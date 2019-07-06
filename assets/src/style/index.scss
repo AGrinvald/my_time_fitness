@@ -1,4 +1,6 @@
 @import "variables";
+@import "avenir-next-cyr";
+@import "magistral-c";
 
 @import "../../../node_modules/bootstrap/scss/_functions";
 @import "../../../node_modules/bootstrap/scss/_variables";
@@ -44,3 +46,14 @@
 // @import "../../../node_modules/owl.carousel/src/scss/_video.scss";
 // @import "../../../node_modules/owl.carousel/src/scss/_theme.scss";
 @import "../../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
+
+body,
+html {
+	height: 100%;
+}
+
+body {
+  font-family: "Avenir Next Cyr";
+  font-style: normal;
+  line-height: normal;
+}
