@@ -53,7 +53,7 @@ var gulp = require('gulp'),  // подключаем Gulp
   autoprefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
   cleanCSS = require('gulp-clean-css'), // плагин для минимизации CSS
   uglify = require('gulp-uglify'), // модуль для минимизации JavaScript
-  cache = require('gulp-cache'), // модуль для кэширования
+  //cache = require('gulp-cache'), // модуль для кэширования
   imagemin = require('gulp-imagemin'), // плагин для сжатия PNG, JPEG, GIF и SVG изображений
   jpegrecompress = require('imagemin-jpeg-recompress'), // плагин для сжатия jpeg	
   pngquant = require('imagemin-pngquant'), // плагин для сжатия png
@@ -82,9 +82,6 @@ gulp.task('css:build', function () {
     .pipe(plumber()) // для отслеживания ошибок
     .pipe(sourcemaps.init()) // инициализируем sourcemap
     .pipe(sass()) // scss -> css
-    .pipe(autoprefixer({ // добавим префиксы
-        browsers: autoprefixerList
-    }))
     .pipe(gulp.dest(path.build.css))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cleanCSS()) // минимизируем CSS
@@ -125,9 +122,9 @@ gulp.task('clean:build', function () {
 });
 
 // очистка кэша
-gulp.task('cache:clear', function () {
-  cache.clearAll();
-});
+// gulp.task('cache:clear', function () {
+//   cache.clearAll();
+// });
 
 // сборка
 gulp.task('build',

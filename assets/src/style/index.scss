@@ -39,12 +39,6 @@
 @import "../../../node_modules/bootstrap/scss/_spinners";
 @import "../../../node_modules/bootstrap/scss/_utilities";
 @import "../../../node_modules/bootstrap/scss/_print";
-// @import "../../../node_modules/owl.carousel/src/scss/_core";
-// @import "../../../node_modules/owl.carousel/src/scss/_animate.scss";
-// @import "../../../node_modules/owl.carousel/src/scss/_autoheight.scss";
-// @import "../../../node_modules/owl.carousel/src/scss/_lazyload.scss";
-// @import "../../../node_modules/owl.carousel/src/scss/_video.scss";
-// @import "../../../node_modules/owl.carousel/src/scss/_theme.scss";
 @import "../../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 
 body,
@@ -53,7 +47,170 @@ html {
 }
 
 body {
-  font-family: "Avenir Next Cyr";
+  font-family: Helvetica;
   font-style: normal;
   line-height: normal;
 }
+
+header {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* TOP HEADER START */
+.h-top {
+  height: 124px;
+
+  .container {
+    position: relative;
+  }
+
+  .b-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .b-right {
+    text-align: right;
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    a {
+      display: block;
+      font-size: 24px;
+      font-family: "Avenir Next Cyr";
+      font-weight: bold;
+    }
+
+    hr {
+      margin: 8px 0;
+      background-color: #101929;
+    }
+  }
+
+  .logo {
+    font-size: 50px;
+    font-family: "MagistralC";
+  }
+}
+/* TOP HEADER END */
+
+/* NAVBAR START */
+nav {
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-breakpoint-up(lg) { 
+    background-color: $dark;
+    .navbar-nav {
+      max-width: 1140px;
+      .nav-link {
+        color: $white;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 2.17px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+        @include hover-focus {
+          color: $navbar-dark-hover-color;
+        }
+  
+        &.disabled {
+          color: $navbar-dark-disabled-color;
+        }
+      }
+  
+      .show > .nav-link,
+      .active > .nav-link,
+      .nav-link.show,
+      .nav-link.active {
+        color: $navbar-dark-active-color;
+      }
+    }
+  
+    .navbar-toggler {
+      color: $navbar-dark-color;
+      border-color: $navbar-dark-toggler-border-color;
+    }
+  
+    .navbar-toggler-icon {
+      background-image: $navbar-dark-toggler-icon-bg;
+    }
+  
+    .navbar-text {
+      color: $navbar-dark-color;
+      a {
+        color: $navbar-dark-active-color;
+
+        @include hover-focus {
+          color: $navbar-dark-active-color;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) { 
+    background: $white;
+    .navbar-logo {
+      font-family: "MagistralC";
+      font-size: 26px;
+      color: #000000;
+    }
+    .navbar-nav {
+      .nav-link {
+        color: $white;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 2.17px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+        @include hover-focus {
+          color: $navbar-dark-hover-color;
+        }
+  
+        &.disabled {
+          color: $navbar-dark-disabled-color;
+        }
+      }
+  
+      .show > .nav-link,
+      .active > .nav-link,
+      .nav-link.show,
+      .nav-link.active {
+        color: $navbar-dark-active-color;
+      }
+    }
+  
+    .navbar-toggler {
+      color: $navbar-dark-color;
+      border-color: $navbar-dark-toggler-border-color;
+    }
+  
+    .navbar-toggler-icon {
+      background-image: $navbar-dark-toggler-icon-bg;
+    }
+  
+    .navbar-text {
+      color: $navbar-dark-color;
+      a {
+        color: $navbar-dark-active-color;
+
+        @include hover-focus {
+          color: $navbar-dark-active-color;
+        }
+      }
+    }
+  }
+
+}
+/* NAVBAR END */

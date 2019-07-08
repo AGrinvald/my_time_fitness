@@ -16,7 +16,7 @@
     "popper.js": "^1.14.7"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-cache": "^1.1.2",
@@ -35,6 +35,19 @@
   "engines": {
     "node": "6.3.1"
   },
+  "browserslist": [
+    "> 1%",
+    "ie >= 8",
+    "edge >= 15",
+    "ie_mob >= 10",
+    "ff >= 45",
+    "chrome >= 45",
+    "safari >= 7",
+    "opera >= 23",
+    "ios >= 7",
+    "android >= 4",
+    "bb >= 10"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AGrinvald/my_time_fitness.git"

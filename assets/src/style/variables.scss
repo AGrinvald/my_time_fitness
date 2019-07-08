@@ -1,6 +1,11 @@
+$white: #ffffff;
 $brand: #aacc23; 
-
-$primary:$brand;
+$dark: #26272b;
+$primary: $brand; 
+$navbar-dark-color:                 $white;
+$navbar-dark-hover-color:           rgba($white, .75) !default;
+$navbar-dark-active-color:          $white !default;
+$navbar-dark-disabled-color:        rgba($white, .25) !default;
 // $secondary:#00A5B9;
 // $info: #8A4D98;
 
