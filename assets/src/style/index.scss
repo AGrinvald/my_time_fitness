@@ -57,6 +57,7 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
+
 /* TOP HEADER START */
 .h-top {
   height: 124px;
@@ -103,6 +104,13 @@ header {
 /* TOP HEADER END */
 
 /* NAVBAR START */
+@include media-breakpoint-down(md) { 
+  .navbar {
+    padding: 0;
+    display: block;
+  }
+}
+
 nav {
   max-width: 1920px;
   margin-left: auto;
@@ -160,26 +168,119 @@ nav {
 
   @include media-breakpoint-down(md) { 
     background: $white;
+
+    .dropdown-toggle::after {
+      float: right;
+      margin-left: none;
+      vertical-align: none;
+      color: $primary;
+    }
+
+    .dropdown-menu {
+      border: none;
+      border-radius: 0;
+      background-color: #F0F0F0;
+
+      .dropdown-item {
+        font-family: "Avenir Next Cyr";
+        font-weight: lighter;
+        color: #656565;
+        letter-spacing: 0.05px;
+        padding-bottom: 15px;
+        padding-left: 50px;
+
+        &:hover {
+          background-color: #F0F0F0;
+        }
+
+        &:first-child {
+          padding-top: 15px;
+        }
+      }
+    }
+    .nav-item {
+      padding-bottom: 15px;
+
+      &:first-child{
+        padding-top: 15px;
+      }   
+
+      &:last-child{
+        padding-bottom: 25px;
+      }   
+    }
     .navbar-logo {
       font-family: "MagistralC";
       font-size: 26px;
       color: #000000;
+      &:hover {
+        text-decoration: none;
+        color: #000000;
+      }
     }
-    .navbar-nav {
-      .nav-link {
+
+    .n-top {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+    }
+
+    .n-bottom {
+      background-color: #272B31;
+      text-align: center;
+
+      .btn-link {
         color: $white;
+        font-family: "Avenir Next Cyr";
+        font-weight: lighter;
+
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+
+        &::after {
+          line-height: 14px;
+          color: $primary;
+          display: inline-block;
+          margin-left: 8px;
+          content: "";
+          border-top: $caret-width solid;
+          border-right: $caret-width solid transparent;
+          border-bottom: 0;
+          border-left: $caret-width solid transparent;
+        }
+      }
+    }
+
+    .navbar {
+      padding: 0;
+    }
+
+    .navbar-nav {
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      box-shadow: 0 8px 6px -6px black;
+
+      .nav-link {
+        color: $black;
         text-transform: uppercase;
         font-size: 14px;
         letter-spacing: 2.17px;
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: block;
+        width: 100%;
+        text-align: left;
 
         @include hover-focus {
-          color: $navbar-dark-hover-color;
+          color: $navbar-light-hover-color;
         }
   
         &.disabled {
-          color: $navbar-dark-disabled-color;
+          color: $navbar-light-disabled-color;
         }
       }
   
@@ -187,26 +288,31 @@ nav {
       .active > .nav-link,
       .nav-link.show,
       .nav-link.active {
-        color: $navbar-dark-active-color;
+        color: $navbar-light-active-color;
       }
     }
   
     .navbar-toggler {
-      color: $navbar-dark-color;
-      border-color: $navbar-dark-toggler-border-color;
+      color: $navbar-light-color;
+      border: none;
+      padding-left: 0;
+      padding-right: 0;
+      font-weight: bold;
     }
   
     .navbar-toggler-icon {
-      background-image: $navbar-dark-toggler-icon-bg;
+      background-image: $navbar-light-toggler-icon-bg;
+      width: 24px;
+      height: 22px;
     }
   
     .navbar-text {
-      color: $navbar-dark-color;
+      color: $navbar-light-color;
       a {
-        color: $navbar-dark-active-color;
+        color: $navbar-light-active-color;
 
         @include hover-focus {
-          color: $navbar-dark-active-color;
+          color: $navbar-light-active-color;
         }
       }
     }
@@ -214,3 +320,18 @@ nav {
 
 }
 /* NAVBAR END */
+
+/* CLUBS MODAL START*/
+#clubs-modal {
+  .modal-body {
+    h4 {
+      font-family: "Avenir Next Cyr";
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.08px;
+      text-align: center;
+      padding-top: 30px;
+    }
+  }
+}
+/* CLUBS MODAL END*/
