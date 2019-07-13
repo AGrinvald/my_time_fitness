@@ -576,10 +576,7 @@ pre {
       max-width: 720px; } }
   @media (min-width: 992px) {
     .container {
-      max-width: 960px; } }
-  @media (min-width: 1200px) {
-    .container {
-      max-width: 1140px; } }
+      max-width: 1195px; } }
 
 .container-fluid {
   width: 100%;
@@ -7325,7 +7322,7 @@ html {
   height: 100%; }
 
 body {
-  font-family: Helvetica;
+  font-family: "Avenir Next Cyr";
   font-style: normal;
   line-height: normal;
   font-size: 14px; }
@@ -7347,22 +7344,33 @@ header {
   padding-top: 15px;
   padding-bottom: 15px; }
 
+.btn-rounded {
+  height: 56px;
+  object-fit: contain;
+  border-radius: 32.5px;
+  text-transform: uppercase;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-size: 16px;
+  letter-spacing: 1.12px;
+  font-weight: bold; }
+
 h2.title {
   font-family: "Avenir Next Cyr";
+  font-size: 34px;
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.69px;
-  text-align: center; }
-  @media (min-width: 992px) {
-    h2.title {
-      font-size: 34px; } }
-  @media (max-width: 991.98px) {
-    h2.title {
-      font-size: 20px; } }
+  color: #101929;
+  text-transform: uppercase; }
 
 @media (min-width: 992px) {
-  .container {
-    max-width: 1195px; } }
+  h2.title {
+    letter-spacing: 0.69px;
+    font-size: 34px; } }
+
+@media (max-width: 991.98px) {
+  h2.title {
+    font-size: 20px;
+    letter-spacing: 0.42px; } }
 
 /* TOP HEADER START */
 .h-top {
@@ -7383,7 +7391,8 @@ h2.title {
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
     font-size: 12px;
-    font-weight: bold; }
+    font-weight: bold;
+    font-family: Helvetica; }
     .h-top .b-right a {
       display: block;
       font-size: 24px;
@@ -7418,7 +7427,8 @@ nav {
           font-size: 14px;
           letter-spacing: 2.17px;
           padding-top: 25px;
-          padding-bottom: 25px; }
+          padding-bottom: 25px;
+          font-family: Helvetica; }
           nav .navbar-nav .nav-link:hover, nav .navbar-nav .nav-link:focus {
             color: rgba(255, 255, 255, 0.75); }
           nav .navbar-nav .nav-link.disabled {
@@ -7452,7 +7462,6 @@ nav {
         border-radius: 0;
         background-color: #F0F0F0; }
         nav .dropdown-menu .dropdown-item {
-          font-family: "Avenir Next Cyr";
           font-weight: lighter;
           color: #656565;
           letter-spacing: 0.05px;
@@ -7606,7 +7615,8 @@ nav {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  letter-spacing: 2.16px; }
+  letter-spacing: 2.16px;
+  font-family: Helvetica; }
   @media (min-width: 992px) {
     .banner-area figure {
       text-shadow: 1px 1px 8px #000000, 0 0 28px #000000;
@@ -7620,16 +7630,15 @@ nav {
   @media (min-width: 992px) {
     .banner-area figure .container {
       max-width: 1000px; } }
-  .banner-area figure h2 {
-    font-family: "Avenir Next Cyr";
+  .banner-area figure h1 {
     font-weight: bold;
     letter-spacing: 2.16px;
     text-transform: uppercase; }
     @media (min-width: 992px) {
-      .banner-area figure h2 {
+      .banner-area figure h1 {
         font-size: 48px; } }
     @media (max-width: 991.98px) {
-      .banner-area figure h2 {
+      .banner-area figure h1 {
         font-size: 32px; } }
   .banner-area figure .btn {
     color: #ffffff;
@@ -7651,9 +7660,17 @@ nav {
 
 /* BANNER AREA END*/
 /* FEATURES AREA START*/
+@media (min-width: 992px) {
+  .features-area .features {
+    margin-bottom: 70px; } }
+
+@media (max-width: 991.98px) {
+  .features-area .features {
+    margin-bottom: 16px; } }
+
 .features-area h2.title {
-  color: #101929;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  text-align: center; }
   @media (min-width: 992px) {
     .features-area h2.title {
       padding-bottom: 70px;
@@ -7663,28 +7680,27 @@ nav {
       padding-bottom: 5px;
       padding-top: 20px; } }
 
-.features-area .owl-nav {
-  position: absolute;
-  top: 42%;
-  max-width: 400px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto; }
-  .features-area .owl-nav button.owl-prev, .features-area .owl-nav button.owl-next {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    background-position: center center;
-    background-repeat: no-repeat; }
-  .features-area .owl-nav .owl-prev > span, .features-area .owl-nav .owl-next > span {
-    content: ""; }
-  .features-area .owl-nav button.owl-prev {
-    float: left;
-    background-image: url(../img/group3.png); }
-  .features-area .owl-nav button.owl-next {
-    float: right;
-    background-image: url(../img/group3Copy.png); }
+@media (max-width: 1100px) {
+  .features-area .owl-nav {
+    position: absolute;
+    top: 42%;
+    width: 400px;
+    left: 50%;
+    transform: translateX(-50%); }
+    .features-area .owl-nav button.owl-prev, .features-area .owl-nav button.owl-next {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      background-position: center center;
+      background-repeat: no-repeat; }
+    .features-area .owl-nav .owl-prev > span, .features-area .owl-nav .owl-next > span {
+      content: ""; }
+    .features-area .owl-nav button.owl-prev {
+      float: left;
+      background-image: url(../img/group3.png); }
+    .features-area .owl-nav button.owl-next {
+      float: right;
+      background-image: url(../img/group3Copy.png); } }
 
 .features-area .feature {
   height: 260px;
@@ -7693,10 +7709,13 @@ nav {
   background-position: center center;
   background-repeat: no-repeat;
   margin: 0 auto;
-  font-family: "Avenir Next Cyr";
-  font-weight: 500;
-  max-width: 360px;
-  max-width: 400px; }
+  font-weight: 500; }
+  @media (min-width: 1100px) {
+    .features-area .feature {
+      max-width: 360px; } }
+  @media (max-width: 1100px) {
+    .features-area .feature {
+      max-width: 400px; } }
   .features-area .feature .number {
     font-size: 100px;
     color: #aacc23; }
@@ -7707,3 +7726,148 @@ nav {
     width: 165px; }
 
 /* FEATURES AREA END*/
+/* MAP AREA START */
+.map-area {
+  position: relative; }
+  .map-area .clubs-block {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0; }
+  .map-area .map-container {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto; }
+  .map-area .inner-block {
+    max-width: 408px;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 32px 32px 40px; }
+    .map-area .inner-block h2 {
+      text-align: center; }
+    @media (min-width: 992px) {
+      .map-area .inner-block {
+        height: 504px; } }
+    @media (max-width: 991.98px) {
+      .map-area .inner-block {
+        margin-top: 50px;
+        height: 384px; } }
+    .map-area .inner-block .club-block {
+      max-width: 344px;
+      height: 88px;
+      box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
+      background-color: #ffffff;
+      border-left: 5px solid #000;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      padding: 12px 12px 17px 25px; }
+      .map-area .inner-block .club-block .number-bg {
+        flex-grow: 1;
+        line-height: 38px;
+        height: 42px;
+        width: 25px;
+        font-size: 22px;
+        color: #c6c6c6;
+        font-weight: 500;
+        letter-spacing: 0.46px;
+        text-align: center;
+        background-image: url(../img/shape.png);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat; }
+      .map-area .inner-block .club-block .desc {
+        flex-grow: 2;
+        padding-left: 17px; }
+        .map-area .inner-block .club-block .desc h4 {
+          font-size: 18px;
+          letter-spacing: 0.18px;
+          font-weight: 600;
+          margin-bottom: 3px; }
+        .map-area .inner-block .club-block .desc p {
+          letter-spacing: 0.14px;
+          font-weight: normal;
+          margin-bottom: 0; }
+  @media (max-width: 991.98px) {
+    .map-area .map-block {
+      height: 668px; } }
+  @media (min-width: 992px) {
+    .map-area .map-block {
+      height: 558px; } }
+
+/* MAP AREA END */
+/* SIGNUP AREA START */
+@media (max-width: 991.98px) {
+  .signup-area .signup-block {
+    margin-top: 35px;
+    margin-bottom: 50px; }
+    .signup-area .signup-block h2 {
+      text-align: center; }
+    .signup-area .signup-block .subtitle {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 31px;
+      letter-spacing: -0.43px; }
+    .signup-area .signup-block .note {
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: -0.3px; } }
+
+@media (min-width: 992px) {
+  .signup-area .signup-block {
+    margin-top: 110px;
+    margin-bottom: 112px; }
+    .signup-area .signup-block .subtitle {
+      font-size: 28px;
+      font-weight: 300;
+      line-height: 1.11;
+      letter-spacing: -0.6px; }
+    .signup-area .signup-block .note {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: -0.39px; } }
+
+.signup-area .signup-slides .slide {
+  margin: 0 30px 30px 30px;
+  box-shadow: -20px 20px #aacc23; }
+
+.signup-area .signup-slides .owl-nav {
+  position: absolute;
+  width: 100%;
+  top: 42%;
+  left: 48%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between; }
+  @media (min-width: 768px) {
+    .signup-area .signup-slides .owl-nav button.owl-prev {
+      align-self: flex-start;
+      background-image: url(../img/group-copy-4.png); }
+    .signup-area .signup-slides .owl-nav button.owl-next {
+      align-self: flex-end;
+      background-image: url(../img/group-copy-2.png); } }
+  @media (max-width: 767.98px) {
+    .signup-area .signup-slides .owl-nav button.owl-prev {
+      align-self: flex-start;
+      background-image: url(../img/groupCopy4.png); }
+    .signup-area .signup-slides .owl-nav button.owl-next {
+      align-self: flex-end;
+      background-image: url(../img/groupCopy5.png); } }
+  .signup-area .signup-slides .owl-nav button.owl-prev, .signup-area .signup-slides .owl-nav button.owl-next {
+    cursor: pointer;
+    background-position: center center;
+    background-repeat: no-repeat; }
+    @media (min-width: 768px) {
+      .signup-area .signup-slides .owl-nav button.owl-prev, .signup-area .signup-slides .owl-nav button.owl-next {
+        width: 70px;
+        height: 70px; } }
+    @media (max-width: 767.98px) {
+      .signup-area .signup-slides .owl-nav button.owl-prev, .signup-area .signup-slides .owl-nav button.owl-next {
+        width: 52px;
+        height: 52px; } }
+
+/* SIGNUP AREA END */
