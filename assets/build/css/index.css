@@ -8065,4 +8065,61 @@ nav {
       margin-top: 40px;
       margin-bottom: 30px; } }
 
+.team-area .scrolling-wrapper {
+  overflow: hidden;
+  white-space: nowrap; }
+  .team-area .scrolling-wrapper .photo {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1171px;
+    height: 512px;
+    background-image: url(../img/copy.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat; }
+
+.team-area .caption-block {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px; }
+  .team-area .caption-block .caption {
+    display: flex;
+    align-items: center; }
+    @media (max-width: 991.98px) {
+      .team-area .caption-block .caption {
+        margin-bottom: 25px; } }
+    .team-area .caption-block .caption .link {
+      font-weight: 500;
+      letter-spacing: normal;
+      color: #cbff06;
+      text-decoration: underline;
+      cursor: pointer; }
+    .team-area .caption-block .caption .caption-text {
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ffffff;
+      width: 345px; }
+      @media (min-width: 768px) {
+        .team-area .caption-block .caption .caption-text {
+          font-size: 24px; } }
+      @media (max-width: 767.98px) {
+        .team-area .caption-block .caption .caption-text {
+          font-size: 18px; } }
+    .team-area .caption-block .caption .caption-icon {
+      height: 60px;
+      width: 50px;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      margin-left: 15px;
+      margin-right: 15px; }
+    .team-area .caption-block .caption .icon-1 {
+      background-image: url(../img/shape.svg); }
+    .team-area .caption-block .caption .icon-2 {
+      background-image: url(../img/combined-shape.svg); }
+
 /* TEAM AREA END */
