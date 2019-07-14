@@ -7684,7 +7684,7 @@ nav {
   .features-area .owl-nav {
     position: absolute;
     top: 42%;
-    width: 400px;
+    width: 100%;
     left: 50%;
     transform: translateX(-50%); }
     .features-area .owl-nav button.owl-prev, .features-area .owl-nav button.owl-next {
@@ -7764,7 +7764,7 @@ nav {
       display: flex;
       flex-flow: row wrap;
       align-items: center;
-      padding: 12px 12px 17px 25px; }
+      padding: 12px 12px 17px 15px; }
       .map-area .inner-block .club-block .number-bg {
         flex-grow: 1;
         line-height: 38px;
@@ -7871,3 +7871,198 @@ nav {
         height: 52px; } }
 
 /* SIGNUP AREA END */
+/* PROMO AREA START */
+.promo-area .promo-container {
+  max-width: 1920px;
+  height: 572px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../img/bitmap.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+  @media (min-width: 992px) {
+    .promo-area .promo-container {
+      height: 572px; } }
+  @media (max-width: 991.98px) {
+    .promo-area .promo-container {
+      height: 416px; } }
+
+.promo-area .inner-container {
+  max-width: 1550px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  overflow: hidden; }
+
+@media (min-width: 992px) {
+  .promo-area .promo-block {
+    background-image: url(../img/group-5.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-width: 702px;
+    margin-left: auto; } }
+
+@media (max-width: 991.98px) {
+  .promo-area .promo-block {
+    position: relative;
+    background-color: #aacc23;
+    height: 248px;
+    margin-top: 50px;
+    margin-left: 15px;
+    margin-right: 15px; } }
+
+.promo-area .promo-block h2 {
+  color: #ffffff; }
+  @media (max-width: 991.98px) {
+    .promo-area .promo-block h2 {
+      text-align: center; } }
+
+.promo-area .promo-block p {
+  color: #ffffff;
+  font-weight: 300; }
+  @media (min-width: 992px) {
+    .promo-area .promo-block p {
+      font-size: 28px;
+      letter-spacing: 0.58px;
+      margin-bottom: 24px; } }
+  @media (max-width: 991.98px) {
+    .promo-area .promo-block p {
+      font-size: 20px;
+      letter-spacing: 0.42px;
+      margin-bottom: 20px;
+      text-align: center; } }
+
+@media (min-width: 992px) {
+  .promo-area .promo-block > div {
+    max-width: 447px;
+    margin-left: 40px; } }
+
+@media (max-width: 991.98px) {
+  .promo-area .promo-block > div {
+    margin-left: 35px;
+    margin-right: 35px; } }
+
+@media (max-width: 991.98px) {
+  .promo-area .promo-block .btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; } }
+
+/* PROMO AREA END */
+/* WORKOUT AREA START */
+.workouts-area .worhouts-container {
+  overflow: hidden; }
+  @media (max-width: 991.98px) {
+    .workouts-area .worhouts-container {
+      background-color: #F1F1F1; } }
+
+.workouts-area h2 {
+  text-align: center; }
+  @media (min-width: 992px) {
+    .workouts-area h2 {
+      padding-top: 85px;
+      padding-bottom: 60px; } }
+  @media (max-width: 991.98px) {
+    .workouts-area h2 {
+      padding-top: 45px;
+      padding-bottom: 30px; } }
+
+.workouts-area .workouts-block {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto; }
+  @media (min-width: 992px) {
+    .workouts-area .workouts-block {
+      margin-bottom: 110px; } }
+  @media (max-width: 1199.98px) {
+    .workouts-area .workouts-block {
+      margin-bottom: 55px; } }
+
+.workouts-area .workout-block {
+  width: 390px;
+  height: 260px;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative; }
+  @media (max-width: 1199.98px) {
+    .workouts-area .workout-block:nth-child(2n-1) {
+      margin: 0 15px 15px 0px; } }
+  @media (max-width: 767.98px) {
+    .workouts-area .workout-block:not(:last-child) {
+      margin: 0 15px 15px 15px; } }
+  .workouts-area .workout-block .inner-block {
+    height: 145px;
+    width: 85%;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 15px 15px; }
+    .workouts-area .workout-block .inner-block.primary-bg {
+      background-color: rgba(178, 207, 65, 0.85); }
+    .workouts-area .workout-block .inner-block.dark-bg {
+      background-color: rgba(16, 25, 41, 0.8); }
+    .workouts-area .workout-block .inner-block h3 {
+      font-weight: bold;
+      letter-spacing: -0.65px;
+      margin-bottom: 5px; }
+      @media (min-width: 992px) {
+        .workouts-area .workout-block .inner-block h3 {
+          font-size: 30px; } }
+      @media (max-width: 991.98px) {
+        .workouts-area .workout-block .inner-block h3 {
+          font-size: 20px; } }
+    .workouts-area .workout-block .inner-block p {
+      font-weight: 300;
+      letter-spacing: -0.39px; }
+      @media (min-width: 992px) {
+        .workouts-area .workout-block .inner-block p {
+          font-size: 18px; } }
+      @media (max-width: 991.98px) {
+        .workouts-area .workout-block .inner-block p {
+          font-size: 16px; } }
+
+.workouts-area .bg-img-1 {
+  background-image: url(../img/bitmap-copy-5.png); }
+
+.workouts-area .bg-img-2 {
+  background-image: url(../img/bitmap-copy-4.png); }
+
+.workouts-area .bg-img-3 {
+  background-image: url(../img/bitmap-copy-6.png); }
+
+.workouts-area .bg-img-4 {
+  background-image: url(../img/bitmap-copy-3.png); }
+
+.workouts-area .bg-img-5 {
+  background-image: url(../img/bitmap-copy.png); }
+
+.workouts-area .bg-img-6 {
+  background-image: url(../img/bitmap-copy-2.png); }
+
+/* WORKOUT AREA END */
+/* TEAM AREA START */
+.team-area .team-container {
+  max-width: 1920px;
+  height: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(to bottom, #fefeff 0%, #fefeff 22%, #b5b8bf 45%, #4f565c 69%, #3c444a 78%, #3c444a 79%, #646c7b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefeff', endColorstr='#646c7b', GradientType=0 ); }
+
+.team-area h2 {
+  text-align: center; }
+  @media (min-width: 992px) {
+    .team-area h2 {
+      margin-top: 75px;
+      margin-bottom: 80px; } }
+  @media (max-width: 991.98px) {
+    .team-area h2 {
+      margin-top: 40px;
+      margin-bottom: 30px; } }
+
+/* TEAM AREA END */
