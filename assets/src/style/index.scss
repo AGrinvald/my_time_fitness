@@ -165,10 +165,6 @@ h2.title {
 }
 
 nav {
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
-
   @include media-breakpoint-up(lg) { 
     background-color: $dark;
     .navbar-nav {
@@ -391,18 +387,8 @@ nav {
 
 /* BANNER AREA START*/
 .banner-area {
-  .owl-carousel .owl-item img {
-    width: auto; 
-  }
-
-  .banner-container {
-    max-width: 1920px;
-    margin-left: auto;
-    margin-right: auto;    
-  }
 
   @include media-breakpoint-down(lg) {
-
     .owl-dots {
       width: 100%;
       position: absolute;
@@ -627,12 +613,6 @@ nav {
     left: 0
   }
 
-  .map-container {
-    max-width: 1920px;
-    margin-left: auto;
-    margin-right: auto;    
-  }
-
   .inner-block {
     max-width: 408px;
     background-color: rgba(255, 255, 255, 0.9);
@@ -824,10 +804,7 @@ nav {
 /* PROMO AREA START */
 .promo-area {
   .promo-container {
-    max-width: 1920px;
-    height: 572px;
-    margin-left: auto;
-    margin-right: auto;    
+    height: 572px;  
     background-image: url(../img/bitmap.png);
     background-size: cover;  
     background-position: center center;
@@ -1051,10 +1028,7 @@ nav {
 /* TEAM AREA START */
 .team-area {
   .team-container {
-    max-width: 1920px;
-    height: 900px;
-    margin-left: auto;
-    margin-right: auto;    
+    height: 900px;   
     background: linear-gradient(to bottom, rgba(254,254,255,1) 0%, rgba(254,254,255,1) 22%, rgba(181,184,191,1) 45%, rgba(79,86,92,1) 69%, rgba(60,68,74,1) 78%, rgba(60,68,74,1) 79%, rgba(100,108,123,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefeff', endColorstr='#646c7b', GradientType=0 );
   }
@@ -1154,9 +1128,6 @@ nav {
 
 /* FOOTER START */
 footer {
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
   background-color: #101929;
   overflow: hidden;
   font-size: 18px;
@@ -1174,6 +1145,20 @@ footer {
   
   .footer-container {
     margin-top: 60px;
+  }
+
+  .row > div {
+    padding: 0;
+  }
+
+  .f-bottom {
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.3px;
+    color: #475f8c;
   }
 
   ul {
