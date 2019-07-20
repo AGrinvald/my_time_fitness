@@ -452,8 +452,13 @@ nav {
     letter-spacing: 2.16px;
     font-family: Helvetica;
 
+    .bg-shadow {
+      background-image: url(../img/rectangle-copy-12.png);
+      background-repeat: no-repeat;
+      background-position-y: -20px;
+    }
+
     @include media-breakpoint-up(lg) { 
-      text-shadow: 1px 1px 8px #000000, 0 0 28px #000000;
       height: 515px;
     }
 
@@ -462,8 +467,15 @@ nav {
       p {
         margin: 0;
       }
-      text-shadow: 1px 1px 8px #000000, 0 0 28px #000000,
-       0 0 40px #000000, 0 0 60px #000000, 0 0 80px #000000, 0 0 100px #000000, 0 0 120px #000000;
+      h1 {
+        ///filter: blur(5px);
+        // text-shadow: 1px 1px 8px #000000, 0 0 28px #000000,
+        // 0 0 40px #000000, 0 0 60px #000000, 0 0 80px #000000, 0 0 100px #000000, 0 0 120px #000000;
+        // z-index: 100;
+      }
+      
+      // text-shadow: 1px 1px 8px #000000, 0 0 28px #000000,
+      //  0 0 40px #000000, 0 0 60px #000000, 0 0 80px #000000, 0 0 100px #000000, 0 0 120px #000000;
     }
 
     @include media-breakpoint-up(lg) { 
@@ -500,8 +512,20 @@ nav {
     }
   }
 
-  img {
-    width: auto;
+  .owl-carousel .owl-item img {
+    display: block;
+
+    @include media-breakpoint-down(md) { 
+      width: 65%;
+    }
+
+    @include media-breakpoint-down(sm) { 
+      width: 85%;
+    }
+
+    @include media-breakpoint-down(xs) { 
+      width: 90%;
+    }  
   }
 
   .bg-img-1 {
@@ -606,6 +630,10 @@ nav {
 .map-area {
   position: relative;
 
+  [class*="ymaps-2"][class*="-ground-pane"] {
+    filter: invert(1) grayscale(1) opacity(0.8);
+  }
+
   .clubs-block {
     width: 100%;
     height: 100%;
@@ -635,6 +663,7 @@ nav {
     }
 
     .club-block {
+      display: block;
       max-width: 344px;
       height: 88px;
       box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
@@ -644,6 +673,22 @@ nav {
       flex-flow: row wrap;
       align-items: center;
       padding: 12px 12px 17px 15px;
+      color: #000;
+
+      &:hover, &:focus {
+        color: #000;
+        text-decoration: none;
+        border-left: 5px solid $primary;
+      }
+
+      &.active {
+        background-color: #ebf2d2;
+        border-left: 5px solid $primary;
+        .number-bg {
+          background-image: url(../img/shape-copy-4.png);
+          color: $primary;
+        }
+      }
 
       .number-bg {
         flex-grow: 1;

@@ -7606,14 +7606,16 @@ h2.title {
   background-repeat: no-repeat;
   letter-spacing: 2.16px;
   font-family: Helvetica; }
+  .banner-area figure .bg-shadow {
+    background-image: url(../img/rectangle-copy-12.png);
+    background-repeat: no-repeat;
+    background-position-y: -20px; }
   @media (min-width: 992px) {
     .banner-area figure {
-      text-shadow: 1px 1px 8px #000000, 0 0 28px #000000;
       height: 515px; } }
   @media (max-width: 991.98px) {
     .banner-area figure {
-      height: 615px;
-      text-shadow: 1px 1px 8px #000000, 0 0 28px #000000, 0 0 40px #000000, 0 0 60px #000000, 0 0 80px #000000, 0 0 100px #000000, 0 0 120px #000000; }
+      height: 615px; }
       .banner-area figure p {
         margin: 0; } }
   @media (min-width: 992px) {
@@ -7641,8 +7643,17 @@ h2.title {
         margin-top: 30px;
         margin-bottom: 100px; } }
 
-.banner-area img {
-  width: auto; }
+.banner-area .owl-carousel .owl-item img {
+  display: block; }
+  @media (max-width: 991.98px) {
+    .banner-area .owl-carousel .owl-item img {
+      width: 65%; } }
+  @media (max-width: 767.98px) {
+    .banner-area .owl-carousel .owl-item img {
+      width: 85%; } }
+  @media (max-width: 575.98px) {
+    .banner-area .owl-carousel .owl-item img {
+      width: 90%; } }
 
 .banner-area .bg-img-1 {
   background-image: url(../img/3-copy@1x.png); }
@@ -7718,6 +7729,8 @@ h2.title {
 /* MAP AREA START */
 .map-area {
   position: relative; }
+  .map-area [class*="ymaps-2"][class*="-ground-pane"] {
+    filter: invert(1) grayscale(1) opacity(0.8); }
   .map-area .clubs-block {
     width: 100%;
     height: 100%;
@@ -7741,6 +7754,7 @@ h2.title {
         margin-top: 50px;
         height: 384px; } }
     .map-area .inner-block .club-block {
+      display: block;
       max-width: 344px;
       height: 88px;
       box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
@@ -7749,7 +7763,18 @@ h2.title {
       display: flex;
       flex-flow: row wrap;
       align-items: center;
-      padding: 12px 12px 17px 15px; }
+      padding: 12px 12px 17px 15px;
+      color: #000; }
+      .map-area .inner-block .club-block:hover, .map-area .inner-block .club-block:focus {
+        color: #000;
+        text-decoration: none;
+        border-left: 5px solid #aacc23; }
+      .map-area .inner-block .club-block.active {
+        background-color: #ebf2d2;
+        border-left: 5px solid #aacc23; }
+        .map-area .inner-block .club-block.active .number-bg {
+          background-image: url(../img/shape-copy-4.png);
+          color: #aacc23; }
       .map-area .inner-block .club-block .number-bg {
         flex-grow: 1;
         line-height: 38px;
