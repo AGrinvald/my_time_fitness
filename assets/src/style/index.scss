@@ -678,6 +678,9 @@ nav {
       &:hover, &:focus {
         color: #000;
         text-decoration: none;
+      }
+
+      &:hover {
         border-left: 5px solid $primary;
       }
 

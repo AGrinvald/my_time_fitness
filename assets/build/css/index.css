@@ -7767,7 +7767,8 @@ h2.title {
       color: #000; }
       .map-area .inner-block .club-block:hover, .map-area .inner-block .club-block:focus {
         color: #000;
-        text-decoration: none;
+        text-decoration: none; }
+      .map-area .inner-block .club-block:hover {
         border-left: 5px solid #aacc23; }
       .map-area .inner-block .club-block.active {
         background-color: #ebf2d2;

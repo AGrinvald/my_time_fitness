@@ -146,7 +146,7 @@
             <div>
               <h2 class="title">mytime<span class="text-primary">fitness</span> на карте</h2>
             </div>
-            <a href="#" data-id="1" class="club-block active">
+            <a href="#" data-id="0" class="club-block">
               <div class="number-bg">
                 1
               </div>
@@ -162,7 +162,7 @@
                   img/group-2-copy@3x.png 93w" sizes="31px" src="img/group-2-copy@1x.png" alt="Поинтер">
               </div>
             </a>
-            <a href="#" data-id="2" class="club-block">
+            <a href="#" data-id="1" class="club-block">
               <div class="number-bg">
                 2
               </div>
@@ -178,7 +178,7 @@
                     img/group-2-copy@3x.png 93w" sizes="31px" src="img/group-2-copy@1x.png" alt="Поинтер">
               </div>
             </a>
-            <a href="#" data-id="3" class="club-block">
+            <a href="#" data-id="2" class="club-block">
               <div class="number-bg">
                 3
               </div>
@@ -338,41 +338,98 @@
   </div>
   <script src="js/index.js"></script>
   <script type="text/javascript">
+    
+    var map;
+    var windowsSize = {
+        Medium: 2,
+        Large: 3,
+    };
+
+    var mapSettingsCollection = {
+      Large: { center: [59.91630318065146, 30.07137557421872], zoom: 10, 
+        imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
+      },
+      Medium: { center: [60.1677166120527, 30.394098962890602], zoom: 9,
+        imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58] 
+      }
+    };
+
+    var mapSettings = null; 
+    var currentSize = null;
     ymaps.ready(init);
 
+    var createLayout = function (id) {
+      var Layout = ymaps.templateLayoutFactory.createClass(
+          '<div class="club"></div>',
+          {
+              build: function () {
+                Layout.superclass.build.call(this);
+                  var placemarkMap = this.getData().geoObject.getMap();
+
+                  if (!this.inited) {
+                      this.inited = true;
+
+                      placemarkMap.events.add('sizechange', function () {
+                        this.rebuild();
+                      }, this);
+                  }
+
+                  var img = document.createElement("img");
+                  img.src = mapSettings.imgUrls[id];
+                  img.width = mapSettings.imgSize[0];
+                  img.height = mapSettings.imgSize[1];
+
+                  var options = this.getData().options,
+                  element = this.getParentElement().getElementsByClassName('club')[0];
+                  element.appendChild(img);
+              }
+          }
+      );
+
+      return Layout;
+  };
+
     function init() {
-      var map = new ymaps.Map("map", {
-        center: [59.91630318065146, 30.07137557421872],
-        zoom: 10,
+
+      var width = document.documentElement.clientWidth;
+
+      if(width >= 977) {
+        currentSize = windowsSize.Large;
+        mapSettings = mapSettingsCollection.Large;
+      } else {
+        currentSize = windowsSize.Medium;
+        mapSettings = mapSettingsCollection.Medium;
+      }
+
+      map = new ymaps.Map("map", {
+        center: mapSettings.center,
+        zoom: mapSettings.zoom,
       });
 
       var kupchino = new ymaps.Placemark(
         [59.82853206432565,30.39268299999999], {
+              id: 2,
               hintContent: 'Санкт-Петербург м.Купчино, ул. Олеко Дундича 10/2, 1 этаж'
           }, {
-              iconLayout: 'default#imageWithContent',
-              iconImageSize: [55, 76],
-              iconImageHref: 'img/3.png',
+              iconLayout: createLayout(2)
           }
       );
 
       var komendanskiy = new ymaps.Placemark(
         [60.01065856407727,30.403732499999954], {
+              id: 0,
               hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
           }, {
-              iconLayout: 'default#imageWithContent',
-              iconImageSize: [55, 76],
-              iconImageHref: 'img/1.png',
+              iconLayout: createLayout(0)
           }
       );
 
       var akademicheskaya = new ymaps.Placemark(
         [60.00816706410207,30.2457365], {
+              id: 1,
               hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
           }, {
-              iconLayout: 'default#imageWithContent',
-              iconImageSize: [55, 76],
-              iconImageHref: 'img/2.png',
+              iconLayout: createLayout(1)
           }
       );
 
@@ -384,17 +441,56 @@
       map.controls.remove('rulerControl');
       map.behaviors.disable(['scrollZoom']);
 
-      map.geoObjects.add(komendanskiy);
-      map.geoObjects.add(akademicheskaya);
-      map.geoObjects.add(kupchino);
+      map.events.add('sizechange', function(event) {
+        var size = map.container.getSize();
+        var width = size[0];
+        var toChange = false;
+
+        if(toChange = (width >= 975 && currentSize != windowsSize.Large)) {
+          currentSize = windowsSize.Large;
+          mapSettings = mapSettingsCollection.Large;
+
+        } else if(toChange = (width < 975 && currentSize != windowsSize.Medium)) {
+          currentSize = windowsSize.Medium;
+          mapSettings = mapSettingsCollection.Medium;
+        }
+
+        if(toChange){
+          map.setCenter(mapSettings.center, mapSettings.zoom);
+        }
+      });  
+
+      ymaps.geoQuery(komendanskiy).addToMap(map);
+      ymaps.geoQuery(akademicheskaya).addToMap(map);
+      ymaps.geoQuery(kupchino).addToMap(map);
     }
 
-  </script>
-  <script type="text/javascript">
+    $(".club-block").click(function(event) {
+      event.preventDefault();
+      var self = $(this);
+
+      var hasClass = self.hasClass("active");
+      var geoObjects =  ymaps.geoQuery(map.geoObjects);
+
+      if(hasClass) {
+        var result = geoObjects.setOptions('visible', true);
+        result.then(function() {
+          self.removeClass("active");
+        });
+      } else {
+        var idStr = self.data( "id" );
+        var id = parseInt(idStr);
+        var selected = geoObjects.search("properties.id = " + id).setOptions('visible', true);
+        var result2 = geoObjects.remove(selected).setOptions('visible', false);
+
+        result2.then(function() {
+          $(".club-block").removeClass("active");
+          self.addClass("active");
+        });
+      }
+    });
+
     $(function () {
-
-
-
       $('.banner-slides').owlCarousel({
         items: 1,
         loop: true,
