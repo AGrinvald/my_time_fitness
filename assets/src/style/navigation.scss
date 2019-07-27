@@ -1,0 +1,246 @@
+/* NAVBAR START */
+
+nav {
+  z-index: 2;
+  
+  &.navbar {
+    display: block;
+    padding: 0;
+  }
+
+  .hexagons {
+    position: absolute;
+    top: -73%;
+    height: 279px;
+    z-index: 1;
+  }
+
+  position: relative;
+
+  @include media-breakpoint-up(lg) { 
+    background-color: $dark;
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.37);
+      min-width: 100%; 
+      padding: 0;
+      margin: 0;
+      
+      .dropdown-item {
+        padding: 15px 22px;
+        font-size: 17px;
+        letter-spacing: 0.05px;
+        &:hover {
+          font-weight: 700;
+          background: linear-gradient(to right, rgba(229,229,229,1) 0%, rgba(244,244,244,1) 50%, rgba(244,244,244,1) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f4f4f4', GradientType=1 );
+        }
+      }
+    }
+
+    .navbar-nav {
+      max-width: 1140px;
+      .nav-link {
+        color: $white;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 2.17px;
+        padding-top: 25px;
+        padding-bottom: 20px;
+        font-family: Helvetica;
+        border-bottom: 5px solid $dark;
+        
+        @include hover-focus {
+          color: $navbar-dark-hover-color;
+          border-bottom: 5px solid $primary;
+        }
+  
+        &.disabled {
+          color: $navbar-dark-disabled-color;
+        }
+      }
+  
+      .show > .nav-link,
+      .active > .nav-link,
+      .nav-link.show,
+      .nav-link.active {
+        color: $navbar-dark-active-color;
+      }
+    }
+  
+    .navbar-toggler {
+      color: $navbar-dark-color;
+      border-color: $navbar-dark-toggler-border-color;
+    }
+  
+    .navbar-toggler-icon {
+      background-image: $navbar-dark-toggler-icon-bg;
+    }
+  
+    .navbar-text {
+      color: $navbar-dark-color;
+      a {
+        color: $navbar-dark-active-color;
+
+        @include hover-focus {
+          color: $navbar-dark-active-color;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) { 
+    background: $white;
+
+    .dropdown-toggle::after {
+      float: right;
+      margin-left: none;
+      vertical-align: none;
+      color: $primary;
+    }
+
+    .dropdown-menu {
+      border: none;
+      border-radius: 0;
+      background-color: #F0F0F0;
+
+      .dropdown-item {
+        font-weight: lighter;
+        color: #656565;
+        letter-spacing: 0.05px;
+        padding-bottom: 15px;
+        padding-left: 50px;
+        font-weight: 300;
+        &:hover {
+          background-color: #F0F0F0;
+        }
+
+        &:first-child {
+          padding-top: 15px;
+        }
+      }
+    }
+    .nav-item {
+      padding-bottom: 15px;
+
+      &:first-child{
+        padding-top: 15px;
+      }   
+
+      &:last-child{
+        padding-bottom: 25px;
+      }   
+    }
+    .navbar-logo {
+      font-family: "MagistralC";
+      font-size: 26px;
+      color: #000000;
+      &:hover {
+        text-decoration: none;
+        color: #000000;
+      }
+    }
+
+    .n-top {
+      background: linear-gradient(to right, rgba(217,217,217,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );  
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+    }
+
+    .n-bottom {
+      background-color: #272B31;
+      text-align: center;
+
+      .btn-link {
+        color: $white;
+        font-family: "Avenir Next Cyr";
+        font-weight: lighter;
+
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+
+        &::after {
+          line-height: 14px;
+          color: $primary;
+          display: inline-block;
+          margin-left: 8px;
+          content: "";
+          border-top: $caret-width solid;
+          border-right: $caret-width solid transparent;
+          border-bottom: 0;
+          border-left: $caret-width solid transparent;
+        }
+      }
+    }
+
+    .navbar-nav {
+      background: linear-gradient(to bottom, rgba(249,249,249,1) 0%, rgba(249,249,249,1) 35%, rgba(229,229,229,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#e5e5e5', GradientType=0 );
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      box-shadow: 0 8px 6px -6px black;
+
+      .nav-link {
+        color: $black;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 2.17px;
+        font-weight: 500;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: block;
+        width: 100%;
+        text-align: left;
+
+        @include hover-focus {
+          color: $navbar-light-hover-color;
+        }
+  
+        &.disabled {
+          color: $navbar-light-disabled-color;
+        }
+      }
+  
+      .show > .nav-link,
+      .active > .nav-link,
+      .nav-link.show,
+      .nav-link.active {
+        color: $navbar-light-active-color;
+      }
+    }
+  
+    .navbar-toggler {
+      color: $navbar-light-color;
+      border: none;
+      padding-left: 0;
+      padding-right: 0;
+      font-weight: bold;
+    }
+  
+    .navbar-toggler-icon {
+      background-image: $navbar-light-toggler-icon-bg;
+      width: 24px;
+      height: 22px;
+    }
+  
+    .navbar-text {
+      color: $navbar-light-color;
+      a {
+        color: $navbar-light-active-color;
+
+        @include hover-focus {
+          color: $navbar-light-active-color;
+        }
+      }
+    }
+  }
+
+}
+  /* NAVBAR END */

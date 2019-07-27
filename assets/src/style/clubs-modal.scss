@@ -1,0 +1,45 @@
+/* CLUBS MODAL START*/
+#clubs-modal {
+  .modal-content {
+    border: none;
+  }
+  .modal-body {
+    h4 {
+      font-family: "Avenir Next Cyr";
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.08px;
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .club-link {
+      color: $black;
+      max-width: 328px;
+      height: 120px;
+      background-color: $white;
+      margin: 0 auto;
+      padding: 22px 18px;
+      text-decoration: none;
+      border-radius: 3px;
+
+      img {
+        margin-right: 24px;
+      }
+
+      h5 {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.18;
+      }
+
+      p {
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 22px;
+        letter-spacing: 0.15;
+      }
+    }
+  }
+  }
+  /* CLUBS MODAL END*/

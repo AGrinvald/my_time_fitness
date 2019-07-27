@@ -1,0 +1,164 @@
+/* MAP AREA START */
+.map-area {
+    position: relative;
+  
+    [class*="ymaps-2"][class*="-ground-pane"] {
+      filter: invert(1) grayscale(1) opacity(0.8);
+    }
+  
+    .container-fluid {
+      position: relative;
+    }
+
+    .clubs-block {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      z-index: 20;
+    }
+  
+    .inner-block {
+      overflow: hidden;
+      max-width: 408px;
+      background-color: rgba(255, 255, 255, 0.9);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 32px 32px 40px;
+  
+      h2 {
+        text-align: center;
+      }
+      @include media-breakpoint-up(lg) {
+        height: 504px;
+      }
+  
+      @include media-breakpoint-down(md) {
+        margin-top: 50px;
+        height: 384px;
+      }
+  
+      .club-block {
+        display: block;
+        max-width: 344px;
+        height: 88px;
+        box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
+        background-color: $white;
+        border-left: 5px solid #000;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        padding: 12px 12px 17px 15px;
+        color: #000;
+  
+        &:hover, &:focus {
+          color: #000;
+          text-decoration: none;
+        }
+  
+        &:hover {
+          border-left: 5px solid $primary;
+        }
+  
+        &.active {
+          background-color: #ebf2d2;
+          border-left: 5px solid $primary;
+          .number-bg {
+            background-image: url(../img/shape-copy-4.png);
+            color: $primary;
+          }
+        }
+  
+        .number-bg {
+          flex-grow: 1;
+          line-height: 38px;
+          height: 42px;
+          width: 25px;
+          font-size: 22px;
+          color: #c6c6c6;
+          font-weight: 500;
+          letter-spacing: 0.46px;
+          text-align: center;
+          background-image: url(../img/shape.png);
+          background-size: contain;  
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+  
+        .desc {
+          flex-grow: 2;
+          padding-left: 17px;
+          h4 {
+            font-size: 18px;
+            letter-spacing: 0.18px;
+            font-weight: 600;
+            margin-bottom: 3px;
+          }
+  
+          p {
+            letter-spacing: 0.14px;
+            font-weight: normal;       
+            margin-bottom: 0;   
+          }
+        }
+      }
+    }  
+    
+    .club-info-block {
+      z-index: 25;
+      height: 504px;
+      bottom: 0;
+      padding-left: 45px;
+
+      .inner-div {
+        background-color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        width: 100%;
+        padding: 0 15px;
+        font-size: 15px;
+        letter-spacing: 0.06px;
+        color: #ffffff;
+
+        > div:not(:last-child) {
+          padding-right: 26px;
+        } 
+
+        .info-top, .info-bottom {
+          padding: 10px 0;
+        }
+  
+        .info-top {
+          font-weight: 500;
+          border-bottom: 1px solid #d6ff34;
+        }
+  
+        .info-bottom {
+          font-weight: 100;
+        }
+      }
+
+    }
+
+    @include media-breakpoint-down(md) {
+      .map-block {
+        height: 668px;
+      }
+
+      .club-info-block {
+        display: none;
+      }
+    }
+  
+    @include media-breakpoint-up(lg) {
+      .map-block {
+        height: 558px;
+      }
+
+      .club-info-block {
+        display: flex;
+      }
+    }
+  }
+  /* MAP AREA END */

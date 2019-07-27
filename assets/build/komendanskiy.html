@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/komendanskiy.min.css" media="all">
+  <style>
+
+</style>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ba6c0504-43ff-4821-a7d3-7384f5e5cd00&lang=ru_RU&mode=debug"
+    type="text/javascript">
+    </script>
+</head>
+
+<body>
+  <header>
+    <div class="h-top d-none d-lg-block">
+      <div class="container text-center h-100">
+        <div class="b-center">
+          <a class="logo">mytime<span class="text-primary">fitness</span></a>
+        </div>
+        <div class="b-right">
+          <div>
+            <a class="text-primary" href="tel:+7 (812) 337-07-07">+7 (812) 337-07-07</a>
+          </div>
+          <hr />
+          <div>
+            Запишись по телефону или Whats App
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-expand-lg">
+    <div class="d-lg-none n-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-logo" href="#">mytime<span class="text-primary">fitness</span></a>
+      <a class="btn-link" href="#"><img srcset="img/phone@1x.png 25w,
+        img/phone@2x.png 50w,
+        img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
+    </div>
+    <div class="d-lg-none n-bottom">
+      <button class="btn btn-link" data-toggle="modal" data-target="#clubs-modal">Выберите ваш клуб</button>
+    </div>
+    <div class="collapse navbar-collapse justify-content-center" id="navbar">
+      <ul class="navbar-nav nav-fill w-100 align-items-start">
+        <li class="nav-item dropdown w-100">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Клубы
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Комендантский</a>
+            <a class="dropdown-item" href="#">Академическая</a>
+            <a class="dropdown-item" href="#">Купчино</a>
+          </div>
+        </li>
+        <li class="nav-item w-100">
+          <a class="nav-link" href="#">Расписание</a>
+        </li>
+        <li class="nav-item w-100">
+          <a class="nav-link" href="#">Абонементы</a>
+        </li>
+        <li class="nav-item w-100">
+          <a class="nav-link" href="#">Акции</a>
+        </li>
+        <li class="nav-item w-100">
+          <a class="nav-link" href="#">Детям</a>
+        </li>
+        <li class="nav-item w-100">
+          <a class="nav-link" href="#">Обучение</a>
+        </li>
+        <li class="nav-item w-100 d-lg-none d-xs-inline">
+          <button class="navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbar"
+            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <img srcset="img/rectangle@1x.png 48w,
+              img/rectangle@2x.png 96w,
+              img/rectangle@3x.png 144w" sizes="48px" src="img/rectangle@1x.png" alt="Tooggler"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+  <div class="modal fade" id="clubs-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <img srcset="img/cancel@1x.png 23w,
+                        img/cancel@2x.png 46w,
+                        img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
+                </button>
+                <h4>Выберите Ваш клуб</h4>
+                <a href="#" class="club-link d-flex mt-4">
+                    <img src="img/shape1.svg" alt="pointer">
+                    <div class="inner-div">
+                        <h5>
+                            Комендантский
+                        </h5>
+                        <p class="flex-grow-1">
+                            пр. Ильюшина, 14
+                            ТК «Долгоозерный», 3 этаж
+                        </p>
+                    </div>
+                </a>
+                <a href="#" class="club-link d-flex mt-4">
+                    <img src="img/shape1.svg" alt="pointer">
+                    <div class="inner-div">
+                        <h5>
+                            Академическая
+                        </h5>
+                        <p>
+                            ул. Бутлерова 42 а, 3 этаж
+                            ТК Призма
+                        </p>
+                    </div>
+                </a>
+                <a href="#" class="club-link d-flex mt-4">
+                    <img src="img/shape1.svg" alt="pointer">
+                    <div class="inner-div">
+                        <h5>
+                            Купчино
+                        </h5>
+                        <p>
+                            ул. Олеко Дундича 10/2
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="js/komendanskiy.js"></script>
+  <script type="text/javascript"> 
+//     var map;
+//     var windowsSize = {
+//         Medium: 2,
+//         Large: 3,
+//     };
+
+//     var mapSettingsCollection = {
+//       Large: { center: [59.91630318065146, 30.07137557421872], zoom: 10, 
+//         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
+//       },
+//       Medium: { center: [60.1677166120527, 30.394098962890602], zoom: 9,
+//         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58] 
+//       }
+//     };
+
+//     var mapSettings = null; 
+//     var currentSize = null;
+//     ymaps.ready(init);
+
+//     var createLayout = function (id) {
+//       var Layout = ymaps.templateLayoutFactory.createClass(
+//           '<div class="club"></div>',
+//           {
+//               build: function () {
+//                 Layout.superclass.build.call(this);
+//                   var placemarkMap = this.getData().geoObject.getMap();
+
+//                   if (!this.inited) {
+//                       this.inited = true;
+
+//                       placemarkMap.events.add('sizechange', function () {
+//                         this.rebuild();
+//                       }, this);
+//                   }
+
+//                   var img = document.createElement("img");
+//                   img.src = mapSettings.imgUrls[id];
+//                   img.width = mapSettings.imgSize[0];
+//                   img.height = mapSettings.imgSize[1];
+
+//                   var options = this.getData().options,
+//                   element = this.getParentElement().getElementsByClassName('club')[0];
+//                   element.appendChild(img);
+//               }
+//           }
+//       );
+
+//       return Layout;
+//   };
+
+    // function init() {
+
+    //   var width = document.documentElement.clientWidth;
+
+    //   if(width >= 977) {
+    //     currentSize = windowsSize.Large;
+    //     mapSettings = mapSettingsCollection.Large;
+    //   } else {
+    //     currentSize = windowsSize.Medium;
+    //     mapSettings = mapSettingsCollection.Medium;
+    //   }
+
+    //   map = new ymaps.Map("map", {
+    //     center: mapSettings.center,
+    //     zoom: mapSettings.zoom,
+    //   });
+
+    //   var kupchino = new ymaps.Placemark(
+    //     [59.82853206432565,30.39268299999999], {
+    //           id: 2,
+    //           hintContent: 'Санкт-Петербург м.Купчино, ул. Олеко Дундича 10/2, 1 этаж'
+    //       }, {
+    //           iconLayout: createLayout(2)
+    //       }
+    //   );
+
+    //   var komendanskiy = new ymaps.Placemark(
+    //     [60.01065856407727,30.403732499999954], {
+    //           id: 0,
+    //           hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
+    //       }, {
+    //           iconLayout: createLayout(0)
+    //       }
+    //   );
+
+    //   var akademicheskaya = new ymaps.Placemark(
+    //     [60.00816706410207,30.2457365], {
+    //           id: 1,
+    //           hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
+    //       }, {
+    //           iconLayout: createLayout(1)
+    //       }
+    //   );
+
+    //   map.controls.remove('geolocationControl');
+    //   map.controls.remove('searchControl');
+    //   map.controls.remove('trafficControl');
+    //   map.controls.remove('typeSelector');
+    //   map.controls.remove('fullscreenControl');
+    //   map.controls.remove('rulerControl');
+    //   map.behaviors.disable(['scrollZoom']);
+
+    //   map.events.add('sizechange', function(event) {
+    //     var size = map.container.getSize();
+    //     var width = size[0];
+    //     var toChange = false;
+
+    //     if(toChange = (width >= 975 && currentSize != windowsSize.Large)) {
+    //       currentSize = windowsSize.Large;
+    //       mapSettings = mapSettingsCollection.Large;
+
+    //     } else if(toChange = (width < 975 && currentSize != windowsSize.Medium)) {
+    //       currentSize = windowsSize.Medium;
+    //       mapSettings = mapSettingsCollection.Medium;
+    //     }
+
+    //     if(toChange){
+    //       map.setCenter(mapSettings.center, mapSettings.zoom);
+    //     }
+    //   });  
+
+    //   ymaps.geoQuery(komendanskiy).addToMap(map);
+    //   ymaps.geoQuery(akademicheskaya).addToMap(map);
+    //   ymaps.geoQuery(kupchino).addToMap(map);
+    // }
+
+    // $(".club-block").click(function(event) {
+    //   event.preventDefault();
+    //   var self = $(this);
+
+    //   var hasClass = self.hasClass("active");
+    //   var geoObjects =  ymaps.geoQuery(map.geoObjects);
+
+    //   if(hasClass) {
+    //     var result = geoObjects.setOptions('visible', true);
+    //     result.then(function() {
+    //       self.removeClass("active");
+    //     });
+    //   } else {
+    //     var idStr = self.data( "id" );
+    //     var id = parseInt(idStr);
+    //     var selected = geoObjects.search("properties.id = " + id).setOptions('visible', true);
+    //     var result2 = geoObjects.remove(selected).setOptions('visible', false);
+
+    //     result2.then(function() {
+    //       $(".club-block").removeClass("active");
+    //       self.addClass("active");
+    //     });
+    //   }
+    // });
+
+  </script>
+</body>
+
+</html>

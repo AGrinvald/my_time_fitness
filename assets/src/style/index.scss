@@ -41,352 +41,43 @@
 @import "../../../node_modules/bootstrap/scss/_print";
 @import "../../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 
-body,
-html {
-	height: 100%;
-}
-
-body {
-  font-family: "Avenir Next Cyr";
-  font-style: normal;
-  line-height: normal;
-  font-size: 14px;
-}
-
-header {
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.container-fluid {
-  padding: 0;
-}
-
-.btn {
-  font-family: "Avenir Next Cyr";
-  letter-spacing: 1.42px;
-  font-weight: bold;
-}
-
-.btn-lg {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.btn-rounded {
-  height: 56px;
-  object-fit: contain;
-  border-radius: 32.5px;
-  text-transform: uppercase;
-  padding-left: 22px;
-  padding-right: 22px;
-  font-size: 16px;
-  letter-spacing: 1.12px;
-  font-weight: bold;
-}
-
-h2.title {
-  font-family: "Avenir Next Cyr";
-  font-size: 34px;
-  font-weight: bold;
-  color: #101929;
-  text-transform: uppercase;
-}
+@import "global";
+@import "header";
+@import "navigation";
+@import "map";
+@import "clubs-modal";
 
 
-@include media-breakpoint-up(lg) {
-  h2.title {
-    letter-spacing: 0.69px;
-    font-size: 34px;
-  }
-}
-
-@include media-breakpoint-down(md) {
-  h2.title {
-    font-size: 20px;
-    letter-spacing: 0.42px;
-  }
-}
-
-/* TOP HEADER START */
-.h-top {
-  height: 124px;
-
-  .container {
-    position: relative;
-  }
-
-  .b-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-
-  .b-right {
-    text-align: right;
-    position: absolute;
-    right: 0%;
-    top: 50%;
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    font-size: 12px;
-    font-weight: bold;
-    font-family: Helvetica;
-
-    a {
-      display: block;
-      font-size: 24px;
-      font-family: "Avenir Next Cyr";
-      font-weight: bold;
-    }
-
-    hr {
-      margin: 8px 0;
-      background-color: #101929;
-    }
-  }
-
-  .logo {
-    font-size: 50px;
-    font-family: "MagistralC";
-  }
-}
-/* TOP HEADER END */
-
-/* NAVBAR START */
-@include media-breakpoint-down(md) { 
-  .navbar {
-    padding: 0;
-    display: block;
-  }
-}
-
-nav {
-  @include media-breakpoint-up(lg) { 
-    background-color: $dark;
-    .navbar-nav {
-      max-width: 1140px;
-      .nav-link {
-        color: $white;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 2.17px;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        font-family: Helvetica;
-
-        @include hover-focus {
-          color: $navbar-dark-hover-color;
-        }
-  
-        &.disabled {
-          color: $navbar-dark-disabled-color;
-        }
-      }
-  
-      .show > .nav-link,
-      .active > .nav-link,
-      .nav-link.show,
-      .nav-link.active {
-        color: $navbar-dark-active-color;
-      }
-    }
-  
-    .navbar-toggler {
-      color: $navbar-dark-color;
-      border-color: $navbar-dark-toggler-border-color;
-    }
-  
-    .navbar-toggler-icon {
-      background-image: $navbar-dark-toggler-icon-bg;
-    }
-  
-    .navbar-text {
-      color: $navbar-dark-color;
-      a {
-        color: $navbar-dark-active-color;
-
-        @include hover-focus {
-          color: $navbar-dark-active-color;
-        }
-      }
-    }
-  }
-
-  @include media-breakpoint-down(md) { 
-    background: $white;
-
-    .dropdown-toggle::after {
-      float: right;
-      margin-left: none;
-      vertical-align: none;
-      color: $primary;
-    }
-
-    .dropdown-menu {
-      border: none;
-      border-radius: 0;
-      background-color: #F0F0F0;
-
-      .dropdown-item {
-        font-weight: lighter;
-        color: #656565;
-        letter-spacing: 0.05px;
-        padding-bottom: 15px;
-        padding-left: 50px;
-
-        &:hover {
-          background-color: #F0F0F0;
-        }
-
-        &:first-child {
-          padding-top: 15px;
-        }
-      }
-    }
-    .nav-item {
-      padding-bottom: 15px;
-
-      &:first-child{
-        padding-top: 15px;
-      }   
-
-      &:last-child{
-        padding-bottom: 25px;
-      }   
-    }
-    .navbar-logo {
-      font-family: "MagistralC";
-      font-size: 26px;
-      color: #000000;
-      &:hover {
-        text-decoration: none;
-        color: #000000;
-      }
-    }
-
-    .n-top {
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px;
-    }
-
-    .n-bottom {
-      background-color: #272B31;
-      text-align: center;
-
-      .btn-link {
-        color: $white;
-        font-family: "Avenir Next Cyr";
-        font-weight: lighter;
-
-        &:hover, &:focus {
-          text-decoration: none;
-        }
-
-        &::after {
-          line-height: 14px;
-          color: $primary;
-          display: inline-block;
-          margin-left: 8px;
-          content: "";
-          border-top: $caret-width solid;
-          border-right: $caret-width solid transparent;
-          border-bottom: 0;
-          border-left: $caret-width solid transparent;
-        }
-      }
-    }
-
-    .navbar {
-      padding: 0;
-    }
-
-    .navbar-nav {
-      border-bottom-right-radius: 10px;
-      border-bottom-left-radius: 10px;
-      box-shadow: 0 8px 6px -6px black;
-
-      .nav-link {
-        color: $black;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 2.17px;
-        padding-left: 15px;
-        padding-right: 15px;
-        display: block;
-        width: 100%;
-        text-align: left;
-
-        @include hover-focus {
-          color: $navbar-light-hover-color;
-        }
-  
-        &.disabled {
-          color: $navbar-light-disabled-color;
-        }
-      }
-  
-      .show > .nav-link,
-      .active > .nav-link,
-      .nav-link.show,
-      .nav-link.active {
-        color: $navbar-light-active-color;
-      }
-    }
-  
-    .navbar-toggler {
-      color: $navbar-light-color;
-      border: none;
-      padding-left: 0;
-      padding-right: 0;
-      font-weight: bold;
-    }
-  
-    .navbar-toggler-icon {
-      background-image: $navbar-light-toggler-icon-bg;
-      width: 24px;
-      height: 22px;
-    }
-  
-    .navbar-text {
-      color: $navbar-light-color;
-      a {
-        color: $navbar-light-active-color;
-
-        @include hover-focus {
-          color: $navbar-light-active-color;
-        }
-      }
-    }
-  }
-
-}
-/* NAVBAR END */
-
-/* CLUBS MODAL START*/
-#clubs-modal {
-  .modal-body {
-    h4 {
-      font-family: "Avenir Next Cyr";
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: -0.08px;
-      text-align: center;
-      padding-top: 30px;
-    }
-  }
-}
-/* CLUBS MODAL END*/
 
 /* BANNER AREA START*/
 .banner-area {
+  .container-fluid {
+    position: relative;
+  }
+
+  .left-frame-border {
+    @media only screen and (min-width: 1900px) {
+      display: block;
+      position: absolute;
+      z-index: 99;
+      top: -26.5%;;
+      left: 0;
+    }
+  }
+
+  .right-frame-border {
+    @media only screen and (min-width: 1900px) {
+      display: block;
+      position: absolute;
+      z-index: 99;
+      top: -26.5%;;
+      left: 0;
+    }
+
+    @media only screen and (max-width: 1900px) {
+      display: none;
+    }
+  }
 
   @include media-breakpoint-down(lg) {
     .owl-dots {
@@ -410,7 +101,8 @@ nav {
     }
   }
 
-  @include media-breakpoint-up(lg) { 
+  @include media-breakpoint-up(lg) {
+
     .container {
       max-width: 1000px;
     }
@@ -531,6 +223,10 @@ nav {
   .bg-img-1 {
     background-image: url(../img/3-copy@1x.png);
   }
+
+  .slide-1 {
+
+  }
 }
 /* BANNER AREA END*/
 
@@ -566,9 +262,11 @@ nav {
     .owl-nav {
       position: absolute;
       top: 42%;
-      width: 100%; 
+      min-width: 400px; 
       left: 50%;
       transform: translateX(-50%);
+      display: flex;
+      justify-content: space-between;
 
       button.owl-prev,  button.owl-next {
         width: 40px;
@@ -583,12 +281,10 @@ nav {
       }
 
       button.owl-prev {
-        float: left;
         background-image: url(../img/group3.png);
       }
 
       button.owl-next {
-        float: right;
         background-image: url(../img/group3Copy.png);
       }
     }
@@ -626,121 +322,7 @@ nav {
 }
 /* FEATURES AREA END*/
 
-/* MAP AREA START */
-.map-area {
-  position: relative;
 
-  [class*="ymaps-2"][class*="-ground-pane"] {
-    filter: invert(1) grayscale(1) opacity(0.8);
-  }
-
-  .clubs-block {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0
-  }
-
-  .inner-block {
-    max-width: 408px;
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 32px 32px 40px;
-
-    h2 {
-      text-align: center;
-    }
-    @include media-breakpoint-up(lg) {
-      height: 504px;
-    }
-
-    @include media-breakpoint-down(md) {
-      margin-top: 50px;
-      height: 384px;
-    }
-
-    .club-block {
-      display: block;
-      max-width: 344px;
-      height: 88px;
-      box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
-      background-color: $white;
-      border-left: 5px solid #000;
-      display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-      padding: 12px 12px 17px 15px;
-      color: #000;
-
-      &:hover, &:focus {
-        color: #000;
-        text-decoration: none;
-      }
-
-      &:hover {
-        border-left: 5px solid $primary;
-      }
-
-      &.active {
-        background-color: #ebf2d2;
-        border-left: 5px solid $primary;
-        .number-bg {
-          background-image: url(../img/shape-copy-4.png);
-          color: $primary;
-        }
-      }
-
-      .number-bg {
-        flex-grow: 1;
-        line-height: 38px;
-        height: 42px;
-        width: 25px;
-        font-size: 22px;
-        color: #c6c6c6;
-        font-weight: 500;
-        letter-spacing: 0.46px;
-        text-align: center;
-        background-image: url(../img/shape.png);
-        background-size: contain;  
-        background-position: center center;
-        background-repeat: no-repeat;
-      }
-
-      .desc {
-        flex-grow: 2;
-        padding-left: 17px;
-        h4 {
-          font-size: 18px;
-          letter-spacing: 0.18px;
-          font-weight: 600;
-          margin-bottom: 3px;
-        }
-
-        p {
-          letter-spacing: 0.14px;
-          font-weight: normal;       
-          margin-bottom: 0;   
-        }
-      }
-    }
-  }  
-  
-  @include media-breakpoint-down(md) {
-    .map-block {
-      height: 668px;
-    }
-  }
-
-  @include media-breakpoint-up(lg) {
-    .map-block {
-      height: 558px;
-    }
-  }
-}
-/* MAP AREA END */
 
 /* SIGNUP AREA START */
 .signup-area {
@@ -984,10 +566,38 @@ nav {
   .workout-block {
     width: 390px;
     height: 260px;
-    background-size: contain;  
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: relative; 
+    overflow: hidden; 
+    cursor: pointer;
+    position: relative;
+
+    &:hover > img
+    {
+      transform: scale(1.1);
+    }
+
+    > img {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      z-index: 99;
+      transition: all 0.5s ease;
+    }
+    // .outer-div {
+    //   background-size: cover;
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   position: relative; 
+    //   transition: all 0.5s ease;
+    //   width: 100%;
+    //   height: 100%;
+
+    //   &:hover
+    //   {
+    //     transform: scale(1.2);
+    //   }
+    // }
+
+
 
     @include media-breakpoint-down(lg) {
       &:nth-child(2n-1) {
@@ -1002,6 +612,7 @@ nav {
     } 
 
     .inner-block {
+      z-index: 100;
       height: 145px;
       width: 85%;
       color: $white;

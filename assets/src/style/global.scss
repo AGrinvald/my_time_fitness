@@ -1,0 +1,61 @@
+body,
+html {
+	height: 100%;
+}
+
+body {
+  font-family: "Avenir Next Cyr";
+  font-style: normal;
+  line-height: normal;
+  font-size: 14px;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.btn {
+  font-family: "Avenir Next Cyr";
+  letter-spacing: 1.42px;
+  font-weight: bold;
+}
+
+.btn-lg {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.btn-rounded {
+  height: 56px;
+  object-fit: contain;
+  border-radius: 32.5px;
+  text-transform: uppercase;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-size: 16px;
+  letter-spacing: 1.12px;
+  font-weight: bold;
+}
+
+h2.title {
+  font-family: "Avenir Next Cyr";
+  font-size: 34px;
+  font-weight: bold;
+  color: #101929;
+  text-transform: uppercase;
+}
+
+@include media-breakpoint-up(lg) {
+    h2.title {
+      letter-spacing: 0.69px;
+      font-size: 34px;
+    }
+  }
+  
+  @include media-breakpoint-down(md) {
+    h2.title {
+      font-size: 20px;
+      letter-spacing: 0.42px;
+    }
+  }
+  

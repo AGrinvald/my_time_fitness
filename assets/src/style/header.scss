@@ -1,0 +1,59 @@
+header {
+  background: linear-gradient(to right, rgba(217,217,217,1) 0%, rgba(255,255,255,1) 23%, rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );
+}
+
+/* TOP HEADER START */
+.h-top {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 124px;
+
+    .hexagon {
+      position: absolute;
+      bottom: 0;
+      left: -18%
+    }
+    .container {
+      position: relative;
+    }
+  
+    .b-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  
+    .b-right {
+      text-align: right;
+      position: absolute;
+      right: 0%;
+      top: 50%;
+      -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      font-size: 12px;
+      font-weight: bold;
+      font-family: Helvetica;
+  
+      a {
+        display: block;
+        font-size: 24px;
+        font-family: "Avenir Next Cyr";
+        font-weight: bold;
+      }
+  
+      hr {
+        margin: 8px 0;
+        background-color: #101929;
+      }
+    }
+  
+    .logo {
+      font-size: 50px;
+      font-family: "MagistralC";
+    }
+  }
+  /* TOP HEADER END */
