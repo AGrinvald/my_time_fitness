@@ -1,0 +1,94 @@
+/* FOOTER START */
+footer {
+    background-color: #101929;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 500;
+    color: $white;
+  
+    a {
+      font-weight: 100;
+      color: $white;
+  
+      &:hover, &:focus {
+        text-decoration: none;
+        color: $white;
+        font-weight: 400;
+      }
+  
+      &.number {
+        font-weight: 500;
+      }
+    }
+  
+    .f-top {
+      margin-top: 60px;
+    }
+  
+    .link-middle {
+      padding: 0 20px;
+    }
+  
+    .row {
+      @include media-breakpoint-down(lg) {
+        padding: 0 15px;
+      }  
+  
+      > div {
+        @include media-breakpoint-up(xl) {
+          padding: 0;
+        }  
+      }
+    }
+  
+    .list {
+      > div {
+        line-height: 40px;
+      }
+    }
+  
+    .f-border-bottom {
+      @include media-breakpoint-down(lg) {
+        border-bottom: 1px solid #475f8c;
+      } 
+    }
+  
+    .f-border-top {
+      @include media-breakpoint-down(lg) {
+        border-top: 1px solid #475f8c;
+      } 
+    }
+  
+    .f-bottom {
+      font-size: 14px;
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: -0.3px;
+      color: #475f8c;
+  
+      @include media-breakpoint-up(xl) {
+        border-top: 1px solid #475f8c;
+        height: 106px;
+      } 
+      
+    }
+  
+  
+    ul {
+      padding: 0;
+      margin: 0;
+  
+      li {
+        list-style: none;
+        line-height: 40px;
+  
+        .text-green {
+          color: #99be51;
+        }
+      }
+      
+    }
+  }
+  /* FOOTER END */

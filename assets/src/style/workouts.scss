@@ -1,0 +1,142 @@
+/* WORKOUT AREA START */
+.workouts-area {
+
+    .worhouts-container {
+      overflow: hidden;
+      @include media-breakpoint-down(md) {
+        background-color: #F1F1F1; 
+      } 
+    }
+  
+    h2 {
+      text-align: center;
+  
+      @include media-breakpoint-up(lg) {
+        padding-top: 85px;
+        padding-bottom: 60px; 
+      }  
+  
+      @include media-breakpoint-down(md) {
+        padding-top: 45px;
+        padding-bottom: 30px; 
+      } 
+    }
+  
+    .workouts-block {
+      max-width: 1170px;
+      margin-left: auto;
+      margin-right: auto;
+  
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 110px;
+      }  
+  
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 55px;
+      }    
+    }
+  
+    .workout-block {
+      width: 390px;
+      height: 260px;
+      overflow: hidden; 
+      cursor: pointer;
+      position: relative;
+  
+      &:hover > img
+      {
+        transform: scale(1.1);
+      }
+  
+      > img {
+        position: absolute;
+        top: 0; 
+        left: 0;
+        z-index: 99;
+        transition: all 0.5s ease;
+      }
+
+      @include media-breakpoint-down(lg) {
+        &:nth-child(2n-1) {
+          margin: 0 15px 15px 0px;
+        }
+      }    
+  
+      @include media-breakpoint-down(sm) {
+        &:not(:last-child) {
+          margin: 0 15px 15px 15px;
+        }
+      } 
+  
+      .inner-block {
+        z-index: 100;
+        height: 145px;
+        width: 85%;
+        color: $white;
+        position: absolute;
+        top: 50%; 
+        transform: translate(0,-50%);
+        padding: 15px 15px;
+  
+        &.primary-bg {
+          background-color: rgba(178, 207, 65, 0.85);
+        }
+  
+        &.dark-bg {
+          background-color: rgba(16, 25, 41, 0.8);       
+        }
+  
+        h3 {
+          font-weight: bold;
+          letter-spacing: -0.65px;
+          margin-bottom: 5px;
+  
+          @include media-breakpoint-up(lg) {
+            font-size: 30px;
+          } 
+  
+          @include media-breakpoint-down(md) {
+            font-size: 20px;
+          }    
+        }
+        
+        p {
+          font-weight: 300;
+          letter-spacing: -0.39px;
+  
+          @include media-breakpoint-up(lg) {
+            font-size: 18px;
+          } 
+  
+          @include media-breakpoint-down(md) {
+            font-size: 16px;
+          }   
+        }
+      }
+    }
+  
+    .bg-img-1 {
+      background-image: url(../img/bitmap-copy-5.png);
+    }
+  
+    .bg-img-2 {
+      background-image: url(../img/bitmap-copy-4.png);
+    }
+  
+    .bg-img-3 {
+      background-image: url(../img/bitmap-copy-6.png);
+    }
+  
+    .bg-img-4 {
+      background-image: url(../img/bitmap-copy-3.png);
+    }
+  
+    .bg-img-5 {
+      background-image: url(../img/bitmap-copy.png);
+    }
+  
+    .bg-img-6 {
+      background-image: url(../img/bitmap-copy-2.png);
+    }
+  }
+  /* WORKOUT AREA END */
