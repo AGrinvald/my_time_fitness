@@ -7829,7 +7829,7 @@ footer {
     .workouts-area .workout-block:nth-child(2n-1) {
       margin: 0 15px 15px 0px; } }
   @media (max-width: 767.98px) {
-    .workouts-area .workout-block:not(:last-child) {
+    .workouts-area .workout-block {
       margin: 0 15px 15px 15px; } }
   .workouts-area .workout-block .inner-block {
     z-index: 100;

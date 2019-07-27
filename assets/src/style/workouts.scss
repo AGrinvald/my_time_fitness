@@ -63,9 +63,9 @@
       }    
   
       @include media-breakpoint-down(sm) {
-        &:not(:last-child) {
+      
           margin: 0 15px 15px 15px;
-        }
+        
       } 
   
       .inner-block {
