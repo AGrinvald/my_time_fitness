@@ -8138,12 +8138,30 @@ footer {
   footer a {
     font-weight: 100;
     color: #ffffff; }
+    footer a:hover, footer a:focus {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 400; }
     footer a.number {
       font-weight: 500; }
-  footer .footer-container {
+  footer .f-top {
     margin-top: 60px; }
-  footer .row > div {
-    padding: 0; }
+  footer .link-middle {
+    padding: 0 20px; }
+  @media (max-width: 1199.98px) {
+    footer .row {
+      padding: 0 15px; } }
+  @media (min-width: 1200px) {
+    footer .row > div {
+      padding: 0; } }
+  footer .list > div {
+    line-height: 40px; }
+  @media (max-width: 1199.98px) {
+    footer .f-border-bottom {
+      border-bottom: 1px solid #475f8c; } }
+  @media (max-width: 1199.98px) {
+    footer .f-border-top {
+      border-top: 1px solid #475f8c; } }
   footer .f-bottom {
     font-size: 14px;
     font-weight: 300;
@@ -8152,6 +8170,10 @@ footer {
     line-height: normal;
     letter-spacing: -0.3px;
     color: #475f8c; }
+    @media (min-width: 1200px) {
+      footer .f-bottom {
+        border-top: 1px solid #475f8c;
+        height: 106px; } }
   footer ul {
     padding: 0;
     margin: 0; }

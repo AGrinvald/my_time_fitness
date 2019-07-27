@@ -1186,17 +1186,53 @@ footer {
     font-weight: 100;
     color: $white;
 
+    &:hover, &:focus {
+      text-decoration: none;
+      color: $white;
+      font-weight: 400;
+    }
+
     &.number {
       font-weight: 500;
     }
   }
-  
-  .footer-container {
+
+  .f-top {
     margin-top: 60px;
   }
 
-  .row > div {
-    padding: 0;
+  .link-middle {
+    padding: 0 20px;
+  }
+
+  .row {
+    @include media-breakpoint-down(lg) {
+      padding: 0 15px;
+    }  
+
+    > div {
+      @include media-breakpoint-up(xl) {
+        padding: 0;
+      }  
+    }
+  }
+
+  .list {
+    > div {
+      line-height: 40px;
+    }
+  }
+
+  .f-border-bottom {
+    @include media-breakpoint-down(lg) {
+      border-bottom: 1px solid #475f8c;
+    } 
+  }
+
+  .f-border-top {
+    @include media-breakpoint-down(lg) {
+      border-top: 1px solid #475f8c;
+    } 
   }
 
   .f-bottom {
@@ -1207,7 +1243,14 @@ footer {
     line-height: normal;
     letter-spacing: -0.3px;
     color: #475f8c;
+
+    @include media-breakpoint-up(xl) {
+      border-top: 1px solid #475f8c;
+      height: 106px;
+    } 
+    
   }
+
 
   ul {
     padding: 0;
