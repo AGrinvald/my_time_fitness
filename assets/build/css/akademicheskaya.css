@@ -7620,9 +7620,10 @@ nav {
       background-color: #ffffff;
       border-left: 5px solid #000;
       display: flex;
-      flex-flow: row wrap;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      padding: 12px 12px 17px 15px;
+      padding: 12px 10px 17px 10px;
       color: #000; }
       .map-area .inner-block .club-block:hover, .map-area .inner-block .club-block:focus {
         color: #000;
@@ -7636,7 +7637,6 @@ nav {
           background-image: url(../img/shape-copy-4.png);
           color: #aacc23; }
       .map-area .inner-block .club-block .number-bg {
-        flex-grow: 1;
         line-height: 38px;
         height: 42px;
         width: 25px;
@@ -7649,18 +7649,15 @@ nav {
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat; }
-      .map-area .inner-block .club-block .desc {
-        flex-grow: 2;
-        padding-left: 17px; }
-        .map-area .inner-block .club-block .desc h4 {
-          font-size: 18px;
-          letter-spacing: 0.18px;
-          font-weight: 600;
-          margin-bottom: 3px; }
-        .map-area .inner-block .club-block .desc p {
-          letter-spacing: 0.14px;
-          font-weight: normal;
-          margin-bottom: 0; }
+      .map-area .inner-block .club-block .desc h4 {
+        font-size: 18px;
+        letter-spacing: 0.18px;
+        font-weight: 600;
+        margin-bottom: 3px; }
+      .map-area .inner-block .club-block .desc p {
+        letter-spacing: 0.14px;
+        font-weight: normal;
+        margin-bottom: 0; }
   .map-area .club-info-block {
     z-index: 25;
     height: 504px;
