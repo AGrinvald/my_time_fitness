@@ -7896,7 +7896,7 @@ footer {
   height: 497px; }
 
 /* BANNER AREA END*/
-/* CLUB NAVIGATION START*/
+/* PAGE NAVIGATION START*/
 @media (min-width: 1200px) {
   .page-nav-area .nav-container {
     height: 645px; } }
@@ -7912,8 +7912,6 @@ footer {
   justify-content: center;
   font-weight: bold;
   color: #000000;
-  width: 264px;
-  height: 264px;
   border-radius: 9px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.29);
   background-image: linear-gradient(to top, #f8f8f8, #ffffff);
@@ -7934,4 +7932,38 @@ footer {
       font-size: 15px;
       letter-spacing: 0.15px; } }
 
-/* CLUB NAVIGATION END*/
+/* PAGE NAVIGATION END*/
+/* SERVICES AREA START*/
+.services-area .services-container {
+  overflow: hidden;
+  background-color: #aacc23; }
+  @media (min-width: 1200px) {
+    .services-area .services-container {
+      height: 958px; } }
+  .services-area .services-container h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 66px; }
+  .services-area .services-container .service-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0.24px .services-area .services-container .service-item;
+    width: 264px;
+    height: 264px;
+    border-radius: 9px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.29);
+    background-image: linear-gradient(to top, #f8f8f8, #ffffff);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ffffff', GradientType=0 ); }
+    .services-area .services-container .service-item :hover, .services-area .services-container .service-item:focus {
+      text-decoration: none; }
+    @media (min-width: 1200px) {
+      .services-area .services-container .service-item {
+        width: 264px;
+        height: 288px; } }
+
+/* SERVICES AREA END*/
