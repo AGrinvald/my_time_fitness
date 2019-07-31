@@ -459,60 +459,105 @@
   }
 
   .promo-block {
+
+    .time-block {
+      width: 176px;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 400;
+
+      &:not(:first-child) {
+        border-top: 1px solid $white;
+      }
+    }
+
+    .right-border {
+      > div {
+        border-right: 1px solid $white;
+      }
+    }
+
+    .bold {
+      font-weight: 600;
+    }
+
+    .dark-yellow {
+      background-color: #dddb64;
+    }
+
+    .bright-yellow {
+      background-color: #fdeb1c;
+    }
+
+    .blue {
+      background-color: #90cbe0;
+    }
+
+    .bright-green {
+      background-color: #cefa56;
+    }
+
+    .dark-green {
+      background-color: #aad577;
+    }
+
+    .green {
+      background-color: #a8d523;
+    }
+
+    .grey {
+      background-color: #d8d8d8;
+    }
+
     @include media-breakpoint-up(lg) {
-      background-image: url(../img/group-5.png);
-      background-size: contain;  
-      background-position: center center;
-      background-repeat: no-repeat;
       height: 100%;
       max-width: 702px;    
       margin-left: auto;
     }
 
     @include media-breakpoint-down(md) {
-      position: relative;
-      background-color: $primary;
-      height: 248px;
-      margin-top: 50px;  
-      margin-left: 15px;
-      margin-right: 15px;
+      // position: relative;
+      // height: 248px;
+      // margin-top: 50px;  
+      // margin-left: 15px;
+      // margin-right: 15px;
     }
 
     h2 {
-      color: $white;
-
+      font-size: 28px;
+      line-height: 40px;
       @include media-breakpoint-down(md) {
         text-align: center;
       }
     }
 
     p {
-      color: $white;
       font-weight: 300;
-      
-      @include media-breakpoint-up(lg) {
-        font-size: 28px;
-        letter-spacing: 0.58px;
-        margin-bottom: 24px;
-      }
+      font-size: 28px;
+      margin-bottom: 30px;
+      // @include media-breakpoint-up(lg) {
+      //   font-size: 28px;
+      //   letter-spacing: 0.58px;
+      //   margin-bottom: 24px;
+      // }
   
-      @include media-breakpoint-down(md) {
-        font-size: 20px;
-        letter-spacing: 0.42px;
-        margin-bottom: 20px;
-        text-align: center;
-      }
+      // @include media-breakpoint-down(md) {
+      //   font-size: 20px;
+      //   letter-spacing: 0.42px;
+      //   margin-bottom: 20px;
+      //   text-align: center;
+      // }
     }
 
     > div {
-      @include media-breakpoint-up(lg) {
-        max-width: 447px; 
-        margin-left: 40px;
-      } 
-      @include media-breakpoint-down(md) {
-        margin-left: 35px;
-        margin-right: 35px;
-      }
+      // @include media-breakpoint-up(lg) {
+      //   max-width: 447px; 
+      //   margin-left: 40px;
+      // } 
+      // @include media-breakpoint-down(md) {
+      //   margin-left: 35px;
+      //   margin-right: 35px;
+      // }
     }
 
     .btn {

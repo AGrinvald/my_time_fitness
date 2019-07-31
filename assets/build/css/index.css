@@ -8145,55 +8145,58 @@ footer {
   height: 100%;
   overflow: hidden; }
 
+.promo-area .promo-block .time-block {
+  width: 176px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 400; }
+  .promo-area .promo-block .time-block:not(:first-child) {
+    border-top: 1px solid #ffffff; }
+
+.promo-area .promo-block .right-border > div {
+  border-right: 1px solid #ffffff; }
+
+.promo-area .promo-block .bold {
+  font-weight: 600; }
+
+.promo-area .promo-block .dark-yellow {
+  background-color: #dddb64; }
+
+.promo-area .promo-block .bright-yellow {
+  background-color: #fdeb1c; }
+
+.promo-area .promo-block .blue {
+  background-color: #90cbe0; }
+
+.promo-area .promo-block .bright-green {
+  background-color: #cefa56; }
+
+.promo-area .promo-block .dark-green {
+  background-color: #aad577; }
+
+.promo-area .promo-block .green {
+  background-color: #a8d523; }
+
+.promo-area .promo-block .grey {
+  background-color: #d8d8d8; }
+
 @media (min-width: 992px) {
   .promo-area .promo-block {
-    background-image: url(../img/group-5.png);
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
     height: 100%;
     max-width: 702px;
     margin-left: auto; } }
 
-@media (max-width: 991.98px) {
-  .promo-area .promo-block {
-    position: relative;
-    background-color: #aacc23;
-    height: 248px;
-    margin-top: 50px;
-    margin-left: 15px;
-    margin-right: 15px; } }
-
 .promo-area .promo-block h2 {
-  color: #ffffff; }
+  font-size: 28px;
+  line-height: 40px; }
   @media (max-width: 991.98px) {
     .promo-area .promo-block h2 {
       text-align: center; } }
 
 .promo-area .promo-block p {
-  color: #ffffff;
-  font-weight: 300; }
-  @media (min-width: 992px) {
-    .promo-area .promo-block p {
-      font-size: 28px;
-      letter-spacing: 0.58px;
-      margin-bottom: 24px; } }
-  @media (max-width: 991.98px) {
-    .promo-area .promo-block p {
-      font-size: 20px;
-      letter-spacing: 0.42px;
-      margin-bottom: 20px;
-      text-align: center; } }
-
-@media (min-width: 992px) {
-  .promo-area .promo-block > div {
-    max-width: 447px;
-    margin-left: 40px; } }
-
-@media (max-width: 991.98px) {
-  .promo-area .promo-block > div {
-    margin-left: 35px;
-    margin-right: 35px; } }
+  font-weight: 300;
+  font-size: 28px;
+  margin-bottom: 30px; }
 
 @media (max-width: 991.98px) {
   .promo-area .promo-block .btn {
