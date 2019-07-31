@@ -7697,10 +7697,9 @@ nav {
   border: none; }
 
 #clubs-modal .modal-body h4 {
-  font-family: "Avenir Next Cyr";
   font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.08px;
+  font-weight: bold;
+  letter-spacing: 0.18px;
   text-align: center;
   padding-top: 30px; }
 
@@ -8134,9 +8133,6 @@ footer {
   @media (min-width: 992px) {
     .promo-area .promo-container {
       height: 572px; } }
-  @media (max-width: 991.98px) {
-    .promo-area .promo-container {
-      height: 416px; } }
 
 .promo-area .inner-container {
   max-width: 1550px;
@@ -8145,15 +8141,48 @@ footer {
   height: 100%;
   overflow: hidden; }
 
+@media (min-width: 992px) {
+  .promo-area .promo-block {
+    height: 100%;
+    max-width: 702px;
+    margin-left: auto; } }
+
+@media (max-width: 991.98px) {
+  .promo-area .promo-block {
+    position: relative;
+    margin-top: 50px;
+    margin-left: 15px;
+    margin-right: 15px; } }
+
+.promo-area .promo-block .schedule-link {
+  max-width: 176px; }
+  .promo-area .promo-block .schedule-link > a {
+    text-align: center;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.49px;
+    color: #000000;
+    padding: 5px 15px;
+    width: 100%;
+    border: 1px solid transparent;
+    font-weight: bold;
+    margin-top: 24px; }
+    .promo-area .promo-block .schedule-link > a:hover, .promo-area .promo-block .schedule-link > a:focus {
+      text-decoration: none;
+      border: 1px solid #000000;
+      border-radius: 25px; }
+
 .promo-area .promo-block .time-block {
-  width: 176px;
-  padding: 15px;
+  max-width: 176px;
+  display: flex;
+  align-items: center;
+  height: 48px;
   font-size: 16px;
   font-weight: 400; }
   .promo-area .promo-block .time-block:not(:first-child) {
     border-top: 1px solid #ffffff; }
 
-.promo-area .promo-block .right-border > div {
+.promo-area .promo-block .right-border > div:not(:last-child) {
   border-right: 1px solid #ffffff; }
 
 .promo-area .promo-block .bold {
@@ -8180,12 +8209,6 @@ footer {
 .promo-area .promo-block .grey {
   background-color: #d8d8d8; }
 
-@media (min-width: 992px) {
-  .promo-area .promo-block {
-    height: 100%;
-    max-width: 702px;
-    margin-left: auto; } }
-
 .promo-area .promo-block h2 {
   font-size: 28px;
   line-height: 40px; }
@@ -8194,9 +8217,18 @@ footer {
       text-align: center; } }
 
 .promo-area .promo-block p {
-  font-weight: 300;
-  font-size: 28px;
-  margin-bottom: 30px; }
+  font-weight: 300; }
+  @media (min-width: 992px) {
+    .promo-area .promo-block p {
+      font-size: 28px;
+      letter-spacing: 0.58px;
+      margin-bottom: 24px; } }
+  @media (max-width: 991.98px) {
+    .promo-area .promo-block p {
+      font-size: 20px;
+      letter-spacing: 0.42px;
+      margin-bottom: 20px;
+      text-align: center; } }
 
 @media (max-width: 991.98px) {
   .promo-area .promo-block .btn {

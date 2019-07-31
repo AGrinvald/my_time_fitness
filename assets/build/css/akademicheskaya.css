@@ -7697,10 +7697,9 @@ nav {
   border: none; }
 
 #clubs-modal .modal-body h4 {
-  font-family: "Avenir Next Cyr";
   font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.08px;
+  font-weight: bold;
+  letter-spacing: 0.18px;
   text-align: center;
   padding-top: 30px; }
 

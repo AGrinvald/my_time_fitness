@@ -445,9 +445,9 @@
       height: 572px;
     }
 
-    @include media-breakpoint-down(md) {
-      height: 416px;
-    }
+    // @include media-breakpoint-down(md) {
+    //   height: 416px;
+    // }
   }
 
   .inner-container {
@@ -460,9 +460,47 @@
 
   .promo-block {
 
+    @include media-breakpoint-up(lg) {
+      height: 100%;
+      max-width: 702px;    
+      margin-left: auto;
+    }
+
+    @include media-breakpoint-down(md) {
+      position: relative;
+      margin-top: 50px;  
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    .schedule-link {
+      max-width: 176px;
+
+      > a {
+        text-align: center;
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.49px;
+        color: $black;
+        padding: 5px 15px;
+        width: 100%;
+        border: 1px solid transparent;
+        font-weight: bold;
+        margin-top: 24px;
+
+        &:hover, &:focus {
+          text-decoration: none;
+          border: 1px solid $black;
+          border-radius: 25px;
+        }
+      } 
+    }
+
     .time-block {
-      width: 176px;
-      padding: 15px;
+      max-width: 176px;
+      display: flex;
+      align-items: center;
+      height: 48px;
       font-size: 16px;
       font-weight: 400;
 
@@ -472,7 +510,7 @@
     }
 
     .right-border {
-      > div {
+      > div:not(:last-child) {
         border-right: 1px solid $white;
       }
     }
@@ -509,19 +547,6 @@
       background-color: #d8d8d8;
     }
 
-    @include media-breakpoint-up(lg) {
-      height: 100%;
-      max-width: 702px;    
-      margin-left: auto;
-    }
-
-    @include media-breakpoint-down(md) {
-      // position: relative;
-      // height: 248px;
-      // margin-top: 50px;  
-      // margin-left: 15px;
-      // margin-right: 15px;
-    }
 
     h2 {
       font-size: 28px;
@@ -533,20 +558,20 @@
 
     p {
       font-weight: 300;
-      font-size: 28px;
-      margin-bottom: 30px;
-      // @include media-breakpoint-up(lg) {
-      //   font-size: 28px;
-      //   letter-spacing: 0.58px;
-      //   margin-bottom: 24px;
-      // }
+
+
+      @include media-breakpoint-up(lg) {
+        font-size: 28px;
+        letter-spacing: 0.58px;
+        margin-bottom: 24px;
+      }
   
-      // @include media-breakpoint-down(md) {
-      //   font-size: 20px;
-      //   letter-spacing: 0.42px;
-      //   margin-bottom: 20px;
-      //   text-align: center;
-      // }
+      @include media-breakpoint-down(md) {
+        font-size: 20px;
+        letter-spacing: 0.42px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
     }
 
     > div {
