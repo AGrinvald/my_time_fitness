@@ -8052,6 +8052,15 @@ footer {
 
 /* FEATURES AREA END*/
 /* SIGNUP AREA START */
+.signup-area .green-block::before {
+  content: "";
+  background-color: #aacc23;
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  left: -10px;
+  bottom: -9px; }
+
 @media (max-width: 991.98px) {
   .signup-area .signup-block {
     margin-top: 35px;
@@ -8084,15 +8093,13 @@ footer {
       letter-spacing: -0.39px; } }
 
 .signup-area .signup-slides .slide {
-  margin: 0 30px 30px 30px;
-  box-shadow: -20px 20px #aacc23; }
+  position: relative; }
 
 .signup-area .signup-slides .owl-nav {
   position: absolute;
-  width: 100%;
+  width: 112%;
   top: 42%;
-  left: 48%;
-  transform: translateX(-50%);
+  left: -8%;
   display: flex;
   justify-content: space-between; }
   @media (min-width: 768px) {
@@ -8133,6 +8140,9 @@ footer {
   @media (min-width: 992px) {
     .promo-area .promo-container {
       height: 572px; } }
+  @media (max-width: 991.98px) {
+    .promo-area .promo-container {
+      height: auto; } }
 
 .promo-area .inner-container {
   max-width: 1550px;
@@ -8143,34 +8153,52 @@ footer {
 
 @media (min-width: 992px) {
   .promo-area .promo-block {
-    height: 100%;
-    max-width: 702px;
+    max-width: 528px;
     margin-left: auto; } }
 
 @media (max-width: 991.98px) {
   .promo-area .promo-block {
     position: relative;
-    margin-top: 50px;
     margin-left: 15px;
     margin-right: 15px; } }
 
-.promo-area .promo-block .schedule-link {
-  max-width: 176px; }
-  .promo-area .promo-block .schedule-link > a {
-    text-align: center;
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 0.49px;
-    color: #000000;
-    padding: 5px 15px;
-    width: 100%;
-    border: 1px solid transparent;
-    font-weight: bold;
-    margin-top: 24px; }
-    .promo-area .promo-block .schedule-link > a:hover, .promo-area .promo-block .schedule-link > a:focus {
-      text-decoration: none;
-      border: 1px solid #000000;
-      border-radius: 25px; }
+@media (min-width: 992px) {
+  .promo-area .promo-block > div {
+    flex-direction: row; } }
+
+@media (max-width: 991.98px) {
+  .promo-area .promo-block > div {
+    flex-direction: column; } }
+
+@media (min-width: 992px) {
+  .promo-area .promo-block .schedule-link {
+    max-width: 176px; } }
+
+@media (max-width: 991.98px) {
+  .promo-area .promo-block .schedule-link {
+    width: 100%; } }
+
+.promo-area .promo-block .schedule-link > a {
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.49px;
+  color: #000000;
+  padding: 5px 15px;
+  width: 100%;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-top: 24px; }
+  @media (min-width: 992px) {
+    .promo-area .promo-block .schedule-link > a {
+      border: 1px solid transparent; } }
+  @media (max-width: 991.98px) {
+    .promo-area .promo-block .schedule-link > a {
+      border: 1px solid #000000; } }
+  .promo-area .promo-block .schedule-link > a:hover, .promo-area .promo-block .schedule-link > a:focus {
+    text-decoration: none;
+    border: 1px solid #000000;
+    border-radius: 25px; }
 
 .promo-area .promo-block .time-block {
   max-width: 176px;
@@ -8179,11 +8207,13 @@ footer {
   height: 48px;
   font-size: 16px;
   font-weight: 400; }
-  .promo-area .promo-block .time-block:not(:first-child) {
-    border-top: 1px solid #ffffff; }
+  @media (min-width: 992px) {
+    .promo-area .promo-block .time-block:not(:first-child) {
+      border-top: 1px solid #ffffff; } }
 
-.promo-area .promo-block .right-border > div:not(:last-child) {
-  border-right: 1px solid #ffffff; }
+@media (min-width: 992px) {
+  .promo-area .promo-block .right-border-lg > div:not(:last-child) {
+    border-right: 1px solid #ffffff; } }
 
 .promo-area .promo-block .bold {
   font-weight: 600; }
@@ -8229,12 +8259,6 @@ footer {
       letter-spacing: 0.42px;
       margin-bottom: 20px;
       text-align: center; } }
-
-@media (max-width: 991.98px) {
-  .promo-area .promo-block .btn {
-    display: block;
-    margin-left: auto;
-    margin-right: auto; } }
 
 /* PROMO AREA END */
 /* TEAM AREA START */

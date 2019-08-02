@@ -328,6 +328,16 @@
 /* SIGNUP AREA START */
 .signup-area {
 
+  .green-block::before {
+    content: "";
+    background-color: #aacc23;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    left: -10px;
+    bottom: -9px;
+  }
+
   @include media-breakpoint-down(md) {
     .signup-block {
       margin-top: 35px;
@@ -375,16 +385,16 @@
 
   .signup-slides {
     .slide {
-      margin: 0 30px 30px 30px;
-      box-shadow: -20px 20px $primary;
+      position: relative;
+      //margin: 0 30px 30px 30px;
+      //box-shadow: -20px 20px $primary;
     }
 
     .owl-nav {
       position: absolute;
-      width: 100%; 
+      width: 112%;
       top: 42%;
-      left: 48%;
-      transform: translateX(-50%);
+      left: -8%;
       display: flex;
       justify-content: space-between;
 
@@ -445,9 +455,9 @@
       height: 572px;
     }
 
-    // @include media-breakpoint-down(md) {
-    //   height: 416px;
-    // }
+    @include media-breakpoint-down(md) {
+      height: auto;
+    }
   }
 
   .inner-container {
@@ -461,20 +471,36 @@
   .promo-block {
 
     @include media-breakpoint-up(lg) {
-      height: 100%;
-      max-width: 702px;    
+      max-width: 528px;    
       margin-left: auto;
     }
 
     @include media-breakpoint-down(md) {
       position: relative;
-      margin-top: 50px;  
+      //margin-top: 50px;  
       margin-left: 15px;
       margin-right: 15px;
     }
 
+    > div {
+      @include media-breakpoint-up(lg) {
+        flex-direction: row;
+      }
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
+    } 
+
     .schedule-link {
-      max-width: 176px;
+    
+      @include media-breakpoint-up(lg) {
+        max-width: 176px;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
 
       > a {
         text-align: center;
@@ -484,9 +510,17 @@
         color: $black;
         padding: 5px 15px;
         width: 100%;
-        border: 1px solid transparent;
+        border-radius: 25px;
         font-weight: bold;
         margin-top: 24px;
+
+        @include media-breakpoint-up(lg) {
+          border: 1px solid transparent;
+        }
+
+        @include media-breakpoint-down(md) {
+          border: 1px solid $black;
+        }
 
         &:hover, &:focus {
           text-decoration: none;
@@ -504,14 +538,18 @@
       font-size: 16px;
       font-weight: 400;
 
-      &:not(:first-child) {
-        border-top: 1px solid $white;
+      @include media-breakpoint-up(lg) {
+        &:not(:first-child) {
+          border-top: 1px solid $white;
+        }
       }
     }
 
-    .right-border {
-      > div:not(:last-child) {
-        border-right: 1px solid $white;
+    @include media-breakpoint-up(lg) {
+      .right-border-lg {
+        > div:not(:last-child) {
+          border-right: 1px solid $white;
+        }
       }
     }
 
@@ -551,6 +589,7 @@
     h2 {
       font-size: 28px;
       line-height: 40px;
+
       @include media-breakpoint-down(md) {
         text-align: center;
       }
@@ -558,7 +597,6 @@
 
     p {
       font-weight: 300;
-
 
       @include media-breakpoint-up(lg) {
         font-size: 28px;
@@ -572,25 +610,6 @@
         margin-bottom: 20px;
         text-align: center;
       }
-    }
-
-    > div {
-      // @include media-breakpoint-up(lg) {
-      //   max-width: 447px; 
-      //   margin-left: 40px;
-      // } 
-      // @include media-breakpoint-down(md) {
-      //   margin-left: 35px;
-      //   margin-right: 35px;
-      // }
-    }
-
-    .btn {
-      @include media-breakpoint-down(md) {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }    
     }
   }
 }
