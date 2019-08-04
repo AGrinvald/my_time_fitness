@@ -49,19 +49,184 @@
 @import "footer";
 @import "workouts";
 
+/* NAVBAR START */
+nav {
+    @include media-breakpoint-up(xl) { 
+        .navbar-nav {
+            position: relative;
+            &::before {
+                content: ""; 
+                position: absolute;
+                right: -30.5%;
+                top: -193%;
+                background-image: url(../img/group-6-copy.svg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100%;
+                width: 335px;
+                height: 466px;          
+            }
+        }
+    }
+}
+/* NAVBAR END */
+
 /* BANNER AREA START*/
 .banner-area { 
-    .container-fluid {
-        position: relative;
-    }
-
     .banner-container {
-        background-image: url(../img/bitmap1.png);
-        width: 100%;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
+        position: relative;
         height: 497px;
+        width: 100%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            top: 0;
+            background-image: url(../img/bitmap1.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            z-index: -2;
+        }
+
+        @include media-breakpoint-down(lg) {
+            &::after{
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }    
+        }
+
+        .container {
+            height: 100%;
+            justify-content: space-between;
+            position: relative;
+
+            @include media-breakpoint-up(xl) {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: -17%;
+                    top: 0;
+                    background-image: url(../img/rectangle-copy-48.svg);
+                    background-repeat: no-repeat;
+                    width: 835px;
+                    height: 100%;
+                    z-index: -1;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    right: -15%;
+                    top: 0;
+                    background-image: url(../img/rectangle-copy-48.svg);
+                    background-repeat: no-repeat;
+                    width: 835px;
+                    height: 100%;
+                    z-index: -1;
+                }
+            }
+
+        }
+
+        .info-div {
+            height: auto;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 0 15px;
+            padding-bottom: 10px;
+            font-size: 15px;
+            letter-spacing: 0.06px;
+            color: #ffffff;
+            flex: 0 1 45%;
+
+            a {
+                color: #1eb8ff;
+            }
+            span {
+                color: #ffec00;
+                font-family: "Arial Unicode MS", Quivira, Symbola, Code2000, STIX,
+                "Linux Libertine", MingLiU, "DFKai-SB"; 
+            }
+
+            .info-block {
+                
+                &:not(:last-child) {
+                    margin-right: 30px;
+                } 
+
+                > div {
+                    &:first-child {
+                        font-weight: 500;
+                        padding-bottom: 8px;
+                        padding-top: 15px;
+                        border-bottom: 1px solid #d6ff34;
+                    }
+                    &:last-child {
+                        padding-top: 8px;
+                        padding-bottom: 10px;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+
+        .subtitle-div {
+            flex: 0 1 55%;
+            font-family: "MagistralC";
+
+            > div {
+                @include media-breakpoint-up(xl) {
+                    width: 76%;
+                }
+            }
+
+            h2 {
+                font-weight: bold;
+                color: $white;
+
+                @include media-breakpoint-up(xl) {
+                    margin-top: 40px;
+                    font-size: 32px;
+                    line-height: 1.25;
+                    letter-spacing: 0.67px;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    margin-top: 30px;
+                    font-size: 23px;
+                    line-height: 1.25;
+                    letter-spacing: 0.48px;
+                }
+            }
+
+            p {
+                color: $white;
+                text-align: center;
+
+                @include media-breakpoint-up(xl) {
+                    margin-top: 25px;
+                    font-size: 26px;
+                    line-height: 1.31;
+                    letter-spacing: 1.44px;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    margin-top: 25px;
+                    font-size: 20px;
+                    line-height: 1.31;
+                    letter-spacing: 1.11px;
+                }
+            }
+        }
     }
 
 }
@@ -70,22 +235,98 @@
 /* PAGE NAVIGATION START*/
 .page-nav-area { 
     .nav-container {
-        
+
+
         @include media-breakpoint-up(xl) {
             height: 645px;
+            background-image: url(../img/555-copy-3.png), url(../img/555-copy-4.png);
+            background-position: right top, left top;
+            background-repeat: no-repeat, no-repeat;
         } 
     
         @include media-breakpoint-down(lg) {
             height: 445px;
+            background-image: url(../img/555Copy4.jpg);
+            background-position: right top;
+            background-repeat: no-repeat;
         }  
 
         .page-nav-item {
             display: flex;
             align-items: center;
             flex-direction: column;
-            justify-content: center;
             font-weight: bold;
             color: #000000;
+            justify-content: space-between;
+
+            @include media-breakpoint-up(xl) {
+                padding-top: 60px;
+                padding-bottom: 35px;
+            } 
+
+            @include media-breakpoint-down(lg) {
+                padding-top: 23px;
+                padding-bottom: 8px;
+            } 
+
+            .icon {
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;             
+            }
+
+            .imb-bg-1 {
+                background-image: url(../img/shape.svg);
+
+                @include media-breakpoint-up(xl) {
+                    height: 106px;
+                    width: 71px;
+                } 
+                @include media-breakpoint-down(lg) {
+                    height: 57px;
+                    width: 38px;
+                } 
+            }
+
+            .imb-bg-2 {
+                background-image: url(../img/combined-shape1.svg);
+
+                @include media-breakpoint-up(xl) {
+                    height: 87px;
+                    width: 84px;
+                } 
+                @include media-breakpoint-down(lg) {
+                    height: 44px;
+                    width: 43px;
+                } 
+            }
+
+            .imb-bg-3 {
+
+                background-image: url(../img/combined-shape.svg);
+
+                @include media-breakpoint-up(xl) {
+                    height: 67px;
+                    width: 103px;
+                } 
+                @include media-breakpoint-down(lg) {
+                    height: 34px;
+                    width: 61px;
+                } 
+            }
+
+            .imb-bg-4 {
+                background-image: url(../img/path.svg);
+
+                @include media-breakpoint-up(xl) {
+                    height: 96px;
+                    width: 50px;
+                } 
+                @include media-breakpoint-down(lg) {
+                    height: 48px;
+                    width: 25px;
+                } 
+            }
 
             &:hover, &:focus {
                 text-decoration: none;
@@ -96,15 +337,15 @@
                 height: 264px;
                 font-size: 20px;
                 letter-spacing: 0.2px
-              } 
+            } 
           
-              @include media-breakpoint-down(lg) {
+            @include media-breakpoint-down(lg) {
                 width: 136px;
                 height: 136px;
                 margin: 13px;
                 font-size: 15px;
                 letter-spacing: 0.15px
-              }  
+            }  
 
             border-radius: 9px;
             box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.29);
@@ -143,7 +384,7 @@
             font-weight: bold;
             color: #000000;
             font-size: 24px;
-            letter-spacing: 0.24px
+            letter-spacing: 0.24px;
 
             &:hover, &:focus {
                 text-decoration: none;
@@ -166,3 +407,121 @@
 
 }
 /* SERVICES AREA END*/
+
+/* SEASON AREA START*/
+.season-area {
+    .container-fluid {
+        overflow: hidden;
+        margin-top: 60px;
+        margin-bottom: 185px;
+    }
+
+    h2 {
+        margin-bottom: 70px;
+    }
+    .season-item {
+        margin-bottom: 15px;
+        width: 368px;
+        box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.29);
+        background-image: linear-gradient(to top, #f8f8f8, #ffffff);
+        border-radius: 13px;
+        display: flex;
+        flex-direction: column;
+
+        .tariff-b {
+            width: 100%;
+            color: white;
+            background-image: url(../img/555-copy-2.png);
+            background-repeat: no-repeat;
+            background-position: top center;
+            padding: 31px 32px 32px 25px;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                margin: 0;
+            }
+
+            .name {
+                font-size: 36px;
+                font-weight: bold;
+                letter-spacing: 0.75px;
+            }
+
+            .old-price {
+                font-size: 26px;
+                letter-spacing: 0.54px;
+                color: #a5a5a5;
+                text-decoration: line-through;
+            }
+            .new-price {
+                > div:first-child {
+                    font-size: 90px;
+                    font-weight: bold;
+                    letter-spacing: 1.88px;
+                }
+                > div:last-child {
+                    p:first-child {
+                        font-size: 44px;
+                        font-weight: bold;
+                        letter-spacing: 0.92px; 
+                    }
+                    p:last-child {
+                        font-size: 26px;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            .offer {
+                font-size: 24px;
+                font-weight: 300;
+                letter-spacing: 0.3px;
+            }
+        }
+
+        .features-b {
+            margin: 0;
+            padding: 0 30px;
+
+            p {
+                margin: 0;
+            }
+
+            li {
+                align-items: center;
+                padding: 15px 0;
+                border-bottom: 1px dotted #cecece;
+                > p:first-child {
+                    margin-right: 17px;
+                }
+            }
+
+        }
+
+        .desc {
+            padding: 0 30px;
+            margin-top: 40px;
+            padding-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            p {
+                padding-top: 10px;
+                padding-bottom: 30px;
+                border-top: solid 1px #101929;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.13;
+                letter-spacing: -0.33px;
+                color: #818181;
+            }
+
+            .btn {
+                width: 250px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+/* SEASON AREA END*/

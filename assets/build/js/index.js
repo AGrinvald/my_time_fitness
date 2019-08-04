@@ -21847,7 +21847,38 @@ $(".club-block").click(function (event) {
   }
 });
 
+function signupNextClick() {
+  var next = $(this).data("next");
+  
+  $.ajax({
+    url: next,
+    dataType: 'html'
+    }).done(function (html) {
+      $(".signup-container").html(html);
+      $(".signup-btn").bind("click", signupNextClick);
+    });    
+}
+
+function signupModalNextClick() {
+  var next = $(this).data("next");
+  
+  $.ajax({
+    url: next,
+    dataType: 'html'
+    }).done(function (html) {
+      $("#signup-modal .signup-form ").html(html);
+      $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
+    });    
+}
+
 $(function () {
+
+  $('#signupFormBtn').bind("click", signupNextClick);
+
+  $('#signup-modal').on('shown.bs.modal', function (e) {
+    $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
+  })
+
   $('.banner-slides').owlCarousel({
     items: 1,
     loop: true,

@@ -39,23 +39,20 @@ body {
 
 h2.title {
   font-family: "Avenir Next Cyr";
-  font-size: 34px;
   font-weight: bold;
   color: #101929;
   text-transform: uppercase;
-}
 
-@include media-breakpoint-up(lg) {
-    h2.title {
+  @include media-breakpoint-up(lg) {
       letter-spacing: 0.69px;
       font-size: 34px;
-    }
   }
-  
+
   @include media-breakpoint-down(md) {
-    h2.title {
       font-size: 20px;
       letter-spacing: 0.42px;
-    }
   }
+}
+
+
   

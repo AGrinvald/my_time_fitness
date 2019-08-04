@@ -10,13 +10,20 @@ header {
     margin-right: auto;
     height: 124px;
 
-    .hexagon {
-      position: absolute;
-      bottom: 0;
-      left: -18%
-    }
     .container {
       position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: -18%;
+          bottom: 0;
+          background-image: url(../img/path-copy-22.svg);
+          background-repeat: no-repeat;
+          background-position-x: left;
+          background-position-y: bottom;
+          width: 288px;
+          height: 100%;
+      }
     }
   
     .b-center {
@@ -52,8 +59,13 @@ header {
     }
   
     .logo {
+      color: $black;
       font-size: 50px;
       font-family: "MagistralC";
+
+      &:hover, &:focus {
+        text-decoration: none;
+      }
     }
   }
   /* TOP HEADER END */

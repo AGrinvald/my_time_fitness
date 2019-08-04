@@ -7352,20 +7352,17 @@ body {
 
 h2.title {
   font-family: "Avenir Next Cyr";
-  font-size: 34px;
   font-weight: bold;
   color: #101929;
   text-transform: uppercase; }
-
-@media (min-width: 992px) {
-  h2.title {
-    letter-spacing: 0.69px;
-    font-size: 34px; } }
-
-@media (max-width: 991.98px) {
-  h2.title {
-    font-size: 20px;
-    letter-spacing: 0.42px; } }
+  @media (min-width: 992px) {
+    h2.title {
+      letter-spacing: 0.69px;
+      font-size: 34px; } }
+  @media (max-width: 991.98px) {
+    h2.title {
+      font-size: 20px;
+      letter-spacing: 0.42px; } }
 
 header {
   background: linear-gradient(to right, #d9d9d9 0%, white 23%, white 100%);
@@ -7377,12 +7374,19 @@ header {
   margin-left: auto;
   margin-right: auto;
   height: 124px; }
-  .h-top .hexagon {
-    position: absolute;
-    bottom: 0;
-    left: -18%; }
   .h-top .container {
     position: relative; }
+    .h-top .container::before {
+      content: "";
+      position: absolute;
+      left: -18%;
+      bottom: 0;
+      background-image: url(../img/path-copy-22.svg);
+      background-repeat: no-repeat;
+      background-position-x: left;
+      background-position-y: bottom;
+      width: 288px;
+      height: 100%; }
   .h-top .b-center {
     position: absolute;
     top: 50%;
@@ -7408,8 +7412,11 @@ header {
       margin: 8px 0;
       background-color: #101929; }
   .h-top .logo {
+    color: #000000;
     font-size: 50px;
     font-family: "MagistralC"; }
+    .h-top .logo:hover, .h-top .logo:focus {
+      text-decoration: none; }
 
 /* TOP HEADER END */
 /* NAVBAR START */
@@ -7659,9 +7666,7 @@ nav {
         font-weight: normal;
         margin-bottom: 0; }
   .map-area .club-info-block {
-    z-index: 25;
     height: 504px;
-    bottom: 0;
     padding-left: 45px; }
     .map-area .club-info-block .inner-div {
       background-color: rgba(0, 0, 0, 0.5);

@@ -49,36 +49,33 @@
 @import "footer";
 @import "workouts";
 
+/* NAVBAR START */
+nav {
+  @include media-breakpoint-up(xl) { 
+      .navbar-nav {
+          position: relative;
+          &::before {
+              content: "";
+              position: absolute;
+              right: -30.5%;
+              top: -193%;
+              background-image: url(../img/group-3.svg);
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-repeat: no-repeat;
+              width: 335px;
+              height: 466px;          
+          }
+      }
+  }
+}
+/* NAVBAR END */
 
 /* BANNER AREA START*/
 .banner-area {
   .container-fluid {
     position: relative;
   }
-
-  // .left-frame-border {
-  //   @media only screen and (min-width: 1900px) {
-  //     display: block;
-  //     position: absolute;
-  //     z-index: 99;
-  //     top: -26.5%;;
-  //     left: 0;
-  //   }
-  // }
-
-  // .right-frame-border {
-  //   @media only screen and (min-width: 1900px) {
-  //     display: block;
-  //     position: absolute;
-  //     z-index: 99;
-  //     top: -26.5%;;
-  //     left: 0;
-  //   }
-
-  //   @media only screen and (max-width: 1900px) {
-  //     display: none;
-  //   }
-  // }
 
   @include media-breakpoint-down(lg) {
     .owl-dots {
@@ -98,7 +95,27 @@
         &.active {
           background: $primary;
         }
-      } 
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .container-fluid {
+      position: relative;
+
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   right: 0;
+      //   top: 0;
+      //   background-image: url(../img/rectangle-copy-15.svg);
+      //   background-repeat: no-repeat;
+      //   background-size: cover;
+      //   background-repeat: no-repeat;
+      //   height: 100%;
+      //   width: 418px;      
+      //   z-index: 3;  
+      // }      
     }
   }
 
@@ -113,7 +130,7 @@
       text-align: center;
       bottom: 5%;
       width: 100%;
-  
+
       button.owl-prev,  button.owl-next {
         width: 58px;
         height: 58px;
@@ -126,11 +143,11 @@
       .owl-prev > span, .owl-next > span {
         content: "";
       }
-  
+
       button.owl-prev {
         background-image: url(../img/group-copy-7@1x.png);
       }
-  
+
       button.owl-next {
         background-image: url(../img/group-copy-6@1x.png);
       }
@@ -138,42 +155,51 @@
   }
 
   figure {
+    
     width: 100%;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     letter-spacing: 2.16px;
     font-family: Helvetica;
+    margin-bottom: 0;
 
     .bg-shadow {
       background-image: url(../img/rectangle-copy-12.png);
       background-repeat: no-repeat;
-      background-position-y: -20px;
+      background-position-y: 25%;
+      background-position-x: 100%;
+
+      @include media-breakpoint-down(md) {
+        background-image: url(../img/rectangleCopy13.png);
+        background-repeat: no-repeat;
+        background-position-y: 70%;
+        background-position-x: 50%;
+      }
+
+      @include media-breakpoint-down(xs) {
+        background-image: url(../img/rectangleCopy13.png);
+        background-repeat: no-repeat;
+        background-position-y: 65%;
+        background-position-x: 50%;
+      }
     }
 
-    @include media-breakpoint-up(lg) { 
+    @include media-breakpoint-up(lg) {
       height: 515px;
     }
 
-    @include media-breakpoint-down(md) { 
+    @include media-breakpoint-down(md) {
       height: 615px;
       p {
         margin: 0;
       }
-      h1 {
-        ///filter: blur(5px);
-        // text-shadow: 1px 1px 8px #000000, 0 0 28px #000000,
-        // 0 0 40px #000000, 0 0 60px #000000, 0 0 80px #000000, 0 0 100px #000000, 0 0 120px #000000;
-        // z-index: 100;
-      }
-      
-      // text-shadow: 1px 1px 8px #000000, 0 0 28px #000000,
-      //  0 0 40px #000000, 0 0 60px #000000, 0 0 80px #000000, 0 0 100px #000000, 0 0 120px #000000;
     }
 
-    @include media-breakpoint-up(lg) { 
+    @include media-breakpoint-up(lg) {
       .container {
         max-width: 1000px;
+        z-index: 4; 
       }
     }
 
@@ -181,11 +207,11 @@
       font-weight: bold;
       letter-spacing: 2.16px;
       text-transform: uppercase;
-      @include media-breakpoint-up(lg) { 
+      @include media-breakpoint-up(lg) {
         font-size: 48px;
       }
 
-      @include media-breakpoint-down(md) { 
+      @include media-breakpoint-down(md) {
         font-size: 32px;
       }
     }
@@ -194,11 +220,11 @@
       color: $white;
       text-transform: uppercase;
       font-size: 16px;
-      @include media-breakpoint-up(lg) { 
+      @include media-breakpoint-up(lg) {
         margin-top: 50px;
       }
 
-      @include media-breakpoint-down(md) { 
+      @include media-breakpoint-down(md) {
         margin-top: 30px;
         margin-bottom: 100px;
       }
@@ -208,17 +234,17 @@
   .owl-carousel .owl-item img {
     display: block;
 
-    @include media-breakpoint-down(md) { 
+    @include media-breakpoint-down(md) {
       width: 65%;
     }
 
-    @include media-breakpoint-down(sm) { 
+    @include media-breakpoint-down(sm) {
       width: 85%;
     }
 
-    @include media-breakpoint-down(xs) { 
+    @include media-breakpoint-down(xs) {
       width: 90%;
-    }  
+    }
   }
 
   .bg-img-1 {
@@ -235,11 +261,11 @@
 .features-area {
 
   .features {
-    @include media-breakpoint-up(lg) { 
+    @include media-breakpoint-up(lg) {
       margin-bottom: 70px;
     }
 
-    @include media-breakpoint-down(md) { 
+    @include media-breakpoint-down(md) {
       margin-bottom: 16px;
     }
   }
@@ -248,22 +274,22 @@
     margin-bottom: 0;
     text-align: center;
 
-    @include media-breakpoint-up(lg) { 
+    @include media-breakpoint-up(lg) {
       padding-bottom: 70px;
       padding-top: 60px;
     }
 
-    @include media-breakpoint-down(md) { 
+    @include media-breakpoint-down(md) {
       padding-bottom: 5px;
       padding-top: 20px;
     }
   }
 
-  @media (max-width: 1100px) { 
+  @media (max-width: 1100px) {
     .owl-nav {
       position: absolute;
       top: 42%;
-      width: 100%; 
+      width: 100%;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -294,17 +320,17 @@
   .feature {
     height: 260px;
     background-image: url(../img/group-4@1x.png);
-    background-size: contain;  
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     margin: 0 auto;
     font-weight: 500;
 
-    @media (min-width: 1100px) { 
+    @media (min-width: 1100px) {
       max-width: 360px;
     }
 
-    @media (max-width: 1100px) {  
+    @media (max-width: 1100px) {
       max-width: 400px;
     }
 
@@ -328,21 +354,11 @@
 /* SIGNUP AREA START */
 .signup-area {
 
-  .green-block::before {
-    content: "";
-    background-color: #aacc23;
-    position: absolute;
-    width: 95%;
-    height: 95%;
-    left: -10px;
-    bottom: -9px;
-  }
-
   @include media-breakpoint-down(md) {
     .signup-block {
       margin-top: 35px;
       margin-bottom: 50px;
-  
+
       h2 {
         text-align: center;
       }
@@ -354,7 +370,7 @@
         line-height: 31px;
         letter-spacing: -0.43px
       }
-  
+
       .note {
         font-size: 14px;
         font-weight: 300;
@@ -367,14 +383,14 @@
     .signup-block {
       margin-top: 110px;
       margin-bottom: 112px;
-  
+
       .subtitle {
         font-size: 28px;
         font-weight: 300;
-        line-height: 1.11;
-        letter-spacing: -0.6px
+        line-height: 1.43;
+        letter-spacing: -0.6px;
       }
-  
+
       .note {
         font-size: 18px;
         font-weight: 300;
@@ -385,16 +401,35 @@
 
   .signup-slides {
     .slide {
-      position: relative;
-      //margin: 0 30px 30px 30px;
-      //box-shadow: -20px 20px $primary;
+      padding-left: 25px;
+      padding-right: 25px;
+
+      .inner {
+        position: relative;
+        padding-left: 25px;
+        padding-bottom: 25px;
+
+          &::after {
+            content: "";
+            background-color: #aacc23;
+            position: absolute;
+            width: 95%;
+            height: 93%;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+          }
+
+          img {
+            z-index: 9999;
+          }
+      }
     }
 
     .owl-nav {
       position: absolute;
-      width: 112%;
-      top: 42%;
-      left: -8%;
+      width: 100%;
+      top: 40%;
       display: flex;
       justify-content: space-between;
 
@@ -403,7 +438,7 @@
           align-self: flex-start;
           background-image: url(../img/group-copy-4.png);
         }
-  
+
         button.owl-next {
           align-self: flex-end;
           background-image: url(../img/group-copy-2.png);
@@ -415,7 +450,7 @@
           align-self: flex-start;
           background-image: url(../img/groupCopy4.png);
         }
-  
+
         button.owl-next {
           align-self: flex-end;
           background-image: url(../img/groupCopy5.png);
@@ -434,50 +469,171 @@
 
         @include media-breakpoint-down(sm) {
           width: 52px;
-          height: 52px;          
+          height: 52px;
         }
       }
     }
   }
+}
+
+.signup-form {
+  .subtitle {
+    font-weight: 300;
+    line-height: 1.43;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 28px;
+      letter-spacing: -0.6px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 26px;
+      letter-spacing: -0.56px;
+    }
+
+  }
+
+  .input-group>.custom-select:not(:first-child), .input-group>.form-control:not(:first-child) {
+    border-radius: 28px;
+  }
+
+  height: 100%;
+  max-width: 340px;
+
+    @include media-breakpoint-down(md) {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  font-size: 16px;
+  font-weight: 300;
+
+  .btn-rounded {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    font-weight: bold;
+  }
+
+  .form-row >.col, .form-row>[class*=col-] {
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+
+  .input-group {
+    border-radius: 28px;
+    position: relative;
+    height: 56px;
+
+    .input-group-prepend {
+      position: absolute;
+      overflow: hidden;
+      z-index: 1000;
+      height: 100%;
+    }
+
+    .input-group-text {
+      border-radius: 50%;
+      font-size: 36px;
+      font-weight: 500;
+      letter-spacing: 0.75px;
+      padding: 0 14px;
+      margin-right: 2px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    &.primary {
+      background-color: $primary;
+      border: solid 1px $black;
+
+      .input-group-text {
+        background-color: $primary;
+        border: solid 1px $black;
+        color: $black;
+      }
+
+      input {
+        background-color: $primary;
+      }
+    }
+
+    &.white {
+      color: $primary;
+      border: solid 1px $primary;
+
+      .input-group-text {
+        border: solid 1px $primary;
+        color: $primary;
+        background-color: $white;
+      }
+    }
+
+  }
+  input {
+    color: $black;
+    &[type="button"] {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.8px;
+    }
+
+    &[type="text"] {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: -0.39px;
+    }
+
+    height: 52px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 27%;
+    text-align: center;
+  }
+
+  input[type="button"]{ text-align:center; }
 }
 /* SIGNUP AREA END */
 
 /* PROMO AREA START */
 .promo-area {
   .promo-container {
-    height: 572px;  
-    background-image: url(../img/bitmap.png);
-    background-size: cover;  
-    background-position: center center;
-    background-repeat: no-repeat;
+    
+    background-color: #e9f0f2;
 
     @include media-breakpoint-up(lg) {
+      background-image: url(../img/bitmap.png);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
       height: 572px;
     }
 
     @include media-breakpoint-down(md) {
-      height: auto;
+      padding-top: 35px;
+      padding-bottom: 25px;
+      margin-bottom: 32px;
     }
   }
 
   .inner-container {
     max-width: 1550px;
     margin-left: auto;
-    margin-right: auto;   
+    margin-right: auto;
     height: 100%;
-    overflow: hidden;  
+    overflow: hidden;
   }
 
   .promo-block {
 
     @include media-breakpoint-up(lg) {
-      max-width: 528px;    
+      max-width: 528px;
       margin-left: auto;
+      margin-top: auto;
+      margin-bottom: auto;
     }
 
     @include media-breakpoint-down(md) {
       position: relative;
-      //margin-top: 50px;  
       margin-left: 15px;
       margin-right: 15px;
     }
@@ -490,16 +646,19 @@
       @include media-breakpoint-down(md) {
         flex-direction: column;
       }
-    } 
+    }
 
     .schedule-link {
-    
+
       @include media-breakpoint-up(lg) {
         max-width: 176px;
       }
 
       @include media-breakpoint-down(md) {
         width: 100%;
+        margin: 25px 0;
+        font-size: 16px;
+        letter-spacing: 0.32px;
       }
 
       > a {
@@ -520,6 +679,9 @@
 
         @include media-breakpoint-down(md) {
           border: 1px solid $black;
+          padding: 15px 0;
+          margin: 0 auto;
+          max-width: 312px;
         }
 
         &:hover, &:focus {
@@ -527,11 +689,11 @@
           border: 1px solid $black;
           border-radius: 25px;
         }
-      } 
+      }
     }
 
     .time-block {
-      max-width: 176px;
+      
       display: flex;
       align-items: center;
       height: 48px;
@@ -539,9 +701,29 @@
       font-weight: 400;
 
       @include media-breakpoint-up(lg) {
+        max-width: 176px;
         &:not(:first-child) {
           border-top: 1px solid $white;
         }
+      }
+
+      @include media-breakpoint-down(md) {
+        //font-size: 20px;
+        &:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    .club-title {
+      background-color: #d8d8d8;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 18px;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 20px;
       }
     }
 
@@ -581,15 +763,7 @@
       background-color: #a8d523;
     }
 
-    .grey {
-      background-color: #d8d8d8;
-    }
-
-
     h2 {
-      font-size: 28px;
-      line-height: 40px;
-
       @include media-breakpoint-down(md) {
         text-align: center;
       }
@@ -603,7 +777,7 @@
         letter-spacing: 0.58px;
         margin-bottom: 24px;
       }
-  
+
       @include media-breakpoint-down(md) {
         font-size: 20px;
         letter-spacing: 0.42px;
@@ -618,7 +792,7 @@
 /* TEAM AREA START */
 .team-area {
   .team-container {
-    height: 900px;   
+    height: 900px;
     background: linear-gradient(to bottom, rgba(254,254,255,1) 0%, rgba(254,254,255,1) 22%, rgba(181,184,191,1) 45%, rgba(79,86,92,1) 69%, rgba(60,68,74,1) 78%, rgba(60,68,74,1) 79%, rgba(100,108,123,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefeff', endColorstr='#646c7b', GradientType=0 );
   }
@@ -629,12 +803,12 @@
     @include media-breakpoint-up(lg) {
       margin-top: 75px;
       margin-bottom: 80px;
-    } 
+    }
 
     @include media-breakpoint-down(md) {
       margin-top: 40px;
       margin-bottom: 30px;
-    }  
+    }
   }
 
   .scrolling-wrapper {
@@ -647,9 +821,9 @@
       width: 1171px;
       height: 512px;
       background-image: url(../img/copy.png);
-      background-size: contain;  
+      background-size: contain;
       background-position: center center;
-      background-repeat: no-repeat;         
+      background-repeat: no-repeat;
     }
   }
 
@@ -665,7 +839,7 @@
 
       @include media-breakpoint-down(md) {
         margin-bottom: 25px;
-      }  
+      }
 
       .link {
         font-weight: 500;
@@ -686,21 +860,21 @@
 
         @include media-breakpoint-up(md) {
           font-size: 24px;
-        }  
+        }
 
         @include media-breakpoint-down(sm) {
           font-size: 18px;
-        }  
+        }
       }
 
       .caption-icon {
         height: 60px;
         width: 50px;
-        background-size: contain;  
+        background-size: contain;
         background-position: center center;
-        background-repeat: no-repeat;   
-        margin-left: 15px; 
-        margin-right: 15px; 
+        background-repeat: no-repeat;
+        margin-left: 15px;
+        margin-right: 15px;
       }
 
       .icon-1 {

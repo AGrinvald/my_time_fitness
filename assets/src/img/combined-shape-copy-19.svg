@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="82" height="91" viewBox="0 0 82 91">
+    <defs>
+        <linearGradient id="a" x1="50%" x2="50%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#454856"/>
+            <stop offset="100%" stop-color="#23252A"/>
+        </linearGradient>
+        <path id="b" d="M1379.324 3416.001c11.33 4.79 23.406 7.24 35.497 7.24 12.095 0 24.17-2.45 35.503-7.241l-2.66 10.584c-1.957 7.377-16.641 11.416-32.841 11.416-16.371 0-30.694-3.957-32.84-11.416l-2.66-10.583zm44.842-38.784c15.978 1.716 30.158 7.391 30.158 16.56 0 1.27-3.844 15.778-3.844 15.778a83.78 83.78 0 0 1-73.311.001s-3.845-14.508-3.845-15.78c0-9.168 14.18-14.843 30.158-16.559 2.493-.268 4.379-2.35 4.379-4.845v-.008c0-3.141-.97-6.21-2.77-8.791a10.467 10.467 0 0 1-1.886-6.008c0-5.836 4.755-10.565 10.619-10.565 5.865 0 10.618 4.73 10.618 10.565 0 2.232-.696 4.302-1.885 6.008a15.33 15.33 0 0 0-2.77 8.792v.007c0 2.49 1.89 4.58 4.379 4.845zm-10.342-24.473c-2.718 0-4.922 2.193-4.922 4.897 0 2.705 2.204 4.897 4.922 4.897 2.718 0 4.922-2.192 4.922-4.897 0-2.704-2.204-4.897-4.922-4.897zm0 29.74c-20.841 0-33.638 6.578-33.638 11.293 0 4.717 12.797 11.295 33.638 11.295 20.84 0 33.638-6.578 33.638-11.295 0-4.715-12.798-11.293-33.638-11.293z"/>
+        <filter id="c" width="107.4%" height="106.6%" x="-3.3%" y="-3.3%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1.5"/>
+            <feOffset dx="3" dy="3" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="nonzero" transform="translate(-1373 -3347)">
+        <use fill="url(#a)" xlink:href="#b"/>
+        <use fill="#000" filter="url(#c)" xlink:href="#b"/>
+    </g>
+</svg>

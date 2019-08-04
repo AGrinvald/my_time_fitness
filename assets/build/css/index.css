@@ -7352,20 +7352,17 @@ body {
 
 h2.title {
   font-family: "Avenir Next Cyr";
-  font-size: 34px;
   font-weight: bold;
   color: #101929;
   text-transform: uppercase; }
-
-@media (min-width: 992px) {
-  h2.title {
-    letter-spacing: 0.69px;
-    font-size: 34px; } }
-
-@media (max-width: 991.98px) {
-  h2.title {
-    font-size: 20px;
-    letter-spacing: 0.42px; } }
+  @media (min-width: 992px) {
+    h2.title {
+      letter-spacing: 0.69px;
+      font-size: 34px; } }
+  @media (max-width: 991.98px) {
+    h2.title {
+      font-size: 20px;
+      letter-spacing: 0.42px; } }
 
 header {
   background: linear-gradient(to right, #d9d9d9 0%, white 23%, white 100%);
@@ -7377,12 +7374,19 @@ header {
   margin-left: auto;
   margin-right: auto;
   height: 124px; }
-  .h-top .hexagon {
-    position: absolute;
-    bottom: 0;
-    left: -18%; }
   .h-top .container {
     position: relative; }
+    .h-top .container::before {
+      content: "";
+      position: absolute;
+      left: -18%;
+      bottom: 0;
+      background-image: url(../img/path-copy-22.svg);
+      background-repeat: no-repeat;
+      background-position-x: left;
+      background-position-y: bottom;
+      width: 288px;
+      height: 100%; }
   .h-top .b-center {
     position: absolute;
     top: 50%;
@@ -7408,8 +7412,11 @@ header {
       margin: 8px 0;
       background-color: #101929; }
   .h-top .logo {
+    color: #000000;
     font-size: 50px;
     font-family: "MagistralC"; }
+    .h-top .logo:hover, .h-top .logo:focus {
+      text-decoration: none; }
 
 /* TOP HEADER END */
 /* NAVBAR START */
@@ -7659,9 +7666,7 @@ nav {
         font-weight: normal;
         margin-bottom: 0; }
   .map-area .club-info-block {
-    z-index: 25;
     height: 504px;
-    bottom: 0;
     padding-left: 45px; }
     .map-area .club-info-block .inner-div {
       background-color: rgba(0, 0, 0, 0.5);
@@ -7826,10 +7831,10 @@ footer {
     transition: all 0.5s ease; }
   @media (max-width: 1199.98px) {
     .workouts-area .workout-block:nth-child(2n-1) {
-      margin: 0 15px 15px 0px; } }
+      margin: 0 15px 15px 15px; } }
   @media (max-width: 767.98px) {
     .workouts-area .workout-block {
-      margin: 0 15px 15px 15px; } }
+      margin: 0 0 15px 0; } }
   .workouts-area .workout-block .inner-block {
     z-index: 100;
     height: 145px;
@@ -7882,6 +7887,23 @@ footer {
   background-image: url(../img/bitmap-copy-2.png); }
 
 /* WORKOUT AREA END */
+/* NAVBAR START */
+@media (min-width: 1200px) {
+  nav .navbar-nav {
+    position: relative; }
+    nav .navbar-nav::before {
+      content: "";
+      position: absolute;
+      right: -30.5%;
+      top: -193%;
+      background-image: url(../img/group-3.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 335px;
+      height: 466px; } }
+
+/* NAVBAR END */
 /* BANNER AREA START*/
 .banner-area .container-fluid {
   position: relative; }
@@ -7901,6 +7923,10 @@ footer {
       box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5); }
       .banner-area .owl-dots .owl-dot.active {
         background: #aacc23; } }
+
+@media (min-width: 1200px) {
+  .banner-area .container-fluid {
+    position: relative; } }
 
 @media (min-width: 992px) {
   .banner-area .container {
@@ -7930,11 +7956,25 @@ footer {
   background-position: center center;
   background-repeat: no-repeat;
   letter-spacing: 2.16px;
-  font-family: Helvetica; }
+  font-family: Helvetica;
+  margin-bottom: 0; }
   .banner-area figure .bg-shadow {
     background-image: url(../img/rectangle-copy-12.png);
     background-repeat: no-repeat;
-    background-position-y: -20px; }
+    background-position-y: 25%;
+    background-position-x: 100%; }
+    @media (max-width: 991.98px) {
+      .banner-area figure .bg-shadow {
+        background-image: url(../img/rectangleCopy13.png);
+        background-repeat: no-repeat;
+        background-position-y: 70%;
+        background-position-x: 50%; } }
+    @media (max-width: 575.98px) {
+      .banner-area figure .bg-shadow {
+        background-image: url(../img/rectangleCopy13.png);
+        background-repeat: no-repeat;
+        background-position-y: 65%;
+        background-position-x: 50%; } }
   @media (min-width: 992px) {
     .banner-area figure {
       height: 515px; } }
@@ -7945,7 +7985,8 @@ footer {
         margin: 0; } }
   @media (min-width: 992px) {
     .banner-area figure .container {
-      max-width: 1000px; } }
+      max-width: 1000px;
+      z-index: 4; } }
   .banner-area figure h1 {
     font-weight: bold;
     letter-spacing: 2.16px;
@@ -8052,15 +8093,6 @@ footer {
 
 /* FEATURES AREA END*/
 /* SIGNUP AREA START */
-.signup-area .green-block::before {
-  content: "";
-  background-color: #aacc23;
-  position: absolute;
-  width: 95%;
-  height: 95%;
-  left: -10px;
-  bottom: -9px; }
-
 @media (max-width: 991.98px) {
   .signup-area .signup-block {
     margin-top: 35px;
@@ -8085,7 +8117,7 @@ footer {
     .signup-area .signup-block .subtitle {
       font-size: 28px;
       font-weight: 300;
-      line-height: 1.11;
+      line-height: 1.43;
       letter-spacing: -0.6px; }
     .signup-area .signup-block .note {
       font-size: 18px;
@@ -8093,13 +8125,28 @@ footer {
       letter-spacing: -0.39px; } }
 
 .signup-area .signup-slides .slide {
-  position: relative; }
+  padding-left: 25px;
+  padding-right: 25px; }
+  .signup-area .signup-slides .slide .inner {
+    position: relative;
+    padding-left: 25px;
+    padding-bottom: 25px; }
+    .signup-area .signup-slides .slide .inner::after {
+      content: "";
+      background-color: #aacc23;
+      position: absolute;
+      width: 95%;
+      height: 93%;
+      left: 0;
+      bottom: 0;
+      z-index: -1; }
+    .signup-area .signup-slides .slide .inner img {
+      z-index: 9999; }
 
 .signup-area .signup-slides .owl-nav {
   position: absolute;
-  width: 112%;
-  top: 42%;
-  left: -8%;
+  width: 100%;
+  top: 40%;
   display: flex;
   justify-content: space-between; }
   @media (min-width: 768px) {
@@ -8129,20 +8176,103 @@ footer {
         width: 52px;
         height: 52px; } }
 
+.signup-form {
+  height: 100%;
+  max-width: 340px;
+  font-size: 16px;
+  font-weight: 300; }
+  .signup-form .subtitle {
+    font-weight: 300;
+    line-height: 1.43; }
+    @media (min-width: 992px) {
+      .signup-form .subtitle {
+        font-size: 28px;
+        letter-spacing: -0.6px; } }
+    @media (max-width: 991.98px) {
+      .signup-form .subtitle {
+        font-size: 26px;
+        letter-spacing: -0.56px; } }
+  .signup-form .input-group > .custom-select:not(:first-child), .signup-form .input-group > .form-control:not(:first-child) {
+    border-radius: 28px; }
+  @media (max-width: 991.98px) {
+    .signup-form {
+      margin-left: auto;
+      margin-right: auto; } }
+  .signup-form .btn-rounded {
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    font-weight: bold; }
+  .signup-form .form-row > .col, .signup-form .form-row > [class*=col-] {
+    padding-right: 3px;
+    padding-left: 3px; }
+  .signup-form .input-group {
+    border-radius: 28px;
+    position: relative;
+    height: 56px; }
+    .signup-form .input-group .input-group-prepend {
+      position: absolute;
+      overflow: hidden;
+      z-index: 1000;
+      height: 100%; }
+    .signup-form .input-group .input-group-text {
+      border-radius: 50%;
+      font-size: 36px;
+      font-weight: 500;
+      letter-spacing: 0.75px;
+      padding: 0 14px;
+      margin-right: 2px;
+      margin-top: 2px;
+      margin-bottom: 2px; }
+    .signup-form .input-group.primary {
+      background-color: #aacc23;
+      border: solid 1px #000000; }
+      .signup-form .input-group.primary .input-group-text {
+        background-color: #aacc23;
+        border: solid 1px #000000;
+        color: #000000; }
+      .signup-form .input-group.primary input {
+        background-color: #aacc23; }
+    .signup-form .input-group.white {
+      color: #aacc23;
+      border: solid 1px #aacc23; }
+      .signup-form .input-group.white .input-group-text {
+        border: solid 1px #aacc23;
+        color: #aacc23;
+        background-color: #ffffff; }
+  .signup-form input {
+    color: #000000;
+    height: 52px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 27%;
+    text-align: center; }
+    .signup-form input[type="button"] {
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 0.8px; }
+    .signup-form input[type="text"] {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: -0.39px; }
+  .signup-form input[type="button"] {
+    text-align: center; }
+
 /* SIGNUP AREA END */
 /* PROMO AREA START */
 .promo-area .promo-container {
-  height: 572px;
-  background-image: url(../img/bitmap.png);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat; }
+  background-color: #e9f0f2; }
   @media (min-width: 992px) {
     .promo-area .promo-container {
+      background-image: url(../img/bitmap.png);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
       height: 572px; } }
   @media (max-width: 991.98px) {
     .promo-area .promo-container {
-      height: auto; } }
+      padding-top: 35px;
+      padding-bottom: 25px;
+      margin-bottom: 32px; } }
 
 .promo-area .inner-container {
   max-width: 1550px;
@@ -8154,7 +8284,9 @@ footer {
 @media (min-width: 992px) {
   .promo-area .promo-block {
     max-width: 528px;
-    margin-left: auto; } }
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto; } }
 
 @media (max-width: 991.98px) {
   .promo-area .promo-block {
@@ -8176,7 +8308,10 @@ footer {
 
 @media (max-width: 991.98px) {
   .promo-area .promo-block .schedule-link {
-    width: 100%; } }
+    width: 100%;
+    margin: 25px 0;
+    font-size: 16px;
+    letter-spacing: 0.32px; } }
 
 .promo-area .promo-block .schedule-link > a {
   text-align: center;
@@ -8194,22 +8329,38 @@ footer {
       border: 1px solid transparent; } }
   @media (max-width: 991.98px) {
     .promo-area .promo-block .schedule-link > a {
-      border: 1px solid #000000; } }
+      border: 1px solid #000000;
+      padding: 15px 0;
+      margin: 0 auto;
+      max-width: 312px; } }
   .promo-area .promo-block .schedule-link > a:hover, .promo-area .promo-block .schedule-link > a:focus {
     text-decoration: none;
     border: 1px solid #000000;
     border-radius: 25px; }
 
 .promo-area .promo-block .time-block {
-  max-width: 176px;
   display: flex;
   align-items: center;
   height: 48px;
   font-size: 16px;
   font-weight: 400; }
   @media (min-width: 992px) {
-    .promo-area .promo-block .time-block:not(:first-child) {
-      border-top: 1px solid #ffffff; } }
+    .promo-area .promo-block .time-block {
+      max-width: 176px; }
+      .promo-area .promo-block .time-block:not(:first-child) {
+        border-top: 1px solid #ffffff; } }
+  @media (max-width: 991.98px) {
+    .promo-area .promo-block .time-block:not(:last-child) {
+      margin-bottom: 8px; } }
+
+.promo-area .promo-block .club-title {
+  background-color: #d8d8d8; }
+  @media (min-width: 992px) {
+    .promo-area .promo-block .club-title {
+      font-size: 18px; } }
+  @media (max-width: 991.98px) {
+    .promo-area .promo-block .club-title {
+      font-size: 20px; } }
 
 @media (min-width: 992px) {
   .promo-area .promo-block .right-border-lg > div:not(:last-child) {
@@ -8236,15 +8387,9 @@ footer {
 .promo-area .promo-block .green {
   background-color: #a8d523; }
 
-.promo-area .promo-block .grey {
-  background-color: #d8d8d8; }
-
-.promo-area .promo-block h2 {
-  font-size: 28px;
-  line-height: 40px; }
-  @media (max-width: 991.98px) {
-    .promo-area .promo-block h2 {
-      text-align: center; } }
+@media (max-width: 991.98px) {
+  .promo-area .promo-block h2 {
+    text-align: center; } }
 
 .promo-area .promo-block p {
   font-weight: 300; }

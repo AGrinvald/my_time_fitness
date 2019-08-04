@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="87" viewBox="0 0 84 87">
+    <defs>
+        <linearGradient id="a" x1="50%" x2="50%" y1="33.203%" y2="100%">
+            <stop offset="0%" stop-color="#D2E911"/>
+            <stop offset="100%" stop-color="#96BC00"/>
+        </linearGradient>
+        <path id="b" d="M788.859 1011c-1.575 0-2.859-.88-2.859-1.984v-16.038c0-1.092 1.284-1.978 2.859-1.978h4.288c1.587 0 2.853.88 2.853 1.978v16.038c0 1.104-1.278 1.984-2.853 1.984h-4.288zm40.997 0c-1.576 0-2.85-.88-2.856-1.984v-16.038c0-1.092 1.28-1.978 2.856-1.978h4.288c1.595 0 2.856.88 2.856 1.978v16.038c0 1.104-1.261 1.984-2.856 1.984h-4.288zm19.967-12a3.187 3.187 0 0 1 3.177 3.165v72.67c0 1.75-1.427 3.165-4.38 3.165h-77.686c-.518 0-1.934-1.415-1.934-3.165v-72.659c0-1.75 1.416-3.176 3.155-3.176h10.461v12.95c0 2.891 2.603 5.245 5.78 5.245h3.93c3.193 0 5.785-2.354 5.785-5.245V999h25.75v12.95c0 2.891 2.597 5.245 5.786 5.245h3.94c3.188 0 5.78-2.354 5.78-5.245V999h10.456zm-1.694 71.82v-18.19c-13.711 12.364-31.029 21.07-31.029 21.07h28.32s2.709.274 2.709-2.88zm.596-26.913l.006-15.142a.996.996 0 0 0-.992-.996h-73.483a.988.988 0 0 0-.987.996v44.79c0 .548.435.99.987.99h30.7c3.522-2.495 19.697-14.433 20.427-23.212.886-10.423 7.764-6.022 14.742-.839 4.788 3.562 7.413-1.884 8.6-6.587zM786 1035h13v13h-13v-13zm20 0h13v13h-13v-13zm-20 18h13v13h-13v-13zm20 13v-13h13v3.243c-2.334 2.923-6.488 7.182-9.236 9.757H806zm19-23.853V1036h13v8c-3.067-2.031-6.015-3.53-8.692-3.53-1.418 0-2.996.392-4.308 1.677z"/>
+        <filter id="c" width="104.8%" height="104.6%" x="-2.4%" y="-2.3%" filterUnits="objectBoundingBox">
+            <feGaussianBlur in="SourceAlpha" result="shadowBlurInner1" stdDeviation="1"/>
+            <feOffset dx="2" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.304004589 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="nonzero" transform="translate(-769 -991)">
+        <use fill="url(#a)" xlink:href="#b"/>
+        <use fill="#000" filter="url(#c)" xlink:href="#b"/>
+    </g>
+</svg>
