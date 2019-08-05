@@ -413,20 +413,38 @@ nav {
     .container-fluid {
         overflow: hidden;
         margin-top: 60px;
-        margin-bottom: 185px;
+        
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 185px;
+        }  
+
+        @include media-breakpoint-down(lg) {
+            
+        }  
     }
 
     h2 {
         margin-bottom: 70px;
     }
     .season-item {
-        margin-bottom: 15px;
         width: 368px;
         box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.29);
         background-image: linear-gradient(to top, #f8f8f8, #ffffff);
         border-radius: 13px;
         display: flex;
         flex-direction: column;
+
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 15px;
+        }  
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 25px;
+        }  
+
+        p {
+            margin: 0;
+        }
 
         .tariff-b {
             width: 100%;
@@ -437,10 +455,6 @@ nav {
             padding: 31px 32px 32px 25px;
             display: flex;
             flex-direction: column;
-
-            p {
-                margin: 0;
-            }
 
             .name {
                 font-size: 36px;
@@ -454,6 +468,7 @@ nav {
                 color: #a5a5a5;
                 text-decoration: line-through;
             }
+
             .new-price {
                 > div:first-child {
                     font-size: 90px;
@@ -461,12 +476,13 @@ nav {
                     letter-spacing: 1.88px;
                 }
                 > div:last-child {
-                    p:first-child {
+                    > div:first-child {
                         font-size: 44px;
                         font-weight: bold;
                         letter-spacing: 0.92px; 
+                        line-height: 40px;
                     }
-                    p:last-child {
+                    > div:last-child {
                         font-size: 26px;
                         font-weight: 300;
                     }

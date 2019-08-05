@@ -8152,20 +8152,29 @@ footer {
 /* SEASON AREA START*/
 .season-area .container-fluid {
   overflow: hidden;
-  margin-top: 60px;
-  margin-bottom: 185px; }
+  margin-top: 60px; }
+  @media (min-width: 1200px) {
+    .season-area .container-fluid {
+      margin-bottom: 185px; } }
 
 .season-area h2 {
   margin-bottom: 70px; }
 
 .season-area .season-item {
-  margin-bottom: 15px;
   width: 368px;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.29);
   background-image: linear-gradient(to top, #f8f8f8, #ffffff);
   border-radius: 13px;
   display: flex;
   flex-direction: column; }
+  @media (min-width: 1200px) {
+    .season-area .season-item {
+      margin-bottom: 15px; } }
+  @media (max-width: 1199.98px) {
+    .season-area .season-item {
+      margin-bottom: 25px; } }
+  .season-area .season-item p {
+    margin: 0; }
   .season-area .season-item .tariff-b {
     width: 100%;
     color: white;
@@ -8175,8 +8184,6 @@ footer {
     padding: 31px 32px 32px 25px;
     display: flex;
     flex-direction: column; }
-    .season-area .season-item .tariff-b p {
-      margin: 0; }
     .season-area .season-item .tariff-b .name {
       font-size: 36px;
       font-weight: bold;
@@ -8190,11 +8197,12 @@ footer {
       font-size: 90px;
       font-weight: bold;
       letter-spacing: 1.88px; }
-    .season-area .season-item .tariff-b .new-price > div:last-child p:first-child {
+    .season-area .season-item .tariff-b .new-price > div:last-child > div:first-child {
       font-size: 44px;
       font-weight: bold;
-      letter-spacing: 0.92px; }
-    .season-area .season-item .tariff-b .new-price > div:last-child p:last-child {
+      letter-spacing: 0.92px;
+      line-height: 40px; }
+    .season-area .season-item .tariff-b .new-price > div:last-child > div:last-child {
       font-size: 26px;
       font-weight: 300; }
     .season-area .season-item .tariff-b .offer {
