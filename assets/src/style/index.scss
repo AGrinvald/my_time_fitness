@@ -435,24 +435,20 @@ nav {
 
       @include media-breakpoint-up(md) {
         button.owl-prev {
-          align-self: flex-start;
           background-image: url(../img/group-copy-4.png);
         }
 
         button.owl-next {
-          align-self: flex-end;
           background-image: url(../img/group-copy-2.png);
         }
       }
 
       @include media-breakpoint-down(sm) {
         button.owl-prev {
-          align-self: flex-start;
           background-image: url(../img/groupCopy4.png);
         }
 
         button.owl-next {
-          align-self: flex-end;
           background-image: url(../img/groupCopy5.png);
         }
       }

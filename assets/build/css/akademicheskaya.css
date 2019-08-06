@@ -7426,11 +7426,6 @@ nav {
   nav.navbar {
     display: block;
     padding: 0; }
-  nav .hexagons {
-    position: absolute;
-    top: -73%;
-    height: 279px;
-    z-index: 1; }
   @media (min-width: 992px) {
     nav {
       background-color: #26272b; }
@@ -8151,14 +8146,22 @@ footer {
 /* SERVICES AREA END*/
 /* SEASON AREA START*/
 .season-area .container-fluid {
-  overflow: hidden;
-  margin-top: 60px; }
-  @media (min-width: 1200px) {
+  overflow: hidden; }
+  @media (min-width: 992px) {
     .season-area .container-fluid {
+      margin-top: 60px;
       margin-bottom: 185px; } }
+  @media (max-width: 991.98px) {
+    .season-area .container-fluid {
+      margin-top: 30px; } }
 
-.season-area h2 {
-  margin-bottom: 70px; }
+@media (min-width: 992px) {
+  .season-area h2 {
+    margin-bottom: 70px; } }
+
+@media (max-width: 991.98px) {
+  .season-area h2 {
+    margin-bottom: 30px; } }
 
 .season-area .season-item {
   width: 368px;
@@ -8241,3 +8244,83 @@ footer {
       margin-right: auto; }
 
 /* SEASON AREA END*/
+/* SCHEME AREA START*/
+.scheme-area .container-fluid {
+  overflow: hidden;
+  background-color: #f5f5f5; }
+  @media (min-width: 992px) {
+    .scheme-area .container-fluid {
+      padding: 80px 0;
+      height: 976px; } }
+  @media (max-width: 991.98px) {
+    .scheme-area .container-fluid {
+      padding-top: 30px;
+      padding-bottom: 27px; } }
+
+.scheme-area .scheme {
+  position: relative;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 40px; }
+  .scheme-area .scheme > div:first-child {
+    width: 100%; }
+    @media (min-width: 992px) {
+      .scheme-area .scheme > div:first-child {
+        height: 549px;
+        background-image: url(../img/akad-scheme.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
+    @media (max-width: 991.98px) {
+      .scheme-area .scheme > div:first-child {
+        height: 294px;
+        background-image: url(../img/akad-sm-scheme.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
+  .scheme-area .scheme .off {
+    display: none; }
+  .scheme-area .scheme .scheme-slides {
+    max-width: 338px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto; }
+    .scheme-area .scheme .scheme-slides .slide {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .scheme-area .scheme .scheme-slides .slide > div:first-child {
+        font-size: 30px;
+        line-height: 44px;
+        letter-spacing: 0.63px;
+        color: #aacc23;
+        font-weight: bold;
+        margin-right: 15px; }
+      .scheme-area .scheme .scheme-slides .slide > div:last-child {
+        text-align: left;
+        max-width: 155px;
+        font-size: 20px;
+        line-height: 21px;
+        letter-spacing: -0.27px; }
+    .scheme-area .scheme .scheme-slides .owl-nav {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .scheme-area .scheme .scheme-slides .owl-nav button.owl-prev {
+        background-image: url(../img/groupCopy4.png); }
+      .scheme-area .scheme .scheme-slides .owl-nav button.owl-next {
+        background-image: url(../img/groupCopy5.png); }
+      .scheme-area .scheme .scheme-slides .owl-nav button.owl-prev, .scheme-area .scheme .scheme-slides .owl-nav button.owl-next {
+        cursor: pointer;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 52px;
+        height: 52px; }
+
+.scheme-area h2 {
+  margin-bottom: 60px; }
+
+/* SCHEME AREA END*/

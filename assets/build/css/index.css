@@ -7426,11 +7426,6 @@ nav {
   nav.navbar {
     display: block;
     padding: 0; }
-  nav .hexagons {
-    position: absolute;
-    top: -73%;
-    height: 279px;
-    z-index: 1; }
   @media (min-width: 992px) {
     nav {
       background-color: #26272b; }
@@ -8151,17 +8146,13 @@ footer {
   justify-content: space-between; }
   @media (min-width: 768px) {
     .signup-area .signup-slides .owl-nav button.owl-prev {
-      align-self: flex-start;
       background-image: url(../img/group-copy-4.png); }
     .signup-area .signup-slides .owl-nav button.owl-next {
-      align-self: flex-end;
       background-image: url(../img/group-copy-2.png); } }
   @media (max-width: 767.98px) {
     .signup-area .signup-slides .owl-nav button.owl-prev {
-      align-self: flex-start;
       background-image: url(../img/groupCopy4.png); }
     .signup-area .signup-slides .owl-nav button.owl-next {
-      align-self: flex-end;
       background-image: url(../img/groupCopy5.png); } }
   .signup-area .signup-slides .owl-nav button.owl-prev, .signup-area .signup-slides .owl-nav button.owl-next {
     cursor: pointer;

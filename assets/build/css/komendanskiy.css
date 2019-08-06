@@ -7426,11 +7426,6 @@ nav {
   nav.navbar {
     display: block;
     padding: 0; }
-  nav .hexagons {
-    position: absolute;
-    top: -73%;
-    height: 279px;
-    z-index: 1; }
   @media (min-width: 992px) {
     nav {
       background-color: #26272b; }

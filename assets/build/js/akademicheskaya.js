@@ -21657,3 +21657,39 @@ return Popper;
 	}
 
 })(window.Zepto || window.jQuery, window, document);
+
+$(function () {
+
+    var owl = $('.scheme-slides'),
+        owlOptions = {
+            loop: true,
+            mouseDrag: false,
+            navText: ["", ""],
+            responsive: {
+                0: {
+                    items: 1
+                }
+            }
+        }, 
+        minWidth = 992;
+
+    if ($(window).width() < minWidth) {
+        var owlActive = owl.owlCarousel(owlOptions);
+    } else {
+        owl.addClass('off');
+    }
+
+    $(window).resize(function () {
+        if ($(window).width() < minWidth) {
+            if ($('.scheme-slides').hasClass('off')) {
+                var owlActive = owl.owlCarousel(owlOptions);
+                owl.removeClass('off');
+            }
+        } else {
+            if (!$('.scheme-slides').hasClass('off')) {
+                owl.addClass('off').trigger('destroy.owl.carousel');
+                owl.find('.owl-stage-outer').children(':eq(0)').unwrap();
+            }
+        }
+    });
+});
