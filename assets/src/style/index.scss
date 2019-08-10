@@ -155,7 +155,6 @@ nav {
   }
 
   figure {
-    
     width: 100%;
     background-size: cover;
     background-position: center center;
@@ -250,16 +249,11 @@ nav {
   .bg-img-1 {
     background-image: url(../img/3-copy@1x.png);
   }
-
-  .slide-1 {
-
-  }
 }
 /* BANNER AREA END*/
 
 /* FEATURES AREA START*/
 .features-area {
-
   .features {
     @include media-breakpoint-up(lg) {
       margin-bottom: 70px;

@@ -77,6 +77,7 @@ nav {
         position: relative;
         height: 497px;
         width: 100%;
+        overflow: hidden;
 
         &::before {
             content: "";
@@ -108,7 +109,7 @@ nav {
             height: 100%;
             justify-content: space-between;
             position: relative;
-
+            //overflow: hidden;
             @include media-breakpoint-up(xl) {
                 &::before {
                     content: "";
@@ -235,8 +236,6 @@ nav {
 /* PAGE NAVIGATION START*/
 .page-nav-area { 
     .nav-container {
-
-
         @include media-breakpoint-up(xl) {
             height: 645px;
             background-image: url(../img/555-copy-3.png), url(../img/555-copy-4.png);
@@ -245,7 +244,7 @@ nav {
         } 
     
         @include media-breakpoint-down(lg) {
-            height: 445px;
+            padding: 72px 0;
             background-image: url(../img/555Copy4.jpg);
             background-position: right top;
             background-repeat: no-repeat;
@@ -371,40 +370,150 @@ nav {
             color: $white;
             text-align: center;
             margin-top: 66px;
+            margin-bottom: 80px;
         }
-        // @include media-breakpoint-down(lg) {
-        //     height: 445px;
-        // }  
 
-        .service-item {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            font-weight: bold;
-            color: #000000;
-            font-size: 24px;
-            letter-spacing: 0.24px;
+        h5 {
+            margin: 0;
+            text-align: center;
+            font-weight: 600;
+        }
 
-            &:hover, &:focus {
-                text-decoration: none;
+        $xl-width: 264px;
+        $xl-height: 288px;
+
+        .flip-card {
+            background-color: transparent;
+            width: $xl-width;
+            height: $xl-height;
+            perspective: 1000px; 
+            margin-bottom: 32px;
+            cursor: pointer;
+
+            .flip-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: all 0.8s ease-in-out;
+                transform-style: preserve-3d;
             }
 
-            @include media-breakpoint-up(xl) {
-                width: 264px;
-                height: 288px;
+            &:hover .flip-card-inner {
+                transform: rotateY(180deg) scale(1.034, 1.083);
+            }
+              
+            /* Position the front and back side */
+            .flip-card-front, .flip-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 9px;
+                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.29);
+            }
 
-              }  
+            .flip-card-front {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-between;
+                font-weight: bold;
+                color: #000000;
+                background-image: linear-gradient(to top, #f8f8f8, #ffffff);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ffffff', GradientType=0 );
 
-            width: 264px;
-            height: 264px;
-            border-radius: 9px;
-            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.29);
-            background-image: linear-gradient(to top, #f8f8f8, #ffffff);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ffffff', GradientType=0 );
+                &:hover, &:focus {
+                    text-decoration: none;
+                }
+    
+                h5 {
+                    font-size: 24px;
+                    letter-spacing: 0.24px;                
+                }
+
+                @include media-breakpoint-up(xl) {
+                    padding: 70px 0 35px 0; 
+                    font-size: 24px;
+                    letter-spacing: 0.24px;
+                }  
+    
+                @include media-breakpoint-down(lg) {
+                    
+                }  
+            }
+
+            .flip-card-back {
+                background-color: #000000;
+                color: white;
+                transform: rotateY(180deg);
+                padding: 25px;
+
+                h5 {
+                    font-size: 26px;
+                    letter-spacing: 0.26px;
+                    color: $primary;     
+                    margin-bottom: 30px;               
+                }
+
+                p {
+                    text-align: left;
+                    font-size: 18px;
+                    font-weight: 300;
+                    line-height: 1.11;
+                }
+
+                &.img-bg-1 {
+                    background-image: url(../img/fitnessbar.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &.img-bg-2 {
+                    background-image: url(../img/solar.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &.img-bg-3 {
+                    background-image: url(../img/towel.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &.img-bg-4 {
+                    background-image: url(../img/hammam.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &.img-bg-5 {
+                    background-image: url(../img/hammam.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &.img-bg-6 {
+                    background-image: url(../img/parking.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &.img-bg-7 {
+                    background-image: url(../img/parking.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+                &.img-bg-8 {
+                    background-image: url(../img/dryer.png);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+
+            }
         }
     }
-
 }
 /* SERVICES AREA END*/
 
