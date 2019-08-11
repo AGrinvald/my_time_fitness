@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="72px" height="59px" viewBox="0 0 72 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Group 3 Copy 11</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-0.360133339%" y1="59.1148559%" x2="23.4847518%" y2="59.1148559%" id="linearGradient-1">
+            <stop stop-color="#D9D9D9" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="5.67047087%" y1="50.0051496%" x2="56.8091545%" y2="50.0051496%" id="linearGradient-2">
+            <stop stop-color="#608D08" offset="0%"></stop>
+            <stop stop-color="#AACC23" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="12.3563922%" y1="50.019398%" x2="110.618701%" y2="50.019398%" id="linearGradient-3">
+            <stop stop-color="#0A121D" offset="0%"></stop>
+            <stop stop-color="#14243B" offset="49.49%"></stop>
+            <stop stop-color="#25344A" offset="74.91%"></stop>
+            <stop stop-color="#314054" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="25.0321473%" y1="68.8504178%" x2="124.280761%" y2="-6.01653822%" id="linearGradient-4">
+            <stop stop-color="#0A121D" offset="0%"></stop>
+            <stop stop-color="#14243B" offset="49.49%"></stop>
+            <stop stop-color="#25344A" offset="74.91%"></stop>
+            <stop stop-color="#314054" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Меню" transform="translate(0.000000, -56.000000)">
+            <g id="Group-3-Copy-11" transform="translate(-36.000000, 56.000000)">
+                <polygon id="Path-Copy-19" fill="url(#linearGradient-1)" points="102.25 40 108 30 102.25 20 90.75 20 85 30 90.75 40"></polygon>
+                <polygon id="Path-Copy-20" fill="url(#linearGradient-2)" fill-rule="nonzero" opacity="0.9" points="85.2641737 49 97 28.5142658 85.2641737 8 61.7358263 8 50 28.5142658 61.7358263 49"></polygon>
+                <polygon id="Path-Copy-21" fill="url(#linearGradient-3)" fill-rule="nonzero" points="58.0070335 59 75 29.5140946 58.0070335 0 23.9929665 0 7 29.5140946 23.9929665 59"></polygon>
+                <polygon id="Path-Copy-24" fill="url(#linearGradient-4)" fill-rule="nonzero" points="55.6210986 59 73 29.5140946 55.6210986 0 17.3789014 0 -1.11438636e-14 29.5140946 17.3789014 59"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

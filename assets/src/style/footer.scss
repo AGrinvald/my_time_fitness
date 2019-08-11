@@ -1,11 +1,55 @@
 /* FOOTER START */
 footer {
     background-color: #101929;
-    overflow: hidden;
     font-size: 18px;
     font-weight: 500;
     color: $white;
-  
+    position: relative;
+    
+    .container-fluid {
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+    }
+
+    @include media-breakpoint-up(xl) {
+      overflow: hidden;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        height: 100%;
+        min-width: 2000px;      
+        width: 100%; 
+        background: url(../img/group-6.svg);
+        background-repeat: no-repeat;
+        background-position-y: 25%;
+        background-position-x: left;
+        z-index: 2;
+      }  
+    }
+
+    @include media-breakpoint-down(lg) {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -4%;
+        height: 72px;
+        width: 108px;      
+        background: url(../img/hexagone.svg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+        z-index: 2;
+      }  
+    }
+
     a {
       font-weight: 100;
       color: $white;

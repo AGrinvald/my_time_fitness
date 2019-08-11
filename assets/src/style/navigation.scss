@@ -1,21 +1,13 @@
 /* NAVBAR START */
 
 nav {
-  z-index: 2;
-  
+  //z-index: 5;
+  position: relative;
+
   &.navbar {
     display: block;
     padding: 0;
   }
-
-  // .hexagons {
-  //   position: absolute;
-  //   top: -73%;
-  //   height: 279px;
-  //   z-index: 1;
-  // }
-
-  position: relative;
 
   @include media-breakpoint-up(lg) { 
     background-color: $dark;

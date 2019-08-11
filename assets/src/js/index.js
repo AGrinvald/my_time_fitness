@@ -200,7 +200,7 @@ $(function () {
     $('.features').owlCarousel({
         mouseDrag: false,
         responsive: {
-            1100: {
+            1195: {
                 items: 3,
                 nav: false
             },
@@ -249,6 +249,8 @@ $(function () {
             var idStr = self.data("id");
             var area = self.data("area");
             var hall = self.data("hall");
+            var link = self.data("link");
+
             var programs = self.data("programs");
 
             var id = parseInt(idStr);
@@ -279,8 +281,10 @@ $(function () {
                 self.addClass("active");
 
                 $(".club-info-block").remove();
+
                 $('<div class="club-info-block"> \
-            <div class="inner-div align-self-end d-flex">\
+                <div class="d-flex align-self-end align-items-center"> \
+            <div class="inner-div d-flex">\
               <div>\
                 <div class="info-top">\
                   Площадь клуба\
@@ -306,8 +310,9 @@ $(function () {
                     + '</div>\
                   </div>\
             </div>\
+            <a href="' + link +'"class="btn btn-rounded btn-primary club-info-btn">О клубе</a>\
+            </div>\
           </div>').appendTo(".map-area .clubs-block .container");
-
             });
         }
     });

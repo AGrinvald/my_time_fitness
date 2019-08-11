@@ -44,7 +44,6 @@
 @import "global";
 @import "header";
 @import "navigation";
-@import "map";
 @import "clubs-modal";
 @import "footer";
 @import "workouts";
@@ -429,17 +428,16 @@ nav {
     
                 h5 {
                     font-size: 24px;
-                    letter-spacing: 0.24px;                
+                    letter-spacing: 0.24px;      
+                    margin-bottom: 20px;          
                 }
 
                 @include media-breakpoint-up(xl) {
                     padding: 70px 0 35px 0; 
-                    font-size: 24px;
-                    letter-spacing: 0.24px;
                 }  
     
                 @include media-breakpoint-down(lg) {
-                    
+                    padding: 55px 0 40px 0; 
                 }  
             }
 
@@ -447,19 +445,33 @@ nav {
                 background-color: #000000;
                 color: white;
                 transform: rotateY(180deg);
-                padding: 25px;
+                
+                @include media-breakpoint-down(lg) {
+                    padding: 50px 22px;
+                }  
+
+                @include media-breakpoint-up(xl) {
+                    padding: 22px;
+                }  
 
                 h5 {
+                    font-weight: 500;
                     font-size: 26px;
                     letter-spacing: 0.26px;
                     color: $primary;     
-                    margin-bottom: 30px;               
+                    margin-bottom: 30px;     
+                    
+                    @include media-breakpoint-down(lg) {
+                        display: none;
+                    }  
                 }
 
                 p {
                     text-align: left;
                     font-size: 18px;
-                    font-weight: 300;
+                    line-height: 20;
+                    font-weight: 100;
+                    letter-spacing: 0;
                     line-height: 1.11;
                 }
 
@@ -767,3 +779,120 @@ nav {
     }
 }
 /* SCHEME AREA END*/
+
+/* GALLERY AREA START*/
+.gallery-area {
+    .gallery-container {
+        height: 880px;
+        background-color: #26272b;
+    }
+
+    .gallery-carousel {
+        // position: relative;
+        // height: 525px;
+        // top: 30%;
+        // transform: translateY(-50%);
+        // overflow: hidden;
+
+        // div {
+        //     position: absolute;
+        //     transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+        //     opacity: 1;
+
+        //     img {
+        //         width: 785px;
+        //         transition: width 1s;
+        //     }
+
+        //     &.hideLeft {
+        //         left: 0%;
+        //         opacity: 0;
+        //         transform: translateY(50%) translateX(-50%);
+        //         img {
+        //             width: 200px;
+        //         }
+        //     }
+        //     &.hideRight {
+        //         left: 100%;
+        //         opacity: 0;
+        //         transform: translateY(50%) translateX(-50%);
+        //         img {
+        //             width: 200px;
+        //         }
+        //     }
+
+        //     &.prev {
+        //         z-index: 5;
+        //         left: 30%;
+        //         transform: translateY(50px) translateX(-50%);
+
+        //         img {
+        //             width: 300px;
+        //         }
+                
+        //     }
+
+        //     &.prevLeftSecond {
+        //         z-index: 4;
+        //         left: 15%;
+        //         transform: translateY(50%) translateX(-50%);
+        //         opacity: .7;
+
+        //         img {
+        //             width: 200px;
+        //         }
+        //     }
+
+        //     &.selected {
+        //         z-index: 10;
+        //         left: 50%;
+        //         transform: translateY(0px) translateX(-50%);
+        //     }
+
+        //     &.next {
+        //         z-index: 5;
+        //         left: 70%;
+        //         transform: translateY(50px) translateX(-50%);
+
+        //         img {
+        //             width: 300px;
+        //         }
+        //     }
+
+        //     &.nextRightSecond {
+        //         z-index: 4;
+        //         left: 85%;
+        //         transform: translateY(50%) translateX(-50%);
+        //         opacity: .7;
+
+        //         img {
+        //             width: 200px;
+        //         }
+        //     }
+        // }
+
+        // .buttons {
+        //     position: fixed
+        //     left: 50%
+        //     transform: translateX(-50%)
+        //     bottom: 10px
+        // }
+
+    }
+
+    h2 {
+        text-align: center;
+        color: $white;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 85px;
+            padding-bottom: 60px; 
+        }  
+
+        @include media-breakpoint-down(md) {
+            padding-top: 45px;
+            padding-bottom: 30px; 
+        } 
+    }
+}
+/* GALLERY AREA END*/
