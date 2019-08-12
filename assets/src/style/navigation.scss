@@ -43,6 +43,11 @@ nav {
         font-family: Helvetica;
         border-bottom: 5px solid $dark;
         
+        &.active {
+          color: $navbar-dark-hover-color;
+          border-bottom: 5px solid $primary;
+        }
+
         @include hover-focus {
           color: $navbar-dark-hover-color;
           border-bottom: 5px solid $primary;

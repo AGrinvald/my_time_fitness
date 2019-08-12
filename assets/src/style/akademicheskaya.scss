@@ -48,24 +48,70 @@
 @import "footer";
 @import "workouts";
 
-/* NAVBAR START */
-nav {
+/* TOP HEADER START */
+header {
+    position: relative;
     @include media-breakpoint-up(xl) { 
-        .navbar-nav {
-            position: relative;
+        .hex-c {
+            width: 100%;    
+            height: 360px; 
+            z-index: 2;
+            overflow: hidden;
+
             &::before {
-                content: ""; 
+                content: "";
                 position: absolute;
-                right: -30.5%;
-                top: -193%;
-                background-image: url(../img/group-6-copy.svg);
+                left: 50%;
+                transform: translateX(-50%);
+                top: 13%;
+                height: 279px;
+                min-width: 2025px;      
+                width: 100%; 
+                background: url(../img/group-6.svg);
+                background-size: 427px 279px;
                 background-repeat: no-repeat;
-                background-size: cover;
-                height: 100%;
-                width: 335px;
-                height: 466px;          
+                background-position-y: top;
+                background-position-x: left;
+                z-index: 2;
             }
         }
+    } 
+}
+
+.h-top {
+    @include media-breakpoint-up(xl) { 
+        .inner {
+            width: 100%;
+            height: 585px;
+            z-index: 1;
+            overflow: hidden;
+
+            &::before {
+                content: "";
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                width: 1820px;
+                height: 585px;
+                background-image: url(../img/group-6-copy.svg);
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position-y: top;
+                background-position-x: right;
+                z-index: 2;
+            }
+        }
+    }
+}
+/* TOP HEADER END */
+
+/* NAVBAR START */
+nav {
+    position: relative;
+    
+    .navbar-nav {
+        z-index: 4;
     }
 }
 /* NAVBAR END */
@@ -76,22 +122,21 @@ nav {
         position: relative;
         height: 497px;
         width: 100%;
-        overflow: hidden;
 
         &::before {
             content: "";
             position: absolute;
             width: 100%;
+            height: 100%;
             top: 0;
             background-image: url(../img/bitmap1.png);
             background-repeat: no-repeat;
             background-size: cover;
-            height: 100%;
-            z-index: -2;
+            z-index: -3;
         }
 
         @include media-breakpoint-down(lg) {
-            &::after{
+            &::after {
                 content: "";
                 position: absolute;
                 left: 0;
@@ -100,40 +145,59 @@ nav {
                 background-repeat: no-repeat;
                 width: 100%;
                 height: 100%;
-                z-index: -1;
+                z-index: -2;
             }    
+        }
+
+        .container-fluid {
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+                content: "";
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                width: 1565px;
+                height: 100%;
+                background-image: url(../img/rectagle-group.svg);
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position-y: top;
+                background-position-x: right;
+                z-index: -2;
+            }
         }
 
         .container {
             height: 100%;
             justify-content: space-between;
             position: relative;
-            //overflow: hidden;
-            @include media-breakpoint-up(xl) {
-                &::before {
-                    content: "";
-                    position: absolute;
-                    right: -17%;
-                    top: 0;
-                    background-image: url(../img/rectangle-copy-48.svg);
-                    background-repeat: no-repeat;
-                    width: 835px;
-                    height: 100%;
-                    z-index: -1;
-                }
-                &::after{
-                    content: "";
-                    position: absolute;
-                    right: -15%;
-                    top: 0;
-                    background-image: url(../img/rectangle-copy-48.svg);
-                    background-repeat: no-repeat;
-                    width: 835px;
-                    height: 100%;
-                    z-index: -1;
-                }
-            }
+        }
 
+        .promo-block {
+            .inner {
+                background-image: url(../img/group-4.svg);
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: center;   
+
+                @include media-breakpoint-down(lg) {
+                    height: 170px;
+                    width: 333px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }  
+                
+                @include media-breakpoint-up(lg) {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 322px;
+                    width: 596px;
+                }        
+            }
         }
 
         .info-div {

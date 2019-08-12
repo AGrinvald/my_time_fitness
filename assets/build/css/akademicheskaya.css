@@ -7367,13 +7367,18 @@ h2.title {
 header {
   background: linear-gradient(to right, #d9d9d9 0%, white 23%, white 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 ); }
+  header .hex-c {
+    position: absolute; }
 
 /* TOP HEADER START */
 .h-top {
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
-  height: 124px; }
+  height: 124px;
+  position: relative; }
+  .h-top .inner {
+    position: absolute; }
   .h-top .container {
     position: relative; }
     .h-top .container::before {
@@ -7392,7 +7397,8 @@ header {
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    z-index: 3; }
   .h-top .b-right {
     text-align: right;
     position: absolute;
@@ -7402,7 +7408,8 @@ header {
     transform: translate(0, -50%);
     font-size: 12px;
     font-weight: bold;
-    font-family: Helvetica; }
+    font-family: Helvetica;
+    z-index: 3; }
     .h-top .b-right a {
       display: block;
       font-size: 24px;
@@ -7414,7 +7421,8 @@ header {
   .h-top .logo {
     color: #000000;
     font-size: 50px;
-    font-family: "MagistralC"; }
+    font-family: "MagistralC";
+    z-index: 3; }
     .h-top .logo:hover, .h-top .logo:focus {
       text-decoration: none; }
 
@@ -7453,6 +7461,9 @@ nav {
           padding-bottom: 20px;
           font-family: Helvetica;
           border-bottom: 5px solid #26272b; }
+          nav .navbar-nav .nav-link.active {
+            color: rgba(255, 255, 255, 0.75);
+            border-bottom: 5px solid #aacc23; }
           nav .navbar-nav .nav-link:hover, nav .navbar-nav .nav-link:focus {
             color: rgba(255, 255, 255, 0.75);
             border-bottom: 5px solid #aacc23; }
@@ -7807,39 +7818,75 @@ footer {
   background-image: url(../img/bitmap-copy-2.png); }
 
 /* WORKOUT AREA END */
-/* NAVBAR START */
+/* TOP HEADER START */
+header {
+  position: relative; }
+  @media (min-width: 1200px) {
+    header .hex-c {
+      width: 100%;
+      height: 360px;
+      z-index: 2;
+      overflow: hidden; }
+      header .hex-c::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 13%;
+        height: 279px;
+        min-width: 2025px;
+        width: 100%;
+        background: url(../img/group-6.svg);
+        background-size: 427px 279px;
+        background-repeat: no-repeat;
+        background-position-y: top;
+        background-position-x: left;
+        z-index: 2; } }
+
 @media (min-width: 1200px) {
-  nav .navbar-nav {
-    position: relative; }
-    nav .navbar-nav::before {
+  .h-top .inner {
+    width: 100%;
+    height: 585px;
+    z-index: 1;
+    overflow: hidden; }
+    .h-top .inner::before {
       content: "";
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
       position: absolute;
-      right: -30.5%;
-      top: -193%;
+      width: 1820px;
+      height: 585px;
       background-image: url(../img/group-6-copy.svg);
+      background-size: auto 100%;
       background-repeat: no-repeat;
-      background-size: cover;
-      height: 100%;
-      width: 335px;
-      height: 466px; } }
+      background-position-y: top;
+      background-position-x: right;
+      z-index: 2; } }
+
+/* TOP HEADER END */
+/* NAVBAR START */
+nav {
+  position: relative; }
+  nav .navbar-nav {
+    z-index: 4; }
 
 /* NAVBAR END */
 /* BANNER AREA START*/
 .banner-area .banner-container {
   position: relative;
   height: 497px;
-  width: 100%;
-  overflow: hidden; }
+  width: 100%; }
   .banner-area .banner-container::before {
     content: "";
     position: absolute;
     width: 100%;
+    height: 100%;
     top: 0;
     background-image: url(../img/bitmap1.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
-    z-index: -2; }
+    z-index: -3; }
   @media (max-width: 1199.98px) {
     .banner-area .banner-container::after {
       content: "";
@@ -7850,32 +7897,46 @@ footer {
       background-repeat: no-repeat;
       width: 100%;
       height: 100%;
-      z-index: -1; } }
+      z-index: -2; } }
+  .banner-area .banner-container .container-fluid {
+    position: relative;
+    overflow: hidden; }
+    .banner-area .banner-container .container-fluid::before {
+      content: "";
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      width: 1565px;
+      height: 100%;
+      background-image: url(../img/rectagle-group.svg);
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position-y: top;
+      background-position-x: right;
+      z-index: -2; }
   .banner-area .banner-container .container {
     height: 100%;
     justify-content: space-between;
     position: relative; }
-    @media (min-width: 1200px) {
-      .banner-area .banner-container .container::before {
-        content: "";
+  .banner-area .banner-container .promo-block .inner {
+    background-image: url(../img/group-4.svg);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center; }
+    @media (max-width: 1199.98px) {
+      .banner-area .banner-container .promo-block .inner {
+        height: 170px;
+        width: 333px;
+        margin-left: auto;
+        margin-right: auto; } }
+    @media (min-width: 992px) {
+      .banner-area .banner-container .promo-block .inner {
         position: absolute;
-        right: -17%;
         top: 0;
-        background-image: url(../img/rectangle-copy-48.svg);
-        background-repeat: no-repeat;
-        width: 835px;
-        height: 100%;
-        z-index: -1; }
-      .banner-area .banner-container .container::after {
-        content: "";
-        position: absolute;
-        right: -15%;
-        top: 0;
-        background-image: url(../img/rectangle-copy-48.svg);
-        background-repeat: no-repeat;
-        width: 835px;
-        height: 100%;
-        z-index: -1; } }
+        left: 0;
+        height: 322px;
+        width: 596px; } }
   .banner-area .banner-container .info-div {
     height: auto;
     margin-bottom: 20px;

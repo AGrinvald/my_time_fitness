@@ -5,9 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/akademicheskaya.min.css" media="all">
-    <style>
-
-    </style>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ba6c0504-43ff-4821-a7d3-7384f5e5cd00&lang=ru_RU&mode=debug"
         type="text/javascript">
         </script>
@@ -15,55 +12,113 @@
 
 <body>
     //= header.html
-    //= navigation.html
+    <nav class="navbar navbar-expand-lg">
+        <div class="d-lg-none n-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-logo" href="#">mytime<span class="text-primary">fitness</span></a>
+            <a class="btn-link" href="#"><img srcset="img/phone@1x.png 25w,
+                    img/phone@2x.png 50w,
+                    img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
+        </div>
+        <div class="d-lg-none n-bottom">
+            <button class="btn btn-link" data-toggle="modal" data-target="#clubs-modal">Выберите ваш клуб</button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-center" id="navbar">
+            <ul class="navbar-nav nav-fill w-100 align-items-start">
+                <li class="nav-item dropdown w-100">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Клубы
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="komendanskiy.html">Комендантский</a>
+                        <a class="dropdown-item" href="akademicheskaya.html">Академическая</a>
+                        <a class="dropdown-item" href="kupchino.html">Купчино</a>
+                    </div>
+                </li>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="#">Расписание</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="#">Абонементы</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="#">Акции</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="#">Детям</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="#">Обучение</a>
+                </li>
+                <li class="nav-item w-100 d-lg-none d-xs-inline">
+                    <button class="navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <img srcset="img/rectangle@1x.png 48w,
+                          img/rectangle@2x.png 96w,
+                          img/rectangle@3x.png 144w" sizes="48px" src="img/rectangle@1x.png" alt="Tooggler"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <section class="banner-area">
         <div class="banner-container">
-            <div class="container d-flex flex-xl-row flex-column">
-                <div class="info-div d-xl-block d-none align-self-end">
-                    <div class="d-flex flex-row">
-                        <div class="info-block flex-grow-1">
-                            <div>Площадь клуба</div>
-                            <div>1 000 м2</div>
+            <div class="container-fluid h-100">
+                <div class="container d-flex flex-xl-row flex-column">
+                    <div class="info-div d-xl-block d-none align-self-end">
+                        <div class="d-flex flex-row">
+                            <div class="info-block flex-grow-1">
+                                <div>Площадь клуба</div>
+                                <div>1 000 м2</div>
+                            </div>
+                            <div class="info-block flex-grow-1">
+                                <div> Тренажерный зал </div>
+                                <div>575 м2</div>
+                            </div>
+                            <div class="info-block flex-grow-1">
+                                <div> Зал групповых программ </div>
+                                <div>15 видов программ</div>
+                            </div>
                         </div>
-                        <div class="info-block flex-grow-1">
-                            <div> Тренажерный зал </div>
-                            <div>575 м2</div>
-                        </div>
-                        <div class="info-block flex-grow-1">
-                            <div> Зал групповых программ </div>
-                            <div>15 видов программ</div>
+                        <div>
+                            Гарант качества <a href="spb.zoon.ru">spb.zoon.ru</a>&nbsp;Рейтинг:
+                            <span>&#128970;&#128970;&#128970;&#128970;&#128970;</span>&nbsp;<a href="spb.zoon.ru">57
+                                отзывов</a>&nbsp;&nbsp;3d тур
                         </div>
                     </div>
-                    <div>
-                        Гарант качества <a href="spb.zoon.ru">spb.zoon.ru</a>&nbsp;Рейтинг:
-                        <span>&#128970;&#128970;&#128970;&#128970;&#128970;</span>&nbsp;<a href="spb.zoon.ru">57
-                            отзывов</a>&nbsp;&nbsp;3d тур
+                    <div class="subtitle-div">
+                        <div class="d-flex flex-column float-xl-right">
+                            <h2 class="text-center align-self-center">
+                                Фитнес клуб<br />
+                                у м. Академическая<br />
+                                ул. Бутлерова 42А, 3 этаж<br />
+                                ТК Призма
+                            </h2>
+                            <p class="text-center align-self-center align-self-xl-start">
+                                ПН-ПТ: 7.00 - 00.00<br />
+                                СБ-ВС и праздничиные дни:<br />
+                                9.00 - 22.00
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="subtitle-div">
-                    <div class="d-flex flex-column float-xl-right">
-                        <h2 class="text-center align-self-center">
-                            Фитнес клуб<br />
-                            у м. Академическая<br />
-                            ул. Бутлерова 42А, 3 этаж<br />
-                            ТК Призма
-                        </h2>
-                        <p class="text-center align-self-center align-self-xl-start">
-                            ПН-ПТ: 7.00 - 00.00<br />
-                            СБ-ВС и праздничиные дни:<br />
-                            9.00 - 22.00
+                    <div class="promo-block">
+                        <div class="inner">
+
+                        </div>
+                    </div>
+                    <div class="d-block d-xl-none">
+                        <p>
+                            Гарант качества spb.zoon.ru
+                        </p>
+                        <p>
+                            Рейтинг: 57 отзывов
                         </p>
                     </div>
                 </div>
-                <div class="d-block d-xl-none">
-                    <p>
-                        Гарант качества spb.zoon.ru
-                    </p>
-                    <p>
-                        Рейтинг: 57 отзывов
-                    </p>
-                </div>
             </div>
+
         </div>
     </section>
     <section class="page-nav-area">
@@ -210,7 +265,7 @@
                 </div>
             </div>
         </div>
-    </section> 
+    </section>
     <section class="services-area">
         <div class="container-fluid services-container">
             <h2 class="title">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</h2>
@@ -224,12 +279,12 @@
                         <div class="flip-card-back img-bg-1">
                             <h5>Фитнес бар</h5>
                             <p>
-                                В нашем баре есть 
+                                В нашем баре есть
                                 качественное спортивное
-                                питание, чтобы зарядиться 
-                                перед тренировкой или 
+                                питание, чтобы зарядиться
+                                перед тренировкой или
                                 восстановить силы после
-                                нее! 
+                                нее!
                             </p>
                         </div>
                     </div>
@@ -247,11 +302,11 @@
                                 новыми лампами, и мы
                                 всегда следим за сроком
                                 их работы.
-                            </p>  
+                            </p>
                             <p>
-                                Стоимость 1 минуты - 
+                                Стоимость 1 минуты -
                                 <span class="text-primary">25 рублей</span>.
-                            </p>                          
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -267,11 +322,11 @@
                                 Вы можете не носить с
                                 собой полотенца и
                                 арендовать их в клубе.
-                            </p>  
+                            </p>
                             <p>
-                                Аренда 1 полотенца - 
+                                Аренда 1 полотенца -
                                 <span class="text-primary">50 рублей</span>.
-                            </p>      
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -285,10 +340,10 @@
                             <h5>Хамам</h5>
                             <p>
                                 Текст про хамам.
-                                текст-"рыба", часто 
-                                используемый в печати 
+                                текст-"рыба", часто
+                                используемый в печати
                                 и вэб-дизайне.
-                            </p>      
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -302,7 +357,7 @@
                             <h5>Wi-fi</h5>
                             <p>
                                 Текст про wi-fi
-                            </p>      
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -317,10 +372,10 @@
                             <p>
                                 Текст про бесплатную
                                 3х часовую парковку.
-                                текст-"рыба", часто 
-                                используемый в печати 
+                                текст-"рыба", часто
+                                используемый в печати
                                 и вэб-дизайне.
-                            </p>      
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -334,10 +389,10 @@
                             <h5>Массаж</h5>
                             <p>
                                 Текст про массаж.
-                                текст-"рыба", часто 
-                                используемый в печати 
+                                текст-"рыба", часто
+                                используемый в печати
                                 и вэб-дизайне.
-                            </p>      
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -352,15 +407,15 @@
                             <p>
                                 В душевых наших клубов
                                 есть все необходимое,
-                                чтобы привести себя 
+                                чтобы привести себя
                                 в порядок после отличной
                                 тренировки.
-                            </p>     
+                            </p>
                             <p>
-                                Фены и другое 
+                                Фены и другое
                                 оборудование доступно
-                                <span class="text-primary">бесплатно</span>.                              
-                            </p> 
+                                <span class="text-primary">бесплатно</span>.
+                            </p>
                         </div>
                     </div>
                 </div>
