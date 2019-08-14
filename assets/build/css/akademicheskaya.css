@@ -7877,6 +7877,9 @@ nav {
   position: relative;
   width: 100%;
   height: 600px; }
+  .banner-area .banner-container .star {
+    width: 14px;
+    height: 14px; }
   @media (min-width: 1200px) {
     .banner-area .banner-container {
       height: 497px; } }
@@ -7935,9 +7938,7 @@ nav {
     line-height: 30px;
     color: #ffffff;
     font-weight: 500;
-    margin-top: 20px; }
-    .banner-area .banner-container .promo-block .quality-b span {
-      color: #ffec00; }
+    margin-top: 15px; }
     .banner-area .banner-container .promo-block .quality-b p {
       margin-bottom: 0; }
     .banner-area .banner-container .promo-block .quality-b a {
@@ -7950,8 +7951,8 @@ nav {
     background-position: center; }
     @media (max-width: 1199.98px) {
       .banner-area .banner-container .promo-block .inner {
-        height: 215px;
-        max-width: 365px;
+        height: 230px;
+        max-width: 395px;
         margin-left: auto;
         margin-right: auto;
         font-size: 16px; } }
@@ -8059,9 +8060,6 @@ nav {
     flex: 0 1 45%; }
     .banner-area .banner-container .info-div a {
       color: #1eb8ff; }
-    .banner-area .banner-container .info-div span {
-      color: #ffec00;
-      font-family: "Arial Unicode MS", Quivira, Symbola, Code2000, STIX, "Linux Libertine", MingLiU, "DFKai-SB"; }
     .banner-area .banner-container .info-div .info-block:not(:last-child) {
       margin-right: 30px; }
     .banner-area .banner-container .info-div .info-block > div:first-child {

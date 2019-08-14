@@ -122,6 +122,11 @@ nav {
         position: relative;
         width: 100%;
 
+        .star {
+            width: 14px;
+            height: 14px;
+        }
+
         @include media-breakpoint-down(xl) {
             height: 600px;
         }
@@ -201,14 +206,12 @@ nav {
                 line-height: 30px;
                 color: $white;
                 font-weight: 500;
-                margin-top: 20px;
+                margin-top: 15px;
 
-                span {
-                    color: #ffec00;
-                }
                 p {
                     margin-bottom: 0;
                 }
+
                 a {
                     color: #1eb8ff;
                 }
@@ -222,8 +225,8 @@ nav {
                 background-position: center;   
                 
                 @include media-breakpoint-down(lg) {
-                    height: 215px;
-                    max-width: 365px;
+                    height: 230px;
+                    max-width: 395px;
                     margin-left: auto;
                     margin-right: auto;
                     font-size: 16px;
@@ -366,11 +369,6 @@ nav {
 
             a {
                 color: #1eb8ff;
-            }
-            span {
-                color: #ffec00;
-                font-family: "Arial Unicode MS", Quivira, Symbola, Code2000, STIX,
-                "Linux Libertine", MingLiU, "DFKai-SB"; 
             }
 
             .info-block {
