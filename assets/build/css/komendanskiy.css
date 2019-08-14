@@ -7430,6 +7430,21 @@ header {
 /* NAVBAR START */
 nav {
   position: relative; }
+  @media (max-width: 991.98px) {
+    nav .n-bottom {
+      position: relative; }
+      nav .n-bottom::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 18%;
+        height: 59px;
+        width: 72px;
+        background: url(../img/hexagone.svg);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center center;
+        z-index: 2; } }
   nav.navbar {
     display: block;
     padding: 0; }
@@ -7554,7 +7569,8 @@ nav {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#e5e5e5', GradientType=0 );
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
-        box-shadow: 0 8px 6px -6px black; }
+        box-shadow: 0 8px 6px -6px black;
+        padding-top: 20px; }
         nav .navbar-nav .nav-link {
           color: #000000;
           text-transform: uppercase;

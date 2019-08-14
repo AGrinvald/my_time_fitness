@@ -4,6 +4,26 @@ nav {
   //z-index: 5;
   position: relative;
 
+  @include media-breakpoint-down(md) { 
+    .n-bottom {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 18%;
+        height: 59px;
+        width: 72px;      
+        background: url(../img/hexagone.svg);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center center;
+        z-index: 2;
+      }   
+    }
+  }
+  
   &.navbar {
     display: block;
     padding: 0;
@@ -33,6 +53,7 @@ nav {
 
     .navbar-nav {
       max-width: 1140px;
+
       .nav-link {
         color: $white;
         text-transform: uppercase;
@@ -183,7 +204,8 @@ nav {
       border-bottom-right-radius: 10px;
       border-bottom-left-radius: 10px;
       box-shadow: 0 8px 6px -6px black;
-
+      padding-top: 20px;
+      
       .nav-link {
         color: $black;
         text-transform: uppercase;

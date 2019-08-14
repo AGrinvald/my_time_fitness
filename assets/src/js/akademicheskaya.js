@@ -20,9 +20,111 @@
 
 // Импортируем Owl
 //= ../../../node_modules/owl.carousel/dist/owl.carousel.js
+var map;
+var windowsSize = {
+    Medium: 2,
+    Large: 3,
+};
+
+var mapSettingsCollection = {
+    Large: {
+        center: [59.91630318065146, 30.07137557421872], zoom: 10,
+        imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
+    },
+    Medium: {
+        center: [60.257601202906805, 30.394098962890602], zoom: 9,
+        imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
+    }
+};
+
+var createLayout = function (id) {
+    var Layout = ymaps.templateLayoutFactory.createClass(
+        '<div class="club"></div>',
+        {
+            build: function () {
+                Layout.superclass.build.call(this);
+                var placemarkMap = this.getData().geoObject.getMap();
+
+                if (!this.inited) {
+                    this.inited = true;
+
+                    placemarkMap.events.add('sizechange', function () {
+                        this.rebuild();
+                    }, this);
+                }
+
+                var img = document.createElement("img");
+                img.src = mapSettings.imgUrls[id];
+                img.width = mapSettings.imgSize[0];
+                img.height = mapSettings.imgSize[1];
+
+                var options = this.getData().options,
+                    element = this.getParentElement().getElementsByClassName('club')[0];
+                element.appendChild(img);
+            }
+        }
+    );
+
+    return Layout;
+};
+
+function init() {
+
+    var width = document.documentElement.clientWidth;
+
+    if (width >= 977) {
+        currentSize = windowsSize.Large;
+        mapSettings = mapSettingsCollection.Large;
+    } else {
+        currentSize = windowsSize.Medium;
+        mapSettings = mapSettingsCollection.Medium;
+    }
+
+    map = new ymaps.Map("map", {
+        center: mapSettings.center,
+        zoom: mapSettings.zoom,
+    });
+
+    var akademicheskaya = new ymaps.Placemark(
+        [60.01065856407727, 30.403732499999954], {
+            id: 1,
+            hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
+        }, {
+            iconLayout: createLayout(1)
+        }
+    );
+
+    map.controls.remove('geolocationControl');
+    map.controls.remove('searchControl');
+    map.controls.remove('trafficControl');
+    map.controls.remove('typeSelector');
+    map.controls.remove('fullscreenControl');
+    map.controls.remove('rulerControl');
+    map.behaviors.disable(['scrollZoom']);
+
+    map.events.add('sizechange', function (event) {
+        var size = map.container.getSize();
+        var width = size[0];
+        var toChange = false;
+
+        if (toChange = (width >= 975 && currentSize != windowsSize.Large)) {
+            currentSize = windowsSize.Large;
+            mapSettings = mapSettingsCollection.Large;
+
+        } else if (toChange = (width < 975 && currentSize != windowsSize.Medium)) {
+            currentSize = windowsSize.Medium;
+            mapSettings = mapSettingsCollection.Medium;
+        }
+
+        if (toChange) {
+            map.setCenter(mapSettings.center, mapSettings.zoom);
+        }
+    });
+
+    ymaps.geoQuery(akademicheskaya).addToMap(map);
+}
 
 $(function () {
-
     var owl = $('.scheme-slides'),
         owlOptions = {
             loop: true,

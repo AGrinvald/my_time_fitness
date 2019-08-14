@@ -18,7 +18,7 @@
                 aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-logo" href="#">mytime<span class="text-primary">fitness</span></a>
+            <a class="navbar-logo" href="index.html">mytime<span class="text-primary">fitness</span></a>
             <a class="btn-link" href="#"><img srcset="img/phone@1x.png 25w,
                     img/phone@2x.png 50w,
                     img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
@@ -121,7 +121,8 @@
                                 </div>
                                 <form class="d-flex justify-content-between">
                                     <input type="tel" class="form-control" placeholder="Введите телефон">
-                                    <button type="submit" class="btn btn-primary">ЗАБРОНИРОВАТЬ <span class="d-none d-xl-inline">КАРТУ</span></button>
+                                    <button type="submit" class="btn btn-primary">ЗАБРОНИРОВАТЬ <span
+                                            class="d-none d-xl-inline">КАРТУ</span></button>
                                 </form>
                                 <p>
                                     Количество абонементов ограничено.
@@ -138,7 +139,7 @@
                                 <img class="star" src="img/star.svg">
                                 <img class="star" src="img/star.svg">
                                 <img class="star" src="img/star.svg">
-                                <img class="star" src="img/star.svg">>&nbsp;<a href="spb.zoon.ru">57
+                                <img class="star" src="img/star.svg">&nbsp;<a href="spb.zoon.ru">57
                                     отзывов</a>
                             </p>
                         </div>
@@ -296,7 +297,8 @@
     <section class="services-area">
         <div class="container-fluid services-container">
             <h2 class="title">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</h2>
-            <div class="container d-flex flex-column flex-lg-row flex-lg-wrap align-items-center justify-content-md-between">
+            <div
+                class="container d-flex flex-column flex-lg-row flex-lg-wrap align-items-center justify-content-md-between">
                 <div class="flip-card">
                     <div class="flip-card-front">
                         <img src="img/combined-shape-copy-18.svg" alt="Фитнес бар">
@@ -451,9 +453,8 @@
     <section class="season-area">
         <div class="container-fluid">
             <h2 class="title text-center">АБОНЕМЕНТЫ КЛУБА</h2>
-            <div
-                class="container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
-                <div class="season-item">
+            <div class="container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
+                <a href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">VIP</p>
                         <p class="old-price">24 700 р.</p>
@@ -506,8 +507,8 @@
                         </p>
                         <button class="btn btn-outline-dark btn-rounded">ВЫБРАТЬ ТАРИФ</button>
                     </div>
-                </div>
-                <div class="season-item">
+                </a>
+                <a href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">Кач</p>
                         <p class="old-price">16 700 р.</p>
@@ -556,8 +557,8 @@
                         </p>
                         <button class="btn btn-outline-dark btn-rounded">ВЫБРАТЬ ТАРИФ</button>
                     </div>
-                </div>
-                <div class="season-item">
+                </a>
+                <a href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">Лайт</p>
                         <p class="old-price">10 900 р.</p>
@@ -598,7 +599,53 @@
                         </p>
                         <button class="btn btn-outline-dark btn-rounded">ВЫБРАТЬ ТАРИФ</button>
                     </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="map-area">
+        <div class="container-fluid">
+            <div class="clubs-block">
+                <div class="container d-flex h-100 
+                  justify-content-lg-start 
+                  justify-content-center 
+                  align-items-lg-center
+                  align-items-start">
+                    <div class="inner-block">
+                        <h2 class="title">mytime<span class="text-primary">fitness</span> АКАДЕМИЧЕСКАЯ</h2>
+                        <p>
+                            ул. Бутлерова, 43 А, 3 этаж, ТК Призма
+                            <br/>
+                            mytimefitnessspb@gmail.com
+                        </p>
+                        <a href="#" class="club-block">
+                            <div class="desc">
+                                <h4>Фитнес клуб</h4>
+                                <p>
+                                    ПН-ПТ: 7.00 - 00.00
+                                    СБ-ВС и праздничиные дни: 
+                                    9.00 - 22.00
+                                </p>
+                                <p class="f-small">
+                                    Вход в клуб закрыт за час до завершения 
+                                    работы клуба.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="#" class="club-block">
+                            <div class="desc">
+                                <h4>Отдел продаж</h4>
+                                <p>
+                                    ПН-ВС: 12.00 - 22.00 
+                                    СБ-ВС и праздничиные дни: 
+                                    12.00 - 22.00
+                                </p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </div>
+            <div id="map" class="map-block">
             </div>
         </div>
     </section>
@@ -609,7 +656,7 @@
     </div>
     <script src="js/akademicheskaya.js"></script>
     <script type="text/javascript">
-    //ymaps.ready(init);
+    ymaps.ready(init);
     </script>
 </body>
 

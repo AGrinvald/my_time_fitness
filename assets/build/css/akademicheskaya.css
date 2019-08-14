@@ -7430,6 +7430,21 @@ header {
 /* NAVBAR START */
 nav {
   position: relative; }
+  @media (max-width: 991.98px) {
+    nav .n-bottom {
+      position: relative; }
+      nav .n-bottom::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 18%;
+        height: 59px;
+        width: 72px;
+        background: url(../img/hexagone.svg);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center center;
+        z-index: 2; } }
   nav.navbar {
     display: block;
     padding: 0; }
@@ -7554,7 +7569,8 @@ nav {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#e5e5e5', GradientType=0 );
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
-        box-shadow: 0 8px 6px -6px black; }
+        box-shadow: 0 8px 6px -6px black;
+        padding-top: 20px; }
         nav .navbar-nav .nav-link {
           color: #000000;
           text-transform: uppercase;
@@ -7660,7 +7676,7 @@ footer {
       content: "";
       position: absolute;
       left: 0;
-      top: -4%;
+      top: -3.6%;
       height: 72px;
       width: 108px;
       background: url(../img/hexagone.svg);
@@ -8130,9 +8146,9 @@ nav {
 @media (max-width: 1199.98px) {
   .page-nav-area .nav-container {
     padding: 72px 0;
-    background-image: url(../img/555Copy4.jpg);
-    background-position: right top;
-    background-repeat: no-repeat; } }
+    background-image: url(../img/555Copy4.jpg), url(../img/555Copy4-copy.jpg);
+    background-position: right top, left bottom;
+    background-repeat: no-repeat, no-repeat; } }
 
 .page-nav-area .nav-container .page-nav-item {
   display: flex;
@@ -8369,7 +8385,19 @@ nav {
   background-image: linear-gradient(to top, #f8f8f8, #ffffff);
   border-radius: 13px;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  cursor: pointer; }
+  .season-area .season-item:hover {
+    box-shadow: 0 0 16px 0 rgba(134, 238, 49, 0.61);
+    text-decoration: none; }
+    .season-area .season-item:hover .tariff-b {
+      background-image: url(../img/555-copy.png); }
+      .season-area .season-item:hover .tariff-b .old-price {
+        color: #dcfe55; }
+    .season-area .season-item:hover button {
+      background-color: #aacc23;
+      border: none;
+      color: #ffffff; }
   @media (min-width: 1200px) {
     .season-area .season-item {
       margin-bottom: 15px; } }
@@ -8542,3 +8570,131 @@ nav {
       padding-bottom: 30px; } }
 
 /* GALLERY AREA END*/
+/* MAP AREA START */
+.map-area {
+  position: relative; }
+  .map-area [class*="ymaps-2"][class*="-ground-pane"] {
+    filter: invert(1) grayscale(1) opacity(0.8); }
+  .map-area .container-fluid {
+    position: relative; }
+  .map-area .clubs-block {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0; }
+  .map-area a.club-info-btn {
+    display: block;
+    width: 152px;
+    line-height: 44px;
+    margin-left: 20px; }
+  .map-area .inner-block {
+    overflow: hidden;
+    max-width: 408px;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 32px 32px 40px; }
+    .map-area .inner-block h2, .map-area .inner-block p {
+      margin-bottom: 0; }
+    .map-area .inner-block p {
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 0.18px;
+      color: #101929; }
+      @media (min-width: 992px) {
+        .map-area .inner-block p {
+          line-height: 30px; } }
+    @media (min-width: 992px) {
+      .map-area .inner-block {
+        height: 504px; } }
+    @media (max-width: 991.98px) {
+      .map-area .inner-block {
+        margin-top: 50px;
+        height: 431px; } }
+    .map-area .inner-block .club-block {
+      display: block;
+      max-width: 340px;
+      box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
+      background-color: #ffffff;
+      border-left: 5px solid #000;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 3px 10px 13px;
+      color: #000;
+      line-height: 20px; }
+      .map-area .inner-block .club-block .f-small {
+        font-size: 14px; }
+      .map-area .inner-block .club-block:first-child {
+        height: 150px; }
+      .map-area .inner-block .club-block:last-child {
+        height: 115px; }
+      .map-area .inner-block .club-block:hover, .map-area .inner-block .club-block:focus {
+        color: #000;
+        text-decoration: none; }
+      .map-area .inner-block .club-block:hover {
+        border-left: 5px solid #aacc23; }
+      .map-area .inner-block .club-block.active {
+        background-color: #ebf2d2;
+        border-left: 5px solid #aacc23; }
+        .map-area .inner-block .club-block.active .number-bg {
+          background-image: url(../img/shape-copy-4.png);
+          color: #aacc23; }
+      .map-area .inner-block .club-block .number-bg {
+        line-height: 38px;
+        height: 42px;
+        width: 25px;
+        font-size: 22px;
+        color: #c6c6c6;
+        font-weight: 500;
+        letter-spacing: 0.46px;
+        text-align: center;
+        background-image: url(../img/shape.png);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat; }
+      .map-area .inner-block .club-block .desc h4 {
+        color: #aacc23;
+        font-size: 18px;
+        letter-spacing: 0.18px;
+        font-weight: 500;
+        margin-bottom: 3px; }
+      .map-area .inner-block .club-block .desc p {
+        letter-spacing: 0.14px;
+        font-weight: normal;
+        margin-bottom: 0; }
+  .map-area .club-info-block {
+    height: 504px;
+    padding-left: 45px; }
+    .map-area .club-info-block .inner-div {
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      width: 100%;
+      padding: 0 15px;
+      font-size: 15px;
+      letter-spacing: 0.06px;
+      color: #ffffff; }
+      .map-area .club-info-block .inner-div > div:not(:last-child) {
+        padding-right: 26px; }
+      .map-area .club-info-block .inner-div .info-top, .map-area .club-info-block .inner-div .info-bottom {
+        padding: 10px 0; }
+      .map-area .club-info-block .inner-div .info-top {
+        font-weight: 500;
+        border-bottom: 1px solid #d6ff34; }
+      .map-area .club-info-block .inner-div .info-bottom {
+        font-weight: 100; }
+  @media (max-width: 991.98px) {
+    .map-area .map-block {
+      height: 688px; }
+    .map-area .club-info-block {
+      display: none; } }
+  @media (min-width: 992px) {
+    .map-area .map-block {
+      height: 558px; }
+    .map-area .club-info-block {
+      display: flex; } }
+
+/* MAP AREA END */
