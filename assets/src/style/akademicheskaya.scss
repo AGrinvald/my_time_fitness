@@ -219,17 +219,25 @@ nav {
 
             .inner {
                 overflow: hidden;
-                background-image: url(../img/group-4.svg);
+            
+                @include media-breakpoint-up(xl) {
+                    background-image: url(../img/group-4.svg);
+                }
+
+                @include media-breakpoint-down(lg) {
+                    background-image: url(../img/group2.png);
+                }
+
                 background-size: contain;
                 background-repeat: no-repeat;
                 background-position: center;   
                 
                 @include media-breakpoint-down(lg) {
-                    height: 230px;
-                    max-width: 395px;
+                    height: 235px;
+                    max-width: 355px;
                     margin-left: auto;
                     margin-right: auto;
-                    font-size: 16px;
+                    font-size: 15px;
                 }  
                 
                 @include media-breakpoint-up(xl) {
@@ -254,7 +262,7 @@ nav {
 
                     @include media-breakpoint-down(lg) {
                         width: 80%;
-                        margin-top: 12%;
+                        margin-top: 14%;
                     }
 
                     

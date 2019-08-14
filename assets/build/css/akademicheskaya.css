@@ -7945,17 +7945,22 @@ nav {
       color: #1eb8ff; }
   .banner-area .banner-container .promo-block .inner {
     overflow: hidden;
-    background-image: url(../img/group-4.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center; }
+    @media (min-width: 1200px) {
+      .banner-area .banner-container .promo-block .inner {
+        background-image: url(../img/group-4.svg); } }
     @media (max-width: 1199.98px) {
       .banner-area .banner-container .promo-block .inner {
-        height: 230px;
-        max-width: 395px;
+        background-image: url(../img/group2.png); } }
+    @media (max-width: 1199.98px) {
+      .banner-area .banner-container .promo-block .inner {
+        height: 235px;
+        max-width: 355px;
         margin-left: auto;
         margin-right: auto;
-        font-size: 16px; } }
+        font-size: 15px; } }
     @media (min-width: 1200px) {
       .banner-area .banner-container .promo-block .inner {
         position: absolute;
@@ -7976,7 +7981,7 @@ nav {
       @media (max-width: 1199.98px) {
         .banner-area .banner-container .promo-block .inner > div {
           width: 80%;
-          margin-top: 12%; } }
+          margin-top: 14%; } }
     .banner-area .banner-container .promo-block .inner h5 {
       font-weight: bold;
       text-transform: uppercase; }
