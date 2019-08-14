@@ -8232,12 +8232,19 @@ nav {
     cursor: pointer;
     position: relative;
     text-align: center;
-    perspective: 1000;
-    /* Position the front and back side */ }
-    .services-area .services-container .flip-card:hover > .flip-card-front {
-      transform: rotateY(-180deg) scale(1.034, 1.083); }
-    .services-area .services-container .flip-card:hover > .flip-card-back {
-      transform: rotateY(0deg) scale(1.034, 1.083); }
+    perspective: 1000; }
+    @media (min-width: 1200px) {
+      .services-area .services-container .flip-card:hover > .flip-card-front {
+        transform: rotateY(-180deg) scale(1.034, 1.083); } }
+    @media (max-width: 1199.98px) {
+      .services-area .services-container .flip-card:hover > .flip-card-front {
+        transform: rotateY(-180deg); } }
+    @media (min-width: 1200px) {
+      .services-area .services-container .flip-card:hover > .flip-card-back {
+        transform: rotateY(0deg) scale(1.034, 1.083); } }
+    @media (max-width: 1199.98px) {
+      .services-area .services-container .flip-card:hover > .flip-card-back {
+        transform: rotateY(0deg); } }
     .services-area .services-container .flip-card .flip-card-front, .services-area .services-container .flip-card .flip-card-back {
       position: absolute;
       width: 100%;
@@ -8247,7 +8254,7 @@ nav {
       backface-visibility: hidden;
       transition: transform .8s linear;
       transform-style: preserve-3d;
-      perspective: 1000px; }
+      perspective: 1000; }
     .services-area .services-container .flip-card .flip-card-front {
       transform: rotateY(0deg) scale(1, 1);
       display: flex;
@@ -8272,7 +8279,7 @@ nav {
         .services-area .services-container .flip-card .flip-card-front {
           padding: 55px 0 40px 0; } }
     .services-area .services-container .flip-card .flip-card-back {
-      transform: rotateY(180deg) scale(1, 1);
+      transform: rotateY(180deg);
       background-color: #000000;
       color: white; }
       @media (max-width: 1199.98px) {

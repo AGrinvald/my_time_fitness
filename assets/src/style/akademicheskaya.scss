@@ -610,13 +610,26 @@ nav {
             perspective: 1000;
 
             &:hover > .flip-card-front{
-                transform: rotateY(-180deg) scale(1.034, 1.083);
+                @include media-breakpoint-up(xl) {
+                    transform: rotateY(-180deg) scale(1.034, 1.083);
+                }
+
+                @include media-breakpoint-down(lg) {
+                    transform: rotateY(-180deg);
+                }
             }
 
             &:hover > .flip-card-back{
-                transform: rotateY(0deg) scale(1.034, 1.083);
+
+                @include media-breakpoint-up(xl) {
+                    transform: rotateY(0deg) scale(1.034, 1.083);
+                }
+
+                @include media-breakpoint-down(lg) {
+                    transform: rotateY(0deg);
+                }
             }
-            /* Position the front and back side */
+
             .flip-card-front, .flip-card-back {
                 position: absolute;
                 width: 100%;
@@ -626,7 +639,7 @@ nav {
                 backface-visibility: hidden;
                 transition: transform .8s linear;
                 transform-style: preserve-3d;
-                perspective: 1000px; 
+                perspective: 1000; 
             }
 
             .flip-card-front {
@@ -661,7 +674,7 @@ nav {
             }
 
             .flip-card-back {
-                transform: rotateY(180deg) scale(1, 1);
+                transform: rotateY(180deg);
                 background-color: #000000;
                 color: white;
                 
