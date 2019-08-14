@@ -8235,9 +8235,9 @@ nav {
     text-align: center;
     /* Position the front and back side */ }
     .services-area .services-container .flip-card:hover > .flip-card-front {
-      transform: perspective(600px) rotateY(-180deg) scale(1.034, 1.083); }
+      transform: perspective(600px) rotateY(-180deg); }
     .services-area .services-container .flip-card:hover > .flip-card-back {
-      transform: perspective(600px) rotateY(0deg) scale(1, 1); }
+      transform: perspective(600px) rotateY(0deg) scale(1.034, 1.083); }
     .services-area .services-container .flip-card .flip-card-front, .services-area .services-container .flip-card .flip-card-back {
       position: absolute;
       width: 100%;

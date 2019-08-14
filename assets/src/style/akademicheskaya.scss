@@ -627,11 +627,11 @@ nav {
             //}
 
             &:hover > .flip-card-front{
-                transform: perspective(600px) rotateY(-180deg) scale(1.034, 1.083);
+                transform: perspective(600px) rotateY(-180deg);
             }
 
             &:hover > .flip-card-back{
-                transform: perspective(600px) rotateY(0deg) scale(1, 1);
+                transform: perspective(600px) rotateY(0deg) scale(1.034, 1.083);
             }
             /* Position the front and back side */
             .flip-card-front, .flip-card-back {
@@ -646,9 +646,7 @@ nav {
             }
 
             .flip-card-front {
-
                 transform: perspective(600px) rotateY(0deg) scale(1, 1);
-
                 display: flex;
                 align-items: center;
                 flex-direction: column;
@@ -679,7 +677,6 @@ nav {
 
             .flip-card-back {
                 transform: perspective(600px) rotateY(180deg) scale(1.034, 1.083);
-
                 background-color: #000000;
                 color: white;
                 transform: rotateY(180deg);
