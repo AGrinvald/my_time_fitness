@@ -7960,7 +7960,8 @@ nav {
         max-width: 355px;
         margin-left: auto;
         margin-right: auto;
-        font-size: 15px; } }
+        font-size: 15px;
+        letter-spacing: -0.32px; } }
     @media (min-width: 1200px) {
       .banner-area .banner-container .promo-block .inner {
         position: absolute;
