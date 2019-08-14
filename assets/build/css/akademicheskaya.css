@@ -7946,7 +7946,7 @@ nav {
   .banner-area .banner-container .promo-block .inner {
     overflow: hidden;
     background-image: url(../img/group-4.svg);
-    background-size: auto 100%;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center; }
     @media (max-width: 1199.98px) {
@@ -7975,8 +7975,8 @@ nav {
           margin-top: 10%; } }
       @media (max-width: 1199.98px) {
         .banner-area .banner-container .promo-block .inner > div {
-          width: 85%;
-          margin-top: 11%; } }
+          width: 80%;
+          margin-top: 12%; } }
     .banner-area .banner-container .promo-block .inner h5 {
       font-weight: bold;
       text-transform: uppercase; }
