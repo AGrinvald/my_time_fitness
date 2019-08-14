@@ -603,18 +603,18 @@ nav {
             background-color: transparent;
             width: $xl-width;
             height: $xl-height;
-            perspective: 1000px; 
             margin-bottom: 32px;
             cursor: pointer;
             position: relative;
             text-align: center;
+            perspective: 1000;
 
             &:hover > .flip-card-front{
-                transform: perspective(1000px) rotateY(-180deg);
+                transform: rotateY(-180deg) scale(1.034, 1.083);
             }
 
             &:hover > .flip-card-back{
-                transform: perspective(1000px) rotateY(0deg);
+                transform: rotateY(0deg) scale(1.034, 1.083);
             }
             /* Position the front and back side */
             .flip-card-front, .flip-card-back {
@@ -623,13 +623,14 @@ nav {
                 height: 100%;
                 border-radius: 9px;
                 box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.29);
-                transform-style: preserve-3d;
                 backface-visibility: hidden;
                 transition: transform .8s linear;
+                transform-style: preserve-3d;
+                perspective: 1000px; 
             }
 
             .flip-card-front {
-                transform: perspective(600px) rotateY(0deg) scale(1, 1);
+                transform: rotateY(0deg) scale(1, 1);
                 display: flex;
                 align-items: center;
                 flex-direction: column;
@@ -646,7 +647,8 @@ nav {
                 h5 {
                     font-size: 24px;
                     letter-spacing: 0.24px;      
-                    margin-bottom: 20px;          
+                    margin-bottom: 20px;  
+                    width: 100%;        
                 }
 
                 @include media-breakpoint-up(xl) {
@@ -659,10 +661,9 @@ nav {
             }
 
             .flip-card-back {
-                transform: perspective(600px) rotateY(180deg) scale(1.034, 1.083);
+                transform: rotateY(180deg) scale(1, 1);
                 background-color: #000000;
                 color: white;
-                transform: rotateY(180deg);
                 
                 @include media-breakpoint-down(lg) {
                     padding: 50px 22px;
