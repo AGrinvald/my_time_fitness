@@ -56,15 +56,15 @@
         transition: all 0.5s ease;
       }
 
+      @include media-breakpoint-down(sm) {
+        margin: 0 15px 15px 15px;
+      } 
+
       @include media-breakpoint-down(lg) {
         &:nth-child(2n-1) {
           margin: 0 15px 15px 15px;
         }
       }    
-  
-      @include media-breakpoint-down(sm) {
-          margin: 0 0 15px 0;
-      } 
   
       .inner-block {
         z-index: 100;
