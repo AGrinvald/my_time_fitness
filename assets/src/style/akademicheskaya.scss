@@ -1157,6 +1157,7 @@ nav {
     }
 }
 /* GALLERY AREA END*/
+
 /* MAP AREA START */
 .map-area {
     position: relative;
@@ -1348,3 +1349,258 @@ nav {
     }
   }
   /* MAP AREA END */
+
+  /* ANNOUNCE AREA START*/
+  .announce-container {
+    background-image: url(../img/img-1575.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: $white;
+    display: flex;
+
+    @include media-breakpoint-up(lg) {
+        height: 562px;
+    }
+
+    @include media-breakpoint-down(md) {
+        height: 688px;
+    }
+
+    h3 {
+        @include media-breakpoint-up(lg) {
+            font-size: 48px;
+            letter-spacing: 1px;
+        }
+
+        @include media-breakpoint-down(md) {
+            font-size: 28px;
+            letter-spacing: 0.58px;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        font-weight: bold;
+    }
+
+    .subtitle {
+        font-weight: 500;
+        letter-spacing: normal;
+        color: $primary;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 36px;
+            line-height: 0.92;
+        }
+
+        @include media-breakpoint-down(md) {
+            font-size: 22px;
+            letter-spacing: 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .text-sm {
+        font-weight: 300;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 18px;
+            width: 60%;
+            margin-left:auto;
+            margin-right: auto;
+        }
+
+        @include media-breakpoint-down(md) {
+            font-size: 16px;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .rules {
+        font-weight: 300;  
+
+        @include media-breakpoint-up(lg) {
+            font-size: 16px;
+        }
+
+        @include media-breakpoint-down(md) {
+            font-size: 14px;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%; 
+        width: 100%; 
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+    }
+
+    .inner {
+        bottom: 0;
+        height: 110%;
+        position: absolute;
+        width: 100%;
+        overflow: hidden;
+        z-index: 4;
+
+        @include media-breakpoint-up(lg) {
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 100%;
+                min-width: 1700px;
+                background: url(../img/group-11.svg), url(../img/group-10.svg);
+                background-size: auto, auto;
+                background-repeat: no-repeat, no-repeat;
+                background-position: left bottom, right bottom;
+                z-index: 5;
+            }
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 6;
+
+        > div {
+           height: 95%;
+        }
+
+        .h-60 {
+            @include media-breakpoint-up(lg) {
+                height: 60%;
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 80%;
+            }
+        }
+
+        .mt-10 {
+            margin-top: 8%;
+        }
+    }
+
+    form {
+        @include media-breakpoint-up(lg) {
+            width: 90%;
+        }
+
+        @include media-breakpoint-down(md) {
+            max-width: 272px;
+        }
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .input-group>.custom-select:not(:first-child), .input-group>.form-control:not(:first-child) {
+        border-radius: 28px;
+    }
+
+    .input-group {
+        border-radius: 28px;
+        position: relative;
+        height: 56px;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        @include media-breakpoint-up(lg) {
+            &:not(:last-child) {
+                margin-right: 40px;
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 15px;
+        }
+
+        .input-group-prepend {
+          position: absolute;
+          overflow: hidden;
+          z-index: 1000;
+          height: 100%;
+        }
+    
+        .input-group-text {
+          border-radius: 50%;
+          font-size: 36px;
+          font-weight: 500;
+          letter-spacing: 0.75px;
+          padding: 0 14px;
+          margin-right: 2px;
+          margin-top: 2px;
+          margin-bottom: 2px;
+        }
+    
+        &.primary {
+          background-color: $primary;
+          border: solid 1px $black;
+    
+          .input-group-text {
+            background-color: $primary;
+            border: solid 1px $black;
+            color: $black;
+          }
+    
+          input {
+            background-color: $primary;
+          }
+        }
+    
+        &.white {
+          background-color: $white;
+          color: $primary;
+          border: solid 1px $primary;
+    
+          .input-group-text {
+            border: solid 1px $primary;
+            color: $primary;
+            background-color: $white;
+          }
+        }
+    
+      }
+      input {
+        color: $black;
+        padding-left: 20%;
+
+        &[type="button"] {
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 0.8px;
+        }
+    
+        &[type="text"] {
+          font-size: 18px;
+          font-weight: 300;
+          letter-spacing: -0.39px;
+          align-self: center;
+
+          @include media-breakpoint-up(lg) {
+            text-align: left;
+          }
+        }
+    
+        height: 52px;
+        background-color: #ffffff;
+        border: none;
+        border-radius: 27%;
+        text-align: center;
+      }
+    
+      input[type="button"]{ text-align:center; }
+  }
+  /* ANNOUNCE AREA END */
