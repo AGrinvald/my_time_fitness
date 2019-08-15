@@ -8660,8 +8660,10 @@ nav.navbar {
   .gallery-area .gallery-carousel .owl-nav {
     position: absolute;
     text-align: center;
-    bottom: 5%;
-    width: 100%; }
+    top: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; }
     .gallery-area .gallery-carousel .owl-nav button.owl-prev, .gallery-area .gallery-carousel .owl-nav button.owl-next {
       width: 58px;
       height: 58px;
@@ -8669,8 +8671,6 @@ nav.navbar {
       background-position: center center;
       background-repeat: no-repeat;
       margin: 12px; }
-    .gallery-area .gallery-carousel .owl-nav .owl-prev > span, .gallery-area .gallery-carousel .owl-nav .owl-next > span {
-      content: ""; }
     .gallery-area .gallery-carousel .owl-nav button.owl-prev {
       background-image: url(../img/prev.svg); }
     .gallery-area .gallery-carousel .owl-nav button.owl-next {

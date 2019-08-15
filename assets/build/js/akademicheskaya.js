@@ -21790,23 +21790,6 @@ function moveToSelected(element) {
 }
 
 $(function () {
-    // $('.gallery-carousel').owlCarousel({
-    //     loop: true,
-    //     center: true,
-    //     mouseDrag: false,
-    //     nav: true,
-    //     navText: ["", ""],
-    //     responsive: {
-    //         1195: {
-    //             items: 5,
-    //             nav: false
-    //         },
-    //         0: {
-    //             items: 1,
-    //             nav: true
-    //         }
-    //     }
-    // });
 
     $('.gallery-area button.prev-btn').click(function () {
         moveToSelected('prev');

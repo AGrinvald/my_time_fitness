@@ -1178,9 +1178,11 @@ nav.navbar {
         .owl-nav {
             position: absolute;
             text-align: center;
-            bottom: 5%;
+            top: 45%;
             width: 100%;
-      
+            display: flex;
+            justify-content: space-between;
+
             button.owl-prev,  button.owl-next {
               width: 58px;
               height: 58px;
@@ -1189,11 +1191,7 @@ nav.navbar {
               background-repeat: no-repeat;
               margin: 12px;
             }
-      
-            .owl-prev > span, .owl-next > span {
-              content: "";
-            }
-      
+
             button.owl-prev {
               background-image: url(../img/prev.svg);
             }

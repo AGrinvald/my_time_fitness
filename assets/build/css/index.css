@@ -7909,8 +7909,6 @@ footer {
       background-position: center center;
       background-repeat: no-repeat;
       margin: 12px; }
-    .banner-area .owl-nav .owl-prev > span, .banner-area .owl-nav .owl-next > span {
-      content: ""; }
     .banner-area .owl-nav button.owl-prev {
       background-image: url(../img/group-copy-7@1x.png); }
     .banner-area .owl-nav button.owl-next {
