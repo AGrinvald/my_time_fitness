@@ -1430,6 +1430,9 @@ nav {
 
         @include media-breakpoint-down(md) {
             font-size: 14px;
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
@@ -1442,6 +1445,21 @@ nav {
         width: 100%; 
         background-color: rgba(0, 0, 0, 0.7);
         z-index: 1;
+    }
+
+    @include media-breakpoint-down(md) {
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background: url(../img/group5.png), url(../img/group6.png);
+            background-size: auto, auto;
+            background-repeat: no-repeat, no-repeat;
+            background-position: left top, right bottom;
+            z-index: 2;
+        }        
     }
 
     .inner {
