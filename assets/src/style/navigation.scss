@@ -1,8 +1,9 @@
 /* NAVBAR START */
 
-nav {
-  //z-index: 5;
+nav.navbar {
   position: relative;
+  display: block;
+  padding: 0;
 
   @include media-breakpoint-down(md) { 
     .n-bottom {
@@ -24,11 +25,6 @@ nav {
     }
   }
   
-  &.navbar {
-    display: block;
-    padding: 0;
-  }
-
   @include media-breakpoint-up(lg) { 
     background-color: $dark;
 

@@ -24,7 +24,8 @@ var path = {
     js: ['assets/src/js/index.js', 'assets/src/js/akademicheskaya.js', 
     'assets/src/js/kids.js', 'assets/src/js/kupchino.js', 'assets/src/js/komendanskiy.js' ],
     style: ['assets/src/style/index.scss', 'assets/src/style/akademicheskaya.scss',
-    'assets/src/style/komendanskiy.scss', 'assets/src/style/kupchino.scss'],
+    'assets/src/style/komendanskiy.scss', 'assets/src/style/kupchino.scss', 
+    'assets/src/style/kids.scss'],
     img: 'assets/src/img/**/*.*',
     fonts: 'assets/src/fonts/**/*.*'
   },
