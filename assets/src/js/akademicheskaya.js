@@ -20,6 +20,7 @@
 
 // Импортируем Owl
 //= ../../../node_modules/owl.carousel/dist/owl.carousel.js
+
 var map;
 var windowsSize = {
     Medium: 2,
@@ -125,6 +126,24 @@ function init() {
 }
 
 $(function () {
+    // $('.gallery-carousel').owlCarousel({
+    //     loop: true,
+    //     center: true,
+    //     mouseDrag: false,
+    //     nav: true,
+    //     navText: ["", ""],
+    //     responsive: {
+    //         1195: {
+    //             items: 5,
+    //             nav: false
+    //         },
+    //         0: {
+    //             items: 1,
+    //             nav: true
+    //         }
+    //     }
+    // });
+
     var owl = $('.scheme-slides'),
         owlOptions = {
             loop: true,

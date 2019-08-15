@@ -8232,7 +8232,22 @@ nav.navbar {
 /* SERVICES AREA START*/
 .services-area .services-container {
   overflow: hidden;
-  background-color: #aacc23; }
+  background-color: #aacc23;
+  position: relative; }
+  .services-area .services-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: url(../img/combined-shape-copy-12.svg);
+    background-repeat: repeat-y;
+    background-position: center center;
+    z-index: 1; }
+  .services-area .services-container .container {
+    z-index: 2;
+    position: relative; }
   @media (min-width: 1200px) {
     .services-area .services-container {
       height: 958px; } }
@@ -8895,5 +8910,56 @@ nav.navbar {
           text-align: left; } }
   .announce-container input[type="button"] {
     text-align: center; }
+
+/* ANNOUNCE AREA END */
+/* GALLERY AREA START*/
+.schedule-area .container-fluid {
+  overflow: hidden; }
+  @media (min-width: 1200px) {
+    .schedule-area .container-fluid {
+      background-image: url(../img/555-copy-3.png), url(../img/555-copy-4.png);
+      background-position: right top, left top;
+      background-repeat: no-repeat, no-repeat; } }
+  @media (max-width: 1199.98px) {
+    .schedule-area .container-fluid {
+      background-image: url(../img/555-copy-3.png);
+      background-position: right top;
+      background-repeat: no-repeat; } }
+  .schedule-area .container-fluid h2 {
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 80px; }
+  .schedule-area .container-fluid .legend {
+    background-color: #F7F7F7;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: #606060; }
+    @media (min-width: 992px) {
+      .schedule-area .container-fluid .legend {
+        font-size: 16px;
+        padding: 30px 40px; }
+        .schedule-area .container-fluid .legend > div {
+          margin-right: 40px; }
+        .schedule-area .container-fluid .legend img {
+          height: 20px;
+          width: auto; } }
+    @media (max-width: 991.98px) {
+      .schedule-area .container-fluid .legend {
+        font-size: 14px;
+        padding: 25px 20px; }
+        .schedule-area .container-fluid .legend > div {
+          margin-right: 40px;
+          margin-bottom: 15px; }
+        .schedule-area .container-fluid .legend img {
+          height: 15px;
+          width: auto; } }
+  @media (min-width: 992px) {
+    .schedule-area .container-fluid .schedule-lg .days {
+      border-top: 1px solid #606060;
+      border-bottom: 1px solid #606060;
+      height: 70px;
+      display: flex;
+      align-items: center; } }
 
 /* ANNOUNCE AREA END */
