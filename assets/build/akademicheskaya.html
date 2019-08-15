@@ -174,25 +174,25 @@
                 justify-content-center
                 align-items-center">
                 <div class="d-flex w-100 flex-wrap justify-content-center justify-content-xl-between">
-                    <a href="#" class="page-nav-item">
+                    <a href="#onmap" class="page-nav-item">
                         <div class="icon imb-bg-1">
                             &nbsp;
                         </div>
                         <p>КЛУБ НА КАРТЕ</p>
                     </a>
-                    <a href="#" class="page-nav-item">
+                    <a href="#schedule" class="page-nav-item">
                         <div class="icon imb-bg-2">
                             &nbsp;
                         </div>
                         <p>РАСПИСАНИЕ</p>
                     </a>
-                    <a href="#" class="page-nav-item">
+                    <a href="#services" class="page-nav-item">
                         <div class="icon imb-bg-3">
                             &nbsp;
                         </div>
                         <p>УСЛУГИ</p>
                     </a>
-                    <a href="#" class="page-nav-item">
+                    <a href="#seasons" class="page-nav-item">
                         <div class="icon imb-bg-4">
                             &nbsp;
                         </div>
@@ -204,28 +204,38 @@
     </section>
     <section class="gallery-area">
         <div class="container-fluid gallery-container">
-            <h2 class="title">
-                ФОТОГАЛЕРЕЯ КЛУБА
-            </h2>
-            <!-- <div class="container">
-                <div class="gallery-carousel owl-carousel">
-                    <div class="slide">
+            <div class="container">
+                <h2 class="title">
+                    ФОТОГАЛЕРЕЯ КЛУБА
+                </h2>
+                <div class="gallery-carousel">
+                    <div class="slide prevLeftSecond">
                         <img src="img/gallery.png">
                     </div>
-                    <div class="slide">
+                    <div class="slide prev">
                         <img src="img/gallery.png">
                     </div>
-                    <div class="slide">
+                    <div class="slide selected">
                         <img src="img/gallery.png">
                     </div>
-                    <div class="slide">
+                    <div class="slide next">
                         <img src="img/gallery.png">
                     </div>
-                    <div class="slide">
+                    <div class="slide nextRightSecond">
                         <img src="img/gallery.png">
                     </div>
                 </div> 
-            </div> -->
+                <p>
+                    Большие и просторные тренажерные залы, оборудованные  новым оборудованием от ведущего производителя Evost.
+                </p>
+                <p>
+                    В наших залах легко разобраться благодаря комфортной навигации и зонированию пространства.
+                </p>
+                <div class="buttons">
+                    <button class="prev-btn"></button>
+                    <button class="next-btn"></button>
+                </div>
+            </div>
         </div>
     </section>
     <section class="workouts-area">
@@ -299,7 +309,7 @@
             </div>
         </div>
     </section>
-    <section class="services-area">
+    <section id="services" class="services-area">
         <div class="container-fluid services-container">
             <h2 class="title">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</h2>
             <div
@@ -463,7 +473,7 @@
             </div>
         </div>
     </section>
-    <section class="season-area">
+    <section id="seasons" class="season-area">
         <div class="container-fluid">
             <h2 class="title text-center">АБОНЕМЕНТЫ КЛУБА</h2>
             <div
@@ -667,28 +677,20 @@
             </div>
         </div>
     </section>
-    <section class="schedule-area">
+    <section id="schedule" class="schedule-area">
         <div class="container-fluid">
             <h2 class="title">РАСПИСАНИЕ ГРУППОВЫХ ПРОГРАММ</h2>
             <div class="container">
-                <div class="legend">
-                    <div><img src="img/phone-receiver.svg" alt="Телефон"><span> - предварительная запись</span></div>
-                    <div><img src="img/paper-bill.svg" alt="Телефон"><span> - коммерческий класс</span></div>
-                    <div><img src="img/thumbs-up.svg" alt="Телефон"><span> - популярное занятие</span></div>
-                </div>
-                <div class="schedule-lg">
-                    <div class="days">
-                        <button class="btn btn-outline-dark">Сегодня</button>
-                        <div><span>10 июня</span>-<span>16 июня</span><a href="#">></a></div>
-                    </div>
-                </div>
-                <div class="schedule-md">
-
+                <div class="schedule">
+                    <img class="d-none d-lg-block" src="img/schedule-copy.png" alt="Temp">
+                    <img class="d-none d-lg-block" src="img/schedule.png" alt="Temp">
+                    <img class="d-block d-lg-none" src="img/schedule-copy-sm.png" alt="Temp">
+                    <img class="d-block d-lg-none" src="img/schedule-sm.png" alt="Temp">
                 </div>
             </div>
         </div>
     </section>
-    <section class="map-area">
+    <section id="onmap" class="map-area">
         <div class="container-fluid">
             <div class="clubs-block">
                 <div class="container d-flex h-100 
