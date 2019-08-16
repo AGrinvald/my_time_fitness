@@ -7777,7 +7777,9 @@ footer {
     top: 0;
     left: 0;
     z-index: 99;
-    transition: all 0.5s ease; }
+    transition: all 0.5s ease;
+    width: 100%;
+    height: 100%; }
   @media (max-width: 767.98px) {
     .workouts-area .workout-block {
       margin: 0 15px 15px 15px; } }
@@ -7816,24 +7818,6 @@ footer {
       @media (max-width: 991.98px) {
         .workouts-area .workout-block .inner-block p {
           font-size: 16px; } }
-
-.workouts-area .bg-img-1 {
-  background-image: url(../img/bitmap-copy-5.png); }
-
-.workouts-area .bg-img-2 {
-  background-image: url(../img/bitmap-copy-4.png); }
-
-.workouts-area .bg-img-3 {
-  background-image: url(../img/bitmap-copy-6.png); }
-
-.workouts-area .bg-img-4 {
-  background-image: url(../img/bitmap-copy-3.png); }
-
-.workouts-area .bg-img-5 {
-  background-image: url(../img/bitmap-copy.png); }
-
-.workouts-area .bg-img-6 {
-  background-image: url(../img/bitmap-copy-2.png); }
 
 /* WORKOUT AREA END */
 /* MAP AREA START */

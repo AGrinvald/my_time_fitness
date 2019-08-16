@@ -394,6 +394,38 @@ nav.navbar {
 /* SCHEDULE AREA START*/
 .schedule-area {
     .container-fluid {
+        position: relative;
+
+        @include media-breakpoint-down(sm) {
+            &::before {
+                position: absolute;
+                content: "";
+                top: 0;
+                right: 0;
+                width: 109px;
+                height: 83px;
+                background-image: url(../img/cloud-half.png);
+                background-size: auto;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: -1;
+            }       
+            
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: -10%;
+                left: 0;
+                width: 100%;
+                height: 85px;
+                background-image: url(../img/cloud-half2.png), url(../img/blue-flower.svg);
+                background-size: auto, 57px 54px;
+                background-repeat: no-repeat, no-repeat;
+                background-position: left top, right top;
+                z-index: 5;
+            } 
+        }
+
         .container {
             position: relative;
             @include media-breakpoint-up(lg) {
@@ -454,3 +486,161 @@ nav.navbar {
     }
 }
 /* SCHEDULE AREA END */
+
+/* WORKOUT AREA START */
+.workouts-area {
+
+    .worhouts-container {
+      overflow: hidden;
+    }
+  
+    h2 {
+      text-align: center;
+  
+      @include media-breakpoint-up(lg) {
+        padding-top: 125px;
+        padding-bottom: 60px; 
+      }  
+  
+      @include media-breakpoint-down(md) {
+        padding-top: 100px;
+        padding-bottom: 20px; 
+      } 
+    }
+  
+    .workouts-block {
+      max-width: 1170px;
+      margin-left: auto;
+      margin-right: auto;
+  
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 110px;
+      }  
+  
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 55px;
+      }    
+    }
+  
+    .workout-block {
+      position: relative;
+      overflow: hidden; 
+      width: 584px;
+      height: 392px;
+      cursor: pointer;
+    
+    @include media-breakpoint-up(lg) {
+        width: 584px;
+        height: 392px;
+    } 
+
+    @include media-breakpoint-down(md) {
+        width: 344px;
+        height: 232px;
+    }   
+
+      &:hover > img
+      {
+        transform: scale(1.1);
+      }
+  
+      > img {
+        position: absolute;
+        top: 0; 
+        left: 0;
+        z-index: 99;
+        transition: all 0.5s ease;
+        width: 100%;
+        height: 100%;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin: 0 15px 15px 15px;
+      } 
+
+      @include media-breakpoint-down(lg) {
+        &:nth-child(2n-1) {
+          margin: 0 15px 15px 15px;
+        }
+      }    
+  
+      .inner-block {
+        z-index: 100;
+        color: $white;
+        position: absolute;
+        top: 50%; 
+        transform: translate(0,-50%);
+        padding: 15px 15px;
+  
+        @include media-breakpoint-up(lg) {
+            height: 168px;
+            width: 65%;
+        } 
+
+        @include media-breakpoint-down(md) {
+            height: 128px;
+            width: 85%;
+        }   
+
+        &.green-bg {
+          background-color: rgba(178, 207, 65, 0.85);
+        }
+  
+        &.pink-bg {
+          background-color: rgba(160, 92, 161, 0.8);       
+        }
+  
+        &.orange-bg {
+            background-color: rgba(249, 151, 72, 0.8);      
+        }
+
+        &.blue-bg {
+            background-color: rgba(89, 192, 203, 0.8);;      
+        }
+
+        h3 {
+          font-weight: bold;
+          letter-spacing: -0.65px;
+          margin-bottom: 5px;
+  
+          @include media-breakpoint-up(lg) {
+            font-size: 30px;
+          } 
+  
+          @include media-breakpoint-down(md) {
+            font-size: 20px;
+          }    
+        }
+        
+        p {
+          font-weight: 300;
+          letter-spacing: -0.39px;
+  
+          @include media-breakpoint-up(lg) {
+            font-size: 18px;
+          } 
+  
+          @include media-breakpoint-down(md) {
+            font-size: 16px;
+          }   
+        }
+      }
+    }
+  
+    .bg-img-1 {
+      background-image: url(../img/kids3.png);
+    }
+  
+    .bg-img-2 {
+      background-image: url(../img/kids2.png);
+    }
+  
+    .bg-img-3 {
+      background-image: url(../img/kids4.png);
+    }
+  
+    .bg-img-4 {
+      background-image: url(../img/kids1.png);
+    }
+  }
+  /* WORKOUT AREA END */
