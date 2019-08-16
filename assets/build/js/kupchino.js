@@ -21739,7 +21739,9 @@ function init() {
     map.controls.remove('fullscreenControl');
     map.controls.remove('rulerControl');
     map.behaviors.disable(['scrollZoom']);
-
+    map.controls.remove('zoomControl');
+    map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px'}, size: 'small'});
+    
     map.events.add('sizechange', function (event) {
         var size = map.container.getSize();
         var width = size[0];
