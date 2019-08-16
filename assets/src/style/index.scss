@@ -909,6 +909,25 @@ nav {
     overflow: hidden;
     white-space:nowrap;
 
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: $primary;
+    }
+    
+    &::-webkit-scrollbar-track {
+      border-radius: 4px;
+      background-color: #282828;
+    }
+
+
+    @include media-breakpoint-down(md) {
+      overflow-x: scroll;
+    }
+
     .photo {
       margin-left: auto;
       margin-right: auto;

@@ -8434,6 +8434,17 @@ footer {
 .team-area .scrolling-wrapper {
   overflow: hidden;
   white-space: nowrap; }
+  .team-area .scrolling-wrapper::-webkit-scrollbar {
+    height: 8px; }
+  .team-area .scrolling-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #aacc23; }
+  .team-area .scrolling-wrapper::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background-color: #282828; }
+  @media (max-width: 991.98px) {
+    .team-area .scrolling-wrapper {
+      overflow-x: scroll; } }
   .team-area .scrolling-wrapper .photo {
     margin-left: auto;
     margin-right: auto;
