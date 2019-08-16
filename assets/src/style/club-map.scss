@@ -57,10 +57,6 @@
         font-weight: 300;
         letter-spacing: 0.18px;
         color: #101929;
-
-        @include media-breakpoint-up(lg) {
-            line-height: 30px;
-        }
       }
 
       @include media-breakpoint-up(lg) {

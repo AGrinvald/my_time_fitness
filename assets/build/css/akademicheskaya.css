@@ -7880,9 +7880,6 @@ footer {
       font-weight: 300;
       letter-spacing: 0.18px;
       color: #101929; }
-      @media (min-width: 992px) {
-        .map-area .inner-block p {
-          line-height: 30px; } }
     @media (min-width: 992px) {
       .map-area .inner-block {
         height: 504px; } }
