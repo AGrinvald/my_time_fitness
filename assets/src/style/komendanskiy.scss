@@ -194,6 +194,11 @@ nav.navbar {
             height: 100%;
             justify-content: space-between;
             position: relative;
+
+            @include media-breakpoint-down(lg) {
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
 
         .promo-block {
@@ -262,11 +267,9 @@ nav.navbar {
                     }
 
                     @include media-breakpoint-down(lg) {
-                        width: 80%;
+                        width: 81%;
                         margin-top: 14%;
                     }
-
-
                 }
 
                 h5 {
@@ -1890,4 +1893,4 @@ nav.navbar {
 
     }
   }
- /* ANNOUNCE AREA END */
+ /* SCHEDULE AREA END */

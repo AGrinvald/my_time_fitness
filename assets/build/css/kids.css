@@ -7820,6 +7820,8 @@ header {
 
 .banner-area .banner-bottom {
   position: relative; }
+  .banner-area .banner-bottom .overflow-hidden {
+    overflow: hidden; }
   @media (max-width: 991.98px) {
     .banner-area .banner-bottom::after {
       content: "";
@@ -7874,20 +7876,6 @@ header {
         background-position: center center; } }
   .banner-area .banner-bottom .desc-block {
     position: relative; }
-    @media (max-width: 991.98px) {
-      .banner-area .banner-bottom .desc-block {
-        overflow: hidden; }
-        .banner-area .banner-bottom .desc-block::before {
-          content: "";
-          position: absolute;
-          left: 0%;
-          bottom: -2%;
-          height: 110%;
-          width: 100%;
-          background: url(../img/white-shadow.png);
-          background-repeat: no-repeat;
-          background-position: center center;
-          z-index: -1; } }
     @media (min-width: 992px) {
       .banner-area .banner-bottom .desc-block::before {
         content: "";
@@ -7909,6 +7897,20 @@ header {
         background: url(../img/flower-group.svg);
         background-repeat: no-repeat;
         background-position: center center; } }
+    @media (max-width: 991.98px) {
+      .banner-area .banner-bottom .desc-block {
+        overflow: hidden; }
+        .banner-area .banner-bottom .desc-block::before {
+          content: "";
+          position: absolute;
+          left: 0%;
+          bottom: -2%;
+          height: 110%;
+          width: 100%;
+          background: url(../img/white-shadow.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          z-index: -1; } }
   .banner-area .banner-bottom h1 {
     font-weight: bold;
     line-height: 1.2;
@@ -7983,3 +7985,52 @@ header {
       max-height: 258px; } }
 
 /* BANNER AREA END*/
+/* SCHEDULE AREA START*/
+.schedule-area .container-fluid .container {
+  position: relative; }
+  @media (min-width: 992px) {
+    .schedule-area .container-fluid .container::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: -5%;
+      width: 230px;
+      height: 123px;
+      background-image: url(../img/cloud.svg);
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: -1; }
+    .schedule-area .container-fluid .container::after {
+      position: absolute;
+      content: "";
+      bottom: -10%;
+      right: -5%;
+      width: 251px;
+      height: 134px;
+      background-image: url(../img/cloud-mirror.svg);
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: -1; } }
+  @media (max-width: 991.98px) {
+    .schedule-area .container-fluid .container {
+      overflow: hidden; } }
+
+.schedule-area .container-fluid img {
+  margin-left: auto;
+  margin-right: auto; }
+
+.schedule-area .container-fluid h2 {
+  text-align: center; }
+  @media (min-width: 992px) {
+    .schedule-area .container-fluid h2 {
+      margin-top: 90px;
+      margin-bottom: 50px; } }
+  @media (max-width: 991.98px) {
+    .schedule-area .container-fluid h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+      line-height: 32px; } }
+
+/* SCHEDULE AREA END */
