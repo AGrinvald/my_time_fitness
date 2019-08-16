@@ -7823,8 +7823,6 @@ header {
 
 .banner-area .banner-bottom {
   position: relative; }
-  .banner-area .banner-bottom .overflow-hidden {
-    overflow: hidden; }
   @media (max-width: 991.98px) {
     .banner-area .banner-bottom::after {
       content: "";
@@ -7889,7 +7887,8 @@ header {
         height: 71px;
         background: url(../img/flower-sm.svg);
         background-repeat: no-repeat;
-        background-position: center center; }
+        background-position: center center;
+        z-index: 5; }
       .banner-area .banner-bottom .desc-block::after {
         content: "";
         position: absolute;
@@ -7975,6 +7974,10 @@ header {
   .banner-area .banner-bottom .row {
     position: relative;
     z-index: 8; }
+    @media (max-width: 991.98px) {
+      .banner-area .banner-bottom .row {
+        margin-left: 0;
+        margin-right: 0; } }
     .banner-area .banner-bottom .row > div {
       padding-left: 0;
       padding-right: 0; }

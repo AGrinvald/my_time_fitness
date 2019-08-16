@@ -164,9 +164,9 @@ header {
     .banner-bottom {
         position: relative;
 
-        .overflow-hidden {
-            overflow: hidden;
-        }
+        // .overflow-hidden {
+        //     overflow: hidden;
+        // }
         
         @include media-breakpoint-down(md) {
             &::after {
@@ -248,6 +248,7 @@ header {
                     background: url(../img/flower-sm.svg);
                     background-repeat: no-repeat;
                     background-position: center center;
+                    z-index: 5;
                 }
 
                 &::after {
@@ -353,6 +354,10 @@ header {
         }
 
         .row {
+            @include media-breakpoint-down(md) {
+                margin-left: 0;
+                margin-right: 0;
+            }
             position: relative;
             z-index: 8;
             > div {
