@@ -2,294 +2,912 @@
 <html lang="ru">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="css/komendanskiy.min.css" media="all">
-  <style>
-
-</style>
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=ba6c0504-43ff-4821-a7d3-7384f5e5cd00&lang=ru_RU&mode=debug"
-    type="text/javascript">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/komendanskiy.min.css" media="all">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ba6c0504-43ff-4821-a7d3-7384f5e5cd00&lang=ru_RU&mode=debug"
+        type="text/javascript">
     </script>
 </head>
-
 <body>
-  <header>
-    <div class="h-top d-none d-lg-block">
-      <div class="container text-center h-100">
-        <div class="b-center">
-          <a class="logo">mytime<span class="text-primary">fitness</span></a>
+    <header>
+        <div class="hex-c"></div>
+        <div class="h-top d-none d-lg-block">
+            <div class="inner"></div>
+            <div class="container text-center h-100">
+            <!-- <img class="hexagon" src="img/path-copy-22.svg" alt="hexagon"> -->
+                <div class="b-center">
+                    <a href="index.html" class="logo">mytime<span class="text-primary">fitness</span></a>
+                </div>
+                <div class="b-right">
+                    <div>
+                        <a class="text-primary" href="tel:+7 (812) 337-07-07">+7 (812) 337-07-07</a>
+                    </div>
+                    <hr />
+                    <div>
+                        Запишись по телефону или Whats App
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="b-right">
-          <div>
-            <a class="text-primary" href="tel:+7 (812) 337-07-07">+7 (812) 337-07-07</a>
-          </div>
-          <hr />
-          <div>
-            Запишись по телефону или Whats App
-          </div>
+    </header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="d-lg-none n-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-logo" href="index.html">mytime<span class="text-primary">fitness</span></a>
+            <a class="btn-link" href="#"><img srcset="img/phone@1x.png 25w,
+                    img/phone@2x.png 50w,
+                    img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
         </div>
-      </div>
-    </div>
-  </header>
-  <nav class="navbar navbar-expand-lg">
-    <div class="d-lg-none n-top">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-logo" href="#">mytime<span class="text-primary">fitness</span></a>
-      <a class="btn-link" href="#"><img srcset="img/phone@1x.png 25w,
-        img/phone@2x.png 50w,
-        img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
-    </div>
-    <div class="d-lg-none n-bottom">
-      <button class="btn btn-link" data-toggle="modal" data-target="#clubs-modal">Выберите ваш клуб</button>
-    </div>
-    <div class="collapse navbar-collapse justify-content-center" id="navbar">
-      <ul class="navbar-nav nav-fill w-100 align-items-start">
-        <li class="nav-item dropdown w-100">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Клубы
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Комендантский</a>
-            <a class="dropdown-item" href="#">Академическая</a>
-            <a class="dropdown-item" href="#">Купчино</a>
-          </div>
-        </li>
-        <li class="nav-item w-100">
-          <a class="nav-link" href="#">Расписание</a>
-        </li>
-        <li class="nav-item w-100">
-          <a class="nav-link" href="#">Абонементы</a>
-        </li>
-        <li class="nav-item w-100">
-          <a class="nav-link" href="#">Акции</a>
-        </li>
-        <li class="nav-item w-100">
-          <a class="nav-link" href="#">Детям</a>
-        </li>
-        <li class="nav-item w-100">
-          <a class="nav-link" href="#">Обучение</a>
-        </li>
-        <li class="nav-item w-100 d-lg-none d-xs-inline">
-          <button class="navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbar"
-            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <img srcset="img/rectangle@1x.png 48w,
-              img/rectangle@2x.png 96w,
-              img/rectangle@3x.png 144w" sizes="48px" src="img/rectangle@1x.png" alt="Tooggler"></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-
-
-
-  <div class="modal fade" id="clubs-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl h-100" role="document">
-        <div class="modal-content h-100">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <img srcset="img/cancel@1x.png 23w,
-                        img/cancel@2x.png 46w,
-                        img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
-                </button>
-                <h4>Выберите Ваш клуб</h4>
-                <a href="komendanskiy.html" class="club-link d-flex mt-4">
-                    <img src="img/shape1.svg" alt="pointer">
-                    <div class="inner-div">
-                        <h5>
-                            Комендантский
-                        </h5>
-                        <p class="flex-grow-1">
-                            пр. Ильюшина, 14
-                            ТК «Долгоозерный», 3 этаж
+        <div class="d-lg-none n-bottom">
+            <button class="btn btn-link" data-toggle="modal" data-target="#clubs-modal">Выберите ваш клуб</button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-center" id="navbar">
+            <ul class="navbar-nav nav-fill w-100 align-items-start">
+                <li class="nav-item dropdown w-100">
+                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Клубы
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="komendanskiy.html">Комендантский</a>
+                        <a class="dropdown-item" href="akademicheskaya.html">Академическая</a>
+                        <a class="dropdown-item" href="kupchino.html">Купчино</a>
+                    </div>
+                </li>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="#">Расписание</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="#">Абонементы</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="#">Акции</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="kids.html">Детям</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a class="nav-link" href="#">Обучение</a>
+                </li>
+                <li class="nav-item w-100 d-lg-none d-xs-inline">
+                    <button class="navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <img srcset="img/rectangle@1x.png 48w,
+                          img/rectangle@2x.png 96w,
+                          img/rectangle@3x.png 144w" sizes="48px" src="img/rectangle@1x.png" alt="Tooggler"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="banner-area">
+        <div class="banner-container">
+            <div class="container-fluid h-100">
+                <div class="rectagle-bg">
+                </div>
+                <div class="container d-flex flex-xl-row flex-column">
+                    <div class="info-div d-xl-block d-none align-self-end">
+                        <div class="d-flex flex-row">
+                            <div class="info-block flex-grow-1">
+                                <div>Площадь клуба</div>
+                                <div>3 000 м2</div>
+                            </div>
+                            <div class="info-block flex-grow-1">
+                                <div> Тренажерный зал </div>
+                                <div>1040 м2</div>
+                            </div>
+                            <div class="info-block flex-grow-1">
+                                <div>Зал групповых программ</div>
+                                <div>15 видов программ</div>
+                            </div>
+                        </div>
+                        <div>
+                            Гарант качества <a href="spb.zoon.ru">spb.zoon.ru</a>&nbsp;Рейтинг:
+                            <img class="star" src="img/star.svg">
+                            <img class="star" src="img/star.svg">
+                            <img class="star" src="img/star.svg">
+                            <img class="star" src="img/star.svg">
+                            <img class="star" src="img/star.svg">&nbsp;<a href="spb.zoon.ru">57
+                                отзывов</a>&nbsp;&nbsp;3d тур
+                        </div>
+                    </div>
+                    <div class="subtitle-div">
+                        <div class="d-flex flex-column float-xl-right">
+                            <h2 class="text-center align-self-center">
+                                Фитнес клуб<br /> 
+                                у м. Комендантский пр.,<br /> 
+                                ул. Ильюшина, 14<br />
+                                ТК Долгоозерный, 3 этаж
+                            </h2>
+                            <p class="text-center align-self-center align-self-xl-start">
+                                ПН-ПТ: 7.00 - 00.00<br />
+                                СБ-ВС и праздничиные дни:<br />
+                                9.00 - 22.00
+                            </p>
+                        </div>
+                    </div>
+                    <div class="promo-block">
+                        <div class="inner">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <h5>Акция</h5>
+                                    <p class="promo text-primary">До 10 августа 2019</p>
+                                </div>
+                                <div class="price">
+                                    Годовые карты от <b>1 125 руб.</b> \ мес.
+                                </div>
+                                <form class="d-flex justify-content-between">
+                                    <input type="tel" class="form-control" placeholder="Введите телефон">
+                                    <button type="submit" class="btn btn-primary">ЗАБРОНИРОВАТЬ <span
+                                            class="d-none d-xl-inline">КАРТУ</span></button>
+                                </form>
+                                <p>
+                                    Количество абонементов ограничено.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="quality-b d-block d-xl-none text-center">
+                            <p>
+                                Гарант качества <a href="spb.zoon.ru">spb.zoon.ru</a>
+                            </p>
+                            <p>
+                                Рейтинг:
+                                <img class="star" src="img/star.svg">
+                                <img class="star" src="img/star.svg">
+                                <img class="star" src="img/star.svg">
+                                <img class="star" src="img/star.svg">
+                                <img class="star" src="img/star.svg">&nbsp;<a href="spb.zoon.ru">57
+                                    отзывов</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="page-nav-area">
+        <div class="nav-container">
+            <div class="container h-100 d-flex
+                justify-content-center
+                align-items-center">
+                <div class="d-flex w-100 flex-wrap justify-content-center justify-content-xl-between">
+                    <a href="#onmap" class="page-nav-item">
+                        <div class="icon imb-bg-1">
+                            &nbsp;
+                        </div>
+                        <p>КЛУБ НА КАРТЕ</p>
+                    </a>
+                    <a href="#schedule" class="page-nav-item">
+                        <div class="icon imb-bg-2">
+                            &nbsp;
+                        </div>
+                        <p>РАСПИСАНИЕ</p>
+                    </a>
+                    <a href="#services" class="page-nav-item">
+                        <div class="icon imb-bg-3">
+                            &nbsp;
+                        </div>
+                        <p>УСЛУГИ</p>
+                    </a>
+                    <a href="#seasons" class="page-nav-item">
+                        <div class="icon imb-bg-4">
+                            &nbsp;
+                        </div>
+                        <p>ТАРИФЫ</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="gallery-area">
+        <div class="container-fluid gallery-container">
+            <div class="container">
+                <h2 class="title">
+                    ФОТОГАЛЕРЕЯ КЛУБА
+                </h2>
+                <div class="gallery-carousel">
+                    <div class="slide prevLeftSecond">
+                        <img src="img/bitmap4.png">
+                    </div>
+                    <div class="slide prev">
+                        <img src="img/bitmap4.png">
+                    </div>
+                    <div class="slide selected">
+                        <img src="img/bitmap4.png">
+                    </div>
+                    <div class="slide next">
+                        <img src="img/bitmap4.png">
+                    </div>
+                    <div class="slide nextRightSecond">
+                        <img src="img/bitmap4.png">
+                    </div>
+                </div> 
+                <div class="desc">
+                    <p>
+                        Большие и просторные тренажерные залы, оборудованные  новым оборудованием от ведущего производителя Evost.
+                    </p>
+                    <p class="d-none d-lg-block">
+                        В наших залах легко разобраться благодаря комфортной навигации и зонированию пространства.
+                    </p>
+                </div>
+                <div class="buttons">
+                    <button class="prev-btn"></button>
+                    <button class="next-btn"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="workouts-area">
+        <div class="container-fluid worhouts-container">
+            <h2 class="title">
+                НАПРАВЛЕНИЯ ТРЕНИРОВОК КЛУБА У М. АКАДЕМИЧЕСКАЯ
+            </h2>
+            <div class="workouts-block d-flex flex-wrap justify-content-center">
+                <div class="workout-block">
+                    <img src="img/bitmap-copy-5.png" alt="background">
+                    <div class="inner-block dark-bg">
+                        <h3>Силовые</h3>
+                        <p>
+                            (super sculpt, abs, pump, <br />
+                            bums) подойдут для <br />
+                            интенсивных нагрузок
                         </p>
                     </div>
-                </a>
-                <a href="akademicheskaya.html" class="club-link d-flex mt-4">
-                    <img src="img/shape1.svg" alt="pointer">
-                    <div class="inner-div">
-                        <h5>
-                            Академическая
-                        </h5>
+                </div>
+                <div class="workout-block">
+                    <img src="img/bitmap-copy-4.png" alt="background">
+                    <div class="inner-block primary-bg">
+                        <h3>Body & Mind</h3>
                         <p>
-                            ул. Бутлерова 42 а, 3 этаж
-                            ТК Призма
+                            Йога, пилатес и стретчинг - <br />
+                            для любителей менее <br />
+                            динамичных тренировок
                         </p>
                     </div>
-                </a>
-                <a href="kupchino.html"  class="club-link d-flex mt-4">
-                    <img src="img/shape1.svg" alt="pointer">
-                    <div class="inner-div">
-                        <h5>
-                            Купчино
-                        </h5>
+                </div>
+                <div class="workout-block">
+                    <img src="img/bitmap-copy-6.png" alt="background">
+                    <div class="inner-block dark-bg">
+                        <h3>Кардио-программы</h3>
                         <p>
-                            ул. Олеко Дундича 10/2
+                            Степ, аэробика, кардио-тренажеры
                         </p>
+                    </div>
+                </div>
+                <div class="workout-block">
+                    <img src="img/bitmap-copy-3.png" alt="background">
+                    <div class="inner-block primary-bg">
+                        <h3>Функциональные</h3>
+                        <p>
+                            functional training, total <br />
+                            condition
+                        </p>
+                    </div>
+                </div>
+                <div class="workout-block">
+                    <img src="img/bitmap-copy.png" alt="background">
+                    <div class="inner-block dark-bg">
+                        <h3>Танцевальные</h3>
+                        <p>
+                            Latina, strip, fusion, pole <br />
+                            dance и др.
+                        </p>
+                    </div>
+                </div>
+                <div class="workout-block">
+                    <img src="img/bitmap-copy-2.png" alt="background">
+                    <div class="inner-block primary-bg">
+                        <h3>Боевые искусства</h3>
+                        <p>
+                            Классический и тайский бокс,
+                            кикбоксинг, карате, cross fight,
+                            дзюдо, ММА
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services-area">
+        <div class="container-fluid services-container">
+            <h2 class="title">ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</h2>
+            <div
+                class="container d-flex flex-column flex-lg-row flex-lg-wrap align-items-center justify-content-md-between">
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="img/combined-shape-copy-18.svg" alt="Фитнес бар">
+                        <h5>Фитнес бар</h5>
+                    </div>
+                    <div class="flip-card-back img-bg-1">
+                        <h5>Фитнес бар</h5>
+                        <p>
+                            В нашем баре есть
+                            качественное спортивное
+                            питание, чтобы зарядиться
+                            перед тренировкой или
+                            восстановить силы после
+                            нее!
+                        </p>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="img/sun.svg" alt="Солярий">
+                        <h5>Солярий</h5>
+                    </div>
+                    <div class="flip-card-back img-bg-2">
+                        <h5>Солярий</h5>
+                        <p>
+                            Наши солярии оснащены
+                            новыми лампами, и мы
+                            всегда следим за сроком
+                            их работы.
+                        </p>
+                        <p>
+                            Стоимость 1 минуты -
+                            <span class="text-primary">25 рублей</span>.
+                        </p>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="img/towel.svg" alt="Полотенца">
+                        <h5>Полотенца</h5>
+                    </div>
+                    <div class="flip-card-back img-bg-3">
+                        <h5>Полотенца</h5>
+                        <p>
+                            Вы можете не носить с
+                            собой полотенца и
+                            арендовать их в клубе.
+                        </p>
+                        <p>
+                            Аренда 1 полотенца -
+                            <span class="text-primary">50 рублей</span>.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="img/sauna.svg" alt="Телефон">
+                        <h5>SPA зона</h5>
+                    </div>
+                    <div class="flip-card-back img-bg-4">
+                        <h5>SPA зона</h5>
+                        <p>
+                            Текст про SPA зону.
+                            текст-"рыба", часто
+                            используемый в печати
+                            и вэб-дизайне.
+                        </p>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="img/wifi.svg" alt="Телефон">
+                        <h5>Wi-fi</h5>
+                    </div>
+                    <div class="flip-card-back img-bg-5">
+                        <h5>Wi-fi</h5>
+                        <p>
+                            Текст про wi-fi
+                        </p>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="img/parking.svg" alt="Телефон">
+                        <h5>Бесплатная парковка 3 часа</h5>
+                    </div>
+                    <div class="flip-card-back img-bg-6">
+                        <h5>Бесплатная парковка 3 часа</h5>
+                        <p>
+                            Текст про бесплатную
+                            3х часовую парковку.
+                            текст-"рыба", часто
+                            используемый в печати
+                            и вэб-дизайне.
+                        </p>
+                    </div>
+                </div>
+                <div class="flip-card">
+                  <div class="flip-card-front">
+                      <img src="img/combined-shape-black.svg" alt="Солярий">
+                      <h5>Персональный тренинг</h5>
+                  </div>
+                  <div class="flip-card-back img-bg-2">
+                      <h5>Персональный тренинг</h5>
+                      <p>
+                          Текст про персональный
+                          тренинг
+                      </p>
+                  </div>
+              </div>
+                <div class="flip-card">
+                    <div class="flip-card-front">
+                        <img src="img/dryer.svg" alt="Телефон">
+                        <h5>Фены в душевых</h5>
+                    </div>
+                    <div class="flip-card-back img-bg-8">
+                        <h5>Фены в душевых</h5>
+                        <p>
+                            В душевых наших клубов
+                            есть все необходимое,
+                            чтобы привести себя
+                            в порядок после отличной
+                            тренировки.
+                        </p>
+                        <p>
+                            Фены и другое
+                            оборудование доступно
+                            <span class="text-primary">бесплатно</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="scheme-area">
+        <div class="container-fluid">
+            <h2 class="title text-center">СХЕМА ФИТНЕС КЛУБА</h2>
+            <div class="container scheme">
+                <div></div>
+                <div class="owl-carousel scheme-slides">
+                    <div class="slide">
+                        <div>1</div>
+                        <div>Зона рычажных блоков</div>
+                    </div>
+                    <div class="slide">
+                        <div>2</div>
+                        <div>Кардио зона</div>
+                    </div>
+                    <div class="slide">
+                        <div>3</div>
+                        <div>Зона кроссфита</div>
+                    </div>
+                    <div class="slide">
+                        <div>4</div>
+                        <div>Зона свободных весов</div>
+                    </div>
+                    <div class="slide">
+                        <div>5</div>
+                        <div>Женская раздевалка</div>
+                    </div>
+                    <div class="slide">
+                        <div>6</div>
+                        <div>Мужская раздевалка</div>
+                    </div>
+                    <div class="slide">
+                        <div>7</div>
+                        <div>SPA зона</div>
+                    </div>
+                    <div class="slide">
+                        <div>8</div>
+                        <div>Большой зал групповых программ</div>
+                    </div>
+                    <div class="slide">
+                        <div>9</div>
+                        <div>Малый зал групповых программ</div>
+                    </div>
+                    <div class="slide">
+                        <div>10</div>
+                        <div>Функциональная зона</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="seasons" class="season-area">
+        <div class="container-fluid">
+            <h2 class="title text-center">АБОНЕМЕНТЫ КЛУБА</h2>
+            <div
+                class="container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
+                <a href="#" class="season-item">
+                    <div class="tariff-b">
+                        <p class="name">Дуэт Старт</p>
+                        <p class="old-price">17 900 р.</p>
+                        <div class="new-price d-flex align-self-end align-items-center">
+                            <div>9</div>
+                            <div>
+                                <div>700</div>
+                                <div>р./ год</div>
+                            </div>
+                        </div>
+                        <p class="offer align-self-end">или 26 руб./ 1 посещение</p>
+                    </div>
+                    <ul class="d-flex flex-column features-b">
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>12 месяцев безлимитного 
+                              посещения при покупке
+                              2х карт одновременно</p>
+                        </li>
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>Без ограничений по времени</p>
+                        </li>
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>1 занятие с персональным
+                              тренером</p>
+                        </li>
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>«-10%» скидка на покупку
+                              клип-карты  (10 персональных
+                              тренировок)</p>
+                        </li>
+                    </ul>
+                    <div class="desc mt-auto">
+                        <p>
+                          В рамках данной акции абонементы 
+                          «Дуэт Старт» доступны с 18 по 24 декабря 
+                          в количестве 10шт.
+                        </p>
+                        <button class="btn btn-outline-dark btn-rounded">ВЫБРАТЬ ТАРИФ</button>
+                    </div>
+                </a>
+                <a href="#" class="season-item">
+                    <div class="tariff-b">
+                        <p class="name">Свободное утро</p>
+                        <p class="old-price">12 900 р.</p>
+                        <div class="new-price d-flex align-self-end align-items-center">
+                            <div>8</div>
+                            <div>
+                                <div>200</div>
+                                <div>р./ год</div>
+                            </div>
+                        </div>
+                        <p class="offer align-self-end">или 22 руб./ 1 посещение</p>
+                    </div>
+                    <ul class="d-flex flex-column features-b">
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>12 месяцев безлимитного
+                                посещения в рассрочку</p>
+                        </li>
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>Будние дни 07.00-17.00
+                              Выходные и прздничные дни
+                              09.00-15.00</p>
+                        </li>
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>1 занятие с персональным
+                              тренером</p>
+                        </li>
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>«-10%» скидка на покупку
+                              клип-карты  (10 персональных
+                              тренировок)</p>
+                        </li>
+                    </ul>
+                    <div class="desc mt-auto">
+                        <p>
+                          В рамках данной акции абонементы 
+                          «Свободное утром» доступны с 18 по 
+                          24 декабря в количестве 10шт.
+                        </p>
+                        <button class="btn btn-outline-dark btn-rounded">ВЫБРАТЬ ТАРИФ</button>
+                    </div>
+                </a>
+                <a href="#" class="season-item">
+                    <div class="tariff-b">
+                        <p class="name">Старт</p>
+                        <p class="old-price">17 900 р.</p>
+                        <div class="new-price d-flex align-self-end align-items-center">
+                            <div>10</div>
+                            <div>
+                                <div>900</div>
+                                <div>р./ год</div>
+                            </div>
+                        </div>
+                        <p class="offer align-self-end">или 29 руб./ 1 посещение</p>
+                    </div>
+                    <ul class="d-flex flex-column features-b">
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>12 месяцев безлимитного 
+                              посещения </p>
+                        </li>
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>Без ограничений по времени</p>
+                        </li>
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>1 занятие с персональным
+                                тренером</p>
+                        </li>
+                        <li class="d-flex">
+                            <p><img src="img/combined-shape-copy-21.svg" alt="иконка"></p>
+                            <p>-10%» скидка на покупку клип-карты (10 персональных тренировок)</p>
+                        </li>
+                    </ul>
+                    <div class="desc mt-auto">
+                        <p>
+                          В рамках данной акции абонементы 
+                          «Старт» доступны с 18 по 24 декабря 
+                          в количестве 10шт.
+                        </p>
+                        <button class="btn btn-outline-dark btn-rounded">ВЫБРАТЬ ТАРИФ</button>
                     </div>
                 </a>
             </div>
         </div>
+    </section>
+    <section class="announce-area">
+        <div class="announce-container container-fluid">
+            <div class="inner">
+            </div>
+            <div class="container d-flex align-items-center">
+                <div class="text-center d-flex flex-column">
+                    <div class="d-flex h-60 flex-column justify-content-between mt-10">
+                        <h3>
+                            ПЕРВЫЙ ВИЗИТ - ЗА НАШ СЧЕТ!
+                        </h3>
+                        <p class="subtitle">
+                            Приходи и убедись сам в удобстве нашего фитнес клуба!
+                        </p>
+                        <p class="text-sm">
+                            Посещение ни к чему не обязывает. Инструктор по твоему желанию проведет
+                            экскурсию по тренажерному залу и использованию оборудования.
+                        </p>
+                        <form class="d-flex flex-column flex-lg-row">
+                            <div class="input-group white">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">1</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Введите Ваше имя"
+                                    aria-label="Username">
+                            </div>
+                            <div class="input-group white">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">2</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Введите Ваш телефон"
+                                    aria-label="Phone">
+                            </div>
+                            <div class="input-group primary">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">3</span>
+                                </div>
+                                <input type="button" data-next="signup-confirm.html" class="form-control signup-btn"
+                                    value="ЗАПИСАТЬСЯ">
+                            </div>
+                        </form>
+                    </div>
+    
+                    <p class="rules mt-auto">
+                        Нажимая на кнопку "Записаться", Вы соглашаетесь с <a href="#" class="text-primary">правилами
+                            обработки персональных данных.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="schedule" class="schedule-area">
+        <div class="container-fluid">
+            <h2 class="title">РАСПИСАНИЕ ГРУППОВЫХ ПРОГРАММ</h2>
+            <div class="container">
+                <div class="schedule">
+                    <img class="d-none d-lg-block" src="img/schedule-copy.png" alt="Temp">
+                    <img class="d-none d-lg-block" src="img/schedule.png" alt="Temp">
+                    <img class="d-block d-lg-none" src="img/schedule-copy-sm.png" alt="Temp">
+                    <img class="d-block d-lg-none" src="img/schedule-sm.png" alt="Temp">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="onmap" class="map-area">
+        <div class="container-fluid">
+            <div class="clubs-block">
+                <div class="container d-flex h-100 
+                  justify-content-lg-start 
+                  justify-content-center 
+                  align-items-lg-center
+                  align-items-start">
+                    <div class="inner-block">
+                        <h2 class="title">mytime<span class="text-primary">fitness</span> АКАДЕМИЧЕСКАЯ</h2>
+                        <p>
+                          ул. Ильюшина, 14,<br/> 
+                          ТК Долгоозерный, 3 этаж
+                            <br />
+                            mytimefitnessspb@gmail.com
+                        </p>
+                        <a href="#" class="club-block">
+                            <div class="desc">
+                                <h4>Фитнес клуб</h4>
+                                <p>
+                                    ПН-ПТ: 7.00 - 00.00
+                                    СБ-ВС и праздничиные дни: 
+                                    9.00 - 22.00
+                                </p>
+                                <p class="f-small">
+                                    Вход в клуб закрыт за час до завершения
+                                    работы клуба.
+                                </p>
+                            </div>
+                        </a>
+                        <a href="#" class="club-block">
+                            <div class="desc">
+                                <h4>Отдел продаж</h4>
+                                <p>
+                                  ПН-ВС: 10.00 - 22.00 
+                                  СБ-ВС и праздничиные дни: 
+                                  10.00 - 22.00
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="map" class="map-block">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container-fluid">
+            <div class="container f-top">
+                <div class="row mb-xl-5">
+                    <div class="col-xl-3 col-6 offset-xl-2 order-1">
+                        <ul>
+                            <li>
+                                Фитнес клубы
+                            </li>
+                            <li>
+                                <a href="#">Академический</a>
+                            </li>
+                            <li>
+                                <a href="#">Купчино</a>
+                            </li>
+                            <li>
+                                <a href="#">Комендантский</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-3 col-6 order-3 order-xl-2 mt-4 mt-xl-0">
+                        <ul>
+                            <li>
+                                Информация
+                            </li>
+                            <li>
+                                <a href="#">Правила оплаты</a>
+                            </li>
+                            <li>
+                                <a href="#">Правила возврата</a>
+                            </li>
+                            <li>
+                                <a href="#">Юридическая информация</a>
+                            </li>
+                            <li>
+                                <a href="#">Публичная оферта</a>
+                            </li>
+                            <li>
+                                <a href="#">Правила клуба</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-6 order-2 order-xl-3">
+                        <ul>
+                            <li>
+                                <a href="#">Акции</a>
+                            </li>
+                            <li>
+                                <a href="#">Секции</a>
+                            </li>
+                            <li>
+                                <a href="#">Вакансии</a>
+                            </li>
+                            <li>
+                                <a href="#">О компании</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xl-2 col-12 f-border-bottom f-border-top order-4 mt-3 mt-xl-0">
+                        <ul class="py-3 py-xl-0">
+                            <li>
+                                <a href="#">mytime<span class="text-green">fitness</span>.ru</a>
+                            </li>
+                            <li>
+                                <a class="number" href="#">+7 (812) 337-07-07</a>
+                            </li>
+                            <li class="d-flex">
+                                <a href="#"><img src="img/group-7.svg" alt="whatsup link"></a>
+                                <a href="#" class="link-middle"><img src="img/group-8.svg" alt="instagram link"></a>
+                                <a href="#"><img src="img/group-9.svg" alt="vk link"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row list">
+                    <div class="offset-xl-2 col-xl-3 col-12 pt-3 pt-xl-0">
+                        <a href="#">Политика конфиденциальности</a>
+                    </div>
+                    <div class="col-xl-4 col-12">
+                        <a href="#">Политика обработки персональных данных</a>
+                    </div>
+                    <div class="col-xl-3 col-12 pb-3 pb-xl-0 mb-xl-5">
+                        <a href="#">Написать руководителю</a>
+                    </div>
+                </div>
+            </div>
+            <div class="f-bottom">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-xl-10 offset-xl-2 col-12 f-border-top pt-3 pt-xl-0 pb-5 pb-xl-0">
+                            Вся информация носит справочный характер и не является публичной офертой, определяемой
+                            положениями
+                            статьи
+                            437 ГК РФ.
+                            Любое использование текстов, изображений и видео, расположенных на сайте, не допускается без
+                            письменного
+                            разрешения.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade" id="clubs-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl h-100" role="document">
+            <div class="modal-content h-100">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img srcset="img/cancel@1x.png 23w,
+                            img/cancel@2x.png 46w,
+                            img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
+                    </button>
+                    <h4>Выберите Ваш клуб</h4>
+                    <a href="komendanskiy.html" class="club-link d-flex mt-4">
+                        <img src="img/shape1.svg" alt="pointer">
+                        <div class="inner-div">
+                            <h5>
+                                Комендантский
+                            </h5>
+                            <p class="flex-grow-1">
+                                пр. Ильюшина, 14
+                                ТК «Долгоозерный», 3 этаж
+                            </p>
+                        </div>
+                    </a>
+                    <a href="akademicheskaya.html" class="club-link d-flex mt-4">
+                        <img src="img/shape1.svg" alt="pointer">
+                        <div class="inner-div">
+                            <h5>
+                                Академическая
+                            </h5>
+                            <p>
+                                ул. Бутлерова 42 а, 3 этаж
+                                ТК Призма
+                            </p>
+                        </div>
+                    </a>
+                    <a href="kupchino.html"  class="club-link d-flex mt-4">
+                        <img src="img/shape1.svg" alt="pointer">
+                        <div class="inner-div">
+                            <h5>
+                                Купчино
+                            </h5>
+                            <p>
+                                ул. Олеко Дундича 10/2
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  <script src="js/komendanskiy.js"></script>
-  <script type="text/javascript"> 
-//     var map;
-//     var windowsSize = {
-//         Medium: 2,
-//         Large: 3,
-//     };
-
-//     var mapSettingsCollection = {
-//       Large: { center: [59.91630318065146, 30.07137557421872], zoom: 10, 
-//         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
-//       },
-//       Medium: { center: [60.1677166120527, 30.394098962890602], zoom: 9,
-//         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58] 
-//       }
-//     };
-
-//     var mapSettings = null; 
-//     var currentSize = null;
-//     ymaps.ready(init);
-
-//     var createLayout = function (id) {
-//       var Layout = ymaps.templateLayoutFactory.createClass(
-//           '<div class="club"></div>',
-//           {
-//               build: function () {
-//                 Layout.superclass.build.call(this);
-//                   var placemarkMap = this.getData().geoObject.getMap();
-
-//                   if (!this.inited) {
-//                       this.inited = true;
-
-//                       placemarkMap.events.add('sizechange', function () {
-//                         this.rebuild();
-//                       }, this);
-//                   }
-
-//                   var img = document.createElement("img");
-//                   img.src = mapSettings.imgUrls[id];
-//                   img.width = mapSettings.imgSize[0];
-//                   img.height = mapSettings.imgSize[1];
-
-//                   var options = this.getData().options,
-//                   element = this.getParentElement().getElementsByClassName('club')[0];
-//                   element.appendChild(img);
-//               }
-//           }
-//       );
-
-//       return Layout;
-//   };
-
-    // function init() {
-
-    //   var width = document.documentElement.clientWidth;
-
-    //   if(width >= 977) {
-    //     currentSize = windowsSize.Large;
-    //     mapSettings = mapSettingsCollection.Large;
-    //   } else {
-    //     currentSize = windowsSize.Medium;
-    //     mapSettings = mapSettingsCollection.Medium;
-    //   }
-
-    //   map = new ymaps.Map("map", {
-    //     center: mapSettings.center,
-    //     zoom: mapSettings.zoom,
-    //   });
-
-    //   var kupchino = new ymaps.Placemark(
-    //     [59.82853206432565,30.39268299999999], {
-    //           id: 2,
-    //           hintContent: 'Санкт-Петербург м.Купчино, ул. Олеко Дундича 10/2, 1 этаж'
-    //       }, {
-    //           iconLayout: createLayout(2)
-    //       }
-    //   );
-
-    //   var komendanskiy = new ymaps.Placemark(
-    //     [60.01065856407727,30.403732499999954], {
-    //           id: 0,
-    //           hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
-    //       }, {
-    //           iconLayout: createLayout(0)
-    //       }
-    //   );
-
-    //   var akademicheskaya = new ymaps.Placemark(
-    //     [60.00816706410207,30.2457365], {
-    //           id: 1,
-    //           hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
-    //       }, {
-    //           iconLayout: createLayout(1)
-    //       }
-    //   );
-
-    //   map.controls.remove('geolocationControl');
-    //   map.controls.remove('searchControl');
-    //   map.controls.remove('trafficControl');
-    //   map.controls.remove('typeSelector');
-    //   map.controls.remove('fullscreenControl');
-    //   map.controls.remove('rulerControl');
-    //   map.behaviors.disable(['scrollZoom']);
-
-    //   map.events.add('sizechange', function(event) {
-    //     var size = map.container.getSize();
-    //     var width = size[0];
-    //     var toChange = false;
-
-    //     if(toChange = (width >= 975 && currentSize != windowsSize.Large)) {
-    //       currentSize = windowsSize.Large;
-    //       mapSettings = mapSettingsCollection.Large;
-
-    //     } else if(toChange = (width < 975 && currentSize != windowsSize.Medium)) {
-    //       currentSize = windowsSize.Medium;
-    //       mapSettings = mapSettingsCollection.Medium;
-    //     }
-
-    //     if(toChange){
-    //       map.setCenter(mapSettings.center, mapSettings.zoom);
-    //     }
-    //   });  
-
-    //   ymaps.geoQuery(komendanskiy).addToMap(map);
-    //   ymaps.geoQuery(akademicheskaya).addToMap(map);
-    //   ymaps.geoQuery(kupchino).addToMap(map);
-    // }
-
-    // $(".club-block").click(function(event) {
-    //   event.preventDefault();
-    //   var self = $(this);
-
-    //   var hasClass = self.hasClass("active");
-    //   var geoObjects =  ymaps.geoQuery(map.geoObjects);
-
-    //   if(hasClass) {
-    //     var result = geoObjects.setOptions('visible', true);
-    //     result.then(function() {
-    //       self.removeClass("active");
-    //     });
-    //   } else {
-    //     var idStr = self.data( "id" );
-    //     var id = parseInt(idStr);
-    //     var selected = geoObjects.search("properties.id = " + id).setOptions('visible', true);
-    //     var result2 = geoObjects.remove(selected).setOptions('visible', false);
-
-    //     result2.then(function() {
-    //       $(".club-block").removeClass("active");
-    //       self.addClass("active");
-    //     });
-    //   }
-    // });
-
-  </script>
+    <script src="js/komendanskiy.js"></script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+    </script>
 </body>
 
 </html>

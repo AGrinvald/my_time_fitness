@@ -8400,7 +8400,8 @@ nav.navbar {
   border-radius: 13px;
   display: flex;
   flex-direction: column;
-  cursor: pointer; }
+  cursor: pointer;
+  color: #000000; }
   .season-area .season-item:hover {
     box-shadow: 0 0 16px 0 rgba(134, 238, 49, 0.61);
     text-decoration: none; }
@@ -8456,13 +8457,15 @@ nav.navbar {
       letter-spacing: 0.3px; }
   .season-area .season-item .features-b {
     margin: 0;
-    padding: 0 30px; }
+    padding: 0 30px;
+    min-height: 500px; }
     .season-area .season-item .features-b p {
       margin: 0; }
     .season-area .season-item .features-b li {
       align-items: center;
-      padding: 15px 0;
-      border-bottom: 1px dotted #cecece; }
+      padding: 15px 0; }
+      .season-area .season-item .features-b li:not(:last-child) {
+        border-bottom: 1px dotted #cecece; }
       .season-area .season-item .features-b li > p:first-child {
         margin-right: 17px; }
   .season-area .season-item .desc {
@@ -8657,8 +8660,8 @@ nav.navbar {
 .gallery-area .buttons {
   position: absolute;
   left: 50%;
-  top: 50%;
-  width: 57.3%;
+  top: 45%;
+  width: 58%;
   transform: translateX(-50%);
   justify-content: space-between;
   z-index: 20; }
@@ -8697,7 +8700,8 @@ nav.navbar {
     position: absolute;
     text-align: center;
     top: 45%;
-    width: 100%;
+    left: -2%;
+    width: 105%;
     display: flex;
     justify-content: space-between; }
     .gallery-area .gallery-carousel .owl-nav button.owl-prev, .gallery-area .gallery-carousel .owl-nav button.owl-next {
@@ -8731,17 +8735,18 @@ nav.navbar {
       position: absolute;
       transition: transform 1s, left 1s, opacity 1s, z-index 0s, width 1s;
       opacity: 1;
-      width: 57.3%; }
+      width: 57.3%;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.88); }
       .gallery-area .gallery-carousel div img {
         width: 100%;
         height: 100%; }
       .gallery-area .gallery-carousel div.prev::before, .gallery-area .gallery-carousel div.prevLeftSecond::before, .gallery-area .gallery-carousel div.next::before, .gallery-area .gallery-carousel div.nextRightSecond::before {
         content: "";
         position: absolute;
-        left: 1.7%;
-        top: 2.6%;
-        height: 95%;
-        width: 96.6%;
+        left: 0%;
+        top: 0%;
+        height: 100%;
+        width: 100%;
         background-color: rgba(0, 0, 0, 0.7);
         z-index: 6; }
       .gallery-area .gallery-carousel div.prev {

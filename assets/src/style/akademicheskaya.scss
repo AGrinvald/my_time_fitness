@@ -821,6 +821,7 @@ nav.navbar {
         display: flex;
         flex-direction: column;
         cursor: pointer;
+        color: $black;
 
         &:hover {
             box-shadow: 0 0 16px 0 rgba(134, 238, 49, 0.61);
@@ -906,7 +907,8 @@ nav.navbar {
         .features-b {
             margin: 0;
             padding: 0 30px;
-
+            min-height: 500px;
+            
             p {
                 margin: 0;
             }
@@ -914,7 +916,9 @@ nav.navbar {
             li {
                 align-items: center;
                 padding: 15px 0;
-                border-bottom: 1px dotted #cecece;
+                &:not(:last-child) {
+                    border-bottom: 1px dotted #cecece;
+                }
                 > p:first-child {
                     margin-right: 17px;
                 }
@@ -1169,8 +1173,8 @@ nav.navbar {
     .buttons {
         position: absolute;
         left: 50%;
-        top: 50%;
-        width: 57.3%;  
+        top: 45%;
+        width: 58%;  
         transform: translateX(-50%);
         justify-content: space-between;
         z-index: 20;
@@ -1230,7 +1234,8 @@ nav.navbar {
             position: absolute;
             text-align: center;
             top: 45%;
-            width: 100%;
+            left: -2%;
+            width: 105%;
             display: flex;
             justify-content: space-between;
 
@@ -1281,7 +1286,8 @@ nav.navbar {
                 transition: transform 1s, left 1s, opacity 1s, z-index 0s, width 1s;
                 opacity: 1;
                 width: 57.3%;
-
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.88);
+                
                 img {
                     width: 100%;
                     height: 100%;
@@ -1291,10 +1297,10 @@ nav.navbar {
                     &::before {
                         content: "";
                         position: absolute;
-                        left: 1.7%;
-                        top: 2.6%;
-                        height: 95%;
-                        width: 96.6%;
+                        left: 0%;
+                        top: 0%;
+                        height: 100%;
+                        width: 100%;
                         background-color: rgba(0,0,0,.7);
                         z-index: 6;
                     }
