@@ -7806,7 +7806,7 @@ header {
   font-weight: 300;
   letter-spacing: -0.39px;
   color: #000000; }
-  @media (max-width: 1199.98px) {
+  @media (max-width: 991.98px) {
     .banner-area .banner-top {
       display: none; } }
   .banner-area .banner-top .breadcrumb {
@@ -7820,17 +7820,121 @@ header {
 
 .banner-area .banner-bottom {
   position: relative; }
+  @media (max-width: 991.98px) {
+    .banner-area .banner-bottom::after {
+      content: "";
+      position: absolute;
+      bottom: -7%;
+      left: 25%;
+      width: 75px;
+      height: 71px;
+      background: url(../img/flower-sm.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      z-index: 10; } }
+  @media (max-width: 767.98px) {
+    .banner-area .banner-bottom::after {
+      content: "";
+      position: absolute;
+      bottom: -7%;
+      left: 10%;
+      width: 75px;
+      height: 71px;
+      background: url(../img/flower-sm.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      z-index: 10; } }
+  .banner-area .banner-bottom .card-block {
+    position: relative; }
+    @media (max-width: 991.98px) {
+      .banner-area .banner-bottom .card-block::before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        right: 26%;
+        width: 86px;
+        height: 81px;
+        background: url(../img/flower-md.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center; } }
+    @media (max-width: 767.98px) {
+      .banner-area .banner-bottom .card-block::before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        right: 17%;
+        width: 86px;
+        height: 81px;
+        background: url(../img/flower-md.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center; } }
+  .banner-area .banner-bottom .desc-block {
+    position: relative; }
+    @media (max-width: 991.98px) {
+      .banner-area .banner-bottom .desc-block {
+        overflow: hidden; }
+        .banner-area .banner-bottom .desc-block::before {
+          content: "";
+          position: absolute;
+          left: 0%;
+          bottom: -2%;
+          height: 110%;
+          width: 100%;
+          background: url(../img/white-shadow.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          z-index: -1; } }
+    @media (min-width: 992px) {
+      .banner-area .banner-bottom .desc-block::before {
+        content: "";
+        position: absolute;
+        top: -28%;
+        left: 35%;
+        width: 75px;
+        height: 71px;
+        background: url(../img/flower-sm.svg);
+        background-repeat: no-repeat;
+        background-position: center center; }
+      .banner-area .banner-bottom .desc-block::after {
+        content: "";
+        position: absolute;
+        right: -10%;
+        bottom: -50%;
+        width: 190px;
+        height: 149px;
+        background: url(../img/flower-group.svg);
+        background-repeat: no-repeat;
+        background-position: center center; } }
   .banner-area .banner-bottom h1 {
-    font-size: 40px;
     font-weight: bold;
     line-height: 1.2;
-    letter-spacing: 0.8px;
     color: #90b500;
-    margin-bottom: 20px; }
+    text-shadow: 0px 0px 10px #fff; }
+    @media (min-width: 992px) {
+      .banner-area .banner-bottom h1 {
+        font-size: 40px;
+        letter-spacing: 0.8px;
+        margin-bottom: 20px; } }
+    @media (max-width: 991.98px) {
+      .banner-area .banner-bottom h1 {
+        font-size: 32px;
+        letter-spacing: 1.44px;
+        margin-top: 25px; } }
   .banner-area .banner-bottom p {
-    font-size: 24px;
     font-weight: 300;
-    margin-bottom: 40px; }
+    text-shadow: 0px 2px 4px #fff; }
+    @media (min-width: 992px) {
+      .banner-area .banner-bottom p {
+        font-size: 24px;
+        margin-bottom: 40px; } }
+    @media (max-width: 991.98px) {
+      .banner-area .banner-bottom p {
+        font-size: 22px;
+        margin-bottom: 25px; } }
   .banner-area .banner-bottom .btn {
     color: #ffffff;
     font-size: 16px;
@@ -7840,7 +7944,8 @@ header {
     @media (max-width: 991.98px) {
       .banner-area .banner-bottom .btn {
         width: 232px;
-        letter-spacing: 1.42px; } }
+        letter-spacing: 1.42px;
+        margin-bottom: 40px; } }
   @media (min-width: 992px) {
     .banner-area .banner-bottom {
       height: 438px;
@@ -7866,7 +7971,8 @@ header {
     position: relative;
     z-index: 8; }
     .banner-area .banner-bottom .row > div {
-      padding: 0; }
+      padding-left: 0;
+      padding-right: 0; }
   @media (min-width: 992px) {
     .banner-area .banner-bottom img {
       max-width: 491px;

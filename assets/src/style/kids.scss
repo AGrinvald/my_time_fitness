@@ -128,7 +128,7 @@ header {
     }
 
     .banner-top {
-        @include media-breakpoint-down(lg) { 
+        @include media-breakpoint-down(md) { 
             display: none;
         }
 
@@ -164,19 +164,150 @@ header {
     .banner-bottom {
         position: relative;
 
+        @include media-breakpoint-down(md) {
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -7%;
+                left: 25%;
+                width: 75px;
+                height: 71px;
+                background: url(../img/flower-sm.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                z-index: 10;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -7%;
+                left: 10%;
+                width: 75px;
+                height: 71px;
+                background: url(../img/flower-sm.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                z-index: 10;
+            }
+        }
+
+        .card-block {
+            position: relative;
+
+            @include media-breakpoint-down(md) {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -10%;
+                    right: 26%;
+                    width: 86px;
+                    height: 81px;
+                    background: url(../img/flower-md.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center center;
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -10%;
+                    right: 17%;
+                    width: 86px;
+                    height: 81px;
+                    background: url(../img/flower-md.svg);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center center;
+                }
+            }
+        }
+
+        .desc-block {   
+            position: relative;
+
+            @include media-breakpoint-down(md) {
+                overflow: hidden;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0%;
+                    bottom: -2%;
+                    height: 110%;
+                    width: 100%;      
+                    background: url(../img/white-shadow.png);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    z-index: -1;
+                }
+            }
+
+            @include media-breakpoint-up(lg) {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -28%;
+                    left: 35%;
+                    width: 75px;
+                    height: 71px;
+                    background: url(../img/flower-sm.svg);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: -10%;
+                    bottom: -50%;
+                    width: 190px;
+                    height: 149px;
+                    background: url(../img/flower-group.svg);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+            }
+        }
+
         h1 {
-            font-size: 40px;
             font-weight: bold;
             line-height: 1.2;
-            letter-spacing: 0.8px;
             color: #90b500;
-            margin-bottom: 20px;
+            text-shadow: 0px 0px 10px#fff;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 40px;
+                letter-spacing: 0.8px;
+                margin-bottom: 20px;
+            }
+
+            @include media-breakpoint-down(md) {
+                font-size: 32px;
+                letter-spacing: 1.44px;
+                margin-top: 25px;
+            }
         }
 
         p {
-            font-size: 24px;
             font-weight: 300;
-            margin-bottom: 40px;
+            text-shadow: 0px 2px 4px#fff;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 24px;
+                margin-bottom: 40px;
+            }
+
+            @include media-breakpoint-down(md) {
+                font-size: 22px;
+                margin-bottom: 25px;
+            }
         }
 
         .btn {
@@ -189,6 +320,7 @@ header {
             @include media-breakpoint-down(md) {
                 width: 232px;
                 letter-spacing: 1.42px;
+                margin-bottom: 40px;
             }
         }
 
@@ -220,7 +352,8 @@ header {
             position: relative;
             z-index: 8;
             > div {
-                padding: 0;
+                padding-left: 0;
+                padding-right: 0;
             }
         }
 
