@@ -847,6 +847,8 @@ nav.navbar {
         }
 
         @include media-breakpoint-down(lg) {
+            margin-right: 15px;
+            margin-left: 15px;
             margin-bottom: 25px;
         }
 
@@ -1233,7 +1235,7 @@ nav.navbar {
         .owl-nav {
             position: absolute;
             text-align: center;
-            top: 45%;
+            top: 40%;
             left: -2%;
             width: 105%;
             display: flex;
