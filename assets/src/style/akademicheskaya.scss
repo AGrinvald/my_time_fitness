@@ -1078,7 +1078,7 @@ nav.navbar {
                 background-size: auto;
                 background-repeat: no-repeat;
                 background-position: left top;
-                z-index: 10;
+                z-index: 2;
             }
 
             &::after {
@@ -1092,12 +1092,11 @@ nav.navbar {
                 background-size: auto;
                 background-repeat: no-repeat;
                 background-position: right bottom;
-                z-index: 10;
+                z-index: 2;
             }
         }
 
         @include media-breakpoint-down(lg) {
-            //height: 416px;
             &::before {
                 content: "";
                 position: absolute;
@@ -1109,7 +1108,7 @@ nav.navbar {
                 background-size: auto;
                 background-repeat: no-repeat;
                 background-position: left top;
-                z-index: 10;
+                z-index: 2;
             }
 
             &::after {
@@ -1123,7 +1122,7 @@ nav.navbar {
                 background-size: auto;
                 background-repeat: no-repeat;
                 background-position: right bottom;
-                z-index: 10;
+                z-index: 2;
             }
         }
     }
@@ -1131,8 +1130,39 @@ nav.navbar {
     .container {
         position: relative;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+
         @include media-breakpoint-up(xl) {
             max-width: 1400px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            max-width: 720px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            max-width: 335px;
+        }
+
+        .desc {
+            color: $white;
+            margin-bottom: 0;
+            font-weight: 300;
+            text-align: center;
+            margin-top: auto;
+
+            @include media-breakpoint-up(xl) {
+                margin-bottom: 70px;
+                font-size: 18px;
+                line-height: 0.72;
+            }
+    
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 35px;
+                font-size: 14px;
+                line-height: 16px;
+            }  
         }
     }
     
@@ -1154,21 +1184,42 @@ nav.navbar {
         }
 
         .prev-btn, .next-btn {
-            width: 58px;
-            height: 58px;
             cursor: pointer;
             background-position: center center;
             background-repeat: no-repeat;
             border:0;
+
+            @include media-breakpoint-up(xl) {
+                width: 58px;
+                height: 58px;
+            }
+    
+            @include media-breakpoint-down(lg) {
+                width: 40px;
+                height: 40px;
+            }
         }
 
-        .prev-btn {
-            background-image: url(../img/prev.svg);
+        @include media-breakpoint-up(xl) {
+            .prev-btn {
+                background-image: url(../img/prev.svg);
+            }
+    
+            .next-btn {
+                background-image: url(../img/next.svg);
+            }
         }
 
-        .next-btn {
-            background-image: url(../img/next.svg);
+        @include media-breakpoint-down(lg) {
+            .prev-btn {
+                background-image: url(../img/groupCopy4.png);
+            }
+    
+            .next-btn {
+                background-image: url(../img/groupCopy5.png);
+            }
         }
+
     }
 
     .gallery-carousel {
@@ -1184,20 +1235,39 @@ nav.navbar {
             justify-content: space-between;
 
             button.owl-prev,  button.owl-next {
-              width: 58px;
-              height: 58px;
               cursor: pointer;
               background-position: center center;
               background-repeat: no-repeat;
-              margin: 12px;
+
+              @include media-breakpoint-up(xl) {
+                    width: 58px;
+                    height: 58px;
+                }
+    
+              @include media-breakpoint-down(lg) {
+                    width: 40px;
+                    height: 40px;
+                }
             }
 
-            button.owl-prev {
-              background-image: url(../img/prev.svg);
+            @include media-breakpoint-up(xl) {
+                button.owl-prev {
+                    background-image: url(../img/prev.svg);
+                }
+        
+                button.owl-next {
+                    background-image: url(../img/next.svg);
+                }
             }
-      
-            button.owl-next {
-              background-image: url(../img/next.svg);
+    
+            @include media-breakpoint-down(lg) {
+                button.owl-prev {
+                    background-image: url(../img/groupCopy4.png);
+                }
+        
+                button.owl-next {
+                    background-image: url(../img/groupCopy5.png);
+                }
             }
           }
         }
@@ -1211,7 +1281,6 @@ nav.navbar {
                 transition: transform 1s, left 1s, opacity 1s, z-index 0s, width 1s;
                 opacity: 1;
                 width: 57.3%;
-               // transition: ;
 
                 img {
                     width: 100%;
@@ -1285,10 +1354,11 @@ nav.navbar {
     h2 {
         text-align: center;
         color: $white;
+        margin-bottom: 0;
 
         @include media-breakpoint-up(lg) {
             padding-top: 85px;
-            padding-bottom: 60px;
+            padding-bottom: 50px;
         }
 
         @include media-breakpoint-down(md) {
