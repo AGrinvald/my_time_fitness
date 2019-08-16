@@ -105,6 +105,16 @@ header {
 }
 /* TOP HEADER END */
 
+/* NAVBAR START */
+nav.navbar {
+    position: relative;
+
+    .navbar-nav {
+        z-index: 10;
+    }
+}
+/* NAVBAR END */
+
 /* BANNER AREA START*/
 .banner-area { 
     .banner-container {

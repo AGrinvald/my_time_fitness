@@ -7782,6 +7782,13 @@ header {
       z-index: 2; } }
 
 /* TOP HEADER END */
+/* NAVBAR START */
+nav.navbar {
+  position: relative; }
+  nav.navbar .navbar-nav {
+    z-index: 10; }
+
+/* NAVBAR END */
 /* BANNER AREA START*/
 .banner-area .banner-container {
   width: 100%;
