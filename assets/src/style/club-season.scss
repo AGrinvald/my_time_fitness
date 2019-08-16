@@ -1,0 +1,174 @@
+/* SEASON AREA START*/
+.season-area {
+    .container-fluid {
+        overflow: hidden;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 60px;
+            margin-bottom: 185px;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-top: 30px;
+        }
+    }
+
+    h2 {
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 70px;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 30px;
+        }
+    }
+    .season-item {
+        width: 368px;
+        box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.29);
+        background-image: linear-gradient(to top, #f8f8f8, #ffffff);
+        border-radius: 13px;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        color: $black;
+
+        &:hover {
+            box-shadow: 0 0 16px 0 rgba(134, 238, 49, 0.61);
+            text-decoration: none;
+
+            .tariff-b {
+                background-image: url(../img/555-copy.png);
+
+                .old-price {
+                    color: #dcfe55;
+                }
+            }
+
+            button {
+                background-color: $primary;
+                border: none;
+                color: $white;
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 15px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .tariff-b {
+            width: 100%;
+            color: white;
+            background-image: url(../img/555-copy-2.png);
+            background-repeat: no-repeat;
+            background-position: top center;
+            padding: 31px 32px 32px 25px;
+            display: flex;
+            flex-direction: column;
+
+            .name {
+                font-size: 36px;
+                font-weight: bold;
+                letter-spacing: 0.75px;
+            }
+
+            .old-price {
+                font-size: 26px;
+                letter-spacing: 0.54px;
+                color: #a5a5a5;
+                text-decoration: line-through;
+            }
+
+            .new-price {
+                > div:first-child {
+                    font-size: 90px;
+                    font-weight: bold;
+                    letter-spacing: 1.88px;
+                }
+                > div:last-child {
+                    > div:first-child {
+                        font-size: 44px;
+                        font-weight: bold;
+                        letter-spacing: 0.92px;
+                        line-height: 40px;
+                    }
+                    > div:last-child {
+                        font-size: 26px;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            .offer {
+                font-size: 24px;
+                font-weight: 300;
+                letter-spacing: 0.3px;
+            }
+        }
+
+        .features-b {
+            margin: 0;
+            padding: 0 30px;
+
+            @include media-breakpoint-up(xl) {
+                min-height: 450px;
+            }
+
+            p {
+                margin: 0;
+            }
+
+            li {
+                align-items: center;
+                padding: 15px 0;
+
+                &:not(:last-child) {
+                    border-bottom: 1px dotted #cecece;
+                }
+
+                &:last-child {
+                    margin-bottom: 40px;
+                }
+
+                > p:first-child {
+                    margin-right: 17px;
+                }
+            }
+
+        }
+
+        .desc {
+            padding: 0 30px;
+            margin-top: 40px;
+            padding-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            p {
+                padding-top: 10px;
+                padding-bottom: 30px;
+                border-top: solid 1px #101929;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.13;
+                letter-spacing: -0.33px;
+                color: #818181;
+            }
+
+            .btn {
+                width: 250px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+/* SEASON AREA END*/

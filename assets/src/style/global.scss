@@ -18,6 +18,11 @@ body {
   font-family: "Avenir Next Cyr";
   letter-spacing: 1.42px;
   font-weight: bold;
+
+  &:focus, &:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }
 
 .btn-lg {

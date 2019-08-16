@@ -1,0 +1,122 @@
+/* PAGE NAVIGATION START*/
+.page-nav-area {
+    .nav-container {
+        @include media-breakpoint-up(xl) {
+            height: 645px;
+            background-image: url(../img/555-copy-3.png), url(../img/555-copy-4.png);
+            background-position: right top, left top;
+            background-repeat: no-repeat, no-repeat;
+        }
+
+        @include media-breakpoint-down(lg) {
+            padding: 72px 0;
+            background-image: url(../img/555Copy4.jpg), url(../img/555Copy4-copy.jpg);
+            background-position: right top, left bottom;
+            background-repeat: no-repeat, no-repeat;
+        }
+
+        .page-nav-item {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            font-weight: bold;
+            color: #000000;
+            justify-content: space-between;
+
+            @include media-breakpoint-up(xl) {
+                padding-top: 60px;
+                padding-bottom: 35px;
+            }
+
+            @include media-breakpoint-down(lg) {
+                padding-top: 23px;
+                padding-bottom: 8px;
+            }
+
+            .icon {
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+            }
+
+            .imb-bg-1 {
+                background-image: url(../img/shape.svg);
+
+                @include media-breakpoint-up(xl) {
+                    height: 106px;
+                    width: 71px;
+                }
+                @include media-breakpoint-down(lg) {
+                    height: 57px;
+                    width: 38px;
+                }
+            }
+
+            .imb-bg-2 {
+                background-image: url(../img/combined-shape1.svg);
+
+                @include media-breakpoint-up(xl) {
+                    height: 87px;
+                    width: 84px;
+                }
+                @include media-breakpoint-down(lg) {
+                    height: 44px;
+                    width: 43px;
+                }
+            }
+
+            .imb-bg-3 {
+
+                background-image: url(../img/combined-shape.svg);
+
+                @include media-breakpoint-up(xl) {
+                    height: 67px;
+                    width: 103px;
+                }
+                @include media-breakpoint-down(lg) {
+                    height: 34px;
+                    width: 61px;
+                }
+            }
+
+            .imb-bg-4 {
+                background-image: url(../img/path.svg);
+
+                @include media-breakpoint-up(xl) {
+                    height: 96px;
+                    width: 50px;
+                }
+                @include media-breakpoint-down(lg) {
+                    height: 48px;
+                    width: 25px;
+                }
+            }
+
+            &:hover, &:focus {
+                text-decoration: none;
+            }
+
+            @include media-breakpoint-up(xl) {
+                width: 264px;
+                height: 264px;
+                font-size: 20px;
+                letter-spacing: 0.2px
+            }
+
+            @include media-breakpoint-down(lg) {
+                width: 136px;
+                height: 136px;
+                margin: 13px;
+                font-size: 15px;
+                letter-spacing: 0.15px
+            }
+
+            border-radius: 9px;
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.29);
+            background-image: linear-gradient(to top, #f8f8f8, #ffffff);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ffffff', GradientType=0 );
+        }
+    }
+
+}
+/* PAGE NAVIGATION END*/

@@ -1,0 +1,33 @@
+  /* SCHEDULE AREA START*/
+  .schedule-area {
+    .container-fluid {
+        overflow: hidden;
+
+        img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include media-breakpoint-up(xl) {
+            background-image: url(../img/555-copy-3.png), url(../img/555-copy-4.png);
+            background-position: right top, left top;
+            background-repeat: no-repeat, no-repeat;
+            padding-bottom: 45px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            background-image: url(../img/555-copy-3.png);
+            background-position: right top;
+            background-repeat: no-repeat;
+            padding-bottom: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 75px;
+            margin-bottom: 80px;
+        }
+
+    }
+  }
+ /* SCHEDULE AREA END */
