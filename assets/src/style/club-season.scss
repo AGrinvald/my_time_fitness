@@ -74,7 +74,9 @@
             padding: 31px 32px 32px 25px;
             display: flex;
             flex-direction: column;
-
+            border-top-left-radius: 13px;
+            border-top-right-radius: 13px;
+            
             .name {
                 font-size: 36px;
                 font-weight: bold;
@@ -130,6 +132,9 @@
             li {
                 align-items: center;
                 padding: 15px 0;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 1.11;
 
                 &:not(:last-child) {
                     border-bottom: 1px dotted #cecece;
@@ -147,11 +152,10 @@
         }
 
         .desc {
-            padding: 0 30px;
-            margin-top: 40px;
-            padding-bottom: 60px;
+            padding: 0 30px 60px 30px;
             display: flex;
             flex-direction: column;
+            
             p {
                 padding-top: 10px;
                 padding-bottom: 30px;

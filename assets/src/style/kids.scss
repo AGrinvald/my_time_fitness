@@ -49,629 +49,879 @@
 
 /* TOP HEADER START */
 header {
-    position: relative;
-    @include media-breakpoint-up(xl) { 
-        .hex-c {
-            width: 100%;    
-            height: 360px; 
-            z-index: 2;
-            overflow: hidden;
+  position: relative;
+  @include media-breakpoint-up(xl) {
+    .hex-c {
+      width: 100%;
+      height: 360px;
+      z-index: 2;
+      overflow: hidden;
 
-            &::before {
-                content: "";
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                top: 13%;
-                height: 279px;
-                min-width: 2025px;      
-                width: 100%; 
-                background: url(../img/group-6.svg);
-                background-size: 427px 279px;
-                background-repeat: no-repeat;
-                background-position-y: top;
-                background-position-x: left;
-                z-index: 2;
-            }
-        }
-    } 
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 13%;
+        height: 279px;
+        min-width: 2025px;
+        width: 100%;
+        background: url(../img/group-6.svg);
+        background-size: 427px 279px;
+        background-repeat: no-repeat;
+        background-position-y: top;
+        background-position-x: left;
+        z-index: 2;
+      }
+    }
+  }
 }
 
 .h-top {
-    @include media-breakpoint-up(lg) { 
-        .inner {
-            width: 100%;
-            height: 585px;
-            z-index: 1;
-            overflow: hidden;
+  @include media-breakpoint-up(lg) {
+    .inner {
+      width: 100%;
+      height: 585px;
+      z-index: 1;
+      overflow: hidden;
 
-            &::before {
-                content: "";
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                position: absolute;
-                width: 1635px;
-                height: 293px;
-                background-image: url(../img/header-kids.svg);
-                background-size: auto 100%;
-                background-repeat: no-repeat;
-                background-position-y: top;
-                background-position-x: right;
-                z-index: 2;
-            }
-        }
+      &::before {
+        content: "";
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        width: 1635px;
+        height: 293px;
+        background-image: url(../img/header-kids.svg);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position-y: top;
+        background-position-x: right;
+        z-index: 2;
+      }
     }
+  }
 }
 /* TOP HEADER END */
 
 /* NAVBAR START */
 nav.navbar {
-    position: relative;
+  position: relative;
 
-    .navbar-nav {
-        z-index: 10;
-    }
+  .navbar-nav {
+    z-index: 10;
+  }
 }
 /* NAVBAR END */
 
 /* BANNER AREA START*/
-.banner-area { 
-    .banner-container {
-        @include media-breakpoint-up(lg) { 
-            max-width: 1169px;
+.banner-area {
+  .banner-container {
+    @include media-breakpoint-up(lg) {
+      max-width: 1169px;
+    }
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    padding: 0;
+  }
+
+  .container-fluid {
+    @include media-breakpoint-down(md) {
+      height: 600px;
+      background-image: url(../img/kids-bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding-top: 30px;
+    }
+  }
+
+  .banner-top {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: -0.39px;
+    color: $black;
+
+    .breadcrumb {
+      background: transparent;
+
+      .breadcrumb-item {
+        a {
+          color: $black;
         }
-        width: 100%;
-        position: relative;
+
+        &.active {
+          color: #8e8e8e;
+        }
+      }
+    }
+
+    .dropdown {
+      text-decoration: underline;
+    }
+  }
+
+  .banner-bottom {
+    position: relative;
+
+    // .overflow-hidden {
+    //     overflow: hidden;
+    // }
+
+    @include media-breakpoint-down(md) {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -7%;
+        left: 25%;
+        width: 75px;
+        height: 71px;
+        background: url(../img/flower-sm.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        z-index: 10;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -7%;
+        left: 10%;
+        width: 75px;
+        height: 71px;
+        background: url(../img/flower-sm.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        z-index: 10;
+      }
+    }
+
+    .card-block {
+      position: relative;
+
+      @include media-breakpoint-down(md) {
+        &::before {
+          content: "";
+          position: absolute;
+          top: -10%;
+          right: 26%;
+          width: 86px;
+          height: 81px;
+          background: url(../img/flower-md.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center center;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        &::before {
+          content: "";
+          position: absolute;
+          top: -10%;
+          right: 17%;
+          width: 86px;
+          height: 81px;
+          background: url(../img/flower-md.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center center;
+        }
+      }
+    }
+
+    .desc-block {
+      position: relative;
+
+      @include media-breakpoint-up(lg) {
+        &::before {
+          content: "";
+          position: absolute;
+          top: -28%;
+          left: 35%;
+          width: 75px;
+          height: 71px;
+          background: url(../img/flower-sm.svg);
+          background-repeat: no-repeat;
+          background-position: center center;
+          z-index: 5;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: -10%;
+          bottom: -50%;
+          width: 190px;
+          height: 149px;
+          background: url(../img/flower-group.svg);
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        overflow: hidden;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0%;
+          bottom: -2%;
+          height: 110%;
+          width: 100%;
+          background: url(../img/white-shadow.png);
+          background-repeat: no-repeat;
+          background-position: center center;
+          z-index: -1;
+        }
+      }
+    }
+
+    h1 {
+      font-weight: bold;
+      line-height: 1.2;
+      color: #90b500;
+      text-shadow: 0px 0px 10px#fff;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 40px;
+        letter-spacing: 0.8px;
+        margin-bottom: 20px;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 32px;
+        letter-spacing: 1.44px;
+        margin-top: 25px;
+      }
+    }
+
+    p {
+      font-weight: 300;
+      text-shadow: 0px 2px 4px#fff;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 22px;
+        margin-bottom: 25px;
+      }
+    }
+
+    .btn {
+      color: $white;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1.12px;
+      width: 204px;
+
+      @include media-breakpoint-down(md) {
+        width: 232px;
+        letter-spacing: 1.42px;
+        margin-bottom: 40px;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 438px;
+      padding-left: 55px;
+      padding-right: 55px;
+      background-image: url(../img/kids-bg.png);
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        width: 578px;
+        height: 100%;
+        background-image: url(../img/kids-bg2.svg);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position-y: top;
+        background-position-x: right;
         z-index: 5;
-        padding: 0;
+      }
     }
 
-    .container-fluid {
-        @include media-breakpoint-down(md) {
-            height: 600px;
-            background-image: url(../img/kids-bg.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            padding-top: 30px;
-        }
+    .row {
+      @include media-breakpoint-down(md) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      position: relative;
+      z-index: 8;
+      > div {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
 
-    .banner-top {
-        @include media-breakpoint-down(md) { 
-            display: none;
-        }
+    img {
+      @include media-breakpoint-up(lg) {
+        max-width: 491px;
+        max-height: 371px;
+      }
 
-        height: 80px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 18px;
-        font-weight: 300;
-        letter-spacing: -0.39px;
-        color: $black;
-
-        .breadcrumb {
-            background: transparent;
-    
-            .breadcrumb-item {
-                a {
-                    color: $black;
-                }
-    
-                &.active {
-                    color: #8e8e8e;
-                }
-            }
-        }
-    
-        .dropdown {
-            text-decoration: underline;
-        }
-    
+      @include media-breakpoint-down(md) {
+        max-width: 363px;
+        max-height: 258px;
+      }
     }
-
-    .banner-bottom {
-        position: relative;
-
-        // .overflow-hidden {
-        //     overflow: hidden;
-        // }
-        
-        @include media-breakpoint-down(md) {
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: -7%;
-                left: 25%;
-                width: 75px;
-                height: 71px;
-                background: url(../img/flower-sm.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center center;
-                z-index: 10;
-            }
-        }
-
-        @include media-breakpoint-down(sm) {
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: -7%;
-                left: 10%;
-                width: 75px;
-                height: 71px;
-                background: url(../img/flower-sm.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center center;
-                z-index: 10;
-            }
-        }
-
-        .card-block {
-            position: relative;
-
-            @include media-breakpoint-down(md) {
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: -10%;
-                    right: 26%;
-                    width: 86px;
-                    height: 81px;
-                    background: url(../img/flower-md.svg);
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center center;
-                }
-            }
-
-            @include media-breakpoint-down(sm) {
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: -10%;
-                    right: 17%;
-                    width: 86px;
-                    height: 81px;
-                    background: url(../img/flower-md.svg);
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    background-position: center center;
-                }
-            }
-        }
-
-        .desc-block {   
-            position: relative;
-
-            @include media-breakpoint-up(lg) {
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: -28%;
-                    left: 35%;
-                    width: 75px;
-                    height: 71px;
-                    background: url(../img/flower-sm.svg);
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    z-index: 5;
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    right: -10%;
-                    bottom: -50%;
-                    width: 190px;
-                    height: 149px;
-                    background: url(../img/flower-group.svg);
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                }
-            }
-
-            @include media-breakpoint-down(md) {
-                overflow: hidden;
-                &::before {
-                    content: "";
-                    position: absolute;
-                    left: 0%;
-                    bottom: -2%;
-                    height: 110%;
-                    width: 100%;      
-                    background: url(../img/white-shadow.png);
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                    z-index: -1;
-                }
-            }
-        }
-
-        h1 {
-            font-weight: bold;
-            line-height: 1.2;
-            color: #90b500;
-            text-shadow: 0px 0px 10px#fff;
-
-            @include media-breakpoint-up(lg) {
-                font-size: 40px;
-                letter-spacing: 0.8px;
-                margin-bottom: 20px;
-            }
-
-            @include media-breakpoint-down(md) {
-                font-size: 32px;
-                letter-spacing: 1.44px;
-                margin-top: 25px;
-            }
-        }
-
-        p {
-            font-weight: 300;
-            text-shadow: 0px 2px 4px#fff;
-
-            @include media-breakpoint-up(lg) {
-                font-size: 24px;
-                margin-bottom: 40px;
-            }
-
-            @include media-breakpoint-down(md) {
-                font-size: 22px;
-                margin-bottom: 25px;
-            }
-        }
-
-        .btn {
-            color: $white;
-            font-size: 16px;
-            font-weight: bold;
-            letter-spacing: 1.12px;
-            width: 204px;
-
-            @include media-breakpoint-down(md) {
-                width: 232px;
-                letter-spacing: 1.42px;
-                margin-bottom: 40px;
-            }
-        }
-
-        @include media-breakpoint-up(lg) {
-            height: 438px;
-            padding-left: 55px;
-            padding-right: 55px;
-            background-image: url(../img/kids-bg.png);
-            background-size: auto 100%;
-            background-repeat: no-repeat;
-    
-            &::before {
-                position: absolute;
-                content: "";
-                top: 0;
-                right: 0;
-                width: 578px;
-                height: 100%;
-                background-image: url(../img/kids-bg2.svg);
-                background-size: auto 100%;
-                background-repeat: no-repeat;
-                background-position-y: top;
-                background-position-x: right;
-                z-index: 5;
-            }
-        }
-
-        .row {
-            @include media-breakpoint-down(md) {
-                margin-left: 0;
-                margin-right: 0;
-            }
-            position: relative;
-            z-index: 8;
-            > div {
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
-
-        img {
-            @include media-breakpoint-up(lg) { 
-                max-width: 491px;
-                max-height: 371px;
-            }
-
-            @include media-breakpoint-down(md) { 
-                max-width: 363px;
-                max-height: 258px;
-            }
-        }
-    }
+  }
 }
 /* BANNER AREA END*/
 
 /* SCHEDULE AREA START*/
 .schedule-area {
-    .container-fluid {
-        position: relative;
+  .container-fluid {
+    position: relative;
 
-        @include media-breakpoint-down(sm) {
-            &::before {
-                position: absolute;
-                content: "";
-                top: 0;
-                right: 0;
-                width: 109px;
-                height: 83px;
-                background-image: url(../img/cloud-half.png);
-                background-size: auto;
-                background-repeat: no-repeat;
-                background-position: center;
-                z-index: -1;
-            }       
-            
-            &::after {
-                position: absolute;
-                content: "";
-                bottom: -10%;
-                left: 0;
-                width: 100%;
-                height: 85px;
-                background-image: url(../img/cloud-half2.png), url(../img/blue-flower.svg);
-                background-size: auto, 57px 54px;
-                background-repeat: no-repeat, no-repeat;
-                background-position: left top, right top;
-                z-index: 5;
-            } 
-        }
+    @include media-breakpoint-down(sm) {
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        width: 109px;
+        height: 83px;
+        background-image: url(../img/cloud-half.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
 
-        .container {
-            position: relative;
-            @include media-breakpoint-up(lg) {
-                &::before {
-                    position: absolute;
-                    content: "";
-                    top: 0;
-                    left: -5%;
-                    width: 230px;
-                    height: 123px;
-                    background-image: url(../img/cloud.svg);
-                    background-size: auto;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    z-index: -1;
-                } 
-
-                &::after {
-                    position: absolute;
-                    content: "";
-                    bottom: -10%;
-                    right: -5%;
-                    width: 251px;
-                    height: 134px;
-                    background-image: url(../img/cloud-mirror.svg);
-                    background-size: auto;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    z-index: -1;
-                }           
-            }
-
-            @include media-breakpoint-down(md) {
-                overflow: hidden;
-            }
-
-        }
-
-        img {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        h2 {
-            text-align: center;
-            @include media-breakpoint-up(lg) { 
-                margin-top: 90px;
-                margin-bottom: 50px;
-            }
-
-            @include media-breakpoint-down(md) { 
-                margin-top: 40px;
-                margin-bottom: 10px;
-                line-height: 32px;
-            }
-        }
-
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: -10%;
+        left: 0;
+        width: 100%;
+        height: 85px;
+        background-image: url(../img/cloud-half2.png), url(../img/blue-flower.svg);
+        background-size: auto, 57px 54px;
+        background-repeat: no-repeat, no-repeat;
+        background-position: left top, right top;
+        z-index: 5;
+      }
     }
+
+    .container {
+      position: relative;
+      @include media-breakpoint-up(lg) {
+        &::before {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: -5%;
+          width: 230px;
+          height: 123px;
+          background-image: url(../img/cloud.svg);
+          background-size: auto;
+          background-repeat: no-repeat;
+          background-position: center;
+          z-index: -1;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: -10%;
+          right: -5%;
+          width: 251px;
+          height: 134px;
+          background-image: url(../img/cloud-mirror.svg);
+          background-size: auto;
+          background-repeat: no-repeat;
+          background-position: center;
+          z-index: -1;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        overflow: hidden;
+      }
+    }
+
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      text-align: center;
+      @include media-breakpoint-up(lg) {
+        margin-top: 90px;
+        margin-bottom: 50px;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin-top: 40px;
+        margin-bottom: 10px;
+        line-height: 32px;
+      }
+    }
+  }
 }
 /* SCHEDULE AREA END */
 
 /* WORKOUT AREA START */
 .workouts-area {
-    .worhouts-container {
+  .worhouts-container {
+    position: relative;
+    @include media-breakpoint-down(md) {
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: -5%;
+        right: 0%;
+        width: 110px;
+        height: 99px;
+        background-image: url(../img/cloud-half3.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -1;
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 125px;
+      padding-bottom: 60px;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding-top: 100px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .workouts-block {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    @include media-breakpoint-down(md) {
+      &:last-child {
         position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          bottom: -3.5%;
+          left: 15%;
+          width: 63px;
+          height: 59px;
+          background-image: url(../img/blue-flower.svg);
+          background-size: 100%;
+          background-repeat: no-repeat;
+          background-position: center;
+          z-index: 120;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 110px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 55px;
+    }
+  }
+
+  .workout-block {
+    position: relative;
+    overflow: hidden;
+    width: 584px;
+    height: 392px;
+    cursor: pointer;
+
+    @include media-breakpoint-up(lg) {
+      width: 584px;
+      height: 392px;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 344px;
+      height: 232px;
+    }
+
+    &:hover > img {
+      transform: scale(1.1);
+    }
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      transition: all 0.5s ease;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin: 0 15px 15px 15px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      &:nth-child(2n-1) {
+        margin: 0 15px 15px 15px;
+      }
+    }
+
+    .inner-block {
+      z-index: 100;
+      color: $white;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      padding: 15px 15px;
+
+      @include media-breakpoint-up(lg) {
+        height: 168px;
+        width: 65%;
+      }
+
+      @include media-breakpoint-down(md) {
+        height: 128px;
+        width: 85%;
+      }
+
+      &.green-bg {
+        background-color: rgba(178, 207, 65, 0.85);
+      }
+
+      &.pink-bg {
+        background-color: rgba(160, 92, 161, 0.8);
+      }
+
+      &.orange-bg {
+        background-color: rgba(249, 151, 72, 0.8);
+      }
+
+      &.blue-bg {
+        background-color: rgba(89, 192, 203, 0.8);
+      }
+
+      h3 {
+        font-weight: bold;
+        letter-spacing: -0.65px;
+        margin-bottom: 5px;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 30px;
+        }
+
         @include media-breakpoint-down(md) {
+          font-size: 20px;
+        }
+      }
+
+      p {
+        font-weight: 300;
+        letter-spacing: -0.39px;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 18px;
+        }
+
+        @include media-breakpoint-down(md) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .bg-img-1 {
+    background-image: url(../img/kids3.png);
+  }
+
+  .bg-img-2 {
+    background-image: url(../img/kids2.png);
+  }
+
+  .bg-img-3 {
+    background-image: url(../img/kids4.png);
+  }
+
+  .bg-img-4 {
+    background-image: url(../img/kids1.png);
+  }
+}
+/* WORKOUT AREA END */
+/* SEASON AREA START*/
+.season-area {
+    .container-fluid {
+        @include media-breakpoint-up(lg) {
+            margin-top: 60px;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-top: 30px;
+        }
+    }
+
+    h2 {
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 70px;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 30px;
+        }
+    }
+    .season-item {
+        position: relative;
+        box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.29);
+        background-image: linear-gradient(to top, #f8f8f8, #ffffff);
+        border-radius: 13px;
+        display: flex;
+        cursor: pointer;
+        color: $black;
+        width: 80%;
+
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+            height: 369px;
+
+            &::before {
+                position: absolute;
+                content: "";
+                top: -25%;
+                right: -7%;
+                width: 150px;
+                height: 141px;
+                background-image: url(../img/blue-flower.svg);
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: 10;
+            }
+
             &::after {
                 position: absolute;
                 content: "";
-                bottom: -5%;
-                right: 0%;
-                width: 110px;
-                height: 99px;
-                background-image: url(../img/cloud-half3.png);
-                background-size: auto;
+                bottom: -14%;
+                left: -5%;
+                width: 104px;
+                height: 97px;
+                background-image: url(../img/velvet-flower.svg);
+                background-size: 100%;
                 background-repeat: no-repeat;
                 background-position: center;
-                z-index: -1;
-            }           
+                z-index: 10;
+            }
         }
-    }
-  
-    h2 {
-      text-align: center;
-  
-      @include media-breakpoint-up(lg) {
-        padding-top: 125px;
-        padding-bottom: 60px; 
-      }  
-  
-      @include media-breakpoint-down(md) {
-        padding-top: 100px;
-        padding-bottom: 20px; 
-      } 
-    }
-  
-    .workouts-block {
-      max-width: 1170px;
-      margin-left: auto;
-      margin-right: auto;
-  
-      &:last-child {
-        position: relative;  
-        &::before {
-            position: absolute;
-            content: "";
-            bottom: -3.5%;
-            left: 15%;
-            width: 63px;
-            height: 59px;
-            background-image: url(../img/blue-flower.svg);
-            background-size: 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-            z-index: 120;
-        } 
-      }
-
-      @include media-breakpoint-up(lg) {
-        margin-bottom: 110px;
-      }  
-  
-      @include media-breakpoint-down(lg) {
-        margin-bottom: 55px;
-      }    
-    }
-  
-    .workout-block {
-      position: relative;
-      overflow: hidden; 
-      width: 584px;
-      height: 392px;
-      cursor: pointer;
-    
-    @include media-breakpoint-up(lg) {
-        width: 584px;
-        height: 392px;
-    } 
-
-    @include media-breakpoint-down(md) {
-        width: 344px;
-        height: 232px;
-    }   
-
-      &:hover > img
-      {
-        transform: scale(1.1);
-      }
-  
-      > img {
-        position: absolute;
-        top: 0; 
-        left: 0;
-        z-index: 99;
-        transition: all 0.5s ease;
-        width: 100%;
-        height: 100%;
-      }
-
-      @include media-breakpoint-down(sm) {
-        margin: 0 15px 15px 15px;
-      } 
-
-      @include media-breakpoint-down(lg) {
-        &:nth-child(2n-1) {
-          margin: 0 15px 15px 15px;
-        }
-      }    
-  
-      .inner-block {
-        z-index: 100;
-        color: $white;
-        position: absolute;
-        top: 50%; 
-        transform: translate(0,-50%);
-        padding: 15px 15px;
-  
-        @include media-breakpoint-up(lg) {
-            height: 168px;
-            width: 65%;
-        } 
 
         @include media-breakpoint-down(md) {
-            height: 128px;
-            width: 85%;
-        }   
+            flex-direction: column;
+            max-width: 344px;
 
-        &.green-bg {
-          background-color: rgba(178, 207, 65, 0.85);
-        }
-  
-        &.pink-bg {
-          background-color: rgba(160, 92, 161, 0.8);       
-        }
-  
-        &.orange-bg {
-            background-color: rgba(249, 151, 72, 0.8);      
-        }
-
-        &.blue-bg {
-            background-color: rgba(89, 192, 203, 0.8);;      
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -5%;
+                right: 10%;
+                width: 77px;
+                height: 73px;
+                background-image: url(../img/velvet-flower.svg);
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: 10;
+            }
         }
 
-        h3 {
-          font-weight: bold;
-          letter-spacing: -0.65px;
-          margin-bottom: 5px;
-  
-          @include media-breakpoint-up(lg) {
-            font-size: 30px;
-          } 
-  
-          @include media-breakpoint-down(md) {
-            font-size: 20px;
-          }    
+        &:hover {
+            box-shadow: 0 0 16px 0 rgba(134, 238, 49, 0.61);
+            text-decoration: none;
         }
-        
+
+        @include media-breakpoint-up(xl) {
+            margin-bottom: 15px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 25px;
+        }
+
         p {
-          font-weight: 300;
-          letter-spacing: -0.39px;
-  
-          @include media-breakpoint-up(lg) {
-            font-size: 18px;
-          } 
-  
-          @include media-breakpoint-down(md) {
-            font-size: 16px;
-          }   
+            margin: 0;
         }
-      }
+
+        .tariff-b {
+            @include media-breakpoint-up(lg) {
+                flex: 0 1 73%;
+                background-image: url(../img/555-copy3.png);
+                background-repeat: no-repeat;
+                background-position: top center;
+                padding: 15px 34px 34px 36px;
+                border-top-left-radius: 13px;
+                border-bottom-left-radius: 13px;
+            }
+
+            @include media-breakpoint-down(md) {
+                background-image: url(../img/555Copy7.png);
+                background-repeat: no-repeat;
+                background-position: top center;
+                padding: 20px;
+                border-top-left-radius: 13px;
+                border-top-right-radius: 13px;
+            }
+
+            color: white;
+            display: flex;
+            flex-direction: column;
+
+            .name {
+                font-size: 36px;
+                font-weight: bold;
+                letter-spacing: 0.75px;
+            }
+
+            .old-price {
+                font-size: 26px;
+                letter-spacing: 0.54px;
+                color: #92e0e8;
+                text-decoration: line-through;
+            }
+
+            .new-price {
+                > div:first-child {
+                    font-size: 90px;
+                    font-weight: bold;
+                    letter-spacing: 1.88px;
+                    line-height: 88px;
+                }
+                > div:last-child {
+                    > div:first-child {
+                        font-size: 44px;
+                        font-weight: bold;
+                        letter-spacing: 0.92px;
+                        line-height: 40px;
+                    }
+                    > div:last-child {
+                        font-size: 26px;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            .offer {
+                font-size: 24px;
+                font-weight: 300;
+                letter-spacing: 0.3px;
+
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: 26px;
+                }
+            }
+
+            .btn-container {
+                @include media-breakpoint-up(lg) {
+                    width: 100%;
+                    text-align: center;
+                    border-top: solid 1px rgba(255,255,255,0.8);
+                    padding-top: 32px;
+                    .btn {
+                        width: 250px;
+                    }
+                }
+
+                @include media-breakpoint-down(md) {
+                    display: none;
+                }
+            }
+        }
+
+        .features-b {
+            margin: 0;
+            padding: 0 30px;
+
+            p {
+                margin: 0;
+            }
+
+            li {
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 1.11;
+                padding: 15px 0;
+
+                &:not(:last-child) {
+                    border-bottom: 1px dotted #cecece;
+                }
+
+                @include media-breakpoint-down(md) {
+                    &:last-child {
+                        margin-bottom: 40px;
+                    }
+                }
+
+                > p:first-child {
+                    margin-right: 17px;
+                }
+            }
+
+        }
+
+        .desc {
+            padding: 0 30px 60px 30px;
+            flex-direction: column;
+
+            p {
+                padding-top: 10px;
+                padding-bottom: 30px;
+                border-top: solid 1px #101929;
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 1.13;
+                letter-spacing: -0.33px;
+                color: #818181;
+            }
+
+            .btn {
+                width: 250px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
     }
-  
-    .bg-img-1 {
-      background-image: url(../img/kids3.png);
+}
+/* SEASON AREA END*/
+
+/* PHOTO AREA START*/
+.photo-area {
+    .photo-container {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: right;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
-  
-    .bg-img-2 {
-      background-image: url(../img/kids2.png);
-    }
-  
-    .bg-img-3 {
-      background-image: url(../img/kids4.png);
-    }
-  
-    .bg-img-4 {
-      background-image: url(../img/kids1.png);
-    }
-  }
-  /* WORKOUT AREA END */
+}
+/* PHOTO AREA END*/
