@@ -39,7 +39,6 @@
 @import "../../../node_modules/bootstrap/scss/_spinners";
 @import "../../../node_modules/bootstrap/scss/_utilities";
 @import "../../../node_modules/bootstrap/scss/_print";
-@import "../../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 
 @import "global";
 @import "header";
@@ -118,10 +117,6 @@ nav.navbar {
 /* BANNER AREA START*/
 .banner-area {
   .banner-container {
-    @include media-breakpoint-up(lg) {
-      max-width: 1169px;
-    }
-    width: 100%;
     position: relative;
     z-index: 5;
     padding: 0;
@@ -153,7 +148,8 @@ nav.navbar {
 
     .breadcrumb {
       background: transparent;
-
+      padding-left: 0; 
+      
       .breadcrumb-item {
         a {
           color: $black;
