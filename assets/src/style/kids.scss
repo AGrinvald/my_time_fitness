@@ -489,9 +489,23 @@ nav.navbar {
 
 /* WORKOUT AREA START */
 .workouts-area {
-
     .worhouts-container {
-      overflow: hidden;
+        position: relative;
+        @include media-breakpoint-down(md) {
+            &::after {
+                position: absolute;
+                content: "";
+                bottom: -5%;
+                right: 0%;
+                width: 110px;
+                height: 99px;
+                background-image: url(../img/cloud-half3.png);
+                background-size: auto;
+                background-repeat: no-repeat;
+                background-position: center;
+                z-index: -1;
+            }           
+        }
     }
   
     h2 {
@@ -513,6 +527,23 @@ nav.navbar {
       margin-left: auto;
       margin-right: auto;
   
+      &:last-child {
+        position: relative;  
+        &::before {
+            position: absolute;
+            content: "";
+            bottom: -3.5%;
+            left: 15%;
+            width: 63px;
+            height: 59px;
+            background-image: url(../img/blue-flower.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 120;
+        } 
+      }
+
       @include media-breakpoint-up(lg) {
         margin-bottom: 110px;
       }  

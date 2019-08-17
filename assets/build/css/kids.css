@@ -8074,7 +8074,20 @@ nav.navbar {
 /* SCHEDULE AREA END */
 /* WORKOUT AREA START */
 .workouts-area .worhouts-container {
-  overflow: hidden; }
+  position: relative; }
+  @media (max-width: 991.98px) {
+    .workouts-area .worhouts-container::after {
+      position: absolute;
+      content: "";
+      bottom: -5%;
+      right: 0%;
+      width: 110px;
+      height: 99px;
+      background-image: url(../img/cloud-half3.png);
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: -1; } }
 
 .workouts-area h2 {
   text-align: center; }
@@ -8091,6 +8104,20 @@ nav.navbar {
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto; }
+  .workouts-area .workouts-block:last-child {
+    position: relative; }
+    .workouts-area .workouts-block:last-child::before {
+      position: absolute;
+      content: "";
+      bottom: -3.5%;
+      left: 15%;
+      width: 63px;
+      height: 59px;
+      background-image: url(../img/blue-flower.svg);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 120; }
   @media (min-width: 992px) {
     .workouts-area .workouts-block {
       margin-bottom: 110px; } }
