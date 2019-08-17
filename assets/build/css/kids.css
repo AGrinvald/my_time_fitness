@@ -8391,6 +8391,7 @@ nav.navbar {
 /* SEASON AREA END*/
 /* PHOTO AREA START*/
 .photo-area .photo-container {
+  max-width: 1000px;
   width: 80%;
   margin-right: auto;
   margin-left: auto;
