@@ -141,7 +141,7 @@ nav.navbar {
   .promo-container {
     margin-bottom: 50px;
     display: flex;
-    justify-content: flex-end!important;
+    justify-content: flex-end !important;
     align-items: center;
     flex-direction: row;
   }
@@ -200,17 +200,17 @@ nav.navbar {
     position: relative;
 
     &::before {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        background: url(../img/promo-dark-bg.svg);
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-position: right center;
-        z-index: 2;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../img/promo-dark-bg.svg);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: right center;
+      z-index: 2;
     }
 
     @include media-breakpoint-up(lg) {
@@ -228,7 +228,7 @@ nav.navbar {
       }
 
       @include media-breakpoint-down(md) {
-        width: 220px;
+        width: 240px;
         height: 55%;
       }
 
@@ -279,17 +279,25 @@ nav.navbar {
     position: relative;
 
     &::before {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        background: url(../img/promo-green-sm.svg);
-        background-repeat: no-repeat;
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../img/promo-green-sm.svg);
+      background-repeat: no-repeat;
+      background-position: right top;
+      z-index: 2;
+
+      @include media-breakpoint-up(lg) {
         background-size: auto;
-        background-position: right top;
-        z-index: 2;
+      }
+
+      @include media-breakpoint-down(md) {
+        background-size: auto 95px;
+        background-position: 95% 10%;
+      }
     }
 
     @include media-breakpoint-up(lg) {
@@ -308,8 +316,8 @@ nav.navbar {
       }
 
       @include media-breakpoint-down(md) {
-        width: 220px;
-        height: 55%;
+        width: 100%;
+        height: 85%;
       }
 
       display: flex;
@@ -320,13 +328,15 @@ nav.navbar {
 
       h3 {
         @include media-breakpoint-up(lg) {
-            font-size: 30px;
-            line-height: 32px;
+          font-size: 30px;
+          line-height: 32px;
           margin-left: 13%;
         }
 
         @include media-breakpoint-down(md) {
-          //margin-top: 5%;
+            width: 240px;
+            margin-top: 29px;
+          margin-left: auto;
         }
       }
 
@@ -334,21 +344,249 @@ nav.navbar {
         position: relative;
 
         &::before {
-            content: "";
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            filter: blur(9px);
-            background-color: rgba(0, 0, 0, 0.63);
-            z-index: -1;
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          filter: blur(9px);
+          background-color: rgba(0, 0, 0, 0.63);
+          z-index: -1;
         }
 
         @include media-breakpoint-up(lg) {
           text-align: right;
         }
+
+        @include media-breakpoint-down(md) {
+          width: 235px;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
+
+      .btn {
+        border: solid 1px #26272b;
+      }
+    }
+  }
+
+  .promo-3 {
+    background-image: url(../img/promo3.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../img/promo-dark-sm.svg);
+      background-repeat: no-repeat;
+      z-index: 2;
+
+      @include media-breakpoint-up(lg) {
+        background-size: auto;
+        background-position: right top;
+      }
+
+      @include media-breakpoint-down(md) {
+        background-size: auto 95px;
+        background-position: 95% 10%;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 352px;
+      padding-right: 50px;
+    }
+
+    @include media-breakpoint-down(md) {
+      height: 192px;
+      padding-right: 50px;
+    }
+
+    .promo-block {
+      @include media-breakpoint-up(lg) {
+        width: 325px;
+        height: 72%;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        height: 85%;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+      color: $white;
+
+      h3 {
+        @include media-breakpoint-up(lg) {
+          font-size: 30px;
+          line-height: 32px;
+          margin-left: 13%;
+          margin-top: 5%;
+        }
+
+        @include media-breakpoint-down(md) {
+          margin-top: 39px;
+          margin-left: auto;
+          width: 192px;
+        }
+      }
+
+      p {
+        font-weight: 300;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          filter: blur(20px);
+          background-color: rgba(0, 0, 0, 0.63);
+          z-index: -1;
+        }
+
+        @include media-breakpoint-up(lg) {
+          text-align: right;
+        }
+
+        @include media-breakpoint-down(md) {
+          width: 222px;
+          margin-left: auto;
+          margin-top: 15px;
+        }
+      }
+
+      .btn {
+        border: solid 1px #26272b;
+      }
+    }
+  }
+
+  .promo-4 {
+    background-image: url(../img/promo4.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../img/promo-green-bg.svg);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: right center;
+      z-index: 2;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 384px;
+      padding-right: 125px;
+    }
+
+    @include media-breakpoint-down(md) {
+      height: 192px;
+      padding-right: 75px;
+    }
+
+    .promo-block {
+      @include media-breakpoint-up(lg) {
+        width: 385px;
+        height: 55%;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 200px;
+        height: 65%;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+      color: $white;
+
+      h3 {
+        @include media-breakpoint-up(lg) {
+          margin-top: 6%;
+        }
+
+        @include media-breakpoint-down(md) {
+          margin-top: 5%;
+          width: 190px;
+          text-align: center;
+          margin-left: auto;
+        }
+      }
+
+      p {
+        @include media-breakpoint-up(lg) {
+            width: 310px;
+            color: $black;
+        }
+
+        @include media-breakpoint-down(md) {
+            color: $white;
+            text-align: center;
+            font-size: 15px;
+            letter-spacing: -0.58px;
+        }
+      }
+
+      .btn {
+          color: $black;
+          border: solid 1px #000000;
+        
+        @include media-breakpoint-up(lg) {
+          max-width: 204px;
+          height: 48px;
+          margin-right: auto;
+          margin-left: 10%;
+        }
+
+        @include media-breakpoint-down(md) {
+          font-size: 12px;
+          letter-spacing: 0.04px;
+          max-width: 106px;
+          height: 26px;
+          margin-left: auto;
+          margin-right: 30%;
+        }
+      }
+    }
+  }
+
+  .promo-5 {
+    background-image: url(../img/promo5.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 386px;
+    display: flex;
+    align-items: center;
+
+    .container {
+        height: 65%;
     }
   }
 }
