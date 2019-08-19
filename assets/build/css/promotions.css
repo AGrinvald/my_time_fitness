@@ -7969,7 +7969,8 @@ nav.navbar {
   position: relative;
   height: 386px;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 50px; }
   .promotions-area .promo-5 .container {
     height: 65%; }
 
