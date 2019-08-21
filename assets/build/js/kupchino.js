@@ -21666,7 +21666,7 @@ var windowsSize = {
 
 var mapSettingsCollection = {
     Large: {
-        center: [59.91630318065146, 30.07137557421872], zoom: 10,
+        center: [59.78987504525991, 30.123560632812463], zoom: 10,
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
@@ -21760,7 +21760,7 @@ function init() {
             map.setCenter(mapSettings.center, mapSettings.zoom);
         }
 
-        //console.log(map.getCenter());
+        console.log(map.getCenter());
     });
 
     ymaps.geoQuery(akademicheskaya).addToMap(map);

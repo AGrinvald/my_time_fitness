@@ -8117,7 +8117,7 @@ footer {
     border-radius: 28px;
     position: relative;
     height: 56px;
-    padding-left: 5px;
+    padding-left: 3px;
     padding-right: 5px; }
     @media (min-width: 992px) {
       .announce-container .input-group:not(:last-child) {
@@ -8792,7 +8792,7 @@ nav.navbar {
       @media (min-width: 1200px) {
         .banner-area .banner-container .promo-block .inner > div {
           width: 75%;
-          margin-top: 10%; } }
+          margin-top: 11%; } }
       @media (max-width: 1199.98px) {
         .banner-area .banner-container .promo-block .inner > div {
           width: 81%;

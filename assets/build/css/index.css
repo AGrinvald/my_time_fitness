@@ -8568,7 +8568,8 @@ footer {
         margin-bottom: 0; }
   .map-area .club-info-block {
     height: 504px;
-    padding-left: 45px; }
+    padding-left: 45px;
+    z-index: 50; }
     .map-area .club-info-block .inner-div {
       background-color: rgba(0, 0, 0, 0.5);
       text-align: center;

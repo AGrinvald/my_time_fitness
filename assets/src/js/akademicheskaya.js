@@ -29,11 +29,11 @@ var windowsSize = {
 
 var mapSettingsCollection = {
     Large: {
-        center: [59.91630318065146, 30.07137557421872], zoom: 10,
+        center: [59.98105719928422, 30.093348230468735], zoom: 10,
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
-        center: [60.257601202906805, 30.394098962890602], zoom: 9,
+        center: [60.29306783149127, 30.48198958789056], zoom: 9,
         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
     }
 };
@@ -123,6 +123,8 @@ function init() {
         if (toChange) {
             map.setCenter(mapSettings.center, mapSettings.zoom);
         }
+
+        //console.log(map.getCenter());
     });
 
     ymaps.geoQuery(akademicheskaya).addToMap(map);
