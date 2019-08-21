@@ -8067,4 +8067,11 @@ nav.navbar {
           height: 32px;
           margin-top: auto; } }
 
+.promotions-area .btn-c .btn {
+  width: 305px;
+  height: 56px;
+  border: solid 1px #101929;
+  font-size: 16px;
+  margin-bottom: 100px; }
+
 /* PROMOTIONS AREA END*/

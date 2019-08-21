@@ -598,10 +598,9 @@ nav.navbar {
     }
 
     @include media-breakpoint-down(sm) {
-        background-position: 57% center;
+      background-position: 57% center;
     }
 
-      
     .block {
       display: flex;
       margin-left: auto;
@@ -612,7 +611,7 @@ nav.navbar {
         height: 70%;
         width: 1300px;
       }
-  
+
       @include media-breakpoint-down(md) {
         justify-content: center;
         height: 60%;
@@ -658,9 +657,9 @@ nav.navbar {
         }
 
         @include media-breakpoint-down(md) {
-            margin-bottom: auto;
-            font-size: 50px;
-            line-height: 44px;
+          margin-bottom: auto;
+          font-size: 50px;
+          line-height: 44px;
         }
       }
     }
@@ -714,6 +713,16 @@ nav.navbar {
           margin-top: auto;
         }
       }
+    }
+  }
+
+  .btn-c {
+    .btn {
+        width: 305px;
+        height: 56px;
+        border: solid 1px #101929;
+        font-size: 16px;
+        margin-bottom: 100px;
     }
   }
 }
