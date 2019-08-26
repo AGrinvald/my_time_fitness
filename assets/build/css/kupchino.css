@@ -8710,13 +8710,15 @@ footer {
       width: 264px;
       height: 288px;
       transform-style: preserve-3d;
+      transition: 0.4s linear; }
+    .services-area .services-container .flip-card:hover > .flipper {
       transition: 0.7s linear; }
-    @media (min-width: 1200px) {
-      .services-area .services-container .flip-card:hover > .flipper {
-        transform: rotateY(180deg) scale(1.034, 1.083); } }
-    @media (max-width: 1199.98px) {
-      .services-area .services-container .flip-card:hover > .flipper {
-        transform: rotateY(180deg); } }
+      @media (min-width: 1200px) {
+        .services-area .services-container .flip-card:hover > .flipper {
+          transform: rotateY(180deg) scale(1.034, 1.083); } }
+      @media (max-width: 1199.98px) {
+        .services-area .services-container .flip-card:hover > .flipper {
+          transform: rotateY(180deg); } }
     .services-area .services-container .flip-card .flip-card-front,
     .services-area .services-container .flip-card .flip-card-back {
       box-sizing: border-box;

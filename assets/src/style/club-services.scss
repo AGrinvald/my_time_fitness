@@ -68,10 +68,12 @@
         width: $xl-width;
         height: $xl-height;
         transform-style: preserve-3d;
-        transition: 0.7s linear;
+        transition: 0.4s linear;
       }
 
       &:hover > .flipper {
+        transition: 0.7s linear;
+
         @include media-breakpoint-up(xl) {
           transform: rotateY(180deg) scale(1.034, 1.083);
         }
