@@ -68,31 +68,18 @@
         width: $xl-width;
         height: $xl-height;
         transform-style: preserve-3d;
-        transition: .7s linear;
+        transition: 0.7s linear;
       }
 
       &:hover > .flipper {
-        transform: rotateY(180deg) scale(1.034, 1.083);
+        @include media-breakpoint-up(xl) {
+          transform: rotateY(180deg) scale(1.034, 1.083);
+        }
+
+        @include media-breakpoint-down(lg) {
+          transform: rotateY(180deg);
+        }
       }
-      // &:hover > .flip-card-front {
-      //   @include media-breakpoint-up(xl) {
-      //     transform: rotateY(0) scale(1.034, 1.083);
-      //   }
-
-      //   @include media-breakpoint-down(lg) {
-      //     transform: rotateY(0);
-      //   }
-      // }
-
-      // &:hover > .flip-card-back {
-      //   @include media-breakpoint-up(xl) {
-      //     transform: rotateY(-180deg) scale(1.034, 1.083);
-      //   }
-
-      //   @include media-breakpoint-down(lg) {
-      //     transform: rotateY(-180deg);
-      //   }
-      // }
 
       .flip-card-front,
       .flip-card-back {
