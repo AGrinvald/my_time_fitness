@@ -53,6 +53,7 @@
 @import "club-gallery";
 @import "club-page-nav";
 @import "club-season";
+@import "club-services";
 
 /* TOP HEADER START */
 header {
@@ -470,214 +471,6 @@ nav.navbar {
 }
 /* BANNER AREA END*/
 
-
-/* SERVICES AREA START*/
-.services-area {
-    .services-container {
-        overflow: hidden;
-        background-color: $primary;
-        position: relative;
-
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            background: url(../img/combined-shape-copy-12.svg);
-            background-repeat: repeat-y;
-            background-position: center center;
-            z-index: 1;
-        }
-
-        .container {
-            z-index: 2;
-            position: relative;
-        }
-
-        @include media-breakpoint-up(xl) {
-            height: 958px;
-        }
-
-        h2 {
-            color: $white;
-            text-align: center;
-            margin-top: 66px;
-            margin-bottom: 80px;
-        }
-
-        h5 {
-            margin: 0;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        $xl-width: 264px;
-        $xl-height: 288px;
-
-        .flip-card {
-            background-color: transparent;
-            width: $xl-width;
-            height: $xl-height;
-            margin-bottom: 32px;
-            cursor: pointer;
-            position: relative;
-            text-align: center;
-            perspective: 1000;
-
-            &:hover > .flip-card-front{
-                @include media-breakpoint-up(xl) {
-                    transform: rotateY(-180deg) scale(1.034, 1.083);
-                }
-
-                @include media-breakpoint-down(lg) {
-                    transform: rotateY(-180deg);
-                }
-            }
-
-            &:hover > .flip-card-back{
-
-                @include media-breakpoint-up(xl) {
-                    transform: rotateY(0deg) scale(1.034, 1.083);
-                }
-
-                @include media-breakpoint-down(lg) {
-                    transform: rotateY(0deg);
-                }
-            }
-
-            .flip-card-front, .flip-card-back {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border-radius: 9px;
-                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.29);
-                backface-visibility: hidden;
-                transition: transform .8s linear;
-                transform-style: preserve-3d;
-                perspective: 1000;
-            }
-
-            .flip-card-front {
-                transform: rotateY(0deg) scale(1, 1);
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                justify-content: space-between;
-                font-weight: bold;
-                color: #000000;
-                background-image: linear-gradient(to top, #f8f8f8, #ffffff);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ffffff', GradientType=0 );
-
-                &:hover, &:focus {
-                    text-decoration: none;
-                }
-
-                h5 {
-                    font-size: 24px;
-                    letter-spacing: 0.24px;
-                    margin-bottom: 20px;
-                    width: 100%;
-                }
-
-                @include media-breakpoint-up(xl) {
-                    padding: 70px 0 35px 0;
-                }
-
-                @include media-breakpoint-down(lg) {
-                    padding: 55px 0 40px 0;
-                }
-            }
-
-            .flip-card-back {
-                transform: rotateY(180deg);
-                background-color: #000000;
-                color: white;
-
-                @include media-breakpoint-down(lg) {
-                    padding: 50px 22px;
-                }
-
-                @include media-breakpoint-up(xl) {
-                    padding: 22px;
-                }
-
-                h5 {
-                    font-weight: 500;
-                    font-size: 26px;
-                    letter-spacing: 0.26px;
-                    color: $primary;
-                    margin-bottom: 30px;
-
-                    @include media-breakpoint-down(lg) {
-                        display: none;
-                    }
-                }
-
-                p {
-                    text-align: left;
-                    font-size: 18px;
-                    line-height: 20;
-                    font-weight: 100;
-                    letter-spacing: 0;
-                    line-height: 1.11;
-                }
-
-                &.img-bg-1 {
-                    background-image: url(../img/fitnessbar.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-
-                &.img-bg-2 {
-                    background-image: url(../img/solar.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-
-                &.img-bg-3 {
-                    background-image: url(../img/towel.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-
-                &.img-bg-4 {
-                    background-image: url(../img/hammam.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-
-                &.img-bg-5 {
-                    background-image: url(../img/hammam.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-
-                &.img-bg-6 {
-                    background-image: url(../img/parking.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-
-                &.img-bg-7 {
-                    background-image: url(../img/parking.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-
-                &.img-bg-8 {
-                    background-image: url(../img/dryer.png);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                }
-
-            }
-        }
-    }
-}
-/* SERVICES AREA END*/
-
 /* SCHEME AREA START*/
 .scheme-area {
     .container-fluid {
@@ -685,13 +478,13 @@ nav.navbar {
         background-color: #f5f5f5;
 
         @include media-breakpoint-up(lg) {
-            padding: 80px 0;
+            padding-bottom: 80px;
             height: 976px;
         }
 
         @include media-breakpoint-down(md) {
             padding-top: 30px;
-            padding-bottom: 27px;
+            padding-bottom: 30px;
         }
     }
 
@@ -783,7 +576,17 @@ nav.navbar {
     }
 
     h2 {
-        margin-bottom: 60px;
+        margin-bottom: 0;
+
+        @include media-breakpoint-up(lg) {
+          padding-top: 80px;
+          padding-bottom: 80px;
+        }
+  
+        @include media-breakpoint-down(md) {
+          padding-top: 40px;
+          padding-bottom: 40px;
+        }
     }
 }
 /* SCHEME AREA END*/

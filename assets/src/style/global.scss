@@ -1,6 +1,6 @@
 body,
 html {
-	height: 100%;
+  height: 100%;
 }
 
 body {
@@ -19,7 +19,8 @@ body {
   letter-spacing: 1.42px;
   font-weight: bold;
 
-  &:focus, &:active {
+  &:focus,
+  &:active {
     outline: none !important;
     box-shadow: none !important;
   }
@@ -49,15 +50,36 @@ h2.title {
   text-transform: uppercase;
 
   @include media-breakpoint-up(lg) {
-      letter-spacing: 0.69px;
-      font-size: 34px;
+    letter-spacing: 0.69px;
+    font-size: 34px;
   }
 
   @include media-breakpoint-down(md) {
-      font-size: 20px;
-      letter-spacing: 0.42px;
+    font-size: 20px;
+    letter-spacing: 0.42px;
   }
 }
 
+@include media-breakpoint-up(lg) { 
+  //background-color: $dark;
 
-  
+  .dropdown-menu {
+    //border: 1px solid $white;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.37);
+    min-width: 100%; 
+    padding: 0;
+    margin: 0;
+    background-clip: border-box;
+
+    .dropdown-item {
+      padding: 15px 22px;
+      font-size: 17px;
+      letter-spacing: 0.05px;
+      &:hover {
+        font-weight: 700;
+        background: linear-gradient(to right, rgba(229,229,229,1) 0%, rgba(244,244,244,1) 50%, rgba(244,244,244,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f4f4f4', GradientType=1 );
+      }
+    }
+  }
+}

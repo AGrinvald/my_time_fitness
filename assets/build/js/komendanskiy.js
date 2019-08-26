@@ -21760,7 +21760,7 @@ function init() {
             map.setCenter(mapSettings.center, mapSettings.zoom);
         }
 
-        console.log(map.getCenter());
+        //console.log(map.getCenter());
     });
 
     ymaps.geoQuery(akademicheskaya).addToMap(map);

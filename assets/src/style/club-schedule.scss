@@ -22,10 +22,19 @@
             padding-bottom: 50px;
         }
 
-        h2 {
+        h2.title  {
             text-align: center;
-            margin-top: 75px;
-            margin-bottom: 80px;
+            margin-bottom: 0;
+
+            @include media-breakpoint-up(lg) {
+              padding-top: 80px;
+              padding-bottom: 70px;
+            }
+      
+            @include media-breakpoint-down(md) {
+              padding-top: 40px;
+              padding-bottom: 35px;
+            }
         }
 
     }

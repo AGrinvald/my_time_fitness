@@ -21675,6 +21675,12 @@ var mapSettingsCollection = {
     }
 };
 
+var centerPoints = [
+    [60.007597075434596, 30.241306762352266],
+    [60.00995002543195, 30.39969335894417],
+    [59.8278368177265, 30.388026441680854]
+];
+
 var mapSettings = null;
 var currentSize = windowsSize.Large;
 
@@ -21731,7 +21737,8 @@ function init() {
             id: 2,
             hintContent: 'Санкт-Петербург м.Купчино, ул. Олеко Дундича 10/2, 1 этаж'
         }, {
-            iconLayout: createLayout(2)
+            iconLayout: createLayout(2),
+            iconImageOffset: [55, 76]
         }
     );
 
@@ -21740,7 +21747,8 @@ function init() {
             id: 0,
             hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
         }, {
-            iconLayout: createLayout(0)
+            iconLayout: createLayout(0),
+            iconImageOffset: [-55, -76]
         }
     );
 
@@ -21749,7 +21757,8 @@ function init() {
             id: 1,
             hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
         }, {
-            iconLayout: createLayout(1)
+            iconLayout: createLayout(1),
+            iconImageOffset: [-55, -76]
         }
     );
 
@@ -21778,6 +21787,9 @@ function init() {
         if (toChange) {
             map.setCenter(mapSettings.center, mapSettings.zoom);
         }
+
+        console.log(map.getZoom());
+        console.log(map.getCenter());
     });
 
     ymaps.geoQuery(komendanskiy).addToMap(map);
@@ -21877,7 +21889,7 @@ $(function () {
                 var moving = new ymaps.map.action.Single({
                     center: mapSettings.center,
                     zoom: mapSettings.zoom,
-                    duration: 1000
+                    duration: 2000
                 });
 
                 map.action.execute(moving);
@@ -21898,17 +21910,20 @@ $(function () {
 
                 var placemark = selected.get(0);
                 var coords = placemark.geometry.getCoordinates();
-                var zoom = 12;
 
                 if (currentSize == windowsSize.Medium) {
                     coords[0] = coords[0] + 0.07;
                     zoom = 11;
+                } else {
+                    //var coords = centerPoints[id];
+                    coords[1] = coords[1] - 0.08;
+                    var zoom = 14;
                 }
 
                 var moving = new ymaps.map.action.Single({
                     center: coords,
                     zoom: zoom,
-                    duration: 1000
+                    duration: 2000
                 });
 
                 map.action.execute(moving);

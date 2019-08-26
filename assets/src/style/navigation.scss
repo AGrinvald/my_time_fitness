@@ -28,25 +28,6 @@ nav.navbar {
   @include media-breakpoint-up(lg) { 
     background-color: $dark;
 
-    .dropdown-menu {
-      border: none;
-      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.37);
-      min-width: 100%; 
-      padding: 0;
-      margin: 0;
-      
-      .dropdown-item {
-        padding: 15px 22px;
-        font-size: 17px;
-        letter-spacing: 0.05px;
-        &:hover {
-          font-weight: 700;
-          background: linear-gradient(to right, rgba(229,229,229,1) 0%, rgba(244,244,244,1) 50%, rgba(244,244,244,1) 100%);
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f4f4f4', GradientType=1 );
-        }
-      }
-    }
-
     .navbar-nav {
       max-width: 1140px;
 

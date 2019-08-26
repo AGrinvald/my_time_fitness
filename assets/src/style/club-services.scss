@@ -1,0 +1,225 @@
+/* SERVICES AREA START*/
+.services-area {
+  .services-container {
+    overflow: hidden;
+    background-color: $primary;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $primary;
+      background-image: url(../img/combined-shape-copy-13.svg);
+      background-repeat: repeat-x;
+      background-position: center center;
+      z-index: 1;
+    }
+
+    .container {
+      z-index: 2;
+      position: relative;
+    }
+
+    @include media-breakpoint-up(xl) {
+      height: 958px;
+    }
+
+    h2 {
+      color: $white;
+      text-align: center;
+      margin-bottom: 0;
+
+      @include media-breakpoint-up(lg) {
+        padding-top: 80px;
+        padding-bottom: 70px;
+      }
+
+      @include media-breakpoint-down(md) {
+        padding-top: 40px;
+        padding-bottom: 35px;
+      }
+    }
+
+    h5 {
+      margin: 0;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    $xl-width: 264px;
+    $xl-height: 288px;
+
+    .flip-card {
+      background-color: transparent;
+      width: $xl-width;
+      text-align: center;
+      margin-bottom: 32px;
+      perspective: 1200;
+      transform-style: preserve-3d;
+      cursor: pointer;
+
+      .flipper {
+        transform: scale(1, 1);
+        position: relative;
+        width: $xl-width;
+        height: $xl-height;
+        transform-style: preserve-3d;
+        transition: .7s linear;
+      }
+
+      &:hover > .flipper {
+        transform: rotateY(180deg) scale(1.034, 1.083);
+      }
+      // &:hover > .flip-card-front {
+      //   @include media-breakpoint-up(xl) {
+      //     transform: rotateY(0) scale(1.034, 1.083);
+      //   }
+
+      //   @include media-breakpoint-down(lg) {
+      //     transform: rotateY(0);
+      //   }
+      // }
+
+      // &:hover > .flip-card-back {
+      //   @include media-breakpoint-up(xl) {
+      //     transform: rotateY(-180deg) scale(1.034, 1.083);
+      //   }
+
+      //   @include media-breakpoint-down(lg) {
+      //     transform: rotateY(-180deg);
+      //   }
+      // }
+
+      .flip-card-front,
+      .flip-card-back {
+        box-sizing: border-box;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 9px;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.29);
+        backface-visibility: hidden;
+      }
+
+      .flip-card-front {
+        transform: rotateY(0deg);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        font-weight: bold;
+        color: #000000;
+        background-image: linear-gradient(to top, #f8f8f8, #ffffff);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ffffff', GradientType=0 );
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+
+        h5 {
+          font-size: 24px;
+          letter-spacing: 0.24px;
+          margin-bottom: 20px;
+          width: 100%;
+        }
+
+        @include media-breakpoint-up(xl) {
+          padding: 70px 0 35px 0;
+        }
+
+        @include media-breakpoint-down(lg) {
+          padding: 55px 0 40px 0;
+        }
+      }
+
+      .flip-card-back {
+        transform: rotateY(-180deg);
+        background-color: #000000;
+        color: white;
+
+        @include media-breakpoint-down(lg) {
+          padding: 50px 22px;
+        }
+
+        @include media-breakpoint-up(xl) {
+          padding: 22px;
+        }
+
+        h5 {
+          font-weight: 500;
+          font-size: 26px;
+          letter-spacing: 0.26px;
+          color: $primary;
+          margin-bottom: 30px;
+
+          @include media-breakpoint-down(lg) {
+            display: none;
+          }
+        }
+
+        p {
+          text-align: left;
+          font-size: 18px;
+          line-height: 20;
+          font-weight: 100;
+          letter-spacing: 0;
+          line-height: 1.11;
+        }
+
+        &.img-bg-1 {
+          background-image: url(../img/fitnessbar.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        &.img-bg-2 {
+          background-image: url(../img/solar.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        &.img-bg-3 {
+          background-image: url(../img/towel.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        &.img-bg-4 {
+          background-image: url(../img/hammam.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        &.img-bg-5 {
+          background-image: url(../img/hammam.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        &.img-bg-6 {
+          background-image: url(../img/parking.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        &.img-bg-7 {
+          background-image: url(../img/parking.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        &.img-bg-8 {
+          background-image: url(../img/dryer.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+  }
+}
+/* SERVICES AREA END*/

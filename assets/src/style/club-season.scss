@@ -4,24 +4,24 @@
         overflow: hidden;
 
         @include media-breakpoint-up(lg) {
-            margin-top: 60px;
             margin-bottom: 185px;
         }
-
-        @include media-breakpoint-down(md) {
-            margin-top: 30px;
-        }
     }
 
-    h2 {
+    h2.title  {
+        margin-bottom: 0;
+
         @include media-breakpoint-up(lg) {
-            margin-bottom: 70px;
+            padding-top: 80px;
+            padding-bottom: 70px
         }
 
         @include media-breakpoint-down(md) {
-            margin-bottom: 30px;
+            padding-top: 40px;
+            padding-bottom: 35px;
         }
     }
+
     .season-item {
         width: 368px;
         box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.29);
@@ -33,14 +33,19 @@
         color: $black;
 
         &:hover {
-            box-shadow: 0 0 16px 0 rgba(134, 238, 49, 0.61);
+            box-shadow: 0 0 16px 0 #AACC23;
             text-decoration: none;
 
             .tariff-b {
-                background-image: url(../img/555-copy.png);
+
+                &::before {
+                    background-color:rgba(134, 198, 0, 0.7);   
+                    transition: background-color 1s ease-out;
+                }
 
                 .old-price {
                     color: #dcfe55;
+                    transition: color 1s;
                 }
             }
 
@@ -48,6 +53,7 @@
                 background-color: $primary;
                 border: none;
                 color: $white;
+                transition: color 1s, background-color 1s ease-out;
             }
         }
 
@@ -66,21 +72,34 @@
         }
 
         .tariff-b {
+            position: relative;
             width: 100%;
             color: white;
-            background-image: url(../img/555-copy-2.png);
+            background-image: url(../img/555-copy-6.png);
             background-repeat: no-repeat;
-            background-position: top center;
+            background-position: cover;
             padding: 31px 32px 32px 25px;
             display: flex;
             flex-direction: column;
             border-top-left-radius: 13px;
             border-top-right-radius: 13px;
-            
+
+            &::before {
+                background-color:rgba(0, 0, 0, 0.7);   
+                border-top-left-radius: 13px;
+                border-top-right-radius: 13px;
+                content: "";
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                z-index: 1;
+            }
+
             .name {
                 font-size: 36px;
                 font-weight: bold;
                 letter-spacing: 0.75px;
+                z-index: 10;
             }
 
             .old-price {
@@ -88,9 +107,11 @@
                 letter-spacing: 0.54px;
                 color: #a5a5a5;
                 text-decoration: line-through;
+                z-index: 10;
             }
 
             .new-price {
+                z-index: 10;
                 > div:first-child {
                     font-size: 90px;
                     font-weight: bold;
@@ -111,6 +132,7 @@
             }
 
             .offer {
+                z-index: 10;
                 font-size: 24px;
                 font-weight: 300;
                 letter-spacing: 0.3px;
