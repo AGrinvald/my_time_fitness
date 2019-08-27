@@ -4,7 +4,7 @@
         overflow: hidden;
 
         @include media-breakpoint-up(lg) {
-            margin-bottom: 185px;
+            padding-bottom: 185px;
         }
     }
 
@@ -31,21 +31,23 @@
         flex-direction: column;
         cursor: pointer;
         color: $black;
+        transition: all .5s ease-in-out;
 
         &:hover {
             box-shadow: 0 0 16px 0 #AACC23;
             text-decoration: none;
+            transform: scale(1.02); 
 
             .tariff-b {
 
                 &::before {
-                    background-color:rgba(134, 198, 0, 0.7);   
-                    transition: background-color 1s ease-out;
+                    background-color:rgba(110, 161, 0, 0.7);   
+                    transition: background-color .5s ease-in-out;
                 }
 
                 .old-price {
                     color: #dcfe55;
-                    transition: color 1s;
+                    transition: color .5s ease-in-out;
                 }
             }
 
@@ -53,7 +55,7 @@
                 background-color: $primary;
                 border: none;
                 color: $white;
-                transition: color 1s, background-color 1s ease-out;
+                transition: all .5s ease-in-out;
             }
         }
 

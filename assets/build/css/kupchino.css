@@ -8519,7 +8519,7 @@ footer {
   overflow: hidden; }
   @media (min-width: 992px) {
     .season-area .container-fluid {
-      margin-bottom: 185px; } }
+      padding-bottom: 185px; } }
 
 .season-area h2.title {
   margin-bottom: 0; }
@@ -8540,21 +8540,23 @@ footer {
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  color: #000000; }
+  color: #000000;
+  transition: all .5s ease-in-out; }
   .season-area .season-item:hover {
     box-shadow: 0 0 16px 0 #AACC23;
-    text-decoration: none; }
+    text-decoration: none;
+    transform: scale(1.02); }
     .season-area .season-item:hover .tariff-b::before {
-      background-color: rgba(134, 198, 0, 0.7);
-      transition: background-color 1s ease-out; }
+      background-color: rgba(110, 161, 0, 0.7);
+      transition: background-color .5s ease-in-out; }
     .season-area .season-item:hover .tariff-b .old-price {
       color: #dcfe55;
-      transition: color 1s; }
+      transition: color .5s ease-in-out; }
     .season-area .season-item:hover button {
       background-color: #aacc23;
       border: none;
       color: #ffffff;
-      transition: color 1s, background-color 1s ease-out; }
+      transition: all .5s ease-in-out; }
   @media (min-width: 1200px) {
     .season-area .season-item {
       margin-bottom: 15px; } }
