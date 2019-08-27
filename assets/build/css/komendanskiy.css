@@ -7343,7 +7343,6 @@ body {
   padding-bottom: 15px; }
 
 .btn-rounded {
-  object-fit: contain;
   border-radius: 32.5px;
   text-transform: uppercase;
   font-weight: bold;
@@ -7355,8 +7354,7 @@ body {
     height: 48px;
     font-size: 16px;
     height: 48px;
-    width: 204px;
-    line-height: 2.5; } }
+    width: 204px; } }
 
 @media (max-width: 991.98px) {
   .btn-custom-md {
@@ -7364,21 +7362,18 @@ body {
     letter-spacing: 0.04px;
     width: 114px;
     height: 24px;
-    padding: 3px;
-    line-height: 1.5; } }
+    padding: 3px; } }
 
 .btn-custom-lg {
   height: 56px;
   width: 312px;
-  font-size: 16px;
-  line-height: 2.8; }
+  font-size: 16px; }
 
 @media (min-width: 992px) {
   .btn-custom-lg-res {
     height: 56px;
     width: 312px;
-    font-size: 16px;
-    line-height: 3; } }
+    font-size: 16px; } }
 
 @media (max-width: 991.98px) {
   .btn-custom-lg-res {
