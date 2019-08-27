@@ -7163,15 +7163,77 @@ body {
   padding-bottom: 15px; }
 
 .btn-rounded {
-  height: 56px;
   object-fit: contain;
   border-radius: 32.5px;
   text-transform: uppercase;
-  padding-left: 22px;
-  padding-right: 22px;
+  font-weight: bold;
+  letter-spacing: 1.12px; }
+
+@media (min-width: 992px) {
+  .btn-custom-md {
+    width: 204px;
+    height: 48px;
+    font-size: 16px;
+    height: 48px;
+    width: 204px;
+    line-height: 2.5; } }
+
+@media (max-width: 991.98px) {
+  .btn-custom-md {
+    font-size: 12px;
+    letter-spacing: 0.04px;
+    width: 114px;
+    height: 24px;
+    padding: 3px;
+    line-height: 1.5; } }
+
+.btn-custom-lg {
+  height: 56px;
+  width: 312px;
   font-size: 16px;
-  letter-spacing: 1.12px;
-  font-weight: bold; }
+  line-height: 3; }
+
+@media (min-width: 992px) {
+  .btn-custom-lg-res {
+    height: 56px;
+    width: 312px;
+    font-size: 16px;
+    line-height: 3; } }
+
+@media (max-width: 991.98px) {
+  .btn-custom-lg-res {
+    font-size: 12px;
+    width: 152px;
+    height: 32px;
+    margin-top: auto; } }
+
+.btn-custom-dark-text-white {
+  background-color: #26272b;
+  color: #ffffff; }
+  .btn-custom-dark-text-white:hover {
+    background-color: #aacc23;
+    color: #000000;
+    border: 1px solid #000000; }
+
+.btn-custom-dark {
+  background-color: #26272b;
+  color: #aacc23; }
+  .btn-custom-dark:hover {
+    background-color: #aacc23;
+    color: #000000;
+    border: 1px solid #000000; }
+
+.btn-custom-green {
+  background-color: #aacc23;
+  color: #000000;
+  border: 1px solid #000000; }
+  .btn-custom-green:hover {
+    background-color: #000000;
+    color: #aacc23;
+    border: 1px solid #aacc23; }
+
+.text-grey {
+  color: #26272b; }
 
 h2.title {
   font-family: "Avenir Next Cyr";

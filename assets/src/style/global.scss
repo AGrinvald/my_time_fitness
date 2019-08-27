@@ -32,15 +32,99 @@ body {
 }
 
 .btn-rounded {
-  height: 56px;
   object-fit: contain;
   border-radius: 32.5px;
   text-transform: uppercase;
-  padding-left: 22px;
-  padding-right: 22px;
-  font-size: 16px;
-  letter-spacing: 1.12px;
   font-weight: bold;
+  // padding-left: 22px;
+  // padding-right: 22px;
+  
+  letter-spacing: 1.12px;
+  
+}
+
+.btn-custom-md {
+  
+
+  @include media-breakpoint-up(lg) {
+    width: 204px;
+    height: 48px;
+    font-size: 16px;
+    height: 48px;
+    width: 204px;
+    line-height: 2.5;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 12px;
+    letter-spacing: 0.04px;
+    width: 114px;
+    height: 24px;
+    padding: 3px;
+    line-height: 1.5;
+  }
+}
+
+.btn-custom-lg {
+  height: 56px;
+  width: 312px;
+  font-size: 16px;
+  line-height: 3;
+}
+
+.btn-custom-lg-res {
+
+  @include media-breakpoint-up(lg) {
+    height: 56px;
+    width: 312px;
+    font-size: 16px;
+    line-height: 3;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 12px;
+    width: 152px;
+    height: 32px;
+    margin-top: auto;
+  }
+}
+
+.btn-custom-dark-text-white {
+  background-color: #26272b;
+  color: $white;
+
+  &:hover {
+    background-color: $primary;
+    color: $black;   
+    border: 1px solid $black;
+  }
+}
+
+.btn-custom-dark {
+  background-color: #26272b;
+  color: $primary;
+
+  &:hover {
+    background-color: $primary;
+    color: $black;   
+    border: 1px solid $black;
+  }
+}
+
+.btn-custom-green {
+  background-color: $primary;
+  color: $black;
+  border: 1px solid $black;
+
+  &:hover {
+    background-color: $black;
+    color: $primary;   
+    border: 1px solid $primary;
+  }
+}
+
+.text-grey {
+  color: #26272b;
 }
 
 h2.title {

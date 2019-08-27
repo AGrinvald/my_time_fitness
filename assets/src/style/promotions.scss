@@ -138,6 +138,10 @@ nav.navbar {
     margin-bottom: 15px;
   }
 
+  .mb-110 {
+    margin-bottom: 110px;
+  }
+  
   .promo-container {
     margin-bottom: 50px;
     display: flex;
@@ -186,21 +190,6 @@ nav.navbar {
 
     b {
       font-weight: 700;
-    }
-  }
-
-  .btn {
-    @include media-breakpoint-up(lg) {
-      width: 204px;
-      height: 48px;
-    }
-
-    @include media-breakpoint-down(md) {
-      font-size: 12px;
-      letter-spacing: 0.04px;
-      width: 114px;
-      height: 24px;
-      padding: 3px;
     }
   }
 
@@ -264,20 +253,6 @@ nav.navbar {
       p {
         @include media-breakpoint-up(lg) {
           margin-left: 4%;
-        }
-      }
-
-      .btn {
-        @include media-breakpoint-up(lg) {
-          max-width: 204px;
-          height: 48px;
-        }
-
-        @include media-breakpoint-down(md) {
-          font-size: 12px;
-          letter-spacing: 0.04px;
-          max-width: 106px;
-          height: 26px;
         }
       }
     }
@@ -377,10 +352,6 @@ nav.navbar {
           margin-left: auto;
           margin-right: auto;
         }
-      }
-
-      .btn {
-        border: solid 1px #26272b;
       }
     }
   }
@@ -482,10 +453,6 @@ nav.navbar {
           margin-top: 15px;
         }
       }
-
-      .btn {
-        border: solid 1px #26272b;
-      }
     }
   }
 
@@ -561,27 +528,6 @@ nav.navbar {
           text-align: center;
           font-size: 15px;
           letter-spacing: -0.58px;
-        }
-      }
-
-      .btn {
-        color: $black;
-        border: solid 1px #000000;
-
-        @include media-breakpoint-up(lg) {
-          max-width: 204px;
-          height: 48px;
-          margin-right: auto;
-          margin-left: 10%;
-        }
-
-        @include media-breakpoint-down(md) {
-          font-size: 12px;
-          letter-spacing: 0.04px;
-          max-width: 106px;
-          height: 26px;
-          margin-left: auto;
-          margin-right: 30%;
         }
       }
     }
@@ -704,37 +650,6 @@ nav.navbar {
           font-size: 16px;
         }
       }
-
-      button {
-        border-radius: 32.5px;
-        border: solid 1px #000000;
-        font-weight: bold;
-        color: #000000;
-
-        @include media-breakpoint-up(lg) {
-          margin-top: auto;
-          width: 312px;
-          height: 56px;
-          font-size: 16px;
-        }
-
-        @include media-breakpoint-down(md) {
-          font-size: 12px;
-          width: 152px;
-          height: 32px;
-          margin-top: auto;
-        }
-      }
-    }
-  }
-
-  .btn-c {
-    .btn {
-        width: 305px;
-        height: 56px;
-        border: solid 1px #101929;
-        font-size: 16px;
-        margin-bottom: 100px;
     }
   }
 }
