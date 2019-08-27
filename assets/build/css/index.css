@@ -7976,11 +7976,9 @@ footer {
   0% {
     transform: rotate(0deg); }
   5% {
-    transform: rotate(-1deg); }
+    transform: rotate(-2deg); }
   10% {
     transform: rotate(0deg); }
-  20% {
-    transform: translate(0, 0px); }
   70% {
     transform: translate(0px, 10px); }
   100% {
