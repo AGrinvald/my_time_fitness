@@ -345,20 +345,40 @@ nav {
       font-weight: 500;
       background-image: linear-gradient(to bottom left, #4F4F4F 0%, #26272B 50%, #4F4F4F 100%);
       border-radius: 0 20px 0 20px;
+      perspective: 800px;
 
+      .number-2 {
+        padding-right: 12px;
+      }
 
-      &:hover {
-        //background-size: 300% 100%;
-        //transition: all .4s ease-in-out;
-        // background-color: #4F4F4F;
-        // background-image:linear-gradient(to bottom left, #26272B 0%, #4F4F4F 50%, #4F4F4F 100%);
-        // background-repeat:no-repeat;
+      .number-3 {
+        padding-right: 10px;
+      }
 
-        .number {
-          transform: rotate3d(0,1,0,360deg);
-          transition: transform 1s ease-in-out;
-          transform-style: preserve-3d;
+      @include media-breakpoint-up(lg) {
+        .number-1 {
+          > div {
+            animation: numberRotation 7s infinite linear;
+          }
         }
+        
+        .number-2 {
+          > div {
+            animation: numberRotation 7s 9s infinite linear;
+          }
+        }
+
+        .number-3 {
+          > div {
+            animation: numberRotation 7s 18s infinite linear;
+          }
+        }
+      }
+
+      @keyframes numberRotation {
+        0% {transform: rotate3d(0,1,0,0deg);}
+        20% {transform: rotate3d(0,1,0,360deg);}
+        100% {transform: rotate3d(0,1,0,360deg);}
       }
 
       &::before {
@@ -393,6 +413,7 @@ nav {
     .number {
       font-size: 100px;
       color: $primary;
+      text-align: center;
     }
 
     .desc {
