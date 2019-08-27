@@ -7330,13 +7330,18 @@ body {
 .container-fluid {
   padding: 0; }
 
+button {
+  font-family: "Avenir Next Cyr";
+  letter-spacing: 1.42px;
+  font-weight: bold; }
+  button:focus, button:active {
+    outline: none !important;
+    box-shadow: none !important; }
+
 .btn {
   font-family: "Avenir Next Cyr";
   letter-spacing: 1.42px;
   font-weight: bold; }
-  .btn:focus, .btn:active {
-    outline: none !important;
-    box-shadow: none !important; }
 
 .btn-lg, .btn-group-lg > .btn {
   padding-top: 15px;

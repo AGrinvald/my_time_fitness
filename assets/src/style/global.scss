@@ -14,7 +14,8 @@ body {
   padding: 0;
 }
 
-.btn {
+
+button {
   font-family: "Avenir Next Cyr";
   letter-spacing: 1.42px;
   font-weight: bold;
@@ -24,6 +25,12 @@ body {
     outline: none !important;
     box-shadow: none !important;
   }
+}
+
+.btn {
+  font-family: "Avenir Next Cyr";
+  letter-spacing: 1.42px;
+  font-weight: bold;
 }
 
 .btn-lg {
@@ -68,7 +75,6 @@ body {
     height: 56px;
     width: 312px;
     font-size: 16px;
-    //line-height: 3;
   }
 
   @include media-breakpoint-down(md) {
@@ -135,10 +141,7 @@ h2.title {
 }
 
 @include media-breakpoint-up(lg) { 
-  //background-color: $dark;
-
   .dropdown-menu {
-    //border: 1px solid $white;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.37);
     min-width: 100%; 
     padding: 0;
