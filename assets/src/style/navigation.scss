@@ -39,11 +39,11 @@ nav.navbar {
         padding-top: 25px;
         padding-bottom: 20px;
         font-family: Helvetica;
-        border-bottom: 5px solid $dark;
+        border-bottom: 4px solid $dark;
         
         &.active {
           color: $primary;
-          border-bottom: 5px solid $primary;
+          border-bottom: 4px solid $primary;
         }
 
         @include hover-focus {
