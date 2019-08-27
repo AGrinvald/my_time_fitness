@@ -42,13 +42,12 @@ nav.navbar {
         border-bottom: 5px solid $dark;
         
         &.active {
-          color: $navbar-dark-hover-color;
+          color: $primary;
           border-bottom: 5px solid $primary;
         }
 
         @include hover-focus {
-          color: $navbar-dark-hover-color;
-          border-bottom: 5px solid $primary;
+          color: $primary;
         }
   
         &.disabled {
@@ -60,7 +59,7 @@ nav.navbar {
       .active > .nav-link,
       .nav-link.show,
       .nav-link.active {
-        color: $navbar-dark-active-color;
+        color: $primary;
       }
     }
   

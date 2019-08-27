@@ -229,6 +229,8 @@ nav {
 
   .owl-carousel .owl-item img {
     display: block;
+    position: relative;
+    animation: floating 6s infinite ease-in-out;
 
     @include media-breakpoint-down(md) {
       width: 65%;
@@ -241,6 +243,15 @@ nav {
     @include media-breakpoint-down(xs) {
       width: 90%;
     }
+  }
+
+  @keyframes floating {
+    0% { transform: rotate(0deg); } 
+    5% { transform: rotate(-2deg); } 
+    10% { transform: rotate(0deg); } 
+    25% { transform: translate(0,  0px); }
+    50%  { transform: translate(0px, 15px); }
+    100%   { transform: translate(0, -0px); } 
   }
 
   .bg-img-1 {
