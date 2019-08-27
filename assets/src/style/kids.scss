@@ -46,6 +46,8 @@
 @import "clubs-modal";
 @import "footer";
 
+@keyframes spin { 100% { transform:rotate(360deg); } }
+
 /* TOP HEADER START */
 header {
   position: relative;
@@ -169,10 +171,6 @@ nav.navbar {
   .banner-bottom {
     position: relative;
 
-    // .overflow-hidden {
-    //     overflow: hidden;
-    // }
-
     @include media-breakpoint-down(md) {
       &::after {
         content: "";
@@ -186,6 +184,7 @@ nav.navbar {
         background-size: contain;
         background-position: center center;
         z-index: 10;
+        animation: spin 10s linear infinite;
       }
     }
 
@@ -202,6 +201,7 @@ nav.navbar {
         background-size: contain;
         background-position: center center;
         z-index: 10;
+        animation: spin 10s linear infinite;
       }
     }
 
@@ -220,6 +220,7 @@ nav.navbar {
           background-repeat: no-repeat;
           background-size: contain;
           background-position: center center;
+          animation: spin 10s linear infinite;
         }
       }
 
@@ -235,6 +236,7 @@ nav.navbar {
           background-repeat: no-repeat;
           background-size: contain;
           background-position: center center;
+          animation: spin 10s linear infinite;
         }
       }
     }
@@ -254,6 +256,7 @@ nav.navbar {
           background-repeat: no-repeat;
           background-position: center center;
           z-index: 5;
+          animation: spin 10s linear infinite;
         }
 
         &::after {
@@ -372,6 +375,10 @@ nav.navbar {
     }
 
     img {
+      display: block;
+      position: relative;
+      animation: floating 6s infinite ease-in-out;
+
       @include media-breakpoint-up(lg) {
         max-width: 491px;
         max-height: 371px;
@@ -381,6 +388,14 @@ nav.navbar {
         max-width: 363px;
         max-height: 258px;
       }
+    }
+
+    @keyframes floating {
+      0% { transform: rotate(0deg); } 
+      5% { transform: rotate(2deg); } 
+      10% { transform: rotate(0deg); } 
+      55%  { transform: translate(0px, 10px); }
+      100%   { transform: translate(0, -0px); } 
     }
   }
 }

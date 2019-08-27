@@ -7207,6 +7207,14 @@ button {
     height: 32px;
     margin-top: auto; } }
 
+.btn-custom-dark-outline {
+  background-color: #26272b;
+  color: #ffffff; }
+  .btn-custom-dark-outline:hover {
+    background-color: transparent;
+    color: #26272b;
+    border: 1px solid #26272b; }
+
 .btn-custom-dark-text-white {
   background-color: #26272b;
   color: #ffffff; }

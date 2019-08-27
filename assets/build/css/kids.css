@@ -7207,6 +7207,14 @@ button {
     height: 32px;
     margin-top: auto; } }
 
+.btn-custom-dark-outline {
+  background-color: #26272b;
+  color: #ffffff; }
+  .btn-custom-dark-outline:hover {
+    background-color: transparent;
+    color: #26272b;
+    border: 1px solid #26272b; }
+
 .btn-custom-dark-text-white {
   background-color: #26272b;
   color: #ffffff; }
@@ -7618,6 +7626,10 @@ footer {
         color: #99be51; }
 
 /* FOOTER END */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg); } }
+
 /* TOP HEADER START */
 header {
   position: relative; }
@@ -7722,7 +7734,8 @@ nav.navbar {
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
-      z-index: 10; } }
+      z-index: 10;
+      animation: spin 10s linear infinite; } }
   @media (max-width: 767.98px) {
     .banner-area .banner-bottom::after {
       content: "";
@@ -7735,7 +7748,8 @@ nav.navbar {
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
-      z-index: 10; } }
+      z-index: 10;
+      animation: spin 10s linear infinite; } }
   .banner-area .banner-bottom .card-block {
     position: relative; }
     @media (max-width: 991.98px) {
@@ -7749,7 +7763,8 @@ nav.navbar {
         background: url(../img/flower-md.svg);
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: center center; } }
+        background-position: center center;
+        animation: spin 10s linear infinite; } }
     @media (max-width: 767.98px) {
       .banner-area .banner-bottom .card-block::before {
         content: "";
@@ -7761,7 +7776,8 @@ nav.navbar {
         background: url(../img/flower-md.svg);
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: center center; } }
+        background-position: center center;
+        animation: spin 10s linear infinite; } }
   .banner-area .banner-bottom .desc-block {
     position: relative; }
     @media (min-width: 992px) {
@@ -7775,7 +7791,8 @@ nav.navbar {
         background: url(../img/flower-sm.svg);
         background-repeat: no-repeat;
         background-position: center center;
-        z-index: 5; }
+        z-index: 5;
+        animation: spin 10s linear infinite; }
       .banner-area .banner-bottom .desc-block::after {
         content: "";
         position: absolute;
@@ -7868,14 +7885,30 @@ nav.navbar {
     .banner-area .banner-bottom .row > div {
       padding-left: 0;
       padding-right: 0; }
-  @media (min-width: 992px) {
-    .banner-area .banner-bottom img {
-      max-width: 491px;
-      max-height: 371px; } }
-  @media (max-width: 991.98px) {
-    .banner-area .banner-bottom img {
-      max-width: 363px;
-      max-height: 258px; } }
+  .banner-area .banner-bottom img {
+    display: block;
+    position: relative;
+    animation: floating 6s infinite ease-in-out; }
+    @media (min-width: 992px) {
+      .banner-area .banner-bottom img {
+        max-width: 491px;
+        max-height: 371px; } }
+    @media (max-width: 991.98px) {
+      .banner-area .banner-bottom img {
+        max-width: 363px;
+        max-height: 258px; } }
+
+@keyframes floating {
+  0% {
+    transform: rotate(0deg); }
+  5% {
+    transform: rotate(2deg); }
+  10% {
+    transform: rotate(0deg); }
+  55% {
+    transform: translate(0px, 10px); }
+  100% {
+    transform: translate(0, 0px); } }
 
 /* BANNER AREA END*/
 /* SCHEDULE AREA START*/
