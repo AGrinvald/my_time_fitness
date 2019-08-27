@@ -38,14 +38,10 @@ body {
   font-weight: bold;
   // padding-left: 22px;
   // padding-right: 22px;
-  
   letter-spacing: 1.12px;
-  
 }
 
 .btn-custom-md {
-  
-
   @include media-breakpoint-up(lg) {
     width: 204px;
     height: 48px;
@@ -69,7 +65,7 @@ body {
   height: 56px;
   width: 312px;
   font-size: 16px;
-  line-height: 3;
+  line-height: 2.8;
 }
 
 .btn-custom-lg-res {
