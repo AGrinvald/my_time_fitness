@@ -108,7 +108,7 @@
   .buttons {
     position: absolute;
     left: 50%;
-    top: 45%;
+    top: 48%;
     width: 58%;
     transform: translateX(-50%);
     justify-content: space-between;
@@ -197,7 +197,7 @@
 
       div {
         position: absolute;
-        transition: transform 1.5s, left 1.5s, z-index 0s, width 1.5s;
+        transition: transform 0.9s, left 0.9s, z-index 0s, width 0.9s;
         opacity: 1;
         width: 57.3%;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.88);
@@ -221,7 +221,7 @@
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 6;
             opacity: 1;
-            transition: opacity 2.5s ease-out;
+            transition: opacity 1.5s ease-out;
           }
         }
 
@@ -236,7 +236,7 @@
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 6;
             opacity: 0;
-            transition: opacity 2.5s ease-in-out;
+            transition: opacity 1.5s ease-in-out;
           }
         }
 
