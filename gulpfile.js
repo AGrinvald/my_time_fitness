@@ -52,7 +52,7 @@ var gulp = require('gulp'),  // подключаем Gulp
   rigger = require('gulp-rigger'), // модуль для импорта содержимого одного файла в другой
   sourcemaps = require('gulp-sourcemaps'), // модуль для генерации карты исходных файлов
   sass = require('gulp-sass'), // модуль для компиляции SASS (SCSS) в CSS
-  autoprefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
+  autoPrefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
   cleanCSS = require('gulp-clean-css'), // плагин для минимизации CSS
   uglify = require('gulp-uglify'), // модуль для минимизации JavaScript
   //cache = require('gulp-cache'), // модуль для кэширования
@@ -84,6 +84,7 @@ gulp.task('css:build', function () {
     .pipe(plumber()) // для отслеживания ошибок
     .pipe(sourcemaps.init()) // инициализируем sourcemap
     .pipe(sass()) // scss -> css
+    .pipe(autoPrefixer(autoprefixerList))
     .pipe(gulp.dest(path.build.css))
     .pipe(rename({ suffix: '.min' }))
     .pipe(cleanCSS()) // минимизируем CSS
