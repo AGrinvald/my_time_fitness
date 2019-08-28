@@ -1,311 +1,310 @@
 /* GALLERY AREA START*/
 .gallery-area {
-    .gallery-container {
-        background-color: #26272b;
-        position: relative;
+  .gallery-container {
+    background-color: #26272b;
+    position: relative;
 
-        @include media-breakpoint-up(xl) {
-            height: 880px;
-            &::before {
-                content: "";
-                position: absolute;
-                top: -4.1%;
-                left: 0;
-                height: 706px;
-                width: 272px;
-                background: url(../img/group-12.svg);
-                background-size: auto;
-                background-repeat: no-repeat;
-                background-position: left top;
-                z-index: 2;
-            }
-
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: -0.2%;
-                right: 0;
-                height: 802px;
-                width: 328px;
-                background: url(../img/group-13.svg);
-                background-size: auto;
-                background-repeat: no-repeat;
-                background-position: right bottom;
-                z-index: 2;
-            }
-        }
-
-        @include media-breakpoint-down(lg) {
-            &::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 159px;
-                width: 80px;
-                background: url(../img/group10.png);
-                background-size: auto;
-                background-repeat: no-repeat;
-                background-position: left top;
-                z-index: 2;
-            }
-
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 0%;
-                right: 0;
-                height: 149px;
-                width: 74px;
-                background: url(../img/group11.png);
-                background-size: auto;
-                background-repeat: no-repeat;
-                background-position: right bottom;
-                z-index: 2;
-            }
-        }
-    }
-
-    .container {
-        position: relative;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-
-        @include media-breakpoint-up(xl) {
-            max-width: 1400px;
-        }
-
-        @include media-breakpoint-down(lg) {
-            max-width: 720px;
-        }
-
-        @include media-breakpoint-down(sm) {
-            max-width: 335px;
-        }
-
-        .desc {
-            color: $white;
-            margin-bottom: 0;
-            font-weight: 300;
-            text-align: center;
-            margin-top: auto;
-
-            @include media-breakpoint-up(xl) {
-                margin-bottom: 70px;
-                font-size: 18px;
-                line-height: 0.72;
-            }
-    
-            @include media-breakpoint-down(lg) {
-                margin-bottom: 35px;
-                font-size: 14px;
-                line-height: 16px;
-            }  
-        }
-    }
-    
-    .buttons {
+    @include media-breakpoint-up(xl) {
+      height: 880px;
+      &::before {
+        content: "";
         position: absolute;
-        left: 50%;
-        top: 45%;
-        width: 58%;  
-        transform: translateX(-50%);
-        justify-content: space-between;
-        z-index: 20;
+        top: -4.1%;
+        left: 0;
+        height: 706px;
+        width: 272px;
+        background: url(../img/group-12.svg);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: left top;
+        z-index: 2;
+      }
 
-        @include media-breakpoint-up(xl) {
-            display: flex;
-        }
-
-        @include media-breakpoint-down(lg) {
-            display: none;
-        }
-
-        .prev-btn, .next-btn {
-            cursor: pointer;
-            background-position: center center;
-            background-repeat: no-repeat;
-            border:0;
-
-            @include media-breakpoint-up(xl) {
-                width: 58px;
-                height: 58px;
-            }
-    
-            @include media-breakpoint-down(lg) {
-                width: 40px;
-                height: 40px;
-            }
-        }
-
-        @include media-breakpoint-up(xl) {
-            .prev-btn {
-                background-image: url(../img/prev.svg);
-            }
-    
-            .next-btn {
-                background-image: url(../img/next.svg);
-            }
-        }
-
-        @include media-breakpoint-down(lg) {
-            .prev-btn {
-                background-image: url(../img/groupCopy4.png);
-            }
-    
-            .next-btn {
-                background-image: url(../img/groupCopy5.png);
-            }
-        }
-
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.2%;
+        right: 0;
+        height: 802px;
+        width: 328px;
+        background: url(../img/group-13.svg);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        z-index: 2;
+      }
     }
 
-    .gallery-carousel {
+    @include media-breakpoint-down(lg) {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 159px;
+        width: 80px;
+        background: url(../img/group10.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: left top;
+        z-index: 2;
+      }
 
-        @include media-breakpoint-down(lg) {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0%;
+        right: 0;
+        height: 149px;
+        width: 74px;
+        background: url(../img/group11.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        z-index: 2;
+      }
+    }
+  }
 
-        .owl-nav {
+  .container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(xl) {
+      max-width: 1400px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      max-width: 720px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      max-width: 335px;
+    }
+
+    .desc {
+      color: $white;
+      margin-bottom: 0;
+      font-weight: 300;
+      text-align: center;
+      margin-top: auto;
+
+      @include media-breakpoint-up(xl) {
+        margin-bottom: 70px;
+        font-size: 18px;
+        line-height: 0.72;
+      }
+
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 35px;
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  .buttons {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 58%;
+    transform: translateX(-50%);
+    justify-content: space-between;
+    z-index: 20;
+
+    @include media-breakpoint-up(xl) {
+      display: flex;
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+
+    .prev-btn,
+    .next-btn {
+      cursor: pointer;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border: 0;
+
+      @include media-breakpoint-up(xl) {
+        width: 58px;
+        height: 58px;
+      }
+
+      @include media-breakpoint-down(lg) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      .prev-btn {
+        background-image: url(../img/prev.svg);
+      }
+
+      .next-btn {
+        background-image: url(../img/next.svg);
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      .prev-btn {
+        background-image: url(../img/groupCopy4.png);
+      }
+
+      .next-btn {
+        background-image: url(../img/groupCopy5.png);
+      }
+    }
+  }
+
+  .gallery-carousel {
+    @include media-breakpoint-down(lg) {
+      .owl-nav {
+        position: absolute;
+        text-align: center;
+        top: 40%;
+        left: -2%;
+        width: 105%;
+        display: flex;
+        justify-content: space-between;
+
+        button.owl-prev,
+        button.owl-next {
+          cursor: pointer;
+          background-position: center center;
+          background-repeat: no-repeat;
+          width: 40px;
+          height: 40px;
+        }
+
+        button.owl-prev {
+          background-image: url(../img/groupCopy4.png);
+        }
+
+        button.owl-next {
+          background-image: url(../img/groupCopy5.png);
+        }
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      position: relative;
+      width: 100%;
+
+      div {
+        position: absolute;
+        transition: transform 1.5s, left 1.5s, z-index 0s, width 1.5s;
+        opacity: 1;
+        width: 57.3%;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.88);
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        &.prev,
+        &.prevLeft,
+        &.next,
+        &.nextRight {
+          &::before {
+            content: "";
             position: absolute;
-            text-align: center;
-            top: 40%;
-            left: -2%;
-            width: 105%;
-            display: flex;
-            justify-content: space-between;
-
-            button.owl-prev,  button.owl-next {
-              cursor: pointer;
-              background-position: center center;
-              background-repeat: no-repeat;
-
-              @include media-breakpoint-up(xl) {
-                    width: 58px;
-                    height: 58px;
-                }
-    
-              @include media-breakpoint-down(lg) {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-
-            @include media-breakpoint-up(xl) {
-                button.owl-prev {
-                    background-image: url(../img/prev.svg);
-                }
-        
-                button.owl-next {
-                    background-image: url(../img/next.svg);
-                }
-            }
-    
-            @include media-breakpoint-down(lg) {
-                button.owl-prev {
-                    background-image: url(../img/groupCopy4.png);
-                }
-        
-                button.owl-next {
-                    background-image: url(../img/groupCopy5.png);
-                }
-            }
+            left: 0%;
+            top: 0%;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 6;
+            opacity: 1;
+            transition: opacity 2.5s ease-out;
           }
         }
 
-        @include media-breakpoint-up(xl) {
-            position: relative;
+        &.selected {
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            height: 100%;
             width: 100%;
-
-            div {
-                position: absolute;
-                transition: transform 1s, left 1s, opacity 1s, z-index 0s, width 1s;
-                opacity: 1;
-                width: 57.3%;
-                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.88);
-                
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-    
-                &.prev, &.prevLeftSecond, &.next, &.nextRightSecond {
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        left: 0%;
-                        top: 0%;
-                        height: 100%;
-                        width: 100%;
-                        background-color: rgba(0,0,0,.7);
-                        z-index: 6;
-                    }
-                }
-    
-                &.prev {
-                    z-index: 5;
-                    left: 30%;
-                    transform: translateY(20%) translateX(-55%);
-                    width: 39%;
-                }
-    
-                &.prevLeftSecond {
-                    z-index: 4;
-                    left: 15%;
-                    transform: translateY(45%) translateX(-50%);
-                    width: 29.9%;
-                }
-    
-                &.selected {
-                    z-index: 10;
-                    left: 50%;
-                    transform: translateY(0px) translateX(-50%);
-                }
-    
-                &.next {
-                    z-index: 5;
-                    left: 70%;
-                    transform: translateY(20%) translateX(-45%);
-                    width: 39%;
-                }
-    
-                &.nextRightSecond {
-                    z-index: 4;
-                    left: 85%;
-                    transform: translateY(45%) translateX(-50%);
-                    width: 29.9%;
-                }
-
-                &.hideLeft {
-                    left: 15%;
-                    opacity: 0;
-                    width: 29.9%;
-                    transform: translateY(50%);
-                }
-
-                &.hideRight {
-                    left: 65%;
-                    opacity: 0;
-                    width: 29.9%;
-                    transform: translateY(50%);
-                }
-            }
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 6;
+            opacity: 0;
+            transition: opacity 2.5s ease-in-out;
+          }
         }
+
+        &.prev {
+          z-index: 5;
+          left: 30%;
+          transform: translateY(20%) translateX(-55%);
+          width: 39%;
+        }
+
+        &.prevLeft {
+          z-index: 4;
+          left: 15%;
+          transform: translateY(45%) translateX(-50%);
+          width: 29.9%;
+        }
+
+        &.selected {
+          z-index: 10;
+          left: 50%;
+          transform: translateY(0px) translateX(-50%);
+        }
+
+        &.next {
+          z-index: 5;
+          left: 70%;
+          transform: translateY(20%) translateX(-45%);
+          width: 39%;
+        }
+
+        &.nextRight{
+          z-index: 4;
+          left: 85%;
+          transform: translateY(45%) translateX(-50%);
+          width: 29.9%;
+        }
+
+        // &.hideLeft {
+        //   left: 15%;
+        //   opacity: 0;
+        //   width: 29.9%;
+        //   transform: translateY(50%);
+        // }
+
+        // &.hideRight {
+        //   left: 65%;
+        //   opacity: 0;
+        //   width: 29.9%;
+        //   transform: translateY(50%);
+        // }
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    color: $white;
+    margin-bottom: 0;
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 80px;
+      padding-bottom: 70px;
     }
 
-    h2 {
-        text-align: center;
-        color: $white;
-        margin-bottom: 0;
-
-        @include media-breakpoint-up(lg) {
-            padding-top: 80px;
-            padding-bottom: 70px
-        }
-
-        @include media-breakpoint-down(md) {
-            padding-top: 40px;
-            padding-bottom: 35px;
-        }
+    @include media-breakpoint-down(md) {
+      padding-top: 40px;
+      padding-bottom: 35px;
     }
+  }
 }
 /* GALLERY AREA END*/
