@@ -8893,16 +8893,8 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column; }
-  @media (min-width: 1200px) {
-    .gallery-area .container {
-      max-width: 1400px; } }
-  @media (max-width: 1199.98px) {
-    .gallery-area .container {
-      max-width: 720px; } }
-  @media (max-width: 767.98px) {
-    .gallery-area .container {
-      max-width: 335px; } }
+      flex-direction: column;
+  max-width: 1400px; }
   .gallery-area .container .desc {
     color: #ffffff;
     margin-bottom: 0;
@@ -8929,14 +8921,9 @@ footer {
           transform: translateX(-50%);
   -ms-flex-pack: justify;
       justify-content: space-between;
-  z-index: 20; }
-  @media (min-width: 1200px) {
-    .gallery-area .buttons {
-      display: -ms-flexbox;
-      display: flex; } }
-  @media (max-width: 1199.98px) {
-    .gallery-area .buttons {
-      display: none; } }
+  z-index: 20;
+  display: -ms-flexbox;
+  display: flex; }
   .gallery-area .buttons .prev-btn,
   .gallery-area .buttons .next-btn {
     cursor: pointer;
@@ -8964,95 +8951,73 @@ footer {
     .gallery-area .buttons .next-btn {
       background-image: url(../img/groupCopy5.png); } }
 
-@media (max-width: 1199.98px) {
-  .gallery-area .gallery-carousel .owl-nav {
+.gallery-area .gallery-carousel {
+  position: relative;
+  width: 100%; }
+  .gallery-area .gallery-carousel div {
     position: absolute;
-    text-align: center;
-    top: 40%;
-    left: -2%;
-    width: 105%;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between; }
-    .gallery-area .gallery-carousel .owl-nav button.owl-prev,
-    .gallery-area .gallery-carousel .owl-nav button.owl-next {
-      cursor: pointer;
-      background-position: center center;
-      background-repeat: no-repeat;
-      width: 40px;
-      height: 40px; }
-    .gallery-area .gallery-carousel .owl-nav button.owl-prev {
-      background-image: url(../img/groupCopy4.png); }
-    .gallery-area .gallery-carousel .owl-nav button.owl-next {
-      background-image: url(../img/groupCopy5.png); } }
-
-@media (min-width: 1200px) {
-  .gallery-area .gallery-carousel {
-    position: relative;
-    width: 100%; }
-    .gallery-area .gallery-carousel div {
+    transition: left 0.9s, z-index 0s, width 0.9s, -webkit-transform 0.9s;
+    transition: transform 0.9s, left 0.9s, z-index 0s, width 0.9s;
+    transition: transform 0.9s, left 0.9s, z-index 0s, width 0.9s, -webkit-transform 0.9s;
+    opacity: 1;
+    width: 57.3%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.88);
+    top: 0;
+    left: 0; }
+    .gallery-area .gallery-carousel div img {
+      width: 100%;
+      height: 100%; }
+    .gallery-area .gallery-carousel div.prev::before, .gallery-area .gallery-carousel div.prevLeft::before, .gallery-area .gallery-carousel div.next::before, .gallery-area .gallery-carousel div.nextRight::before {
+      content: "";
       position: absolute;
-      transition: left 0.9s, z-index 0s, width 0.9s, -webkit-transform 0.9s;
-      transition: transform 0.9s, left 0.9s, z-index 0s, width 0.9s;
-      transition: transform 0.9s, left 0.9s, z-index 0s, width 0.9s, -webkit-transform 0.9s;
+      left: 0%;
+      top: 0%;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 6;
       opacity: 1;
-      width: 57.3%;
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.88); }
-      .gallery-area .gallery-carousel div img {
-        width: 100%;
-        height: 100%; }
-      .gallery-area .gallery-carousel div.prev::before, .gallery-area .gallery-carousel div.prevLeft::before, .gallery-area .gallery-carousel div.next::before, .gallery-area .gallery-carousel div.nextRight::before {
-        content: "";
-        position: absolute;
-        left: 0%;
-        top: 0%;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        z-index: 6;
-        opacity: 1;
-        transition: opacity 1.5s ease-out; }
-      .gallery-area .gallery-carousel div.selected::before {
-        content: "";
-        position: absolute;
-        left: 0%;
-        top: 0%;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        z-index: 6;
-        opacity: 0;
-        transition: opacity 1.5s ease-in-out; }
-      .gallery-area .gallery-carousel div.prev {
-        z-index: 5;
-        left: 30%;
-        -webkit-transform: translateY(20%) translateX(-55%);
-                transform: translateY(20%) translateX(-55%);
-        width: 39%; }
-      .gallery-area .gallery-carousel div.prevLeft {
-        z-index: 4;
-        left: 15%;
-        -webkit-transform: translateY(45%) translateX(-50%);
-                transform: translateY(45%) translateX(-50%);
-        width: 29.9%; }
-      .gallery-area .gallery-carousel div.selected {
-        z-index: 10;
-        left: 50%;
-        -webkit-transform: translateY(0px) translateX(-50%);
-                transform: translateY(0px) translateX(-50%); }
-      .gallery-area .gallery-carousel div.next {
-        z-index: 5;
-        left: 70%;
-        -webkit-transform: translateY(20%) translateX(-45%);
-                transform: translateY(20%) translateX(-45%);
-        width: 39%; }
-      .gallery-area .gallery-carousel div.nextRight {
-        z-index: 4;
-        left: 85%;
-        -webkit-transform: translateY(45%) translateX(-50%);
-                transform: translateY(45%) translateX(-50%);
-        width: 29.9%; } }
+      transition: opacity 1.5s ease-out; }
+    .gallery-area .gallery-carousel div.selected::before {
+      content: "";
+      position: absolute;
+      left: 0%;
+      top: 0%;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 6;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out; }
+    .gallery-area .gallery-carousel div.prev {
+      z-index: 5;
+      left: 30%;
+      -webkit-transform: translateY(20%) translateX(-55%);
+              transform: translateY(20%) translateX(-55%);
+      width: 39%; }
+    .gallery-area .gallery-carousel div.prevLeft {
+      z-index: 4;
+      left: 15%;
+      -webkit-transform: translateY(45%) translateX(-50%);
+              transform: translateY(45%) translateX(-50%);
+      width: 29.9%; }
+    .gallery-area .gallery-carousel div.selected {
+      z-index: 10;
+      left: 50%;
+      -webkit-transform: translateY(0px) translateX(-50%);
+              transform: translateY(0px) translateX(-50%); }
+    .gallery-area .gallery-carousel div.next {
+      z-index: 5;
+      left: 70%;
+      -webkit-transform: translateY(20%) translateX(-45%);
+              transform: translateY(20%) translateX(-45%);
+      width: 39%; }
+    .gallery-area .gallery-carousel div.nextRight {
+      z-index: 4;
+      left: 85%;
+      -webkit-transform: translateY(45%) translateX(-50%);
+              transform: translateY(45%) translateX(-50%);
+      width: 29.9%; }
 
 .gallery-area h2 {
   text-align: center;

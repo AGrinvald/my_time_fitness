@@ -21821,18 +21821,18 @@ $(function () {
     var md = 992;
     var lg = 1195;
 
-    var galleryOwl = $('.gallery-carousel'),
-        galleryOwlOptions = {
-            loop: true,
-            mouseDrag: false,
-            navText: ["", ""],
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: true
-                }
-            }
-        };
+    // var galleryOwl = $('.gallery-carousel'),
+    //     galleryOwlOptions = {
+    //         loop: true,
+    //         mouseDrag: false,
+    //         navText: ["", ""],
+    //         responsive: {
+    //             0: {
+    //                 items: 1,
+    //                 nav: true
+    //             }
+    //         }
+    //     };
 
     var owl = $('.scheme-slides'),
         owlOptions = {
@@ -21852,12 +21852,12 @@ $(function () {
         owl.addClass('off');
     }
 
-    if ($(window).width() < lg) {
-        galleryOwl.addClass('owl-carousel');
-        var galleryActive = galleryOwl.owlCarousel(galleryOwlOptions);
-    } else {
-        galleryOwl.addClass('off');
-    }
+    // if ($(window).width() < lg) {
+    //     galleryOwl.addClass('owl-carousel');
+    //     var galleryActive = galleryOwl.owlCarousel(galleryOwlOptions);
+    // } else {
+    //     galleryOwl.addClass('off');
+    // }
 
     $(window).resize(function () {
 
@@ -21874,19 +21874,19 @@ $(function () {
             }
         }
 
-        if ($(window).width() < lg) {
-            if ($('.gallery-carousel').hasClass('off')) {
-                galleryOwl.addClass('owl-carousel');
-                var galleryActive = galleryOwl.owlCarousel(galleryOwlOptions);
-                galleryOwl.removeClass('off');
-            }
-        } else {
-            galleryOwl.removeClass('owl-carousel');
+        // if ($(window).width() < lg) {
+        //     if ($('.gallery-carousel').hasClass('off')) {
+        //         galleryOwl.addClass('owl-carousel');
+        //         var galleryActive = galleryOwl.owlCarousel(galleryOwlOptions);
+        //         galleryOwl.removeClass('off');
+        //     }
+        // } else {
+        //     galleryOwl.removeClass('owl-carousel');
 
-            if (!$('.gallery-carousel').hasClass('off')) {
-                galleryOwl.addClass('off').trigger('destroy.owl.carousel');
-                galleryOwl.find('.owl-stage-outer').children(':eq(0)').unwrap();
-            }
-        }
+        //     if (!$('.gallery-carousel').hasClass('off')) {
+        //         galleryOwl.addClass('off').trigger('destroy.owl.carousel');
+        //         galleryOwl.find('.owl-stage-outer').children(':eq(0)').unwrap();
+        //     }
+        // }
     });
 });
