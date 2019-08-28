@@ -276,19 +276,19 @@
           width: 29.9%;
         }
 
-        // &.hideLeft {
-        //   left: 15%;
-        //   opacity: 0;
-        //   width: 29.9%;
-        //   transform: translateY(50%);
-        // }
+        &.hideLeft {
+          left: 15%;
+          opacity: 0;
+          width: 29.9%;
+          transform: translateY(50%);
+        }
 
-        // &.hideRight {
-        //   left: 65%;
-        //   opacity: 0;
-        //   width: 29.9%;
-        //   transform: translateY(50%);
-        // }
+        &.hideRight {
+          left: 65%;
+          opacity: 0;
+          width: 29.9%;
+          transform: translateY(50%);
+        }
       }
     // }
   }

@@ -21778,19 +21778,19 @@ function moveToSelected(element) {
         var selected = element;
     }
    
-    var amount = $("div.gallery-carousel div").length;
-    var selectedIndex = $(".gallery-carousel div.slide").index($(selected));
-    console.log(selectedIndex);
+    // var amount = $("div.gallery-carousel div").length;
+    // var selectedIndex = $(".gallery-carousel div.slide").index($(selected));
+    // console.log(selectedIndex);
 
-    if (element == "next" && amount <= selectedIndex + 2) {
-        var firstSlide = gallery.find("div.slide:first-child");
-        firstSlide.clone().appendTo(gallery);
-        firstSlide.remove();
-    } else if (element == "prev" && selectedIndex < 2) {
-        var lastSlide = gallery.find("div.slide:last-child");
-        lastSlide.clone().prependTo(gallery);
-        lastSlide.remove();
-    } 
+    // if (element == "next" && amount <= selectedIndex + 2) {
+    //     var firstSlide = gallery.find("div.slide:first-child");
+    //     firstSlide.clone().appendTo(gallery);
+    //     firstSlide.remove();
+    // } else if (element == "prev" && selectedIndex < 2) {
+    //     var lastSlide = gallery.find("div.slide:last-child");
+    //     lastSlide.clone().prependTo(gallery);
+    //     lastSlide.remove();
+    // } 
 
     var next = $(selected).next();
     var prev = $(selected).prev();

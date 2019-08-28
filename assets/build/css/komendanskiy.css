@@ -9018,6 +9018,18 @@ footer {
       -webkit-transform: translateY(45%) translateX(-50%);
               transform: translateY(45%) translateX(-50%);
       width: 29.9%; }
+    .gallery-area .gallery-carousel div.hideLeft {
+      left: 15%;
+      opacity: 0;
+      width: 29.9%;
+      -webkit-transform: translateY(50%);
+              transform: translateY(50%); }
+    .gallery-area .gallery-carousel div.hideRight {
+      left: 65%;
+      opacity: 0;
+      width: 29.9%;
+      -webkit-transform: translateY(50%);
+              transform: translateY(50%); }
 
 .gallery-area h2 {
   text-align: center;
