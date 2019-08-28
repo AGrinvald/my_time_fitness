@@ -21767,30 +21767,44 @@ function init() {
 }
 
 function moveToSelected(element) {
+    var gallery = $("div.gallery-carousel");
 
     if (element == "next") {
-        var selected = $(".gallery-area .selected").next();
+        var selected = $("div.gallery-carousel .selected").next();
     } else if (element == "prev") {
-        var selected = $(".gallery-area .selected").prev();
+        var selected = $("div.gallery-carousel .selected").prev();
     } else {
         var selected = element;
     }
+   
+    var amount = $("div.gallery-carousel div").length;
+    var selectedIndex = $(".gallery-carousel div.slide").index($(selected));
+    console.log(selectedIndex);
+
+    if (element == "next" && amount <= selectedIndex + 2) {
+        var firstSlide = gallery.find("div.slide:first-child");
+        firstSlide.clone().appendTo(gallery);
+        firstSlide.remove();
+    } else if (element == "prev" && selectedIndex < 2) {
+        var lastSlide = gallery.find("div.slide:last-child");
+        lastSlide.clone().prependTo(gallery);
+        lastSlide.remove();
+    } 
 
     var next = $(selected).next();
     var prev = $(selected).prev();
     var prevSecond = $(prev).prev();
     var nextSecond = $(next).next();
 
-    $(selected).removeClass().addClass("selected");
+    $(selected).removeClass().addClass("slide").addClass("selected");
+    $(prev).removeClass().addClass("slide").addClass("prev");
+    $(next).removeClass().addClass("slide").addClass("next");
 
-    $(prev).removeClass().addClass("prev");
-    $(next).removeClass().addClass("next");
+    $(nextSecond).removeClass().addClass("slide").addClass("nextRight");
+    $(prevSecond).removeClass().addClass("slide").addClass("prevLeft");
 
-    $(nextSecond).removeClass().addClass("nextRightSecond");
-    $(prevSecond).removeClass().addClass("prevLeftSecond");
-
-    $(nextSecond).nextAll().removeClass().addClass('hideRight');
-    $(prevSecond).prevAll().removeClass().addClass('hideLeft');
+    $(nextSecond).nextAll().removeClass().addClass("slide").addClass('hideRight');
+    $(prevSecond).prevAll().removeClass().addClass("slide").addClass('hideLeft');
 }
 
 $(function () {
