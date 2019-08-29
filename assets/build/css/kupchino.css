@@ -8997,32 +8997,32 @@ footer {
         transition: opacity 1.5s ease-in-out; }
     .gallery-area .gallery-carousel div.prev {
       z-index: 5;
-      left: 30vw;
-      -webkit-transform: translate3D(-55vw, 20vw, 0);
-              transform: translate3D(-55vw, 20vw, 0);
+      left: 30%;
+      -webkit-transform: translate3D(-55%, 20%, 0);
+              transform: translate3D(-55%, 20%, 0);
       width: 39vw; }
     .gallery-area .gallery-carousel div.prevLeft {
       z-index: 4;
-      left: 15vw;
-      -webkit-transform: translate3D(-50vw, 45vw, 0);
-              transform: translate3D(-50vw, 45vw, 0);
+      left: 15%;
+      -webkit-transform: translate3D(-50%, 45%, 0);
+              transform: translate3D(-50%, 45%, 0);
       width: 29.9vw; }
     .gallery-area .gallery-carousel div.selected {
       z-index: 10;
-      left: 50vw;
-      -webkit-transform: translate3D(-50vw, 0, 0);
-              transform: translate3D(-50vw, 0, 0); }
+      left: 50%;
+      -webkit-transform: translate3D(-50%, 0, 0);
+              transform: translate3D(-50%, 0, 0); }
     .gallery-area .gallery-carousel div.next {
       z-index: 5;
-      left: 70vw;
-      -webkit-transform: translate3D(-45vw, 20vw, 0);
-              transform: translate3D(-45vw, 20vw, 0);
+      left: 70%;
+      -webkit-transform: translate3D(-45%, 20%, 0);
+              transform: translate3D(-45%, 20%, 0);
       width: 39vw; }
     .gallery-area .gallery-carousel div.nextRight {
       z-index: 4;
-      left: 85vw;
-      -webkit-transform: translate3D(-50vw, 45vw, 0);
-              transform: translate3D(-50vw, 45vw, 0);
+      left: 85%;
+      -webkit-transform: translate3D(-50%, 45%, 0);
+              transform: translate3D(-50%, 45%, 0);
       width: 29.9vw; }
     .gallery-area .gallery-carousel div.hideLeft {
       left: 15%;

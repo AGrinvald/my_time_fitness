@@ -235,35 +235,35 @@
 
         &.prev {
           z-index: 5;
-          left: 30vw;
-          transform: translate3D(-55vw, 20vw, 0);
+          left: 30%;
+          transform: translate3D(-55%, 20%, 0);
           width: 39vw;
         }
 
         &.prevLeft {
           z-index: 4;
-          left: 15vw;
-          transform: translate3D(-50vw, 45vw, 0);
+          left: 15%;
+          transform: translate3D(-50%, 45%, 0);
           width: 29.9vw;
         }
 
         &.selected {
           z-index: 10;
-          left: 50vw;
-          transform: translate3D(-50vw, 0, 0);
+          left: 50%;
+          transform: translate3D(-50%, 0, 0);
         }
 
         &.next {
           z-index: 5;
-          left: 70vw;
-          transform: translate3D(-45vw, 20vw, 0);
+          left: 70%;
+          transform: translate3D(-45%, 20%, 0);
           width: 39vw;
         }
 
         &.nextRight{
           z-index: 4;
-          left: 85vw;
-          transform: translate3D(-50vw, 45vw, 0);
+          left: 85%;
+          transform: translate3D(-50%, 45%, 0);
           width: 29.9vw;
         }
 
