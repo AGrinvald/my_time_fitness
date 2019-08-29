@@ -23,7 +23,6 @@
     }
 
     .season-item {
-        width: 368px;
         box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.29);
         background-image: linear-gradient(to top, #f8f8f8, #ffffff);
         border-radius: 13px;
@@ -32,6 +31,16 @@
         cursor: pointer;
         color: $black;
         transition: all .5s ease-in-out;
+
+        @include media-breakpoint-up(xl) {
+            width: 368px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            max-width: 344px;
+            width: 100%;
+            margin-bottom: 25px;
+        }
 
         &:hover {
             box-shadow: 0 0 16px 0 #AACC23;
@@ -57,16 +66,6 @@
                 color: $white;
                 transition: all .5s ease-in-out;
             }
-        }
-
-        @include media-breakpoint-up(xl) {
-            margin-bottom: 15px;
-        }
-
-        @include media-breakpoint-down(lg) {
-            margin-right: 15px;
-            margin-left: 15px;
-            margin-bottom: 25px;
         }
 
         p {

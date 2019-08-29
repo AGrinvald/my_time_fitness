@@ -712,11 +712,11 @@ nav.navbar {
         display: flex;
         cursor: pointer;
         color: $black;
-        width: 80%;
 
         @include media-breakpoint-up(lg) {
             flex-direction: row;
             height: 369px;
+            width: 80%;
 
             &::before {
                 position: absolute;
@@ -750,6 +750,7 @@ nav.navbar {
         @include media-breakpoint-down(md) {
             flex-direction: column;
             max-width: 344px;
+            width: 100%;
 
             &::after {
                 content: "";

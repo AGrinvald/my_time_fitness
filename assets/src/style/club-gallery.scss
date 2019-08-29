@@ -71,18 +71,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-
-    //@include media-breakpoint-up(xl) {
-      max-width: 1400px;
-    //}
-
-    // @include media-breakpoint-down(lg) {
-    //   max-width: 720px;
-    // }
-
-    // @include media-breakpoint-down(sm) {
-    //   max-width: 335px;
-    // }
+    z-index: 5;
+    max-width: 1400px;
 
     .desc {
       color: $white;

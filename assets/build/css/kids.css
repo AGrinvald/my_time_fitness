@@ -7749,7 +7749,7 @@ button {
   background-color: #26272b;
   color: #ffffff; }
   .btn-custom-dark-outline:hover {
-    background-color: transparent;
+    background-color: #ffffff;
     color: #26272b;
     border: 1px solid #26272b; }
 
@@ -8733,13 +8733,13 @@ nav.navbar {
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
-  color: #000000;
-  width: 80%; }
+  color: #000000; }
   @media (min-width: 992px) {
     .season-area .season-item {
       -ms-flex-direction: row;
           flex-direction: row;
-      height: 369px; }
+      height: 369px;
+      width: 80%; }
       .season-area .season-item::before {
         position: absolute;
         content: "";
@@ -8768,7 +8768,8 @@ nav.navbar {
     .season-area .season-item {
       -ms-flex-direction: column;
           flex-direction: column;
-      max-width: 344px; }
+      max-width: 344px;
+      width: 100%; }
       .season-area .season-item::after {
         content: "";
         position: absolute;

@@ -7749,7 +7749,7 @@ button {
   background-color: #26272b;
   color: #ffffff; }
   .btn-custom-dark-outline:hover {
-    background-color: transparent;
+    background-color: #ffffff;
     color: #26272b;
     border: 1px solid #26272b; }
 

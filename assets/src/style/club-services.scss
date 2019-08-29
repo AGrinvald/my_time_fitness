@@ -16,6 +16,10 @@
       background-repeat: repeat-x;
       background-position: center center;
       z-index: -1;
+
+      @include media-breakpoint-down(md) {
+        background-repeat: repeat-y;
+      }
     }
 
     .container {
