@@ -189,11 +189,9 @@
         position: absolute;
         transition: transform 0.9s, left 0.9s, z-index 0s, width 0.9s;
         opacity: 1;
-        width: 57.3%;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.88);
         top: 0;
         left: 0;
-        transform-origin: 50% 50%;
 
         img {
           width: 100%;
@@ -219,6 +217,7 @@
         }
 
         &.selected {
+          width: 57.3vw;
           transform: translate3D(0, 0, 0);
           &::before {
             content: "";
@@ -236,36 +235,36 @@
 
         &.prev {
           z-index: 5;
-          left: 30%;
-          transform: translate3D(-55%, 20%, 0);
-          width: 39%;
+          left: 30vw;
+          transform: translate3D(-55vw, 20vw, 0);
+          width: 39vw;
         }
 
         &.prevLeft {
           z-index: 4;
-          left: 15%;
-          transform: translate3D(-50%, 45%, 0);
-          width: 29.9%;
+          left: 15vw;
+          transform: translate3D(-50vw, 45vw, 0);
+          width: 29.9vw;
         }
 
         &.selected {
           z-index: 10;
-          left: 50%;
-          transform: translate3D(-50%, 0, 0);
+          left: 50vw;
+          transform: translate3D(-50vw, 0, 0);
         }
 
         &.next {
           z-index: 5;
-          left: 70%;
-          transform: translate3D(-45%, 20%, 0);
-          width: 39%;
+          left: 70vw;
+          transform: translate3D(-45vw, 20vw, 0);
+          width: 39vw;
         }
 
         &.nextRight{
           z-index: 4;
-          left: 85%;
-          transform: translate3D(-50%, 45%, 0);
-          width: 29.9%;
+          left: 85vw;
+          transform: translate3D(-50vw, 45vw, 0);
+          width: 29.9vw;
         }
 
         &.hideLeft {
