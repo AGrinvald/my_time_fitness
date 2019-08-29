@@ -8547,15 +8547,9 @@ footer {
     background-position-x: 100%; }
     @media (max-width: 991.98px) {
       .banner-area figure .bg-shadow {
-        background-image: url(../img/rectangleCopy13.png);
+        background-image: url(../img/shadow.svg);
         background-repeat: no-repeat;
-        background-position-y: 70%;
-        background-position-x: 50%; } }
-    @media (max-width: 575.98px) {
-      .banner-area figure .bg-shadow {
-        background-image: url(../img/rectangleCopy13.png);
-        background-repeat: no-repeat;
-        background-position-y: 65%;
+        background-position-y: 72%;
         background-position-x: 50%; } }
   @media (min-width: 992px) {
     .banner-area figure {
@@ -8592,15 +8586,14 @@ footer {
   position: relative;
   -webkit-animation: floating 6s infinite ease-in-out;
           animation: floating 6s infinite ease-in-out; }
+  @media (min-width: 992px) {
+    .banner-area .owl-carousel .owl-item img {
+      max-width: 520px;
+      width: 100%; } }
   @media (max-width: 991.98px) {
     .banner-area .owl-carousel .owl-item img {
-      width: 65%; } }
-  @media (max-width: 767.98px) {
-    .banner-area .owl-carousel .owl-item img {
-      width: 85%; } }
-  @media (max-width: 575.98px) {
-    .banner-area .owl-carousel .owl-item img {
-      width: 90%; } }
+      max-width: 390px;
+      width: 100%; } }
 
 @-webkit-keyframes floating {
   0% {
@@ -8809,6 +8802,9 @@ footer {
       z-index: 2; } }
 
 @media (max-width: 991.98px) {
+  .signup-area .col-md-12 {
+    padding-left: 0;
+    padding-right: 0; }
   .signup-area .signup-block {
     margin-top: 35px;
     margin-bottom: 50px; }
@@ -8843,19 +8839,19 @@ footer {
   content: "";
   background-color: #aacc23;
   position: absolute;
-  width: 89%;
+  width: 85%;
   height: 91%;
-  left: 4%;
+  left: 5%;
   bottom: 5%;
   z-index: -1; }
 
 .signup-area .signup-slides .slide {
-  padding-left: 25px;
-  padding-right: 25px; }
+  padding-left: 5%;
+  padding-right: 5%; }
   .signup-area .signup-slides .slide .inner {
     position: relative;
-    padding-left: 25px;
-    padding-bottom: 25px; }
+    padding-left: 5%;
+    padding-bottom: 5%; }
     .signup-area .signup-slides .slide .inner img {
       z-index: 9999; }
 
@@ -8999,9 +8995,7 @@ footer {
 
 @media (max-width: 991.98px) {
   .promo-area .promo-block {
-    position: relative;
-    margin-left: 15px;
-    margin-right: 15px; } }
+    position: relative; } }
 
 @media (min-width: 992px) {
   .promo-area .promo-block > div {
@@ -9228,7 +9222,7 @@ footer {
     margin-left: 20px; }
   .map-area .inner-block {
     overflow: hidden;
-    max-width: 408px;
+    max-width: 344px;
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 10;
     display: -ms-flexbox;
@@ -9236,17 +9230,24 @@ footer {
     -ms-flex-direction: column;
         flex-direction: column;
     -ms-flex-pack: justify;
-        justify-content: space-between;
-    padding: 20px 32px 32px 40px; }
+        justify-content: space-between; }
     .map-area .inner-block h2 {
-      text-align: center; }
+      letter-spacing: 0.4px;
+      text-align: center;
+      padding-top: 10px;
+      margin-bottom: 0; }
     @media (min-width: 992px) {
       .map-area .inner-block {
-        height: 504px; } }
+        height: 504px;
+        max-width: 408px;
+        padding: 20px 32px 32px 40px; } }
     @media (max-width: 991.98px) {
       .map-area .inner-block {
         margin-top: 50px;
-        height: 384px; } }
+        height: 384px;
+        max-width: 344px;
+        width: 100%;
+        padding: 20px 16px 32px 16px; } }
     .map-area .inner-block .club-block {
       display: block;
       max-width: 344px;

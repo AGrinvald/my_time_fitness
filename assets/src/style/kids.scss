@@ -46,7 +46,11 @@
 @import "clubs-modal";
 @import "footer";
 
-@keyframes spin { 100% { transform:rotate(360deg); } }
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /* TOP HEADER START */
 header {
@@ -150,8 +154,8 @@ nav.navbar {
 
     .breadcrumb {
       background: transparent;
-      padding-left: 0; 
-      
+      padding-left: 0;
+
       .breadcrumb-item {
         a {
           color: $black;
@@ -208,33 +212,83 @@ nav.navbar {
     .card-block {
       position: relative;
 
-      @include media-breakpoint-down(md) {
-        &::before {
-          content: "";
-          position: absolute;
-          top: -10%;
-          right: 26%;
-          width: 86px;
-          height: 81px;
-          background: url(../img/flower-md.svg);
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position: center center;
-          animation: spin 10s linear infinite;
+      .card-img {
+        display: block;
+        position: relative;
+        max-width: 400px;
+        animation: floating 6s infinite ease-in-out;
+        background: url(../img/1-karta-kluba-4-copy-3@3x.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+
+        @include media-breakpoint-up(lg) {
+          height: 380px;
+          width: 100%;
+        }
+  
+        @include media-breakpoint-down(md) {
+          height: 275px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: -10%;
+            right: 7%;
+            width: 86px;
+            height: 81px;
+            background: url(../img/flower-md.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            animation: spin 10s linear infinite;
+          }
         }
       }
 
-      @include media-breakpoint-down(sm) {
+
+
+      // @include media-breakpoint-down(sm) {
+      //   &::before {
+      //     content: "";
+      //     position: absolute;
+      //     top: -10%;
+      //     right: 7%;
+      //     width: 86px;
+      //     height: 81px;
+      //     background: url(../img/flower-md.svg);
+      //     background-repeat: no-repeat;
+      //     background-size: contain;
+      //     background-position: center center;
+      //     animation: spin 10s linear infinite;
+      //   }
+      // }
+    }
+
+    .row {
+      @include media-breakpoint-up(lg) {
         &::before {
           content: "";
           position: absolute;
-          top: -10%;
-          right: 17%;
-          width: 86px;
-          height: 81px;
+          right: -5%;
+          bottom: -13%;
+          width: 121px;
+          height: 113px;
           background: url(../img/flower-md.svg);
           background-repeat: no-repeat;
-          background-size: contain;
+          background-position: center center;
+          animation: spin 10s linear infinite;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 5%;
+          bottom: -20%;
+          width: 75px;
+          height: 71px;
+          background: url(../img/flower-sm.svg);
+          background-repeat: no-repeat;
           background-position: center center;
           animation: spin 10s linear infinite;
         }
@@ -257,18 +311,6 @@ nav.navbar {
           background-position: center center;
           z-index: 5;
           animation: spin 10s linear infinite;
-        }
-
-        &::after {
-          content: "";
-          position: absolute;
-          right: -10%;
-          bottom: -50%;
-          width: 190px;
-          height: 149px;
-          background: url(../img/flower-group.svg);
-          background-repeat: no-repeat;
-          background-position: center center;
         }
       }
 
@@ -342,7 +384,7 @@ nav.navbar {
       padding-left: 55px;
       padding-right: 55px;
       background-image: url(../img/kids-bg.png);
-      background-size: auto 100%;
+      background-size: cover;
       background-repeat: no-repeat;
 
       &::before {
@@ -374,28 +416,22 @@ nav.navbar {
       }
     }
 
-    img {
-      display: block;
-      position: relative;
-      animation: floating 6s infinite ease-in-out;
-
-      @include media-breakpoint-up(lg) {
-        max-width: 491px;
-        max-height: 371px;
-      }
-
-      @include media-breakpoint-down(md) {
-        max-width: 363px;
-        max-height: 258px;
-      }
-    }
-
     @keyframes floating {
-      0% { transform: rotate(0deg); } 
-      5% { transform: rotate(2deg); } 
-      10% { transform: rotate(0deg); } 
-      55%  { transform: translate(0px, 10px); }
-      100%   { transform: translate(0, -0px); } 
+      0% {
+        transform: rotate(0deg);
+      }
+      5% {
+        transform: rotate(2deg);
+      }
+      10% {
+        transform: rotate(0deg);
+      }
+      55% {
+        transform: translate(0px, 10px);
+      }
+      100% {
+        transform: translate(0, -0px);
+      }
     }
   }
 }
@@ -405,6 +441,36 @@ nav.navbar {
 .schedule-area {
   .container-fluid {
     position: relative;
+
+    .flower {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+
+      @include media-breakpoint-down(sm) {
+        position: absolute;
+        bottom: -7%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 360px;
+        height: 54px;
+        z-index: 5;
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 0;
+          right: 0;
+          width: 57px;
+          height: 54px;
+          background-image: url(../img/blue-flower.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          animation: spin 10s linear infinite;
+        }
+      }
+    }
 
     @include media-breakpoint-down(sm) {
       &::before {
@@ -428,10 +494,10 @@ nav.navbar {
         left: 0;
         width: 100%;
         height: 85px;
-        background-image: url(../img/cloud-half2.png), url(../img/blue-flower.svg);
-        background-size: auto, 57px 54px;
-        background-repeat: no-repeat, no-repeat;
-        background-position: left top, right top;
+        background-image: url(../img/cloud-half2.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: left top;
         z-index: 5;
       }
     }
@@ -549,6 +615,7 @@ nav.navbar {
           background-repeat: no-repeat;
           background-position: center;
           z-index: 120;
+          animation: spin 10s linear infinite;
         }
       }
     }
@@ -685,256 +752,258 @@ nav.navbar {
 /* WORKOUT AREA END */
 /* SEASON AREA START*/
 .season-area {
-    .container-fluid {
+  .container-fluid {
+    @include media-breakpoint-up(lg) {
+      margin-top: 60px;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: 30px;
+    }
+  }
+
+  h2 {
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 70px;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 30px;
+    }
+  }
+  .season-item {
+    position: relative;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.29);
+    background-image: linear-gradient(to top, #f8f8f8, #ffffff);
+    border-radius: 13px;
+    display: flex;
+    cursor: pointer;
+    color: $black;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      height: 369px;
+      width: 80%;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: -25%;
+        right: -7%;
+        width: 150px;
+        height: 141px;
+        background-image: url(../img/blue-flower.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 10;
+        animation: spin 10s linear infinite;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: -14%;
+        left: -5%;
+        width: 104px;
+        height: 97px;
+        background-image: url(../img/velvet-flower.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 10;
+        animation: spin 10s linear infinite;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      max-width: 344px;
+      width: 100%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5%;
+        right: 10%;
+        width: 77px;
+        height: 73px;
+        background-image: url(../img/velvet-flower.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 10;
+        animation: spin 10s linear infinite;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 16px 0 rgba(134, 238, 49, 0.61);
+      text-decoration: none;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-bottom: 15px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 25px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .tariff-b {
+      @include media-breakpoint-up(lg) {
+        flex: 0 1 73%;
+        background-image: url(../img/555-copy3.png);
+        background-repeat: no-repeat;
+        background-position: top center;
+        padding: 15px 34px 34px 36px;
+        border-top-left-radius: 13px;
+        border-bottom-left-radius: 13px;
+      }
+
+      @include media-breakpoint-down(md) {
+        background-image: url(../img/555Copy7.png);
+        background-repeat: no-repeat;
+        background-position: top center;
+        padding: 20px;
+        border-top-left-radius: 13px;
+        border-top-right-radius: 13px;
+      }
+
+      color: white;
+      display: flex;
+      flex-direction: column;
+
+      .name {
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 0.75px;
+      }
+
+      .old-price {
+        font-size: 26px;
+        letter-spacing: 0.54px;
+        color: #92e0e8;
+        text-decoration: line-through;
+      }
+
+      .new-price {
+        > div:first-child {
+          font-size: 90px;
+          font-weight: bold;
+          letter-spacing: 1.88px;
+          line-height: 88px;
+        }
+        > div:last-child {
+          > div:first-child {
+            font-size: 44px;
+            font-weight: bold;
+            letter-spacing: 0.92px;
+            line-height: 40px;
+          }
+          > div:last-child {
+            font-size: 26px;
+            font-weight: 300;
+          }
+        }
+      }
+
+      .offer {
+        font-size: 24px;
+        font-weight: 300;
+        letter-spacing: 0.3px;
+
         @include media-breakpoint-up(lg) {
-            margin-top: 60px;
+          margin-bottom: 26px;
+        }
+      }
+
+      .btn-container {
+        @include media-breakpoint-up(lg) {
+          width: 100%;
+          text-align: center;
+          border-top: solid 1px rgba(255, 255, 255, 0.8);
+          padding-top: 32px;
+          .btn {
+            width: 250px;
+          }
         }
 
         @include media-breakpoint-down(md) {
-            margin-top: 30px;
+          display: none;
         }
+      }
     }
 
-    h2 {
-        @include media-breakpoint-up(lg) {
-            margin-bottom: 70px;
+    .features-b {
+      margin: 0;
+      padding: 0 30px;
+
+      p {
+        margin: 0;
+      }
+
+      li {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.11;
+        padding: 15px 0;
+
+        &:not(:last-child) {
+          border-bottom: 1px dotted #cecece;
         }
 
         @include media-breakpoint-down(md) {
-            margin-bottom: 30px;
+          &:last-child {
+            margin-bottom: 40px;
+          }
         }
+
+        > p:first-child {
+          margin-right: 17px;
+        }
+      }
     }
-    .season-item {
-        position: relative;
-        box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.29);
-        background-image: linear-gradient(to top, #f8f8f8, #ffffff);
-        border-radius: 13px;
-        display: flex;
-        cursor: pointer;
-        color: $black;
 
-        @include media-breakpoint-up(lg) {
-            flex-direction: row;
-            height: 369px;
-            width: 80%;
+    .desc {
+      padding: 0 30px 60px 30px;
+      flex-direction: column;
 
-            &::before {
-                position: absolute;
-                content: "";
-                top: -25%;
-                right: -7%;
-                width: 150px;
-                height: 141px;
-                background-image: url(../img/blue-flower.svg);
-                background-size: 100%;
-                background-repeat: no-repeat;
-                background-position: center;
-                z-index: 10;
-            }
+      p {
+        padding-top: 10px;
+        padding-bottom: 30px;
+        border-top: solid 1px #101929;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.13;
+        letter-spacing: -0.33px;
+        color: #818181;
+      }
 
-            &::after {
-                position: absolute;
-                content: "";
-                bottom: -14%;
-                left: -5%;
-                width: 104px;
-                height: 97px;
-                background-image: url(../img/velvet-flower.svg);
-                background-size: 100%;
-                background-repeat: no-repeat;
-                background-position: center;
-                z-index: 10;
-            }
-        }
-
-        @include media-breakpoint-down(md) {
-            flex-direction: column;
-            max-width: 344px;
-            width: 100%;
-
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: -5%;
-                right: 10%;
-                width: 77px;
-                height: 73px;
-                background-image: url(../img/velvet-flower.svg);
-                background-size: 100%;
-                background-repeat: no-repeat;
-                background-position: center;
-                z-index: 10;
-            }
-        }
-
-        &:hover {
-            box-shadow: 0 0 16px 0 rgba(134, 238, 49, 0.61);
-            text-decoration: none;
-        }
-
-        @include media-breakpoint-up(xl) {
-            margin-bottom: 15px;
-        }
-
-        @include media-breakpoint-down(lg) {
-            margin-bottom: 25px;
-        }
-
-        p {
-            margin: 0;
-        }
-
-        .tariff-b {
-            @include media-breakpoint-up(lg) {
-                flex: 0 1 73%;
-                background-image: url(../img/555-copy3.png);
-                background-repeat: no-repeat;
-                background-position: top center;
-                padding: 15px 34px 34px 36px;
-                border-top-left-radius: 13px;
-                border-bottom-left-radius: 13px;
-            }
-
-            @include media-breakpoint-down(md) {
-                background-image: url(../img/555Copy7.png);
-                background-repeat: no-repeat;
-                background-position: top center;
-                padding: 20px;
-                border-top-left-radius: 13px;
-                border-top-right-radius: 13px;
-            }
-
-            color: white;
-            display: flex;
-            flex-direction: column;
-
-            .name {
-                font-size: 36px;
-                font-weight: bold;
-                letter-spacing: 0.75px;
-            }
-
-            .old-price {
-                font-size: 26px;
-                letter-spacing: 0.54px;
-                color: #92e0e8;
-                text-decoration: line-through;
-            }
-
-            .new-price {
-                > div:first-child {
-                    font-size: 90px;
-                    font-weight: bold;
-                    letter-spacing: 1.88px;
-                    line-height: 88px;
-                }
-                > div:last-child {
-                    > div:first-child {
-                        font-size: 44px;
-                        font-weight: bold;
-                        letter-spacing: 0.92px;
-                        line-height: 40px;
-                    }
-                    > div:last-child {
-                        font-size: 26px;
-                        font-weight: 300;
-                    }
-                }
-            }
-
-            .offer {
-                font-size: 24px;
-                font-weight: 300;
-                letter-spacing: 0.3px;
-
-                @include media-breakpoint-up(lg) {
-                    margin-bottom: 26px;
-                }
-            }
-
-            .btn-container {
-                @include media-breakpoint-up(lg) {
-                    width: 100%;
-                    text-align: center;
-                    border-top: solid 1px rgba(255,255,255,0.8);
-                    padding-top: 32px;
-                    .btn {
-                        width: 250px;
-                    }
-                }
-
-                @include media-breakpoint-down(md) {
-                    display: none;
-                }
-            }
-        }
-
-        .features-b {
-            margin: 0;
-            padding: 0 30px;
-
-            p {
-                margin: 0;
-            }
-
-            li {
-                font-size: 18px;
-                font-weight: 300;
-                line-height: 1.11;
-                padding: 15px 0;
-
-                &:not(:last-child) {
-                    border-bottom: 1px dotted #cecece;
-                }
-
-                @include media-breakpoint-down(md) {
-                    &:last-child {
-                        margin-bottom: 40px;
-                    }
-                }
-
-                > p:first-child {
-                    margin-right: 17px;
-                }
-            }
-
-        }
-
-        .desc {
-            padding: 0 30px 60px 30px;
-            flex-direction: column;
-
-            p {
-                padding-top: 10px;
-                padding-bottom: 30px;
-                border-top: solid 1px #101929;
-                font-size: 16px;
-                font-weight: 300;
-                line-height: 1.13;
-                letter-spacing: -0.33px;
-                color: #818181;
-            }
-
-            .btn {
-                width: 250px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
+      .btn {
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
+  }
 }
 /* SEASON AREA END*/
 
 /* PHOTO AREA START*/
 .photo-area {
-    .photo-container {
-        max-width: 1000px;
-        width: 80%;
-        margin-right: auto;
-        margin-left: auto;
-        text-align: right;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
+  .photo-container {
+    max-width: 1000px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: right;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }
 /* PHOTO AREA END*/

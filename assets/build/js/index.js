@@ -21676,9 +21676,9 @@ var mapSettingsCollection = {
 };
 
 var centerPoints = [
-    [60.007597075434596, 30.241306762352266],
-    [60.00995002543195, 30.39969335894417],
-    [59.8278368177265, 30.388026441680854]
+    [60.0066198557117, 30.229417072509765],
+    [60.0085957593716, 30.38656056396479],
+    [59.82606894374578, 30.377313508422816]
 ];
 
 var mapSettings = null;
@@ -21769,7 +21769,8 @@ function init() {
     map.controls.remove('fullscreenControl');
     map.controls.remove('rulerControl');
     map.behaviors.disable(['scrollZoom']);
-
+    map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px'}, size: 'small'});
+    
     map.events.add('sizechange', function (event) {
         var size = map.container.getSize();
         var width = size[0];
@@ -21788,8 +21789,8 @@ function init() {
             map.setCenter(mapSettings.center, mapSettings.zoom);
         }
 
-        console.log(map.getZoom());
-        console.log(map.getCenter());
+        // console.log(map.getZoom());
+        // console.log(map.getCenter());
     });
 
     ymaps.geoQuery(komendanskiy).addToMap(map);
@@ -21915,8 +21916,7 @@ $(function () {
                     coords[0] = coords[0] + 0.07;
                     zoom = 11;
                 } else {
-                    //var coords = centerPoints[id];
-                    coords[1] = coords[1] - 0.08;
+                    var coords = centerPoints[id];
                     var zoom = 14;
                 }
 

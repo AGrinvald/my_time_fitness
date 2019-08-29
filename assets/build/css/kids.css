@@ -8307,34 +8307,61 @@ nav.navbar {
               animation: spin 10s linear infinite; } }
   .banner-area .banner-bottom .card-block {
     position: relative; }
-    @media (max-width: 991.98px) {
-      .banner-area .banner-bottom .card-block::before {
-        content: "";
-        position: absolute;
-        top: -10%;
-        right: 26%;
-        width: 86px;
-        height: 81px;
-        background: url(../img/flower-md.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center center;
-        -webkit-animation: spin 10s linear infinite;
-                animation: spin 10s linear infinite; } }
-    @media (max-width: 767.98px) {
-      .banner-area .banner-bottom .card-block::before {
-        content: "";
-        position: absolute;
-        top: -10%;
-        right: 17%;
-        width: 86px;
-        height: 81px;
-        background: url(../img/flower-md.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center center;
-        -webkit-animation: spin 10s linear infinite;
-                animation: spin 10s linear infinite; } }
+    .banner-area .banner-bottom .card-block .card-img {
+      display: block;
+      position: relative;
+      max-width: 400px;
+      -webkit-animation: floating 6s infinite ease-in-out;
+              animation: floating 6s infinite ease-in-out;
+      background: url(../img/1-karta-kluba-4-copy-3@3x.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center; }
+      @media (min-width: 992px) {
+        .banner-area .banner-bottom .card-block .card-img {
+          height: 380px;
+          width: 100%; } }
+      @media (max-width: 991.98px) {
+        .banner-area .banner-bottom .card-block .card-img {
+          height: 275px; }
+          .banner-area .banner-bottom .card-block .card-img::before {
+            content: "";
+            position: absolute;
+            top: -10%;
+            right: 7%;
+            width: 86px;
+            height: 81px;
+            background: url(../img/flower-md.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            -webkit-animation: spin 10s linear infinite;
+                    animation: spin 10s linear infinite; } }
+  @media (min-width: 992px) {
+    .banner-area .banner-bottom .row::before {
+      content: "";
+      position: absolute;
+      right: -5%;
+      bottom: -13%;
+      width: 121px;
+      height: 113px;
+      background: url(../img/flower-md.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      -webkit-animation: spin 10s linear infinite;
+              animation: spin 10s linear infinite; }
+    .banner-area .banner-bottom .row::after {
+      content: "";
+      position: absolute;
+      right: 5%;
+      bottom: -20%;
+      width: 75px;
+      height: 71px;
+      background: url(../img/flower-sm.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      -webkit-animation: spin 10s linear infinite;
+              animation: spin 10s linear infinite; } }
   .banner-area .banner-bottom .desc-block {
     position: relative; }
     @media (min-width: 992px) {
@@ -8350,17 +8377,7 @@ nav.navbar {
         background-position: center center;
         z-index: 5;
         -webkit-animation: spin 10s linear infinite;
-                animation: spin 10s linear infinite; }
-      .banner-area .banner-bottom .desc-block::after {
-        content: "";
-        position: absolute;
-        right: -10%;
-        bottom: -50%;
-        width: 190px;
-        height: 149px;
-        background: url(../img/flower-group.svg);
-        background-repeat: no-repeat;
-        background-position: center center; } }
+                animation: spin 10s linear infinite; } }
     @media (max-width: 991.98px) {
       .banner-area .banner-bottom .desc-block {
         overflow: hidden; }
@@ -8418,7 +8435,7 @@ nav.navbar {
       padding-left: 55px;
       padding-right: 55px;
       background-image: url(../img/kids-bg.png);
-      background-size: auto 100%;
+      background-size: cover;
       background-repeat: no-repeat; }
       .banner-area .banner-bottom::before {
         position: absolute;
@@ -8443,19 +8460,6 @@ nav.navbar {
     .banner-area .banner-bottom .row > div {
       padding-left: 0;
       padding-right: 0; }
-  .banner-area .banner-bottom img {
-    display: block;
-    position: relative;
-    -webkit-animation: floating 6s infinite ease-in-out;
-            animation: floating 6s infinite ease-in-out; }
-    @media (min-width: 992px) {
-      .banner-area .banner-bottom img {
-        max-width: 491px;
-        max-height: 371px; } }
-    @media (max-width: 991.98px) {
-      .banner-area .banner-bottom img {
-        max-width: 363px;
-        max-height: 258px; } }
 
 @-webkit-keyframes floating {
   0% {
@@ -8495,6 +8499,32 @@ nav.navbar {
 /* SCHEDULE AREA START*/
 .schedule-area .container-fluid {
   position: relative; }
+  @media (min-width: 992px) {
+    .schedule-area .container-fluid .flower {
+      display: none; } }
+  @media (max-width: 767.98px) {
+    .schedule-area .container-fluid .flower {
+      position: absolute;
+      bottom: -7%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      width: 360px;
+      height: 54px;
+      z-index: 5; }
+      .schedule-area .container-fluid .flower::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        width: 57px;
+        height: 54px;
+        background-image: url(../img/blue-flower.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        -webkit-animation: spin 10s linear infinite;
+                animation: spin 10s linear infinite; } }
   @media (max-width: 767.98px) {
     .schedule-area .container-fluid::before {
       position: absolute;
@@ -8515,10 +8545,10 @@ nav.navbar {
       left: 0;
       width: 100%;
       height: 85px;
-      background-image: url(../img/cloud-half2.png), url(../img/blue-flower.svg);
-      background-size: auto, 57px 54px;
-      background-repeat: no-repeat, no-repeat;
-      background-position: left top, right top;
+      background-image: url(../img/cloud-half2.png);
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: left top;
       z-index: 5; } }
   .schedule-area .container-fluid .container {
     position: relative; }
@@ -8612,7 +8642,9 @@ nav.navbar {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
-        z-index: 120; } }
+        z-index: 120;
+        -webkit-animation: spin 10s linear infinite;
+                animation: spin 10s linear infinite; } }
   @media (min-width: 992px) {
     .workouts-area .workouts-block {
       margin-bottom: 110px; } }
@@ -8751,7 +8783,9 @@ nav.navbar {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
-        z-index: 10; }
+        z-index: 10;
+        -webkit-animation: spin 10s linear infinite;
+                animation: spin 10s linear infinite; }
       .season-area .season-item::after {
         position: absolute;
         content: "";
@@ -8763,7 +8797,9 @@ nav.navbar {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
-        z-index: 10; } }
+        z-index: 10;
+        -webkit-animation: spin 10s linear infinite;
+                animation: spin 10s linear infinite; } }
   @media (max-width: 991.98px) {
     .season-area .season-item {
       -ms-flex-direction: column;
@@ -8781,7 +8817,9 @@ nav.navbar {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
-        z-index: 10; } }
+        z-index: 10;
+        -webkit-animation: spin 10s linear infinite;
+                animation: spin 10s linear infinite; } }
   .season-area .season-item:hover {
     box-shadow: 0 0 16px 0 rgba(134, 238, 49, 0.61);
     text-decoration: none; }
