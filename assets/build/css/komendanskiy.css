@@ -8761,7 +8761,7 @@ footer {
         width: 90%; } }
     @media (max-width: 991.98px) {
       .announce-container form {
-        max-width: 272px; } }
+        width: 272px; } }
   .announce-container .input-group > .custom-select:not(:first-child), .announce-container .input-group > .form-control:not(:first-child) {
     border-radius: 28px; }
   .announce-container .input-group {
