@@ -21809,7 +21809,6 @@ function moveToSelected(element) {
     calcPositions();
 }
 
-
 function calcWidth(percent) {
     var containerWidth = $("div.gallery-carousel").width();
     var elWidth = containerWidth * percent / 100;
