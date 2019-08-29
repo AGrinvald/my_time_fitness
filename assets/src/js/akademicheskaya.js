@@ -172,7 +172,6 @@ function moveToSelected(element) {
     calcPositions();
 }
 
-
 function calcWidth(percent) {
     var containerWidth = $("div.gallery-carousel").width();
     var elWidth = containerWidth * percent / 100;
@@ -189,8 +188,6 @@ function calcPositions() {
     var nextSecond = $(next).next();
     
     var containerWidth = $("div.gallery-carousel").width();
-    var temp = $("div.gallery-carousel").height();
-    console.log(temp);
     selected.css({top: 0});
 
     var selectedWidth = calcWidth(57.3);
@@ -214,14 +211,15 @@ function calcPositions() {
     nextSecond.css({left: containerWidth - thirdX - thirdWidth});
     prevSecond.css({left: thirdX});
 
-    var secondY = (selected.height() - next.height()) / 2;
+    var secondY = (selectedWidth*0.66878981 - secondWidth*0.66878981) / 2;
     next.css({top: secondY});
     prev.css({top: secondY});
 
-    var thirdY = (selected.height() - nextSecond.height()) / 2;
+    var thirdY = (selectedWidth*0.66878981 - thirdWidth*0.66878981) / 2;
     nextSecond.css({top: thirdY});
     prevSecond.css({top: thirdY});
 }
+
 
 $(function () {
 

@@ -8959,15 +8959,11 @@ footer {
   width: 100%; }
   .gallery-area .gallery-carousel div {
     position: absolute;
-    transition: top 0.9s, left 0.9s, z-index 0s, width 0.9s, -webkit-transform 0.9s;
-    transition: transform 0.9s, top 0.9s, left 0.9s, z-index 0s, width 0.9s;
-    transition: transform 0.9s, top 0.9s, left 0.9s, z-index 0s, width 0.9s, -webkit-transform 0.9s;
+    transition: top 0.9s, left 0.9s, z-index 0.9s, width 0.9s;
     opacity: 1;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.88);
     top: 0;
-    left: 0;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%; }
+    left: 0; }
     .gallery-area .gallery-carousel div img {
       width: 100%;
       height: 100%; }
@@ -8996,21 +8992,13 @@ footer {
         z-index: 6;
         opacity: 0;
         transition: opacity 1.5s ease-in-out; }
-    .gallery-area .gallery-carousel div.prev {
+    .gallery-area .gallery-carousel div.prev, .gallery-area .gallery-carousel div.next {
       z-index: 5; }
-    .gallery-area .gallery-carousel div.prevLeft {
+    .gallery-area .gallery-carousel div.prevLeft, .gallery-area .gallery-carousel div.nextRight {
       z-index: 4; }
     .gallery-area .gallery-carousel div.selected {
       z-index: 10; }
-    .gallery-area .gallery-carousel div.next {
-      z-index: 5; }
-    .gallery-area .gallery-carousel div.nextRight {
-      z-index: 4; }
-    .gallery-area .gallery-carousel div.hideLeft {
-      left: 15%;
-      opacity: 0; }
-    .gallery-area .gallery-carousel div.hideRight {
-      left: 65%;
+    .gallery-area .gallery-carousel div.hideLeft, .gallery-area .gallery-carousel div.hideRight {
       opacity: 0; }
 
 .gallery-area h2 {
