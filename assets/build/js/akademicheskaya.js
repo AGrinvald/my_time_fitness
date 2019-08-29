@@ -21778,19 +21778,18 @@ function moveToSelected(element) {
         var selected = element;
     }
    
-    // var amount = $("div.gallery-carousel div").length;
-    // var selectedIndex = $(".gallery-carousel div.slide").index($(selected));
-    // console.log(selectedIndex);
+    var amount = $("div.gallery-carousel div").length;
+    var selectedIndex = $(".gallery-carousel div.slide").index($(selected));
 
-    // if (element == "next" && amount <= selectedIndex + 2) {
-    //     var firstSlide = gallery.find("div.slide:first-child");
-    //     firstSlide.clone().appendTo(gallery);
-    //     firstSlide.remove();
-    // } else if (element == "prev" && selectedIndex < 2) {
-    //     var lastSlide = gallery.find("div.slide:last-child");
-    //     lastSlide.clone().prependTo(gallery);
-    //     lastSlide.remove();
-    // } 
+    if (element == "next" && amount <= selectedIndex + 2) {
+        var firstSlide = gallery.find("div.slide:first-child");
+        firstSlide.clone().appendTo(gallery);
+        firstSlide.remove();
+    } else if (element == "prev" && selectedIndex < 2) {
+        var lastSlide = gallery.find("div.slide:last-child");
+        lastSlide.clone().prependTo(gallery);
+        lastSlide.remove();
+    } 
 
     var next = $(selected).next();
     var prev = $(selected).prev();
@@ -21806,9 +21805,64 @@ function moveToSelected(element) {
 
     $(nextSecond).nextAll().removeClass().addClass("slide").addClass('hideRight');
     $(prevSecond).prevAll().removeClass().addClass("slide").addClass('hideLeft');
+
+    calcPositions();
+}
+
+
+function calcWidth(percent) {
+    var containerWidth = $("div.gallery-carousel").width();
+    var elWidth = containerWidth * percent / 100;
+
+    return elWidth;
+}
+
+function calcPositions() {
+
+    var selected = $("div.gallery-carousel .selected");
+    var next = $(selected).next();
+    var prev = $(selected).prev();
+    var prevSecond = $(prev).prev();
+    var nextSecond = $(next).next();
+    
+    var containerWidth = $("div.gallery-carousel").width();
+    var temp = $("div.gallery-carousel").height();
+    console.log(temp);
+    selected.css({top: 0});
+
+    var selectedWidth = calcWidth(57.3);
+    var secondWidth = calcWidth(39);
+    var thirdWidth = calcWidth(29.9);
+
+    selected.width(selectedWidth);
+    next.width(secondWidth);
+    prev.width(secondWidth);
+    nextSecond.width(thirdWidth);
+    prevSecond.width(thirdWidth);
+
+    var selectedLeft = (containerWidth - selectedWidth) / 2;
+    selected.css({left: selectedLeft});
+
+    var secondX = (containerWidth - selectedWidth - 2*(secondWidth/3))/2;
+    next.css({left: containerWidth - secondX - secondWidth});
+    prev.css({left: secondX});
+
+    var thirdX = (containerWidth - selectedWidth - 2*(secondWidth/3) - 2*(thirdWidth/3))/2;
+    nextSecond.css({left: containerWidth - thirdX - thirdWidth});
+    prevSecond.css({left: thirdX});
+
+    var secondY = (selected.height() - next.height()) / 2;
+    next.css({top: secondY});
+    prev.css({top: secondY});
+
+    var thirdY = (selected.height() - nextSecond.height()) / 2;
+    nextSecond.css({top: thirdY});
+    prevSecond.css({top: thirdY});
 }
 
 $(function () {
+
+    calcPositions();
 
     $('.gallery-area button.prev-btn').click(function () {
         moveToSelected('prev');
@@ -21817,6 +21871,7 @@ $(function () {
     $('.gallery-area button.next-btn').click(function () {
         moveToSelected('next');
     });
+
 
     var md = 992;
     var lg = 1195;
