@@ -8980,17 +8980,20 @@ footer {
       z-index: 6;
       opacity: 1;
       transition: opacity 1.5s ease-out; }
-    .gallery-area .gallery-carousel div.selected::before {
-      content: "";
-      position: absolute;
-      left: 0%;
-      top: 0%;
-      height: 100%;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 6;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out; }
+    .gallery-area .gallery-carousel div.selected {
+      -webkit-transform: translate3D(0, 0, 0);
+              transform: translate3D(0, 0, 0); }
+      .gallery-area .gallery-carousel div.selected::before {
+        content: "";
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 6;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out; }
     .gallery-area .gallery-carousel div.prev {
       z-index: 5;
       left: 30%;
