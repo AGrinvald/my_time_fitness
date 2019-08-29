@@ -392,7 +392,6 @@ nav.navbar {
 
     @include media-breakpoint-down(md) {
       height: 192px;
-      padding-right: 50px;
     }
 
     .promo-block {
@@ -423,7 +422,8 @@ nav.navbar {
         @include media-breakpoint-down(md) {
           margin-top: 39px;
           margin-left: auto;
-          width: 192px;
+          width: 235px;
+          padding-right: 50px;
         }
       }
 
@@ -435,7 +435,7 @@ nav.navbar {
           content: "";
           position: absolute;
           right: 0;
-          top: 0;
+          top: -4%;
           height: 100%;
           width: 100%;
           filter: blur(20px);
@@ -449,8 +449,10 @@ nav.navbar {
 
         @include media-breakpoint-down(md) {
           width: 222px;
+          line-height: 1;
+          text-align: center;
           margin-left: auto;
-          margin-top: 15px;
+          margin-right: auto;
         }
       }
     }
@@ -500,24 +502,34 @@ nav.navbar {
 
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       z-index: 10;
       color: $white;
 
+      @include media-breakpoint-up(lg) {
+        justify-content: space-between;
+      }
+
+      @include media-breakpoint-down(md) {
+        justify-content: center;
+      }
+
       h3 {
+        line-height: 1;
+      
         @include media-breakpoint-up(lg) {
           margin-top: 6%;
         }
 
         @include media-breakpoint-down(md) {
-          margin-top: 5%;
           width: 190px;
           text-align: center;
           margin-left: auto;
+          margin-top: 3%;
         }
       }
 
       p {
+        line-height: 1;
         @include media-breakpoint-up(lg) {
           width: 310px;
           color: $black;
@@ -528,6 +540,13 @@ nav.navbar {
           text-align: center;
           font-size: 15px;
           letter-spacing: -0.58px;
+          margin: 6px 0;
+        }
+      }
+
+      button {
+        @include media-breakpoint-down(md) {
+          margin-left: 12%;
         }
       }
     }
@@ -573,7 +592,7 @@ nav.navbar {
       @include media-breakpoint-down(md) {
         justify-content: center;
         height: 60%;
-        width: 400px;
+        width: 730px;
       }
     }
 
@@ -584,10 +603,6 @@ nav.navbar {
       @include media-breakpoint-up(lg) {
         text-align: right;
         flex: 0 1 41%;
-      }
-
-      @include media-breakpoint-down(md) {
-        //margin-left: 18%;
       }
 
       h4 {
@@ -631,7 +646,7 @@ nav.navbar {
       }
 
       @include media-breakpoint-down(md) {
-        margin-left: 10%;
+        margin-left: 15%;
       }
 
       p {
@@ -641,6 +656,12 @@ nav.navbar {
         color: #000000;
 
         @include media-breakpoint-up(lg) {
+          margin-bottom: 25px;
+          font-size: 40px;
+          margin-top: auto;
+        }
+
+        @include media-breakpoint-up(xl) {
           margin-bottom: 25px;
           font-size: 48px;
           margin-top: auto;
