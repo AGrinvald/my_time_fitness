@@ -142,7 +142,6 @@ function moveToSelected(element) {
    
     var amount = $("div.gallery-carousel div").length;
     var selectedIndex = $(".gallery-carousel div.slide").index($(selected));
-    console.log(selectedIndex);
 
     if (element == "next" && amount <= selectedIndex + 2) {
         var firstSlide = gallery.find("div.slide:first-child");
@@ -168,9 +167,61 @@ function moveToSelected(element) {
 
     $(nextSecond).nextAll().removeClass().addClass("slide").addClass('hideRight');
     $(prevSecond).prevAll().removeClass().addClass("slide").addClass('hideLeft');
+
+    calcPositions();
+}
+
+function calcWidth(percent) {
+    var containerWidth = $("div.gallery-carousel").width();
+    var elWidth = containerWidth * percent / 100;
+
+    return elWidth;
+}
+
+function calcPositions() {
+
+    var selected = $("div.gallery-carousel .selected");
+    var next = $(selected).next();
+    var prev = $(selected).prev();
+    var prevSecond = $(prev).prev();
+    var nextSecond = $(next).next();
+    
+    var containerWidth = $("div.gallery-carousel").width();
+    selected.css({top: 0});
+
+    var selectedWidth = calcWidth(57.3);
+    var secondWidth = calcWidth(39);
+    var thirdWidth = calcWidth(29.9);
+
+    selected.width(selectedWidth);
+    next.width(secondWidth);
+    prev.width(secondWidth);
+    nextSecond.width(thirdWidth);
+    prevSecond.width(thirdWidth);
+
+    var selectedLeft = (containerWidth - selectedWidth) / 2;
+    selected.css({left: selectedLeft});
+
+    var secondX = (containerWidth - selectedWidth - 2*(secondWidth/3))/2;
+    next.css({left: containerWidth - secondX - secondWidth});
+    prev.css({left: secondX});
+
+    var thirdX = (containerWidth - selectedWidth - 2*(secondWidth/3) - 2*(thirdWidth/3))/2;
+    nextSecond.css({left: containerWidth - thirdX - thirdWidth});
+    prevSecond.css({left: thirdX});
+
+    var secondY = (selectedWidth*0.66878981 - secondWidth*0.66878981) / 2;
+    next.css({top: secondY});
+    prev.css({top: secondY});
+
+    var thirdY = (selectedWidth*0.66878981 - thirdWidth*0.66878981) / 2;
+    nextSecond.css({top: thirdY});
+    prevSecond.css({top: thirdY});
 }
 
 $(function () {
+
+    calcPositions();
 
     $('.gallery-area button.prev-btn').click(function () {
         moveToSelected('prev');
@@ -222,7 +273,6 @@ $(function () {
     }
 
     $(window).resize(function () {
-
         if ($(window).width() < md) {
             if ($('.scheme-slides').hasClass('off')) {
                 var owlActive = owl.owlCarousel(owlOptions);
@@ -249,6 +299,8 @@ $(function () {
                 galleryOwl.addClass('off').trigger('destroy.owl.carousel');
                 galleryOwl.find('.owl-stage-outer').children(':eq(0)').unwrap();
             }
+
+            calcPositions();
         }
     });
 });

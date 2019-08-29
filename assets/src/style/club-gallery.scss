@@ -104,13 +104,13 @@
     justify-content: space-between;
     z-index: 20;
 
-    //@include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xl) {
       display: flex;
-    //}
+    }
 
-    // @include media-breakpoint-down(lg) {
-    //   display: none;
-    // }
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
 
     .prev-btn,
     .next-btn {
@@ -152,36 +152,36 @@
   }
 
   .gallery-carousel {
-    // @include media-breakpoint-down(lg) {
-    //   .owl-nav {
-    //     position: absolute;
-    //     text-align: center;
-    //     top: 40%;
-    //     left: -2%;
-    //     width: 105%;
-    //     display: flex;
-    //     justify-content: space-between;
+    @include media-breakpoint-down(lg) {
+      .owl-nav {
+        position: absolute;
+        text-align: center;
+        top: 40%;
+        left: -2%;
+        width: 105%;
+        display: flex;
+        justify-content: space-between;
 
-    //     button.owl-prev,
-    //     button.owl-next {
-    //       cursor: pointer;
-    //       background-position: center center;
-    //       background-repeat: no-repeat;
-    //       width: 40px;
-    //       height: 40px;
-    //     }
+        button.owl-prev,
+        button.owl-next {
+          cursor: pointer;
+          background-position: center center;
+          background-repeat: no-repeat;
+          width: 40px;
+          height: 40px;
+        }
 
-    //     button.owl-prev {
-    //       background-image: url(../img/groupCopy4.png);
-    //     }
+        button.owl-prev {
+          background-image: url(../img/groupCopy4.png);
+        }
 
-    //     button.owl-next {
-    //       background-image: url(../img/groupCopy5.png);
-    //     }
-    //   }
-    // }
+        button.owl-next {
+          background-image: url(../img/groupCopy5.png);
+        }
+      }
+    }
 
-    // @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(xl) {
       position: relative;
       width: 100%;
 
@@ -248,7 +248,7 @@
         &.hideLeft, &.hideRight {
           opacity: 0;
         }
-      //}
+      }
     }
   }
 
