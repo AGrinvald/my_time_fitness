@@ -9417,22 +9417,14 @@ footer {
       -webkit-transform: rotateY(-180deg);
               transform: rotateY(-180deg);
       background-color: #000000;
-      color: white; }
-      @media (max-width: 1199.98px) {
-        .services-area .services-container .flip-card .flip-card-back {
-          padding: 50px 22px; } }
-      @media (min-width: 1200px) {
-        .services-area .services-container .flip-card .flip-card-back {
-          padding: 22px; } }
+      color: white;
+      padding: 22px; }
       .services-area .services-container .flip-card .flip-card-back h5 {
         font-weight: 500;
         font-size: 26px;
         letter-spacing: 0.26px;
         color: #aacc23;
         margin-bottom: 30px; }
-        @media (max-width: 1199.98px) {
-          .services-area .services-container .flip-card .flip-card-back h5 {
-            display: none; } }
       .services-area .services-container .flip-card .flip-card-back p {
         text-align: left;
         font-size: 18px;
@@ -9845,10 +9837,15 @@ nav.navbar {
         font-size: 20px;
         line-height: 21px;
         letter-spacing: -0.27px; }
+    .scheme-area .scheme .scheme-slides .owl-stage {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center; }
     .scheme-area .scheme .scheme-slides .owl-nav {
       position: absolute;
       width: 100%;
-      top: 0;
+      top: 6%;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: justify;

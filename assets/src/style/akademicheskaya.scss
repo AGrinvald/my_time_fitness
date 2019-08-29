@@ -547,10 +547,15 @@ nav.navbar {
                 }
             }
 
+            .owl-stage {
+                display: flex;
+                align-items: center;
+            }
+
             .owl-nav {
                 position: absolute;
                 width: 100%;
-                top: 0;
+                top: 6%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;

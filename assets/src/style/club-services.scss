@@ -133,14 +133,7 @@
         transform: rotateY(-180deg);
         background-color: #000000;
         color: white;
-
-        @include media-breakpoint-down(lg) {
-          padding: 50px 22px;
-        }
-
-        @include media-breakpoint-up(xl) {
-          padding: 22px;
-        }
+        padding: 22px;
 
         h5 {
           font-weight: 500;
@@ -149,9 +142,9 @@
           color: $primary;
           margin-bottom: 30px;
 
-          @include media-breakpoint-down(lg) {
-            display: none;
-          }
+          // @include media-breakpoint-down(lg) {
+          //   display: none;
+          // }
         }
 
         p {
