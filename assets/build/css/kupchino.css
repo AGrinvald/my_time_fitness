@@ -8836,7 +8836,7 @@ footer {
 .gallery-area .gallery-container {
   background-color: #26272b;
   position: relative; }
-  @media (min-width: 1200px) {
+  @media screen and (min-width: 1400px) {
     .gallery-area .gallery-container {
       height: 880px; }
       .gallery-area .gallery-container::before {
@@ -8863,7 +8863,7 @@ footer {
         background-repeat: no-repeat;
         background-position: right bottom;
         z-index: 2; } }
-  @media (max-width: 1199.98px) {
+  @media screen and (max-width: 1400px) {
     .gallery-area .gallery-container::before {
       content: "";
       position: absolute;
@@ -8879,7 +8879,7 @@ footer {
     .gallery-area .gallery-container::after {
       content: "";
       position: absolute;
-      bottom: 0%;
+      bottom: 16%;
       right: 0;
       height: 149px;
       width: 74px;
@@ -8891,27 +8891,27 @@ footer {
 
 .gallery-area .container {
   position: relative;
-  height: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  z-index: 5;
-  max-width: 1400px; }
+  z-index: 5; }
+  @media screen and (min-width: 1400px) {
+    .gallery-area .container {
+      max-width: 1400px;
+      height: 100%; } }
   .gallery-area .container .desc {
     color: #ffffff;
     margin-bottom: 0;
     font-weight: 300;
     text-align: center;
     margin-top: auto; }
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       .gallery-area .container .desc {
         margin-bottom: 70px;
-        font-size: 18px;
-        line-height: 0.72; } }
-    @media (max-width: 1199.98px) {
+        font-size: 18px; } }
+    @media (max-width: 767.98px) {
       .gallery-area .container .desc {
-        margin-bottom: 35px;
         font-size: 14px;
         line-height: 16px; } }
 
@@ -8925,11 +8925,11 @@ footer {
   -ms-flex-pack: justify;
       justify-content: space-between;
   z-index: 20; }
-  @media (min-width: 1200px) {
+  @media screen and (min-width: 1400px) {
     .gallery-area .buttons {
       display: -ms-flexbox;
       display: flex; } }
-  @media (max-width: 1199.98px) {
+  @media screen and (max-width: 1400px) {
     .gallery-area .buttons {
       display: none; } }
   .gallery-area .buttons .prev-btn,
@@ -8938,28 +8938,28 @@ footer {
     background-position: center center;
     background-repeat: no-repeat;
     border: 0; }
-    @media (min-width: 1200px) {
+    @media screen and (min-width: 1400px) {
       .gallery-area .buttons .prev-btn,
       .gallery-area .buttons .next-btn {
         width: 58px;
         height: 58px; } }
-    @media (max-width: 1199.98px) {
+    @media screen and (max-width: 1400px) {
       .gallery-area .buttons .prev-btn,
       .gallery-area .buttons .next-btn {
         width: 40px;
         height: 40px; } }
-  @media (min-width: 1200px) {
+  @media screen and (min-width: 1400px) {
     .gallery-area .buttons .prev-btn {
       background-image: url(../img/prev.svg); }
     .gallery-area .buttons .next-btn {
       background-image: url(../img/next.svg); } }
-  @media (max-width: 1199.98px) {
+  @media screen and (max-width: 1400px) {
     .gallery-area .buttons .prev-btn {
       background-image: url(../img/groupCopy4.png); }
     .gallery-area .buttons .next-btn {
       background-image: url(../img/groupCopy5.png); } }
 
-@media (max-width: 1199.98px) {
+@media screen and (max-width: 1400px) {
   .gallery-area .gallery-carousel .owl-nav {
     position: absolute;
     text-align: center;
@@ -8982,7 +8982,7 @@ footer {
     .gallery-area .gallery-carousel .owl-nav button.owl-next {
       background-image: url(../img/groupCopy5.png); } }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .gallery-area .gallery-carousel {
     position: relative;
     width: 100%; }
@@ -9029,6 +9029,12 @@ footer {
         z-index: 10; }
       .gallery-area .gallery-carousel div.hideLeft, .gallery-area .gallery-carousel div.hideRight {
         opacity: 0; } }
+
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+  .gallery-area .gallery-carousel {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto; } }
 
 .gallery-area h2 {
   text-align: center;
