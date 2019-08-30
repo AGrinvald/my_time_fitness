@@ -21814,6 +21814,10 @@ function calcWidth(percent) {
     return elWidth;
 }
 
+
+var md = 992;
+var lg = 1400;
+
 function calcPositions() {
 
     var selected = $("div.gallery-carousel .selected");
@@ -21855,10 +21859,31 @@ function calcPositions() {
     prevSecond.css({top: thirdY});
 }
 
+function galleryReset() {
+    var selected = $("div.gallery-carousel .selected");
+    var next = $(selected).next();
+    var prev = $(selected).prev();
+    var prevSecond = $(prev).prev();
+    var nextSecond = $(next).next();
+    selected.css('width', 'auto');
+    next.css('width', 'auto');
+    prev.css('width', 'auto');
+    prevSecond.css('width', 'auto');
+    nextSecond.css('width', 'auto');
+    selected.css('left', '');
+    next.css('left', '');
+    prev.css('left', '');
+    prevSecond.css('left', '');
+    nextSecond.css('left', '');
+    selected.css('top', '');
+    next.css('top', '');
+    prev.css('top', '');
+    prevSecond.css('top', '');
+    nextSecond.css('top', '');
+}
+
 $(function () {
 
-    calcPositions();
-    
     $('.gallery-area button.prev-btn').click(function () {
         moveToSelected('prev');
     });
@@ -21866,9 +21891,6 @@ $(function () {
     $('.gallery-area button.next-btn').click(function () {
         moveToSelected('next');
     });
-
-    var md = 992;
-    var lg = 1195;
 
     var galleryOwl = $('.gallery-carousel'),
         galleryOwlOptions = {
@@ -21905,10 +21927,12 @@ $(function () {
         galleryOwl.addClass('owl-carousel');
         var galleryActive = galleryOwl.owlCarousel(galleryOwlOptions);
     } else {
+        calcPositions();
         galleryOwl.addClass('off');
     }
 
     $(window).resize(function () {
+
         if ($(window).width() < md) {
             if ($('.scheme-slides').hasClass('off')) {
                 var owlActive = owl.owlCarousel(owlOptions);
@@ -21923,6 +21947,7 @@ $(function () {
         }
 
         if ($(window).width() < lg) {
+            galleryReset();
             if ($('.gallery-carousel').hasClass('off')) {
                 galleryOwl.addClass('owl-carousel');
                 var galleryActive = galleryOwl.owlCarousel(galleryOwlOptions);
