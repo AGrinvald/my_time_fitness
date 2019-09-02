@@ -1120,9 +1120,16 @@ nav {
   }
 
   .club-info-block {
-    height: 504px;
+    // height: 504px;
+    // padding-left: 45px;
+    // z-index: 50;
+
     padding-left: 45px;
     z-index: 50;
+    width: 700px;
+    align-self: flex-end;
+    padding-bottom: 28px;
+
     .inner-div {
       background-color: rgba(0, 0, 0, 0.5);
       text-align: center;
@@ -1168,7 +1175,7 @@ nav {
     }
 
     .club-info-block {
-      display: flex;
+      //display: flex;
     }
   }
 }

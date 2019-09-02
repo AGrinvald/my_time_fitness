@@ -9299,9 +9299,12 @@ footer {
         font-weight: normal;
         margin-bottom: 0; }
   .map-area .club-info-block {
-    height: 504px;
     padding-left: 45px;
-    z-index: 50; }
+    z-index: 50;
+    width: 700px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    padding-bottom: 28px; }
     .map-area .club-info-block .inner-div {
       background-color: rgba(0, 0, 0, 0.5);
       text-align: center;
@@ -9326,9 +9329,6 @@ footer {
       display: none; } }
   @media (min-width: 992px) {
     .map-area .map-block {
-      height: 558px; }
-    .map-area .club-info-block {
-      display: -ms-flexbox;
-      display: flex; } }
+      height: 558px; } }
 
 /* MAP AREA END */

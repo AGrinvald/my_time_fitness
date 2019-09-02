@@ -21686,7 +21686,7 @@ var currentSize = windowsSize.Large;
 
 var createLayout = function (id) {
     var Layout = ymaps.templateLayoutFactory.createClass(
-        '<div class="club"></div>',
+        '<div class="club">$[[options.contentLayout observeSize minWidth=235 maxWidth=235 maxHeight=350]]</div>',
         {
             build: function () {
                 Layout.superclass.build.call(this);
@@ -21708,6 +21708,12 @@ var createLayout = function (id) {
                 var options = this.getData().options,
                     element = this.getParentElement().getElementsByClassName('club')[0];
                 element.appendChild(img);
+
+                this._$element = $('.club', this.getParentElement());
+                this._$element.css({
+                    left: -(mapSettings.imgSize[0] / 2),
+                    top: -(mapSettings.imgSize[1] / 2)
+                });
             }
         }
     );
@@ -21737,8 +21743,7 @@ function init() {
             id: 2,
             hintContent: 'Санкт-Петербург м.Купчино, ул. Олеко Дундича 10/2, 1 этаж'
         }, {
-            iconLayout: createLayout(2),
-            iconImageOffset: [55, 76]
+            iconLayout: createLayout(2)
         }
     );
 
@@ -21747,8 +21752,7 @@ function init() {
             id: 0,
             hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
         }, {
-            iconLayout: createLayout(0),
-            iconImageOffset: [-55, -76]
+            iconLayout: createLayout(0)
         }
     );
 
@@ -21757,8 +21761,7 @@ function init() {
             id: 1,
             hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
         }, {
-            iconLayout: createLayout(1),
-            iconImageOffset: [-55, -76]
+            iconLayout: createLayout(1)
         }
     );
 
@@ -21769,6 +21772,7 @@ function init() {
     map.controls.remove('fullscreenControl');
     map.controls.remove('rulerControl');
     map.behaviors.disable(['scrollZoom']);
+    map.controls.remove('zoomControl');
     map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px'}, size: 'small'});
     
     map.events.add('sizechange', function (event) {

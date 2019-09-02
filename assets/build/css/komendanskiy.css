@@ -8836,12 +8836,12 @@ footer {
 .gallery-area .gallery-container {
   background-color: #26272b;
   position: relative; }
-  @media screen and (min-width: 1400px) {
-    .gallery-area .gallery-container {
-      height: 880px; }
+  .gallery-area .gallery-container::before {
+    content: "";
+    position: absolute;
+    z-index: 2; }
+    @media screen and (min-width: 1600px) {
       .gallery-area .gallery-container::before {
-        content: "";
-        position: absolute;
         top: -4.1%;
         left: 0;
         height: 706px;
@@ -8849,11 +8849,21 @@ footer {
         background: url(../img/group-12.svg);
         background-size: auto;
         background-repeat: no-repeat;
-        background-position: left top;
-        z-index: 2; }
+        background-position: left top; } }
+    @media (max-width: 767.98px) {
+      .gallery-area .gallery-container::before {
+        height: 159px;
+        width: 80px;
+        background: url(../img/group10.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: left top; } }
+  .gallery-area .gallery-container::after {
+    content: "";
+    position: absolute;
+    z-index: 2; }
+    @media screen and (min-width: 1600px) {
       .gallery-area .gallery-container::after {
-        content: "";
-        position: absolute;
         bottom: -0.2%;
         right: 0;
         height: 802px;
@@ -8861,33 +8871,30 @@ footer {
         background: url(../img/group-13.svg);
         background-size: auto;
         background-repeat: no-repeat;
-        background-position: right bottom;
-        z-index: 2; } }
-  @media screen and (max-width: 1400px) {
-    .gallery-area .gallery-container::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 159px;
-      width: 80px;
-      background: url(../img/group10.png);
-      background-size: auto;
-      background-repeat: no-repeat;
-      background-position: left top;
-      z-index: 2; }
-    .gallery-area .gallery-container::after {
-      content: "";
-      position: absolute;
-      bottom: 16%;
-      right: 0;
-      height: 149px;
-      width: 74px;
-      background: url(../img/group11.png);
-      background-size: auto;
-      background-repeat: no-repeat;
-      background-position: right bottom;
-      z-index: 2; } }
+        background-position: right bottom; } }
+    @media (max-width: 767.98px) {
+      .gallery-area .gallery-container::after {
+        bottom: 0;
+        right: 0;
+        height: 149px;
+        width: 74px;
+        background: url(../img/group11.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: right bottom; } }
+    @media (max-width: 575.98px) {
+      .gallery-area .gallery-container::after {
+        bottom: 18%;
+        right: 0;
+        height: 149px;
+        width: 74px;
+        background: url(../img/group11.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: right bottom; } }
+  @media screen and (min-width: 1400px) {
+    .gallery-area .gallery-container {
+      height: 880px; } }
 
 .gallery-area .container {
   position: relative;
@@ -8906,14 +8913,18 @@ footer {
     font-weight: 300;
     text-align: center;
     margin-top: auto; }
-    @media (min-width: 992px) {
+    @media (min-width: 1200px) {
       .gallery-area .container .desc {
         margin-bottom: 70px;
         font-size: 18px; } }
-    @media (max-width: 767.98px) {
+    @media (max-width: 1199.98px) {
       .gallery-area .container .desc {
         font-size: 14px;
         line-height: 16px; } }
+    @media (max-width: 991.98px) {
+      .gallery-area .container .desc {
+        padding-left: 0;
+        padding-right: 0; } }
 
 .gallery-area .buttons {
   position: absolute;
@@ -8960,27 +8971,41 @@ footer {
       background-image: url(../img/groupCopy5.png); } }
 
 @media screen and (max-width: 1400px) {
-  .gallery-area .gallery-carousel .owl-nav {
-    position: absolute;
-    text-align: center;
-    top: 40%;
-    left: -2%;
-    width: 105%;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between; }
-    .gallery-area .gallery-carousel .owl-nav button.owl-prev,
-    .gallery-area .gallery-carousel .owl-nav button.owl-next {
-      cursor: pointer;
-      background-position: center center;
-      background-repeat: no-repeat;
-      width: 40px;
-      height: 40px; }
-    .gallery-area .gallery-carousel .owl-nav button.owl-prev {
-      background-image: url(../img/groupCopy4.png); }
-    .gallery-area .gallery-carousel .owl-nav button.owl-next {
-      background-image: url(../img/groupCopy5.png); } }
+  .gallery-area .gallery-carousel {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; }
+    .gallery-area .gallery-carousel .owl-nav {
+      position: absolute;
+      text-align: center;
+      left: -2%;
+      width: 105%;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+          justify-content: space-between; } }
+    @media screen and (max-width: 1400px) and (min-width: 992px) {
+      .gallery-area .gallery-carousel .owl-nav {
+        top: 50%; } }
+    @media screen and (max-width: 1400px) and (max-width: 991.98px) {
+      .gallery-area .gallery-carousel .owl-nav {
+        top: 45%; } }
+    @media screen and (max-width: 1400px) and (max-width: 767.98px) {
+      .gallery-area .gallery-carousel .owl-nav {
+        top: 40%; } }
+
+@media screen and (max-width: 1400px) {
+      .gallery-area .gallery-carousel .owl-nav button.owl-prev,
+      .gallery-area .gallery-carousel .owl-nav button.owl-next {
+        cursor: pointer;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 40px;
+        height: 40px; }
+      .gallery-area .gallery-carousel .owl-nav button.owl-prev {
+        background-image: url(../img/groupCopy4.png); }
+      .gallery-area .gallery-carousel .owl-nav button.owl-next {
+        background-image: url(../img/groupCopy5.png); } }
 
 @media screen and (min-width: 1400px) {
   .gallery-area .gallery-carousel {
