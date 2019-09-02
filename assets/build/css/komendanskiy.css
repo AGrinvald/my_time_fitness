@@ -9431,10 +9431,10 @@ footer {
         width: 100%; }
       @media (min-width: 1200px) {
         .services-area .services-container .flip-card .flip-card-front {
-          padding: 70px 0 35px 0; } }
+          padding: 70px 20px 35px 20px; } }
       @media (max-width: 1199.98px) {
         .services-area .services-container .flip-card .flip-card-front {
-          padding: 55px 0 40px 0; } }
+          padding: 55px 20px 40px 20px; } }
     .services-area .services-container .flip-card .flip-card-back {
       -webkit-transform: rotateY(-180deg);
               transform: rotateY(-180deg);

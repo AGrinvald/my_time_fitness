@@ -121,11 +121,11 @@
         }
 
         @include media-breakpoint-up(xl) {
-          padding: 70px 0 35px 0;
+          padding: 70px 20px 35px 20px;
         }
 
         @include media-breakpoint-down(lg) {
-          padding: 55px 0 40px 0;
+          padding: 55px 20px 40px 20px;
         }
       }
 

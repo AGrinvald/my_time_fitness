@@ -8549,7 +8549,7 @@ footer {
       .banner-area figure .bg-shadow {
         background-image: url(../img/shadow.svg);
         background-repeat: no-repeat;
-        background-position-y: 72%;
+        background-position-y: 68%;
         background-position-x: 50%; } }
   @media (min-width: 992px) {
     .banner-area figure {
