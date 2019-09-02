@@ -61,10 +61,6 @@ var createLayout = function (id) {
                     placemarkMap.events.add('sizechange', function () {
                         this.rebuild();
                     }, this);
-
-                    placemarkMap.events.add('boundschange', function () {
-                        this.rebuild();
-                    }, this);
                 }
 
                 var img = document.createElement("img");
@@ -288,8 +284,10 @@ $(function () {
             result.then(function () {
 
                 var placemark = selected.get(0);
-                var coords = placemark.geometry.getCoordinates();
+                var markCoords = placemark.geometry.getCoordinates();
 
+                var coords = [markCoords[0], markCoords[1]];
+                
                 if (currentSize == windowsSize.Medium) {
                     coords[0] = coords[0] + 0.07;
                     zoom = 11;
