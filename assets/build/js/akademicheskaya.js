@@ -21697,8 +21697,21 @@ var createLayout = function (id) {
                 img.height = mapSettings.imgSize[1];
 
                 var options = this.getData().options,
-                    element = this.getParentElement().getElementsByClassName('club')[0];
+                    element = this.getParentElement().getElementsByClassName('club')[0],
+                    circleShape = {type: 'Rectangle', coordinates: [
+                        [-mapSettings.imgSize[0] / 2, -mapSettings.imgSize[1] / 2], 
+                        [mapSettings.imgSize[0] / 2, mapSettings.imgSize[1] / 2]]};
                 element.appendChild(img);
+
+                element.style.width = mapSettings.imgSize[0];
+                element.style.height = mapSettings.imgSize[1];
+
+                element.style.marginLeft = -mapSettings.imgSize[0] / 2 + 'px';
+                element.style.marginTop = -mapSettings.imgSize[1] / 2 + 'px';
+                element.style.left =  -mapSettings.imgSize[0] / 2 + 'px';
+                element.style.top =  -mapSettings.imgSize[1] / 2 + 'px';
+
+                options.set('shape', circleShape);
             }
         }
     );

@@ -49,7 +49,7 @@ var currentSize = windowsSize.Large;
 
 var createLayout = function (id) {
     var Layout = ymaps.templateLayoutFactory.createClass(
-        '<div class="club">$[[options.contentLayout observeSize minWidth=235 maxWidth=235 maxHeight=350]]</div>',
+        '<div class="club"></div>',
         {
             build: function () {
                 Layout.superclass.build.call(this);
@@ -61,6 +61,10 @@ var createLayout = function (id) {
                     placemarkMap.events.add('sizechange', function () {
                         this.rebuild();
                     }, this);
+
+                    placemarkMap.events.add('boundschange', function () {
+                        this.rebuild();
+                    }, this);
                 }
 
                 var img = document.createElement("img");
@@ -69,14 +73,21 @@ var createLayout = function (id) {
                 img.height = mapSettings.imgSize[1];
 
                 var options = this.getData().options,
-                    element = this.getParentElement().getElementsByClassName('club')[0];
+                    element = this.getParentElement().getElementsByClassName('club')[0],
+                    circleShape = {type: 'Rectangle', coordinates: [
+                        [-mapSettings.imgSize[0] / 2, -mapSettings.imgSize[1] / 2], 
+                        [mapSettings.imgSize[0] / 2, mapSettings.imgSize[1] / 2]]};
                 element.appendChild(img);
 
-                this._$element = $('.club', this.getParentElement());
-                this._$element.css({
-                    left: -(mapSettings.imgSize[0] / 2),
-                    top: -(mapSettings.imgSize[1] / 2)
-                });
+                element.style.width = mapSettings.imgSize[0];
+                element.style.height = mapSettings.imgSize[1];
+
+                element.style.marginLeft = -mapSettings.imgSize[0] / 2 + 'px';
+                element.style.marginTop = -mapSettings.imgSize[1] / 2 + 'px';
+                element.style.left =  -mapSettings.imgSize[0] / 2 + 'px';
+                element.style.top =  -1 * mapSettings.imgSize[1] + 'px';
+
+                options.set('shape', circleShape);
             }
         }
     );
