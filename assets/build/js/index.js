@@ -21670,7 +21670,7 @@ var mapSettingsCollection = {
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
-        center: [60.1677166120527, 30.394098962890602], zoom: 9,
+        center: [60.20874891762144, 30.372126306640563], zoom: 9,
         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
     }
 };
@@ -21805,7 +21805,7 @@ function init() {
         }
 
         // console.log(map.getZoom());
-        // console.log(map.getCenter());
+        console.log(map.getCenter());
     });
 
     ymaps.geoQuery(komendanskiy).addToMap(map);
