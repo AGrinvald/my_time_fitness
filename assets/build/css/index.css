@@ -8786,7 +8786,8 @@ footer {
 /* FEATURES AREA END*/
 /* SIGNUP AREA START */
 .signup-area .container {
-  position: relative; }
+  position: relative;
+  z-index: 10; }
   @media (min-width: 992px) {
     .signup-area .container::before {
       content: "";
@@ -9322,6 +9323,8 @@ footer {
         border-bottom: 1px solid #d6ff34; }
       .map-area .club-info-block .inner-div .info-bottom {
         font-weight: 100; }
+  .map-area .map-block {
+    z-index: -1; }
   @media (max-width: 991.98px) {
     .map-area .map-block {
       height: 668px; }

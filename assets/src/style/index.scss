@@ -422,7 +422,7 @@ nav {
 
   .container {
     position: relative;
-
+    z-index: 10;
     @include media-breakpoint-up(lg) {
         &::before {
           content: "";
@@ -1120,10 +1120,6 @@ nav {
   }
 
   .club-info-block {
-    // height: 504px;
-    // padding-left: 45px;
-    // z-index: 50;
-
     padding-left: 45px;
     z-index: 50;
     width: 700px;
@@ -1157,6 +1153,10 @@ nav {
       }
     }
 
+  }
+
+  .map-block {
+    z-index: -1;
   }
 
   @include media-breakpoint-down(md) {
