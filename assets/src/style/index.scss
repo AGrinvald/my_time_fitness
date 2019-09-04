@@ -1025,6 +1025,7 @@ nav {
   }
 
   .inner-block {
+    position: relative;
     overflow: hidden;
     max-width: 344px;
     background-color: rgba(255, 255, 255, 0.9);
@@ -1154,10 +1155,6 @@ nav {
 
   }
 
-  .map-block {
-    z-index: -1;
-  }
-
   @include media-breakpoint-down(md) {
     .map-block {
       height: 668px;
@@ -1171,10 +1168,6 @@ nav {
   @include media-breakpoint-up(lg) {
     .map-block {
       height: 558px;
-    }
-
-    .club-info-block {
-      //display: flex;
     }
   }
 }

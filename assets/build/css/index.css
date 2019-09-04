@@ -9222,6 +9222,7 @@ footer {
     line-height: 44px;
     margin-left: 20px; }
   .map-area .inner-block {
+    position: relative;
     overflow: hidden;
     max-width: 344px;
     background-color: rgba(255, 255, 255, 0.9);
@@ -9323,8 +9324,6 @@ footer {
         border-bottom: 1px solid #d6ff34; }
       .map-area .club-info-block .inner-div .info-bottom {
         font-weight: 100; }
-  .map-area .map-block {
-    z-index: -1; }
   @media (max-width: 991.98px) {
     .map-area .map-block {
       height: 668px; }
