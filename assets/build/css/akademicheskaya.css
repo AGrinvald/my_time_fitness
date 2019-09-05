@@ -8913,9 +8913,9 @@ footer {
     font-weight: 300;
     text-align: center;
     margin-top: auto; }
-    @media (min-width: 1200px) {
+    @media screen and (min-width: 1400px) {
       .gallery-area .container .desc {
-        margin-bottom: 70px;
+        margin-bottom: 35px;
         font-size: 18px; } }
     @media (max-width: 1199.98px) {
       .gallery-area .container .desc {
@@ -9808,18 +9808,14 @@ nav.navbar {
   background-color: #f5f5f5; }
   @media (min-width: 992px) {
     .scheme-area .container-fluid {
-      padding-bottom: 80px;
-      height: 976px; } }
+      padding-bottom: 80px; } }
   @media (max-width: 991.98px) {
     .scheme-area .container-fluid {
-      padding-top: 30px;
-      padding-bottom: 30px; } }
+      padding-bottom: 40px; } }
 
 .scheme-area .scheme {
   position: relative;
-  text-align: center;
-  padding-top: 30px;
-  padding-bottom: 40px; }
+  text-align: center; }
   .scheme-area .scheme > div:first-child {
     width: 100%; }
     @media (min-width: 992px) {

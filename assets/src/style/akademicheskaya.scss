@@ -479,20 +479,16 @@ nav.navbar {
 
         @include media-breakpoint-up(lg) {
             padding-bottom: 80px;
-            height: 976px;
         }
 
         @include media-breakpoint-down(md) {
-            padding-top: 30px;
-            padding-bottom: 30px;
+            padding-bottom: 40px;
         }
     }
 
     .scheme {
         position: relative;
         text-align: center;
-        padding-top: 30px;
-        padding-bottom: 40px;
 
         > div:first-child {
             @include media-breakpoint-up(lg) {

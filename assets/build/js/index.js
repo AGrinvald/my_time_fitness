@@ -21707,9 +21707,11 @@ var createLayout = function (id) {
 
                 var options = this.getData().options,
                     element = this.getParentElement().getElementsByClassName('club')[0],
-                    circleShape = {type: 'Rectangle', coordinates: [
-                        [-mapSettings.imgSize[0] / 2, -mapSettings.imgSize[1] / 2], 
-                        [mapSettings.imgSize[0] / 2, mapSettings.imgSize[1] / 2]]};
+                    circleShape = {
+                        type: 'Rectangle', coordinates: [
+                            [-mapSettings.imgSize[0] / 2, -mapSettings.imgSize[1] / 2],
+                            [mapSettings.imgSize[0] / 2, mapSettings.imgSize[1] / 2]]
+                    };
                 element.appendChild(img);
 
                 element.style.width = mapSettings.imgSize[0];
@@ -21717,8 +21719,8 @@ var createLayout = function (id) {
 
                 element.style.marginLeft = -mapSettings.imgSize[0] / 2 + 'px';
                 element.style.marginTop = -mapSettings.imgSize[1] / 2 + 'px';
-                element.style.left =  -mapSettings.imgSize[0] / 2 + 'px';
-                element.style.top =  -1 * mapSettings.imgSize[1] + 'px';
+                element.style.left = -mapSettings.imgSize[0] / 2 + 'px';
+                element.style.top = -1 * mapSettings.imgSize[1] + 'px';
 
                 options.set('shape', circleShape);
             }
@@ -21780,8 +21782,8 @@ function init() {
     map.controls.remove('rulerControl');
     map.behaviors.disable(['scrollZoom']);
     map.controls.remove('zoomControl');
-    map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px'}, size: 'small'});
-    
+    map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px' }, size: 'small' });
+
     map.events.add('sizechange', function (event) {
         var size = map.container.getSize();
         var width = size[0];
@@ -21901,7 +21903,9 @@ $(function () {
                 var moving = new ymaps.map.action.Single({
                     center: mapSettings.center,
                     zoom: mapSettings.zoom,
-                    duration: 2000
+                    timingFunction: 'ease-in',
+                    checkZoomRange: true,
+                    duration: 1500
                 });
 
                 map.action.execute(moving);
@@ -21924,7 +21928,7 @@ $(function () {
                 var markCoords = placemark.geometry.getCoordinates();
 
                 var coords = [markCoords[0], markCoords[1]];
-                
+
                 if (currentSize == windowsSize.Medium) {
                     coords[0] = coords[0] + 0.07;
                     zoom = 11;
@@ -21936,48 +21940,52 @@ $(function () {
                 var moving = new ymaps.map.action.Single({
                     center: coords,
                     zoom: zoom,
-                    duration: 2000
+                    timingFunction: 'ease-in',
+                    checkZoomRange: true,
+                    duration: 1500,
+                    callback: function (err) {
+                        selected.setOptions('visible', true);
+
+                        $(".club-block").removeClass("active");
+                        self.addClass("active");
+
+                        $(".club-info-block").remove();
+
+                        $('<div class="club-info-block"> \
+                        <div class="d-flex align-self-end align-items-center"> \
+                    <div class="inner-div d-flex">\
+                      <div>\
+                        <div class="info-top">\
+                          Площадь клуба\
+                        </div>\
+                        <div class="info-bottom">' +
+                            area
+                            + '</div>\
+                      </div>\
+                      <div>\
+                          <div class="info-top">\
+                              Тренажерный зал\
+                          </div>\
+                          <div class="info-bottom">' +
+                            hall
+                            + '</div>\
+                        </div>\
+                        <div>\
+                            <div class="info-top">\
+                                Зал групповых программ\
+                            </div>\
+                            <div class="info-bottom">' +
+                            programs
+                            + '</div>\
+                          </div>\
+                    </div>\
+                    <a href="' + link + '"class="btn btn-rounded btn-primary club-info-btn">О клубе</a>\
+                    </div>\
+                  </div>').appendTo(".map-area .clubs-block .container");
+                    }
                 });
 
                 map.action.execute(moving);
-                selected.setOptions('visible', true);
-
-                $(".club-block").removeClass("active");
-                self.addClass("active");
-
-                $(".club-info-block").remove();
-
-                $('<div class="club-info-block"> \
-                <div class="d-flex align-self-end align-items-center"> \
-            <div class="inner-div d-flex">\
-              <div>\
-                <div class="info-top">\
-                  Площадь клуба\
-                </div>\
-                <div class="info-bottom">' +
-                    area
-                    + '</div>\
-              </div>\
-              <div>\
-                  <div class="info-top">\
-                      Тренажерный зал\
-                  </div>\
-                  <div class="info-bottom">' +
-                    hall
-                    + '</div>\
-                </div>\
-                <div>\
-                    <div class="info-top">\
-                        Зал групповых программ\
-                    </div>\
-                    <div class="info-bottom">' +
-                    programs
-                    + '</div>\
-                  </div>\
-            </div>\
-            <a href="' + link +'"class="btn btn-rounded btn-primary club-info-btn">О клубе</a>\
-            </div>\
-          </div>').appendTo(".map-area .clubs-block .container");
             });
         }
     });

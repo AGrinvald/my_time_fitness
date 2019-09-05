@@ -8913,9 +8913,9 @@ footer {
     font-weight: 300;
     text-align: center;
     margin-top: auto; }
-    @media (min-width: 1200px) {
+    @media screen and (min-width: 1400px) {
       .gallery-area .container .desc {
-        margin-bottom: 70px;
+        margin-bottom: 35px;
         font-size: 18px; } }
     @media (max-width: 1199.98px) {
       .gallery-area .container .desc {
