@@ -8660,7 +8660,7 @@ footer {
 @media (max-width: 1199.98px) {
   .features-area .owl-nav {
     position: absolute;
-    top: 40%;
+    top: 41%;
     width: 100%;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -8708,8 +8708,8 @@ footer {
         justify-content: center;
     -ms-flex-align: center;
         align-items: center;
-    font-weight: 500;
-    background-image: linear-gradient(to bottom left, #4F4F4F 0%, #26272B 50%, #4F4F4F 100%);
+    font-weight: 600;
+    background-color: #f3f3f3;
     border-radius: 0 20px 0 20px;
     -webkit-perspective: 800px;
             perspective: 800px; }
@@ -8752,11 +8752,11 @@ footer {
     .features-area .feature .inner::before {
       content: "";
       position: absolute;
-      left: -7.5%;
+      left: -7%;
       top: -8%;
       height: 125px;
-      width: 105px;
-      background: url(../img/left-angle.svg);
+      width: 112px;
+      background: url(../img/angle1.svg);
       background-repeat: no-repeat;
       background-size: auto 100%;
       background-position: center center;
@@ -8768,18 +8768,18 @@ footer {
       bottom: -8%;
       height: 107px;
       width: 91px;
-      background: url(../img/right-angle.svg);
+      background: url(../img/angle2.svg);
       background-repeat: no-repeat;
       background-size: auto 100%;
       background-position: center center;
       z-index: 2; }
   .features-area .feature .number {
     font-size: 100px;
-    color: #aacc23;
+    color: #373737;
     text-align: center; }
   .features-area .feature .desc {
     font-size: 20px;
-    color: #ffffff;
+    color: #373737;
     line-height: 25px;
     width: 165px; }
 
