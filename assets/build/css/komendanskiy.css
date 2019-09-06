@@ -16,7 +16,7 @@
   font-family: 'Avenir Next Cyr';
   src: url("../fonts/AvenirNextCyr-Demi.eot");
   src: local("Avenir Next Cyr Demi"), local("AvenirNextCyr-Demi"), url("../fonts/AvenirNextCyr-Demi.eot?#iefix") format("embedded-opentype"), url("../fonts/AvenirNextCyr-Demi.woff") format("woff"), url("../fonts/AvenirNextCyr-Demi.ttf") format("truetype");
-  font-weight: bold;
+  font-weight: 600;
   font-style: normal; }
 
 @font-face {
@@ -9013,7 +9013,7 @@ footer {
     width: 100%; }
     .gallery-area .gallery-carousel div {
       position: absolute;
-      transition: top 0.9s, left 0.9s, z-index 0.9s, width 0.9s;
+      transition: top 0.7s, left 0.7s, z-index 0.7s, width 0.7s;
       opacity: 1;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.88);
       top: 0;
@@ -9031,7 +9031,7 @@ footer {
         background-color: rgba(0, 0, 0, 0.7);
         z-index: 6;
         opacity: 1;
-        transition: opacity 1.5s ease-out; }
+        transition: opacity 0.7s ease-out; }
       .gallery-area .gallery-carousel div.selected {
         -webkit-transform: translate3D(0, 0, 0);
                 transform: translate3D(0, 0, 0); }
@@ -9045,7 +9045,7 @@ footer {
           background-color: rgba(0, 0, 0, 0.7);
           z-index: 6;
           opacity: 0;
-          transition: opacity 1.5s ease-in-out; }
+          transition: opacity 0.7s ease-in-out; }
       .gallery-area .gallery-carousel div.prev, .gallery-area .gallery-carousel div.next {
         z-index: 5; }
       .gallery-area .gallery-carousel div.prevLeft, .gallery-area .gallery-carousel div.nextRight {
