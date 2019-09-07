@@ -8826,6 +8826,9 @@ footer {
       letter-spacing: -0.39px;
       -ms-flex-item-align: center;
           align-self: center; }
+      @media (min-width: 992px) {
+        .announce-container input[type="text"] {
+          padding-left: 10%; } }
       @media (max-width: 991.98px) {
         .announce-container input[type="text"] {
           padding-left: 20%; } }

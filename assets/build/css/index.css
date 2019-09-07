@@ -9149,12 +9149,61 @@ footer {
   .team-area .scrolling-wrapper .photo {
     margin-left: auto;
     margin-right: auto;
-    width: 1171px;
-    height: 512px;
-    background-image: url(../img/copy.png);
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat; }
+    width: 1202px;
+    max-width: 1171px;
+    height: 560px;
+    position: relative; }
+    .team-area .scrolling-wrapper .photo:hover img {
+      -webkit-filter: brightness(50%);
+              filter: brightness(50%); }
+    .team-area .scrolling-wrapper .photo img {
+      position: absolute;
+      cursor: pointer;
+      transition: all .4s ease-in-out; }
+      .team-area .scrolling-wrapper .photo img:hover {
+        -webkit-filter: brightness(100%);
+                filter: brightness(100%);
+        -webkit-transform: scale(1.05);
+                transform: scale(1.05); }
+      .team-area .scrolling-wrapper .photo img.img-1 {
+        z-index: 10;
+        bottom: 12px; }
+      .team-area .scrolling-wrapper .photo img.img-2 {
+        z-index: 5;
+        bottom: 28px;
+        left: 45px; }
+      .team-area .scrolling-wrapper .photo img.img-3 {
+        z-index: 10;
+        bottom: 4px;
+        left: 185px; }
+      .team-area .scrolling-wrapper .photo img.img-4 {
+        z-index: 5;
+        bottom: 23px;
+        left: 273px; }
+      .team-area .scrolling-wrapper .photo img.img-5 {
+        z-index: 10;
+        bottom: 8px;
+        left: 404px; }
+      .team-area .scrolling-wrapper .photo img.img-6 {
+        z-index: 5;
+        bottom: 20px;
+        right: 417px; }
+      .team-area .scrolling-wrapper .photo img.img-7 {
+        z-index: 10;
+        bottom: 11px;
+        right: 370px; }
+      .team-area .scrolling-wrapper .photo img.img-8 {
+        z-index: 5;
+        bottom: 20px;
+        right: 203px; }
+      .team-area .scrolling-wrapper .photo img.img-9 {
+        z-index: 10;
+        bottom: 11px;
+        right: 111px; }
+      .team-area .scrolling-wrapper .photo img.img-10 {
+        z-index: 5;
+        bottom: 20px;
+        right: -24px; }
 
 .team-area .caption-block {
   max-width: 1100px;

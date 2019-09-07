@@ -254,6 +254,10 @@
       letter-spacing: -0.39px;
       align-self: center;
 
+      @include media-breakpoint-up(lg) {
+        padding-left: 10%;
+      }
+
       @include media-breakpoint-down(md) {
         padding-left: 20%;
       }
