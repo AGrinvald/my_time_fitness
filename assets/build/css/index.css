@@ -8476,11 +8476,11 @@ footer {
     .banner-area .container-fluid::before {
       content: "";
       position: absolute;
-      right: 0;
-      bottom: -2px;
-      height: 703px;
-      width: 420px;
-      background: url(../img/rectangle-copy-15.svg);
+      right: 9px;
+      top: -193px;
+      height: 248px;
+      width: 254px;
+      background: url(../img/group-3-copy-7.svg);
       background-repeat: no-repeat;
       background-size: auto 100%;
       background-position: center center;
@@ -8489,10 +8489,10 @@ footer {
       content: "";
       position: absolute;
       left: 0;
-      bottom: 0;
-      height: 651px;
-      width: 427px;
-      background: url(../img/rectangle-copy-14.svg);
+      top: -142px;
+      height: 279px;
+      width: 426px;
+      background-image: url(../img/group-3-copy-8.svg);
       background-repeat: no-repeat;
       background-size: auto 100%;
       background-position: center center;
@@ -8518,15 +8518,15 @@ footer {
   .banner-area .owl-nav {
     position: absolute;
     text-align: center;
-    bottom: 5%;
-    width: 100%; }
+    width: 100%;
+    bottom: 0; }
     .banner-area .owl-nav button.owl-prev, .banner-area .owl-nav button.owl-next {
       width: 58px;
       height: 58px;
       cursor: pointer;
       background-position: center center;
       background-repeat: no-repeat;
-      margin: 12px; }
+      margin: 12px 12px 24px 12px; }
     .banner-area .owl-nav button.owl-prev {
       background-image: url(../img/group-copy-7@1x.png); }
     .banner-area .owl-nav button.owl-next {
@@ -8582,16 +8582,19 @@ footer {
         margin-bottom: 100px; } }
 
 .banner-area .owl-carousel .owl-item img {
+  width: auto; }
+
+.banner-area .owl-carousel .owl-item img.card-img {
   display: block;
   position: relative;
   -webkit-animation: floating 6s infinite ease-in-out;
           animation: floating 6s infinite ease-in-out; }
   @media (min-width: 992px) {
-    .banner-area .owl-carousel .owl-item img {
+    .banner-area .owl-carousel .owl-item img.card-img {
       max-width: 520px;
       width: 100%; } }
   @media (max-width: 991.98px) {
-    .banner-area .owl-carousel .owl-item img {
+    .banner-area .owl-carousel .owl-item img.card-img {
       max-width: 390px;
       width: 100%; } }
 
@@ -8630,7 +8633,51 @@ footer {
             transform: translate(0, 0px); } }
 
 .banner-area .bg-img-1 {
-  background-image: url(../img/3-copy@1x.png); }
+  background-image: url(../img/3-copy@1x.png);
+  position: relative; }
+  @media only screen and (min-width: 1850px) {
+    .banner-area .bg-img-1::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -1px;
+      height: 510px;
+      width: 420px;
+      background: url(../img/rectangle-copy-15.svg);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center center;
+      z-index: 2; }
+    .banner-area .bg-img-1::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 510px;
+      width: 427px;
+      background: url(../img/rectangle-copy-14.svg);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center center;
+      z-index: 2; } }
+
+.banner-area .bg-img-2 {
+  background-image: url(../img/group-3.jpg); }
+  .banner-area .bg-img-2 img {
+    position: relative;
+    bottom: -4px; }
+
+.banner-area .bg-img-3 {
+  background-image: url(../img/group-4.jpg); }
+
+.banner-area .bg-img-4 {
+  background-image: url(../img/group-5.jpg); }
+
+.banner-area .bg-img-5 {
+  background-image: url(../img/group-6.jpg); }
+
+.banner-area .bg-img-6 {
+  background-image: url(../img/group-7.jpg); }
 
 /* BANNER AREA END*/
 /* FEATURES AREA START*/
@@ -8794,7 +8841,7 @@ footer {
       content: "";
       position: absolute;
       left: -33%;
-      top: -45%;
+      top: -53%;
       height: 640px;
       width: 354px;
       background: url(../img/group.svg);
@@ -8837,29 +8884,35 @@ footer {
       font-weight: 300;
       letter-spacing: -0.39px; } }
 
-.signup-area .signup-slides::before {
-  content: "";
-  background-color: #aacc23;
-  position: absolute;
-  width: 85%;
-  height: 91%;
-  left: 5%;
-  bottom: 5%;
-  z-index: -1; }
+.signup-area .carousel-container {
+  width: 80%;
+  position: relative; }
+  @media (min-width: 992px) {
+    .signup-area .carousel-container {
+      margin-left: auto; } }
+  @media (max-width: 991.98px) {
+    .signup-area .carousel-container {
+      margin-left: auto;
+      margin-right: auto; } }
+  .signup-area .carousel-container::before {
+    content: "";
+    background-color: #aacc23;
+    position: absolute;
+    width: 99%;
+    height: 94%;
+    left: -5%;
+    top: 8%;
+    z-index: -1; }
 
-.signup-area .signup-slides .slide {
-  padding-left: 5%;
-  padding-right: 5%; }
-  .signup-area .signup-slides .slide .inner {
-    position: relative;
-    padding-left: 5%;
-    padding-bottom: 5%; }
-    .signup-area .signup-slides .slide .inner img {
-      z-index: 9999; }
+.signup-area .signup-slides .slide .inner {
+  position: relative; }
+  .signup-area .signup-slides .slide .inner img {
+    z-index: 9999; }
 
 .signup-area .signup-slides .owl-nav {
   position: absolute;
-  width: 100%;
+  width: 110%;
+  left: -5%;
   top: 40%;
   display: -ms-flexbox;
   display: flex;
@@ -9117,7 +9170,7 @@ footer {
 /* PROMO AREA END */
 /* TEAM AREA START */
 .team-area .team-container {
-  height: 900px;
+  height: 950px;
   background: linear-gradient(to bottom, #fefeff 0%, #fefeff 22%, #b5b8bf 45%, #4f565c 69%, #3c444a 78%, #3c444a 79%, #646c7b 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefeff', endColorstr='#646c7b', GradientType=0 ); }
 
@@ -9156,6 +9209,28 @@ footer {
     .team-area .scrolling-wrapper .photo:hover img {
       -webkit-filter: brightness(50%);
               filter: brightness(50%); }
+    .team-area .scrolling-wrapper .photo .dasha-shadow {
+      position: absolute;
+      right: 107px;
+      bottom: 12px;
+      height: 91px;
+      width: 158px;
+      background: url(../img/dasha-shadow.png);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center center;
+      z-index: 1; }
+    .team-area .scrolling-wrapper .photo .alena-shadow {
+      position: absolute;
+      left: 18px;
+      bottom: 14px;
+      height: 106px;
+      width: 118px;
+      background: url(../img/alena-shadow.png);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center center;
+      z-index: 1; }
     .team-area .scrolling-wrapper .photo img {
       position: absolute;
       cursor: pointer;
@@ -9199,14 +9274,14 @@ footer {
       .team-area .scrolling-wrapper .photo img.img-9 {
         z-index: 10;
         bottom: 11px;
-        right: 111px; }
+        right: 156px; }
       .team-area .scrolling-wrapper .photo img.img-10 {
         z-index: 5;
         bottom: 20px;
         right: -24px; }
 
 .team-area .caption-block {
-  max-width: 1100px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 60px; }
@@ -9233,7 +9308,7 @@ footer {
       color: #ffffff; }
       @media (min-width: 768px) {
         .team-area .caption-block .caption .caption-text {
-          font-size: 24px;
+          font-size: 22px;
           width: 345px; } }
       @media (max-width: 767.98px) {
         .team-area .caption-block .caption .caption-text {

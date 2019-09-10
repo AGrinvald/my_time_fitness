@@ -8821,7 +8821,7 @@ nav.navbar {
         -webkit-animation: spin 10s linear infinite;
                 animation: spin 10s linear infinite; } }
   .season-area .season-item:hover {
-    box-shadow: 0 0 16px 0 rgba(134, 238, 49, 0.61);
+    box-shadow: 0 0 16px 0 rgba(89, 192, 203, 0.61);
     text-decoration: none; }
   @media (min-width: 1200px) {
     .season-area .season-item {
