@@ -1,0 +1,45 @@
+/* PROMO MODAL START*/
+#promo-modal {
+
+  .modal-responsive {
+    max-width: 680px;
+  }
+
+  .modal-content {
+    border: none;
+    background-color: $white;
+    background-image: url(../img/555-copy-7.png);
+    background-position: left top;
+    background-repeat: no-repeat;
+    min-height: 608px;
+  }
+
+  .form-row >.col, .form-row>[class*=col-] {
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+
+  .promo-form {
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    .custom-input-group {
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 0.54px;
+    }
+    
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+  
+}
+/* PROMO MODAL END*/
