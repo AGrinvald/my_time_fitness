@@ -601,8 +601,8 @@
         <div class="announce-container container-fluid">
             <div class="inner">
             </div>
-            <div class="container d-flex align-items-center">
-                <div class="text-center d-flex flex-column">
+            <div class="container d-flex align-items-center announce-block">
+                <div class="text-center h-95 d-flex flex-column">
                     <div class="d-flex h-60 flex-column justify-content-between mt-10">
                         <h3>
                             ПЕРВЫЙ ВИЗИТ - ЗА НАШ СЧЕТ!
@@ -614,31 +614,30 @@
                             Посещение ни к чему не обязывает. Инструктор по твоему желанию проведет
                             экскурсию по тренажерному залу и использованию оборудования.
                         </p>
-                        <form class="d-flex flex-column flex-lg-row">
+                        <form id="announceForm" class="d-flex flex-column flex-lg-row">
                             <div class="input-group white">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">1</span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Введите Ваше имя"
-                                    aria-label="Username">
+                                <input id="announceName" type="text" class="form-control" placeholder="Введите Ваше имя"
+                                    aria-label="Username" required>
                             </div>
                             <div class="input-group white">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">2</span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Введите Ваш телефон"
-                                    aria-label="Phone">
+                                <input id="announcePhone" type="tel" class="form-control"
+                                    placeholder="Введите Ваш телефон" aria-label="Phone" required>
                             </div>
                             <div class="input-group primary">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">3</span>
                                 </div>
-                                <input type="button" data-next="signup-confirm.html" class="form-control signup-btn"
-                                    value="ЗАПИСАТЬСЯ">
+                                <input type="button" id="signupFormBtn" data-next="announce-confirm.html"
+                                    class="form-control signup-btn" value="ЗАПИСАТЬСЯ">
                             </div>
                         </form>
                     </div>
-
                     <p class="rules mt-auto">
                         Нажимая на кнопку "Записаться", Вы соглашаетесь с <a href="#" class="text-primary">правилами
                             обработки персональных данных.</a>

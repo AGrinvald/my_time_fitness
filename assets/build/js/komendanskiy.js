@@ -21895,7 +21895,33 @@ function galleryReset() {
     nextSecond.css('top', '');
 }
 
+function announceNextClick() {
+    let name = document.getElementById("announceName"); 
+    let phone = document.getElementById("announcePhone"); 
+
+    if (!name.checkValidity()) {
+        name.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $(".announce-block").html(html);
+        });
+    }
+}
+
 $(function () {
+
+    $('#signupFormBtn').bind("click", announceNextClick);
 
     $('.gallery-area button.prev-btn').click(function () {
         moveToSelected('prev');

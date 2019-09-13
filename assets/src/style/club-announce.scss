@@ -140,7 +140,7 @@
     position: relative;
     z-index: 6;
 
-    > div {
+    .h-95 {
       height: 95%;
     }
 
@@ -239,6 +239,7 @@
       }
     }
   }
+
   input {
     color: $black;
 
@@ -248,7 +249,7 @@
       letter-spacing: 0.8px;
     }
 
-    &[type="text"] {
+    &[type="tel"] {
       font-size: 18px;
       font-weight: 300;
       letter-spacing: -0.39px;

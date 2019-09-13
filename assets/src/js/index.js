@@ -166,7 +166,7 @@ function init() {
         }
 
         // console.log(map.getZoom());
-        console.log(map.getCenter());
+        //console.log(map.getCenter());
     });
 
     ymaps.geoQuery(komendanskiy).addToMap(map);
