@@ -1,21 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="596" height="322" viewBox="0 0 596 322">
+<svg xmlns="http://www.w3.org/2000/svg" width="552" height="282" viewBox="0 0 552 282">
     <defs>
-        <linearGradient id="c" x1="79.982%" x2="50%" y1="41.284%" y2="59.737%">
-            <stop offset="0%" stop-color="#DAFF04"/>
-            <stop offset="100%" stop-color="#D4F316"/>
-        </linearGradient>
-        <path id="b" d="M536 42c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v5c-2.761 0-5 2.015-5 4.5s2.239 4.5 5 4.5v13a6 6 0 0 1-6 6H14a6 6 0 0 1-6-6v-13c2.746 0 4.972-2.015 4.972-4.5S10.746 224 8 224v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 210 8 210v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 196 8 196v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 182 8 182v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 168 8 168v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 154 8 154v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 140 8 140v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 126 8 126v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 112 8 112v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 98 8 98v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 84 8 84v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 70 8 70v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 56 8 56v-5c2.746 0 4.972-2.015 4.972-4.5S10.746 42 8 42V25a6 6 0 0 1 6-6h516a6 6 0 0 1 6 6v17z"/>
-        <filter id="a" width="115.9%" height="136.1%" x="-8%" y="-18%" filterUnits="objectBoundingBox">
+        <filter id="a" width="111.3%" height="123.3%" x="-5.7%" y="-11.7%" filterUnits="objectBoundingBox">
             <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
-            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="14"/>
-            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.184780111 0 0 0 0 0.276154891 0 0 0 0 0 0 0 0 1 0"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="7.5"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.171465253 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
         </filter>
     </defs>
-    <g fill="none" fill-rule="evenodd" transform="translate(26 25)">
-        <g transform="rotate(-4 272 135.5)">
-            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
-            <use fill="url(#c)" xlink:href="#b"/>
-        </g>
-        <rect width="496" height="208" x="22.968" y="31.071" fill="#FFF" rx="7" transform="rotate(-4 270.968 135.071)"/>
+    <g fill="none" fill-rule="evenodd" filter="url(#a)" transform="translate(15 15)">
+        <path fill="#96BC00" d="M82.084 0c0 9.586 7.76 17.358 17.334 17.358v217.307c-9.574 0-17.334 7.771-17.334 17.357H13.45c-.07 0-.139-.115-.206-.341C5.703 250.058 0 242.662 0 233.79V18.209C0 9.335 5.705 1.938 13.248.326 13.313.11 13.38 0 13.447 0z"/>
+        <path fill="#FFF" d="M522 95.475v-83.6C522 5.314 516.673 0 510.1 0H116.394c0 9.585-7.788 17.356-17.395 17.356v217.288c9.607 0 17.395 7.77 17.395 17.356H510.1c6.574 0 11.901-5.315 11.901-11.874v-83.6-61.051z"/>
     </g>
 </svg>

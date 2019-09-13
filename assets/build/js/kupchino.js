@@ -21895,6 +21895,25 @@ function galleryReset() {
     nextSecond.css('top', '');
 }
 
+function couponNextClick() {
+    let phone = document.getElementById("couponPhone"); 
+
+    if (!phone.checkValidity()) {
+        phone.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (phone.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $(".banner-area .promo-block .inner").html(html);
+        });
+    }
+}
+
 function announceNextClick() {
     let name = document.getElementById("announceName"); 
     let phone = document.getElementById("announcePhone"); 
@@ -21922,6 +21941,7 @@ function announceNextClick() {
 $(function () {
 
     $('#signupFormBtn').bind("click", announceNextClick);
+    $('#couponFormBtn').bind("click", couponNextClick);
     
     $('.gallery-area button.prev-btn').click(function () {
         moveToSelected('prev');
