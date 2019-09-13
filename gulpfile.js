@@ -22,7 +22,9 @@ var path = {
   src: {
     html: 'assets/src/*.html',
     js: ['assets/src/js/index.js', 'assets/src/js/akademicheskaya.js', 
-    'assets/src/js/kids.js', 'assets/src/js/kupchino.js', 'assets/src/js/komendanskiy.js', 'assets/src/js/promotions.js' ],
+    'assets/src/js/kids.js', 'assets/src/js/kupchino.js', 
+    'assets/src/js/komendanskiy.js', 'assets/src/js/promotions.js',
+    'assets/src/js/sale.js' ],
     style: ['assets/src/style/index.scss', 'assets/src/style/akademicheskaya.scss',
     'assets/src/style/komendanskiy.scss', 'assets/src/style/kupchino.scss', 
     'assets/src/style/kids.scss', 'assets/src/style/promotions.scss', 'assets/src/style/sale.scss'],

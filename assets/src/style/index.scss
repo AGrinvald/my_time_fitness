@@ -634,6 +634,17 @@ nav {
 }
 
 .signup-form {
+
+  height: 100%;
+  max-width: 340px;
+  font-size: 16px;
+  font-weight: 300;
+
+  @include media-breakpoint-down(md) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .subtitle {
     font-weight: 300;
     line-height: 1.43;
@@ -647,108 +658,12 @@ nav {
       font-size: 26px;
       letter-spacing: -0.56px;
     }
-
-  }
-
-  .input-group>.custom-select:not(:first-child), .input-group>.form-control:not(:first-child) {
-    border-radius: 28px;
-  }
-
-  height: 100%;
-  max-width: 340px;
-
-  @include media-breakpoint-down(md) {
-      margin-left: auto;
-      margin-right: auto;
-  }
-
-  font-size: 16px;
-  font-weight: 300;
-
-  .btn-rounded {
-    font-size: 16px;
-    letter-spacing: 0.8px;
-    font-weight: bold;
   }
 
   .form-row >.col, .form-row>[class*=col-] {
     padding-right: 3px;
     padding-left: 3px;
   }
-
-  .input-group {
-    border-radius: 28px;
-    position: relative;
-    height: 56px;
-
-    .input-group-prepend {
-      position: absolute;
-      overflow: hidden;
-      z-index: 1000;
-      height: 100%;
-    }
-
-    .input-group-text {
-      border-radius: 50%;
-      font-size: 36px;
-      font-weight: 500;
-      letter-spacing: 0.75px;
-      padding: 0 14px;
-      margin-right: 2px;
-      margin-top: 2px;
-      margin-bottom: 2px;
-    }
-
-    &.primary {
-      background-color: $primary;
-      border: solid 1px $black;
-
-      .input-group-text {
-        background-color: $primary;
-        border: solid 1px $black;
-        color: $black;
-      }
-
-      input {
-        background-color: $primary;
-      }
-    }
-
-    &.white {
-      color: $primary;
-      border: solid 1px $primary;
-
-      .input-group-text {
-        border: solid 1px $primary;
-        color: $primary;
-        background-color: $white;
-      }
-    }
-
-  }
-  input {
-    color: $black;
-    &[type="button"] {
-      font-size: 16px;
-      font-weight: bold;
-      letter-spacing: 0.8px;
-    }
-
-    &[type="text"] {
-      font-size: 18px;
-      font-weight: 300;
-      letter-spacing: -0.39px;
-      align-self: center;
-    }
-
-    height: 52px;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 27%;
-    text-align: center;
-  }
-
-  input[type="button"]{ text-align:center; }
 }
 /* SIGNUP AREA END */
 

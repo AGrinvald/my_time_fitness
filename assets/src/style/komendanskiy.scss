@@ -236,9 +236,9 @@ nav.navbar {
                 background-repeat: no-repeat;
                 background-position: center;
                 display: flex;
-                
+                background-image: url(../img/group-4.png);
+
                 @include media-breakpoint-down(lg) {
-                    background-image: url(../img/group-4.svg);
                     height: 235px;
                     max-width: 355px;
                     margin-left: auto;
@@ -248,7 +248,6 @@ nav.navbar {
                 }
 
                 @include media-breakpoint-up(xl) {
-                    background-image: url(../img/group-4.svg);
                     position: absolute;
                     right: 76px;
                     bottom: -131px;

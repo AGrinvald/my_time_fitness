@@ -193,7 +193,7 @@ function signupModalNextClick() {
         url: next,
         dataType: 'html'
     }).done(function (html) {
-        $("#signup-modal .signup-form ").html(html);
+        $("#signup-modal .modal-body").html(html);
         $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
     });
 }

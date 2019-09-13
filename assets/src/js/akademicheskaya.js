@@ -260,8 +260,8 @@ function galleryReset() {
 }
 
 function announceNextClick() {
-    let name = document.getElementById("announceName"); 
-    let phone = document.getElementById("announcePhone"); 
+    var name = document.getElementById("announceName"); 
+    var phone = document.getElementById("announcePhone"); 
 
     if (!name.checkValidity()) {
         name.setAttribute("style", "background-color: #FFDBDC");
@@ -285,7 +285,7 @@ function announceNextClick() {
 
 
 function couponNextClick() {
-    let phone = document.getElementById("couponPhone"); 
+    var phone = document.getElementById("couponPhone"); 
 
     if (!phone.checkValidity()) {
         phone.setAttribute("style", "background-color: #FFDBDC");
