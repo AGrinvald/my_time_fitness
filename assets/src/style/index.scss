@@ -396,10 +396,11 @@ nav {
       align-items: center;
       background-color: #f3f3f3;
       border-radius: 0 20px 0 20px;
-      perspective: 800px;
-      
+
       .number {
         display: block;
+        perspective: 800px;
+        perspective-origin: 50% 50%;
         > div {
           display: block;
         }

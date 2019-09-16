@@ -8867,11 +8867,13 @@ footer {
     -ms-flex-align: center;
         align-items: center;
     background-color: #f3f3f3;
-    border-radius: 0 20px 0 20px;
-    -webkit-perspective: 800px;
-            perspective: 800px; }
+    border-radius: 0 20px 0 20px; }
     .features-area .feature .inner .number {
-      display: block; }
+      display: block;
+      -webkit-perspective: 800px;
+              perspective: 800px;
+      -webkit-perspective-origin: 50% 50%;
+              perspective-origin: 50% 50%; }
       .features-area .feature .inner .number > div {
         display: block; }
     .features-area .feature .inner .number-2 {
