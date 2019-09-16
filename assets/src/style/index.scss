@@ -415,27 +415,37 @@ nav {
       //@include media-breakpoint-up(lg) {
         .number-1 {
           > div {
-            animation: numberRotation 7s infinite linear;
+            animation-name: numberRotation;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
           }
         }
         
         .number-2 {
           > div {
-            animation: numberRotation 7s 9s infinite linear;
+            animation-name: numberRotation;
+            animation-duration: 7s;
+            animation-delay: 8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
           }
         }
 
         .number-3 {
           > div {
-            animation: numberRotation 7s 18s infinite linear;
+            animation-name: numberRotation;
+            animation-duration: 7s;
+            animation-delay: 16s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
           }
         }
       //}
 
       @keyframes numberRotation {
-        0% {transform: rotate3d(0,1,0,0deg);}
-        20% {transform: rotate3d(0,1,0,360deg);}
-        100% {transform: rotate3d(0,1,0,0deg);}
+        0%, 40% {transform: rotate3d(0,1,0,0deg);}
+        60%, 100%   {transform: rotate3d(0,1,0,360deg);}
       }
 
       &::before {

@@ -8879,36 +8879,52 @@ footer {
     .features-area .feature .inner .number-3 {
       padding-right: 10px; }
     .features-area .feature .inner .number-1 > div {
-      -webkit-animation: numberRotation 7s infinite linear;
-              animation: numberRotation 7s infinite linear; }
+      -webkit-animation-name: numberRotation;
+              animation-name: numberRotation;
+      -webkit-animation-duration: 7s;
+              animation-duration: 7s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+              animation-timing-function: linear; }
     .features-area .feature .inner .number-2 > div {
-      -webkit-animation: numberRotation 7s 9s infinite linear;
-              animation: numberRotation 7s 9s infinite linear; }
+      -webkit-animation-name: numberRotation;
+              animation-name: numberRotation;
+      -webkit-animation-duration: 7s;
+              animation-duration: 7s;
+      -webkit-animation-delay: 8s;
+              animation-delay: 8s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+              animation-timing-function: linear; }
     .features-area .feature .inner .number-3 > div {
-      -webkit-animation: numberRotation 7s 18s infinite linear;
-              animation: numberRotation 7s 18s infinite linear; }
+      -webkit-animation-name: numberRotation;
+              animation-name: numberRotation;
+      -webkit-animation-duration: 7s;
+              animation-duration: 7s;
+      -webkit-animation-delay: 16s;
+              animation-delay: 16s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+              animation-timing-function: linear; }
 
 @-webkit-keyframes numberRotation {
-  0% {
+  0%, 40% {
     -webkit-transform: rotate3d(0, 1, 0, 0deg);
             transform: rotate3d(0, 1, 0, 0deg); }
-  20% {
+  60%, 100% {
     -webkit-transform: rotate3d(0, 1, 0, 360deg);
-            transform: rotate3d(0, 1, 0, 360deg); }
-  100% {
-    -webkit-transform: rotate3d(0, 1, 0, 0deg);
-            transform: rotate3d(0, 1, 0, 0deg); } }
+            transform: rotate3d(0, 1, 0, 360deg); } }
 
 @keyframes numberRotation {
-  0% {
+  0%, 40% {
     -webkit-transform: rotate3d(0, 1, 0, 0deg);
             transform: rotate3d(0, 1, 0, 0deg); }
-  20% {
+  60%, 100% {
     -webkit-transform: rotate3d(0, 1, 0, 360deg);
-            transform: rotate3d(0, 1, 0, 360deg); }
-  100% {
-    -webkit-transform: rotate3d(0, 1, 0, 0deg);
-            transform: rotate3d(0, 1, 0, 0deg); } }
+            transform: rotate3d(0, 1, 0, 360deg); } }
     .features-area .feature .inner::before {
       content: "";
       position: absolute;
