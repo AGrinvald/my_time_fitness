@@ -21907,6 +21907,7 @@ $(function () {
         loop: true,
         mouseDrag: false,
         autoplay: true,
+        autoplaySpeed:1000,
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         responsive: {
