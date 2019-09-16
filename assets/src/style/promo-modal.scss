@@ -3,6 +3,10 @@
 
   .modal-responsive {
     max-width: 680px;
+
+    @include media-breakpoint-down(sm) {
+      height: 100%;
+    }
   }
 
   .modal-content {
