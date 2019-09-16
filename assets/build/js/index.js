@@ -21902,7 +21902,7 @@ $(function () {
         $("#promo-modal .promo-btn").bind("click", promoNextClick);
     });
 
-    $('.banner-slides').owlCarousel({
+    var owl = $('.banner-slides').owlCarousel({
         items: 1,
         loop: true,
         mouseDrag: false,
@@ -21922,6 +21922,8 @@ $(function () {
         },
         navText: ["", ""]
     });
+
+    owl.trigger('play.owl.autoplay',[3000])
 
     $('.features').owlCarousel({
         mouseDrag: false,
