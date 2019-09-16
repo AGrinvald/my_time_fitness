@@ -16,7 +16,6 @@
       <div class="h-top d-none d-lg-block">
           <div class="inner"></div>
           <div class="container text-center h-100">
-          <!-- <img class="hexagon" src="img/path-copy-22.svg" alt="hexagon"> -->
               <div class="b-center">
                   <a href="index.html" class="logo">mytime<span class="text-primary">fitness</span></a>
               </div>
@@ -657,20 +656,20 @@
     <div class="modal-dialog modal-xl h-100" role="document">
       <div class="modal-content h-100">
         <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close d-block d-md-none" data-dismiss="modal" aria-label="Close">
               <img srcset="img/cancel@1x.png 23w,
                                 img/cancel@2x.png 46w,
                                 img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
           </button>
           <div class="signup-form">
               <h3 class="text-primary text-center mt-5 mt-lg-0 mb-5 subtitle">Запись на просмотр клуба</h3>
-              <form>
+              <form class="signup-form-validation">
                   <div class="form-row">
                       <div class="input-group custom-input-group white mb-3 col-12">
                           <div class="input-group-prepend">
                               <span class="input-group-text">1</span>
                           </div>
-                          <input type="text" class="form-control" placeholder="Введите Ваше имя" aria-label="Username">
+                          <input type="text" class="form-control" id="signupName" placeholder="Введите Ваше имя" aria-label="Username" required>
                       </div>
                   </div>
                   <div class="form-row">
@@ -678,7 +677,7 @@
                           <div class="input-group-prepend">
                               <span class="input-group-text">2</span>
                           </div>
-                          <input type="text" class="form-control" placeholder="Введите Ваш телефон" aria-label="Phone">
+                          <input type="tel" class="form-control" id="signupPhone" placeholder="Введите Ваш телефон" aria-label="Phone" required>
                       </div>
                   </div>
                   <div class="form-row">

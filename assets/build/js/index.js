@@ -21749,29 +21749,29 @@ function init() {
 
     var kupchino = new ymaps.Placemark(
         [59.82853206432565, 30.39268299999999], {
-            id: 2,
-            hintContent: 'Санкт-Петербург м.Купчино, ул. Олеко Дундича 10/2, 1 этаж'
-        }, {
-            iconLayout: createLayout(2)
-        }
+        id: 2,
+        hintContent: 'Санкт-Петербург м.Купчино, ул. Олеко Дундича 10/2, 1 этаж'
+    }, {
+        iconLayout: createLayout(2)
+    }
     );
 
     var komendanskiy = new ymaps.Placemark(
         [60.00816706410207, 30.2457365], {
-            id: 0,
-            hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
-        }, {
-            iconLayout: createLayout(0)
-        }
+        id: 0,
+        hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
+    }, {
+        iconLayout: createLayout(0)
+    }
     );
 
     var akademicheskaya = new ymaps.Placemark(
         [60.01065856407727, 30.403732499999954], {
-            id: 1,
-            hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
-        }, {
-            iconLayout: createLayout(1)
-        }
+        id: 1,
+        hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
+    }, {
+        iconLayout: createLayout(1)
+    }
     );
 
     map.controls.remove('geolocationControl');
@@ -21801,9 +21801,6 @@ function init() {
         if (toChange) {
             map.setCenter(mapSettings.center, mapSettings.zoom);
         }
-
-        // console.log(map.getZoom());
-        //console.log(map.getCenter());
     });
 
     ymaps.geoQuery(komendanskiy).addToMap(map);
@@ -21821,18 +21818,45 @@ function signupNextClick() {
         $(".signup-container").html(html);
         $(".signup-btn").bind("click", signupNextClick);
     });
+    
 }
 
 function signupModalNextClick() {
     var next = $(this).data("next");
+    var formToValidate = $(".signup-form-validation");
 
-    $.ajax({
-        url: next,
-        dataType: 'html'
-    }).done(function (html) {
-        $("#signup-modal .modal-body").html(html);
-        $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
-    });
+    if(formToValidate) {
+        var name = document.getElementById("signupName"); 
+        var phone = document.getElementById("signupPhone"); 
+    
+        if (!name.checkValidity()) {
+            name.setAttribute("style", "background-color: #FFDBDC");
+        }
+    
+        if (!phone.checkValidity()) {
+            phone.setAttribute("style", "background-color: #FFDBDC");
+        }
+
+        if (name.checkValidity() && phone.checkValidity()) {
+            var next = $(this).data("next");
+    
+            $.ajax({
+                url: next,
+                dataType: 'html'
+            }).done(function (html) {
+                $("#signup-modal .modal-body").html(html);
+                $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
+            });
+        }
+    } else {
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $("#signup-modal .modal-body").html(html);
+            $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
+        });
+    }
 }
 
 $(function () {
