@@ -4562,15 +4562,15 @@ a.close.disabled {
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 100%;
-    margin: 1px auto; }
+    margin: 0.01px auto; }
   .modal-dialog-scrollable {
-    max-height: calc(100% - 2px); }
+    max-height: calc(100% - 0.02px); }
     .modal-dialog-scrollable .modal-content {
-      max-height: calc(100vh - 2px); }
+      max-height: calc(100vh - 0.02px); }
   .modal-dialog-centered {
-    min-height: calc(100% - 2px); }
+    min-height: calc(100% - 0.02px); }
     .modal-dialog-centered::before {
-      height: calc(100vh - 2px); }
+      height: calc(100vh - 0.02px); }
   .modal-sm {
     max-width: 100%; } }
 
