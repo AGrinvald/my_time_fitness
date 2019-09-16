@@ -7860,7 +7860,7 @@ h2.title {
       background-color: #ffffff; }
   .custom-input-group input {
     color: #000000;
-    height: 55px;
+    height: 52px;
     background-color: #ffffff;
     border: none;
     border-radius: 27%;
@@ -8418,6 +8418,9 @@ nav.navbar {
 
 .promotions-area .mb-110 {
   margin-bottom: 110px; }
+
+.promotions-area a:hover, .promotions-area a:focus {
+  text-decoration: none; }
 
 .promotions-area .promo-container {
   margin-bottom: 50px;

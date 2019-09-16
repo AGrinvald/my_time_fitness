@@ -143,6 +143,12 @@ nav.navbar {
     margin-bottom: 110px;
   }
   
+  a {
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+
   .promo-container {
     margin-bottom: 50px;
     display: flex;

@@ -7860,7 +7860,7 @@ h2.title {
       background-color: #ffffff; }
   .custom-input-group input {
     color: #000000;
-    height: 55px;
+    height: 52px;
     background-color: #ffffff;
     border: none;
     border-radius: 27%;
@@ -8446,11 +8446,13 @@ nav.navbar {
     text-decoration: underline; }
 
 /* BANNER AREA END*/
-/* Promo-area AREA END*/
+/* PROMO AREA START*/
 .promo-area h4 {
   font-size: 24px;
   font-weight: 300;
   color: #000000; }
+  .promo-area h4 b {
+    font-weight: 600; }
 
 .promo-area p {
   font-size: 18px;
@@ -8481,3 +8483,5 @@ nav.navbar {
     background-image: url(../img/group-copy-7@1x.png); }
   .promo-area .arrow-btn.btn-next {
     background-image: url(../img/group-copy-6@1x.png); }
+
+/* PROMO AREA END*/

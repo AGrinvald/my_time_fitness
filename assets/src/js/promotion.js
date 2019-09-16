@@ -21,12 +21,32 @@
 function modalNextClick() {
     var next = $(this).data("next");
 
-    $.ajax({
-        url: next,
-        dataType: 'html'
-    }).done(function (html) {
-        $("#promo-modal .modal-body").html(html);
-    });
+    var name = document.getElementById("promoName"); 
+    var phone = document.getElementById("promoPhone"); 
+    var email = document.getElementById("promoEmail"); 
+
+    if (!name.checkValidity()) {
+        name.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!email.checkValidity()) {
+        email.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity() && email.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $("#promo-modal .modal-body").html(html);
+        });
+    }
 }
 
 $(function () {

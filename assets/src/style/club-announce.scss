@@ -210,6 +210,7 @@
       margin-right: 2px;
       margin-top: 2px;
       margin-bottom: 2px;
+      background-color: transparent;
     }
 
     &.primary {
@@ -217,7 +218,6 @@
       border: solid 1px $black;
 
       .input-group-text {
-        background-color: $primary;
         border: solid 1px $black;
         color: $black;
       }
@@ -235,7 +235,6 @@
       .input-group-text {
         border: solid 1px $primary;
         color: $primary;
-        background-color: $white;
       }
     }
   }

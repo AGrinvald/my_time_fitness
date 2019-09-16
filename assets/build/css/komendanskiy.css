@@ -8054,7 +8054,7 @@ h2.title {
       background-color: #ffffff; }
   .custom-input-group input {
     color: #000000;
-    height: 55px;
+    height: 52px;
     background-color: #ffffff;
     border: none;
     border-radius: 27%;
@@ -8858,12 +8858,12 @@ footer {
       padding: 0 14px;
       margin-right: 2px;
       margin-top: 2px;
-      margin-bottom: 2px; }
+      margin-bottom: 2px;
+      background-color: transparent; }
     .announce-container .input-group.primary {
       background-color: #aacc23;
       border: solid 1px #000000; }
       .announce-container .input-group.primary .input-group-text {
-        background-color: #aacc23;
         border: solid 1px #000000;
         color: #000000; }
       .announce-container .input-group.primary input {
@@ -8874,8 +8874,7 @@ footer {
       border: solid 1px #aacc23; }
       .announce-container .input-group.white .input-group-text {
         border: solid 1px #aacc23;
-        color: #aacc23;
-        background-color: #ffffff; }
+        color: #aacc23; }
   .announce-container input {
     color: #000000;
     height: 52px;
