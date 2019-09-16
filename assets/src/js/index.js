@@ -269,6 +269,9 @@ $(function () {
         items: 1,
         loop: true,
         mouseDrag: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
         responsive: {
             992: {
                 dots: false,

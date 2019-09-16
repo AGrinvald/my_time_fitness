@@ -4562,15 +4562,15 @@ a.close.disabled {
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 100%;
-    margin: 0.01px auto; }
+    margin: 0 auto; }
   .modal-dialog-scrollable {
-    max-height: calc(100% - 0.02px); }
+    max-height: calc(100% - 0); }
     .modal-dialog-scrollable .modal-content {
-      max-height: calc(100vh - 0.02px); }
+      max-height: calc(100vh - 0); }
   .modal-dialog-centered {
-    min-height: calc(100% - 0.02px); }
+    min-height: calc(100% - 0); }
     .modal-dialog-centered::before {
-      height: calc(100vh - 0.02px); }
+      height: calc(100vh - 0); }
   .modal-sm {
     max-width: 100%; } }
 
@@ -8238,6 +8238,10 @@ footer {
 
 /* FOOTER END */
 /* PROMO MODAL START*/
+@media (min-width: 992px) {
+  #promo-modal .modal-dialog-centered {
+    min-height: calc(100% - 1%); } }
+
 @media (max-width: 767.98px) {
   #promo-modal .modal-dialog {
     height: 100%; } }

@@ -1,5 +1,11 @@
 /* PROMO MODAL START*/
 #promo-modal {
+  .modal-dialog-centered {
+    @include media-breakpoint-up(lg) {
+      min-height: calc(100% - 1%);
+    }
+  }
+
   .modal-dialog {
     @include media-breakpoint-down(sm) {
       height: 100%;
