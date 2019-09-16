@@ -14,10 +14,6 @@
 
   .modal-responsive {
     max-width: 680px;
-
-    @include media-breakpoint-down(sm) {
-      height: 100%;
-    }
   }
 
   .modal-content {
@@ -27,6 +23,11 @@
     background-position: left top;
     background-repeat: no-repeat;
     min-height: 608px;
+
+    @include media-breakpoint-down(sm) {
+      height: 100%;
+    }
+
   }
 
   .form-row >.col, .form-row>[class*=col-] {

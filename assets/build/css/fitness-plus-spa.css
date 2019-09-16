@@ -8248,9 +8248,6 @@ footer {
 
 #promo-modal .modal-responsive {
   max-width: 680px; }
-  @media (max-width: 767.98px) {
-    #promo-modal .modal-responsive {
-      height: 100%; } }
 
 #promo-modal .modal-content {
   border: none;
@@ -8259,6 +8256,9 @@ footer {
   background-position: left top;
   background-repeat: no-repeat;
   min-height: 608px; }
+  @media (max-width: 767.98px) {
+    #promo-modal .modal-content {
+      height: 100%; } }
 
 #promo-modal .form-row > .col, #promo-modal .form-row > [class*=col-] {
   padding-right: 3px;
