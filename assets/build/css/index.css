@@ -8870,20 +8870,23 @@ footer {
     border-radius: 0 20px 0 20px;
     -webkit-perspective: 800px;
             perspective: 800px; }
+    .features-area .feature .inner .number {
+      display: block; }
+      .features-area .feature .inner .number > div {
+        display: block; }
     .features-area .feature .inner .number-2 {
       padding-right: 12px; }
     .features-area .feature .inner .number-3 {
       padding-right: 10px; }
-    @media (min-width: 992px) {
-      .features-area .feature .inner .number-1 > div {
-        -webkit-animation: numberRotation 7s infinite linear;
-                animation: numberRotation 7s infinite linear; }
-      .features-area .feature .inner .number-2 > div {
-        -webkit-animation: numberRotation 7s 9s infinite linear;
-                animation: numberRotation 7s 9s infinite linear; }
-      .features-area .feature .inner .number-3 > div {
-        -webkit-animation: numberRotation 7s 18s infinite linear;
-                animation: numberRotation 7s 18s infinite linear; } }
+    .features-area .feature .inner .number-1 > div {
+      -webkit-animation: numberRotation 7s infinite linear;
+              animation: numberRotation 7s infinite linear; }
+    .features-area .feature .inner .number-2 > div {
+      -webkit-animation: numberRotation 7s 9s infinite linear;
+              animation: numberRotation 7s 9s infinite linear; }
+    .features-area .feature .inner .number-3 > div {
+      -webkit-animation: numberRotation 7s 18s infinite linear;
+              animation: numberRotation 7s 18s infinite linear; }
 
 @-webkit-keyframes numberRotation {
   0% {
@@ -8893,8 +8896,8 @@ footer {
     -webkit-transform: rotate3d(0, 1, 0, 360deg);
             transform: rotate3d(0, 1, 0, 360deg); }
   100% {
-    -webkit-transform: rotate3d(0, 1, 0, 360deg);
-            transform: rotate3d(0, 1, 0, 360deg); } }
+    -webkit-transform: rotate3d(0, 1, 0, 0deg);
+            transform: rotate3d(0, 1, 0, 0deg); } }
 
 @keyframes numberRotation {
   0% {
@@ -8904,8 +8907,8 @@ footer {
     -webkit-transform: rotate3d(0, 1, 0, 360deg);
             transform: rotate3d(0, 1, 0, 360deg); }
   100% {
-    -webkit-transform: rotate3d(0, 1, 0, 360deg);
-            transform: rotate3d(0, 1, 0, 360deg); } }
+    -webkit-transform: rotate3d(0, 1, 0, 0deg);
+            transform: rotate3d(0, 1, 0, 0deg); } }
     .features-area .feature .inner::before {
       content: "";
       position: absolute;
