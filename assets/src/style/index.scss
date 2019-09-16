@@ -45,6 +45,7 @@
 @import "header";
 @import "navigation";
 @import "clubs-modal";
+@import "promo-modal";
 @import "footer";
 @import "workouts";
 
@@ -687,13 +688,6 @@ nav {
       margin-bottom: 32px;
     }
   }
-  // .inner-container {
-  //   max-width: 1550px;
-  //   margin-left: auto;
-  //   margin-right: auto;
-  //   height: 100%;
-  //   overflow: hidden;
-  // }
 
   .promo-block {
 
@@ -706,8 +700,6 @@ nav {
 
     @include media-breakpoint-down(md) {
       position: relative;
-      // margin-left: 15px;
-      // margin-right: 15px;
     }
 
     > div {
@@ -765,7 +757,6 @@ nav {
     }
 
     .time-block {
-
       display: flex;
       align-items: center;
       height: 48px;
@@ -780,7 +771,6 @@ nav {
       }
 
       @include media-breakpoint-down(md) {
-        //font-size: 20px;
         &:not(:last-child) {
           margin-bottom: 8px;
         }

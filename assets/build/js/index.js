@@ -21830,11 +21830,11 @@ function signupModalNextClick() {
         var phone = document.getElementById("signupPhone"); 
     
         if (!name.checkValidity()) {
-            name.setAttribute("style", "background-color: #FFDBDC");
+            name.parentElement.setAttribute("style", "background-color: #FFDBDC");
         }
     
         if (!phone.checkValidity()) {
-            phone.setAttribute("style", "background-color: #FFDBDC");
+            phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
         }
 
         if (name.checkValidity() && phone.checkValidity()) {
@@ -21859,13 +21859,48 @@ function signupModalNextClick() {
     }
 }
 
+function promoNextClick() {
+    var next = $(this).data("next");
+
+    var name = document.getElementById("promoName"); 
+    var phone = document.getElementById("promoPhone"); 
+    var email = document.getElementById("promoEmail"); 
+
+    if (!name.checkValidity()) {
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!email.checkValidity()) {
+        email.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity() && email.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $("#promo-modal .modal-body").html(html);
+        });
+    }
+}
+
 $(function () {
 
     $('#signupFormBtn').bind("click", signupNextClick);
 
     $('#signup-modal').on('shown.bs.modal', function (e) {
         $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
-    })
+    });
+
+    $('#promo-modal').on('shown.bs.modal', function (e) {
+        $("#promo-modal .promo-btn").bind("click", promoNextClick);
+    });
 
     $('.banner-slides').owlCarousel({
         items: 1,

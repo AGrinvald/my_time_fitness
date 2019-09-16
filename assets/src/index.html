@@ -28,7 +28,8 @@
                   Первый платеж от 4 500 р.
                 </p>
                 <p>
-                  <button class="btn btn-lg btn-primary"><span
+                  <button class="btn btn-lg btn-primary" data-toggle="modal"
+                  data-target="#promo-modal"><span
                       class="d-none d-lg-inline">&#x0003C;&#x0003C;&nbsp;</span>Хочу эту
                     карту</button>
                 </p>
@@ -37,7 +38,7 @@
           </div>
         </figure>
         <figure class="bg-img-2">
-            <img class="mr-auto ml-auto" src="img/group-3.png" alt="Телефон">
+          <img class="mr-auto ml-auto" src="img/group-3.png" alt="Телефон">
         </figure>
         <figure class="bg-img-3">
 
@@ -198,16 +199,16 @@
                 <div class="inner">
                   <img srcset="img/20180604-113203@1x.png 585w,
                                                 img/20180604-113203@2x.png 1170w,
-                                                img/20180604-113203@3x.png 1755w" sizes="(max-width: 328px) 375px, 585px"
-                    src="img/20180604-113203@1x.png" alt="Велотренажеры">
+                                                img/20180604-113203@3x.png 1755w"
+                    sizes="(max-width: 328px) 375px, 585px" src="img/20180604-113203@1x.png" alt="Велотренажеры">
                 </div>
               </div>
               <div class="slide">
                 <div class="inner">
                   <img srcset="img/20180604-113203@1x.png 585w,
                                                     img/20180604-113203@2x.png 1170w,
-                                                    img/20180604-113203@3x.png 1755w" sizes="(max-width: 328px) 375px, 585px"
-                    src="img/20180604-113203@1x.png" alt="Велотренажеры">
+                                                    img/20180604-113203@3x.png 1755w"
+                    sizes="(max-width: 328px) 375px, 585px" src="img/20180604-113203@1x.png" alt="Велотренажеры">
                 </div>
               </div>
             </div>
@@ -380,18 +381,18 @@
       </div>
       <div class="scrolling-wrapper">
         <div class="photo">
-            <img src="img/Алена.png" class="img-1" alt="Алена">
-            <div class="alena-shadow"></div> 
-            <img src="img/Виталий.png" class="img-2" alt="Виталий">
-            <img src="img/Ксюша.png" class="img-3" alt="Ксюша">
-            <img src="img/Коля.png" class="img-4" alt="Коля">
-            <img src="img/Маша.png" class="img-5" alt="Маша">
-            <img src="img/Федя.png" class="img-6" alt="Федя">
-            <img src="img/Настя.png" class="img-7" alt="Настя">
-            <img src="img/Дима.png" class="img-8" alt="Дима">
-            <img src="img/Даша.png" class="img-9" alt="Даша">
-            <div class="dasha-shadow"></div> 
-            <img src="img/Бараш.png" class="img-10" alt="Бараш">
+          <img src="img/Алена.png" class="img-1" alt="Алена">
+          <div class="alena-shadow"></div>
+          <img src="img/Виталий.png" class="img-2" alt="Виталий">
+          <img src="img/Ксюша.png" class="img-3" alt="Ксюша">
+          <img src="img/Коля.png" class="img-4" alt="Коля">
+          <img src="img/Маша.png" class="img-5" alt="Маша">
+          <img src="img/Федя.png" class="img-6" alt="Федя">
+          <img src="img/Настя.png" class="img-7" alt="Настя">
+          <img src="img/Дима.png" class="img-8" alt="Дима">
+          <img src="img/Даша.png" class="img-9" alt="Даша">
+          <div class="dasha-shadow"></div>
+          <img src="img/Бараш.png" class="img-10" alt="Бараш">
         </div>
       </div>
       <div class="caption-block d-flex flex-wrap 
@@ -428,10 +429,18 @@
       </div>
     </div>
   </div>
+  <div class="modal fade" id="promo-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          //= promo-form.html
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="js/index.js"></script>
   <script type="text/javascript">
     ymaps.ready(init);
   </script>
 </body>
-
 </html>

@@ -26,15 +26,15 @@ function modalNextClick() {
     var email = document.getElementById("promoEmail"); 
 
     if (!name.checkValidity()) {
-        name.setAttribute("style", "background-color: #FFDBDC");
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
     if (!phone.checkValidity()) {
-        phone.setAttribute("style", "background-color: #FFDBDC");
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
     if (!email.checkValidity()) {
-        email.setAttribute("style", "background-color: #FFDBDC");
+        email.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
     if (name.checkValidity() && phone.checkValidity() && email.checkValidity()) {

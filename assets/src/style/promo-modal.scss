@@ -1,5 +1,10 @@
 /* PROMO MODAL START*/
 #promo-modal {
+  .modal-dialog {
+    @include media-breakpoint-down(sm) {
+      height: 100%;
+    }
+  }
 
   .modal-responsive {
     max-width: 680px;

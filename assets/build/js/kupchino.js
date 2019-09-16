@@ -21919,11 +21919,11 @@ function announceNextClick() {
     var phone = document.getElementById("announcePhone"); 
 
     if (!name.checkValidity()) {
-        name.setAttribute("style", "background-color: #FFDBDC");
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
     if (!phone.checkValidity()) {
-        phone.setAttribute("style", "background-color: #FFDBDC");
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
     if (name.checkValidity() && phone.checkValidity()) {

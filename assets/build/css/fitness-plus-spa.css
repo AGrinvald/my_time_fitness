@@ -7827,13 +7827,14 @@ h2.title {
 .custom-input-group {
   border-radius: 28px;
   position: relative;
-  height: 58px; }
+  height: 56px; }
   .custom-input-group .input-group-prepend {
     position: absolute;
     overflow: hidden;
     z-index: 1000;
     height: 100%; }
   .custom-input-group .input-group-text {
+    background-color: transparent;
     border-radius: 50%;
     font-size: 36px;
     font-weight: 500;
@@ -7842,26 +7843,26 @@ h2.title {
     margin-right: 2px;
     margin-top: 2px;
     margin-bottom: 2px; }
-  .custom-input-group.primary {
+  .custom-input-group.primary, .custom-input-group.primary:focus, .custom-input-group.primary:hover, .custom-input-group.primary:active {
     background-color: #aacc23;
     border: solid 1px #000000; }
-    .custom-input-group.primary .input-group-text {
-      background-color: #aacc23;
+    .custom-input-group.primary input, .custom-input-group.primary:focus input, .custom-input-group.primary:hover input, .custom-input-group.primary:active input {
+      background: transparent;
+      color: #000000; }
+    .custom-input-group.primary .input-group-text, .custom-input-group.primary:focus .input-group-text, .custom-input-group.primary:hover .input-group-text, .custom-input-group.primary:active .input-group-text {
       border: solid 1px #000000;
       color: #000000; }
-    .custom-input-group.primary input {
-      background-color: #aacc23; }
   .custom-input-group.white {
     color: #aacc23;
-    border: solid 1px #aacc23; }
+    border: solid 1px #aacc23;
+    background-color: #ffffff; }
     .custom-input-group.white .input-group-text {
       border: solid 1px #aacc23;
-      color: #aacc23;
-      background-color: #ffffff; }
+      color: #aacc23; }
   .custom-input-group input {
     color: #000000;
+    background-color: transparent;
     height: 52px;
-    background-color: #ffffff;
     border: none;
     border-radius: 27%;
     text-align: center; }
@@ -7871,7 +7872,7 @@ h2.title {
       letter-spacing: 0.8px;
       -ms-flex-item-align: center;
           align-self: center; }
-    .custom-input-group input[type="text"] {
+    .custom-input-group input[type="text"], .custom-input-group input[type="tel"], .custom-input-group input[type="email"] {
       font-size: 18px;
       font-weight: 300;
       letter-spacing: -0.39px;
@@ -8237,6 +8238,10 @@ footer {
 
 /* FOOTER END */
 /* PROMO MODAL START*/
+@media (max-width: 767.98px) {
+  #promo-modal .modal-dialog {
+    height: 100%; } }
+
 #promo-modal .modal-responsive {
   max-width: 680px; }
   @media (max-width: 767.98px) {

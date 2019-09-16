@@ -192,7 +192,7 @@ h2.title {
 .custom-input-group {
   border-radius: 28px;
   position: relative;
-  height: 58px;
+  height: 56px;
 
   .input-group-prepend {
     position: absolute;
@@ -202,6 +202,7 @@ h2.title {
   }
 
   .input-group-text {
+    background-color: transparent;
     border-radius: 50%;
     font-size: 36px;
     font-weight: 500;
@@ -212,34 +213,36 @@ h2.title {
     margin-bottom: 2px;
   }
 
-  &.primary {
+  &.primary, &.primary:focus, &.primary:hover, &.primary:active  {
     background-color: $primary;
     border: solid 1px $black;
 
-    .input-group-text {
-      background-color: $primary;
-      border: solid 1px $black;
+    input {
+      background: transparent;
       color: $black;
     }
 
-    input {
-      background-color: $primary;
+    .input-group-text {
+      border: solid 1px $black;
+      color: $black;
     }
   }
 
   &.white {
     color: $primary;
     border: solid 1px $primary;
-
+    background-color: $white;
+    
     .input-group-text {
       border: solid 1px $primary;
       color: $primary;
-      background-color: $white;
     }
   }
 
   input {
     color: $black;
+    background-color: transparent;
+
     &[type="button"] {
       font-size: 16px;
       font-weight: bold;
@@ -247,7 +250,7 @@ h2.title {
       align-self: center;
     }
   
-    &[type="text"] {
+    &[type="text"], &[type="tel"], &[type="email"] {
       font-size: 18px;
       font-weight: 300;
       letter-spacing: -0.39px;
@@ -255,7 +258,6 @@ h2.title {
     }
 
     height: 52px;
-    background-color: #ffffff;
     border: none;
     border-radius: 27%;
     text-align: center;

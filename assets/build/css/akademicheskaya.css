@@ -8021,13 +8021,14 @@ h2.title {
 .custom-input-group {
   border-radius: 28px;
   position: relative;
-  height: 58px; }
+  height: 56px; }
   .custom-input-group .input-group-prepend {
     position: absolute;
     overflow: hidden;
     z-index: 1000;
     height: 100%; }
   .custom-input-group .input-group-text {
+    background-color: transparent;
     border-radius: 50%;
     font-size: 36px;
     font-weight: 500;
@@ -8036,26 +8037,26 @@ h2.title {
     margin-right: 2px;
     margin-top: 2px;
     margin-bottom: 2px; }
-  .custom-input-group.primary {
+  .custom-input-group.primary, .custom-input-group.primary:focus, .custom-input-group.primary:hover, .custom-input-group.primary:active {
     background-color: #aacc23;
     border: solid 1px #000000; }
-    .custom-input-group.primary .input-group-text {
-      background-color: #aacc23;
+    .custom-input-group.primary input, .custom-input-group.primary:focus input, .custom-input-group.primary:hover input, .custom-input-group.primary:active input {
+      background: transparent;
+      color: #000000; }
+    .custom-input-group.primary .input-group-text, .custom-input-group.primary:focus .input-group-text, .custom-input-group.primary:hover .input-group-text, .custom-input-group.primary:active .input-group-text {
       border: solid 1px #000000;
       color: #000000; }
-    .custom-input-group.primary input {
-      background-color: #aacc23; }
   .custom-input-group.white {
     color: #aacc23;
-    border: solid 1px #aacc23; }
+    border: solid 1px #aacc23;
+    background-color: #ffffff; }
     .custom-input-group.white .input-group-text {
       border: solid 1px #aacc23;
-      color: #aacc23;
-      background-color: #ffffff; }
+      color: #aacc23; }
   .custom-input-group input {
     color: #000000;
+    background-color: transparent;
     height: 52px;
-    background-color: #ffffff;
     border: none;
     border-radius: 27%;
     text-align: center; }
@@ -8065,7 +8066,7 @@ h2.title {
       letter-spacing: 0.8px;
       -ms-flex-item-align: center;
           align-self: center; }
-    .custom-input-group input[type="text"] {
+    .custom-input-group input[type="text"], .custom-input-group input[type="tel"], .custom-input-group input[type="email"] {
       font-size: 18px;
       font-weight: 300;
       letter-spacing: -0.39px;
@@ -8830,74 +8831,21 @@ footer {
     @media (max-width: 991.98px) {
       .announce-container form {
         width: 272px; } }
-  .announce-container .input-group > .custom-select:not(:first-child),
-  .announce-container .input-group > .form-control:not(:first-child) {
-    border-radius: 28px; }
-  .announce-container .input-group {
-    border-radius: 28px;
-    position: relative;
-    height: 56px;
+  .announce-container .custom-input-group {
     padding-left: 3px;
     padding-right: 5px; }
     @media (min-width: 992px) {
-      .announce-container .input-group:not(:last-child) {
+      .announce-container .custom-input-group:not(:last-child) {
         margin-right: 40px; } }
     @media (max-width: 991.98px) {
-      .announce-container .input-group {
+      .announce-container .custom-input-group {
         margin-bottom: 15px; } }
-    .announce-container .input-group .input-group-prepend {
-      position: absolute;
-      overflow: hidden;
-      z-index: 1000;
-      height: 100%; }
-    .announce-container .input-group .input-group-text {
-      border-radius: 50%;
-      font-size: 36px;
-      font-weight: 500;
-      letter-spacing: 0.75px;
-      padding: 0 14px;
-      margin-right: 2px;
-      margin-top: 2px;
-      margin-bottom: 2px;
-      background-color: transparent; }
-    .announce-container .input-group.primary {
-      background-color: #aacc23;
-      border: solid 1px #000000; }
-      .announce-container .input-group.primary .input-group-text {
-        border: solid 1px #000000;
-        color: #000000; }
-      .announce-container .input-group.primary input {
-        background-color: #aacc23; }
-    .announce-container .input-group.white {
-      background-color: #ffffff;
-      color: #aacc23;
-      border: solid 1px #aacc23; }
-      .announce-container .input-group.white .input-group-text {
-        border: solid 1px #aacc23;
-        color: #aacc23; }
-  .announce-container input {
-    color: #000000;
-    height: 52px;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 27%;
-    text-align: center; }
-    .announce-container input[type="button"] {
-      font-size: 16px;
-      font-weight: bold;
-      letter-spacing: 0.8px; }
-    .announce-container input[type="tel"] {
-      font-size: 18px;
-      font-weight: 300;
-      letter-spacing: -0.39px;
-      -ms-flex-item-align: center;
-          align-self: center; }
-      @media (min-width: 992px) {
-        .announce-container input[type="tel"] {
-          padding-left: 10%; } }
-      @media (max-width: 991.98px) {
-        .announce-container input[type="tel"] {
-          padding-left: 20%; } }
+  @media (min-width: 992px) {
+    .announce-container input[type="tel"], .announce-container input[type="text"], .announce-container input[type="email"] {
+      padding-left: 10%; } }
+  @media (max-width: 991.98px) {
+    .announce-container input[type="tel"], .announce-container input[type="text"], .announce-container input[type="email"] {
+      padding-left: 20%; } }
   .announce-container input[type="button"] {
     text-align: center; }
 
