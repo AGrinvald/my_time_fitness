@@ -8911,20 +8911,26 @@ footer {
               animation-timing-function: linear; }
 
 @-webkit-keyframes numberRotation {
-  0%, 40% {
-    -webkit-transform: rotate3d(0, 1, 0, 0deg);
-            transform: rotate3d(0, 1, 0, 0deg); }
-  60%, 100% {
+  0% {
     -webkit-transform: rotate3d(0, 1, 0, 360deg);
-            transform: rotate3d(0, 1, 0, 360deg); } }
+            transform: rotate3d(0, 1, 0, 360deg); }
+  50% {
+    -webkit-transform: rotate3d(0, 1, 0, 180deg);
+            transform: rotate3d(0, 1, 0, 180deg); }
+  100% {
+    -webkit-transform: rotate3d(0, 1, 0, 0);
+            transform: rotate3d(0, 1, 0, 0); } }
 
 @keyframes numberRotation {
-  0%, 40% {
-    -webkit-transform: rotate3d(0, 1, 0, 0deg);
-            transform: rotate3d(0, 1, 0, 0deg); }
-  60%, 100% {
+  0% {
     -webkit-transform: rotate3d(0, 1, 0, 360deg);
-            transform: rotate3d(0, 1, 0, 360deg); } }
+            transform: rotate3d(0, 1, 0, 360deg); }
+  50% {
+    -webkit-transform: rotate3d(0, 1, 0, 180deg);
+            transform: rotate3d(0, 1, 0, 180deg); }
+  100% {
+    -webkit-transform: rotate3d(0, 1, 0, 0);
+            transform: rotate3d(0, 1, 0, 0); } }
     .features-area .feature .inner::before {
       content: "";
       position: absolute;
