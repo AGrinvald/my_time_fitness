@@ -402,6 +402,7 @@ nav {
         perspective: 1200;
         perspective-origin: 50% 50%;
         transform-style: preserve-3d;
+
         > div {
           display: block;
           transform: rotate3d(0, 1, 0, 360deg);
@@ -415,7 +416,7 @@ nav {
         padding-right: 10px;
       }
 
-      //@include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(lg) {
         .number-1 {
           > div {
             animation-name: numberRotation;
@@ -444,20 +445,11 @@ nav {
             animation-timing-function: linear;
           }
         }
-      //}
+      }
 
       @keyframes numberRotation {
-        // 0%, 40% {transform: rotate3d(0,1,0,0deg);}
-        // 60%, 100%   {transform: rotate3d(0,1,0,360deg);}
-        0% {
-          transform: rotate3d(0, 1, 0, 360deg);
-        }
-        50% {
-          transform: rotate3d(0, 1, 0, 180deg);
-        }
-        100% {
-          transform: rotate3d(0, 1, 0, 360deg);
-        }
+        0%, 40% {transform: rotate3d(0,1,0,0deg);}
+        60%, 100%   {transform: rotate3d(0,1,0,360deg);}
       }
 
       &::before {
