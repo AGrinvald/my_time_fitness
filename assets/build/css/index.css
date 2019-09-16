@@ -8870,12 +8870,16 @@ footer {
     border-radius: 0 20px 0 20px; }
     .features-area .feature .inner .number {
       display: block;
-      -webkit-perspective: 800px;
-              perspective: 800px;
+      -webkit-perspective: 1200;
+              perspective: 1200;
       -webkit-perspective-origin: 50% 50%;
-              perspective-origin: 50% 50%; }
+              perspective-origin: 50% 50%;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d; }
       .features-area .feature .inner .number > div {
-        display: block; }
+        display: block;
+        -webkit-transform: rotate3d(0, 1, 0, 360deg);
+                transform: rotate3d(0, 1, 0, 360deg); }
     .features-area .feature .inner .number-2 {
       padding-right: 12px; }
     .features-area .feature .inner .number-3 {
@@ -8920,8 +8924,8 @@ footer {
     -webkit-transform: rotate3d(0, 1, 0, 180deg);
             transform: rotate3d(0, 1, 0, 180deg); }
   100% {
-    -webkit-transform: rotate3d(0, 1, 0, 0);
-            transform: rotate3d(0, 1, 0, 0); } }
+    -webkit-transform: rotate3d(0, 1, 0, 360deg);
+            transform: rotate3d(0, 1, 0, 360deg); } }
 
 @keyframes numberRotation {
   0% {
@@ -8931,8 +8935,8 @@ footer {
     -webkit-transform: rotate3d(0, 1, 0, 180deg);
             transform: rotate3d(0, 1, 0, 180deg); }
   100% {
-    -webkit-transform: rotate3d(0, 1, 0, 0);
-            transform: rotate3d(0, 1, 0, 0); } }
+    -webkit-transform: rotate3d(0, 1, 0, 360deg);
+            transform: rotate3d(0, 1, 0, 360deg); } }
     .features-area .feature .inner::before {
       content: "";
       position: absolute;
