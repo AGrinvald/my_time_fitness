@@ -448,8 +448,22 @@ nav {
       //}
 
       @keyframes numberRotation {
-        0%, 40% {transform: rotate3d(0,1,0,0deg);}
-        60%, 100%   {transform: rotate3d(0,1,0,360deg);}
+        // 1%, 40% {transform: rotate3d(0,1,0,0deg);}
+        // 60%, 100%   {transform: rotate3d(0,1,0,360deg);}
+
+        0% {
+          transform: rotate3d(0, 1, 0, 0deg);
+        }
+        10% {
+          transform: rotate3d(0, 1, 0, 180deg);
+        }
+        20% {
+          transform: rotate3d(0, 1, 0, 360deg);
+        }
+        100% {
+          transform: rotate3d(0, 1, 0, 360deg);
+        }
+
       }
 
       &::before {

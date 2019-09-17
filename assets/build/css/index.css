@@ -8917,18 +8917,30 @@ footer {
               animation-timing-function: linear; }
 
 @-webkit-keyframes numberRotation {
-  0%, 40% {
+  0% {
     -webkit-transform: rotate3d(0, 1, 0, 0deg);
             transform: rotate3d(0, 1, 0, 0deg); }
-  60%, 100% {
+  10% {
+    -webkit-transform: rotate3d(0, 1, 0, 180deg);
+            transform: rotate3d(0, 1, 0, 180deg); }
+  20% {
+    -webkit-transform: rotate3d(0, 1, 0, 360deg);
+            transform: rotate3d(0, 1, 0, 360deg); }
+  100% {
     -webkit-transform: rotate3d(0, 1, 0, 360deg);
             transform: rotate3d(0, 1, 0, 360deg); } }
 
 @keyframes numberRotation {
-  0%, 40% {
+  0% {
     -webkit-transform: rotate3d(0, 1, 0, 0deg);
             transform: rotate3d(0, 1, 0, 0deg); }
-  60%, 100% {
+  10% {
+    -webkit-transform: rotate3d(0, 1, 0, 180deg);
+            transform: rotate3d(0, 1, 0, 180deg); }
+  20% {
+    -webkit-transform: rotate3d(0, 1, 0, 360deg);
+            transform: rotate3d(0, 1, 0, 360deg); }
+  100% {
     -webkit-transform: rotate3d(0, 1, 0, 360deg);
             transform: rotate3d(0, 1, 0, 360deg); } }
     .features-area .feature .inner::before {
