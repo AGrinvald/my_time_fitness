@@ -416,7 +416,7 @@ nav {
         padding-right: 10px;
       }
 
-      //@include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(lg) {
         .number-1 {
           > div {
             animation-name: numberRotation;
@@ -445,12 +445,9 @@ nav {
             animation-timing-function: linear;
           }
         }
-      //}
+      }
 
       @keyframes numberRotation {
-        // 1%, 40% {transform: rotate3d(0,1,0,0deg);}
-        // 60%, 100%   {transform: rotate3d(0,1,0,360deg);}
-
         0% {
           transform: rotate3d(0, 1, 0, 0deg);
         }
