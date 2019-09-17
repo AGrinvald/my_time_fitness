@@ -8884,38 +8884,37 @@ footer {
       padding-right: 12px; }
     .features-area .feature .inner .number-3 {
       padding-right: 10px; }
-    @media (min-width: 992px) {
-      .features-area .feature .inner .number-1 > div {
-        -webkit-animation-name: numberRotation;
-                animation-name: numberRotation;
-        -webkit-animation-duration: 7s;
-                animation-duration: 7s;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-timing-function: linear;
-                animation-timing-function: linear; }
-      .features-area .feature .inner .number-2 > div {
-        -webkit-animation-name: numberRotation;
-                animation-name: numberRotation;
-        -webkit-animation-duration: 7s;
-                animation-duration: 7s;
-        -webkit-animation-delay: 8s;
-                animation-delay: 8s;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-timing-function: linear;
-                animation-timing-function: linear; }
-      .features-area .feature .inner .number-3 > div {
-        -webkit-animation-name: numberRotation;
-                animation-name: numberRotation;
-        -webkit-animation-duration: 7s;
-                animation-duration: 7s;
-        -webkit-animation-delay: 16s;
-                animation-delay: 16s;
-        -webkit-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-        -webkit-animation-timing-function: linear;
-                animation-timing-function: linear; } }
+    .features-area .feature .inner .number-1 > div {
+      -webkit-animation-name: numberRotation;
+              animation-name: numberRotation;
+      -webkit-animation-duration: 7s;
+              animation-duration: 7s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+              animation-timing-function: linear; }
+    .features-area .feature .inner .number-2 > div {
+      -webkit-animation-name: numberRotation;
+              animation-name: numberRotation;
+      -webkit-animation-duration: 7s;
+              animation-duration: 7s;
+      -webkit-animation-delay: 8s;
+              animation-delay: 8s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+              animation-timing-function: linear; }
+    .features-area .feature .inner .number-3 > div {
+      -webkit-animation-name: numberRotation;
+              animation-name: numberRotation;
+      -webkit-animation-duration: 7s;
+              animation-duration: 7s;
+      -webkit-animation-delay: 16s;
+              animation-delay: 16s;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+              animation-timing-function: linear; }
 
 @-webkit-keyframes numberRotation {
   0%, 40% {
