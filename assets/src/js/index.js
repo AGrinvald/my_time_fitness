@@ -269,10 +269,10 @@ $(function () {
         items: 1,
         loop: true,
         mouseDrag: false,
-        autoplay: true,
-        autoplaySpeed:1000,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
+        // autoplay: true,
+        // autoplaySpeed:1000,
+        // autoplayTimeout: 3000,
+        // autoplayHoverPause: true,
         responsive: {
             992: {
                 dots: false,
@@ -286,7 +286,7 @@ $(function () {
         navText: ["", ""]
     });
 
-    owl.trigger('play.owl.autoplay',[3000])
+   // owl.trigger('play.owl.autoplay',[3000])
 
     $('.features').owlCarousel({
         mouseDrag: false,

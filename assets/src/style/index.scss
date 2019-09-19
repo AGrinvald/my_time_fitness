@@ -75,7 +75,6 @@ nav {
 
 /* BANNER AREA START*/
 .banner-area {
-
   .container-fluid {
     position: relative;
 
@@ -121,7 +120,7 @@ nav {
         margin: 0px 6px;
         width: 8px;
         height: 8px;
-        background-color:rgba(14, 22, 37, 0.71);
+        background-color: rgba(14, 22, 37, 0.71);
         border-radius: 30px;
         box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5);
 
@@ -139,7 +138,8 @@ nav {
       width: 100%;
       bottom: 0;
 
-      button.owl-prev,  button.owl-next {
+      button.owl-prev,
+      button.owl-next {
         width: 58px;
         height: 58px;
         cursor: pointer;
@@ -160,26 +160,7 @@ nav {
 
   figure {
     width: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    letter-spacing: 2.16px;
-    font-family: Helvetica;
     margin-bottom: 0;
-
-    .bg-shadow {
-      background-image: url(../img/rectangle-copy-12.png);
-      background-repeat: no-repeat;
-      background-position-y: 25%;
-      background-position-x: 100%;
-
-      @include media-breakpoint-down(md) {
-        background-image: url(../img/shadow.svg);
-        background-repeat: no-repeat;
-        background-position-y: 68%;
-        background-position-x: 50%;
-      }
-    }
 
     @include media-breakpoint-up(lg) {
       height: 510px;
@@ -192,122 +173,271 @@ nav {
       }
     }
 
-    h1 {
-      font-weight: bold;
-      letter-spacing: 2.16px;
-      text-transform: uppercase;
-      @include media-breakpoint-up(lg) {
-        font-size: 48px;
-      }
-
-      @include media-breakpoint-down(md) {
-        font-size: 32px;
-      }
-    }
-
-    .btn {
-      color: $white;
-      text-transform: uppercase;
-      font-size: 16px;
-
-      @include media-breakpoint-up(lg) {
-        margin-top: 50px;
-      }
-
-      @include media-breakpoint-down(md) {
-        margin-top: 30px;
-        margin-bottom: 100px;
-      }
-    }
-  }
-
-  .owl-carousel .owl-item img {
-    width: auto;
-  }
-
-  .owl-carousel .owl-item img.card-img {
-    display: block;
-    position: relative;
-    animation: floating 6s infinite ease-in-out;
-
-    @include media-breakpoint-up(lg) {
-      max-width: 520px;
-      width: 100%;
-    }
-
-    @include media-breakpoint-down(md) {
-      max-width: 390px;
-      width: 100%;
-    }
-  }
-
-  @keyframes floating {
-    0% { transform: rotate(0deg); } 
-    5% { transform: rotate(2deg); } 
-    10% { transform: rotate(0deg); } 
-    55%  { transform: translate(0px, 10px); }
-    100%   { transform: translate(0, -0px); } 
-  }
-
-  .bg-img-1 {
-    background-image: url(../img/3-copy@1x.png);
-    position: relative;
-
-    @media only screen and (min-width: 1850px) {
-      &::before {
-        content: "";
-        position: absolute;
-        right: 0;
-        bottom: -1px;
-        height: 510px;
-        width: 420px;
-        background: url(../img/rectangle-copy-15.svg);
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-position: center center;
-        z-index: 2;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 510px;
-        width: 427px;
-        background: url(../img/rectangle-copy-14.svg);
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-position: center center;
-        z-index: 2;
-      }
-    }
-  }
-
-  .bg-img-2 {
-    background-image: url(../img/group-3.jpg);
-
-    img {
+    &.bg-img-1 {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url(../img/3-copy@1x.png);
       position: relative;
-      bottom: -4px;
+      letter-spacing: 2.16px;
+      font-family: Helvetica;
+
+      h1 {
+        font-weight: bold;
+        letter-spacing: 2.16px;
+        text-transform: uppercase;
+        @include media-breakpoint-up(lg) {
+          font-size: 48px;
+        }
+
+        @include media-breakpoint-down(md) {
+          font-size: 32px;
+        }
+      }
+
+      .btn {
+        color: $white;
+        text-transform: uppercase;
+        font-size: 16px;
+
+        @include media-breakpoint-up(lg) {
+          margin-top: 50px;
+        }
+
+        @include media-breakpoint-down(md) {
+          margin-top: 30px;
+          margin-bottom: 100px;
+        }
+      }
+
+      .bg-shadow {
+        background-image: url(../img/rectangle-copy-12.png);
+        background-repeat: no-repeat;
+        background-position-y: 25%;
+        background-position-x: 100%;
+  
+        @include media-breakpoint-down(md) {
+          background-image: url(../img/shadow.svg);
+          background-repeat: no-repeat;
+          background-position-y: 68%;
+          background-position-x: 50%;
+        }
+      }
+
+      .card-img {
+        display: block;
+        position: relative;
+        animation: floating 6s infinite ease-in-out;
+  
+        @include media-breakpoint-up(lg) {
+          max-width: 520px;
+          width: 100%;
+        }
+  
+        @include media-breakpoint-down(md) {
+          max-width: 390px;
+          width: 100%;
+        }
+      }
+
+      @keyframes floating {
+        0% {
+          transform: rotate(0deg);
+        }
+        5% {
+          transform: rotate(2deg);
+        }
+        10% {
+          transform: rotate(0deg);
+        }
+        55% {
+          transform: translate(0px, 10px);
+        }
+        100% {
+          transform: translate(0, -0px);
+        }
+      }
+  
+      @media only screen and (min-width: 1850px) {
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          bottom: -1px;
+          height: 510px;
+          width: 420px;
+          background: url(../img/rectangle-copy-15.svg);
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+          background-position: center center;
+          z-index: 2;
+        }
+  
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 510px;
+          width: 427px;
+          background: url(../img/rectangle-copy-14.svg);
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+          background-position: center center;
+          z-index: 2;
+        }
+      }
+    }
+
+    &.bg-img-2 {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url(../img/222@2x.png);
+      display: flex;
+      justify-content: center;
+
+      .inner-block {
+        position: relative;
+        z-index: 6;
+        display: flex;
+        flex-direction: column;
+        
+        h3, p {
+          text-align: center;
+        }
+
+        @include media-breakpoint-up(lg) {
+          width: 802px;
+          height: 437px;
+          padding: 55px 54px 54px 89px;
+          margin-top: 10px;
+        }
+    
+        @include media-breakpoint-down(md) {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          padding-top: 263px;
+        }
+
+        p {
+          font-weight: 300;
+
+          @include media-breakpoint-up(lg) {
+            font-size: 28px;
+          }
+      
+          @include media-breakpoint-down(md) {
+            font-size: 22px;
+            line-height: 39px;
+          }
+        }
+
+        h3 {
+          font-weight: 600;
+          line-height: 1.45;
+
+          @include media-breakpoint-up(lg) {
+            font-size: 40px;
+          }
+      
+          @include media-breakpoint-down(md) {
+            font-size: 26px;
+            margin-bottom: 0;
+          }
+        }
+
+        .custom-btn {
+          line-height: 42px;
+
+          @include media-breakpoint-up(lg) {
+            background-color: $black;
+            color: $primary;
+            margin-top: 0.5rem;
+            width: 248px;
+          }
+      
+          @include media-breakpoint-down(md) {
+            background-color: $primary;
+            color: $white;
+            margin-top: 2rem;
+            width: 232px;
+          }
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          background-size: contain;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-image: url(../img/group-copy-13.svg);
+          z-index: -1;
+
+          @include media-breakpoint-up(lg) {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+          }
+      
+          @include media-breakpoint-down(md) {
+            width: 400px;
+            height: 215px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 145px;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          background: url(../img/girl-banner.png);
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+          background-position: center center;
+
+
+          @include media-breakpoint-up(lg) {
+            z-index: 6;
+            left: -88px;
+            top: -5px;
+            width: 244px;
+            height: 506px;
+          }
+      
+          @include media-breakpoint-down(md) {
+            z-index: -2;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -6px;
+            width: 273px;
+            height: 567px;
+          }
+        }
+      }
+    }
+  
+    &.bg-img-3 {
+      background-image: url(../img/group-4.jpg);
+    }
+  
+    &.bg-img-4 {
+      background-image: url(../img/group-5.jpg);
+    }
+  
+    &.bg-img-5 {
+      background-image: url(../img/group-6.jpg);
+    }
+  
+    &.bg-img-6 {
+      background-image: url(../img/group-7.jpg);
     }
   }
 
-  .bg-img-3 {
-    background-image: url(../img/group-4.jpg);
-  }
 
-  .bg-img-4 {
-    background-image: url(../img/group-5.jpg);
-  }
-
-  .bg-img-5 {
-    background-image: url(../img/group-6.jpg);
-  }
-
-  .bg-img-6 {
-    background-image: url(../img/group-7.jpg);
-  }
 }
 /* BANNER AREA END*/
 
@@ -351,7 +481,8 @@ nav {
       display: flex;
       justify-content: space-between;
 
-      button.owl-prev,  button.owl-next {
+      button.owl-prev,
+      button.owl-next {
         width: 40px;
         height: 40px;
         cursor: pointer;
@@ -360,7 +491,8 @@ nav {
         background-size: contain;
       }
 
-      .owl-prev > span, .owl-next > span {
+      .owl-prev > span,
+      .owl-next > span {
         content: "";
       }
 
@@ -425,7 +557,7 @@ nav {
             animation-timing-function: linear;
           }
         }
-        
+
         .number-2 {
           > div {
             animation-name: numberRotation;
@@ -460,7 +592,6 @@ nav {
         100% {
           transform: rotate3d(0, 1, 0, 360deg);
         }
-
       }
 
       &::before {
@@ -512,24 +643,25 @@ nav {
 
 /* SIGNUP AREA START */
 .signup-area {
-
   .container {
     position: relative;
     z-index: 10;
+    
     @include media-breakpoint-up(lg) {
-        &::before {
-          content: "";
-          position: absolute;
-          left: -33%;
-          top: -53%;
-          height: 640px;
-          width: 354px;
-          background: url(../img/group.svg);
-          background-repeat: no-repeat;
-          background-size: auto 100%;
-          background-position: top right;
-          z-index: 2;
-        }
+      padding-right: 25px;
+      &::before {
+        content: "";
+        position: absolute;
+        left: -33%;
+        top: -53%;
+        height: 640px;
+        width: 354px;
+        background: url(../img/group.svg);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: top right;
+        z-index: 2;
+      }
     }
   }
 
@@ -552,7 +684,7 @@ nav {
         font-size: 20px;
         font-weight: 300;
         line-height: 31px;
-        letter-spacing: -0.43px
+        letter-spacing: -0.43px;
       }
 
       .note {
@@ -612,9 +744,9 @@ nav {
     .slide {
       .inner {
         position: relative;
-          img {
-            z-index: 9999;
-          }
+        img {
+          z-index: 9999;
+        }
       }
     }
 
@@ -646,7 +778,8 @@ nav {
         }
       }
 
-      button.owl-prev,  button.owl-next {
+      button.owl-prev,
+      button.owl-next {
         cursor: pointer;
         background-position: center center;
         background-repeat: no-repeat;
@@ -666,7 +799,6 @@ nav {
 }
 
 .signup-form {
-
   height: 100%;
   max-width: 340px;
   font-size: 16px;
@@ -692,7 +824,8 @@ nav {
     }
   }
 
-  .form-row >.col, .form-row>[class*=col-] {
+  .form-row > .col,
+  .form-row > [class*="col-"] {
     padding-right: 3px;
     padding-left: 3px;
   }
@@ -702,7 +835,6 @@ nav {
 /* PROMO AREA START */
 .promo-area {
   .promo-container {
-
     background-color: #e9f0f2;
 
     @include media-breakpoint-up(lg) {
@@ -721,7 +853,6 @@ nav {
   }
 
   .promo-block {
-
     @include media-breakpoint-up(lg) {
       max-width: 528px;
       margin-left: auto;
@@ -744,7 +875,6 @@ nav {
     }
 
     .schedule-link {
-
       @include media-breakpoint-up(lg) {
         max-width: 176px;
       }
@@ -779,7 +909,8 @@ nav {
           max-width: 312px;
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           text-decoration: none;
           border: 1px solid $black;
           border-radius: 25px;
@@ -886,7 +1017,16 @@ nav {
 .team-area {
   .team-container {
     height: 950px;
-    background: linear-gradient(to bottom, rgba(254,254,255,1) 0%, rgba(254,254,255,1) 22%, rgba(181,184,191,1) 45%, rgba(79,86,92,1) 69%, rgba(60,68,74,1) 78%, rgba(60,68,74,1) 79%, rgba(100,108,123,1) 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba(254, 254, 255, 1) 0%,
+      rgba(254, 254, 255, 1) 22%,
+      rgba(181, 184, 191, 1) 45%,
+      rgba(79, 86, 92, 1) 69%,
+      rgba(60, 68, 74, 1) 78%,
+      rgba(60, 68, 74, 1) 79%,
+      rgba(100, 108, 123, 1) 100%
+    );
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefeff', endColorstr='#646c7b', GradientType=0 );
   }
 
@@ -906,7 +1046,7 @@ nav {
 
   .scrolling-wrapper {
     overflow: hidden;
-    white-space:nowrap;
+    white-space: nowrap;
 
     &::-webkit-scrollbar {
       height: 8px;
@@ -921,7 +1061,6 @@ nav {
       border-radius: 4px;
       background-color: #282828;
     }
-
 
     @include media-breakpoint-down(md) {
       overflow-x: scroll;
@@ -951,7 +1090,7 @@ nav {
         background-repeat: no-repeat;
         background-size: auto 100%;
         background-position: center center;
-        z-index: 1; 
+        z-index: 1;
       }
 
       .alena-shadow {
@@ -964,13 +1103,13 @@ nav {
         background-repeat: no-repeat;
         background-size: auto 100%;
         background-position: center center;
-        z-index: 1; 
+        z-index: 1;
       }
 
       img {
         position: absolute;
         cursor: pointer;
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
 
         &:hover {
           filter: brightness(100%);
@@ -1098,7 +1237,6 @@ nav {
         background-image: url(../img/team2.svg);
       }
     }
-
   }
 }
 /* TEAM AREA END */
@@ -1175,12 +1313,13 @@ nav {
       @include media-breakpoint-down(md) {
         padding: 14px 16px 12px 14px;
       }
-    
+
       @include media-breakpoint-up(lg) {
         padding: 12px 17px 15px 25px;
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: #000;
         text-decoration: none;
       }
@@ -1252,7 +1391,8 @@ nav {
         padding-right: 26px;
       }
 
-      .info-top, .info-bottom {
+      .info-top,
+      .info-bottom {
         padding: 10px 0;
       }
 
@@ -1265,7 +1405,6 @@ nav {
         font-weight: 100;
       }
     }
-
   }
 
   @include media-breakpoint-down(md) {
@@ -1285,4 +1424,3 @@ nav {
   }
 }
 /* MAP AREA END */
-
