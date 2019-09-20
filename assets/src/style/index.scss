@@ -175,7 +175,12 @@ nav {
 
     .custom-btn {
       @include media-breakpoint-down(md) {
-        line-height: 42px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 1px solid transparent;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.5;
         display: block;
         width: 232px;
         height: 56px;
@@ -318,7 +323,7 @@ nav {
         z-index: 6;
         display: flex;
         flex-direction: column;
-        
+
         h3, p {
           text-align: center;
         }
@@ -334,7 +339,6 @@ nav {
           width: 100%;
           height: 100%;
           overflow: hidden;
-          padding-top: 263px;
         }
 
         p {
@@ -365,16 +369,22 @@ nav {
         }
 
         .custom-btn {
-          line-height: 42px;
           @include media-breakpoint-up(lg) {
             background-color: $black;
             color: $primary;
             margin-top: 0.5rem;
             width: 248px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border: 1px solid transparent;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 1.5;
           }
       
           @include media-breakpoint-down(md) {
-            margin-top: 2rem;
+            margin-top: 55px;
+            margin-bottom: 100px;
           }
         }
 
@@ -399,7 +409,7 @@ nav {
             height: 215px;
             left: 50%;
             transform: translateX(-50%);
-            bottom: 145px;
+            bottom: 176px;
           }
         }
 
@@ -438,6 +448,15 @@ nav {
       background-repeat: no-repeat;
       position: relative;
       background-image: url(../img/man-bg.jpg);
+      display: flex;
+      
+      @include media-breakpoint-up(lg) {
+        align-items: center;
+      }
+  
+      @include media-breakpoint-down(md) {
+        align-items: flex-end;
+      }
 
         &::before {
           content: "";
@@ -447,7 +466,7 @@ nav {
 
           @include media-breakpoint-up(lg) {
             height: 335px;
-            top: 93px;
+            top: 80px;
             left: 0;
             background-size: 100% 100%;
             background-position: center center;
@@ -456,7 +475,7 @@ nav {
       
           @include media-breakpoint-down(md) {
             height: 345px;
-            top: 110px;
+            top: 105px;
             left: 0;
             background-position: center center;
             background-repeat: repeat-x;
@@ -465,10 +484,9 @@ nav {
 
 
       .inner-block {
-        position: relative;
         display: flex;
-        top: 188px;
         z-index: 5;
+        position: relative;
 
         @include media-breakpoint-up(lg) {
           height: 178px;
@@ -482,6 +500,7 @@ nav {
           align-items: center;
           text-align: center;
           padding: 0;
+          margin-bottom: 100px;
         }
 
         .flex-block {
@@ -564,7 +583,6 @@ nav {
           }
 
           @include media-breakpoint-down(md) {
-            line-height: 56px;
             margin-left: auto;
             margin-right: auto;
             margin-top: 60px;
