@@ -9239,10 +9239,21 @@ footer {
           background-image: url(../img/img-6.png); } }
     @media (max-width: 991.98px) {
       .banner-area figure.bg-img-6 {
-        background-size: cover;
-        background-position: 15% top;
-        background-repeat: no-repeat;
-        background-image: url(../img/img-6.png); } }
+        background-color: #17191e; }
+        .banner-area figure.bg-img-6::before {
+          content: "";
+          position: absolute;
+          height: 300px;
+          width: 520px;
+          top: 13%;
+          left: 50%;
+          -webkit-transform: translateX(-40%);
+                  transform: translateX(-40%);
+          z-index: 1;
+          background-size: 100%;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-image: url(../img/img-6.png); } }
     .banner-area figure.bg-img-6 .inner-block {
       display: -ms-flexbox;
       display: flex;

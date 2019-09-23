@@ -863,10 +863,22 @@ nav {
       }
 
       @include media-breakpoint-down(md) {
-        background-size: cover;
-        background-position: 15% top;
-        background-repeat: no-repeat;
-        background-image: url(../img/img-6.png);
+        background-color: #17191e;
+
+        &::before {
+          content: "";
+          position: absolute;
+          height: 300px;
+          width: 520px;
+          top: 13%;
+          left: 50%;
+          transform: translateX(-40%);
+          z-index: 1;
+          background-size: 100%;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-image: url(../img/img-6.png);
+        }
       }
 
       .inner-block {   
