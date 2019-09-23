@@ -9091,11 +9091,12 @@ footer {
         .banner-area figure.bg-img-5::before {
           content: "";
           position: absolute;
-          height: 345px;
+          height: 225px;
           width: 100%;
-          top: 105px;
+          top: 37%;
           left: 0;
           z-index: 1;
+          background-size: auto 100%;
           background-position: center center;
           background-repeat: repeat-x;
           background-image: url(../img/green-bg-small.png); } }
@@ -9217,7 +9218,7 @@ footer {
         .banner-area figure.bg-img-5 .flex-block a.custom-btn {
           margin-left: auto;
           margin-right: auto;
-          margin-top: 100px; } }
+          margin-top: 40px; } }
   .banner-area figure.bg-img-6 {
     overflow: hidden; }
     @media (min-width: 992px) {
