@@ -20,7 +20,7 @@ nav.navbar {
         background-repeat: no-repeat;
         background-size: auto 100%;
         background-position: center center;
-        z-index: 2;
+        z-index: 101;
       }   
     }
   }
@@ -29,7 +29,7 @@ nav.navbar {
     background-color: $dark;
 
     .navbar-nav {
-      max-width: 1140px;
+      max-width: 945px;
 
       .nav-link {
         color: $white;
@@ -181,7 +181,8 @@ nav.navbar {
       border-bottom-left-radius: 10px;
       box-shadow: 0 8px 6px -6px black;
       padding-top: 20px;
-      
+      position: relative;
+      z-index: 100;
       .nav-link {
         color: $black;
         text-transform: uppercase;

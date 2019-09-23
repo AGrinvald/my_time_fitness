@@ -8090,6 +8090,9 @@ header {
     position: absolute; }
   .h-top .container {
     position: relative; }
+    @media (min-width: 992px) {
+      .h-top .container {
+        max-width: 945px; } }
     .h-top .container::before {
       content: "";
       position: absolute;
@@ -8155,12 +8158,12 @@ nav.navbar {
         background-repeat: no-repeat;
         background-size: auto 100%;
         background-position: center center;
-        z-index: 2; } }
+        z-index: 101; } }
   @media (min-width: 992px) {
     nav.navbar {
       background-color: #26272b; }
       nav.navbar .navbar-nav {
-        max-width: 1140px; }
+        max-width: 945px; }
         nav.navbar .navbar-nav .nav-link {
           color: #ffffff;
           text-transform: uppercase;
@@ -8267,7 +8270,9 @@ nav.navbar {
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
         box-shadow: 0 8px 6px -6px black;
-        padding-top: 20px; }
+        padding-top: 20px;
+        position: relative;
+        z-index: 100; }
         nav.navbar .navbar-nav .nav-link {
           color: #000000;
           text-transform: uppercase;
@@ -8583,7 +8588,7 @@ footer {
 /* BANNER AREA START*/
 .banner-area .container-fluid {
   position: relative; }
-  @media only screen and (min-width: 1850px) {
+  @media only screen and (min-width: 1750px) {
     .banner-area .container-fluid::before {
       content: "";
       position: absolute;
@@ -8629,7 +8634,9 @@ footer {
   .banner-area .owl-nav {
     position: absolute;
     text-align: center;
-    width: 100%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    left: 50%;
     bottom: 0; }
     .banner-area .owl-nav button.owl-prev,
     .banner-area .owl-nav button.owl-next {
@@ -8760,7 +8767,7 @@ footer {
   100% {
     -webkit-transform: translate(0, 0px);
             transform: translate(0, 0px); } }
-    @media only screen and (min-width: 1850px) {
+    @media only screen and (min-width: 1750px) {
       .banner-area figure.bg-img-1::before {
         content: "";
         position: absolute;
@@ -9040,7 +9047,165 @@ footer {
     .banner-area figure.bg-img-4 .text-grey {
       color: #000000; } }
   .banner-area figure.bg-img-5 {
-    background-image: url(../img/group-6.jpg); }
+    overflow: hidden; }
+    @media (min-width: 992px) {
+      .banner-area figure.bg-img-5 {
+        position: relative;
+        background-color: #000000; }
+        .banner-area figure.bg-img-5::before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 50%;
+          top: 0;
+          left: 50%;
+          z-index: 1;
+          background-size: cover;
+          background-position: 40% top;
+          background-repeat: no-repeat;
+          background-image: url(../img/img5.jpg); }
+        .banner-area figure.bg-img-5::after {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 50%;
+          top: 0;
+          left: 2%;
+          z-index: 2;
+          background-size: auto 100%;
+          background-position: right center;
+          background-repeat: no-repeat;
+          background-image: url(../img/copy-2.png); } }
+    @media (max-width: 991.98px) {
+      .banner-area figure.bg-img-5 {
+        background-size: cover;
+        background-position: 30% top;
+        background-repeat: no-repeat;
+        background-image: url(../img/img5.jpg); }
+        .banner-area figure.bg-img-5::before {
+          content: "";
+          position: absolute;
+          height: 255px;
+          width: 100%;
+          top: 34%;
+          left: 0;
+          z-index: 1;
+          background-position: center center;
+          background-repeat: repeat-x;
+          background-image: url(../img/green-5-sm.png); } }
+    .banner-area figure.bg-img-5 .container-fluid {
+      position: relative;
+      z-index: 4; }
+      @media (min-width: 992px) {
+        .banner-area figure.bg-img-5 .container-fluid::before {
+          content: "";
+          position: absolute;
+          height: 240px;
+          width: 1069px;
+          top: 20%;
+          right: 44%;
+          background-size: cover;
+          background-position: 40% top;
+          background-repeat: no-repeat;
+          background-image: url(../img/green-5.png); } }
+      .banner-area figure.bg-img-5 .container-fluid .right-block {
+        position: absolute;
+        width: 534px;
+        height: 90px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url(../img/green-right-5.png);
+        right: 0;
+        bottom: 8%;
+        -ms-flex-align: center;
+            align-items: center; }
+        .banner-area figure.bg-img-5 .container-fluid .right-block p {
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 2.8;
+          letter-spacing: 0.62px;
+          color: #000000;
+          margin-left: 15%;
+          margin-bottom: 0; }
+    @media (min-width: 992px) {
+      .banner-area figure.bg-img-5 .text-lg-primary {
+        color: #aacc23; } }
+    .banner-area figure.bg-img-5 .inner-block {
+      position: relative;
+      z-index: 5; }
+      @media (max-width: 991.98px) {
+        .banner-area figure.bg-img-5 .inner-block {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-align: end;
+              align-items: flex-end; } }
+    .banner-area figure.bg-img-5 .flex-block {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+      @media (min-width: 992px) {
+        .banner-area figure.bg-img-5 .flex-block {
+          width: 45%;
+          height: 100%;
+          padding: 30px 0 60px 0;
+          text-align: right; } }
+      @media (max-width: 991.98px) {
+        .banner-area figure.bg-img-5 .flex-block {
+          width: 100%;
+          margin-bottom: 100px;
+          text-align: center; } }
+      .banner-area figure.bg-img-5 .flex-block h2 {
+        font-weight: bold; }
+        @media (min-width: 992px) {
+          .banner-area figure.bg-img-5 .flex-block h2 {
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+            font-size: 42px;
+            line-height: 1.31; } }
+        @media (max-width: 991.98px) {
+          .banner-area figure.bg-img-5 .flex-block h2 {
+            font-size: 26px;
+            line-height: 1.42; } }
+      .banner-area figure.bg-img-5 .flex-block p.subtitle {
+        font-weight: 300; }
+        @media (min-width: 992px) {
+          .banner-area figure.bg-img-5 .flex-block p.subtitle {
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+            font-size: 32px;
+            line-height: 1.25; } }
+        @media (max-width: 991.98px) {
+          .banner-area figure.bg-img-5 .flex-block p.subtitle {
+            font-size: 22px;
+            line-height: 1.82; } }
+      .banner-area figure.bg-img-5 .flex-block p.date-text {
+        font-weight: 300; }
+        @media (min-width: 992px) {
+          .banner-area figure.bg-img-5 .flex-block p.date-text {
+            -ms-flex-positive: 1;
+                flex-grow: 1;
+            font-size: 28px;
+            color: #ffffff; } }
+        @media (max-width: 991.98px) {
+          .banner-area figure.bg-img-5 .flex-block p.date-text {
+            font-size: 26px;
+            color: #000000; } }
+      @media (min-width: 992px) {
+        .banner-area figure.bg-img-5 .flex-block a.custom-btn {
+          text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+          font-size: 14px;
+          letter-spacing: 1.31px;
+          text-align: left;
+          color: #ffffff;
+          margin-left: 43%; }
+          .banner-area figure.bg-img-5 .flex-block a.custom-btn:hover, .banner-area figure.bg-img-5 .flex-block a.custom-btn:focus {
+            text-decoration: none; } }
+      @media (max-width: 991.98px) {
+        .banner-area figure.bg-img-5 .flex-block a.custom-btn {
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 55px; } }
   .banner-area figure.bg-img-6 {
     background-image: url(../img/group-7.jpg); }
 

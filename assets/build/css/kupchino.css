@@ -8090,6 +8090,9 @@ header {
     position: absolute; }
   .h-top .container {
     position: relative; }
+    @media (min-width: 992px) {
+      .h-top .container {
+        max-width: 945px; } }
     .h-top .container::before {
       content: "";
       position: absolute;
@@ -8155,12 +8158,12 @@ nav.navbar {
         background-repeat: no-repeat;
         background-size: auto 100%;
         background-position: center center;
-        z-index: 2; } }
+        z-index: 101; } }
   @media (min-width: 992px) {
     nav.navbar {
       background-color: #26272b; }
       nav.navbar .navbar-nav {
-        max-width: 1140px; }
+        max-width: 945px; }
         nav.navbar .navbar-nav .nav-link {
           color: #ffffff;
           text-transform: uppercase;
@@ -8267,7 +8270,9 @@ nav.navbar {
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
         box-shadow: 0 8px 6px -6px black;
-        padding-top: 20px; }
+        padding-top: 20px;
+        position: relative;
+        z-index: 100; }
         nav.navbar .navbar-nav .nav-link {
           color: #000000;
           text-transform: uppercase;
