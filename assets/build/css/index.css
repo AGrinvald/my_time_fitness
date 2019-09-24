@@ -7882,6 +7882,9 @@ body {
 .container-fluid {
   padding: 0; }
 
+.modal-responsive {
+  max-width: 680px; }
+
 button {
   font-family: "Avenir Next Cyr";
   letter-spacing: 1.42px;
@@ -8353,9 +8356,6 @@ nav.navbar {
   #promo-modal .modal-dialog {
     height: 100%; } }
 
-#promo-modal .modal-responsive {
-  max-width: 680px; }
-
 #promo-modal .modal-content {
   border: none;
   background-color: #ffffff;
@@ -8387,6 +8387,67 @@ nav.navbar {
     text-align: center; }
 
 /* PROMO MODAL END*/
+/* ALERT MODAL START*/
+@media (min-width: 992px) {
+  #alert-modal .modal-dialog-centered {
+    min-height: calc(100% - 1%); } }
+
+@media (max-width: 767.98px) {
+  #alert-modal .modal-dialog {
+    height: 100%; } }
+
+#alert-modal .modal-content {
+  border: none;
+  background-color: #ffffff;
+  position: relative; }
+  @media (min-width: 992px) {
+    #alert-modal .modal-content::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 134px;
+      width: 136px;
+      background: url(../img/modal-left.svg);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center center;
+      z-index: 2; }
+    #alert-modal .modal-content::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 134px;
+      width: 136px;
+      background: url(../img/modal-right.svg);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center center;
+      z-index: 2; } }
+
+#alert-modal p {
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: 0.54px;
+  text-align: center;
+  color: #000000;
+  margin-top: 100px;
+  margin-bottom: 85px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 415px;
+  width: 100%; }
+
+#alert-modal a {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 85px;
+  padding-top: 15px;
+  padding-bottom: 15px; }
+
+/* ALERT MODAL END*/
 /* FOOTER START */
 footer {
   background-color: #101929;

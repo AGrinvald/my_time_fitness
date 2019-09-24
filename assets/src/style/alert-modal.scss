@@ -1,0 +1,73 @@
+/* ALERT MODAL START*/
+#alert-modal {
+  .modal-dialog-centered {
+    @include media-breakpoint-up(lg) {
+      min-height: calc(100% - 1%);
+    }
+  }
+
+  .modal-dialog {
+    @include media-breakpoint-down(sm) {
+      height: 100%;
+    }
+  }
+
+  .modal-content {
+    border: none;
+    background-color: $white;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 134px;
+        width: 136px;
+        background: url(../img/modal-left.svg);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center center;
+        z-index: 2;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 134px;
+        width: 136px;
+        background: url(../img/modal-right.svg);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center center;
+        z-index: 2;
+      }
+    }
+  }
+
+  p {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: 0.54px;
+    text-align: center;
+    color: $black;
+    margin-top: 100px;
+    margin-bottom: 85px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 415px;
+    width: 100%;
+  }
+
+  a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 85px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+/* ALERT MODAL END*/

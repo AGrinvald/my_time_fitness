@@ -14,6 +14,10 @@ body {
   padding: 0;
 }
 
+.modal-responsive {
+  max-width: 680px;
+}
+
 button {
   font-family: "Avenir Next Cyr";
   letter-spacing: 1.42px;
@@ -263,5 +267,7 @@ h2.title {
     text-align: center;
   }
 }
+
+
 
 
