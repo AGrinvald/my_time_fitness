@@ -16,6 +16,11 @@
     border: none;
     background-color: $white;
     position: relative;
+
+    @include media-breakpoint-down(sm) {
+        height: 100%;
+    }
+
     @include media-breakpoint-up(lg) {
       &::before {
         content: "";
