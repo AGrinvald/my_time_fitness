@@ -8309,6 +8309,12 @@ footer {
         color: #99be51; }
 
 /* FOOTER END */
+a.promo-sale {
+  color: #000000; }
+  a.promo-sale:hover, a.promo-sale:focus {
+    text-decoration: none;
+    color: #000000; }
+
 .promo-sale {
   background-image: url(../img/promo5.jpg);
   background-size: cover;
@@ -8320,8 +8326,6 @@ footer {
       align-items: center;
   margin-bottom: 50px;
   overflow: hidden; }
-  .promo-sale:hover, .promo-sale:focus {
-    text-decoration: none; }
   @media (min-width: 992px) {
     .promo-sale {
       height: 386px;
@@ -8542,13 +8546,12 @@ nav.navbar {
   color: #000000; }
 
 .promo-area .arrow-text {
-  font-size: 18px;
   font-weight: 300;
   line-height: 1.39;
   color: #81a100; }
   @media (min-width: 992px) {
     .promo-area .arrow-text {
-      font-size: 14px; } }
+      font-size: 18px; } }
   @media (max-width: 991.98px) {
     .promo-area .arrow-text {
       font-size: 14px; } }

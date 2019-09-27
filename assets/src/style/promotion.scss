@@ -106,13 +106,12 @@ nav.navbar {
     }
   
     .arrow-text {
-      font-size: 18px;
       font-weight: 300;
       line-height: 1.39;
       color: #81a100;
       
       @include media-breakpoint-up(lg) {
-        font-size: 14px;
+        font-size: 18px;
       }
   
       @include media-breakpoint-down(md) {

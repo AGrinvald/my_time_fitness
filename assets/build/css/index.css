@@ -9890,7 +9890,6 @@ footer {
       margin-bottom: 35px; } }
 
 .team-area .scrolling-wrapper {
-  overflow: hidden;
   white-space: nowrap; }
   .team-area .scrolling-wrapper::-webkit-scrollbar {
     height: 8px; }

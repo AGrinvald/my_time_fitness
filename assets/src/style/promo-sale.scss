@@ -1,3 +1,12 @@
+a.promo-sale {
+  color: $black;
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $black;
+  }
+}
+
 .promo-sale {
     background-image: url(../img/promo5.jpg);
     background-size: cover;
@@ -7,10 +16,6 @@
     align-items: center;
     margin-bottom: 50px;
     overflow: hidden;
-
-    &:hover, &:focus {
-      text-decoration: none;
-    }
 
     @include media-breakpoint-up(lg) {
       height: 386px;

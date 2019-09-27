@@ -8217,6 +8217,12 @@ nav.navbar {
   padding-bottom: 15px; }
 
 /* ALERT MODAL END*/
+a.promo-sale {
+  color: #000000; }
+  a.promo-sale:hover, a.promo-sale:focus {
+    text-decoration: none;
+    color: #000000; }
+
 .promo-sale {
   background-image: url(../img/promo5.jpg);
   background-size: cover;
@@ -8228,8 +8234,6 @@ nav.navbar {
       align-items: center;
   margin-bottom: 50px;
   overflow: hidden; }
-  .promo-sale:hover, .promo-sale:focus {
-    text-decoration: none; }
   @media (min-width: 992px) {
     .promo-sale {
       height: 386px;

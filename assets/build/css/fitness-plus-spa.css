@@ -8433,13 +8433,12 @@ nav.navbar {
   color: #000000; }
 
 .promo-area .arrow-text {
-  font-size: 18px;
   font-weight: 300;
   line-height: 1.39;
   color: #81a100; }
   @media (min-width: 992px) {
     .promo-area .arrow-text {
-      font-size: 14px; } }
+      font-size: 18px; } }
   @media (max-width: 991.98px) {
     .promo-area .arrow-text {
       font-size: 14px; } }
