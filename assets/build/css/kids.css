@@ -8979,8 +8979,8 @@ nav.navbar {
         flex-direction: column; }
     @media (min-width: 992px) {
       .season-area .season-item .tariff-b {
-        -ms-flex: 0 1 73%;
-            flex: 0 1 73%;
+        -ms-flex: 0 1 49%;
+            flex: 0 1 49%;
         background-image: url(../img/555-copy3.png);
         background-repeat: no-repeat;
         background-position: top center;
@@ -9038,6 +9038,10 @@ nav.navbar {
   .season-area .season-item .features-b {
     margin: 0;
     padding: 0 30px; }
+    @media (min-width: 992px) {
+      .season-area .season-item .features-b {
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%; } }
     .season-area .season-item .features-b p {
       margin: 0; }
     .season-area .season-item .features-b li {
