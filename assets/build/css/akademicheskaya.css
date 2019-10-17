@@ -125,12 +125,12 @@
   font-style: normal; }
 
 :root {
-  --blue: #007bff;
+  --blue: #59c0cb;
   --indigo: #6610f2;
   --purple: #6f42c1;
-  --pink: #e83e8c;
+  --pink: #f0869b;
   --red: #dc3545;
-  --orange: #fd7e14;
+  --orange: #f99748;
   --yellow: #ffc107;
   --green: #28a745;
   --teal: #20c997;
@@ -535,7 +535,7 @@ mark,
 
 code {
   font-size: 87.5%;
-  color: #e83e8c;
+  color: #f0869b;
   word-break: break-word; }
   a > code {
     color: inherit; }
@@ -9284,7 +9284,7 @@ footer {
 
 .season-area .season-item {
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.29);
-  background-image: linear-gradient(to top, #f8f8f8, #ffffff);
+  background: linear-gradient(to top, #f8f8f8 100%, #ffffff 67%);
   border-radius: 13px;
   display: -ms-flexbox;
   display: flex;
@@ -9307,7 +9307,7 @@ footer {
     -webkit-transform: scale(1.02);
             transform: scale(1.02); }
     .season-area .season-item:hover .tariff-b::before {
-      background-color: rgba(110, 161, 0, 0.7);
+      background-color: #aacc23;
       transition: background-color .5s ease-in-out; }
     .season-area .season-item:hover .tariff-b .old-price {
       color: #dcfe55;
@@ -9325,7 +9325,8 @@ footer {
     color: white;
     background-image: url(../img/555-copy-6.png);
     background-repeat: no-repeat;
-    background-position: cover;
+    background-position: left top;
+    background-size: 100% auto;
     padding: 31px 32px 32px 25px;
     display: -ms-flexbox;
     display: flex;
@@ -9343,7 +9344,8 @@ footer {
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1; }
+      z-index: 1;
+      mix-blend-mode: multiply; }
     .season-area .season-item .tariff-b .name {
       font-size: 36px;
       font-weight: bold;
