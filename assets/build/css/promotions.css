@@ -7788,6 +7788,13 @@ button {
     background-color: #000000;
     color: #aacc23; }
 
+.btn-custom-blue-no-border {
+  background-color: #59c0cb;
+  color: #ffffff; }
+  .btn-custom-blue-no-border:hover {
+    background-color: #000000;
+    color: #ffffff; }
+
 .text-grey {
   color: #26272b; }
 
@@ -7855,6 +7862,15 @@ h2.title {
     .custom-input-group.primary .input-group-text, .custom-input-group.primary:focus .input-group-text, .custom-input-group.primary:hover .input-group-text, .custom-input-group.primary:active .input-group-text {
       border: solid 1px #000000;
       color: #000000; }
+  .custom-input-group.blue, .custom-input-group.blue:focus, .custom-input-group.blue:hover, .custom-input-group.blue:active {
+    background-color: #ffffff;
+    border: solid 1px #59c0cb; }
+    .custom-input-group.blue input, .custom-input-group.blue:focus input, .custom-input-group.blue:hover input, .custom-input-group.blue:active input {
+      background: transparent;
+      color: #59c0cb; }
+    .custom-input-group.blue .input-group-text, .custom-input-group.blue:focus .input-group-text, .custom-input-group.blue:hover .input-group-text, .custom-input-group.blue:active .input-group-text {
+      border: solid 1px #59c0cb;
+      color: #59c0cb; }
   .custom-input-group.white {
     color: #aacc23;
     border: solid 1px #aacc23;

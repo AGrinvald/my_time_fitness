@@ -143,6 +143,16 @@ button {
   }
 }
 
+.btn-custom-blue-no-border {
+  background-color: $blue;
+  color: $white;
+
+  &:hover {
+    background-color: $black;
+    color: $white;   
+  }
+}
+
 .text-grey {
   color: #26272b;
 }
@@ -229,6 +239,21 @@ h2.title {
     .input-group-text {
       border: solid 1px $black;
       color: $black;
+    }
+  }
+
+  &.blue, &.blue:focus, &.blue:hover, &.blue:active  {
+    background-color: $white;
+    border: solid 1px $blue;
+
+    input {
+      background: transparent;
+      color: $blue;
+    }
+
+    .input-group-text {
+      border: solid 1px $blue;
+      color: $blue;
     }
   }
 

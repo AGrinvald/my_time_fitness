@@ -93,7 +93,8 @@
                                 Академическая
                             </p>
                             <p>
-                                <button class="btn btn-lg btn-primary">ПОДРОБНЕЕ</button>
+                                <button class="btn btn-lg btn-primary" data-toggle="modal"
+                                data-target="#kids-request-modal">ПОДРОБНЕЕ</button>
                             </p>
                         </div>
                     </div>
@@ -197,7 +198,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="container season-container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
+            <div
+                class="container season-container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
                 <a href="#" class="season-item season-item-pink">
                     <div class="tariff-b">
                         <p class="name">Разовый</p>
@@ -322,6 +324,16 @@
     <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">
         //= alert-modal.html
+    </div>
+    <div class="modal fade" id="kids-request-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    //= kids-request-form.html
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/kids.js"></script>
 </body>
