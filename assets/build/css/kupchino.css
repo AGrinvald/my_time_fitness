@@ -8061,7 +8061,7 @@ h2.title {
     border: solid 1px #59c0cb; }
     .custom-input-group.blue input, .custom-input-group.blue:focus input, .custom-input-group.blue:hover input, .custom-input-group.blue:active input {
       background: transparent;
-      color: #59c0cb; }
+      color: #000000; }
     .custom-input-group.blue .input-group-text, .custom-input-group.blue:focus .input-group-text, .custom-input-group.blue:hover .input-group-text, .custom-input-group.blue:active .input-group-text {
       border: solid 1px #59c0cb;
       color: #59c0cb; }

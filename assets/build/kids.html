@@ -418,7 +418,7 @@
                         <a href="#">Политика обработки персональных данных</a>
                     </div>
                     <div class="col-xl-3 col-12 pb-3 pb-xl-0 mb-xl-5">
-                        <a href="#">Написать руководителю</a>
+                        <a href="#" data-toggle="modal" data-target="#contact-boss-modal">Написать руководителю</a>
                     </div>
                 </div>
             </div>
@@ -529,7 +529,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">1</span>
                                     </div>
-                                    <input type="text" id="promoName" class="form-control" 
+                                    <input type="text" id="clientName" class="form-control" 
                                     placeholder="Введите Ваше имя *" required >
                                 </div>
                             </div>
@@ -538,7 +538,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">2</span>
                                     </div>
-                                    <input type="text" id="promoPhone" class="form-control" 
+                                    <input type="text" id="clientPhone" class="form-control" 
                                     placeholder="Введите Ваш телефон *" required>
                                 </div>
                             </div>
@@ -547,18 +547,88 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">3</span>
                                     </div>
-                                    <input type="email" id="promoEmail" class="form-control" 
+                                    <input type="email" id="clientEmail" class="form-control" 
                                     placeholder="Введите Ваш email" required>
                                 </div>
                                 <div class="text-right text-small mb-4 col-12">* обязательные поля</div>
                             </div>
                             <div class="form-row">
-                                <button type="button" data-next="promo-confirm.html" 
+                                <button type="button" data-next="kids-request-confirm.html" 
                                 class="btn btn-custom-blue-no-border btn-custom-lg btn-rounded w-100 promo-btn">ОТПРАВИТЬ ЗАЯВКУ</button>
                             </div>
                         </form>
                         <p class="my-5">
                             Нажимая на кнопку "Записаться",<br /> Вы соглашаетесь с <a href="#" class="text-blue d-inline">правилами
+                                обработки персональных данных.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="contact-boss-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img srcset="img/cancel@1x.png 23w,
+                            img/cancel@2x.png 46w,
+                            img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
+                    </button>
+                    <div class="promo-form">
+                        <h3 class="text-center font-weight-bold my-5">ОСТАВИТЬ ЗАЯВКУ</h3>
+                        <form class="promo-form">
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-row">
+                                        <div class="input-group white custom-input-group mb-3 col-12">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">1</span>
+                                            </div>
+                                            <input type="text" id="promoName" class="form-control" placeholder="Введите Ваше имя" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="input-group white custom-input-group mb-3 col-12">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">2</span>
+                                            </div>
+                                            <input type="text" id="promoPhone" class="form-control" placeholder="Введите Ваш телефон"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="input-group white custom-input-group mb-3 col-12">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">3</span>
+                                            </div>
+                                            <input type="email" id="promoEmail" class="form-control" placeholder="Введите Ваш email"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-row">
+                                        <div class="input-group white custom-input-group mb-3 col-12">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">1</span>
+                                            </div>
+                                            <input type="text" id="promoName" class="form-control" placeholder="Введите Ваше имя" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <button type="button" data-next="promo-confirm.html"
+                                        class="btn btn-custom-green-no-border btn-custom-lg btn-rounded w-100 promo-btn">ОТПРАВИТЬ
+                                        ЗАЯВКУ</button>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="my-5">
+                            Нажимая на кнопку "Записаться",<br /> Вы соглашаетесь с <a href="#" class="text-primary d-inline">правилами
                                 обработки персональных данных.</a>
                         </p>
                     </div>

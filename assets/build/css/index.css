@@ -8061,7 +8061,7 @@ h2.title {
     border: solid 1px #59c0cb; }
     .custom-input-group.blue input, .custom-input-group.blue:focus input, .custom-input-group.blue:hover input, .custom-input-group.blue:active input {
       background: transparent;
-      color: #59c0cb; }
+      color: #000000; }
     .custom-input-group.blue .input-group-text, .custom-input-group.blue:focus .input-group-text, .custom-input-group.blue:hover .input-group-text, .custom-input-group.blue:active .input-group-text {
       border: solid 1px #59c0cb;
       color: #59c0cb; }
@@ -8388,7 +8388,7 @@ nav.navbar {
   padding-left: 3px; }
 
 #promo-modal .promo-form {
-  max-width: 330px;
+  max-width: 340px;
   margin-left: auto;
   margin-right: auto; }
   #promo-modal .promo-form .custom-input-group {
@@ -9782,10 +9782,6 @@ footer {
     -ms-flex-direction: column;
         flex-direction: column; } }
 
-@media (min-width: 992px) {
-  .promo-area .promo-block .schedule-link {
-    max-width: 176px; } }
-
 @media (max-width: 991.98px) {
   .promo-area .promo-block .schedule-link {
     width: 100%;
@@ -9827,10 +9823,8 @@ footer {
   font-size: 16px;
   font-weight: 400; }
   @media (min-width: 992px) {
-    .promo-area .promo-block .time-block {
-      max-width: 176px; }
-      .promo-area .promo-block .time-block:not(:first-child) {
-        border-top: 1px solid #ffffff; } }
+    .promo-area .promo-block .time-block:not(:first-child) {
+      border-top: 1px solid #ffffff; } }
   @media (max-width: 991.98px) {
     .promo-area .promo-block .time-block:not(:last-child) {
       margin-bottom: 8px; } }

@@ -18,3 +18,37 @@
 //= ../../../node_modules/bootstrap/js/dist/tab.js
 //= ../../../node_modules/bootstrap/js/dist/toast.js
 
+function modalNextClick() {
+    var name = document.getElementById("clientName"); 
+    var phone = document.getElementById("clientPhone"); 
+    var email = document.getElementById("clientEmail"); 
+
+    if (!name.checkValidity()) {
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!email.checkValidity()) {
+        email.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity() && email.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $("#kids-request-modal .modal-body").html(html);
+        });
+    }
+}
+
+$(function () {
+    $('#kids-request-modal').on('shown.bs.modal', function (e) {
+        $("#kids-request-modal .promo-btn").bind("click", modalNextClick);
+    });
+});

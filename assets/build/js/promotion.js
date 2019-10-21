@@ -18209,7 +18209,6 @@ return Popper;
 //# sourceMappingURL=toast.js.map
 
 function modalNextClick() {
-    var next = $(this).data("next");
 
     var name = document.getElementById("promoName"); 
     var phone = document.getElementById("promoPhone"); 

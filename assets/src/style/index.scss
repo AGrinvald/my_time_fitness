@@ -1413,9 +1413,6 @@ nav {
     }
 
     .schedule-link {
-      @include media-breakpoint-up(lg) {
-        max-width: 176px;
-      }
 
       @include media-breakpoint-down(md) {
         width: 100%;
@@ -1464,7 +1461,6 @@ nav {
       font-weight: 400;
 
       @include media-breakpoint-up(lg) {
-        max-width: 176px;
         &:not(:first-child) {
           border-top: 1px solid $white;
         }

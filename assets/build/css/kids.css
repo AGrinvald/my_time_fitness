@@ -7867,7 +7867,7 @@ h2.title {
     border: solid 1px #59c0cb; }
     .custom-input-group.blue input, .custom-input-group.blue:focus input, .custom-input-group.blue:hover input, .custom-input-group.blue:active input {
       background: transparent;
-      color: #59c0cb; }
+      color: #000000; }
     .custom-input-group.blue .input-group-text, .custom-input-group.blue:focus .input-group-text, .custom-input-group.blue:hover .input-group-text, .custom-input-group.blue:active .input-group-text {
       border: solid 1px #59c0cb;
       color: #59c0cb; }
@@ -8500,7 +8500,7 @@ footer {
   padding-left: 3px; }
 
 #kids-request-modal .promo-form {
-  max-width: 330px;
+  max-width: 340px;
   margin-left: auto;
   margin-right: auto; }
   #kids-request-modal .promo-form .custom-input-group {
@@ -8518,11 +8518,55 @@ footer {
     font-weight: 300;
     text-align: center; }
 
+/* CONTACT BOSS MODAL START*/
+@media (min-width: 992px) {
+  #contact-boss-modal .modal-dialog-centered {
+    min-height: calc(100% - 1%); } }
+
+#contact-boss-modal .modal-dialog {
+  max-width: 900px; }
+  @media (max-width: 767.98px) {
+    #contact-boss-modal .modal-dialog {
+      height: 100%; } }
+
+#contact-boss-modal .modal-content {
+  border: none;
+  background-color: #ffffff;
+  background-image: url(../img/555-copy-7.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  min-height: 656px; }
+  @media (max-width: 767.98px) {
+    #contact-boss-modal .modal-content {
+      height: 100%; } }
+
+#contact-boss-modal .modal-responsive {
+  max-width: 680px; }
+
+#contact-boss-modal .form-row > .col, #contact-boss-modal .form-row > [class*=col-] {
+  padding-right: 3px;
+  padding-left: 3px; }
+
+#contact-boss-modal .promo-form {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto; }
+  #contact-boss-modal .promo-form .custom-input-group {
+    margin-bottom: 25px; }
+  #contact-boss-modal .promo-form h3 {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 0.54px; }
+  #contact-boss-modal .promo-form p {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center; }
+
+/* CONTACT BOSS END*/
 @-webkit-keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
-
 @keyframes spin {
   100% {
     -webkit-transform: rotate(360deg);
