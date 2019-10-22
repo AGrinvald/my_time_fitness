@@ -8548,7 +8548,7 @@ footer {
   padding-left: 3px; }
 
 #contact-boss-modal .promo-form {
-  max-width: 600px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto; }
   #contact-boss-modal .promo-form .custom-input-group {
@@ -8561,6 +8561,19 @@ footer {
     font-size: 16px;
     font-weight: 300;
     text-align: center; }
+  #contact-boss-modal .promo-form textarea {
+    min-height: 100%;
+    border-radius: 24px;
+    border: solid 1px #aacc23;
+    padding: 1rem 1.5rem;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: -.39px;
+    color: #000000; }
+  #contact-boss-modal .promo-form .rules-text {
+    max-width: 321px; }
+  #contact-boss-modal .promo-form .promo-btn {
+    max-width: 330px; }
 
 /* CONTACT BOSS END*/
 @-webkit-keyframes spin {

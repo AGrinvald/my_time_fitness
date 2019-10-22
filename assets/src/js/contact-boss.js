@@ -1,8 +1,9 @@
-function modalNextClick() {
+function bossModalNextClick() {
 
-    var name = document.getElementById("promoName"); 
-    var phone = document.getElementById("promoPhone"); 
-    var email = document.getElementById("promoEmail"); 
+    var name = document.getElementById("bossContactName"); 
+    var phone = document.getElementById("bossContactPhone"); 
+    var email = document.getElementById("bossContactEmail"); 
+    var message = document.getElementById("bossContactMessage"); 
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -29,7 +30,7 @@ function modalNextClick() {
 }
 
 $(function () {
-    $('#promo-modal').on('shown.bs.modal', function (e) {
-        $("#promo-modal .promo-btn").bind("click", modalNextClick);
+    $('#contact-boss-modal').on('shown.bs.modal', function (e) {
+        $("#contact-boss-modal .promo-btn").bind("click", modalNextClick);
     });
 });

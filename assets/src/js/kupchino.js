@@ -18,6 +18,9 @@
 //= ../../../node_modules/bootstrap/js/dist/tab.js
 //= ../../../node_modules/bootstrap/js/dist/toast.js
 
+// импортируем jQuery Masked Input
+//= ../../../node_modules/jquery.maskedinput/src/jquery.maskedinput.js
+
 // Импортируем Owl
 //= ../../../node_modules/owl.carousel/dist/owl.carousel.js
 
@@ -301,11 +304,45 @@ function announceNextClick() {
     }
 }
 
+function bossModalNextClick() {
+
+    var name = document.getElementById("bossContactName"); 
+    var phone = document.getElementById("bossContactPhone"); 
+    var email = document.getElementById("bossContactEmail"); 
+    var message = document.getElementById("bossContactMessage"); 
+
+    if (!name.checkValidity()) {
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!email.checkValidity()) {
+        email.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity() && email.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $("#contact-boss-modal .modal-body").html(html);
+        });
+    }
+}
+
 $(function () {
 
     $('#signupFormBtn').bind("click", announceNextClick);
     $('#couponFormBtn').bind("click", couponNextClick);
-    
+    $("#couponPhone").mask("+7(999) 999-99-99");
+    $("#bossContactPhone").mask("+7(999) 999-99-99");
+    $("#announcePhone").mask("+7(999) 999-99-99");
+
     $('.gallery-area button.prev-btn').click(function () {
         moveToSelected('prev');
     });
@@ -314,6 +351,10 @@ $(function () {
         moveToSelected('next');
     });
 
+    $('#contact-boss-modal').on('shown.bs.modal', function (e) {
+        $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);
+    });
+    
     var galleryOwl = $('.gallery-carousel'),
         galleryOwlOptions = {
             loop: true,

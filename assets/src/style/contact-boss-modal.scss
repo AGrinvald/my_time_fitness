@@ -38,7 +38,7 @@
     }
   
     .promo-form {
-      max-width: 600px;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
       
@@ -56,6 +56,25 @@
         font-size: 16px;
         font-weight: 300;
         text-align: center;
+      }
+
+      textarea { 
+        min-height: 100%;
+        border-radius: 24px;
+        border: solid 1px $primary;
+        padding: 1rem 1.5rem;
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: -.39px;
+        color: $black;
+      }
+
+      .rules-text {
+          max-width: 321px;
+      }
+
+      .promo-btn {
+          max-width: 330px;
       }
     }
     

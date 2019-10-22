@@ -69,8 +69,10 @@
                                     Годовые карты от <b>1 125 руб.</b>/мес.
                                 </p>
                                 <form>
-                                    <input type="tel" id="couponPhone" class="form-control" placeholder="Введите Ваш телефон" required>
-                                    <button type="button" data-next="coupon-confirm.html" id="couponFormBtn" class="btn btn-primary">ЗАБРОНИРОВАТЬ <span
+                                    <input type="tel" id="couponPhone" class="form-control"
+                                        placeholder="Введите Ваш телефон" required>
+                                    <button type="button" data-next="coupon-confirm.html" id="couponFormBtn"
+                                        class="btn btn-primary">ЗАБРОНИРОВАТЬ <span
                                             class="d-none d-xl-inline">КАРТУ</span></button>
                                 </form>
                                 <p class="text-small">
@@ -459,7 +461,8 @@
             <div class="container">
                 <h2 class="title text-center">АБОНЕМЕНТЫ КЛУБА</h2>
             </div>
-            <div class="container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
+            <div
+                class="container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
                 <a href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">VIP</p>
@@ -638,15 +641,15 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">2</span>
                                 </div>
-                                <input id="announcePhone" type="tel" class="form-control" placeholder="Введите Ваш телефон"
-                                    aria-label="Phone" required>
+                                <input id="announcePhone" type="tel" class="form-control"
+                                    placeholder="Введите Ваш телефон" aria-label="Phone" required>
                             </div>
                             <div class="input-group custom-input-group primary">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">3</span>
                                 </div>
-                                <input type="button" id="signupFormBtn" data-next="announce-confirm.html" class="form-control signup-btn"
-                                    value="ЗАПИСАТЬСЯ">
+                                <input type="button" id="signupFormBtn" data-next="announce-confirm.html"
+                                    class="form-control signup-btn" value="ЗАПИСАТЬСЯ">
                             </div>
                         </form>
                     </div>
@@ -726,8 +729,19 @@
         aria-hidden="true">
         //= clubs-modal.html
     </div>
-    <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
         //= alert-modal.html
+    </div>
+    <div class="modal fade" id="contact-boss-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    //= contact-boss-form.html
+                </div>
+            </div>
+        </div>
     </div>
     <script src="js/akademicheskaya.js"></script>
     <script type="text/javascript">
