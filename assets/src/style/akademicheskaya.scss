@@ -55,75 +55,8 @@
 @import "club-page-nav";
 @import "club-season";
 @import "club-services";
+@import "club-header";
 @import "contact-boss-modal";
-
-/* TOP HEADER START */
-header {
-    position: relative;
-    @include media-breakpoint-up(xl) {
-        .hex-c {
-            width: 100%;
-            height: 360px;
-            z-index: 2;
-            overflow: hidden;
-
-            &::before {
-                content: "";
-                position: absolute;
-                left: 50%;
-                transform: translateX(-50%);
-                top: 13%;
-                height: 279px;
-                min-width: 1915px;
-                width: 100%;
-                background: url(../img/group-6.svg);
-                background-size: 427px 279px;
-                background-repeat: no-repeat;
-                background-position-y: top;
-                background-position-x: left;
-                z-index: 2;
-            }
-        }
-    }
-}
-
-.h-top {
-    @include media-breakpoint-up(xl) {
-        .inner {
-            width: 100%;
-            height: 585px;
-            z-index: 1;
-            overflow: hidden;
-
-            &::before {
-                content: "";
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                position: absolute;
-                width: 1790px;
-                height: 466px;
-                background-image: url(../img/group-6-copy.svg);
-                background-size: auto 100%;
-                background-repeat: no-repeat;
-                background-position-y: top;
-                background-position-x: right;
-                z-index: 2;
-            }
-        }
-    }
-}
-/* TOP HEADER END */
-
-/* NAVBAR START */
-nav.navbar {
-    position: relative;
-
-    .navbar-nav {
-        z-index: 4;
-    }
-}
-/* NAVBAR END */
 
 /* BANNER AREA START*/
 .banner-area {

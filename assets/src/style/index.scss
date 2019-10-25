@@ -51,66 +51,34 @@
 @import "workouts";
 @import "contact-boss-modal";
 
-/* NAVBAR START */
-nav {
-  @include media-breakpoint-down(md) {
-    .n-bottom {
-      position: relative;
 
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 18%;
-        height: 59px;
-        width: 72px;
-        background: url(../img/hexagone.svg);
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-position: center center;
-        z-index: 2;
+/* TOP HEADER START */
+.h-top {
+  @include media-breakpoint-up(xl) {
+      .inner {
+        height: 248px;
+          &::before {
+              content: "";
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              position: absolute;
+              width: 1475px;
+              height: 248px;
+              background: url(../img/group-3-copy-7.svg);
+              background-size: auto 100%;
+              background-repeat: no-repeat;
+              background-position-y: top;
+              background-position-x: right;
+              z-index: 8;
+          }
       }
-    }
   }
 }
-/* NAVBAR END */
+/* TOP HEADER END */
 
 /* BANNER AREA START*/
 .banner-area {
-  .container-fluid {
-    position: relative;
-
-    @media only screen and (min-width: 1750px) {
-      &::before {
-        content: "";
-        position: absolute;
-        right: 9px;
-        top: -193px;
-        height: 248px;
-        width: 254px;
-        background: url(../img/group-3-copy-7.svg);
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-position: center center;
-        z-index: 2;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: -142px;
-        height: 279px;
-        width: 426px;
-        background-image: url(../img/group-3-copy-8.svg);
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-        background-position: center center;
-        z-index: 2;
-      }
-    }
-  }
-
   @include media-breakpoint-down(lg) {
     .owl-dots {
       width: 100%;
@@ -283,36 +251,6 @@ nav {
         }
         100% {
           transform: translate(0, -0px);
-        }
-      }
-  
-      @media only screen and (min-width: 1750px) {
-        &::before {
-          content: "";
-          position: absolute;
-          right: 0;
-          bottom: -1px;
-          height: 510px;
-          width: 420px;
-          background: url(../img/rectangle-copy-15.svg);
-          background-repeat: no-repeat;
-          background-size: auto 100%;
-          background-position: center center;
-          z-index: 2;
-        }
-  
-        &::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          height: 510px;
-          width: 427px;
-          background: url(../img/rectangle-copy-14.svg);
-          background-repeat: no-repeat;
-          background-size: auto 100%;
-          background-position: center center;
-          z-index: 2;
         }
       }
     }

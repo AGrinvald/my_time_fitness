@@ -1,5 +1,4 @@
 /* NAVBAR START */
-
 nav.navbar {
   position: relative;
   display: block;
@@ -30,6 +29,7 @@ nav.navbar {
 
     .navbar-nav {
       max-width: 945px;
+      z-index: 4;
 
       .nav-link {
         color: $white;
@@ -182,7 +182,7 @@ nav.navbar {
       box-shadow: 0 8px 6px -6px black;
       padding-top: 20px;
       position: relative;
-      z-index: 100;
+
       .nav-link {
         color: $black;
         text-transform: uppercase;

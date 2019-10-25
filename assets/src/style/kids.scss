@@ -57,42 +57,10 @@
 }
 
 /* TOP HEADER START */
-header {
-  position: relative;
-  @include media-breakpoint-up(xl) {
-    .hex-c {
-      width: 100%;
-      height: 360px;
-      z-index: 2;
-      overflow: hidden;
-
-      &::before {
-        content: "";
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 13%;
-        height: 279px;
-        min-width: 1915px;
-        width: 100%;
-        background: url(../img/group-6.svg);
-        background-size: 427px 279px;
-        background-repeat: no-repeat;
-        background-position-y: top;
-        background-position-x: left;
-        z-index: 2;
-      }
-    }
-  }
-}
-
 .h-top {
   @include media-breakpoint-up(lg) {
     .inner {
-      width: 100%;
       height: 585px;
-      z-index: 1;
-      overflow: hidden;
 
       &::before {
         content: "";
@@ -100,7 +68,7 @@ header {
         left: 50%;
         transform: translateX(-50%);
         position: absolute;
-        width: 1635px;
+        width: 1670px;
         height: 293px;
         background-image: url(../img/header-kids.svg);
         background-size: auto 100%;
@@ -113,16 +81,6 @@ header {
   }
 }
 /* TOP HEADER END */
-
-/* NAVBAR START */
-nav.navbar {
-  position: relative;
-
-  .navbar-nav {
-    z-index: 10;
-  }
-}
-/* NAVBAR END */
 
 /* BANNER AREA START*/
 .banner-area {
