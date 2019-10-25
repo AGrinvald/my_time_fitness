@@ -8072,25 +8072,28 @@ h2.title {
     .custom-input-group.white .input-group-text {
       border: solid 1px #aacc23;
       color: #aacc23; }
-  .custom-input-group input {
-    color: #000000;
+  .custom-input-group select {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: -0.39px;
+    text-align: center;
+    text-align-last: center; }
+    .custom-input-group select option {
+      text-align: center; }
+  .custom-input-group input, .custom-input-group select {
     background-color: transparent;
     height: 52px;
     border: none;
     border-radius: 27%;
     text-align: center; }
-    .custom-input-group input[type="button"] {
+    .custom-input-group input[type="button"], .custom-input-group select[type="button"] {
       font-size: 16px;
       font-weight: bold;
-      letter-spacing: 0.8px;
-      -ms-flex-item-align: center;
-          align-self: center; }
-    .custom-input-group input[type="text"], .custom-input-group input[type="tel"], .custom-input-group input[type="email"] {
+      letter-spacing: 0.8px; }
+    .custom-input-group input[type="text"], .custom-input-group input[type="tel"], .custom-input-group input[type="email"], .custom-input-group select[type="text"], .custom-input-group select[type="tel"], .custom-input-group select[type="email"] {
       font-size: 18px;
       font-weight: 300;
-      letter-spacing: -0.39px;
-      -ms-flex-item-align: center;
-          align-self: center; }
+      letter-spacing: -0.39px; }
 
 header {
   position: relative;

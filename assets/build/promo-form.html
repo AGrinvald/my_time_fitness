@@ -1,5 +1,5 @@
 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <img srcset="img/cancel@1x.png 23w,
+    <img srcset="img/cancel@1x.png 23w,
         img/cancel@2x.png 46w,
         img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
 </button>
@@ -11,8 +11,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">1</span>
                 </div>
-                <input type="text" id="promoName" class="form-control" 
-                placeholder="Введите Ваше имя" required >
+                <input type="text" id="promoName" class="form-control" placeholder="Введите Ваше имя" required>
             </div>
         </div>
         <div class="form-row">
@@ -20,8 +19,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">2</span>
                 </div>
-                <input type="text" id="promoPhone" class="form-control" 
-                placeholder="Введите Ваш телефон" required>
+                <input type="text" id="promoPhone" class="form-control" placeholder="Введите Ваш телефон" required>
             </div>
         </div>
         <div class="form-row">
@@ -29,13 +27,26 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">3</span>
                 </div>
-                <input type="email" id="promoEmail" class="form-control" 
-                placeholder="Введите Ваш email" required>
+                <input type="email" id="promoEmail" class="form-control" placeholder="Введите Ваш email" required>
             </div>
         </div>
         <div class="form-row">
-            <button type="button" data-next="promo-confirm.html" 
-            class="btn btn-custom-green-no-border btn-custom-lg btn-rounded w-100 promo-btn">ОТПРАВИТЬ ЗАЯВКУ</button>
+            <div class="input-group white custom-input-group mb-3 col-12">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">4</span>
+                </div>
+                <select class="form-control">
+                    <option selected>Выберите клуб</option>
+                    <option value="1">Комендантский</option>
+                    <option value="2">Академическая</option>
+                    <option value="3">Купчино</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <button type="button" data-next="promo-confirm.html"
+                class="btn btn-custom-green-no-border btn-custom-lg btn-rounded w-100 promo-btn">ОТПРАВИТЬ
+                ЗАЯВКУ</button>
         </div>
     </form>
     <p class="my-5">

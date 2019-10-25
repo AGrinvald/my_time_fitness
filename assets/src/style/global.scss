@@ -268,22 +268,31 @@ h2.title {
     }
   }
 
-  input {
-    color: $black;
+  select {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: -0.39px;
+    text-align: center;
+    text-align-last: center;
+
+    option {
+      text-align: center;
+    }
+  }
+
+  input, select {
     background-color: transparent;
 
     &[type="button"] {
       font-size: 16px;
       font-weight: bold;
       letter-spacing: 0.8px;
-      align-self: center;
     }
   
     &[type="text"], &[type="tel"], &[type="email"] {
       font-size: 18px;
       font-weight: 300;
       letter-spacing: -0.39px;
-      align-self: center;
     }
 
     height: 52px;
