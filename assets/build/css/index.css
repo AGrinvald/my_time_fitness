@@ -7885,6 +7885,33 @@ body {
 .modal-responsive {
   max-width: 680px; }
 
+.breadcrumb {
+  background: transparent;
+  padding-left: 0; }
+  .breadcrumb .breadcrumb-item a {
+    color: #000000; }
+  .breadcrumb .breadcrumb-item.active {
+    color: #8e8e8e; }
+
+.banner-top {
+  height: 80px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: -0.39px;
+  color: #000000;
+  padding: 0 15px; }
+  @media (max-width: 991.98px) {
+    .banner-top {
+      display: none; } }
+  .banner-top .dropdown {
+    text-decoration: underline; }
+
 button {
   font-family: "Avenir Next Cyr";
   letter-spacing: 1.42px;

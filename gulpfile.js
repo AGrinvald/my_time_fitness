@@ -24,11 +24,11 @@ var path = {
     js: ['assets/src/js/index.js', 'assets/src/js/akademicheskaya.js', 
     'assets/src/js/kids.js', 'assets/src/js/kupchino.js', 
     'assets/src/js/komendanskiy.js', 'assets/src/js/promotions.js',
-    'assets/src/js/promotion.js' ],
+    'assets/src/js/promotion.js', 'assets/src/js/payment-process.js' ],
     style: ['assets/src/style/index.scss', 'assets/src/style/akademicheskaya.scss',
     'assets/src/style/komendanskiy.scss', 'assets/src/style/kupchino.scss', 
     'assets/src/style/kids.scss', 'assets/src/style/promotions.scss', 'assets/src/style/sale.scss', 
-    'assets/src/style/fitness-plus-spa.scss'],
+    'assets/src/style/fitness-plus-spa.scss', 'assets/src/style/payment-process.scss'],
     img: 'assets/src/img/**/*.*',
     fonts: 'assets/src/fonts/**/*.*'
   },

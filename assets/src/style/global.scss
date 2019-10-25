@@ -18,6 +18,41 @@ body {
   max-width: 680px;
 }
 
+.breadcrumb {
+  background: transparent;
+  padding-left: 0;
+
+  .breadcrumb-item {
+    a {
+      color: $black;
+    }
+
+    &.active {
+      color: #8e8e8e;
+    }
+  }
+} 
+
+.banner-top {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: -0.39px;
+  color: $black;
+  padding: 0 15px;
+
+  .dropdown {
+    text-decoration: underline;
+  }
+} 
+
 button {
   font-family: "Avenir Next Cyr";
   letter-spacing: 1.42px;
