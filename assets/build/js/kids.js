@@ -18723,6 +18723,13 @@ $(function () {
     $('#kids-request-modal').on('shown.bs.modal', function (e) {
         $("#clientPhone").mask("+7(999) 999-99-99");
         $("#kids-request-modal .promo-btn").bind("click", modalNextClick);
+
+        $(".kids-dropdown a.dropdown-item").click(function (event) {
+            event.preventDefault();
+
+            $(".kids-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+            $(".kids-dropdown").find('input:hidden').val($(this).data('value'));
+        });
     });
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {

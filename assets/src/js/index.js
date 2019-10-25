@@ -182,44 +182,41 @@ function signupNextClick() {
         dataType: 'html'
     }).done(function (html) {
         $(".signup-container").html(html);
-        
-        if($("#signupPhone").length > 0) {
+
+        if ($("#signupPhone").length > 0) {
             $("#signupPhone").mask("+7(999) 999-99-99");
         }
 
         $(".signup-btn").bind("click", signupNextClick);
+
+        if ($(".signup-dropdown a.dropdown-item")) {
+
+            $(".signup-dropdown a.dropdown-item").click(function (event) {
+                event.preventDefault();
+
+                $(".signup-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+                $(".signup-dropdown").find('input:hidden').val($(this).data('value'));
+            });
+        }
     });
-    
 }
 
 function signupModalNextClick() {
-    var next = $(this).data("next");
-    var formToValidate = $(".signup-form-validation");
 
-    if(formToValidate) {
-        var name = document.getElementById("signupName"); 
-        var phone = document.getElementById("signupPhone"); 
-    
-        if (!name.checkValidity()) {
-            name.parentElement.setAttribute("style", "background-color: #FFDBDC");
-        }
-    
-        if (!phone.checkValidity()) {
-            phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
-        }
+    var name = document.getElementById("signupName");
+    var phone = document.getElementById("signupPhone");
 
-        if (name.checkValidity() && phone.checkValidity()) {
-            var next = $(this).data("next");
-    
-            $.ajax({
-                url: next,
-                dataType: 'html'
-            }).done(function (html) {
-                $("#signup-modal .modal-body").html(html);
-                $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
-            });
-        }
-    } else {
+    if (!name.checkValidity()) {
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity()) {
+        var next = $(this).data("next");
+
         $.ajax({
             url: next,
             dataType: 'html'
@@ -228,14 +225,15 @@ function signupModalNextClick() {
             $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
         });
     }
+
 }
 
 function promoNextClick() {
     var next = $(this).data("next");
 
-    var name = document.getElementById("promoName"); 
-    var phone = document.getElementById("promoPhone"); 
-    var email = document.getElementById("promoEmail"); 
+    var name = document.getElementById("promoName");
+    var phone = document.getElementById("promoPhone");
+    var email = document.getElementById("promoEmail");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -263,10 +261,10 @@ function promoNextClick() {
 
 function bossModalNextClick() {
 
-    var name = document.getElementById("bossContactName"); 
-    var phone = document.getElementById("bossContactPhone"); 
-    var email = document.getElementById("bossContactEmail"); 
-    var message = document.getElementById("bossContactMessage"); 
+    var name = document.getElementById("bossContactName");
+    var phone = document.getElementById("bossContactPhone");
+    var email = document.getElementById("bossContactEmail");
+    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -300,11 +298,31 @@ $(function () {
     $('#signup-modal').on('shown.bs.modal', function (e) {
         $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
         $("#signupPhone").mask("+7(999) 999-99-99");
+
+        if ($(".signup-dropdown a.dropdown-item")) {
+
+            $(".signup-dropdown a.dropdown-item").click(function (event) {
+                event.preventDefault();
+
+                $(".signup-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+                $(".signup-dropdown").find('input:hidden').val($(this).data('value'));
+            });
+        }
     });
 
     $('#promo-modal').on('shown.bs.modal', function (e) {
         $("#promo-modal .promo-btn").bind("click", promoNextClick);
         $("#promoPhone").mask("+7(999) 999-99-99");
+
+        if ($(".promo-dropdown a.dropdown-item")) {
+
+            $(".promo-dropdown a.dropdown-item").click(function (event) {
+                event.preventDefault();
+
+                $(".promo-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+                $(".promo-dropdown").find('input:hidden').val($(this).data('value'));
+            });
+        }
     });
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
@@ -316,7 +334,7 @@ $(function () {
         loop: true,
         mouseDrag: false,
         autoplay: true,
-        autoplaySpeed:1000,
+        autoplaySpeed: 1000,
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         responsive: {
@@ -332,7 +350,7 @@ $(function () {
         navText: ["", ""]
     });
 
-    owl.trigger('play.owl.autoplay',[3000])
+    owl.trigger('play.owl.autoplay', [3000])
 
     $('.features').owlCarousel({
         mouseDrag: false,

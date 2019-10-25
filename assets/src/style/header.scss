@@ -98,6 +98,10 @@ header {
         font-size: 24px;
         font-family: "Avenir Next Cyr";
         font-weight: 600;
+
+        &:hover, &:focus {
+          text-decoration: none;
+        }
       }
   
       hr {

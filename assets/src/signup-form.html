@@ -11,7 +11,8 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">1</span>
                 </div>
-                <input type="text" class="form-control" id="signupName" placeholder="Введите Ваше имя" aria-label="Username" required>
+                <input type="text" class="form-control" id="signupName" placeholder="Введите Ваше имя"
+                    aria-label="Username" required>
             </div>
         </div>
         <div class="form-row">
@@ -19,20 +20,27 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">2</span>
                 </div>
-                <input type="tel" class="form-control" id="signupPhone" placeholder="Введите Ваш телефон" aria-label="Phone" required>
+                <input type="tel" class="form-control" id="signupPhone" placeholder="Введите Ваш телефон"
+                    aria-label="Phone" required>
             </div>
         </div>
         <div class="form-row">
-            <div class="input-group custom-input-group white mb-3 col-12">
+            <div class="input-group custom-input-group white mb-5 col-12">
                 <div class="input-group-prepend">
                     <span class="input-group-text">3</span>
                 </div>
-                <select class="form-control">
-                    <option selected>Выберите клуб</option>
-                    <option value="1">Комендантский</option>
-                    <option value="2">Академическая</option>
-                    <option value="3">Купчино</option>
-                </select>
+                <div class="dropdown signup-dropdown">
+                    <button type="button" class="form-control dropdown-toggle" id="selectClubDropdown"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Выберите клуб
+                    </button>
+                    <div class="dropdown-menu text-center" aria-labelledby="selectClubDropdown">
+                        <a class="dropdown-item" href="#">Комендантский</a>
+                        <a class="dropdown-item" href="#">Академическая</a>
+                        <a class="dropdown-item" href="#">Купчино</a>
+                    </div>
+                    <input type="hidden" name="selectedClub">
+                </div>
             </div>
         </div>
         <div class="form-row">

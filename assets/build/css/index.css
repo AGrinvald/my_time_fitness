@@ -8062,7 +8062,7 @@ h2.title {
   .custom-input-group .input-group-prepend {
     position: absolute;
     overflow: hidden;
-    z-index: 1000;
+    z-index: 5;
     height: 100%; }
   .custom-input-group .input-group-text {
     background-color: transparent;
@@ -8099,25 +8099,33 @@ h2.title {
     .custom-input-group.white .input-group-text {
       border: solid 1px #aacc23;
       color: #aacc23; }
-  .custom-input-group select {
+  .custom-input-group .dropdown {
+    width: 100%; }
+  .custom-input-group .dropdown-menu.show {
+    display: block;
+    z-index: 10; }
+  .custom-input-group button {
+    background-color: transparent;
+    display: block;
     font-size: 18px;
     font-weight: 300;
     letter-spacing: -0.39px;
-    text-align: center;
-    text-align-last: center; }
-    .custom-input-group select option {
-      text-align: center; }
-  .custom-input-group input, .custom-input-group select {
-    background-color: transparent;
     height: 52px;
     border: none;
     border-radius: 27%;
     text-align: center; }
-    .custom-input-group input[type="button"], .custom-input-group select[type="button"] {
+  .custom-input-group input {
+    background-color: transparent;
+    display: block;
+    height: 52px;
+    border: none;
+    border-radius: 27%;
+    text-align: center; }
+    .custom-input-group input[type="button"] {
       font-size: 16px;
       font-weight: bold;
       letter-spacing: 0.8px; }
-    .custom-input-group input[type="text"], .custom-input-group input[type="tel"], .custom-input-group input[type="email"], .custom-input-group select[type="text"], .custom-input-group select[type="tel"], .custom-input-group select[type="email"] {
+    .custom-input-group input[type="text"], .custom-input-group input[type="tel"], .custom-input-group input[type="email"] {
       font-size: 18px;
       font-weight: 300;
       letter-spacing: -0.39px; }
@@ -8203,6 +8211,8 @@ header {
       font-size: 24px;
       font-family: "Avenir Next Cyr";
       font-weight: 600; }
+      .h-top .b-right a:hover, .h-top .b-right a:focus {
+        text-decoration: none; }
     .h-top .b-right hr {
       margin: 8px 0;
       background-color: #101929; }

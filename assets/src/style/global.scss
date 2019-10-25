@@ -246,7 +246,7 @@ h2.title {
   .input-group-prepend {
     position: absolute;
     overflow: hidden;
-    z-index: 1000;
+    z-index: 5;
     height: 100%;
   }
 
@@ -303,20 +303,31 @@ h2.title {
     }
   }
 
-  select {
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu.show {
+    display: block;
+    z-index: 10;
+  }
+
+  button {
+    background-color: transparent;
+    display: block;
     font-size: 18px;
     font-weight: 300;
     letter-spacing: -0.39px;
-    text-align: center;
-    text-align-last: center;
-
-    option {
-      text-align: center;
-    }
+    height: 52px;
+    border: none;
+    border-radius: 27%;
+    text-align: center; 
   }
 
-  input, select {
+  input {
     background-color: transparent;
+    display: block;
+    
 
     &[type="button"] {
       font-size: 16px;
