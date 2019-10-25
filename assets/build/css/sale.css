@@ -7966,7 +7966,7 @@ header {
   .h-top .b-right {
     text-align: right;
     position: absolute;
-    right: 0%;
+    right: -5%;
     top: 50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
@@ -7978,7 +7978,7 @@ header {
       display: block;
       font-size: 24px;
       font-family: "Avenir Next Cyr";
-      font-weight: bold; }
+      font-weight: 600; }
     .h-top .b-right hr {
       margin: 8px 0;
       background-color: #101929; }

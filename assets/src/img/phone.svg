@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="34px" viewBox="0 0 20 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 20 0 20 34 0 34"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Страница-клуба_Комендантский" transform="translate(-1282.000000, -45.000000)">
+            <g id="Group-3" transform="translate(1282.000000, 45.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M19.8029107,29.8833718 L16.6396423,24.9757299 C15.59078,23.3307572 15.2467198,23.8385166 12.7548901,24.6526103 C12.1522635,24.8519373 10.8552609,25.5296493 10.1296067,24.86033 C8.61991234,23.4587461 6.75573175,19.0735509 6.33243347,17.3110801 C6.13225301,16.467612 5.41702489,12.5838817 5.86326051,11.7005481 C6.54095479,10.3451241 9.79180215,11.2830104 10.2338673,8.23855189 L10.7009551,2.61333261 C11.1951506,-2.76220332 2.15366625,1.27259589 0.814959381,4.75137753 C-2.43588798,13.3539136 4.42654862,33.9664291 14.51481,34 C16.7689255,33.9853127 20.9560336,31.8829369 19.8029107,29.8833718" id="Fill-1" fill="#A8D049" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
