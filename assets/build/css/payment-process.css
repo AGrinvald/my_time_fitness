@@ -7839,21 +7839,20 @@ h2.title {
       font-size: 20px;
       letter-spacing: 0.42px; } }
 
-@media (min-width: 992px) {
-  .dropdown-menu {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.37);
-    min-width: 100%;
-    padding: 0;
-    margin: 0;
-    background-clip: border-box; }
-    .dropdown-menu .dropdown-item {
-      padding: 15px 22px;
-      font-size: 17px;
-      letter-spacing: 0.05px; }
-      .dropdown-menu .dropdown-item:hover {
-        font-weight: 700;
-        background: linear-gradient(to right, #e5e5e5 0%, #f4f4f4 50%, #f4f4f4 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f4f4f4', GradientType=1 ); } }
+.dropdown-menu {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.37);
+  min-width: 100%;
+  padding: 0;
+  margin: 0;
+  background-clip: border-box; }
+  .dropdown-menu .dropdown-item {
+    padding: 15px 22px;
+    font-size: 17px;
+    letter-spacing: 0.05px; }
+    .dropdown-menu .dropdown-item:hover {
+      font-weight: 700;
+      background: linear-gradient(to right, #e5e5e5 0%, #f4f4f4 50%, #f4f4f4 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f4f4f4', GradientType=1 ); }
 
 .input-group > .custom-select:not(:first-child), .input-group > .form-control:not(:first-child) {
   border-radius: 28px; }
@@ -8512,5 +8511,11 @@ footer {
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5; }
+
+.description-area ul li {
+  list-style-image: url(../img/path-copy-3.svg);
+  font-size: 18px;
+  padding-bottom: 5px;
+  font-weight: 300; }
 
 /* DESCRIPTION AREA END*/

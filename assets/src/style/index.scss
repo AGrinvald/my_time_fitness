@@ -59,7 +59,7 @@
         height: 248px;
           &::before {
               content: "";
-              top: 0;
+              top: -2%;
               left: 50%;
               transform: translateX(-50%);
               position: absolute;
@@ -1126,11 +1126,16 @@
     
     @include media-breakpoint-up(lg) {
       padding-right: 25px;
+
+      .signup-block {
+        height: 435px;
+      }
+
       &::before {
         content: "";
         position: absolute;
-        left: -33%;
-        top: -53%;
+        left: -30%;
+        top: -46.5%;
         height: 640px;
         width: 354px;
         background: url(../img/group.svg);
@@ -1151,7 +1156,7 @@
     .signup-block {
       margin-top: 35px;
       margin-bottom: 50px;
-
+      
       h2 {
         text-align: center;
       }
