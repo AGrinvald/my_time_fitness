@@ -50,6 +50,33 @@
 @import "promotion";
 @import "contact-boss-modal";
 
+
+/* TOP HEADER START */
+.h-top {
+  @include media-breakpoint-up(xl) {
+      .inner {
+        height: 466px;
+
+          &::before {
+              content: "";
+              top: -2%;
+              left: 50%;
+              transform: translateX(-50%);
+              position: absolute;
+              width: 1835px;
+              height: 466px;
+              background: url(../img/group-2.svg);
+              background-size: auto 100%;
+              background-repeat: no-repeat;
+              background-position-y: top;
+              background-position-x: right;
+              z-index: 8;
+          }
+      }
+  }
+}
+/* TOP HEADER END */
+
 .promo-area {
   .fitness-plus-spa {
     margin-bottom: 50px;
