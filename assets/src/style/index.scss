@@ -1730,6 +1730,10 @@
     position: relative;
   }
 
+  .container-shadow {
+
+  }
+  
   .clubs-block {
     width: 100%;
     height: 100%;
@@ -1750,67 +1754,71 @@
     max-width: 344px;
     background-color: rgba(255, 255, 255, 0.9);
     z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
     h2 {
       letter-spacing: 0.4px;
       text-align: center;
-      padding-top: 10px;
       margin-bottom: 0;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 10px;
+      }
     }
 
     @include media-breakpoint-up(lg) {
       height: 504px;
       max-width: 408px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       padding: 20px 32px 32px 40px;
     }
 
     @include media-breakpoint-down(md) {
       margin-top: 50px;
-      height: 384px;
+      height: 175px;
       max-width: 344px;
       width: 100%;
-      padding: 20px 16px 32px 16px;
+      padding: 20px 8px 8px 8px;
     }
 
     .club-block {
-      display: block;
-      max-width: 344px;
-      height: 88px;
-      box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
-      background-color: $white;
-      border-left: 5px solid #000;
       display: flex;
       flex-direction: row;
       align-items: center;
-      color: #000;
+      
 
       @include media-breakpoint-down(md) {
-        padding: 14px 16px 12px 14px;
+        height: 79px;
+        padding-left: 18px;
+        padding-right: 18px;
       }
 
       @include media-breakpoint-up(lg) {
+        max-width: 344px;
         padding: 12px 17px 15px 25px;
-      }
-
-      &:hover,
-      &:focus {
         color: #000;
-        text-decoration: none;
-      }
+        height: 88px;
+        box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
+        background-color: $white;
+        border-left: 5px solid #000;
 
-      &:hover {
-        border-left: 5px solid $primary;
-      }
-
-      &.active {
-        background-color: #ebf2d2;
-        border-left: 5px solid $primary;
-        .number-bg {
-          background-image: url(../img/shape-copy-4.png);
-          color: $primary;
+        &:hover,
+        &:focus {
+          color: #000;
+          text-decoration: none;
+        }
+  
+        &:hover {
+          border-left: 5px solid $primary;
+        }
+  
+        &.active {
+          background-color: #ebf2d2;
+          border-left: 5px solid $primary;
+          .number-bg {
+            background-image: url(../img/shape-copy-4.png);
+            color: $primary;
+          }
         }
       }
 
@@ -1827,6 +1835,11 @@
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat;
+
+        @include media-breakpoint-down(md) {
+          background-image: url(../img/shapeCopy8.png);
+          color: $primary;
+        }
       }
 
       .desc {
@@ -1837,12 +1850,22 @@
           letter-spacing: 0.18px;
           font-weight: 600;
           margin-bottom: 3px;
+
+          @include media-breakpoint-down(md) {
+            font-size: 15px;
+            letter-spacing: 0.15px;
+          }
         }
 
         p {
           letter-spacing: 0.14px;
           font-weight: normal;
           margin-bottom: 0;
+
+          @include media-breakpoint-down(md) {
+            font-size: 15px;
+            letter-spacing: 0.15px;
+          }
         }
       }
     }
@@ -1884,9 +1907,41 @@
     }
   }
 
+  .nav-tabs {
+    
+    .nav-item {
+      background-color: #f2f2f2;
+      color: #848484;
+      border: 1px solid #d7d7d7;
+      border-radius: 0;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.14px;
+      flex-grow: 1;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+
+      &.active {
+        color: $black;
+        background-color: #fff;
+        border-color: #d7d7d7 #d7d7d7 #fff;
+      }
+    }
+  }
+
+  .tab-content {
+    .tab-pane {
+      background-color: $white;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #fff #d7d7d7 #d7d7d7;
+    }
+  }
+
   @include media-breakpoint-down(md) {
     .map-block {
-      height: 668px;
+      height: 690px;
     }
 
     .club-info-block {

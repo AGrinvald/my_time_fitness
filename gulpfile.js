@@ -58,10 +58,6 @@ var gulp = require('gulp'),  // подключаем Gulp
   autoPrefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
   cleanCSS = require('gulp-clean-css'), // плагин для минимизации CSS
   uglify = require('gulp-uglify'), // модуль для минимизации JavaScript
-  //cache = require('gulp-cache'), // модуль для кэширования
-  imagemin = require('gulp-imagemin'), // плагин для сжатия PNG, JPEG, GIF и SVG изображений
-  jpegrecompress = require('imagemin-jpeg-recompress'), // плагин для сжатия jpeg	
-  pngquant = require('imagemin-pngquant'), // плагин для сжатия png
   rimraf = require('gulp-rimraf'), // плагин для удаления файлов и каталогов
   rename = require('gulp-rename');
 
@@ -75,7 +71,7 @@ gulp.task('webserver', function () {
 // сбор html
 gulp.task('html:build', function () {
   return gulp.src(path.src.html) // выбор всех html файлов по указанному пути
-    .pipe(plumber()) // отслеживание ошибок
+    //.pipe(plumber()) // отслеживание ошибок
     .pipe(rigger()) // импорт вложений
     .pipe(gulp.dest(path.build.html)) // выкладывание готовых файлов
     .pipe(webserver.reload({ stream: true })); // перезагрузка сервера

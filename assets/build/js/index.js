@@ -22256,6 +22256,10 @@ function init() {
     ymaps.geoQuery(komendanskiy).addToMap(map);
     ymaps.geoQuery(akademicheskaya).addToMap(map);
     ymaps.geoQuery(kupchino).addToMap(map);
+
+    if (width < 977) {
+        $(".club-block-nav:first-child").click();
+    }
 }
 
 function signupNextClick() {
@@ -22460,7 +22464,43 @@ $(function () {
         navText: ["", ""]
     });
 
-    $(".club-block").click(function (event) {
+    $(".club-block-nav").click(function (event) {
+        var self = $(this);
+
+        var geoObjects = ymaps.geoQuery(map.geoObjects);
+        var idStr = self.data("id");
+
+        var id = parseInt(idStr);
+        var selected = geoObjects.search("properties.id = " + id);
+        var result = geoObjects.setOptions('visible', false);
+
+        result.then(function () {
+
+            var placemark = selected.get(0);
+            var markCoords = placemark.geometry.getCoordinates();
+
+            var coords = [markCoords[0], markCoords[1]];
+
+            coords[0] = coords[0] + 0.04;
+            zoom = 11;
+
+            var moving = new ymaps.map.action.Single({
+                center: coords,
+                zoom: zoom,
+                timingFunction: 'ease-in',
+                checkZoomRange: true,
+                duration: 1500,
+                callback: function (err) {
+                    selected.setOptions('visible', true);
+                }
+            });
+
+            map.action.execute(moving);
+        });
+
+    });
+
+    $(".club-block-lg").click(function (event) {
         event.preventDefault();
         var self = $(this);
 
@@ -22504,15 +22544,9 @@ $(function () {
                 var markCoords = placemark.geometry.getCoordinates();
 
                 var coords = [markCoords[0], markCoords[1]];
-
-                if (currentSize == windowsSize.Medium) {
-                    coords[0] = coords[0] + 0.07;
-                    zoom = 11;
-                } else {
-                    var coords = centerPoints[id];
-                    var zoom = 14;
-                }
-
+                var coords = centerPoints[id];
+                var zoom = 14;
+                
                 var moving = new ymaps.map.action.Single({
                     center: coords,
                     zoom: zoom,

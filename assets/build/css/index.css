@@ -10140,61 +10140,64 @@ footer {
     overflow: hidden;
     max-width: 344px;
     background-color: rgba(255, 255, 255, 0.9);
-    z-index: 10;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-pack: justify;
-        justify-content: space-between; }
+    z-index: 10; }
     .map-area .inner-block h2 {
       letter-spacing: 0.4px;
       text-align: center;
-      padding-top: 10px;
       margin-bottom: 0; }
+      @media (max-width: 991.98px) {
+        .map-area .inner-block h2 {
+          margin-bottom: 10px; } }
     @media (min-width: 992px) {
       .map-area .inner-block {
         height: 504px;
         max-width: 408px;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
         padding: 20px 32px 32px 40px; } }
     @media (max-width: 991.98px) {
       .map-area .inner-block {
         margin-top: 50px;
-        height: 384px;
+        height: 175px;
         max-width: 344px;
         width: 100%;
-        padding: 20px 16px 32px 16px; } }
+        padding: 20px 8px 8px 8px; } }
     .map-area .inner-block .club-block {
-      display: block;
-      max-width: 344px;
-      height: 88px;
-      box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
-      background-color: #ffffff;
-      border-left: 5px solid #000;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-direction: row;
           flex-direction: row;
       -ms-flex-align: center;
-          align-items: center;
-      color: #000; }
+          align-items: center; }
       @media (max-width: 991.98px) {
         .map-area .inner-block .club-block {
-          padding: 14px 16px 12px 14px; } }
+          height: 79px;
+          padding-left: 18px;
+          padding-right: 18px; } }
       @media (min-width: 992px) {
         .map-area .inner-block .club-block {
-          padding: 12px 17px 15px 25px; } }
-      .map-area .inner-block .club-block:hover, .map-area .inner-block .club-block:focus {
-        color: #000;
-        text-decoration: none; }
-      .map-area .inner-block .club-block:hover {
-        border-left: 5px solid #aacc23; }
-      .map-area .inner-block .club-block.active {
-        background-color: #ebf2d2;
-        border-left: 5px solid #aacc23; }
-        .map-area .inner-block .club-block.active .number-bg {
-          background-image: url(../img/shape-copy-4.png);
-          color: #aacc23; }
+          max-width: 344px;
+          padding: 12px 17px 15px 25px;
+          color: #000;
+          height: 88px;
+          box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
+          background-color: #ffffff;
+          border-left: 5px solid #000; }
+          .map-area .inner-block .club-block:hover, .map-area .inner-block .club-block:focus {
+            color: #000;
+            text-decoration: none; }
+          .map-area .inner-block .club-block:hover {
+            border-left: 5px solid #aacc23; }
+          .map-area .inner-block .club-block.active {
+            background-color: #ebf2d2;
+            border-left: 5px solid #aacc23; }
+            .map-area .inner-block .club-block.active .number-bg {
+              background-image: url(../img/shape-copy-4.png);
+              color: #aacc23; } }
       .map-area .inner-block .club-block .number-bg {
         line-height: 38px;
         height: 42px;
@@ -10208,6 +10211,10 @@ footer {
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat; }
+        @media (max-width: 991.98px) {
+          .map-area .inner-block .club-block .number-bg {
+            background-image: url(../img/shapeCopy8.png);
+            color: #aacc23; } }
       .map-area .inner-block .club-block .desc {
         margin-left: 17px; }
         .map-area .inner-block .club-block .desc h4 {
@@ -10215,10 +10222,18 @@ footer {
           letter-spacing: 0.18px;
           font-weight: 600;
           margin-bottom: 3px; }
+          @media (max-width: 991.98px) {
+            .map-area .inner-block .club-block .desc h4 {
+              font-size: 15px;
+              letter-spacing: 0.15px; } }
         .map-area .inner-block .club-block .desc p {
           letter-spacing: 0.14px;
           font-weight: normal;
           margin-bottom: 0; }
+          @media (max-width: 991.98px) {
+            .map-area .inner-block .club-block .desc p {
+              font-size: 15px;
+              letter-spacing: 0.15px; } }
   .map-area .club-info-block {
     padding-left: 45px;
     z-index: 50;
@@ -10244,9 +10259,31 @@ footer {
         border-bottom: 1px solid #d6ff34; }
       .map-area .club-info-block .inner-div .info-bottom {
         font-weight: 100; }
+  .map-area .nav-tabs .nav-item {
+    background-color: #f2f2f2;
+    color: #848484;
+    border: 1px solid #d7d7d7;
+    border-radius: 0;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.14px;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center; }
+    .map-area .nav-tabs .nav-item.active {
+      color: #000000;
+      background-color: #fff;
+      border-color: #d7d7d7 #d7d7d7 #fff; }
+  .map-area .tab-content .tab-pane {
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fff #d7d7d7 #d7d7d7; }
   @media (max-width: 991.98px) {
     .map-area .map-block {
-      height: 668px; }
+      height: 690px; }
     .map-area .club-info-block {
       display: none; } }
   @media (min-width: 992px) {
