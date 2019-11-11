@@ -11,7 +11,7 @@ header {
       .hex-c {
           width: 100%;
           height: 360px;
-          z-index: 2;
+          z-index: -1;
           overflow: hidden;
 
           &::before {
