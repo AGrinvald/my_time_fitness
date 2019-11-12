@@ -174,6 +174,7 @@ function init() {
     ymaps.geoQuery(kupchino).addToMap(map);
 
     if (width < 977) {
+        //map.behaviors.disable(['drag']);
         $(".club-block-nav:first-child").click();
     }
 }

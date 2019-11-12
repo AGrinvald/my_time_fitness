@@ -10217,6 +10217,9 @@ footer {
             color: #aacc23; } }
       .map-area .inner-block .club-block .desc {
         margin-left: 17px; }
+        @media (max-width: 991.98px) {
+          .map-area .inner-block .club-block .desc {
+            margin-left: 8px; } }
         .map-area .inner-block .club-block .desc h4 {
           font-size: 18px;
           letter-spacing: 0.18px;
