@@ -10176,8 +10176,8 @@ footer {
       @media (max-width: 991.98px) {
         .map-area .inner-block .club-block {
           height: 79px;
-          padding-left: 18px;
-          padding-right: 18px; } }
+          padding-left: 12px;
+          padding-right: 12px; } }
       @media (min-width: 992px) {
         .map-area .inner-block .club-block {
           max-width: 344px;
