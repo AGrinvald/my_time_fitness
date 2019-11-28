@@ -22474,8 +22474,7 @@ $(function () {
         onTranslated: function(event) {
             var clubBlock = $(event.target).find('.owl-item.active > .club-schedule-block')[0];
             var newUrl = $(clubBlock).data("link");
-            console.log(newUrl);
-            
+
             $('.schedule-btn').attr("href", newUrl);
         },
         items: 1
