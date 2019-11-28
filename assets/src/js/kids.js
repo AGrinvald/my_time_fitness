@@ -25,8 +25,6 @@ function bossModalNextClick() {
 
     var name = document.getElementById("bossContactName"); 
     var phone = document.getElementById("bossContactPhone"); 
-    var email = document.getElementById("bossContactEmail"); 
-    var message = document.getElementById("bossContactMessage"); 
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -36,11 +34,7 @@ function bossModalNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (!email.checkValidity()) {
-        email.parentElement.setAttribute("style", "background-color: #FFDBDC");
-    }
-
-    if (name.checkValidity() && phone.checkValidity() && email.checkValidity()) {
+    if (name.checkValidity() && phone.checkValidity()) {
         var next = $(this).data("next");
 
         $.ajax({

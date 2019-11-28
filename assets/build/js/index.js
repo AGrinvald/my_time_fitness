@@ -22120,7 +22120,7 @@ var mapSettingsCollection = {
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
-        center: [60.20874891762144, 30.372126306640563], zoom: 9,
+        center: [60.20874891762144, 30.372126306640563], zoom: 13,
         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
     }
 };
@@ -22191,6 +22191,8 @@ function init() {
         currentSize = windowsSize.Medium;
         mapSettings = mapSettingsCollection.Medium;
     }
+
+    console.log(mapSettings.zoom);
 
     map = new ymaps.Map("map", {
         center: mapSettings.center,
@@ -22322,7 +22324,6 @@ function promoNextClick() {
 
     var name = document.getElementById("promoName");
     var phone = document.getElementById("promoPhone");
-    var email = document.getElementById("promoEmail");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -22332,11 +22333,7 @@ function promoNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (!email.checkValidity()) {
-        email.parentElement.setAttribute("style", "background-color: #FFDBDC");
-    }
-
-    if (name.checkValidity() && phone.checkValidity() && email.checkValidity()) {
+    if (name.checkValidity() && phone.checkValidity()) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -22380,6 +22377,9 @@ function bossModalNextClick() {
 }
 
 $(function () {
+
+    var md = 992;
+    var lg = 1400;
 
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $('#signupFormBtn').bind("click", signupNextClick);
@@ -22465,6 +22465,43 @@ $(function () {
         navText: ["", ""]
     });
 
+    var scheduleOwl = $('.schedule-slides'),
+    owlOptions = {
+        loop: true,
+        mouseDrag: false,
+        nav: true,
+        navText: ["", ""],
+        onTranslated: function(event) {
+            var clubBlock = $(event.target).find('.owl-item.active > .club-schedule-block')[0];
+            var newUrl = $(clubBlock).data("link");
+            console.log(newUrl);
+            
+            $('.schedule-btn').attr("href", newUrl);
+        },
+        items: 1
+    };
+
+    if ($(window).width() < md) {
+        scheduleOwl.owlCarousel(owlOptions);
+    } else {
+        scheduleOwl.addClass('off');
+    }
+
+    $(window).resize(function () {
+        if ($(window).width() < md) {
+            if ($('.schedule-slides').hasClass('off')) {
+                scheduleOwl.owlCarousel(owlOptions);
+                scheduleOwl.removeClass('off');
+            }
+
+        } else {
+            if (!$('.schedule-slides').hasClass('off')) {
+                scheduleOwl.addClass('off').trigger('destroy.owl.carousel');
+                scheduleOwl.find('.owl-stage-outer').children(':eq(0)').unwrap();
+            }
+        }
+    });
+
     $(".club-block-nav").click(function (event) {
         var self = $(this);
 
@@ -22482,8 +22519,8 @@ $(function () {
 
             var coords = [markCoords[0], markCoords[1]];
 
-            coords[0] = coords[0] + 0.04;
-            zoom = 11;
+            coords[0] = coords[0] + 0.005;
+            zoom = 13;
 
             var moving = new ymaps.map.action.Single({
                 center: coords,

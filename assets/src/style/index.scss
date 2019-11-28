@@ -1317,9 +1317,8 @@
 /* PROMO AREA START */
 .promo-area {
   .promo-container {
-    background-color: #e9f0f2;
-
     @include media-breakpoint-up(lg) {
+      background-color: #e9f0f2;
       background-image: url(../img/bitmap.png);
       background-size: cover;
       background-position: center center;
@@ -1328,9 +1327,46 @@
     }
 
     @include media-breakpoint-down(md) {
+      background-color: #f1f1f1;
       padding-top: 35px;
-      padding-bottom: 25px;
+      padding-bottom: 30px;
       margin-bottom: 32px;
+    }
+  }
+
+  .schedule-slides {
+    .owl-nav {
+      position: absolute;
+      width: 110%;
+      left: -5%;
+      top: 40%;
+      display: flex;
+      justify-content: space-between;
+
+      button.owl-prev {
+        background-image: url(../img/groupCopy4.png);
+      }
+
+      button.owl-next {
+        background-image: url(../img/groupCopy5.png);
+      }
+
+      button.owl-prev,
+      button.owl-next {
+        cursor: pointer;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        @include media-breakpoint-up(md) {
+          width: 70px;
+          height: 70px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          width: 52px;
+          height: 52px;
+        }
+      }
     }
   }
 
@@ -1342,22 +1378,13 @@
       margin-bottom: auto;
     }
 
-    @include media-breakpoint-down(md) {
-      position: relative;
-    }
-
     > div {
       @include media-breakpoint-up(lg) {
         flex-direction: row;
       }
-
-      @include media-breakpoint-down(md) {
-        flex-direction: column;
-      }
     }
 
     .schedule-link {
-
       @include media-breakpoint-down(md) {
         width: 100%;
         margin: 25px 0;
@@ -1397,6 +1424,14 @@
       }
     }
 
+    .address-block {
+      height: 112px;
+      padding: 25px 50px;
+      background-color: $white;
+      font-size: 15px;
+      letter-spacing: 0.15px;
+    }
+
     .time-block {
       display: flex;
       align-items: center;
@@ -1409,23 +1444,20 @@
           border-top: 1px solid $white;
         }
       }
-
-      @include media-breakpoint-down(md) {
-        &:not(:last-child) {
-          margin-bottom: 8px;
-        }
-      }
     }
 
     .club-title {
-      background-color: #d8d8d8;
-
       @include media-breakpoint-up(lg) {
         font-size: 18px;
+        background-color: #d8d8d8;
       }
 
       @include media-breakpoint-down(md) {
-        font-size: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.16px;
+        background-color: $primary;
+        color: $white;
       }
     }
 

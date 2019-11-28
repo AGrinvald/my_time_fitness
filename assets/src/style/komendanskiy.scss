@@ -58,16 +58,6 @@
 @import "club-header";
 @import "contact-boss-modal";
 
-/* NAVBAR START */
-nav.navbar {
-    position: relative;
-
-    .navbar-nav {
-        z-index: 4;
-    }
-}
-/* NAVBAR END */
-
 /* BANNER AREA START*/
 .banner-area {
     .banner-container {
@@ -366,7 +356,7 @@ nav.navbar {
             background-color: rgba(0, 0, 0, 0.5);
             text-align: center;
             padding: 0 15px;
-            padding-bottom: 10px;
+            padding-bottom: 5px;
             font-size: 15px;
             letter-spacing: 0.06px;
             color: #ffffff;
