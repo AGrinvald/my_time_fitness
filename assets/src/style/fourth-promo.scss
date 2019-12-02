@@ -1,0 +1,122 @@
+@import "variables";
+@import "avenir-next-cyr";
+@import "magistral-c";
+
+@import "../../../node_modules/bootstrap/scss/_functions";
+@import "../../../node_modules/bootstrap/scss/_variables";
+@import "../../../node_modules/bootstrap/scss/_mixins";
+@import "../../../node_modules/bootstrap/scss/_root";
+@import "../../../node_modules/bootstrap/scss/_reboot";
+@import "../../../node_modules/bootstrap/scss/_type";
+@import "../../../node_modules/bootstrap/scss/_images";
+@import "../../../node_modules/bootstrap/scss/_code";
+@import "../../../node_modules/bootstrap/scss/_grid";
+@import "../../../node_modules/bootstrap/scss/_tables";
+@import "../../../node_modules/bootstrap/scss/_forms";
+@import "../../../node_modules/bootstrap/scss/_buttons";
+@import "../../../node_modules/bootstrap/scss/_transitions";
+@import "../../../node_modules/bootstrap/scss/_dropdown";
+@import "../../../node_modules/bootstrap/scss/_button-group";
+@import "../../../node_modules/bootstrap/scss/_input-group";
+@import "../../../node_modules/bootstrap/scss/_custom-forms";
+@import "../../../node_modules/bootstrap/scss/_nav";
+@import "../../../node_modules/bootstrap/scss/_navbar";
+@import "../../../node_modules/bootstrap/scss/_card";
+@import "../../../node_modules/bootstrap/scss/_breadcrumb";
+@import "../../../node_modules/bootstrap/scss/_pagination";
+@import "../../../node_modules/bootstrap/scss/_badge";
+@import "../../../node_modules/bootstrap/scss/_jumbotron";
+@import "../../../node_modules/bootstrap/scss/_alert";
+@import "../../../node_modules/bootstrap/scss/_progress";
+@import "../../../node_modules/bootstrap/scss/_media";
+@import "../../../node_modules/bootstrap/scss/_list-group";
+@import "../../../node_modules/bootstrap/scss/_close";
+@import "../../../node_modules/bootstrap/scss/_toasts";
+@import "../../../node_modules/bootstrap/scss/_modal";
+@import "../../../node_modules/bootstrap/scss/_tooltip";
+@import "../../../node_modules/bootstrap/scss/_popover";
+@import "../../../node_modules/bootstrap/scss/_carousel";
+@import "../../../node_modules/bootstrap/scss/_spinners";
+@import "../../../node_modules/bootstrap/scss/_utilities";
+@import "../../../node_modules/bootstrap/scss/_print";
+
+@import "global";
+@import "header";
+@import "navigation";
+@import "clubs-modal";
+@import "footer";
+@import "promo-modal";
+@import "alert-modal";
+@import "promotion";
+@import "contact-boss-modal";
+@import "couple-promo";
+
+.couple-promo {
+    height: 384px; 
+    position: relative;
+
+    .container-fluid {
+      &::before {
+        @include media-breakpoint-up(lg) {
+          height: 145px;
+          width: 655px;
+          top: 24%;
+        }
+      }
+  
+      .right-block {
+        width: 345px;
+        height: 90px;
+        background-size: contain;
+  
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+    
+    .flex-block {
+
+      @include media-breakpoint-up(lg) {
+        width: 45%;
+        height: 100%;
+        padding: 30px 0 60px 0;
+      }
+  
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+  
+      h2 {
+        @include media-breakpoint-up(lg) {
+          font-size: 28px;
+        }
+  
+        @include media-breakpoint-down(md) {
+          font-size: 26px;
+        }
+      }
+  
+      p.subtitle {
+        @include media-breakpoint-up(lg) {
+          font-size: 22px;
+        }
+  
+        @include media-breakpoint-down(md) {
+          font-size: 18px;
+        }
+      }
+  
+      p.date-text {
+        @include media-breakpoint-up(lg) {
+          font-size: 18px;
+        }
+  
+        @include media-breakpoint-down(md) {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+  

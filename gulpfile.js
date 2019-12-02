@@ -29,7 +29,8 @@ var path = {
     'assets/src/style/komendanskiy.scss', 'assets/src/style/kupchino.scss', 
     'assets/src/style/kids.scss', 'assets/src/style/promotions.scss', 'assets/src/style/sale.scss', 
     'assets/src/style/fitness-plus-spa.scss', 'assets/src/style/payment-process.scss', 
-    'assets/src/style/first-promo.scss'],
+    'assets/src/style/first-promo.scss', 'assets/src/style/second-promo.scss', 
+    'assets/src/style/fourth-promo.scss', 'assets/src/style/fifth-promo.scss'],
     img: 'assets/src/img/**/*.*',
     fonts: 'assets/src/fonts/**/*.*'
   },

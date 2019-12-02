@@ -8540,181 +8540,193 @@ b {
     max-width: 330px; }
 
 /* CONTACT BOSS END*/
-.girl-promo {
+.fighting-promo {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url(../img/222@2x.png);
+  position: relative;
+  background-image: url(../img/man-bg.jpg);
   display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center; }
-  .girl-promo .inner-block {
-    position: relative;
-    z-index: 6;
+  display: flex; }
+  @media (min-width: 992px) {
+    .fighting-promo {
+      -ms-flex-align: center;
+          align-items: center; } }
+  @media (max-width: 991.98px) {
+    .fighting-promo {
+      -ms-flex-align: end;
+          align-items: flex-end; } }
+  .fighting-promo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    z-index: 1; }
+    @media (min-width: 992px) {
+      .fighting-promo::before {
+        height: 335px;
+        top: 80px;
+        left: 0;
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat; } }
+    @media (max-width: 991.98px) {
+      .fighting-promo::before {
+        height: 345px;
+        top: 105px;
+        left: 0;
+        background-position: center center;
+        background-repeat: repeat-x; } }
+  .fighting-promo .inner-block {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column; }
-    .girl-promo .inner-block h3,
-    .girl-promo .inner-block p {
-      text-align: center; }
+    z-index: 5;
+    position: relative; }
     @media (min-width: 992px) {
-      .girl-promo .inner-block {
-        width: 802px;
-        height: 437px;
-        padding: 65px 54px 54px 89px; } }
+      .fighting-promo .inner-block {
+        height: 178px;
+        -ms-flex-align: center;
+            align-items: center;
+        -ms-flex-pack: center;
+            justify-content: center; } }
     @media (max-width: 991.98px) {
-      .girl-promo .inner-block {
-        width: 100%;
+      .fighting-promo .inner-block {
+        width: 310px;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        -ms-flex-align: center;
+            align-items: center;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 100px; } }
+    @media (min-width: 992px) {
+      .fighting-promo .inner-block .flex-block {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
         height: 100%;
-        overflow: hidden; } }
-    .girl-promo .inner-block p {
+        position: relative; }
+        .fighting-promo .inner-block .flex-block.left-side {
+          border-right: 5px solid #000000;
+          padding-right: 60px; }
+        .fighting-promo .inner-block .flex-block.right-side {
+          padding-left: 60px; } }
+    .fighting-promo .inner-block h3 {
       font-weight: 300; }
       @media (min-width: 992px) {
-        .girl-promo .inner-block p {
-          font-size: 28px; } }
+        .fighting-promo .inner-block h3 {
+          font-size: 40px;
+          line-height: 1.18;
+          margin-bottom: 8px; } }
       @media (max-width: 991.98px) {
-        .girl-promo .inner-block p {
-          font-size: 22px;
-          line-height: 39px; } }
-    .girl-promo .inner-block h3 {
-      font-weight: 600;
-      line-height: 1.45; }
-      @media (min-width: 992px) {
-        .girl-promo .inner-block h3 {
-          font-size: 40px; } }
-      @media (max-width: 991.98px) {
-        .girl-promo .inner-block h3 {
+        .fighting-promo .inner-block h3 {
           font-size: 26px;
-          margin-bottom: 0; } }
+          line-height: 1.42; } }
+    .fighting-promo .inner-block h2 {
+      font-weight: bold;
+      margin-bottom: 0; }
+      @media (min-width: 992px) {
+        .fighting-promo .inner-block h2 {
+          text-align: right;
+          font-size: 40px;
+          line-height: 1.2; } }
+      @media (max-width: 991.98px) {
+        .fighting-promo .inner-block h2 {
+          font-size: 26px;
+          line-height: 1.54;
+          margin-bottom: 10px; } }
+    .fighting-promo .inner-block p {
+      font-weight: 300; }
+      @media (min-width: 992px) {
+        .fighting-promo .inner-block p {
+          font-size: 28px;
+          line-height: 1.61; } }
+      @media (max-width: 991.98px) {
+        .fighting-promo .inner-block p {
+          font-size: 26px;
+          line-height: 1.73; } }
     @media (min-width: 992px) {
-      .girl-promo .inner-block .custom-btn {
-        background-color: #000000;
-        color: #aacc23;
-        margin-top: 0.5rem;
-        width: 248px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        border: 1px solid transparent;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 1.5; } }
+      .fighting-promo .inner-block .custom-btn {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1.31px;
+        width: 99px;
+        height: 14px;
+        z-index: 10;
+        color: #000000; } }
     @media (max-width: 991.98px) {
-      .girl-promo .inner-block .custom-btn {
-        margin-top: 55px;
-        margin-bottom: 100px; } }
-    .girl-promo .inner-block::before {
-      content: "";
-      position: absolute;
-      background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-image: url(../img/group-copy-13.svg);
-      z-index: -1; }
-      @media (min-width: 992px) {
-        .girl-promo .inner-block::before {
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0; } }
-      @media (max-width: 991.98px) {
-        .girl-promo .inner-block::before {
-          width: 400px;
-          height: 215px;
-          left: 50%;
-          -webkit-transform: translateX(-50%);
-                  transform: translateX(-50%);
-          bottom: 176px; } }
-    .girl-promo .inner-block::after {
-      content: "";
-      position: absolute;
-      background: url(../img/girl-banner.png);
-      background-repeat: no-repeat;
-      background-size: auto 100%;
-      background-position: center center; }
-      @media (min-width: 992px) {
-        .girl-promo .inner-block::after {
-          z-index: 6;
-          left: -88px;
-          top: 5px;
-          width: 244px;
-          height: 506px; } }
-      @media (max-width: 991.98px) {
-        .girl-promo .inner-block::after {
-          z-index: -2;
-          left: 50%;
-          -webkit-transform: translateX(-50%);
-                  transform: translateX(-50%);
-          bottom: -6px;
-          width: 273px;
-          height: 567px; } }
+      .fighting-promo .inner-block .custom-btn {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px; }
+        .fighting-promo .inner-block .custom-btn:hover, .fighting-promo .inner-block .custom-btn:focus {
+          text-decoration: none; } }
 
-/* TOP HEADER START */
-@media (min-width: 1200px) {
-  .h-top .inner {
-    height: 466px; }
-    .h-top .inner::before {
-      content: "";
-      top: -2%;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
-      position: absolute;
-      width: 1835px;
-      height: 466px;
-      background: url(../img/group-2.svg);
-      background-size: auto 100%;
-      background-repeat: no-repeat;
-      background-position-y: top;
-      background-position-x: right;
-      z-index: 8; } }
+@media (min-width: 992px) {
+  .green-theme::before {
+    background-image: url(../img/green-bg.png); } }
 
-/* TOP HEADER END */
-.girl-promo {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url(../img/222@2x.png);
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
+@media (max-width: 991.98px) {
+  .green-theme::before {
+    background-image: url(../img/green-bg-small.png); } }
+
+@media (min-width: 992px) {
+  .yellow-theme::before {
+    background-image: url(../img/yellow-bg.png); } }
+
+@media (max-width: 991.98px) {
+  .yellow-theme::before {
+    background-image: url(../img/yellow-bg-small.png); } }
+
+@media (min-width: 992px) {
+  .yellow-theme .text-grey {
+    color: #6f6f6f; } }
+
+@media (max-width: 991.98px) {
+  .yellow-theme .text-grey {
+    color: #000000; } }
+
+.fighting-promo {
   height: 384px; }
   @media (min-width: 992px) {
-    .girl-promo .inner-block {
-      width: 575px;
-      height: 384px;
-      padding: 80px 54px 54px 89px;
-      margin-top: 0; } }
-  @media (min-width: 992px) {
-    .girl-promo .inner-block p {
-      font-size: 24px; } }
+    .fighting-promo::before {
+      height: 255px;
+      top: 65px; } }
   @media (max-width: 991.98px) {
-    .girl-promo .inner-block p {
-      font-size: 18px;
-      line-height: 30px; } }
-  .girl-promo .inner-block p:last-child {
-    margin-bottom: 98px; }
+    .fighting-promo::before {
+      height: 300px;
+      top: 30px; } }
   @media (min-width: 992px) {
-    .girl-promo .inner-block h3 {
+    .fighting-promo .inner-block {
+      height: 115px; } }
+  @media (max-width: 991.98px) {
+    .fighting-promo .inner-block {
+      width: 310px;
+      margin-bottom: 100px; } }
+  @media (min-width: 992px) {
+    .fighting-promo .inner-block h3 {
       font-size: 30px; } }
   @media (max-width: 991.98px) {
-    .girl-promo .inner-block h3 {
+    .fighting-promo .inner-block h3 {
       font-size: 22px; } }
-  @media (max-width: 991.98px) {
-    .girl-promo .inner-block::before {
-      width: 350px;
-      height: 191px;
-      bottom: 65px; } }
   @media (min-width: 992px) {
-    .girl-promo .inner-block::after {
-      left: -50px;
-      top: 27px;
-      width: 173px;
-      height: 357px; } }
+    .fighting-promo .inner-block h2 {
+      font-size: 30px; } }
   @media (max-width: 991.98px) {
-    .girl-promo .inner-block::after {
-      bottom: -6px;
-      width: 273px;
-      height: 365px; } }
+    .fighting-promo .inner-block h2 {
+      font-size: 22px;
+      margin-bottom: 10px; } }
+  .fighting-promo .inner-block p {
+    font-weight: 300; }
+    @media (min-width: 992px) {
+      .fighting-promo .inner-block p {
+        font-size: 24px; } }
+    @media (max-width: 991.98px) {
+      .fighting-promo .inner-block p {
+        font-size: 18px; } }

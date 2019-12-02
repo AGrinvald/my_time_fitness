@@ -8871,7 +8871,7 @@ footer {
         .girl-promo .inner-block::after {
           z-index: 6;
           left: -88px;
-          top: -2px;
+          top: 5px;
           width: 244px;
           height: 506px; } }
       @media (max-width: 991.98px) {
