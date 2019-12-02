@@ -1,0 +1,130 @@
+.girl-promo {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../img/222@2x.png);
+  display: flex;
+  justify-content: center;
+
+  .inner-block {
+    position: relative;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+
+    h3,
+    p {
+      text-align: center;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 802px;
+      height: 437px;
+      padding: 65px 54px 54px 89px;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    p {
+      font-weight: 300;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 28px;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 22px;
+        line-height: 39px;
+      }
+    }
+
+    h3 {
+      font-weight: 600;
+      line-height: 1.45;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 40px;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 26px;
+        margin-bottom: 0;
+      }
+    }
+
+    .custom-btn {
+      @include media-breakpoint-up(lg) {
+        background-color: $black;
+        color: $primary;
+        margin-top: 0.5rem;
+        width: 248px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 1px solid transparent;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.5;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin-top: 55px;
+        margin-bottom: 100px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url(../img/group-copy-13.svg);
+      z-index: -1;
+
+      @include media-breakpoint-up(lg) {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 400px;
+        height: 215px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 176px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: url(../img/girl-banner.png);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: center center;
+
+      @include media-breakpoint-up(lg) {
+        z-index: 6;
+        left: -88px;
+        top: -2px;
+        width: 244px;
+        height: 506px;
+      }
+
+      @include media-breakpoint-down(md) {
+        z-index: -2;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -6px;
+        width: 273px;
+        height: 567px;
+      }
+    }
+  }
+}

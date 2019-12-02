@@ -1,0 +1,186 @@
+.fighting-promo {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-image: url(../img/man-bg.jpg);
+  display: flex;
+
+  @include media-breakpoint-up(lg) {
+    align-items: center;
+  }
+
+  @include media-breakpoint-down(md) {
+    align-items: flex-end;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    @include media-breakpoint-up(lg) {
+      height: 335px;
+      top: 80px;
+      left: 0;
+      background-size: 100% 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    @include media-breakpoint-down(md) {
+      height: 345px;
+      top: 105px;
+      left: 0;
+      background-position: center center;
+      background-repeat: repeat-x;
+    }
+  }
+
+  .inner-block {
+    display: flex;
+    z-index: 5;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      height: 178px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: 310px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+      margin-bottom: 100px;
+    }
+
+    .flex-block {
+      @include media-breakpoint-up(lg) {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 50%;
+        height: 100%;
+        position: relative;
+
+        &.left-side {
+          border-right: 5px solid $black;
+          padding-right: 60px;
+        }
+        &.right-side {
+          padding-left: 60px;
+        }
+      }
+    }
+
+    h3 {
+      font-weight: 300;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 40px;
+        line-height: 1.18;
+        margin-bottom: 8px;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 26px;
+        line-height: 1.42;
+      }
+    }
+
+    h2 {
+      font-weight: bold;
+      margin-bottom: 0;
+
+      @include media-breakpoint-up(lg) {
+        text-align: right;
+        font-size: 40px;
+        line-height: 1.2;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 26px;
+        line-height: 1.54;
+        margin-bottom: 10px;
+      }
+    }
+
+    p {
+      font-weight: 300;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 28px;
+        line-height: 1.61;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 26px;
+        line-height: 1.73;
+      }
+    }
+
+    .custom-btn {
+      @include media-breakpoint-up(lg) {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1.31px;
+        width: 99px;
+        height: 14px;
+        z-index: 10;
+        color: $black;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.green-theme {
+  &::before {
+    @include media-breakpoint-up(lg) {
+      background-image: url(../img/green-bg.png);
+    }
+
+    @include media-breakpoint-down(md) {
+      background-image: url(../img/green-bg-small.png);
+    }
+  }
+}
+
+.yellow-theme {
+  &::before {
+    @include media-breakpoint-up(lg) {
+      background-image: url(../img/yellow-bg.png);
+    }
+
+    @include media-breakpoint-down(md) {
+      background-image: url(../img/yellow-bg-small.png);
+    }
+  }
+
+  .text-grey {
+    @include media-breakpoint-up(lg) {
+      color: #6f6f6f;
+    }
+
+    @include media-breakpoint-down(md) {
+      color: $black;
+    }
+  }
+}
