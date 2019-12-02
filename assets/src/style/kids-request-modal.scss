@@ -1,4 +1,4 @@
-#kids-request-modal {
+.kids-request-modal {
   .text-blue {
     color: $blue;
   }
@@ -6,33 +6,66 @@
   .modal-body {
     position: relative;
 
-    @include media-breakpoint-up(lg) {
-      &::before {
-        content: "";
-        position: absolute;
-        top: 4%;
-        left: 4%;
-        width: 65px;
-        height: 64px;
-        background: url(../img/flower-sm.svg);
-        background-repeat: no-repeat;
-        background-size: 100% auto;
-        background-position: center center;
-        animation: spin 10s linear infinite;
+    &.kids-request-theme {
+      @include media-breakpoint-up(lg) {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 4%;
+          left: 4%;
+          width: 65px;
+          height: 64px;
+          background: url(../img/flower-sm.svg);
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: center center;
+          animation: spin 10s linear infinite;
+        }
+  
+        &::after {
+          content: "";
+          position: absolute;
+          top: 26%;
+          right: 4%;
+          width: 60px;
+          height: 60px;
+          background: url(../img/blue-md-flower.svg);
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: center center;
+          animation: spin 10s linear infinite;
+        }
       }
+    }
 
-      &::after {
-        content: "";
-        position: absolute;
-        top: 26%;
-        right: 4%;
-        width: 60px;
-        height: 60px;
-        background: url(../img/blue-md-flower.svg);
-        background-repeat: no-repeat;
-        background-size: 100% auto;
-        background-position: center center;
-        animation: spin 10s linear infinite;
+    &.kids-season-theme {
+      @include media-breakpoint-up(lg) {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 15%;
+          right: 8%;
+          width: 60px;
+          height: 56px;
+          background: url(../img/flower-md.svg);
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: center center;
+          animation: spin 10s linear infinite;
+        }
+  
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2%;
+          left: 1%;
+          width: 153px;
+          height: 82px;
+          background-image: url(../img/cloud-mirror.svg);
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: center center;
+        }
       }
     }
   }
@@ -40,35 +73,125 @@
   .modal-content {
     position: relative;
 
-    @include media-breakpoint-up(lg) {
-      &::before {
-        content: "";
-        position: absolute;
-        bottom: 20%;
-        left: 10%;
-        width: 69px;
-        height: 64px;
-        background: url(../img/flower-md.svg);
-        background-repeat: no-repeat;
-        background-size: 100% auto;
-        background-position: center center;
-        animation: spin 10s linear infinite;
+    &.kids-request-theme {
+      @include media-breakpoint-up(lg) {
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 20%;
+          left: 10%;
+          width: 69px;
+          height: 64px;
+          background: url(../img/flower-md.svg);
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: center center;
+          animation: spin 10s linear infinite;
+        }
+  
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 2%;
+          right: 2%;
+          width: 182px;
+          height: 98px;
+          background-image: url(../img/cloud-mirror.svg);
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: center center;
+        }
       }
+    }
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 2%;
-        right: 2%;
-        width: 184px;
-        height: 98px;
-        background-image: url(../img/cloud-mirror.svg);
-        background-repeat: no-repeat;
-        background-size: 100% auto;
-        background-position: center center;
+    &.kids-season-theme {
+      @include media-breakpoint-up(lg) {
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 40%;
+          left: 5%;
+          width: 65px;
+          height: 64px;
+          background: url(../img/flower-sm.svg);
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: center center;
+          animation: spin 10s linear infinite;
+        }
+  
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 20%;
+          right: 8%;
+          width: 60px;
+          height: 60px;
+          background: url(../img/blue-md-flower.svg);
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          background-position: center center;
+          animation: spin 10s linear infinite;
+        }
       }
     }
   }
+
+  .season-block {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.22;
+    max-width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 9px;
+    color: $white;
+    padding: 10px 15px;
+
+    &.pink-bg {
+      background-color: $pink;
+    }
+
+    &.velvet-bg {
+      background-color: $velvet;
+    }
+
+    &.blue-bg {
+      background-color: $blue;
+    }
+
+    &.orange-bg {
+      background-color: $orange;
+    }
+
+    > div {
+      flex: 50%;
+    }
+
+    .font-md {
+      font-size: 23px;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .font-lg {
+      font-size: 40px;
+      font-weight: bold;
+      line-height: 1;
+    }
+  }
+
+  .text-block {
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 425px;
+    text-align: center;
+    line-height: 1.38;
+  }
+
+  .grey-text {
+    color: #717171;
+  }  
 
   .modal-dialog-centered {
     @include media-breakpoint-up(lg) {
@@ -117,12 +240,6 @@
       font-size: 26px;
       font-weight: bold;
       letter-spacing: 0.54px;
-    }
-
-    p {
-      font-size: 16px;
-      font-weight: 300;
-      text-align: center;
     }
   }
 }

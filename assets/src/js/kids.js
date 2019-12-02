@@ -49,7 +49,6 @@ function bossModalNextClick() {
 function modalNextClick() {
     var name = document.getElementById("clientName"); 
     var phone = document.getElementById("clientPhone"); 
-    var email = document.getElementById("clientEmail"); 
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -59,11 +58,7 @@ function modalNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (!email.checkValidity()) {
-        email.parentElement.setAttribute("style", "background-color: #FFDBDC");
-    }
-
-    if (name.checkValidity() && phone.checkValidity() && email.checkValidity()) {
+    if (name.checkValidity() && phone.checkValidity()) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -71,6 +66,30 @@ function modalNextClick() {
             dataType: 'html'
         }).done(function (html) {
             $("#kids-request-modal .modal-body").html(html);
+        });
+    }
+}
+
+function seasonNextClick() {
+    var name = document.getElementById("clientSeasonName"); 
+    var phone = document.getElementById("clientSeasonPhone"); 
+
+    if (!name.checkValidity()) {
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $("#kids-season-modal .modal-body").html(html);
         });
     }
 }
@@ -86,6 +105,31 @@ $(function () {
 
             $(".kids-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
             $(".kids-dropdown").find('input:hidden').val($(this).data('value'));
+        });
+    });
+
+    $('#kids-season-modal').on('shown.bs.modal', function (e) {
+
+        var button = $(e.relatedTarget) // Button that triggered the modal
+        var name = button.data('name')
+        var price = button.data('price');
+        var style = button.data('style');
+
+        var modal = $(this)
+        modal.find('.season-name').text(name);
+        modal.find('.season-price').text(price);
+        modal.find('.season-block').removeAttr('class')
+        .attr('class', 'season-block d-flex').addClass(style);
+        modal.find('#season-name').val(name);
+
+        modal.find("#clientSeasonPhone").mask("+7(999) 999-99-99");
+        modal.find(".promo-btn").bind("click", seasonNextClick);
+
+        modal.find(".kids-season-dropdown a.dropdown-item").click(function (event) {
+            event.preventDefault();
+
+            $(".kids-season-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+            $(".kids-season-dropdown").find('input:hidden').val($(this).data('value'));
         });
     });
 

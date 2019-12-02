@@ -7959,7 +7959,7 @@ header {
                   transform: translateX(-50%);
           top: 13%;
           height: 279px;
-          min-width: 1890px;
+          min-width: 1945px;
           width: 100%;
           background: url(../img/group-6.svg);
           background-size: 427px 279px;
@@ -8431,9 +8431,7 @@ footer {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 85px;
-  padding-top: 15px;
-  padding-bottom: 15px; }
+  margin-bottom: 85px; }
 
 /* ALERT MODAL END*/
 b {

@@ -110,7 +110,7 @@
                             </p>
                             <p>
                                 <button class="btn btn-lg btn-primary" data-toggle="modal"
-                                data-target="#kids-request-modal">ПОДРОБНЕЕ</button>
+                                    data-target="#kids-request-modal">ПОДРОБНЕЕ</button>
                             </p>
                         </div>
                     </div>
@@ -214,9 +214,8 @@
                     </li>
                 </ul>
             </div>
-            <div
-                class="container season-container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
-                <a href="#" class="season-item season-item-pink">
+            <div class="container season-container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
+                <div href="#" class="season-item season-item-pink">
                     <div class="tariff-b">
                         <p class="name">Разовый</p>
                         <div class="new-price d-flex align-self-end align-items-center">
@@ -240,10 +239,11 @@
                     <div class="desc mt-auto">
                         <p>
                         </p>
-                        <button class="btn btn-custom-lg btn-rounded">Купить</button>
+                        <button data-name="Разовый" data-price="500" data-style="pink-bg" data-toggle="modal"
+                        data-target="#kids-season-modal" class="btn btn-custom-lg btn-rounded">Выбрать</button>
                     </div>
-                </a>
-                <a href="#" class="season-item season-item-velvet">
+                </div>
+                <div class="season-item season-item-velvet">
                     <div class="tariff-b">
                         <p class="name">Хочу еще!</p>
                         <div class="new-price d-flex align-self-end align-items-center">
@@ -267,10 +267,11 @@
                     <div class="desc mt-auto">
                         <p>
                         </p>
-                        <button class="btn btn-custom-lg btn-rounded">Выбрать</button>
+                        <button type="button" data-name="Хочу еще!" data-price="500" data-style="velvet-bg" data-toggle="modal"
+                        data-target="#kids-season-modal" class="btn btn-custom-lg btn-rounded">Выбрать</button>
                     </div>
-                </a>
-                <a href="#" class="season-item season-item-orange">
+                </div>
+                <div href="#" class="season-item season-item-orange">
                     <div class="tariff-b">
                         <p class="name">Мне нравится!</p>
                         <div class="new-price d-flex align-self-end align-items-center">
@@ -294,10 +295,11 @@
                     <div class="desc mt-auto">
                         <p>
                         </p>
-                        <button class="btn btn-custom-lg btn-rounded">Выбрать</button>
+                        <button type="button" data-name="Мне нравится!" data-style="orange-bg" data-price="500" data-toggle="modal"
+                        data-target="#kids-season-modal" class="btn btn-custom-lg btn-rounded">Выбрать</button>
                     </div>
-                </a>
-                <a href="#" class="season-item season-item-blue">
+                </div>
+                <div href="#" class="season-item season-item-blue">
                     <div class="tariff-b">
                         <p class="name">Люблю спорт!</p>
                         <div class="new-price d-flex align-self-end align-items-center">
@@ -321,9 +323,12 @@
                     <div class="desc mt-auto">
                         <p>
                         </p>
-                        <button class="btn btn-custom-lg btn-rounded">Выбрать</button>
+                        <button type="button" data-toggle="modal"
+                        data-target="#kids-season-modal" 
+                        data-name="Люблю спорт!" data-style="blue-bg" data-price="500" 
+                        class="btn btn-custom-lg btn-rounded">Выбрать</button>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -506,11 +511,11 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="kids-request-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
-        aria-hidden="true">
+    <div class="modal fade kids-request-modal" id="kids-request-modal" tabindex="-1" role="dialog"
+        aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
+            <div class="modal-content kids-request-theme">
+                <div class="modal-body kids-request-theme">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <img srcset="img/cancel@1x.png 23w,
                             img/cancel@2x.png 46w,
@@ -565,6 +570,90 @@
                         <p class="my-4">
                             Нажимая на кнопку "Записаться",<br /> Вы соглашаетесь с <a href="#" class="text-blue d-inline">правилами
                                 обработки персональных данных.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade kids-request-modal" id="kids-season-modal" tabindex="-1" role="dialog"
+        aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
+            <div class="modal-content kids-season-theme">
+                <div class="modal-body kids-season-theme">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img srcset="img/cancel@1x.png 23w,
+                            img/cancel@2x.png 46w,
+                            img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
+                    </button>
+                    
+                    <div>
+                        <h3 class="text-center font-weight-bold my-5">ВЫ ВЫБРАЛИ <br />
+                            ДЕТСКИЙ АБОНЕМЕНТ</h3>
+                        <div class="season-block d-flex">
+                            <div>
+                                <div class="season-name font-md">
+                                </div>
+                                <div>
+                                    <span class="season-price font-lg"></span> рублей
+                                </div>
+                            </div>
+                            <div>
+                                1 посещение
+                                в любой день на любое
+                                направление секций
+                            </div>
+                        </div>
+                        <p class="mx-auto my-3 text-block grey-text">
+                            Оставьте свои данные, наш менеджер свяжется <br />
+                            с Вами в ближайшее время и оформит Ваш абонемент!
+                        </p>
+                        <form class="promo-form">
+                            <input type="hidden" name="season-name" id="season-name">
+                            <div class="form-row">
+                                <div class="input-group blue custom-input-group mb-3 col-12">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">1</span>
+                                    </div>
+                                    <input type="text" id="clientSeasonName" class="form-control" placeholder="Введите Ваше имя *" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group blue custom-input-group mb-3 col-12">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">2</span>
+                                    </div>
+                                    <input type="text" id="clientSeasonPhone" class="form-control" placeholder="Введите Ваш телефон *" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group custom-input-group blue mb-2 col-12">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">3</span>
+                                    </div>
+                                    <div class="dropdown kids-season-dropdown">
+                                        <button type="button" class="form-control dropdown-toggle" id="selectClubSeasonDropdown"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Выберите клуб
+                                        </button>
+                                        <div class="dropdown-menu text-center" aria-labelledby="selectClubSeasonDropdown">
+                                            <a class="dropdown-item" href="#">Комендантский</a>
+                                            <a class="dropdown-item" href="#">Академическая</a>
+                                            <a class="dropdown-item" href="#">Купчино</a>
+                                        </div>
+                                        <input type="hidden" name="selectedClub">
+                                    </div>
+                                </div>
+                                <div class="text-right text-small mb-4 col-12">* обязательные поля</div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" data-next="kids-request-confirm.html"
+                                    class="btn btn-custom-blue-no-border btn-custom-lg btn-rounded w-100 promo-btn">ОТПРАВИТЬ</button>
+                            </div>
+                        </form>
+                        <p class="my-4 mx-auto text-block">
+                            Нажимая на кнопку «Отправить», Вы соглашаетесь 
+                                с <a href="#" class="text-blue d-inline">правилами обработки персональных данных.</a>
                         </p>
                     </div>
                 </div>
