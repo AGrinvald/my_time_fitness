@@ -8712,40 +8712,50 @@ b {
   height: 384px;
   position: relative; }
   @media (min-width: 992px) {
+    .couple-promo::before {
+      content: "";
+      width: 62%;
+      left: 50%; } }
+  @media (min-width: 992px) {
     .couple-promo .container-fluid::before {
-      height: 145px;
-      width: 655px;
-      top: 24%; } }
+      height: 170px;
+      width: 800px;
+      top: 27%; } }
   .couple-promo .container-fluid .right-block {
-    width: 345px;
+    width: 495px;
     height: 90px;
     background-size: contain; }
     .couple-promo .container-fluid .right-block p {
-      font-size: 14px; }
+      font-size: 20px; }
   @media (min-width: 992px) {
     .couple-promo .flex-block {
       width: 45%;
       height: 100%;
-      padding: 30px 0 60px 0; } }
+      padding: 30px 0 35px 0; } }
   @media (max-width: 991.98px) {
     .couple-promo .flex-block {
       width: 100%;
-      margin-bottom: 30px; } }
+      margin-bottom: 50px; } }
   @media (min-width: 992px) {
     .couple-promo .flex-block h2 {
-      font-size: 28px; } }
+      font-size: 34px; } }
   @media (max-width: 991.98px) {
     .couple-promo .flex-block h2 {
       font-size: 26px; } }
   @media (min-width: 992px) {
     .couple-promo .flex-block p.subtitle {
-      font-size: 22px; } }
+      font-size: 24px; } }
   @media (max-width: 991.98px) {
     .couple-promo .flex-block p.subtitle {
-      font-size: 18px; } }
-  @media (min-width: 992px) {
-    .couple-promo .flex-block p.date-text {
-      font-size: 18px; } }
-  @media (max-width: 991.98px) {
-    .couple-promo .flex-block p.date-text {
-      font-size: 22px; } }
+      font-size: 18px;
+      margin-bottom: 1%; } }
+  .couple-promo .flex-block p.date-text {
+    -ms-flex-positive: 0;
+        flex-grow: 0;
+    margin-bottom: 0; }
+    @media (min-width: 992px) {
+      .couple-promo .flex-block p.date-text {
+        font-size: 24px; } }
+    @media (max-width: 991.98px) {
+      .couple-promo .flex-block p.date-text {
+        font-size: 22px; } }
