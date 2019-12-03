@@ -8696,7 +8696,7 @@ b {
     z-index: 5; }
     @media (min-width: 992px) {
       .dark-promo .inner-block {
-        padding: 60px 80px 135px 0; } }
+        padding: 50px 80px 45px 0; } }
     @media (max-width: 991.98px) {
       .dark-promo .inner-block {
         width: 100%;
@@ -8723,8 +8723,8 @@ b {
         .dark-promo .inner-block h2 {
           -ms-flex-positive: 1;
               flex-grow: 1;
-          font-size: 32px;
-          line-height: 1.31; } }
+          font-size: 34px;
+          line-height: 1.62; } }
       @media (max-width: 991.98px) {
         .dark-promo .inner-block h2 {
           font-size: 26px;
