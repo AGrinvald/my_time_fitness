@@ -695,6 +695,8 @@
 /* WORKOUT AREA END */
 /* SEASON AREA START*/
 .season-area {
+  overflow: hidden;
+
   h2.title {
     margin-bottom: 0;
 
@@ -727,7 +729,7 @@
       &::after {
         position: absolute;
         content: "";
-        top: -90%;
+        top: -65%;
         left: -50%;    
         width: 251px;
         height: 134px;
