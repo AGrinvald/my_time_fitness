@@ -232,6 +232,7 @@ h2.title {
 
 .input-group>.custom-select:not(:first-child), .input-group>.form-control:not(:first-child) {
   border-radius: 28px;
+  padding-left: 10%;
 }
 
 .input-group>.input-group-prepend>.input-group-text {
@@ -303,6 +304,11 @@ h2.title {
     }
   }
 
+  .dropdown-toggle::after {
+    float: right;
+    margin-top: 4%;
+  }   
+
   .dropdown {
     width: 100%;
   }
@@ -322,6 +328,7 @@ h2.title {
     border: none;
     border-radius: 27%;
     text-align: center; 
+    padding-left: 10%;
   }
 
   input {

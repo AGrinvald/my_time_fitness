@@ -7857,7 +7857,8 @@ h2.title {
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f4f4f4', GradientType=1 ); }
 
 .input-group > .custom-select:not(:first-child), .input-group > .form-control:not(:first-child) {
-  border-radius: 28px; }
+  border-radius: 28px;
+  padding-left: 10%; }
 
 .input-group > .input-group-prepend > .input-group-text {
   border-radius: 50%; }
@@ -7906,6 +7907,9 @@ h2.title {
     .custom-input-group.white .input-group-text {
       border: solid 1px #aacc23;
       color: #aacc23; }
+  .custom-input-group .dropdown-toggle::after {
+    float: right;
+    margin-top: 4%; }
   .custom-input-group .dropdown {
     width: 100%; }
   .custom-input-group .dropdown-menu.show {
@@ -7920,7 +7924,8 @@ h2.title {
     height: 52px;
     border: none;
     border-radius: 27%;
-    text-align: center; }
+    text-align: center;
+    padding-left: 10%; }
   .custom-input-group input {
     background-color: transparent;
     display: block;
