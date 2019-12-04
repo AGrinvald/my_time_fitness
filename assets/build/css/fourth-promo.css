@@ -8704,14 +8704,32 @@ b {
         letter-spacing: 1.31px;
         text-align: left;
         color: #ffffff;
-        margin-left: 43%; }
-        .couple-promo .flex-block a.custom-btn:hover, .couple-promo .flex-block a.custom-btn:focus {
-          text-decoration: none; } }
+        margin-left: 43%; } }
     @media (max-width: 991.98px) {
       .couple-promo .flex-block a.custom-btn {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 40px; } }
+        margin-top: 40px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 1px solid transparent;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.5;
+        display: block;
+        width: 232px;
+        height: 56px;
+        border-radius: 32.5px;
+        background-color: #aacc23;
+        color: #ffffff;
+        box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1.42px; }
+        .couple-promo .flex-block a.custom-btn:hover {
+          text-decoration: none;
+          background-color: #000000;
+          color: #aacc23; } }
 
 .couple-promo {
   height: 384px;

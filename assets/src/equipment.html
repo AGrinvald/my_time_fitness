@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/equipment.min.css" media="all">
+    <title>Фитнес + спа</title>
+</head>
+
+<body>
+    //= header.html
+    <nav class="navbar navbar-expand-lg">
+        <div class="d-lg-none n-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-logo" href="index.html">mytime<span class="text-primary">fitness</span></a>
+            <a href="tel:+7 (812) 337-07-07" class="btn-link"><img srcset="img/phone@1x.png 25w,
+                                img/phone@2x.png 50w,
+                                img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
+        </div>
+        <div class="d-lg-none n-bottom">
+            <button class="btn btn-link" data-toggle="modal" data-target="#clubs-modal">Выберите ваш клуб</button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-center" id="navbar">
+            <ul class="navbar-nav justify-content-lg-between w-100">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Клубы
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="komendanskiy.html">Комендантский</a>
+                        <a class="dropdown-item" href="akademicheskaya.html">Академическая</a>
+                        <a class="dropdown-item" href="kupchino.html">Купчино</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Расписание
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="komendanskiy.html#schedule">Комендантский</a>
+                        <a class="dropdown-item" href="akademicheskaya.html#schedule">Академическая</a>
+                        <a class="dropdown-item" href="kupchino.html#schedule">Купчино</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Абонементы
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="komendanskiy.html#seasons">Комендантский</a>
+                        <a class="dropdown-item" href="akademicheskaya.html#seasons">Академическая</a>
+                        <a class="dropdown-item" href="kupchino.html#seasons">Купчино</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="promotions.html">Акции</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="kids.html">Детям</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="equipment.html">Оборудование</a>
+                </li>
+                <li class="nav-item w-100 d-lg-none d-xs-inline text-center">
+                    <button class="navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <img srcset="img/rectangle@1x.png 48w,
+                                      img/rectangle@2x.png 96w,
+                                      img/rectangle@3x.png 144w" sizes="48px" src="img/rectangle@1x.png"
+                            alt="Tooggler"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section class="banner-area">
+        <div class="container-fluid">
+            <figure class="equipment-promo">
+                <div class="container d-lg-flex justify-content-lg-end h-100">
+                    <div class="inner-block">
+                        <h2 class="text-white">
+                            НОВОЕ ОБОРУДОВАНИЕ <br />
+                            НЕМЕЦКОЙ ФИРМЫ
+                        </h2>
+                        <div class="equipment-icon"></div>
+                    </div>
+                </div>
+            </figure>
+        </div>
+    </section>
+    <section class="brand-description-area">
+        <div class="container">
+
+        </div>
+    </section>
+    //= footer.html
+    <div class="modal fade" id="clubs-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        //= clubs-modal.html
+    </div>
+    <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        //= alert-modal.html
+    </div>
+    <div class="modal fade" id="promo-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    //= promo-form.html
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="contact-boss-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    //= contact-boss-form.html
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/equipment.js"></script>
+</body>
+
+</html>

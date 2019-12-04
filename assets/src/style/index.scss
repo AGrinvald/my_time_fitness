@@ -1,6 +1,7 @@
 @import "variables";
 @import "avenir-next-cyr";
 @import "magistral-c";
+@import "DIN";
 
 @import "../../../node_modules/bootstrap/scss/_functions";
 @import "../../../node_modules/bootstrap/scss/_variables";
@@ -54,6 +55,7 @@
 @import "fighting-promo";
 @import "couple-promo";
 @import "dark-promo";
+@import "equipment-promo";
 
 /* TOP HEADER START */
 .h-top {
@@ -148,27 +150,6 @@
       height: 610px;
       p {
         margin: 0;
-      }
-    }
-
-    .custom-btn {
-      @include media-breakpoint-down(md) {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        border: 1px solid transparent;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 1.5;
-        display: block;
-        width: 232px;
-        height: 56px;
-        border-radius: 32.5px;
-        background-color: $primary;
-        color: $white;
-        box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
-        font-size: 16px;
-        font-weight: bold;
-        letter-spacing: 1.42px;
       }
     }
 

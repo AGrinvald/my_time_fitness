@@ -8669,9 +8669,27 @@ b {
       .fighting-promo .inner-block .custom-btn {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 60px; }
+        margin-top: 60px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 1px solid transparent;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.5;
+        display: block;
+        width: 232px;
+        height: 56px;
+        border-radius: 32.5px;
+        background-color: #aacc23;
+        color: #ffffff;
+        box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1.42px; }
         .fighting-promo .inner-block .custom-btn:hover, .fighting-promo .inner-block .custom-btn:focus {
-          text-decoration: none; } }
+          text-decoration: none;
+          background-color: #000000;
+          color: #aacc23; } }
 
 @media (min-width: 992px) {
   .green-theme::before {

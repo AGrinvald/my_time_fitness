@@ -124,6 +124,20 @@
   font-weight: bold;
   font-style: normal; }
 
+@font-face {
+  font-family: "PFDinCondensedRegular";
+  src: url("../fonts/PFDinCondensedRegular.eot");
+  src: url("../fonts/PFDinCondensedRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/PFDinCondensedRegular.woff") format("woff"), url("../fonts/PFDinCondensedRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+@font-face {
+  font-family: "PFDinCondensedMedium";
+  src: url("../fonts/PFDinCondensedMedium.eot");
+  src: url("../fonts/PFDinCondensedMedium.eot?#iefix") format("embedded-opentype"), url("../fonts/PFDinCondensedMedium.woff") format("woff"), url("../fonts/PFDinCondensedMedium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
 :root {
   --blue: #59c0cb;
   --indigo: #6610f2;
@@ -8827,22 +8841,26 @@ footer {
         .girl-promo .inner-block h3 {
           font-size: 26px;
           margin-bottom: 0; } }
-    @media (min-width: 992px) {
-      .girl-promo .inner-block .custom-btn {
-        background-color: #000000;
-        color: #aacc23;
-        margin-top: 0.5rem;
-        width: 248px;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        border: 1px solid transparent;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 1.5; } }
-    @media (max-width: 991.98px) {
-      .girl-promo .inner-block .custom-btn {
-        margin-top: 55px;
-        margin-bottom: 100px; } }
+    .girl-promo .inner-block .custom-btn {
+      background-color: #000000;
+      color: #aacc23;
+      margin-top: 0.5rem;
+      width: 248px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 1px solid transparent;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 1.5; }
+      @media (max-width: 991.98px) {
+        .girl-promo .inner-block .custom-btn {
+          margin-top: 55px;
+          margin-bottom: 100px; } }
+      .girl-promo .inner-block .custom-btn:hover {
+        text-decoration: none;
+        background-color: #aacc23;
+        border-color: #000000;
+        color: #000000; }
     .girl-promo .inner-block::before {
       content: "";
       position: absolute;
@@ -9013,9 +9031,27 @@ footer {
       .fighting-promo .inner-block .custom-btn {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 60px; }
+        margin-top: 60px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 1px solid transparent;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.5;
+        display: block;
+        width: 232px;
+        height: 56px;
+        border-radius: 32.5px;
+        background-color: #aacc23;
+        color: #ffffff;
+        box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1.42px; }
         .fighting-promo .inner-block .custom-btn:hover, .fighting-promo .inner-block .custom-btn:focus {
-          text-decoration: none; } }
+          text-decoration: none;
+          background-color: #000000;
+          color: #aacc23; } }
 
 @media (min-width: 992px) {
   .green-theme::before {
@@ -9200,14 +9236,32 @@ footer {
         letter-spacing: 1.31px;
         text-align: left;
         color: #ffffff;
-        margin-left: 43%; }
-        .couple-promo .flex-block a.custom-btn:hover, .couple-promo .flex-block a.custom-btn:focus {
-          text-decoration: none; } }
+        margin-left: 43%; } }
     @media (max-width: 991.98px) {
       .couple-promo .flex-block a.custom-btn {
         margin-left: auto;
         margin-right: auto;
-        margin-top: 40px; } }
+        margin-top: 40px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border: 1px solid transparent;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 1.5;
+        display: block;
+        width: 232px;
+        height: 56px;
+        border-radius: 32.5px;
+        background-color: #aacc23;
+        color: #ffffff;
+        box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1.42px; }
+        .couple-promo .flex-block a.custom-btn:hover {
+          text-decoration: none;
+          background-color: #000000;
+          color: #aacc23; } }
 
 .dark-promo {
   overflow: hidden; }
@@ -9298,29 +9352,127 @@ footer {
       @media (max-width: 991.98px) {
         .dark-promo .inner-block p.date-text {
           font-size: 26px; } }
+    .dark-promo .inner-block a.custom-btn {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 1px solid transparent;
+      text-align: center;
+      line-height: 1.5;
+      display: block;
+      width: 232px;
+      height: 56px;
+      border-radius: 32.5px;
+      background-color: #aacc23;
+      color: #000000;
+      box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1.42px; }
+      .dark-promo .inner-block a.custom-btn:hover {
+        text-decoration: none;
+        background-color: #000000;
+        border-color: #aacc23;
+        color: #aacc23; }
+      @media (max-width: 991.98px) {
+        .dark-promo .inner-block a.custom-btn {
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 100px; } }
+
+.equipment-promo {
+  overflow: hidden; }
+  @media (min-width: 992px) {
+    .equipment-promo {
+      position: relative;
+      background-color: #2b2c26;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url(../img/eq-bg.jpg); } }
+  @media (max-width: 991.98px) {
+    .equipment-promo {
+      background-color: #17191e; }
+      .equipment-promo::before {
+        content: "";
+        position: absolute;
+        height: 314px;
+        width: 283px;
+        bottom: 25%;
+        left: 50%;
+        -webkit-transform: translateX(-65%);
+                transform: translateX(-65%);
+        z-index: 3;
+        background-size: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url(../img/equipment.png); } }
+  .equipment-promo .inner-block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    position: relative;
+    z-index: 5; }
     @media (min-width: 992px) {
-      .dark-promo .inner-block a.custom-btn {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        border: 1px solid transparent;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 1.5;
-        display: block;
-        width: 232px;
-        height: 56px;
-        border-radius: 32.5px;
-        background-color: #aacc23;
-        color: #000000;
-        box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
-        font-size: 16px;
-        font-weight: bold;
-        letter-spacing: 1.42px; } }
+      .equipment-promo .inner-block {
+        padding: 95px 60px 0px 0; } }
     @media (max-width: 991.98px) {
-      .dark-promo .inner-block a.custom-btn {
+      .equipment-promo .inner-block {
+        width: 100%;
+        height: 100%;
+        max-width: 455px;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 100px; } }
+        text-align: center; } }
+    .equipment-promo .inner-block .equipment-icon {
+      background-image: url(../img/eq-logo.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 248px;
+      height: 49px;
+      margin-left: auto;
+      margin-bottom: 50px; }
+    .equipment-promo .inner-block h2 {
+      font-family: "PFDinCondensedMedium";
+      text-align: right; }
+      @media (min-width: 992px) {
+        .equipment-promo .inner-block h2 {
+          font-size: 56px; } }
+      @media (max-width: 991.98px) {
+        .equipment-promo .inner-block h2 {
+          font-size: 44px;
+          margin-top: 40px; } }
+    .equipment-promo .inner-block a.custom-btn {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 1px solid transparent;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 1.5;
+      display: block;
+      width: 232px;
+      height: 56px;
+      border-radius: 32.5px;
+      background-color: #aacc23;
+      color: #ffffff;
+      box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1.42px; }
+      @media (min-width: 992px) {
+        .equipment-promo .inner-block a.custom-btn {
+          margin-left: auto; } }
+      @media (max-width: 991.98px) {
+        .equipment-promo .inner-block a.custom-btn {
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: auto;
+          margin-bottom: 100px; } }
+      .equipment-promo .inner-block a.custom-btn:hover {
+        text-decoration: none;
+        background-color: #000000;
+        border-color: #aacc23;
+        color: #aacc23; }
 
 /* TOP HEADER START */
 @media (min-width: 1200px) {
@@ -9398,24 +9550,6 @@ footer {
       height: 610px; }
       .banner-area figure p {
         margin: 0; } }
-  @media (max-width: 991.98px) {
-    .banner-area figure .custom-btn {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      border: 1px solid transparent;
-      text-align: center;
-      vertical-align: middle;
-      line-height: 1.5;
-      display: block;
-      width: 232px;
-      height: 56px;
-      border-radius: 32.5px;
-      background-color: #aacc23;
-      color: #ffffff;
-      box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
-      font-size: 16px;
-      font-weight: bold;
-      letter-spacing: 1.42px; } }
   .banner-area figure.bg-img-1 {
     background-size: cover;
     background-position: center center;
