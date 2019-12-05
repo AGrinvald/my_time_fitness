@@ -9380,27 +9380,43 @@ footer {
           margin-bottom: 100px; } }
 
 .equipment-promo {
-  overflow: hidden; }
+  overflow: hidden;
+  background-image: url(../img/eq-bg.jpg);
+  background-repeat: no-repeat; }
   @media (min-width: 992px) {
     .equipment-promo {
       position: relative;
-      background-color: #2b2c26;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-image: url(../img/eq-bg.jpg); } }
+      background-color: #020202;
+      background-size: auto 100%;
+      background-position: 65% 50%; }
+      .equipment-promo::before {
+        content: "";
+        position: absolute;
+        height: 449px;
+        width: 404px;
+        bottom: 5%;
+        left: 50%;
+        -webkit-transform: translateX(-107%);
+                transform: translateX(-107%);
+        z-index: 3;
+        background-size: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url(../img/equipment.png); } }
   @media (max-width: 991.98px) {
     .equipment-promo {
-      background-color: #17191e; }
+      background-color: #2b2c26;
+      background-size: auto 485px;
+      background-position: 35% 0%; }
       .equipment-promo::before {
         content: "";
         position: absolute;
         height: 314px;
         width: 283px;
-        bottom: 25%;
+        bottom: 20%;
         left: 50%;
-        -webkit-transform: translateX(-65%);
-                transform: translateX(-65%);
+        -webkit-transform: translateX(-55%);
+                transform: translateX(-55%);
         z-index: 3;
         background-size: 100%;
         background-position: center center;
@@ -9428,20 +9444,28 @@ footer {
       background-image: url(../img/eq-logo.png);
       background-position: center center;
       background-repeat: no-repeat;
-      width: 248px;
-      height: 49px;
-      margin-left: auto;
-      margin-bottom: 50px; }
+      background-size: contain;
+      margin-left: auto; }
+      @media (min-width: 992px) {
+        .equipment-promo .inner-block .equipment-icon {
+          margin-bottom: 50px;
+          width: 248px;
+          height: 49px; } }
+      @media (max-width: 991.98px) {
+        .equipment-promo .inner-block .equipment-icon {
+          width: 185px;
+          height: 37px; } }
     .equipment-promo .inner-block h2 {
       font-family: "PFDinCondensedMedium";
-      text-align: right; }
+      text-align: right;
+      font-weight: bold; }
       @media (min-width: 992px) {
         .equipment-promo .inner-block h2 {
           font-size: 56px; } }
       @media (max-width: 991.98px) {
         .equipment-promo .inner-block h2 {
           font-size: 44px;
-          margin-top: 40px; } }
+          margin-top: 30px; } }
     .equipment-promo .inner-block a.custom-btn {
       padding-top: 15px;
       padding-bottom: 15px;
@@ -9467,7 +9491,7 @@ footer {
           margin-left: auto;
           margin-right: auto;
           margin-top: auto;
-          margin-bottom: 100px; } }
+          margin-bottom: 70px; } }
       .equipment-promo .inner-block a.custom-btn:hover {
         text-decoration: none;
         background-color: #000000;
@@ -9501,7 +9525,7 @@ footer {
     width: 100%;
     position: absolute;
     text-align: center;
-    bottom: 10%; }
+    bottom: 30px; }
     .banner-area .owl-dots .owl-dot {
       margin: 0px 6px;
       width: 8px;

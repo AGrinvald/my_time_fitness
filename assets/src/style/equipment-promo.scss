@@ -1,31 +1,49 @@
 .equipment-promo {
   overflow: hidden;
+  background-image: url(../img/eq-bg.jpg);
+  background-repeat: no-repeat;
 
   @include media-breakpoint-up(lg) {
     position: relative;
-    background-color: #2b2c26;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url(../img/eq-bg.jpg);
+    background-color: #020202;
+    background-size: auto 100%;
+    background-position: 65% 50%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 449px;
+      width: 404px;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-107%);
+      z-index: 3;
+      background-size: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url(../img/equipment.png);
+    }
   }
 
   @include media-breakpoint-down(md) {
-    background-color: #17191e;
-      &::before {
-        content: "";
-        position: absolute;
-        height: 314px;
-        width: 283px;
-        bottom: 25%;
-        left: 50%;
-        transform: translateX(-65%);
-        z-index: 3;
-        background-size: 100%;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-image: url(../img/equipment.png);
-      }
+    background-color: #2b2c26;
+    background-size: auto 485px;
+    background-position: 35% 0%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 314px;
+      width: 283px;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-55%);
+      z-index: 3;
+      background-size: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url(../img/equipment.png);
+    }
   }
 
   .inner-block {
@@ -51,15 +69,25 @@
       background-image: url(../img/eq-logo.png);
       background-position: center center;
       background-repeat: no-repeat;
-      width: 248px;
-      height: 49px;
+      background-size: contain;
       margin-left: auto;
-      margin-bottom: 50px;
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 50px;
+        width: 248px;
+        height: 49px;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 185px;
+        height: 37px;
+      }
     }
 
     h2 {
       font-family: "PFDinCondensedMedium";
       text-align: right;
+      font-weight: bold;
 
       @include media-breakpoint-up(lg) {
         font-size: 56px;
@@ -67,7 +95,7 @@
 
       @include media-breakpoint-down(md) {
         font-size: 44px;
-        margin-top: 40px;
+        margin-top: 30px;
       }
     }
 
@@ -97,7 +125,7 @@
         margin-left: auto;
         margin-right: auto;
         margin-top: auto;
-        margin-bottom: 100px;
+        margin-bottom: 70px;
       }
 
       &:hover {

@@ -40,6 +40,7 @@
 @import "../../../node_modules/bootstrap/scss/_spinners";
 @import "../../../node_modules/bootstrap/scss/_utilities";
 @import "../../../node_modules/bootstrap/scss/_print";
+@import "../../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
 
 @import "global";
 @import "header";
@@ -57,11 +58,11 @@
     margin-bottom: 0;
 
     @include media-breakpoint-up(lg) {
-      height: 510px;
+      height: 637px;
     }
 
     @include media-breakpoint-down(md) {
-      height: 610px;
+      height: 600px;
       p {
         margin: 0;
       }
@@ -69,11 +70,37 @@
   }
 
   .equipment-promo {
-    @include media-breakpoint-down(md) {
-      background-color: #17191e;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      position: relative;
+      background-color: #020202;
+      background-size: auto 100%;
+      background-position: center;
+      background-image: url(../img/full-eq-bg.jpg);
+
       &::before {
-        bottom: 15%;
+        content: "";
+        position: absolute;
+        height: 449px;
+        width: 404px;
+        bottom: 5%;
         left: 50%;
+        transform: translateX(-107%);
+        z-index: 3;
+        background-image: none;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      background-color: #2b2c26;
+      background-size: auto 450px;
+      background-position: 43% 0%;
+    }
+
+    .inner-block {
+      @include media-breakpoint-up(lg) {
+        padding: 190px 60px 0px 0;
       }
     }
   }
@@ -82,8 +109,352 @@
 
 /* BRAND-DESCRIPTION AREA START*/
 .brand-description-area {
+  .brand-description-block {
+    font-size: 18px;
+    line-height: 1.78;
+    color: #494949;
+    font-weight: 600;
 
-  
+    @include media-breakpoint-up(lg) {
+      margin-top: 70px;
+      margin-bottom: 80px;
 
+      div:first-child {
+        flex: 45%;
+      }
+
+      div:last-child {
+        flex: 55%;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 30px;
+
+      div {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      img {
+        height: 55px;
+        margin: 30px auto;
+      }
+    }
+  }
 }
 /* BRAND-DESCRIPTION AREA END*/
+
+.equipment-block {
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 90px;
+  }
+
+  .block-title {
+    text-align: center;
+    height: 80px;
+
+    h2 {
+      letter-spacing: 0.53px;
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 30px;
+      }
+
+      @include media-breakpoint-down(md) {
+        font-size: 24px;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 30px;
+
+      .container {
+        position: relative;
+
+        &::before {
+          content: "";
+          top: 0;
+          left: -6%;
+          position: absolute;
+          width: 167px;
+          height: 271px;
+          background: url(../img/group-2-copy-8.svg);
+          background-size: auto 100%;
+          background-repeat: no-repeat;
+          background-position-y: top;
+          background-position-x: center;
+          z-index: 1;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: 15px;
+    }
+
+    &.green {
+      background-color: #abd627;
+    }
+
+    &.dark {
+      background-color: #26272b;
+    }
+  }
+
+  h3 {
+    font-weight: bold;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 30px;
+      margin-bottom: 20px;
+      margin-top: 45px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 20px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.67;
+    margin-bottom: 0;
+  }
+
+  .desc-toggler {
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    text-decoration: underline;
+  }
+
+  .equipment-slides {
+    @include media-breakpoint-up(lg) {
+      .owl-nav {
+        position: absolute;
+        width: 104%;
+        left: -2%;
+        top: 45%;
+        display: flex;
+        justify-content: space-between;
+
+        button.owl-prev,
+        button.owl-next {
+          width: 58px;
+          height: 58px;
+          cursor: pointer;
+          background-color: $primary;
+          border-radius: 2px;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        button.owl-prev {
+          background-image: url(../img/left-arrow.svg);
+        }
+
+        button.owl-next {
+          background-image: url(../img/right-arrow.svg);
+        }
+      }
+    }
+  }
+
+  .equipment-slide {
+    width: 100%;
+    display: flex;
+    position: relative;
+    border: 1px solid #d6d6d6;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      align-items: stretch;
+      height: 500px;
+      padding: 40px;
+
+      &::before {
+        content: "";
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        width: 81px;
+        height: 183px;
+        background: url(../img/equipment-corner.svg);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position-y: top;
+        background-position-x: right;
+        z-index: 1;
+      }
+    }
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      max-width: 512px;
+      margin: 0 auto;
+    }
+
+    .equipment-image {
+      @include media-breakpoint-down(md) {
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .equipment-desc {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 0;
+
+      @include media-breakpoint-up(lg) {
+        margin-left: 50px;
+      }
+
+      @include media-breakpoint-down(md) {
+        align-items: center;
+      }
+
+      h4 {
+        font-weight: bold;
+        color: #000000;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 30px;
+        }
+
+        @include media-breakpoint-down(md) {
+          font-size: 20px;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          font-weight: 300;
+          line-height: 1.75;
+
+          @include media-breakpoint-up(lg) {
+            font-size: 20px;
+          }
+
+          @include media-breakpoint-down(md) {
+            font-size: 18px;
+          }
+
+          &::before {
+            content: "\2022";
+            color: #abd627;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+          }
+        }
+      }
+    }
+
+    .features-block {
+      display: flex;
+
+      @include media-breakpoint-up(lg) {
+        flex-direction: row;
+        margin-top: auto;
+        width: 90%;
+      }
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
+
+      .features-element {
+        display: flex;
+        line-height: 1.11;
+        text-align: center;
+        color: #000000;
+        font-weight: 600;
+
+        @include media-breakpoint-up(lg) {
+          flex-direction: column;
+          align-items: center;
+          font-size: 18px;
+          flex-grow: 1;
+        }
+
+        @include media-breakpoint-down(md) {
+          flex-direction: row;
+          align-items: center;
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+
+        .icon {
+          display: flex;
+
+          @include media-breakpoint-up(lg) {
+            height: 130px;
+            align-items: center;
+          }
+
+          @include media-breakpoint-down(md) {
+            width: 100px;
+            justify-content: center;
+          }
+        }
+
+        .icon-desc {
+          width: 100%;
+
+          @include media-breakpoint-up(lg) {
+            max-width: 100px;
+          }
+
+          @include media-breakpoint-down(md) {
+            max-width: 135px;
+          }
+        }
+
+        .man-icon {
+          background-image: url(../img/man-icon.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          width: 49px;
+          height: 84px;
+        }
+
+        .weight-icon {
+          background-image: url(../img/weight-icon.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          width: 58px;
+          height: 83px;
+        }
+
+        .sign-icon {
+          background-image: url(../img/sign-icon.svg);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100%;
+          width: 66px;
+          height: 83px;
+        }
+      }
+    }
+  }
+}

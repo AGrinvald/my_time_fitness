@@ -18,8 +18,8 @@
 //= ../../../node_modules/bootstrap/js/dist/tab.js
 //= ../../../node_modules/bootstrap/js/dist/toast.js
 
-// импортируем jQuery Masked Input
-//= ../../../node_modules/jquery.maskedinput/src/jquery.maskedinput.js
+// Импортируем Owl
+//= ../../../node_modules/owl.carousel/dist/owl.carousel.js
 
 function bossModalNextClick() {
 
@@ -53,8 +53,34 @@ function bossModalNextClick() {
 }
 
 $(function () {
+
+    var md = 992;
+    var lg = 1400;
+    
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
         $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);
         $("#bossContactPhone").mask("+7(999) 999-99-99");
     });
+
+    $('.equipment-slides').owlCarousel({
+        items: 1,
+        loop: true,
+        mouseDrag: false,
+        // autoplay: true,
+        // autoplaySpeed: 1000,
+        // autoplayTimeout: 3000,
+        // autoplayHoverPause: true,
+        responsive: {
+            992: {
+                dots: false,
+                nav: true
+            },
+            0: {
+                dots: true,
+                nav: false
+            }
+        },
+        navText: ["", ""]
+    });
+
 });
