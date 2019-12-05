@@ -21699,14 +21699,10 @@ $(function () {
         $("#bossContactPhone").mask("+7(999) 999-99-99");
     });
 
-    $('.equipment-slides').owlCarousel({
+    $('.level-slides').owlCarousel({
         items: 1,
         loop: true,
         mouseDrag: false,
-        // autoplay: true,
-        // autoplaySpeed: 1000,
-        // autoplayTimeout: 3000,
-        // autoplayHoverPause: true,
         responsive: {
             992: {
                 dots: false,
