@@ -79,4 +79,27 @@ $(function () {
         navText: ["", ""]
     });
 
+    if ($(window).width() < md) {
+        $(".equipment-desc").each(function() {
+            $(this).hide();
+
+            if (content.length > showChar) {
+              var c = content.substr(0, showChar);
+              var h = content;
+              var html =
+                '<div class="truncate-text" style="display:block">' +
+                c +
+                '<span class="moreellipses">' +
+                ellipsestext +
+                '&nbsp;&nbsp;<a href="" class="moreless more">more</a></span></span></div><div class="truncate-text" style="display:none">' +
+                h +
+                '<a href="" class="moreless less">Less</a></span></div>';
+      
+              $(this).html(html);
+            }
+        });
+    } else {
+        
+    }
+
 });
