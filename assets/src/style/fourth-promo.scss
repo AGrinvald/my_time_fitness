@@ -51,6 +51,19 @@
 @import "contact-boss-modal";
 @import "couple-promo";
 
+
+.promo-area {
+  .container {
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+    }  
+
+    .col-12 {
+      padding: 0;
+    }
+  }
+}
+
 .couple-promo {
   height: 384px;
   position: relative;

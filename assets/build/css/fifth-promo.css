@@ -8661,6 +8661,13 @@ b {
           margin-right: auto;
           margin-bottom: 100px; } }
 
+@media (max-width: 991.98px) {
+  .promo-area .container {
+    max-width: 100%; } }
+
+.promo-area .container .col-12 {
+  padding: 0; }
+
 .dark-promo {
   height: 384px; }
   @media (min-width: 992px) {

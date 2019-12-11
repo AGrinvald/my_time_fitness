@@ -51,6 +51,18 @@
 @import "contact-boss-modal";
 @import "fighting-promo";
 
+.promo-area {
+  .container {
+    @include media-breakpoint-down(md) {
+      max-width: 100%;
+    }  
+
+    .col-12 {
+      padding: 0;
+    }
+  }
+}
+
 .fighting-promo {
     height: 384px;
   

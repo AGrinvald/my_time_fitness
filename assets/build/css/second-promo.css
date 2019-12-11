@@ -8715,6 +8715,13 @@ b {
   .yellow-theme .text-grey {
     color: #000000; } }
 
+@media (max-width: 991.98px) {
+  .promo-area .container {
+    max-width: 100%; } }
+
+.promo-area .container .col-12 {
+  padding: 0; }
+
 .fighting-promo {
   height: 384px; }
   @media (min-width: 992px) {
