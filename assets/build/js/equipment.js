@@ -21689,7 +21689,12 @@ function bossModalNextClick() {
     }
 }
 
-document.fonts.ready.then(function () {
+// document.fonts.ready.then(function () {
+
+// }); 
+
+$(function () {
+
     if ($(window).width() < 992) {
 
         (function () {
@@ -21758,9 +21763,6 @@ document.fonts.ready.then(function () {
 
         })();
     }
-});
-
-$(function () {
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
         $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);
