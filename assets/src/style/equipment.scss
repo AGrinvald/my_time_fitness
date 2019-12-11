@@ -145,6 +145,52 @@
 }
 /* BRAND-DESCRIPTION AREA END*/
 
+@include media-breakpoint-down(md) {
+  .morecontent {
+    span.hidden-text {
+      display: none;
+    }
+  }
+
+  .morelink {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.67;
+    margin-bottom: 40px;
+    margin-top: 15px;
+
+    &.more {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        filter: blur(8px);
+        background-color: #ffffff;
+        opacity: 0.95;
+        bottom: -18%;
+        left: -10px;
+        display: block;
+        z-index: -1;
+      }
+    }
+
+    span {
+      padding-bottom: 2px;
+      border-bottom: 1px solid $primary;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: $primary;
+    }
+  }
+}
+
 .equipment-block {
   @include media-breakpoint-up(lg) {
     margin-bottom: 90px;
@@ -239,54 +285,70 @@
   }
 
   .equipment-slides {
-    @include media-breakpoint-up(lg) {
-      .owl-nav {
-        position: absolute;
+    .owl-nav {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+
+      @include media-breakpoint-up(lg) {
+        top: 45%;
         width: 104%;
         left: -2%;
-        top: 45%;
-        display: flex;
-        justify-content: space-between;
+      }
 
-        button.owl-prev,
-        button.owl-next {
+      @include media-breakpoint-down(lg) {
+        top: 65%;
+        width: 110%;
+        left: -5%;
+      }
+
+      button.owl-prev,
+      button.owl-next {
+        cursor: pointer;
+        background-color: $primary;
+        border-radius: 2px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include media-breakpoint-up(lg) {
           width: 58px;
           height: 58px;
-          cursor: pointer;
-          background-color: $primary;
-          border-radius: 2px;
-          background-position: center;
-          background-repeat: no-repeat;
         }
 
-        button.owl-prev {
-          background-image: url(../img/left-arrow.svg);
+        @include media-breakpoint-down(lg) {
+          width: 40px;
+          height: 40px;
+          background-size: auto 14px;
         }
+      }
 
-        button.owl-next {
-          background-image: url(../img/right-arrow.svg);
-        }
+      button.owl-prev {
+        background-image: url(../img/left-arrow.svg);
+      }
+
+      button.owl-next {
+        background-image: url(../img/right-arrow.svg);
       }
     }
 
-    @include media-breakpoint-down(lg) {
-      .owl-dots {
-        width: 100%;
-        position: absolute;
-        text-align: center;
-        top: 30%;
-  
-        .owl-dot {
-          margin: 0px 6px;
-          width: 8px;
-          height: 8px;
-          background-color: $white;
-          border-radius: 30px;
-          box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5);
-  
-          &.active {
-            background: $primary;
-          }
+    .owl-dots {
+      width: 100%;
+      position: absolute;
+      text-align: center;
+      top: 30%;
+
+      @include media-breakpoint-down(lg) {
+      }
+      .owl-dot {
+        margin: 0px 6px;
+        width: 8px;
+        height: 8px;
+        background-color: $white;
+        border-radius: 30px;
+        box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5);
+
+        &.active {
+          background: $primary;
         }
       }
     }
@@ -353,6 +415,8 @@
 
       @include media-breakpoint-down(md) {
         align-items: center;
+        padding-left: 15px;
+        padding-right: 15px;
       }
 
       h4 {
@@ -408,12 +472,12 @@
 
       @include media-breakpoint-down(md) {
         flex-direction: column;
+        width: 90%;
       }
 
       .features-element {
         display: flex;
         line-height: 1.11;
-        text-align: center;
         color: #000000;
         font-weight: 600;
 
@@ -442,6 +506,13 @@
           @include media-breakpoint-down(md) {
             width: 100px;
             justify-content: center;
+
+            .sign-icon,
+            .man-icon,
+            .weight-icon {
+              width: 44px;
+              height: 76px;
+            }
           }
         }
 
@@ -450,10 +521,12 @@
 
           @include media-breakpoint-up(lg) {
             max-width: 100px;
+            text-align: center;
           }
 
           @include media-breakpoint-down(md) {
             max-width: 135px;
+            margin-left: 25px;
           }
         }
 

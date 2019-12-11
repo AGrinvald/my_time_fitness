@@ -23,10 +23,10 @@
 
 function bossModalNextClick() {
 
-    var name = document.getElementById("bossContactName"); 
-    var phone = document.getElementById("bossContactPhone"); 
-    var email = document.getElementById("bossContactEmail"); 
-    var message = document.getElementById("bossContactMessage"); 
+    var name = document.getElementById("bossContactName");
+    var phone = document.getElementById("bossContactPhone");
+    var email = document.getElementById("bossContactEmail");
+    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -52,11 +52,79 @@ function bossModalNextClick() {
     }
 }
 
+document.fonts.ready.then(function () {
+    if ($(window).width() < 992) {
+
+        (function () {
+            var moretext = "Развернуть описание";
+            var lesstext = "Свернуть описание";
+            var lineHeight = 18*1.75;
+            var lines = 4;
+
+            $('.truncate-text').each(function () {
+                var content = $(this).html();
+
+                if ($(this).height() > lineHeight * lines) {
+
+                    if ($(this).attr('title')) {
+                        $(this).text($(this).attr('title'));
+                    }
+
+                    var text = $(this).text();
+
+                    $(this).attr('title', $(this).text().trim());
+                    $(this).text("");
+
+                    var str = "";
+                    var prevstr = "";
+                    var words = text.split(" ");
+
+                    for (var i = 0; i < words.length; i++) {
+                        if ($(this).height() > lineHeight * lines) {
+                            var hiddenText = words.slice(i-1).join(' ');
+
+                            var visibleText = prevstr.trim() + 
+                            '<span class="morecontent"><span class="hidden-text">' + hiddenText + 
+                            '</span>&nbsp;&nbsp;<a href="" class="morelink more"><span>' + moretext + 
+                            '</span></a></span>';
+
+                            $(this).html(visibleText);
+
+                            break;
+                        }
+
+                        prevstr = str;
+
+                        str += words[i] + " ";
+
+                        $(this).html(str.trim());
+                    }
+
+                }
+
+            });
+
+            $(".morelink").click(function () {
+                if ($(this).hasClass("more")) {
+                    $(this).removeClass("more");
+                    $(this).html("<span>" + lesstext + "</span>");
+                } else {
+                    $(this).addClass("more");
+                    $(this).html("<span>" + moretext + "</span>");
+                }
+
+                $(this).parent().prev().slideToggle("fast");
+                $(this).prev().slideToggle("fast");
+
+                return false;
+            });
+
+        })();
+    }
+});
+
 $(function () {
 
-    var md = 992;
-    var lg = 1400;
-    
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
         $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);
         $("#bossContactPhone").mask("+7(999) 999-99-99");
@@ -66,40 +134,27 @@ $(function () {
         items: 1,
         loop: true,
         mouseDrag: false,
-        responsive: {
-            992: {
-                dots: false,
-                nav: true
-            },
-            0: {
-                dots: true,
-                nav: false
-            }
-        },
-        navText: ["", ""]
+        nav: true,
+        navText: ["", ""],
+        dots: false
     });
 
-    if ($(window).width() < md) {
-        $(".equipment-desc").each(function() {
-            $(this).hide();
+    $('.weight-slides').owlCarousel({
+        items: 1,
+        loop: true,
+        mouseDrag: false,
+        nav: true,
+        navText: ["", ""],
+        dots: false
+    });
 
-            if (content.length > showChar) {
-              var c = content.substr(0, showChar);
-              var h = content;
-              var html =
-                '<div class="truncate-text" style="display:block">' +
-                c +
-                '<span class="moreellipses">' +
-                ellipsestext +
-                '&nbsp;&nbsp;<a href="" class="moreless more">more</a></span></span></div><div class="truncate-text" style="display:none">' +
-                h +
-                '<a href="" class="moreless less">Less</a></span></div>';
-      
-              $(this).html(html);
-            }
-        });
-    } else {
-        
-    }
+    $('.stack-slides').owlCarousel({
+        items: 1,
+        loop: true,
+        mouseDrag: false,
+        nav: true,
+        navText: ["", ""],
+        dots: false
+    });
 
 });

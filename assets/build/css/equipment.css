@@ -8836,6 +8836,39 @@ footer {
         margin: 30px auto; } }
 
 /* BRAND-DESCRIPTION AREA END*/
+@media (max-width: 991.98px) {
+  .morecontent span.hidden-text {
+    display: none; }
+  .morelink {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.67;
+    margin-bottom: 40px;
+    margin-top: 15px; }
+    .morelink.more::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 80px;
+      -webkit-filter: blur(8px);
+              filter: blur(8px);
+      background-color: #ffffff;
+      opacity: 0.95;
+      bottom: -18%;
+      left: -10px;
+      display: block;
+      z-index: -1; }
+    .morelink span {
+      padding-bottom: 2px;
+      border-bottom: 1px solid #aacc23; }
+    .morelink:hover {
+      text-decoration: none;
+      color: #aacc23; } }
+
 @media (min-width: 992px) {
   .equipment-block {
     margin-bottom: 90px; } }
@@ -8908,45 +8941,59 @@ footer {
   margin-bottom: 50px;
   text-decoration: underline; }
 
-@media (min-width: 992px) {
-  .equipment-block .equipment-slides .owl-nav {
-    position: absolute;
-    width: 104%;
-    left: -2%;
-    top: 45%;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between; }
-    .equipment-block .equipment-slides .owl-nav button.owl-prev,
-    .equipment-block .equipment-slides .owl-nav button.owl-next {
-      width: 58px;
-      height: 58px;
-      cursor: pointer;
-      background-color: #aacc23;
-      border-radius: 2px;
-      background-position: center;
-      background-repeat: no-repeat; }
-    .equipment-block .equipment-slides .owl-nav button.owl-prev {
-      background-image: url(../img/left-arrow.svg); }
-    .equipment-block .equipment-slides .owl-nav button.owl-next {
-      background-image: url(../img/right-arrow.svg); } }
+.equipment-block .equipment-slides .owl-nav {
+  position: absolute;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+  @media (min-width: 992px) {
+    .equipment-block .equipment-slides .owl-nav {
+      top: 45%;
+      width: 104%;
+      left: -2%; } }
+  @media (max-width: 1199.98px) {
+    .equipment-block .equipment-slides .owl-nav {
+      top: 65%;
+      width: 110%;
+      left: -5%; } }
+  .equipment-block .equipment-slides .owl-nav button.owl-prev,
+  .equipment-block .equipment-slides .owl-nav button.owl-next {
+    cursor: pointer;
+    background-color: #aacc23;
+    border-radius: 2px;
+    background-position: center;
+    background-repeat: no-repeat; }
+    @media (min-width: 992px) {
+      .equipment-block .equipment-slides .owl-nav button.owl-prev,
+      .equipment-block .equipment-slides .owl-nav button.owl-next {
+        width: 58px;
+        height: 58px; } }
+    @media (max-width: 1199.98px) {
+      .equipment-block .equipment-slides .owl-nav button.owl-prev,
+      .equipment-block .equipment-slides .owl-nav button.owl-next {
+        width: 40px;
+        height: 40px;
+        background-size: auto 14px; } }
+  .equipment-block .equipment-slides .owl-nav button.owl-prev {
+    background-image: url(../img/left-arrow.svg); }
+  .equipment-block .equipment-slides .owl-nav button.owl-next {
+    background-image: url(../img/right-arrow.svg); }
 
-@media (max-width: 1199.98px) {
-  .equipment-block .equipment-slides .owl-dots {
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    top: 30%; }
-    .equipment-block .equipment-slides .owl-dots .owl-dot {
-      margin: 0px 6px;
-      width: 8px;
-      height: 8px;
-      background-color: #ffffff;
-      border-radius: 30px;
-      box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5); }
-      .equipment-block .equipment-slides .owl-dots .owl-dot.active {
-        background: #aacc23; } }
+.equipment-block .equipment-slides .owl-dots {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 30%; }
+  .equipment-block .equipment-slides .owl-dots .owl-dot {
+    margin: 0px 6px;
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5); }
+    .equipment-block .equipment-slides .owl-dots .owl-dot.active {
+      background: #aacc23; }
 
 .equipment-block .equipment-slide {
   width: 100%;
@@ -9002,7 +9049,9 @@ footer {
     @media (max-width: 991.98px) {
       .equipment-block .equipment-slide .equipment-desc {
         -ms-flex-align: center;
-            align-items: center; } }
+            align-items: center;
+        padding-left: 15px;
+        padding-right: 15px; } }
     .equipment-block .equipment-slide .equipment-desc h4 {
       font-weight: bold;
       color: #000000; }
@@ -9044,12 +9093,12 @@ footer {
     @media (max-width: 991.98px) {
       .equipment-block .equipment-slide .features-block {
         -ms-flex-direction: column;
-            flex-direction: column; } }
+            flex-direction: column;
+        width: 90%; } }
     .equipment-block .equipment-slide .features-block .features-element {
       display: -ms-flexbox;
       display: flex;
       line-height: 1.11;
-      text-align: center;
       color: #000000;
       font-weight: 600; }
       @media (min-width: 992px) {
@@ -9081,15 +9130,22 @@ footer {
           .equipment-block .equipment-slide .features-block .features-element .icon {
             width: 100px;
             -ms-flex-pack: center;
-                justify-content: center; } }
+                justify-content: center; }
+            .equipment-block .equipment-slide .features-block .features-element .icon .sign-icon,
+            .equipment-block .equipment-slide .features-block .features-element .icon .man-icon,
+            .equipment-block .equipment-slide .features-block .features-element .icon .weight-icon {
+              width: 44px;
+              height: 76px; } }
       .equipment-block .equipment-slide .features-block .features-element .icon-desc {
         width: 100%; }
         @media (min-width: 992px) {
           .equipment-block .equipment-slide .features-block .features-element .icon-desc {
-            max-width: 100px; } }
+            max-width: 100px;
+            text-align: center; } }
         @media (max-width: 991.98px) {
           .equipment-block .equipment-slide .features-block .features-element .icon-desc {
-            max-width: 135px; } }
+            max-width: 135px;
+            margin-left: 25px; } }
       .equipment-block .equipment-slide .features-block .features-element .man-icon {
         background-image: url(../img/man-icon.svg);
         background-position: center;
