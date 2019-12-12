@@ -9017,8 +9017,8 @@ footer {
       margin: 0 auto; } }
   .equipment-block .equipment-slide .equipment-img-container {
     max-width: 512px;
-    max-height: 416px;
-    position: relative; }
+    position: relative;
+    width: 100%; }
     .equipment-block .equipment-slide .equipment-img-container .owl-nav.disabled {
       display: none; }
     .equipment-block .equipment-slide .equipment-img-container .owl-dots {

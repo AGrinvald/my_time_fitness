@@ -372,8 +372,10 @@
 
     .equipment-img-container {
       max-width: 512px;
-      max-height: 416px;
+      // max-height: 416px;
       position: relative;
+      width: 100%;
+      //height: 100%;
 
       .owl-nav {
         &.disabled {
