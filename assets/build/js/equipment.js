@@ -21787,7 +21787,6 @@ $(function () {
 
     $('.weight-slides').owlCarousel({
         items: 1,
-        loop: true,
         mouseDrag: false,
         nav: true,
         navText: ["", ""],
