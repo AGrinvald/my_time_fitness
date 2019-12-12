@@ -126,16 +126,22 @@ $(function () {
 
     $('.level-slides').owlCarousel({
         items: 1,
-        loop: true,
         mouseDrag: false,
         nav: true,
         navText: ["", ""],
         dots: false
     });
 
-    $('.equipment-img-slides').owlCarousel({
+    $('.level-img-slides-1').owlCarousel({
         items: 1,
-        loop: true,
+        mouseDrag: false,
+        nav: false,
+        navText: ["", ""],
+        dots: true
+    });
+
+    $('.level-img-slides-2').owlCarousel({
+        items: 1,
         mouseDrag: false,
         nav: false,
         navText: ["", ""],
@@ -144,12 +150,28 @@ $(function () {
 
     $('.weight-slides').owlCarousel({
         items: 1,
-        loop: true,
         mouseDrag: false,
         nav: true,
         navText: ["", ""],
         dots: false
     });
+
+    $('.weight-img-slides-1').owlCarousel({
+        items: 1,
+        mouseDrag: false,
+        nav: false,
+        navText: ["", ""],
+        dots: true
+    });
+
+    $('.weight-img-slides-2').owlCarousel({
+        items: 1,
+        mouseDrag: false,
+        nav: false,
+        navText: ["", ""],
+        dots: true
+    });
+
 
     $('.stack-slides').owlCarousel({
         items: 1,

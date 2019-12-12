@@ -8734,6 +8734,10 @@ footer {
         .equipment-promo .inner-block h2 {
           font-size: 44px;
           margin-top: 30px; } }
+      @media (max-width: 575.98px) {
+        .equipment-promo .inner-block h2 {
+          font-size: 40px;
+          margin-top: 30px; } }
     .equipment-promo .inner-block a.custom-btn {
       padding-top: 15px;
       padding-bottom: 15px;
@@ -9017,6 +9021,7 @@ footer {
       margin: 0 auto; } }
   .equipment-block .equipment-slide .equipment-img-container {
     max-width: 512px;
+    max-height: 416px;
     position: relative;
     width: 100%; }
     .equipment-block .equipment-slide .equipment-img-container .owl-nav.disabled {
