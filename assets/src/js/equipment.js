@@ -52,10 +52,6 @@ function bossModalNextClick() {
     }
 }
 
-// document.fonts.ready.then(function () {
-
-// }); 
-
 $(function () {
 
     if ($(window).width() < 992) {
@@ -99,14 +95,10 @@ $(function () {
                         }
 
                         prevstr = str;
-
                         str += words[i] + " ";
-
                         $(this).html(str.trim());
                     }
-
                 }
-
             });
 
             $(".morelink").click(function () {
@@ -139,6 +131,15 @@ $(function () {
         nav: true,
         navText: ["", ""],
         dots: false
+    });
+
+    $('.equipment-img-slides').owlCarousel({
+        items: 1,
+        loop: true,
+        mouseDrag: false,
+        nav: false,
+        navText: ["", ""],
+        dots: true
     });
 
     $('.weight-slides').owlCarousel({
