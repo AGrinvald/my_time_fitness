@@ -314,6 +314,11 @@
         background-position: center;
         background-repeat: no-repeat;
 
+        &.disabled {
+          background-color: #C0C0C0;
+          cursor: default;
+        }
+
         @include media-breakpoint-up(lg) {
           width: 58px;
           height: 58px;

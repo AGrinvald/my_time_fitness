@@ -8970,6 +8970,10 @@ footer {
     border-radius: 2px;
     background-position: center;
     background-repeat: no-repeat; }
+    .equipment-block .equipment-slides .owl-nav button.owl-prev.disabled,
+    .equipment-block .equipment-slides .owl-nav button.owl-next.disabled {
+      background-color: #C0C0C0;
+      cursor: default; }
     @media (min-width: 992px) {
       .equipment-block .equipment-slides .owl-nav button.owl-prev,
       .equipment-block .equipment-slides .owl-nav button.owl-next {
