@@ -182,4 +182,17 @@ $(function () {
         dots: false
     });
 
+    $("#scroll-control").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+    
+    $(window).scroll(function () {
+        if ($(this).scrollTop()) {
+            $('#scroll-control').fadeIn();
+        } else {
+            $('#scroll-control').fadeOut();
+        }
+    });
+
 });

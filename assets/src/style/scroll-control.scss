@@ -1,0 +1,27 @@
+.scroll-control {
+    position: fixed;
+    background-image: url("../img/scroll.png");
+    background-size: 100%;
+    background-color: transparent;
+    border: 0;
+    z-index: 999;
+    display: none;
+}
+
+@include media-breakpoint-up(lg) {
+    .scroll-control {
+        width: 86px;
+        height: 86px;
+        bottom: 35px;
+        right: 20px;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .scroll-control {
+        width: 40px;
+        height: 40px;
+        bottom: 35px;
+        right: 10px;
+    }
+}

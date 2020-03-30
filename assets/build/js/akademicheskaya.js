@@ -22116,7 +22116,7 @@ var windowsSize = {
 
 var mapSettingsCollection = {
     Large: {
-        center: [59.98105719928422, 30.093348230468735], zoom: 10,
+        center: [60.01053648806763, 30.387113944660136], zoom: 14,
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
@@ -22148,9 +22148,11 @@ var createLayout = function (id) {
 
                 var options = this.getData().options,
                     element = this.getParentElement().getElementsByClassName('club')[0],
-                    circleShape = {type: 'Rectangle', coordinates: [
-                        [-mapSettings.imgSize[0] / 2, -mapSettings.imgSize[1] / 2], 
-                        [mapSettings.imgSize[0] / 2, mapSettings.imgSize[1] / 2]]};
+                    circleShape = {
+                        type: 'Rectangle', coordinates: [
+                            [-mapSettings.imgSize[0] / 2, -mapSettings.imgSize[1] / 2],
+                            [mapSettings.imgSize[0] / 2, mapSettings.imgSize[1] / 2]]
+                    };
                 element.appendChild(img);
 
                 element.style.width = mapSettings.imgSize[0];
@@ -22158,8 +22160,8 @@ var createLayout = function (id) {
 
                 element.style.marginLeft = -mapSettings.imgSize[0] / 2 + 'px';
                 element.style.marginTop = -mapSettings.imgSize[1] / 2 + 'px';
-                element.style.left =  -mapSettings.imgSize[0] / 2 + 'px';
-                element.style.top =  -mapSettings.imgSize[1] / 2 + 'px';
+                element.style.left = -mapSettings.imgSize[0] / 2 + 'px';
+                element.style.top = -mapSettings.imgSize[1] / 2 + 'px';
 
                 options.set('shape', circleShape);
             }
@@ -22188,11 +22190,11 @@ function init() {
 
     var akademicheskaya = new ymaps.Placemark(
         [60.01065856407727, 30.403732499999954], {
-            id: 1,
-            hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
-        }, {
-            iconLayout: createLayout(1)
-        }
+        id: 1,
+        hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
+    }, {
+        iconLayout: createLayout(1)
+    }
     );
 
     map.controls.remove('geolocationControl');
@@ -22204,7 +22206,11 @@ function init() {
     map.behaviors.disable(['scrollZoom']);
     map.controls.remove('rulerControl');
     map.controls.remove('zoomControl');
-    map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px'}, size: 'small'});
+    map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px' }, size: 'small' });
+
+    map.events.add('boundschange', function (event) {
+        console.log(map.getCenter());
+    });
 
     map.events.add('sizechange', function (event) {
         var size = map.container.getSize();
@@ -22239,7 +22245,7 @@ function moveToSelected(element) {
     } else {
         var selected = element;
     }
-   
+
     var amount = $("div.gallery-carousel div").length;
     var selectedIndex = $(".gallery-carousel div.slide").index($(selected));
 
@@ -22251,7 +22257,7 @@ function moveToSelected(element) {
         var lastSlide = gallery.find("div.slide:last-child");
         lastSlide.clone().prependTo(gallery);
         lastSlide.remove();
-    } 
+    }
 
     var next = $(selected).next();
     var prev = $(selected).prev();
@@ -22289,9 +22295,9 @@ function calcPositions() {
     var prev = $(selected).prev();
     var prevSecond = $(prev).prev();
     var nextSecond = $(next).next();
-    
+
     var containerWidth = $("div.gallery-carousel").width();
-    selected.css({top: 0});
+    selected.css({ top: 0 });
 
     var selectedWidth = calcWidth(57.3);
     var secondWidth = calcWidth(39);
@@ -22304,23 +22310,23 @@ function calcPositions() {
     prevSecond.width(thirdWidth);
 
     var selectedLeft = (containerWidth - selectedWidth) / 2;
-    selected.css({left: selectedLeft});
+    selected.css({ left: selectedLeft });
 
-    var secondX = (containerWidth - selectedWidth - 2*(secondWidth/3))/2;
-    next.css({left: containerWidth - secondX - secondWidth});
-    prev.css({left: secondX});
+    var secondX = (containerWidth - selectedWidth - 2 * (secondWidth / 3)) / 2;
+    next.css({ left: containerWidth - secondX - secondWidth });
+    prev.css({ left: secondX });
 
-    var thirdX = (containerWidth - selectedWidth - 2*(secondWidth/3) - 2*(thirdWidth/3))/2;
-    nextSecond.css({left: containerWidth - thirdX - thirdWidth});
-    prevSecond.css({left: thirdX});
+    var thirdX = (containerWidth - selectedWidth - 2 * (secondWidth / 3) - 2 * (thirdWidth / 3)) / 2;
+    nextSecond.css({ left: containerWidth - thirdX - thirdWidth });
+    prevSecond.css({ left: thirdX });
 
-    var secondY = (selectedWidth*0.66878981 - secondWidth*0.66878981) / 2;
-    next.css({top: secondY});
-    prev.css({top: secondY});
+    var secondY = (selectedWidth * 0.66878981 - secondWidth * 0.66878981) / 2;
+    next.css({ top: secondY });
+    prev.css({ top: secondY });
 
-    var thirdY = (selectedWidth*0.66878981 - thirdWidth*0.66878981) / 2;
-    nextSecond.css({top: thirdY});
-    prevSecond.css({top: thirdY});
+    var thirdY = (selectedWidth * 0.66878981 - thirdWidth * 0.66878981) / 2;
+    nextSecond.css({ top: thirdY });
+    prevSecond.css({ top: thirdY });
 }
 
 function galleryReset() {
@@ -22347,8 +22353,8 @@ function galleryReset() {
 }
 
 function announceNextClick() {
-    var name = document.getElementById("announceName"); 
-    var phone = document.getElementById("announcePhone"); 
+    var name = document.getElementById("announceName");
+    var phone = document.getElementById("announcePhone");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -22372,7 +22378,7 @@ function announceNextClick() {
 
 
 function couponNextClick() {
-    var phone = document.getElementById("couponPhone"); 
+    var phone = document.getElementById("couponPhone");
 
     if (!phone.checkValidity()) {
         phone.setAttribute("style", "background-color: #FFDBDC");
@@ -22392,10 +22398,10 @@ function couponNextClick() {
 
 function bossModalNextClick() {
 
-    var name = document.getElementById("bossContactName"); 
-    var phone = document.getElementById("bossContactPhone"); 
-    var email = document.getElementById("bossContactEmail"); 
-    var message = document.getElementById("bossContactMessage"); 
+    var name = document.getElementById("bossContactName");
+    var phone = document.getElementById("bossContactPhone");
+    var email = document.getElementById("bossContactEmail");
+    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -22511,6 +22517,33 @@ $(function () {
             }
 
             calcPositions();
+        }
+    });
+
+    $("a.page-nav-item").on('click', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            var duration = parseInt($(this).data("duration"));
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, duration, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    $("#scroll-control").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop()) {
+            $('#scroll-control').fadeIn();
+        } else {
+            $('#scroll-control').fadeOut();
         }
     });
 });

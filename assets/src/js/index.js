@@ -338,10 +338,10 @@ $(function () {
         items: 1,
         loop: true,
         mouseDrag: false,
-        autoplay: true,
-        autoplaySpeed: 1000,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
+        // autoplay: true,
+        // autoplaySpeed: 1000,
+        // autoplayTimeout: 3000,
+        // autoplayHoverPause: true,
         responsive: {
             992: {
                 dots: false,
@@ -355,7 +355,7 @@ $(function () {
         navText: ["", ""]
     });
 
-    owl.trigger('play.owl.autoplay', [3000])
+    //owl.trigger('play.owl.autoplay', [3000])
 
     $('.features').owlCarousel({
         mouseDrag: false,
@@ -503,9 +503,9 @@ $(function () {
                 var moving = new ymaps.map.action.Single({
                     center: coords,
                     zoom: zoom,
-                    timingFunction: 'ease-in',
+                    timingFunction: 'linear',
                     checkZoomRange: true,
-                    duration: 1500,
+                    duration: 10,
                     callback: function (err) {
                         selected.setOptions('visible', true);
 
@@ -550,6 +550,19 @@ $(function () {
 
                 map.action.execute(moving);
             });
+        }
+    });
+
+    $("#scroll-control").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop()) {
+            $('#scroll-control').fadeIn();
+        } else {
+            $('#scroll-control').fadeOut();
         }
     });
 });

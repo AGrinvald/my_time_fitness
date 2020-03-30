@@ -32,7 +32,7 @@ var windowsSize = {
 
 var mapSettingsCollection = {
     Large: {
-        center: [59.78987504525991, 30.123560632812463], zoom: 10,
+        center: [59.82822361421412, 30.360174898088157], zoom: 14,
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
@@ -121,6 +121,10 @@ function init() {
     map.controls.remove('zoomControl');
     map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px'}, size: 'small'});
     
+    map.events.add('boundschange', function (event) {
+        console.log(map.getCenter());
+    });
+
     map.events.add('sizechange', function (event) {
         var size = map.container.getSize();
         var width = size[0];
@@ -425,6 +429,33 @@ $(function () {
             }
 
             calcPositions();
+        }
+    });
+
+    $("a.page-nav-item").on('click', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            var duration = parseInt($(this).data("duration"));
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, duration, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    $("#scroll-control").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop()) {
+            $('#scroll-control').fadeIn();
+        } else {
+            $('#scroll-control').fadeOut();
         }
     });
 });

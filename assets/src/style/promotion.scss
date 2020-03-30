@@ -2,11 +2,37 @@ b {
   font-weight: 700;
 } 
 
+/* TOP HEADER START */
+.h-top {
+  @include media-breakpoint-up(xl) {
+      .inner {
+        height: 466px;
+
+          &::before {
+              content: "";
+              top: -2%;
+              left: 50%;
+              transform: translateX(-50%);
+              position: absolute;
+              width: 1835px;
+              height: 466px;
+              background: url(../img/group-2.svg);
+              background-size: auto 100%;
+              background-repeat: no-repeat;
+              background-position-y: top;
+              background-position-x: right;
+              z-index: 8;
+          }
+      }
+  }
+}
+/* TOP HEADER END */
+
 /* BANNER AREA START*/
 .banner-area {
   .banner-container {
     position: relative;
-    z-index: 3;
+    z-index: 10;
     padding: 0;
   }
 }

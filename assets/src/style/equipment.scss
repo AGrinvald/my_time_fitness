@@ -50,6 +50,7 @@
 @import "promo-modal";
 @import "alert-modal";
 @import "equipment-promo";
+@import "scroll-control";
 
 /* BANNER AREA START*/
 .banner-area {
@@ -315,7 +316,7 @@
         background-repeat: no-repeat;
 
         &.disabled {
-          background-color: #C0C0C0;
+          background-color: #c0c0c0;
           cursor: default;
         }
 

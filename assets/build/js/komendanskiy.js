@@ -22116,7 +22116,7 @@ var windowsSize = {
 
 var mapSettingsCollection = {
     Large: {
-        center: [59.799564175206164, 30.090601648437463], zoom: 10,
+        center: [59.828442273208694, 30.358398300534706], zoom: 13,
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
@@ -22139,6 +22139,7 @@ var createLayout = function (id) {
                     placemarkMap.events.add('sizechange', function () {
                         this.rebuild();
                     }, this);
+
                 }
 
                 var img = document.createElement("img");
@@ -22205,6 +22206,10 @@ function init() {
     map.controls.remove('zoomControl');
     map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px'}, size: 'small'});
     
+    map.events.add('boundschange', function (event) {
+        console.log(map.getCenter());
+    });
+
     map.events.add('sizechange', function (event) {
         var size = map.container.getSize();
         var width = size[0];
@@ -22222,6 +22227,8 @@ function init() {
         if (toChange) {
             map.setCenter(mapSettings.center, mapSettings.zoom);
         }
+
+        console.log(map.getCenter());
 
     });
 
@@ -22510,6 +22517,33 @@ $(function () {
             }
 
             calcPositions();
+        }
+    });
+
+    $("a.page-nav-item").on('click', function (event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            var duration = parseInt($(this).data("duration"));
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, duration, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    $("#scroll-control").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop()) {
+            $('#scroll-control').fadeIn();
+        } else {
+            $('#scroll-control').fadeOut();
         }
     });
 });

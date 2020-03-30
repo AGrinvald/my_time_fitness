@@ -25,14 +25,26 @@ var path = {
     'assets/src/js/kids.js', 'assets/src/js/kupchino.js', 
     'assets/src/js/komendanskiy.js', 'assets/src/js/promotions.js',
     'assets/src/js/promotion.js', 'assets/src/js/payment-process.js', 
-    'assets/src/js/equipment.js' ],
+    'assets/src/js/equipment.js', 'assets/src/js/refund.js', 
+    'assets/src/js/law.js', 'assets/src/js/offer.js',
+    'assets/src/js/rules.js', 'assets/src/js/vacancies.js',
+    'assets/src/js/about.js', 'assets/src/js/sections.js',
+    'assets/src/js/privacy-policy.js', 'assets/src/js/personal-data.js'
+   ],
+
     style: ['assets/src/style/index.scss', 'assets/src/style/akademicheskaya.scss',
     'assets/src/style/komendanskiy.scss', 'assets/src/style/kupchino.scss', 
     'assets/src/style/kids.scss', 'assets/src/style/promotions.scss', 'assets/src/style/sale.scss', 
     'assets/src/style/fitness-plus-spa.scss', 'assets/src/style/payment-process.scss', 
     'assets/src/style/first-promo.scss', 'assets/src/style/second-promo.scss', 
     'assets/src/style/fourth-promo.scss', 'assets/src/style/fifth-promo.scss', 
-    'assets/src/style/equipment.scss'],
+    'assets/src/style/equipment.scss', 'assets/src/style/refund.scss',
+    'assets/src/style/law.scss', 'assets/src/style/offer.scss', 
+    'assets/src/style/rules.scss', 'assets/src/style/vacancies.scss',
+    'assets/src/style/about.scss', 'assets/src/style/sections.scss',
+    'assets/src/style/privacy-policy.scss','assets/src/style/personal-data.scss'
+  ],
+
     img: 'assets/src/img/**/*.*',
     fonts: 'assets/src/fonts/**/*.*'
   },

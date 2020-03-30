@@ -208,7 +208,7 @@
   .modal-content {
     border: none;
     background-color: $white;
-    min-height: 608px;
+    min-height: 580px;
 
     @include media-breakpoint-down(sm) {
       height: 100%;

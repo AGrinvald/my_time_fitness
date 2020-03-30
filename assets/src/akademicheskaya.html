@@ -83,25 +83,25 @@
                 justify-content-center
                 align-items-center">
                 <div class="d-flex w-100 flex-wrap justify-content-center justify-content-xl-between">
-                    <a href="#onmap" class="page-nav-item">
+                    <a href="#onmap" data-duration='3000' class="page-nav-item">
                         <div class="icon imb-bg-1">
                             &nbsp;
                         </div>
                         <p>КЛУБ НА КАРТЕ</p>
                     </a>
-                    <a href="#schedule" class="page-nav-item">
+                    <a href="#schedule" data-duration='2800' class="page-nav-item">
                         <div class="icon imb-bg-2">
                             &nbsp;
                         </div>
                         <p>РАСПИСАНИЕ</p>
                     </a>
-                    <a href="#services" class="page-nav-item">
+                    <a href="#services" data-duration='1800' class="page-nav-item">
                         <div class="icon imb-bg-3">
                             &nbsp;
                         </div>
                         <p>УСЛУГИ</p>
                     </a>
-                    <a href="#seasons" class="page-nav-item">
+                    <a href="#seasons" data-duration='2400' class="page-nav-item">
                         <div class="icon imb-bg-4">
                             &nbsp;
                         </div>
@@ -671,7 +671,7 @@
                                 mytimefitnessspb@gmail.com
                             </p>
                         </div>
-                        <a href="#" class="club-block">
+                        <div class="club-block">
                             <div class="desc">
                                 <h4>Фитнес клуб</h4>
                                 <p>
@@ -684,8 +684,8 @@
                                     работы клуба.
                                 </p>
                             </div>
-                        </a>
-                        <a href="#" class="club-block">
+                        </div>
+                        <div class="club-block">
                             <div class="desc">
                                 <h4>Отдел продаж</h4>
                                 <p>
@@ -694,7 +694,7 @@
                                     12.00 - 22.00
                                 </p>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -703,6 +703,8 @@
         </div>
     </section>
     //= footer.html
+    <a class='scroll-control' href="#" id='scroll-control'>
+    </a>
     <div class="modal fade" id="clubs-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">
         //= clubs-modal.html
