@@ -35,11 +35,7 @@ function modalNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (!email.checkValidity()) {
-        email.parentElement.setAttribute("style", "background-color: #FFDBDC");
-    }
-
-    if (name.checkValidity() && phone.checkValidity() && email.checkValidity()) {
+    if (name.checkValidity() && phone.checkValidity()) {
         var next = $(this).data("next");
 
         $.ajax({

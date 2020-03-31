@@ -36,7 +36,7 @@ var mapSettingsCollection = {
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
-        center: [60.29306783149127, 30.48198958789056], zoom: 9,
+        center: [60.020826068876865, 30.403969492065333], zoom: 14,
         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
     }
 };
@@ -200,6 +200,31 @@ function calcWidth(percent) {
     return elWidth;
 }
 
+function promoNextClick() {
+    var next = $(this).data("next");
+
+    var name = document.getElementById("promoName");
+    var phone = document.getElementById("promoPhone");
+
+    if (!name.checkValidity()) {
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $("#promo-modal .modal-body").html(html);
+        });
+    }
+}
 
 var md = 992;
 var lg = 1400;
@@ -362,6 +387,11 @@ $(function () {
     $('#couponFormBtn').bind("click", couponNextClick);
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $("#announcePhone").mask("+7(999) 999-99-99");
+
+    $('#promo-modal').on('shown.bs.modal', function (e) {
+        $("#promo-modal .promo-btn").bind("click", promoNextClick);
+        $("#promoPhone").mask("+7(999) 999-99-99");
+    });
 
     $('.gallery-area button.prev-btn').click(function () {
         moveToSelected('prev');

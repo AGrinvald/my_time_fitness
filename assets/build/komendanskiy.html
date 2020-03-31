@@ -8,7 +8,7 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ba6c0504-43ff-4821-a7d3-7384f5e5cd00&lang=ru_RU&mode=debug"
         type="text/javascript">
         </script>
-        <title>Комендантский</title>
+    <title>Комендантский</title>
 </head>
 
 <body>
@@ -511,7 +511,7 @@
             </div>
             <div
                 class="container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
-                <a href="#" class="season-item">
+                <div href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">Дуэт Старт</p>
                         <p class="old-price">17 900 р.</p>
@@ -553,10 +553,11 @@
                             «Дуэт Старт» доступны с 18 по 24 декабря
                             в количестве 10шт.
                         </p>
-                        <button class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
+                        <button type="button" data-toggle="modal" data-target="#promo-modal"
+                            class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
                     </div>
-                </a>
-                <a href="#" class="season-item">
+                </div>
+                <div href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">Свободное утро</p>
                         <p class="old-price">12 900 р.</p>
@@ -599,10 +600,11 @@
                             «Свободное утром» доступны с 18 по
                             24 декабря в количестве 10шт.
                         </p>
-                        <button class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
+                        <button type="button" data-toggle="modal" data-target="#promo-modal"
+                            class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
                     </div>
-                </a>
-                <a href="#" class="season-item">
+                </div>
+                <div href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">Старт</p>
                         <p class="old-price">17 900 р.</p>
@@ -641,9 +643,10 @@
                             «Старт» доступны с 18 по 24 декабря
                             в количестве 10шт.
                         </p>
-                        <button class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
+                        <button type="button" data-toggle="modal" data-target="#promo-modal"
+                            class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -722,8 +725,7 @@
                         </h2>
                         <div class="pl-3 pl-lg-0">
                             <p class="mt-1">
-                                ул. Ильюшина, 14,<br />
-                                ТК Долгоозерный, 3 этаж
+                                ул. Ильюшина, 14, ТК Долгоозерный, 3 этаж
                             </p>
                             <p>
                                 mytimefitnessspb@gmail.com
@@ -920,6 +922,50 @@
                             </p>
                         </div>
                     </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="promo-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img srcset="img/cancel@1x.png 23w,
+                            img/cancel@2x.png 46w,
+                            img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
+                    </button>
+                    <div class="promo-form">
+                        <h3 class="text-center font-weight-bold my-5">ОСТАВИТЬ ЗАЯВКУ</h3>
+                        <form class="promo-form">
+                            <div class="form-row">
+                                <div class="input-group white custom-input-group mb-3 col-12">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">1</span>
+                                    </div>
+                                    <input type="text" id="promoName" class="form-control" placeholder="Введите Ваше имя" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group white custom-input-group mb-3 col-12">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">2</span>
+                                    </div>
+                                    <input type="text" id="promoPhone" class="form-control" placeholder="Введите Ваш телефон" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" data-next="promo-confirm.html"
+                                    class="btn btn-custom-green-no-border btn-custom-lg btn-rounded w-100 promo-btn">ОТПРАВИТЬ
+                                    ЗАЯВКУ</button>
+                            </div>
+                        </form>
+                        <p class="my-5">
+                            Нажимая на кнопку "Записаться",<br /> Вы соглашаетесь с <a href="#" class="text-primary d-inline">правилами
+                                обработки персональных данных.</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

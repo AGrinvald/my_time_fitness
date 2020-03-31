@@ -137,12 +137,12 @@ $(function () {
         modal.find("#clientSeasonPhone").mask("+7(999) 999-99-99");
         modal.find(".promo-btn").bind("click", seasonNextClick);
 
-        modal.find(".kids-season-dropdown a.dropdown-item").click(function (event) {
-            event.preventDefault();
+        // modal.find(".kids-season-dropdown a.dropdown-item").click(function (event) {
+        //     event.preventDefault();
 
-            $(".kids-season-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-            $(".kids-season-dropdown").find('input:hidden').val($(this).data('value'));
-        });
+        //     $(".kids-season-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+        //     $(".kids-season-dropdown").find('input:hidden').val($(this).data('value'));
+        // });
     });
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {

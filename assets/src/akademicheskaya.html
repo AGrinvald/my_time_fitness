@@ -441,7 +441,7 @@
             </div>
             <div
                 class="container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
-                <a href="#" class="season-item">
+                <div href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">VIP</p>
                         <p class="old-price">24 700 р.</p>
@@ -492,10 +492,11 @@
                             «VIP» доступны с 18 по 24 декабря
                             в количестве 10шт.
                         </p>
-                        <button class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
+                        <button type="button" data-toggle="modal" data-target="#promo-modal"
+                            class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
                     </div>
-                </a>
-                <a href="#" class="season-item">
+                </div>
+                <div class="season-item">
                     <div class="tariff-b">
                         <p class="name">Кач</p>
                         <p class="old-price">16 700 р.</p>
@@ -542,10 +543,11 @@
                             «Кач» доступны с 18 по 24 декабря
                             в количестве 10шт.
                         </p>
-                        <button class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
+                        <button type="button" data-toggle="modal" data-target="#promo-modal"
+                            class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
                     </div>
-                </a>
-                <a href="#" class="season-item">
+                </div>
+                <div class="season-item">
                     <div class="tariff-b">
                         <p class="name">Лайт</p>
                         <p class="old-price">10 900 р.</p>
@@ -584,9 +586,10 @@
                             «Лайт» доступны с 18 по 24 декабря
                             в количестве 10шт.
                         </p>
-                        <button class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
+                        <button type="button" data-toggle="modal" data-target="#promo-modal"
+                            class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -708,6 +711,16 @@
     <div class="modal fade" id="clubs-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">
         //= clubs-modal.html
+    </div>
+    <div class="modal fade" id="promo-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    //= promo-form.html
+                </div>
+            </div>
+        </div>
     </div>
     <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">

@@ -8,7 +8,7 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ba6c0504-43ff-4821-a7d3-7384f5e5cd00&lang=ru_RU&mode=debug"
         type="text/javascript">
         </script>
-        <title>Комендантский</title>
+    <title>Комендантский</title>
 </head>
 
 <body>
@@ -454,7 +454,7 @@
             </div>
             <div
                 class="container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
-                <a href="#" class="season-item">
+                <div href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">Дуэт Старт</p>
                         <p class="old-price">17 900 р.</p>
@@ -496,10 +496,11 @@
                             «Дуэт Старт» доступны с 18 по 24 декабря
                             в количестве 10шт.
                         </p>
-                        <button class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
+                        <button type="button" data-toggle="modal" data-target="#promo-modal"
+                            class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
                     </div>
-                </a>
-                <a href="#" class="season-item">
+                </div>
+                <div href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">Свободное утро</p>
                         <p class="old-price">12 900 р.</p>
@@ -542,10 +543,11 @@
                             «Свободное утром» доступны с 18 по
                             24 декабря в количестве 10шт.
                         </p>
-                        <button class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
+                        <button type="button" data-toggle="modal" data-target="#promo-modal"
+                            class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
                     </div>
-                </a>
-                <a href="#" class="season-item">
+                </div>
+                <div href="#" class="season-item">
                     <div class="tariff-b">
                         <p class="name">Старт</p>
                         <p class="old-price">17 900 р.</p>
@@ -584,9 +586,10 @@
                             «Старт» доступны с 18 по 24 декабря
                             в количестве 10шт.
                         </p>
-                        <button class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
+                        <button type="button" data-toggle="modal" data-target="#promo-modal"
+                            class="btn btn-outline-dark btn-custom-lg btn-rounded">КУПИТЬ</button>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -665,8 +668,7 @@
                         </h2>
                         <div class="pl-3 pl-lg-0">
                             <p class="mt-1">
-                                ул. Ильюшина, 14,<br />
-                                ТК Долгоозерный, 3 этаж
+                                ул. Ильюшина, 14, ТК Долгоозерный, 3 этаж
                             </p>
                             <p>
                                 mytimefitnessspb@gmail.com
@@ -709,6 +711,16 @@
     <div class="modal fade" id="clubs-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">
         //= clubs-modal.html
+    </div>
+    <div class="modal fade" id="promo-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    //= promo-form.html
+                </div>
+            </div>
+        </div>
     </div>
     <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">

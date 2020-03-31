@@ -32,11 +32,11 @@ var windowsSize = {
 
 var mapSettingsCollection = {
     Large: {
-        center: [59.828442273208694, 30.358398300534706], zoom: 13,
+        center: [60.00835870062054, 30.229154516788807], zoom: 14,
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
-        center: [60.11397765479358, 30.438044275390556], zoom: 9,
+        center: [60.017774664818425, 30.24518052670202], zoom: 14,
         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
     }
 };
@@ -104,9 +104,9 @@ function init() {
     });
 
     var akademicheskaya = new ymaps.Placemark(
-        [59.82853206432565, 30.39268299999999], {
+        [60.00816706410207, 30.2457365], {
             id: 0,
-            hintContent: 'ул. Ильюшина, 14, ТК Долгоозерный, 3 этаж'
+            hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
         }, {
             iconLayout: createLayout(0)
         }
@@ -200,6 +200,31 @@ function calcWidth(percent) {
     return elWidth;
 }
 
+function promoNextClick() {
+    var next = $(this).data("next");
+
+    var name = document.getElementById("promoName");
+    var phone = document.getElementById("promoPhone");
+
+    if (!name.checkValidity()) {
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $("#promo-modal .modal-body").html(html);
+        });
+    }
+}
 
 var md = 992;
 var lg = 1400;
@@ -362,6 +387,11 @@ $(function () {
     $("#couponPhone").mask("+7(999) 999-99-99");
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $("#announcePhone").mask("+7(999) 999-99-99");
+
+    $('#promo-modal').on('shown.bs.modal', function (e) {
+        $("#promo-modal .promo-btn").bind("click", promoNextClick);
+        $("#promoPhone").mask("+7(999) 999-99-99");
+    });
 
     $('.gallery-area button.prev-btn').click(function () {
         moveToSelected('prev');

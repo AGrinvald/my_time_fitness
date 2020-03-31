@@ -22116,11 +22116,11 @@ var windowsSize = {
 
 var mapSettingsCollection = {
     Large: {
-        center: [59.82822361421412, 30.360174898088157], zoom: 14,
+        center: [59.82874214743552, 30.378456834733644], zoom: 14,
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
-        center: [60.11397765479358, 30.438044275390556], zoom: 9,
+        center: [59.83896058559016, 30.392857943904374], zoom: 14,
         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
     }
 };
@@ -22281,6 +22281,31 @@ function calcWidth(percent) {
     return elWidth;
 }
 
+function promoNextClick() {
+    var next = $(this).data("next");
+
+    var name = document.getElementById("promoName");
+    var phone = document.getElementById("promoPhone");
+
+    if (!name.checkValidity()) {
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $("#promo-modal .modal-body").html(html);
+        });
+    }
+}
 
 var md = 992;
 var lg = 1400;
@@ -22443,6 +22468,11 @@ $(function () {
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $("#announcePhone").mask("+7(999) 999-99-99");
 
+    $('#promo-modal').on('shown.bs.modal', function (e) {
+        $("#promo-modal .promo-btn").bind("click", promoNextClick);
+        $("#promoPhone").mask("+7(999) 999-99-99");
+    });
+    
     $('.gallery-area button.prev-btn').click(function () {
         moveToSelected('prev');
     });

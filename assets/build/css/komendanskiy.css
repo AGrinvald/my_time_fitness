@@ -8451,6 +8451,46 @@ nav.navbar {
     letter-spacing: 0.15px; }
 
 /* CLUBS MODAL END*/
+/* PROMO MODAL START*/
+@media (min-width: 992px) {
+  #promo-modal .modal-dialog-centered {
+    min-height: calc(100% - 1%); } }
+
+@media (max-width: 767.98px) {
+  #promo-modal .modal-dialog {
+    height: 100%; } }
+
+#promo-modal .modal-content {
+  border: none;
+  background-color: #ffffff;
+  background-image: url(../img/555-copy-7.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  min-height: 540px; }
+  @media (max-width: 767.98px) {
+    #promo-modal .modal-content {
+      height: 100%; } }
+
+#promo-modal .form-row > .col, #promo-modal .form-row > [class*=col-] {
+  padding-right: 3px;
+  padding-left: 3px; }
+
+#promo-modal .promo-form {
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto; }
+  #promo-modal .promo-form .custom-input-group {
+    margin-bottom: 25px; }
+  #promo-modal .promo-form h3 {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 0.54px; }
+  #promo-modal .promo-form p {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center; }
+
+/* PROMO MODAL END*/
 /* ALERT MODAL START*/
 @media (min-width: 992px) {
   #alert-modal .modal-dialog-centered {
