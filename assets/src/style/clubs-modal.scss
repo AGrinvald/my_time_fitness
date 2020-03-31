@@ -1,15 +1,30 @@
 /* CLUBS MODAL START*/
 #clubs-modal {
+  .modal-dialog-centered {
+    @include media-breakpoint-up(lg) {
+      min-height: calc(100% - 1%);
+    }
+  }
+
+  .modal-dialog {
+    @include media-breakpoint-down(sm) {
+      height: 100%;
+    }
+  }
+
   .modal-content {
     border: none;
+
+    @include media-breakpoint-down(sm) {
+      height: 100%;
+    }
   }
   .modal-body {
-    h4 {
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 0.18px;
+    h3 {
       text-align: center;
-      padding-top: 30px;
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 0.54px;
     }
 
     .club-link {
@@ -40,5 +55,5 @@
       }
     }
   }
-  }
-  /* CLUBS MODAL END*/
+}
+/* CLUBS MODAL END*/

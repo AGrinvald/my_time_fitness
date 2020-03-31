@@ -8423,15 +8423,25 @@ nav.navbar {
 
 /* NAVBAR END */
 /* CLUBS MODAL START*/
+@media (min-width: 992px) {
+  #clubs-modal .modal-dialog-centered {
+    min-height: calc(100% - 1%); } }
+
+@media (max-width: 767.98px) {
+  #clubs-modal .modal-dialog {
+    height: 100%; } }
+
 #clubs-modal .modal-content {
   border: none; }
+  @media (max-width: 767.98px) {
+    #clubs-modal .modal-content {
+      height: 100%; } }
 
-#clubs-modal .modal-body h4 {
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 0.18px;
+#clubs-modal .modal-body h3 {
   text-align: center;
-  padding-top: 30px; }
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 0.54px; }
 
 #clubs-modal .modal-body .club-link {
   color: #000000;
