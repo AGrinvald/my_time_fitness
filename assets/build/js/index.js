@@ -22350,7 +22350,6 @@ function bossModalNextClick() {
     var name = document.getElementById("bossContactName");
     var phone = document.getElementById("bossContactPhone");
     var email = document.getElementById("bossContactEmail");
-    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -22376,10 +22375,21 @@ function bossModalNextClick() {
     }
 }
 
+function setClubName() {
+    var name = sessionStorage.getItem('club-name');
+
+    if (!name) {
+        name = 'Выберите ваш клуб'
+    }
+
+    $('#club-name').html(name);
+}
+
 $(function () {
 
+    setClubName();
+
     var md = 992;
-    var lg = 1400;
 
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $('#signupFormBtn').bind("click", signupNextClick);
@@ -22466,19 +22476,19 @@ $(function () {
     });
 
     var scheduleOwl = $('.schedule-slides'),
-    owlOptions = {
-        loop: true,
-        mouseDrag: false,
-        nav: true,
-        navText: ["", ""],
-        onTranslated: function(event) {
-            var clubBlock = $(event.target).find('.owl-item.active > .club-schedule-block')[0];
-            var newUrl = $(clubBlock).data("link");
+        owlOptions = {
+            loop: true,
+            mouseDrag: false,
+            nav: true,
+            navText: ["", ""],
+            onTranslated: function (event) {
+                var clubBlock = $(event.target).find('.owl-item.active > .club-schedule-block')[0];
+                var newUrl = $(clubBlock).data("link");
 
-            $('.schedule-btn').attr("href", newUrl);
-        },
-        items: 1
-    };
+                $('.schedule-btn').attr("href", newUrl);
+            },
+            items: 1
+        };
 
     if ($(window).width() < md) {
         scheduleOwl.owlCarousel(owlOptions);
@@ -22583,7 +22593,7 @@ $(function () {
                 var coords = [markCoords[0], markCoords[1]];
                 var coords = centerPoints[id];
                 var zoom = 14;
-                
+
                 var moving = new ymaps.map.action.Single({
                     center: coords,
                     zoom: zoom,
@@ -22649,4 +22659,40 @@ $(function () {
             $('#scroll-control').fadeOut();
         }
     });
+
+    $('.open-modal-link').click(function (event) {
+        event.preventDefault();
+        var self = $(this);
+
+        var toSelect = self.data('select');
+        var hash = self.data('hash');
+        var club = sessionStorage.getItem('club-link');
+
+        if (toSelect || !club) {
+            $('.club-link').each(function () {
+                var link = $(this).data('link');
+                $(this).attr("href", `/${link}${hash ? hash : ''}`)
+            });
+
+            $(".club-link").on("click", function (e) {
+                var name = $(this).data('name');
+                var link = $(this).data('link');
+
+                sessionStorage.setItem('club-link', link);
+                sessionStorage.setItem('club-name', name);
+
+                setClubName();
+                $('#clubs-modal').modal('hide');
+
+                if (toSelect) {
+                    return false;
+                }
+            });
+
+            $('#clubs-modal').modal('show');
+        } else {
+            window.location.href = `/${club}${hash ? hash : ''}`;
+        }
+    });
+
 });

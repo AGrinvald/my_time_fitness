@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/payment-process.min.css" media="all">
+    <link rel="stylesheet" href="css/payment.min.css" media="all">
     <title>Процесс оплаты</title>
 </head>
 
@@ -22,18 +22,18 @@
                         img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
         </div>
         <div class="d-lg-none n-bottom">
-            <button class="btn btn-link" data-toggle="modal" data-target="#clubs-modal">Выберите ваш клуб</button>
+            <button class="btn btn-link open-modal-link" id='club-name' data-select='true'>Выберите ваш клуб</button>
         </div>
         <div class="collapse navbar-collapse justify-content-center" id="navbar">
             <ul class="navbar-nav justify-content-lg-between w-100">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Клубы</a>
+                    <a class="nav-link open-modal-link" href="#">Клубы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Расписание</a>
+                    <a class="nav-link open-modal-link" data-hash='#schedule' href="#">Расписание</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Абонементы</a>
+                    <a class="nav-link open-modal-link" data-hash='#seasons' href="#">Абонементы</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="promotions.html">Акции</a>
@@ -205,7 +205,7 @@
         aria-hidden="true">
         //= alert-modal.html
     </div>
-    <script src="js/payment-process.js"></script>
+    <script src="js/info.js"></script>
 </body>
 
 </html>

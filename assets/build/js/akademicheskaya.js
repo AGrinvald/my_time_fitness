@@ -22427,7 +22427,19 @@ function bossModalNextClick() {
     }
 }
 
+function setClubName() {
+    var name = sessionStorage.getItem('club-name');
+
+    if (!name) {
+        name = 'Выберите ваш клуб'
+    }
+
+    $('#club-name').html(name);
+}
+
 $(function () {
+
+    setClubName();
 
     $("#couponPhone").mask("+7(999) 999-99-99");
     $('#signupFormBtn').bind("click", announceNextClick);
@@ -22544,6 +22556,41 @@ $(function () {
             $('#scroll-control').fadeIn();
         } else {
             $('#scroll-control').fadeOut();
+        }
+    });
+
+    $('.open-modal-link').click(function (event) {
+        event.preventDefault();
+        var self = $(this);
+
+        var toSelect = self.data('select');
+        var hash = self.data('hash');
+        var club = sessionStorage.getItem('club-link');
+
+        if (toSelect || !club) {
+            $('.club-link').each(function () {
+                var link = $(this).data('link');
+                $(this).attr("href", `/${link}${hash ? hash : ''}`)
+            });
+
+            $(".club-link").on("click", function (e) {
+                var name = $(this).data('name');
+                var link = $(this).data('link');
+
+                sessionStorage.setItem('club-link', link);
+                sessionStorage.setItem('club-name', name);
+
+                setClubName();
+                $('#clubs-modal').modal('hide');
+
+                if (toSelect) {
+                    return false;
+                }
+            });
+
+            $('#clubs-modal').modal('show');
+        } else {
+            window.location.href = `/${club}${hash ? hash : ''}`;
         }
     });
 });

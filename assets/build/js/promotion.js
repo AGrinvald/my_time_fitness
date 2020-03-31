@@ -18660,9 +18660,9 @@ $.fn.extend({
 
 function modalNextClick() {
 
-    var name = document.getElementById("promoName"); 
-    var phone = document.getElementById("promoPhone"); 
-    var email = document.getElementById("promoEmail"); 
+    var name = document.getElementById("promoName");
+    var phone = document.getElementById("promoPhone");
+    var email = document.getElementById("promoEmail");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -18690,10 +18690,10 @@ function modalNextClick() {
 
 function bossModalNextClick() {
 
-    var name = document.getElementById("bossContactName"); 
-    var phone = document.getElementById("bossContactPhone"); 
-    var email = document.getElementById("bossContactEmail"); 
-    var message = document.getElementById("bossContactMessage"); 
+    var name = document.getElementById("bossContactName");
+    var phone = document.getElementById("bossContactPhone");
+    var email = document.getElementById("bossContactEmail");
+    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -18719,7 +18719,20 @@ function bossModalNextClick() {
     }
 }
 
+function setClubName() {
+    var name = sessionStorage.getItem('club-name');
+
+    if (!name) {
+        name = 'Выберите ваш клуб'
+    }
+
+    $('#club-name').html(name);
+}
+
 $(function () {
+
+    setClubName();
+
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $("#promoPhone").mask("+7(999) 999-99-99");
 
@@ -18739,5 +18752,40 @@ $(function () {
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
         $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);
+    });
+
+    $('.open-modal-link').click(function (event) {
+        event.preventDefault();
+        var self = $(this);
+
+        var toSelect = self.data('select');
+        var hash = self.data('hash');
+        var club = sessionStorage.getItem('club-link');
+
+        if (toSelect || !club) {
+            $('.club-link').each(function () {
+                var link = $(this).data('link');
+                $(this).attr("href", `/${link}${hash ? hash : ''}`)
+            });
+
+            $(".club-link").on("click", function (e) {
+                var name = $(this).data('name');
+                var link = $(this).data('link');
+
+                sessionStorage.setItem('club-link', link);
+                sessionStorage.setItem('club-name', name);
+
+                setClubName();
+                $('#clubs-modal').modal('hide');
+
+                if (toSelect) {
+                    return false;
+                }
+            });
+
+            $('#clubs-modal').modal('show');
+        } else {
+            window.location.href = `/${club}${hash ? hash : ''}`;
+        }
     });
 });

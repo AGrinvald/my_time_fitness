@@ -37,18 +37,18 @@
                         img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
         </div>
         <div class="d-lg-none n-bottom">
-            <button class="btn btn-link" data-toggle="modal" data-target="#clubs-modal">Выберите ваш клуб</button>
+            <button class="btn btn-link open-modal-link" id='club-name' data-select='true'>Выберите ваш клуб</button>
         </div>
         <div class="collapse navbar-collapse justify-content-center" id="navbar">
             <ul class="navbar-nav justify-content-lg-between w-100">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Клубы</a>
+                    <a class="nav-link open-modal-link" href="#">Клубы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Расписание</a>
+                    <a class="nav-link open-modal-link" data-hash='#schedule' href="#">Расписание</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Абонементы</a>
+                    <a class="nav-link open-modal-link" data-hash='#seasons' href="#">Абонементы</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="promotions.html">Акции</a>
@@ -113,13 +113,13 @@
                                 Информация
                             </li>
                             <li>
-                                <a href="payment-process.html">Правила оплаты</a>
+                                <a href="payment.html">Правила оплаты</a>
                             </li>
                             <li>
                                 <a href="refund.html">Правила возврата</a>
                             </li>
                             <li>
-                                <a href="law.html">Юридическая информация</a>
+                                <a href="law.html">Ю��идическая информация</a>
                             </li>
                             <li>
                                 <a href="offer.html">Публичная оферта</a>
@@ -201,7 +201,10 @@
                             img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
                     </button>
                     <h3 class='my-5'>ВЫБЕРИТЕ КЛУБ</h3>
-                    <a href="komendanskiy.html" class="club-link d-flex mt-4">
+                    <a href="komendanskiy.html" 
+                    data-link='komendanskiy.html' 
+                    data-name='Комендантский'
+                    class="club-link d-flex mt-4">
                         <img src="img/shape1.svg" alt="pointer">
                         <div class="inner-div">
                             <h5>
@@ -213,7 +216,10 @@
                             </p>
                         </div>
                     </a>
-                    <a href="akademicheskaya.html" class="club-link d-flex mt-4">
+                    <a href="akademicheskaya.html" 
+                    data-link='akademicheskaya.html'
+                    data-name='Академическая' 
+                    class="club-link d-flex mt-4">
                         <img src="img/shape1.svg" alt="pointer">
                         <div class="inner-div">
                             <h5>
@@ -225,7 +231,10 @@
                             </p>
                         </div>
                     </a>
-                    <a href="kupchino.html"  class="club-link d-flex mt-4 mb-5">
+                    <a href="kupchino.html" 
+                    data-link='kupchino.html'  
+                    data-name='Купчино'
+                    class="club-link d-flex mt-4 mb-5">
                         <img src="img/shape1.svg" alt="pointer">
                         <div class="inner-div">
                             <h5>
@@ -261,7 +270,7 @@
             </div>
         </div>
     </div>
-    <script src="js/law.js"></script>
+    <script src="js/info.js"></script>
 </body>
 
 </html>
