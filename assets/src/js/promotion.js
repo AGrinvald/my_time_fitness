@@ -97,16 +97,16 @@ $(function () {
 
     $('#promo-modal').on('shown.bs.modal', function (e) {
         $("#promo-modal .promo-btn").bind("click", modalNextClick);
+        $("#promoPhone").mask("+7(999) 999-99-99");
+        // if ($(".promo-dropdown a.dropdown-item")) {
 
-        if ($(".promo-dropdown a.dropdown-item")) {
+        //     $(".promo-dropdown a.dropdown-item").click(function (event) {
+        //         event.preventDefault();
 
-            $(".promo-dropdown a.dropdown-item").click(function (event) {
-                event.preventDefault();
-
-                $(".promo-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-                $(".promo-dropdown").find('input:hidden').val($(this).data('value'));
-            });
-        }
+        //         $(".promo-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+        //         $(".promo-dropdown").find('input:hidden').val($(this).data('value'));
+        //     });
+        // }
     });
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
