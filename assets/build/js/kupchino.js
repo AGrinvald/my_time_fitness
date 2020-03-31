@@ -22579,14 +22579,20 @@ $(function () {
                 setClubName();
                 $('#clubs-modal').modal('hide');
 
-                if (toSelect) {
-                    return false;
-                }
             });
 
             $('#clubs-modal').modal('show');
         } else {
-            window.location.href = `/${club}${hash ? hash : ''}`;
+            if (window.location.pathname === `/${club}`) {
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 2800, function () {
+                    window.location.hash = hash;
+                });
+            } else {
+                window.location.href = `/${club}${hash ? hash : ''}`;
+            }
+
         }
     });
 });
