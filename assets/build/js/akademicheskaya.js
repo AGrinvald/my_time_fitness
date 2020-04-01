@@ -22506,13 +22506,9 @@ $(function () {
         owlOptions = {
             loop: true,
             mouseDrag: false,
-            navText: ["&#129120;", "&#129122;"],
+            navText: ["", ""],
             dots: false,
-            responsive: {
-                0: {
-                    items: 1
-                }
-            }
+            items: 1
         };
 
     if ($(window).width() < md) {
