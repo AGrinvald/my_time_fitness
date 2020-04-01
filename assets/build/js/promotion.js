@@ -18758,10 +18758,13 @@ $(function () {
         var hash = self.data('hash');
         var club = sessionStorage.getItem('club-link');
 
+        var currentURL = window.location.href;
+        currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
+
         if (toSelect || !club) {
             $('.club-link').each(function () {
                 var link = $(this).data('link');
-                $(this).attr("href", `/${link}${hash ? hash : ''}`)
+                $(this).attr("href", currentURL.concat('/', link, hash ? hash : '')); 
             });
 
             $(".club-link").on("click", function (e) {
@@ -18781,7 +18784,7 @@ $(function () {
 
             $('#clubs-modal').modal('show');
         } else {
-            window.location.href = `/${club}${hash ? hash : ''}`;
+            window.location.href = currentURL.concat('/', club, hash ? hash : '');
         }
     });
 });

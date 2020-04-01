@@ -577,13 +577,9 @@ $(function () {
         var currentURL = window.location.href;
         currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
 
-
-        console.log(currentURL);
-
         if (toSelect || !club) {
             $('.club-link').each(function () {
                 var link = $(this).data('link');
-                console.log(currentURL.concat('/', link, hash ? hash : ''));
                 $(this).attr("href", currentURL.concat('/', link, hash ? hash : '')); 
             });
 

@@ -55,9 +55,9 @@ function bossModalNextClick() {
 function setClubName() {
     var name = sessionStorage.getItem('club-name');
 
-    if(!name) {
+    if (!name) {
         name = 'Выберите ваш клуб'
-    } 
+    }
 
     $('#club-name').html(name);
 }
@@ -65,13 +65,13 @@ function setClubName() {
 $(function () {
 
     setClubName();
-    
+
     if ($(window).width() < 992) {
 
         (function () {
             var moretext = "Развернуть описание";
             var lesstext = "Свернуть описание";
-            var lineHeight = 18*1.75;
+            var lineHeight = 18 * 1.75;
             var lines = 4;
 
             $('.truncate-text').each(function () {
@@ -94,12 +94,12 @@ $(function () {
 
                     for (var i = 0; i < words.length; i++) {
                         if ($(this).height() > lineHeight * lines) {
-                            var hiddenText = words.slice(i-1).join(' ');
+                            var hiddenText = words.slice(i - 1).join(' ');
 
-                            var visibleText = prevstr.trim() + 
-                            '<span class="morecontent"><span class="hidden-text">' + hiddenText + 
-                            '</span>&nbsp;&nbsp;<a href="" class="morelink more"><span>' + moretext + 
-                            '</span></a></span>';
+                            var visibleText = prevstr.trim() +
+                                '<span class="morecontent"><span class="hidden-text">' + hiddenText +
+                                '</span>&nbsp;&nbsp;<a href="" class="morelink more"><span>' + moretext +
+                                '</span></a></span>';
 
                             $(this).html(visibleText);
 
@@ -198,7 +198,7 @@ $(function () {
         $("html, body").animate({ scrollTop: 0 }, "slow");
         return false;
     });
-    
+
     $(window).scroll(function () {
         if ($(this).scrollTop()) {
             $('#scroll-control').fadeIn();
@@ -215,10 +215,13 @@ $(function () {
         var hash = self.data('hash');
         var club = sessionStorage.getItem('club-link');
 
+        var currentURL = window.location.href;
+        currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
+
         if (toSelect || !club) {
             $('.club-link').each(function () {
                 var link = $(this).data('link');
-                $(this).attr("href", `/${link}${hash ? hash : ''}`)
+                $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
             });
 
             $(".club-link").on("click", function (e) {
@@ -238,7 +241,7 @@ $(function () {
 
             $('#clubs-modal').modal('show');
         } else {
-            window.location.href = `/${club}${hash ? hash : ''}`;
+            window.location.href = currentURL.concat('/', club, hash ? hash : '');
         }
     });
 });
