@@ -9851,8 +9851,6 @@ footer {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat; } }
-  .scheme-area .scheme .off {
-    display: none; }
   .scheme-area .scheme .scheme-slides {
     position: relative;
     border: 1px solid #aacc23;
@@ -9866,6 +9864,8 @@ footer {
     display: flex;
     -ms-flex-align: center;
         align-items: center; }
+    .scheme-area .scheme .scheme-slides.off {
+      display: none; }
     .scheme-area .scheme .scheme-slides .slide {
       display: -ms-flexbox;
       display: flex;
