@@ -528,6 +528,8 @@ $(function () {
 
                 setClubName();
                 $('#clubs-modal').modal('hide');
+
+                return false;
             });
 
             $('#clubs-modal').modal('show');

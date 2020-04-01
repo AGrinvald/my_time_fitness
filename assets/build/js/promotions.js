@@ -18749,9 +18749,8 @@ $(function () {
                 setClubName();
                 $('#clubs-modal').modal('hide');
 
-                if (toSelect) {
-                    return false;
-                }
+                return false;
+                
             });
 
             $('#clubs-modal').modal('show');
