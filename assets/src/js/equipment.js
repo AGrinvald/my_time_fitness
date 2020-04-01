@@ -211,14 +211,13 @@ $(function () {
         event.preventDefault();
         var self = $(this);
 
-        var toSelect = self.data('select');
         var hash = self.data('hash');
         var club = sessionStorage.getItem('club-link');
 
         var currentURL = window.location.href;
         currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
 
-        if (toSelect || !club) {
+        if (!club) {
             $('.club-link').each(function () {
                 var link = $(this).data('link');
                 $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
@@ -234,9 +233,8 @@ $(function () {
                 setClubName();
                 $('#clubs-modal').modal('hide');
 
-                if (toSelect) {
-                    return false;
-                }
+                return false;
+                
             });
 
             $('#clubs-modal').modal('show');
