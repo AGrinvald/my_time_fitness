@@ -18745,9 +18745,16 @@ $(function () {
     
     setClubName();
 
-    $('#kids-request-modal').on('shown.bs.modal', function (e) {
+    $('#kids-request-modal').on('show.bs.modal', function (e) {
         $("#clientPhone").mask("+7(999) 999-99-99");
         $("#kids-request-modal .promo-btn").bind("click", modalNextClick);
+
+        var selectedClub = sessionStorage.getItem('club-name');
+
+        if(selectedClub) {
+            $(".kids-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
+            $(".kids-dropdown").find('input:hidden').val(selectedClub);
+        }
 
         $(".kids-dropdown a.dropdown-item").click(function (event) {
             event.preventDefault();
@@ -18757,7 +18764,7 @@ $(function () {
         });
     });
 
-    $('#kids-season-modal').on('shown.bs.modal', function (e) {
+    $('#kids-season-modal').on('show.bs.modal', function (e) {
 
         var button = $(e.relatedTarget) // Button that triggered the modal
         var name = button.data('name')
@@ -18774,12 +18781,19 @@ $(function () {
         modal.find("#clientSeasonPhone").mask("+7(999) 999-99-99");
         modal.find(".promo-btn").bind("click", seasonNextClick);
 
-        // modal.find(".kids-season-dropdown a.dropdown-item").click(function (event) {
-        //     event.preventDefault();
+        var selectedClub = sessionStorage.getItem('club-name');
 
-        //     $(".kids-season-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-        //     $(".kids-season-dropdown").find('input:hidden').val($(this).data('value'));
-        // });
+        if(selectedClub) {
+            $(".kids-season-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
+            $(".kids-season-dropdown").find('input:hidden').val(selectedClub);
+        }
+
+        modal.find(".kids-season-dropdown a.dropdown-item").click(function (event) {
+            event.preventDefault();
+
+            $(".kids-season-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+            $(".kids-season-dropdown").find('input:hidden').val($(this).data('value'));
+        });
     });
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {

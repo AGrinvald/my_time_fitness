@@ -320,7 +320,7 @@
     <div class="modal fade" id="promo-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
-            <div class="modal-content">
+            <div class="modal-content" style='height: 600px'>
                 <div class="modal-body">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <img srcset="img/cancel@1x.png 23w,
@@ -344,6 +344,25 @@
                                         <span class="input-group-text">2</span>
                                     </div>
                                     <input type="text" id="promoPhone" class="form-control" placeholder="Введите Ваш телефон" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group custom-input-group white mb-5 col-12">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">3</span>
+                                    </div>
+                                    <div class="dropdown promo-dropdown">
+                                        <button type="button" class="form-control dropdown-toggle" id="selectPromoClubDropdown"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Выберите клуб
+                                        </button>
+                                        <div class="dropdown-menu text-center" aria-labelledby="selectClubDropdown">
+                                            <a class="dropdown-item" href="#">Комендантский</a>
+                                            <a class="dropdown-item" href="#">Академическая</a>
+                                            <a class="dropdown-item" href="#">Купчино</a>
+                                        </div>
+                                        <input type="hidden" name="selectedPromoClub">
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-row">

@@ -22471,6 +22471,8 @@ $(function () {
     $('#promo-modal').on('shown.bs.modal', function (e) {
         $("#promo-modal .promo-btn").bind("click", promoNextClick);
         $("#promoPhone").mask("+7(999) 999-99-99");
+
+        $('#selectedPromoClub').value('Купчино');
     });
     
     $('.gallery-area button.prev-btn').click(function () {

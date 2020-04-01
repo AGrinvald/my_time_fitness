@@ -22472,9 +22472,11 @@ $(function () {
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $("#announcePhone").mask("+7(999) 999-99-99");
 
-    $('#promo-modal').on('shown.bs.modal', function (e) {
+    $('#promo-modal').on('show.bs.modal', function (e) {
         $("#promo-modal .promo-btn").bind("click", promoNextClick);
         $("#promoPhone").mask("+7(999) 999-99-99");
+
+        $('#selectedPromoClub').value('Академическая');
     });
 
     $('.gallery-area button.prev-btn').click(function () {

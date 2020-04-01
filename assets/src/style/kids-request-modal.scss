@@ -208,7 +208,6 @@
   .modal-content {
     border: none;
     background-color: $white;
-    min-height: 580px;
 
     @include media-breakpoint-down(sm) {
       height: 100%;
@@ -221,6 +220,10 @@
     padding-left: 3px;
   }
 
+  .promo-form-confirm {
+    height: 100%;
+  }
+  
   .promo-form {
     max-width: 340px;
     margin-left: auto;

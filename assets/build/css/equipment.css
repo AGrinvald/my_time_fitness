@@ -8576,8 +8576,7 @@ footer {
   background-color: #ffffff;
   background-image: url(../img/555-copy-7.png);
   background-position: left top;
-  background-repeat: no-repeat;
-  min-height: 540px; }
+  background-repeat: no-repeat; }
   @media (max-width: 767.98px) {
     #promo-modal .modal-content {
       height: 100%; } }
@@ -8585,6 +8584,9 @@ footer {
 #promo-modal .form-row > .col, #promo-modal .form-row > [class*=col-] {
   padding-right: 3px;
   padding-left: 3px; }
+
+#promo-modal .promo-form-confirm {
+  height: 100%; }
 
 #promo-modal .promo-form {
   max-width: 340px;

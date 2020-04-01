@@ -18,7 +18,6 @@
     background-image: url(../img/555-copy-7.png);
     background-position: left top;
     background-repeat: no-repeat;
-    min-height: 540px;
 
     @include media-breakpoint-down(sm) {
       height: 100%;
@@ -30,11 +29,15 @@
     padding-left: 3px;
   }
 
+  .promo-form-confirm {
+    height: 100%;
+  }
+  
   .promo-form {
     max-width: 340px;
     margin-left: auto;
     margin-right: auto;
-    
+
     .custom-input-group {
       margin-bottom: 25px;
     }

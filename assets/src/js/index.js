@@ -325,9 +325,26 @@ $(function () {
         }
     });
 
-    $('#promo-modal').on('shown.bs.modal', function (e) {
+    $('#promo-modal').on('show.bs.modal', function (e) {
         $("#promo-modal .promo-btn").bind("click", promoNextClick);
         $("#promoPhone").mask("+7(999) 999-99-99");
+
+        var selectedClub = sessionStorage.getItem('club-name');
+
+        if(selectedClub) {
+            $(".promo-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
+            $(".promo-dropdown").find('input:hidden').val(selectedClub);
+        }
+
+        if ($(".promo-dropdown a.dropdown-item")) {
+
+            $(".promo-dropdown a.dropdown-item").click(function (event) {
+                event.preventDefault();
+
+                $(".promo-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+                $(".promo-dropdown").find('input:hidden').val($(this).data('value'));
+            });
+        }
     });
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
