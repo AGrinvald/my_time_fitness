@@ -53,10 +53,11 @@
 @import "club-schedule";
 @import "club-announce";
 @import "club-gallery";
-@import "club-page-nav";
+@import "club-page-nav"; 
 @import "club-season";
 @import "club-services";
 @import "club-header";
+@import "club-scheme";
 @import "contact-boss-modal";
 @import "scroll-control";
 
@@ -207,14 +208,14 @@
                     h3 {
                         font-weight: bold;
                         color: #101929;
-                        
+
                         @include media-breakpoint-up(xl) {
                             font-size: 38px;
                             margin-bottom: 16px;
                             line-height: 1.16;
                             letter-spacing: 0.79px;
                         }
-    
+
                         @include media-breakpoint-down(lg) {
                             letter-spacing: -0.27px;
                             font-size: 20px;
@@ -230,7 +231,7 @@
                             margin-bottom: 13px;
                             letter-spacing: -0.6px;
                         }
-    
+
                         @include media-breakpoint-down(lg) {
                             letter-spacing: -0.27px;
                             font-size: 16px;
@@ -301,7 +302,7 @@
                 .price {
                     font-weight: 300;
                     color: $black;
-                    
+
                     b {
                         font-weight: 600;
                     }
@@ -443,130 +444,5 @@
             }
         }
     }
-
 }
 /* BANNER AREA END*/
-
-/* SCHEME AREA START*/
-.scheme-area {
-    .container-fluid {
-        overflow: hidden;
-        background-color: #f5f5f5;
-
-        @include media-breakpoint-up(lg) {
-            padding-bottom: 80px;
-        }
-
-        @include media-breakpoint-down(md) {
-            padding-bottom: 40px;
-        }
-    }
-
-    .scheme {
-        position: relative;
-        text-align: center;
-
-        > div:first-child {
-            @include media-breakpoint-up(lg) {
-                height: 549px;
-                background-image: url(../img/akad-scheme.png);
-                background-position: center;
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
-
-            @include media-breakpoint-down(md) {
-                height: 294px;
-                background-image: url(../img/akad-sm-scheme.png);
-                background-position: center;
-                background-size: contain;
-                background-repeat: no-repeat;
-            }
-
-            width: 100%;
-        }
-
-        .off {
-            display: none;
-        }
-
-        .scheme-slides {
-            max-width: 338px;
-            margin-top: 40px;
-            margin-left: auto;
-            margin-right: auto;
-
-            .slide {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                > div:first-child {
-                    font-size: 30px;
-                    line-height: 44px;
-                    letter-spacing: 0.63px;
-                    color: $primary;
-                    font-weight: bold;
-                    margin-right: 15px;
-                }
-
-                > div:last-child {
-                    text-align: left;
-                    max-width: 155px;
-                    font-size: 20px;
-                    line-height: 21px;
-                    letter-spacing: -0.27px;
-                }
-            }
-
-            .owl-stage {
-                display: flex;
-                align-items: center;
-            }
-
-            .owl-nav {
-                position: absolute;
-                width: 100%;
-                top: 6%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                button.owl-prev {
-                    background-image: url(../img/groupCopy4.png);
-                }
-
-                button.owl-next {
-                    background-image: url(../img/groupCopy5.png);
-                }
-
-
-                button.owl-prev,  button.owl-next {
-                    cursor: pointer;
-                    background-position: center center;
-                    background-repeat: no-repeat;
-                    width: 52px;
-                    height: 52px;
-               }
-            }
-        }
-    }
-
-    h2 {
-        margin-bottom: 0;
-
-        @include media-breakpoint-up(lg) {
-          padding-top: 80px;
-          padding-bottom: 80px;
-        }
-  
-        @include media-breakpoint-down(md) {
-          padding-top: 40px;
-          padding-bottom: 40px;
-        }
-    }
-}
-/* SCHEME AREA END*/
-
-
-

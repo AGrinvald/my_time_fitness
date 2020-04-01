@@ -8419,6 +8419,11 @@ nav.navbar {
 
 #clubs-modal .modal-content {
   border: none; }
+  @media (min-width: 992px) {
+    #clubs-modal .modal-content {
+      background-image: url(../img/555-copy-7.png);
+      background-position: -130% 0%;
+      background-repeat: no-repeat; } }
   @media (max-width: 767.98px) {
     #clubs-modal .modal-content {
       height: 100%; } }
@@ -8765,78 +8770,26 @@ footer {
   .map-area .inner-block {
     position: relative;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.9);
     z-index: 10;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-pack: justify;
-        justify-content: space-between; }
-    .map-area .inner-block h2, .map-area .inner-block p {
+    width: 100%; }
+    .map-area .inner-block .title {
+      font-weight: 600; }
+    .map-area .inner-block h2,
+    .map-area .inner-block p {
       margin-bottom: 0; }
     .map-area .inner-block p {
       font-size: 18px;
       font-weight: 300;
-      letter-spacing: 0.18px;
-      color: #101929; }
+      letter-spacing: 0.18px; }
     @media (min-width: 992px) {
       .map-area .inner-block {
         height: 504px;
         max-width: 408px;
-        padding: 20px 32px 32px 40px; } }
+        padding: 25px 32px 32px 40px; } }
     @media (max-width: 991.98px) {
       .map-area .inner-block {
-        margin-top: 50px;
-        height: 431px;
-        max-width: 344px;
-        padding: 20px 16px 25px 16px; } }
-    .map-area .inner-block .club-block {
-      display: block;
-      max-width: 340px;
-      box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
-      background-color: #ffffff;
-      border-left: 5px solid #000;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-direction: row;
-          flex-direction: row;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-      -ms-flex-align: center;
-          align-items: center;
-      padding: 9px 3px 10px 13px;
-      color: #000;
-      line-height: 20px; }
-      .map-area .inner-block .club-block .f-small {
-        font-size: 14px; }
-      .map-area .inner-block .club-block:first-child {
-        height: 150px; }
-      .map-area .inner-block .club-block:last-child {
-        height: 115px; }
-      .map-area .inner-block .club-block .number-bg {
-        line-height: 38px;
-        height: 42px;
-        width: 25px;
-        font-size: 22px;
-        color: #c6c6c6;
-        font-weight: 500;
-        letter-spacing: 0.46px;
-        text-align: center;
-        background-image: url(../img/shape.png);
-        background-size: contain;
-        background-position: center center;
-        background-repeat: no-repeat; }
-      .map-area .inner-block .club-block .desc h4 {
-        color: #aacc23;
-        font-size: 18px;
-        letter-spacing: 0.18px;
-        font-weight: 500;
-        margin-bottom: 3px; }
-      .map-area .inner-block .club-block .desc p {
-        letter-spacing: 0.14px;
-        font-weight: normal;
-        margin-bottom: 0; }
+        margin-top: 45px;
+        max-width: 340px; } }
   .map-area .club-info-block {
     height: 504px;
     padding-left: 45px; }
@@ -8850,7 +8803,8 @@ footer {
       color: #ffffff; }
       .map-area .club-info-block .inner-div > div:not(:last-child) {
         padding-right: 26px; }
-      .map-area .club-info-block .inner-div .info-top, .map-area .club-info-block .inner-div .info-bottom {
+      .map-area .club-info-block .inner-div .info-top,
+      .map-area .club-info-block .inner-div .info-bottom {
         padding: 10px 0; }
       .map-area .club-info-block .inner-div .info-top {
         font-weight: 500;
@@ -8859,15 +8813,148 @@ footer {
         font-weight: 100; }
   @media (max-width: 991.98px) {
     .map-area .map-block {
-      height: 750px; }
+      height: 650px; }
     .map-area .club-info-block {
-      display: none; } }
+      display: none; }
+    .map-area .club-header {
+      color: #ffffff;
+      background-color: #2d2d2d;
+      padding: 15px 25px;
+      margin-bottom: 10px; }
+    .map-area .title {
+      color: #ffffff; }
+    .map-area .club-block {
+      display: none; }
+    .map-area .club-nav {
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      background-color: transparent;
+      list-style: none;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      padding: 0;
+      border: 0; }
+    .map-area .club-nav-text {
+      position: relative;
+      z-index: 2; }
+    .map-area .club-nav-item {
+      background-color: #2d2d2d;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+      height: 60px; }
+    .map-area .club-nav-link {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
+      width: 100%;
+      height: 100%;
+      color: #ffffff; }
+      .map-area .club-nav-link:hover {
+        text-decoration: none; }
+    .map-area .club-nav-right.active:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -5px;
+      width: 180px;
+      height: 100%;
+      background-color: #aacc23;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      -webkit-transform: skewX(7deg);
+              transform: skewX(7deg);
+      z-index: 1; }
+    .map-area .club-nav-left.active:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -5px;
+      width: 170px;
+      height: 100%;
+      background-color: #aacc23;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      -webkit-transform: skewX(7deg);
+              transform: skewX(7deg);
+      z-index: 1; }
+    .map-area .club-tab {
+      display: none;
+      background-color: #ffffff;
+      height: 140px;
+      border-bottom: 3px solid #aacc23;
+      font-size: 16px;
+      letter-spacing: 0.16px;
+      padding-left: 25px; }
+      .map-area .club-tab.active {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+            align-items: center; } }
   @media (min-width: 992px) {
+    .map-area p {
+      color: #101929; }
+    .map-area .inner-block {
+      background-color: rgba(255, 255, 255, 0.9); }
     .map-area .map-block {
       height: 558px; }
+    .map-area .title {
+      margin-bottom: 20px; }
     .map-area .club-info-block {
       display: -ms-flexbox;
-      display: flex; } }
+      display: flex; }
+    .map-area .club-block {
+      display: block;
+      line-height: 20px;
+      background-color: #ffffff;
+      margin-top: 20px;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      -ms-flex-align: center;
+          align-items: center;
+      max-width: 340px;
+      box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
+      border-left: 5px solid #000;
+      padding: 9px 3px 10px 13px;
+      color: #000; }
+      .map-area .club-block .f-small {
+        font-size: 14px; }
+      .map-area .club-block:first-child {
+        height: 150px; }
+      .map-area .club-block:last-child {
+        height: 115px; }
+      .map-area .club-block .number-bg {
+        line-height: 38px;
+        height: 42px;
+        width: 25px;
+        font-size: 22px;
+        color: #c6c6c6;
+        font-weight: 500;
+        letter-spacing: 0.46px;
+        text-align: center;
+        background-image: url(../img/shape.png);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat; }
+      .map-area .club-block .desc h4 {
+        color: #aacc23;
+        font-size: 18px;
+        letter-spacing: 0.18px;
+        font-weight: 500;
+        margin-bottom: 3px; }
+      .map-area .club-block .desc p {
+        letter-spacing: 0.14px;
+        font-weight: normal;
+        margin-bottom: 0; } }
 
 /* MAP AREA END */
 /* SCHEDULE AREA START*/
@@ -9033,7 +9120,8 @@ footer {
         width: 90%; } }
     @media (max-width: 991.98px) {
       .announce-container form {
-        width: 272px; } }
+        max-width: 290px;
+        width: 100%; } }
   .announce-container .custom-input-group {
     padding-left: 3px;
     padding-right: 5px; }
@@ -9732,6 +9820,117 @@ footer {
       z-index: 2; } }
 
 /* TOP HEADER END */
+/* SCHEME AREA START*/
+.scheme-area .container-fluid {
+  overflow: hidden; }
+  @media (min-width: 992px) {
+    .scheme-area .container-fluid {
+      padding-bottom: 80px;
+      background-color: #f5f5f5; } }
+  @media (max-width: 991.98px) {
+    .scheme-area .container-fluid {
+      padding-bottom: 40px;
+      background-color: #ffffff; } }
+
+.scheme-area .scheme {
+  position: relative;
+  text-align: center; }
+  .scheme-area .scheme > div:first-child {
+    width: 100%; }
+    @media (min-width: 992px) {
+      .scheme-area .scheme > div:first-child {
+        height: 549px;
+        background-image: url(../img/akad-scheme.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
+    @media (max-width: 991.98px) {
+      .scheme-area .scheme > div:first-child {
+        height: 294px;
+        background-image: url(../img/akad-sm-scheme.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
+  .scheme-area .scheme .off {
+    display: none; }
+  .scheme-area .scheme .scheme-slides {
+    position: relative;
+    border: 1px solid #aacc23;
+    border-radius: 5px;
+    max-width: 310px;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 90px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+    .scheme-area .scheme .scheme-slides .slide {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center; }
+      .scheme-area .scheme .scheme-slides .slide > div:first-child {
+        font-size: 30px;
+        line-height: 44px;
+        letter-spacing: 0.63px;
+        color: #aacc23;
+        font-weight: 500;
+        margin-right: 15px; }
+      .scheme-area .scheme .scheme-slides .slide > div:last-child {
+        text-align: left;
+        max-width: 155px;
+        font-size: 20px;
+        line-height: 21px;
+        letter-spacing: -0.27px; }
+    .scheme-area .scheme .scheme-slides .owl-stage {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center; }
+    .scheme-area .scheme .scheme-slides .owl-nav {
+      position: absolute;
+      left: -6%;
+      width: 112%;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      -ms-flex-align: center;
+          align-items: center; }
+      .scheme-area .scheme .scheme-slides .owl-nav button.owl-prev,
+      .scheme-area .scheme .scheme-slides .owl-nav button.owl-next {
+        cursor: pointer;
+        color: #aacc23;
+        font-size: 22px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: #ffffff;
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid #aacc23;
+        outline: 5px solid #ffffff; }
+
+.scheme-area h2 {
+  margin-bottom: 0; }
+  @media (min-width: 992px) {
+    .scheme-area h2 {
+      padding-top: 80px;
+      padding-bottom: 80px; } }
+  @media (max-width: 991.98px) {
+    .scheme-area h2 {
+      padding-top: 40px;
+      padding-bottom: 40px; } }
+
+/* SCHEME AREA END*/
 /* CONTACT BOSS MODAL START*/
 @media (min-width: 992px) {
   #contact-boss-modal .modal-dialog-centered {
@@ -10108,98 +10307,3 @@ footer {
           letter-spacing: 1.11px; } }
 
 /* BANNER AREA END*/
-/* SCHEME AREA START*/
-.scheme-area .container-fluid {
-  overflow: hidden;
-  background-color: #f5f5f5; }
-  @media (min-width: 992px) {
-    .scheme-area .container-fluid {
-      padding-bottom: 80px; } }
-  @media (max-width: 991.98px) {
-    .scheme-area .container-fluid {
-      padding-bottom: 40px; } }
-
-.scheme-area .scheme {
-  position: relative;
-  text-align: center; }
-  .scheme-area .scheme > div:first-child {
-    width: 100%; }
-    @media (min-width: 992px) {
-      .scheme-area .scheme > div:first-child {
-        height: 549px;
-        background-image: url(../img/akad-scheme.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat; } }
-    @media (max-width: 991.98px) {
-      .scheme-area .scheme > div:first-child {
-        height: 294px;
-        background-image: url(../img/akad-sm-scheme.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat; } }
-  .scheme-area .scheme .off {
-    display: none; }
-  .scheme-area .scheme .scheme-slides {
-    max-width: 338px;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto; }
-    .scheme-area .scheme .scheme-slides .slide {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: center;
-          justify-content: center;
-      -ms-flex-align: center;
-          align-items: center; }
-      .scheme-area .scheme .scheme-slides .slide > div:first-child {
-        font-size: 30px;
-        line-height: 44px;
-        letter-spacing: 0.63px;
-        color: #aacc23;
-        font-weight: bold;
-        margin-right: 15px; }
-      .scheme-area .scheme .scheme-slides .slide > div:last-child {
-        text-align: left;
-        max-width: 155px;
-        font-size: 20px;
-        line-height: 21px;
-        letter-spacing: -0.27px; }
-    .scheme-area .scheme .scheme-slides .owl-stage {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-          align-items: center; }
-    .scheme-area .scheme .scheme-slides .owl-nav {
-      position: absolute;
-      width: 100%;
-      top: 6%;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-      -ms-flex-align: center;
-          align-items: center; }
-      .scheme-area .scheme .scheme-slides .owl-nav button.owl-prev {
-        background-image: url(../img/groupCopy4.png); }
-      .scheme-area .scheme .scheme-slides .owl-nav button.owl-next {
-        background-image: url(../img/groupCopy5.png); }
-      .scheme-area .scheme .scheme-slides .owl-nav button.owl-prev, .scheme-area .scheme .scheme-slides .owl-nav button.owl-next {
-        cursor: pointer;
-        background-position: center center;
-        background-repeat: no-repeat;
-        width: 52px;
-        height: 52px; }
-
-.scheme-area h2 {
-  margin-bottom: 0; }
-  @media (min-width: 992px) {
-    .scheme-area h2 {
-      padding-top: 80px;
-      padding-bottom: 80px; } }
-  @media (max-width: 991.98px) {
-    .scheme-area h2 {
-      padding-top: 40px;
-      padding-bottom: 40px; } }
-
-/* SCHEME AREA END*/

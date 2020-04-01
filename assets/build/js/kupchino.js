@@ -22120,7 +22120,7 @@ var mapSettingsCollection = {
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
-        center: [59.83896058559016, 30.392857943904374], zoom: 14,
+        center: [59.83554781051352, 30.392600451838955], zoom: 14,
         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
     }
 };
@@ -22502,7 +22502,8 @@ $(function () {
         owlOptions = {
             loop: true,
             mouseDrag: false,
-            navText: ["", ""],
+            navText: ["&#129120;", "&#129122;"],
+            dots: false,
             responsive: {
                 0: {
                     items: 1

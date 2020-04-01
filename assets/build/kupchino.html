@@ -728,8 +728,9 @@
                   align-items-lg-center
                   align-items-start">
                     <div class="inner-block">
-                        <h2 class="title pl-3 pl-lg-0">mytime<span class="text-primary">fitness</span> КУПЧИНО</h2>
-                        <div class="pl-3 pl-lg-0">
+                        <div class='club-header'>
+                            <h2 class="title">mytime<span class="text-primary">fitness</span> КУПЧИНО
+                            </h2>
                             <p class="mt-1">
                                 ул. Олеко Дундича 10/2
                             </p>
@@ -737,28 +738,67 @@
                                 mytimefitnessspb@gmail.com
                             </p>
                         </div>
-                        <div class="club-block">
-                            <div class="desc">
-                                <h4 class="mb-2">Фитнес клуб</h4>
-                                <p>
-                                    ПН-ПТ: 7.00 - 01.00<br />
-                                    СБ-ВС и праздничиные дни:<br />
-                                    9.00 - 23.00
-                                </p>
-                                <p class="f-small">
-                                    Вход в клуб закрыт за час до завершения
-                                    работы клуба.
-                                </p>
+                        <div class='club-body'>
+                            <ul class='d-lg-none nav nav-tabs club-nav' id="mapTab" role="tablist">
+                                <li class='club-nav-item'>
+                                    <a id="club-tab" data-toggle="tab" href="#club" role="tab" aria-controls="club"
+                                        aria-selected="true" class='club-nav-link active club-nav-left'>
+                                        <span class='club-nav-text'>
+                                            Фитнес клуб
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class='club-nav-item'>
+                                    <a id="sale-tab" data-toggle="tab" href="#sale" role="tab" aria-controls="sale"
+                                        aria-selected="false" class='club-nav-link club-nav-right'>
+                                        <span class='club-nav-text'>
+                                            Отдел продаж
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="d-lg-none club-tabs">
+                                <div class="club-tab active" id="club" role="tabpanel" aria-labelledby="club-tab">
+                                    <span>
+                                        ПН-ПТ: 7.00 - 01.00<br />
+                                        СБ-ВС и праздничиные дни:<br />
+                                        9.00 - 23.00
+                                        <br />
+                                        Вход в клуб закрыт за час до завершения
+                                        работы клуба.
+                                    </span>
+                                </div>
+                                <div class="club-tab" id="sale" role="tabpanel" aria-labelledby="sale-tab">
+                                    <span>
+                                        ПН-ВС: 10.00 - 22.00<br />
+                                        СБ-ВС и праздничные дни:<br />
+                                        12.00 - 22.00
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="club-block">
-                            <div class="desc">
-                                <h4 class="mb-2">Отдел продаж</h4>
-                                <p>
-                                    ПН-ВС: 10.00 - 22.00<br />
-                                    СБ-ВС и праздничные дни:<br />
-                                    12.00 - 22.00
-                                </p>
+                            <div class="club-block">
+                                <div class="desc">
+                                    <h4 class='d-none d-lg-block'>Фитнес клуб</h4>
+                                    <p>
+                                        ПН-ПТ: 7.00 - 01.00<br />
+                                        СБ-ВС и праздничиные дни:<br />
+                                        9.00 - 23.00
+                                    </p>
+                                    <p class="f-small">
+                                        Вход в клуб закрыт за час до завершения
+                                        работы клуба.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="club-block">
+                                <div class="desc">
+                                    <h4 class='d-none d-lg-block'>Отдел продаж</h4>
+                                    <p>
+                                        ПН-ВС: 10.00 - 22.00<br />
+                                        СБ-ВС и праздничные дни:<br />
+                                        12.00 - 22.00
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>

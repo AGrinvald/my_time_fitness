@@ -36,7 +36,7 @@ var mapSettingsCollection = {
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
-        center: [60.017774664818425, 30.24518052670202], zoom: 14,
+        center: [60.01622790747282, 30.245781341521333], zoom: 14,
         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
     }
 };
@@ -422,7 +422,8 @@ $(function () {
         owlOptions = {
             loop: true,
             mouseDrag: false,
-            navText: ["", ""],
+            navText: ["&#129120;", "&#129122;"],
+            dots: false,
             responsive: {
                 0: {
                     items: 1
