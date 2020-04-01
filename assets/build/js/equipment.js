@@ -21881,3 +21881,4 @@ $(function () {
             window.location.href = currentURL.concat('/', club, hash ? hash : '');
         }
     });
+});
