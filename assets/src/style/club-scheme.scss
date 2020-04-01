@@ -92,12 +92,20 @@
                 justify-content: space-between;
                 align-items: center;
 
+
+                button.owl-prev {
+                    background-image: url(../img/arrow-left.svg);
+                }
+
+                button.owl-next {
+                    background-image: url(../img/arrow-right.svg);
+                }
+
                 button.owl-prev,
                 button.owl-next {
-                    font-family: Arial, Helvetica, sans-serif;
                     cursor: pointer;
                     color: $primary;
-                    font-size: 22px;
+                    font-size: 22px; 
                     background-position: center center;
                     background-repeat: no-repeat;
                     background-color: $white;

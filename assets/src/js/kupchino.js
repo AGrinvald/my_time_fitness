@@ -418,7 +418,7 @@ $(function () {
         owlOptions = {
             loop: true,
             mouseDrag: false,
-            navText: ["&#129120;", "&#129122;"],
+            navText: ["", ""],
             dots: false,
             responsive: {
                 0: {

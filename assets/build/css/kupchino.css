@@ -9904,9 +9904,12 @@ footer {
           justify-content: space-between;
       -ms-flex-align: center;
           align-items: center; }
+      .scheme-area .scheme .scheme-slides .owl-nav button.owl-prev {
+        background-image: url(../img/arrow-left.svg); }
+      .scheme-area .scheme .scheme-slides .owl-nav button.owl-next {
+        background-image: url(../img/arrow-right.svg); }
       .scheme-area .scheme .scheme-slides .owl-nav button.owl-prev,
       .scheme-area .scheme .scheme-slides .owl-nav button.owl-next {
-        font-family: Arial, Helvetica, sans-serif;
         cursor: pointer;
         color: #aacc23;
         font-size: 22px;
