@@ -23,10 +23,10 @@
 
 function bossModalNextClick() {
 
-    var name = document.getElementById("bossContactName");
-    var phone = document.getElementById("bossContactPhone");
-    var email = document.getElementById("bossContactEmail");
-    var message = document.getElementById("bossContactMessage");
+    var name = document.getElementById("bossContactName"); 
+    var phone = document.getElementById("bossContactPhone"); 
+    var email = document.getElementById("bossContactEmail"); 
+    var message = document.getElementById("bossContactMessage"); 
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -55,9 +55,9 @@ function bossModalNextClick() {
 function setClubName() {
     var name = sessionStorage.getItem('club-name');
 
-    if (!name) {
+    if(!name) {
         name = 'Выберите ваш клуб'
-    }
+    } 
 
     $('#club-name').html(name);
 }
@@ -89,16 +89,17 @@ $(function () {
         event.preventDefault();
         var self = $(this);
 
+        var toSelect = self.data('select');
         var hash = self.data('hash');
         var club = sessionStorage.getItem('club-link');
 
         var currentURL = window.location.href;
         currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
 
-        if (!club) {
+        if (toSelect || !club) {
             $('.club-link').each(function () {
                 var link = $(this).data('link');
-                $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
+                $(this).attr("href", currentURL.concat('/', link, hash ? hash : '')); 
             });
 
             $(".club-link").on("click", function (e) {
@@ -111,8 +112,9 @@ $(function () {
                 setClubName();
                 $('#clubs-modal').modal('hide');
 
-                return false;
-
+                if (toSelect) {
+                    return false;
+                }
             });
 
             $('#clubs-modal').modal('show');

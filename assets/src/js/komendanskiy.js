@@ -513,7 +513,7 @@ $(function () {
         var currentURL = window.location.href;
         currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
 
-        if (!club) {
+        if (toSelect || !club) {
             $('.club-link').each(function () {
                 var link = $(this).data('link');
                 $(this).attr("href", currentURL.concat('/', link, hash ? hash : '')); 
@@ -528,11 +528,9 @@ $(function () {
 
                 setClubName();
                 $('#clubs-modal').modal('hide');
-                return false;
             });
 
             $('#clubs-modal').modal('show');
-
         } else {
 
             if (window.location.pathname === ('/' + club)) {
