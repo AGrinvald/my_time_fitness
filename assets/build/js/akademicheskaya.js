@@ -22476,7 +22476,7 @@ $(function () {
         $("#promo-modal .promo-btn").bind("click", promoNextClick);
         $("#promoPhone").mask("+7(999) 999-99-99");
 
-        $('#selectedPromoClub').value('Академическая');
+        $('#selectedPromoClub').val('Академическая');
     });
 
     $('.gallery-area button.prev-btn').click(function () {

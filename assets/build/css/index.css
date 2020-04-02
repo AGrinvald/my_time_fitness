@@ -7969,7 +7969,8 @@ button {
   padding: 0;
   height: 56px;
   line-height: 56px;
-  width: 312px;
+  width: 100%;
+  max-width: 312px;
   font-size: 16px; }
 
 @media (min-width: 992px) {
@@ -10060,34 +10061,76 @@ footer {
     padding-bottom: 30px;
     margin-bottom: 32px; } }
 
-.promo-area .schedule-slides .owl-nav {
-  position: absolute;
-  width: 110%;
-  left: -5%;
-  top: 40%;
+.promo-area .accordion-block {
+  width: 100%;
+  border-bottom: 1px solid #EBEBEB; }
+
+.promo-area .accordion-btn {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between; }
-  .promo-area .schedule-slides .owl-nav button.owl-prev {
-    background-image: url(../img/groupCopy4.png); }
-  .promo-area .schedule-slides .owl-nav button.owl-next {
-    background-image: url(../img/groupCopy5.png); }
-  .promo-area .schedule-slides .owl-nav button.owl-prev,
-  .promo-area .schedule-slides .owl-nav button.owl-next {
-    cursor: pointer;
-    background-position: center center;
-    background-repeat: no-repeat; }
-    @media (min-width: 768px) {
-      .promo-area .schedule-slides .owl-nav button.owl-prev,
-      .promo-area .schedule-slides .owl-nav button.owl-next {
-        width: 70px;
-        height: 70px; } }
-    @media (max-width: 767.98px) {
-      .promo-area .schedule-slides .owl-nav button.owl-prev,
-      .promo-area .schedule-slides .owl-nav button.owl-next {
-        width: 52px;
-        height: 52px; } }
+  width: 100%;
+  border: 0;
+  background-color: #aacc23;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.18px;
+  height: 60px;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-left: 15px;
+  padding-right: 30px; }
+  .promo-area .accordion-btn.collapsed {
+    background-color: #ffffff; }
+    .promo-area .accordion-btn.collapsed .accordion-path {
+      fill: #aacc23; }
+    .promo-area .accordion-btn.collapsed .accordion-number {
+      background-image: url(../img/drop-grey.png);
+      color: #c1c1c1; }
+
+.promo-area .accordion-number {
+  width: 24px;
+  height: 34px;
+  background-image: url(../img/drop-white.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 29px; }
+
+.promo-area .accordion-lens {
+  display: block;
+  margin-left: auto; }
+
+.promo-area .accordion-path {
+  fill: #ffffff; }
+
+.promo-area .accordion-text {
+  margin-left: 25px; }
+
+.promo-area .accordion-body {
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #ffffff;
+  padding-bottom: 30px;
+  padding-top: 15px;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+.promo-area .accordion-body-btn {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 268px; }
+
+.promo-area .accordion-body-text {
+  width: 268px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  letter-spacing: 0.15px;
+  margin-bottom: 15px; }
 
 @media (min-width: 992px) {
   .promo-area .promo-block {
@@ -10118,16 +10161,8 @@ footer {
   width: 100%;
   border-radius: 25px;
   font-weight: bold;
-  margin-top: 24px; }
-  @media (min-width: 992px) {
-    .promo-area .promo-block .schedule-link > a {
-      border: 1px solid transparent; } }
-  @media (max-width: 991.98px) {
-    .promo-area .promo-block .schedule-link > a {
-      border: 1px solid #000000;
-      padding: 15px 0;
-      margin: 0 auto;
-      max-width: 312px; } }
+  margin-top: 24px;
+  border: 1px solid transparent; }
   .promo-area .promo-block .schedule-link > a:hover, .promo-area .promo-block .schedule-link > a:focus {
     text-decoration: none;
     border: 1px solid #000000;
@@ -10148,26 +10183,15 @@ footer {
   height: 48px;
   font-size: 16px;
   font-weight: 400; }
-  @media (min-width: 992px) {
-    .promo-area .promo-block .time-block:not(:first-child) {
-      border-top: 1px solid #ffffff; } }
+  .promo-area .promo-block .time-block:not(:first-child) {
+    border-top: 1px solid #ffffff; }
 
-@media (min-width: 992px) {
-  .promo-area .promo-block .club-title {
-    font-size: 18px;
-    background-color: #d8d8d8; } }
+.promo-area .promo-block .club-title {
+  font-size: 18px;
+  background-color: #d8d8d8; }
 
-@media (max-width: 991.98px) {
-  .promo-area .promo-block .club-title {
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.16px;
-    background-color: #aacc23;
-    color: #ffffff; } }
-
-@media (min-width: 992px) {
-  .promo-area .promo-block .right-border-lg > div:not(:last-child) {
-    border-right: 1px solid #ffffff; } }
+.promo-area .promo-block .right-border-lg > div:not(:last-child) {
+  border-right: 1px solid #ffffff; }
 
 .promo-area .promo-block .bold {
   font-weight: 600; }

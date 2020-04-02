@@ -388,7 +388,7 @@ $(function () {
         $("#promo-modal .promo-btn").bind("click", promoNextClick);
         $("#promoPhone").mask("+7(999) 999-99-99");
 
-        $('#selectedPromoClub').value('Купчино');
+        $('#selectedPromoClub').val('Купчино');
     });
     
     $('.gallery-area button.prev-btn').click(function () {

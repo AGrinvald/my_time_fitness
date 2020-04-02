@@ -61,24 +61,24 @@
 /* TOP HEADER START */
 .h-top {
   @include media-breakpoint-up(xl) {
-      .inner {
+    .inner {
+      height: 248px;
+      &::before {
+        content: "";
+        top: -1.65%;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        width: 1475px;
         height: 248px;
-          &::before {
-              content: "";
-              top: -1.65%;
-              left: 50%;
-              transform: translateX(-50%);
-              position: absolute;
-              width: 1475px;
-              height: 248px;
-              background: url(../img/group-3-copy-7.svg);
-              background-size: auto 100%;
-              background-repeat: no-repeat;
-              background-position-y: top;
-              background-position-x: right;
-              z-index: 8;
-          }
+        background: url(../img/group-3-copy-7.svg);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position-y: top;
+        background-position-x: right;
+        z-index: 8;
       }
+    }
   }
 }
 /* TOP HEADER END */
@@ -124,7 +124,9 @@
         background-repeat: no-repeat;
         margin: 12px 12px 24px 12px;
         box-shadow: 0 0 12px 0 rgba(255, 255, 255, 0.5);
-        &:focus, &:active, &:hover {
+        &:focus,
+        &:active,
+        &:hover {
           box-shadow: 0 0 12px 0 rgba(255, 255, 255, 0.5);
         }
       }
@@ -196,7 +198,7 @@
         background-repeat: no-repeat;
         background-position-y: 25%;
         background-position-x: 100%;
-  
+
         @include media-breakpoint-down(md) {
           background-image: url(../img/shadow.svg);
           background-repeat: no-repeat;
@@ -209,12 +211,12 @@
         display: block;
         position: relative;
         animation: floating 6s infinite ease-in-out;
-  
+
         @include media-breakpoint-up(lg) {
           max-width: 520px;
           width: 100%;
         }
-  
+
         @include media-breakpoint-down(md) {
           max-width: 390px;
           width: 100%;
@@ -448,7 +450,7 @@
   .container {
     position: relative;
     z-index: 10;
-    
+
     @include media-breakpoint-up(lg) {
       padding-right: 25px;
 
@@ -481,7 +483,7 @@
     .signup-block {
       margin-top: 35px;
       margin-bottom: 50px;
-      
+
       h2 {
         text-align: center;
       }
@@ -659,39 +661,88 @@
     }
   }
 
-  .schedule-slides {
-    .owl-nav {
-      position: absolute;
-      width: 110%;
-      left: -5%;
-      top: 40%;
+  .accordion {
+    &-block {
+      width: 100%;
+      border-bottom: 1px solid #EBEBEB;
+    }
+
+    &-btn {
       display: flex;
-      justify-content: space-between;
+      width: 100%;
+      border: 0;
+      background-color: $primary;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.18px;
+      height: 60px;
+      align-items: center;
+      padding-left: 15px;
+      padding-right: 30px;
+      
+      &.collapsed {
+        background-color: $white;
 
-      button.owl-prev {
-        background-image: url(../img/groupCopy4.png);
-      }
-
-      button.owl-next {
-        background-image: url(../img/groupCopy5.png);
-      }
-
-      button.owl-prev,
-      button.owl-next {
-        cursor: pointer;
-        background-position: center center;
-        background-repeat: no-repeat;
-
-        @include media-breakpoint-up(md) {
-          width: 70px;
-          height: 70px;
+        .accordion-path {
+          fill: $primary;
         }
 
-        @include media-breakpoint-down(sm) {
-          width: 52px;
-          height: 52px;
+        .accordion-number {
+          background-image: url(../img/drop-grey.png);
+          color: #c1c1c1;
+          
         }
       }
+    }
+
+    &-number {
+      width: 24px;
+      height: 34px;
+      background-image: url(../img/drop-white.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      color: $white;
+      font-weight: 600;
+      font-size: 19px;
+      line-height: 29px;
+    }
+
+    &-lens {
+      display: block;
+      margin-left: auto;
+    }
+
+    &-path {
+      fill: $white;
+    }
+
+    &-text {
+      margin-left: 25px;
+    }
+
+    &-body {
+      display: flex;
+      background-color: $white;
+      padding-bottom: 30px;
+      padding-top: 15px;
+      flex-direction: column;
+    }
+
+    &-body-btn {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 268px;
+    }
+
+    &-body-text {
+      width: 268px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 15px;
+      letter-spacing: 0.15px;
+      margin-bottom: 15px;
     }
   }
 
@@ -728,17 +779,7 @@
         border-radius: 25px;
         font-weight: bold;
         margin-top: 24px;
-
-        @include media-breakpoint-up(lg) {
-          border: 1px solid transparent;
-        }
-
-        @include media-breakpoint-down(md) {
-          border: 1px solid $black;
-          padding: 15px 0;
-          margin: 0 auto;
-          max-width: 312px;
-        }
+        border: 1px solid transparent;
 
         &:hover,
         &:focus {
@@ -763,34 +804,19 @@
       height: 48px;
       font-size: 16px;
       font-weight: 400;
-
-      @include media-breakpoint-up(lg) {
-        &:not(:first-child) {
-          border-top: 1px solid $white;
-        }
+      &:not(:first-child) {
+        border-top: 1px solid $white;
       }
     }
 
     .club-title {
-      @include media-breakpoint-up(lg) {
-        font-size: 18px;
-        background-color: #d8d8d8;
-      }
-
-      @include media-breakpoint-down(md) {
-        font-size: 16px;
-        font-weight: 600;
-        letter-spacing: 0.16px;
-        background-color: $primary;
-        color: $white;
-      }
+      font-size: 18px;
+      background-color: #d8d8d8;
     }
 
-    @include media-breakpoint-up(lg) {
-      .right-border-lg {
-        > div:not(:last-child) {
-          border-right: 1px solid $white;
-        }
+    .right-border-lg {
+      > div:not(:last-child) {
+        border-right: 1px solid $white;
       }
     }
 
@@ -1139,7 +1165,6 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      
 
       @include media-breakpoint-down(md) {
         height: 79px;
@@ -1161,11 +1186,11 @@
           color: #000;
           text-decoration: none;
         }
-  
+
         &:hover {
           border-left: 5px solid $primary;
         }
-  
+
         &.active {
           background-color: #ebf2d2;
           border-left: 5px solid $primary;
@@ -1266,7 +1291,6 @@
   }
 
   .nav-tabs {
-    
     .nav-item {
       background-color: #f2f2f2;
       color: #848484;
@@ -1317,18 +1341,18 @@
 
 @include media-breakpoint-up(md) {
   .scroll-control {
-      width: 86px;
-      height: 86px;
-      bottom: 35px;
-      right: 20px;
+    width: 86px;
+    height: 86px;
+    bottom: 35px;
+    right: 20px;
   }
 }
 
 @include media-breakpoint-down(xl) {
   .scroll-control {
-      width: 86px;
-      height: 86px;
-      bottom: 35px;
-      right: 20px;
+    width: 86px;
+    height: 86px;
+    bottom: 35px;
+    right: 20px;
   }
 }
