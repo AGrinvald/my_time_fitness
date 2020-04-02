@@ -398,42 +398,6 @@ $(function () {
         navText: ["", ""]
     });
 
-    // var scheduleOwl = $('.schedule-slides'),
-    //     owlOptions = {
-    //         loop: true,
-    //         mouseDrag: false,
-    //         nav: true,
-    //         navText: ["", ""],
-    //         onTranslated: function (event) {
-    //             var clubBlock = $(event.target).find('.owl-item.active > .club-schedule-block')[0];
-    //             var newUrl = $(clubBlock).data("link");
-
-    //             $('.schedule-btn').attr("href", newUrl);
-    //         },
-    //         items: 1
-    //     };
-
-    // if ($(window).width() < md) {
-    //     scheduleOwl.owlCarousel(owlOptions);
-    // } else {
-    //     scheduleOwl.addClass('off');
-    // }
-
-    // $(window).resize(function () {
-    //     if ($(window).width() < md) {
-    //         if ($('.schedule-slides').hasClass('off')) {
-    //             scheduleOwl.owlCarousel(owlOptions);
-    //             scheduleOwl.removeClass('off');
-    //         }
-
-    //     } else {
-    //         if (!$('.schedule-slides').hasClass('off')) {
-    //             scheduleOwl.addClass('off').trigger('destroy.owl.carousel');
-    //             scheduleOwl.find('.owl-stage-outer').children(':eq(0)').unwrap();
-    //         }
-    //     }
-    // });
-
     $(".club-block-nav").click(function (event) {
         var self = $(this);
 

@@ -661,91 +661,6 @@
     }
   }
 
-  .accordion {
-    &-block {
-      width: 100%;
-      border-bottom: 1px solid #EBEBEB;
-    }
-
-    &-btn {
-      display: flex;
-      width: 100%;
-      border: 0;
-      background-color: $primary;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 22px;
-      letter-spacing: 0.18px;
-      height: 60px;
-      align-items: center;
-      padding-left: 15px;
-      padding-right: 30px;
-      
-      &.collapsed {
-        background-color: $white;
-
-        .accordion-path {
-          fill: $primary;
-        }
-
-        .accordion-number {
-          background-image: url(../img/drop-grey.png);
-          color: #c1c1c1;
-          
-        }
-      }
-    }
-
-    &-number {
-      width: 24px;
-      height: 34px;
-      background-image: url(../img/drop-white.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100%;
-      color: $white;
-      font-weight: 600;
-      font-size: 19px;
-      line-height: 29px;
-    }
-
-    &-lens {
-      display: block;
-      margin-left: auto;
-    }
-
-    &-path {
-      fill: $white;
-    }
-
-    &-text {
-      margin-left: 25px;
-    }
-
-    &-body {
-      display: flex;
-      background-color: $white;
-      padding-bottom: 30px;
-      padding-top: 15px;
-      flex-direction: column;
-    }
-
-    &-body-btn {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 268px;
-    }
-
-    &-body-text {
-      width: 268px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 15px;
-      letter-spacing: 0.15px;
-      margin-bottom: 15px;
-    }
-  }
-
   .promo-block {
     @include media-breakpoint-up(lg) {
       max-width: 528px;
@@ -1339,20 +1254,86 @@
 }
 /* MAP AREA END */
 
-@include media-breakpoint-up(md) {
-  .scroll-control {
-    width: 86px;
-    height: 86px;
-    bottom: 35px;
-    right: 20px;
+.accordion {
+  &-block {
+    width: 100%;
+    border-bottom: 1px solid #ebebeb;
   }
-}
 
-@include media-breakpoint-down(xl) {
-  .scroll-control {
-    width: 86px;
-    height: 86px;
-    bottom: 35px;
-    right: 20px;
+  &-btn {
+    display: flex;
+    width: 100%;
+    border: 0;
+    background-color: $primary;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.18px;
+    height: 60px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 30px;
+
+    &.collapsed {
+      background-color: $white;
+
+      .accordion-path {
+        fill: $primary;
+      }
+
+      .accordion-number {
+        background-image: url(../img/drop-grey.png);
+        color: #c1c1c1;
+      }
+    }
+  }
+
+  &-number {
+    width: 24px;
+    height: 34px;
+    background-image: url(../img/drop-white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    color: $white;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 29px;
+  }
+
+  &-lens {
+    display: block;
+    margin-left: auto;
+  }
+
+  &-path {
+    fill: $white;
+  }
+
+  &-text {
+    margin-left: 25px;
+  }
+
+  &-body {
+    display: flex;
+    background-color: $white;
+    padding-bottom: 30px;
+    padding-top: 15px;
+    flex-direction: column;
+  }
+
+  &-body-btn {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 268px;
+  }
+
+  &-body-text {
+    width: 268px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    letter-spacing: 0.15px;
+    margin-bottom: 15px;
   }
 }
