@@ -8108,7 +8108,7 @@ header {
                   transform: translateX(-50%);
           top: 13%;
           height: 279px;
-          min-width: 1840px;
+          min-width: 1830px;
           width: 100%;
           background: url(../img/group-6.svg);
           background-size: 427px 279px;
@@ -8137,18 +8137,6 @@ header {
     @media (min-width: 992px) {
       .h-top .container {
         max-width: 945px; } }
-    .h-top .container::before {
-      content: "";
-      position: absolute;
-      left: -10%;
-      bottom: 0;
-      background-image: url(../img/path-copy-22.svg);
-      background-repeat: no-repeat;
-      background-position-x: left;
-      background-position-y: bottom;
-      width: 288px;
-      height: 100%;
-      z-index: 7; }
   .h-top .b-center {
     position: absolute;
     top: 50%;

@@ -52,6 +52,32 @@
 @import "equipment-promo";
 @import "scroll-control";
 
+/* TOP HEADER START */
+.h-top {
+  @include media-breakpoint-up(lg) {
+    .inner {
+      height: 585px;
+
+      &::before {
+        content: "";
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        width: 1670px;
+        height: 293px;
+        background-image: url(../img/header-kids.svg);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position-y: top;
+        background-position-x: right;
+        z-index: 2;
+      }
+    }
+  }
+}
+/* TOP HEADER END */
+
 /* BANNER AREA START*/
 .banner-area {
   figure {
@@ -199,6 +225,7 @@
 .equipment-block {
   @include media-breakpoint-up(lg) {
     margin-bottom: 90px;
+    overflow: hidden;
   }
 
   .block-title {
@@ -238,7 +265,7 @@
           background-repeat: no-repeat;
           background-position-y: top;
           background-position-x: center;
-          z-index: 1;
+          z-index: 3;
         }
       }
     }
@@ -290,22 +317,32 @@
   }
 
   .equipment-slides {
+
+    @include media-breakpoint-down(md) {
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      box-sizing: border-box;
+    }
+
     .owl-nav {
       position: absolute;
       display: flex;
       justify-content: space-between;
-      overflow: hidden;
-      
+
       @include media-breakpoint-up(lg) {
         top: 45%;
         width: 104%;
         left: -2%;
       }
 
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(md) {
         top: 65%;
-        width: 110%;
-        left: -5%;
+        width: 100%;
+        left: -2px;
       }
 
       button.owl-prev,

@@ -27,7 +27,7 @@ header {
         transform: translateX(-50%);
         top: 13%;
         height: 279px;
-        min-width: 1840px;
+        min-width: 1830px;
         width: 100%;
         background: url(../img/group-6.svg);
         background-size: 427px 279px;
@@ -47,7 +47,6 @@ header {
   margin-right: auto;
   height: 124px;
   position: relative;
-  //z-index: 5;
   
   .inner {
     position: absolute;
@@ -64,19 +63,6 @@ header {
     z-index: 10;
     @include media-breakpoint-up(lg) {
       max-width: 945px;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      left: -10%;
-      bottom: 0;
-      background-image: url(../img/path-copy-22.svg);
-      background-repeat: no-repeat;
-      background-position-x: left;
-      background-position-y: bottom;
-      width: 288px;
-      height: 100%;
-      z-index: 7;
     }
   }
 
