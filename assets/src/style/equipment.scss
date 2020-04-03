@@ -294,7 +294,8 @@
       position: absolute;
       display: flex;
       justify-content: space-between;
-
+      overflow: hidden;
+      
       @include media-breakpoint-up(lg) {
         top: 45%;
         width: 104%;

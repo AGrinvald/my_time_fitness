@@ -108,8 +108,6 @@ function init() {
         mapSettings = mapSettingsCollection.Medium;
     }
 
-    console.log(mapSettings.zoom);
-
     map = new ymaps.Map("map", {
         center: mapSettings.center,
         zoom: mapSettings.zoom,
