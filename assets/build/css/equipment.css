@@ -8116,6 +8116,13 @@ button {
   max-width: 312px;
   font-size: 16px; }
 
+.btn-custom-block {
+  padding: 0;
+  height: 56px;
+  line-height: 56px;
+  width: 100%;
+  font-size: 16px; }
+
 @media (min-width: 992px) {
   .btn-custom-lg-res {
     height: 56px;
@@ -8971,6 +8978,64 @@ footer {
     bottom: 35px;
     right: 10px; } }
 
+/* CONTACT BOSS MODAL START*/
+@media (min-width: 992px) {
+  #contact-boss-modal .modal-dialog-centered {
+    min-height: calc(100% - 1%); } }
+
+#contact-boss-modal .modal-dialog {
+  max-width: 900px; }
+  @media (max-width: 767.98px) {
+    #contact-boss-modal .modal-dialog {
+      height: 100%; } }
+
+#contact-boss-modal .modal-content {
+  border: none;
+  background-color: #ffffff;
+  background-image: url(../img/555-copy-7.png);
+  background-position: left top;
+  background-repeat: no-repeat;
+  min-height: 656px; }
+  @media (max-width: 767.98px) {
+    #contact-boss-modal .modal-content {
+      height: 100%; } }
+
+#contact-boss-modal .modal-responsive {
+  max-width: 680px; }
+
+#contact-boss-modal .form-row > .col, #contact-boss-modal .form-row > [class*=col-] {
+  padding-right: 3px;
+  padding-left: 3px; }
+
+#contact-boss-modal .promo-form {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto; }
+  #contact-boss-modal .promo-form .custom-input-group {
+    margin-bottom: 25px; }
+  #contact-boss-modal .promo-form h3 {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 0.54px; }
+  #contact-boss-modal .promo-form p {
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center; }
+  #contact-boss-modal .promo-form textarea {
+    min-height: 100%;
+    border-radius: 24px;
+    border: solid 1px #aacc23;
+    padding: 1rem 1.5rem;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: -.39px;
+    color: #000000; }
+  #contact-boss-modal .promo-form .rules-text {
+    max-width: 321px; }
+  #contact-boss-modal .promo-form .promo-btn {
+    max-width: 330px; }
+
+/* CONTACT BOSS END*/
 /* TOP HEADER START */
 @media (min-width: 992px) {
   .h-top .inner {
