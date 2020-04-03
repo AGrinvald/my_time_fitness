@@ -367,11 +367,12 @@ function bossModalNextClick() {
 function setClubName() {
     var name = sessionStorage.getItem('club-name');
 
-    if(!name) {
+    if (!name) {
         name = 'Выберите ваш клуб'
-    } 
+    }
 
     $('#club-name').html(name);
+    $('#header-club-name').html(name);
 }
 
 $(function () {

@@ -297,6 +297,7 @@ function setClubName() {
     }
 
     $('#club-name').html(name);
+    $('#header-club-name').html(name);
 }
 
 $(function () {

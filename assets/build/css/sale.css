@@ -8144,6 +8144,33 @@ header {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     z-index: 3; }
+  .h-top .b-left {
+    position: absolute;
+    left: -5%;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    font-size: 14px;
+    letter-spacing: 0.14px;
+    z-index: 3;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+    .h-top .b-left-inner {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-align: start;
+          align-items: flex-start;
+      margin-left: 13px; }
+    .h-top .b-left-btn {
+      border: 0;
+      background: none;
+      color: #aacc23;
+      padding: 0;
+      font-weight: 500; }
   .h-top .b-right {
     text-align: right;
     position: absolute;
@@ -8157,7 +8184,7 @@ header {
     z-index: 3; }
     .h-top .b-right a {
       display: block;
-      font-size: 24px;
+      font-size: 20px;
       font-family: "Avenir Next Cyr";
       font-weight: 600; }
       .h-top .b-right a:hover, .h-top .b-right a:focus {
