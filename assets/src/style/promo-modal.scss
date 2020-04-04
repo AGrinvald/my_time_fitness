@@ -36,6 +36,10 @@
 
   .promo-form-confirm {
     height: 100%;
+
+    @include media-breakpoint-down(sm) {
+      height: 500px;
+    }
   }
   
   .promo-form {

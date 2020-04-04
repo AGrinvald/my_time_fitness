@@ -22512,6 +22512,13 @@ function signupNextClick() {
 
         if ($(".signup-dropdown a.dropdown-item")) {
 
+            var selectedClub = sessionStorage.getItem('club-name');
+
+            if (selectedClub) {
+                $(".signup-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
+                $(".signup-dropdown").find('input:hidden').val(selectedClub);
+            }
+            
             $(".signup-dropdown a.dropdown-item").click(function (event) {
                 event.preventDefault();
 
@@ -22535,7 +22542,13 @@ function signupModalNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (name.checkValidity() && phone.checkValidity()) {
+    var promoClub = $(".signup-dropdown").find('input:hidden').val();
+
+    if(!promoClub) {
+        $(".signup-dropdown").parent().css("background-color", "#FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity() && promoClub) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -22555,6 +22568,12 @@ function promoNextClick() {
     var name = document.getElementById("promoName");
     var phone = document.getElementById("promoPhone");
 
+    var promoClub = $(".promo-dropdown").find('input:hidden').val();
+
+    if(!promoClub) {
+        $(".promo-dropdown").parent().css("background-color", "#FFDBDC");
+    }
+
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
@@ -22563,7 +22582,7 @@ function promoNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (name.checkValidity() && phone.checkValidity()) {
+    if (name.checkValidity() && phone.checkValidity() && promoClub) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -22639,13 +22658,28 @@ $(function () {
         $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
         $("#signupPhone").mask("+7(999) 999-99-99");
 
+        var selectedClub = sessionStorage.getItem('club-name');
+
+        if (selectedClub) {
+            $(".signup-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
+            $(".signup-dropdown").find('input:hidden').val(selectedClub);
+        }
+
+        $("#signup-modal").find("#promoName").change(function(e) {
+            $(e.target).parent().css("background-color", "#FFFFFF");
+        });
+
+        $("#signup-modal").find("#promoPhone").change(function(e) {
+            $(e.target).parent().css("background-color", "#FFFFFF");
+        });
+
         if ($(".signup-dropdown a.dropdown-item")) {
 
             $(".signup-dropdown a.dropdown-item").click(function (event) {
                 event.preventDefault();
 
                 $(".signup-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-                $(".signup-dropdown").find('input:hidden').val($(this).data('value'));
+                $(".signup-dropdown").find('input:hidden').val($(event.target).text());
             });
         }
     });
@@ -22661,13 +22695,22 @@ $(function () {
             $(".promo-dropdown").find('input:hidden').val(selectedClub);
         }
 
+        $("#promo-modal").find("#promoName").change(function(e) {
+            $(e.target).parent().css("background-color", "#FFFFFF");
+        });
+
+        $("#promo-modal").find("#promoPhone").change(function(e) {
+            $(e.target).parent().css("background-color", "#FFFFFF");
+        });
+
         if ($(".promo-dropdown a.dropdown-item")) {
 
             $(".promo-dropdown a.dropdown-item").click(function (event) {
                 event.preventDefault();
 
+                $(".promo-dropdown").parent().css("background-color", "#FFFFFF");
                 $(".promo-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-                $(".promo-dropdown").find('input:hidden').val($(this).data('value'));
+                $(".promo-dropdown").find('input:hidden').val($(event.target).text());
             });
         }
     });
