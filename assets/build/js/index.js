@@ -22347,7 +22347,7 @@ var mapSettingsCollection = {
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
-        center: [60.20874891762144, 30.372126306640563], zoom: 13,
+        center: [60.13485370575094, 30.372126306640563], zoom: 9,
         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
     }
 };
@@ -22486,8 +22486,13 @@ function init() {
 
     if (width < 977) {
         //map.behaviors.disable(['drag']);
-        $(".club-block-nav:first-child").click();
+        //$(".map-accordion-btn:first-child").click();
     }
+
+    map.events.add('boundschange', function (event) {
+        console.log(map.getCenter());
+        console.log(map.getZoom());
+    });
 }
 
 function signupNextClick() {
@@ -22620,17 +22625,15 @@ $(function () {
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $('#signupFormBtn').bind("click", signupNextClick);
 
-    // $('#accordionMap').on('shown.bs.collapse', function (e) {
-    //     var temp = $('#accordionMap').find('.accordion-btn').not(".collapsed").first();
+    $('#accordionMap').on('shown.bs.collapse', function (e) {
+        var clicked = $('#accordionMap').find('.accordion-btn').not(".collapsed").first();
+        var scroll = parseInt(clicked.data('scroll'));
 
-    //     var topPos = temp.position();
-    //     $('#accordionMap').scrollTop(60);
-    //     var scrollPos = $( e.target ).scrollTop();
-    //     //$('#accordionMap').animate({scrollTop: 1000}, 2000)
-    //     console.log(topPos);
-    //     console.log(scrollPos);
-    //     console.log(temp);
-    // });
+        $('#accordionMap').animate({
+            scrollTop: scroll
+        }, 300);
+
+    });
 
     $('#signup-modal').on('shown.bs.modal', function (e) {
         $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
@@ -22653,7 +22656,7 @@ $(function () {
 
         var selectedClub = sessionStorage.getItem('club-name');
 
-        if(selectedClub) {
+        if (selectedClub) {
             $(".promo-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
             $(".promo-dropdown").find('input:hidden').val(selectedClub);
         }
@@ -22720,40 +22723,62 @@ $(function () {
         navText: ["", ""]
     });
 
-    $(".club-block-nav").click(function (event) {
+    $(".map-accordion-btn").click(function (event) {
         var self = $(this);
 
+        var hasClass = self.hasClass("active");
         var geoObjects = ymaps.geoQuery(map.geoObjects);
-        var idStr = self.data("id");
 
-        var id = parseInt(idStr);
-        var selected = geoObjects.search("properties.id = " + id);
-        var result = geoObjects.setOptions('visible', false);
+        var result;
 
-        result.then(function () {
+        if (hasClass) {
+            result = geoObjects.setOptions('visible', true);
 
-            var placemark = selected.get(0);
-            var markCoords = placemark.geometry.getCoordinates();
+            result.then(function () {
+                self.removeClass("active");
+                var moving = new ymaps.map.action.Single({
+                    center: mapSettings.center,
+                    zoom: mapSettings.zoom,
+                    timingFunction: 'ease-in',
+                    checkZoomRange: true,
+                    duration: 10
+                });
 
-            var coords = [markCoords[0], markCoords[1]];
-
-            coords[0] = coords[0] + 0.005;
-            zoom = 13;
-
-            var moving = new ymaps.map.action.Single({
-                center: coords,
-                zoom: zoom,
-                timingFunction: 'ease-in',
-                checkZoomRange: true,
-                duration: 1500,
-                callback: function (err) {
-                    selected.setOptions('visible', true);
-                }
+                map.action.execute(moving);
             });
+        } else {
+            var idStr = self.data("id");
 
-            map.action.execute(moving);
-        });
+            var id = parseInt(idStr);
+            var selected = geoObjects.search("properties.id = " + id);
+            result = geoObjects.setOptions('visible', false);
 
+            result.then(function () {
+
+                var placemark = selected.get(0);
+                var markCoords = placemark.geometry.getCoordinates();
+
+                var coords = [markCoords[0], markCoords[1]];
+
+                coords[0] = coords[0] + 0.01;
+                zoom = 13;
+
+                var moving = new ymaps.map.action.Single({
+                    center: coords,
+                    zoom: zoom,
+                    timingFunction: 'ease-in',
+                    checkZoomRange: true,
+                    duration: 10,
+                    callback: function (err) {
+                        $(".map-accordion-btn").removeClass("active");
+                        self.addClass("active");
+                        selected.setOptions('visible', true);
+                    }
+                });
+
+                map.action.execute(moving);
+            });
+        }
     });
 
     $(".club-block-lg").click(function (event) {
@@ -22777,7 +22802,7 @@ $(function () {
                     zoom: mapSettings.zoom,
                     timingFunction: 'ease-in',
                     checkZoomRange: true,
-                    duration: 1500
+                    duration: 10
                 });
 
                 map.action.execute(moving);
@@ -22883,7 +22908,7 @@ $(function () {
         if (toSelect || !club) {
             $('.club-link').each(function () {
                 var link = $(this).data('link');
-                $(this).attr("href", currentURL.concat('/', link, hash ? hash : '')); 
+                $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
             });
 
             $(".club-link").on("click", function (e) {

@@ -10511,7 +10511,8 @@ footer {
     margin-bottom: 0; }
   .map-area .accordion {
     height: 183px;
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    position: relative; }
   .map-area .inner-block {
     position: relative;
     overflow: hidden;
