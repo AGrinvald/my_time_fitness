@@ -10509,10 +10509,9 @@ footer {
     padding-bottom: 15px; }
   .map-area .accordion-body-text {
     margin-bottom: 0; }
-  @media (max-width: 991.98px) {
-    .map-area .container-shadow {
-      height: 183px;
-      overflow-y: auto; } }
+  .map-area .accordion {
+    height: 183px;
+    overflow-y: scroll; }
   .map-area .inner-block {
     position: relative;
     overflow: hidden;

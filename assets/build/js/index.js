@@ -22620,6 +22620,18 @@ $(function () {
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $('#signupFormBtn').bind("click", signupNextClick);
 
+    // $('#accordionMap').on('shown.bs.collapse', function (e) {
+    //     var temp = $('#accordionMap').find('.accordion-btn').not(".collapsed").first();
+
+    //     var topPos = temp.position();
+    //     $('#accordionMap').scrollTop(60);
+    //     var scrollPos = $( e.target ).scrollTop();
+    //     //$('#accordionMap').animate({scrollTop: 1000}, 2000)
+    //     console.log(topPos);
+    //     console.log(scrollPos);
+    //     console.log(temp);
+    // });
+
     $('#signup-modal').on('shown.bs.modal', function (e) {
         $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
         $("#signupPhone").mask("+7(999) 999-99-99");

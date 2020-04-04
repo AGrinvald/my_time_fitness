@@ -1051,11 +1051,9 @@
     margin-bottom: 0;
   }
 
-  .container-shadow {
-    @include media-breakpoint-down(md) {
-      height: 183px;
-      overflow-y: auto;
-    }
+  .accordion {
+    height: 183px;
+    overflow-y: scroll;
   }
 
   .inner-block {
