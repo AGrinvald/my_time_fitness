@@ -174,8 +174,6 @@
   }
 
   .custom-input-group {
-    padding-left: 3px;
-    padding-right: 5px;
 
     @include media-breakpoint-up(lg) {
       &:not(:last-child) {
