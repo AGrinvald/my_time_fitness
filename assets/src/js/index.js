@@ -173,15 +173,22 @@ function init() {
     ymaps.geoQuery(akademicheskaya).addToMap(map);
     ymaps.geoQuery(kupchino).addToMap(map);
 
-    if (width < 977) {
-        //map.behaviors.disable(['drag']);
-        //$(".map-accordion-btn:first-child").click();
-    }
-
     map.events.add('boundschange', function (event) {
         console.log(map.getCenter());
         console.log(map.getZoom());
     });
+}
+
+function getElementInsideContainer(containerID, childID) {
+    var elm = {};
+    var elms = document.getElementById(containerID).getElementsByTagName("*");
+    for (var i = 0; i < elms.length; i++) {
+        if (elms[i].id === childID) {
+            elm = elms[i];
+            break;
+        }
+    }
+    return elm;
 }
 
 function signupNextClick() {
@@ -197,7 +204,39 @@ function signupNextClick() {
             $("#signupPhone").mask("+7(999) 999-99-99");
         }
 
-        $(".signup-btn").bind("click", signupNextClick);
+        if ($(".signup-btn").length > 0) {
+
+            $(".signup-btn").bind("click", function () {
+                
+                var name = getElementInsideContainer("signup-container", "signupName");
+                var phone = getElementInsideContainer("signup-container", "signupPhone");
+
+                if (!name.checkValidity()) {
+                    name.parentElement.setAttribute("style", "background-color: #FFDBDC");
+                }
+
+                if (!phone.checkValidity()) {
+                    phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
+                }
+
+                var promoClub = $(".signup-dropdown").find('input:hidden').val();
+
+                if (!promoClub) {
+                    $(".signup-dropdown").parent().css("background-color", "#FFDBDC");
+                }
+
+                if (name.checkValidity() && phone.checkValidity() && promoClub) {
+                    var next = $(this).data("next");
+
+                    $.ajax({
+                        url: next,
+                        dataType: 'html'
+                    }).done(function (html) {
+                        $(".signup-container").html(html);
+                    });
+                }
+            });
+        }
 
         if ($(".signup-dropdown a.dropdown-item")) {
 
@@ -207,12 +246,12 @@ function signupNextClick() {
                 $(".signup-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
                 $(".signup-dropdown").find('input:hidden').val(selectedClub);
             }
-            
+
             $(".signup-dropdown a.dropdown-item").click(function (event) {
                 event.preventDefault();
 
-                $(".signup-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-                $(".signup-dropdown").find('input:hidden').val($(this).data('value'));
+                $(".signup-dropdown").find('.dropdown-toggle').html($(event.target).text() + ' <span class="caret"></span>');
+                $(".signup-dropdown").find('input:hidden').val($(event.target).text());
             });
         }
     });
@@ -233,7 +272,7 @@ function signupModalNextClick() {
 
     var promoClub = $(".signup-dropdown").find('input:hidden').val();
 
-    if(!promoClub) {
+    if (!promoClub) {
         $(".signup-dropdown").parent().css("background-color", "#FFDBDC");
     }
 
@@ -259,7 +298,7 @@ function promoNextClick() {
 
     var promoClub = $(".promo-dropdown").find('input:hidden').val();
 
-    if(!promoClub) {
+    if (!promoClub) {
         $(".promo-dropdown").parent().css("background-color", "#FFDBDC");
     }
 
@@ -354,11 +393,11 @@ $(function () {
             $(".signup-dropdown").find('input:hidden').val(selectedClub);
         }
 
-        $("#signup-modal").find("#promoName").change(function(e) {
+        $("#signup-modal").find("#promoName").change(function (e) {
             $(e.target).parent().css("background-color", "#FFFFFF");
         });
 
-        $("#signup-modal").find("#promoPhone").change(function(e) {
+        $("#signup-modal").find("#promoPhone").change(function (e) {
             $(e.target).parent().css("background-color", "#FFFFFF");
         });
 
@@ -367,7 +406,8 @@ $(function () {
             $(".signup-dropdown a.dropdown-item").click(function (event) {
                 event.preventDefault();
 
-                $(".signup-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
+                $(".signup-dropdown").parent().css("background-color", "#FFFFFF");
+                $(".signup-dropdown").find('.dropdown-toggle').html($(event.target).text() + ' <span class="caret"></span>');
                 $(".signup-dropdown").find('input:hidden').val($(event.target).text());
             });
         }
@@ -384,11 +424,11 @@ $(function () {
             $(".promo-dropdown").find('input:hidden').val(selectedClub);
         }
 
-        $("#promo-modal").find("#promoName").change(function(e) {
+        $("#promo-modal").find("#promoName").change(function (e) {
             $(e.target).parent().css("background-color", "#FFFFFF");
         });
 
-        $("#promo-modal").find("#promoPhone").change(function(e) {
+        $("#promo-modal").find("#promoPhone").change(function (e) {
             $(e.target).parent().css("background-color", "#FFFFFF");
         });
 

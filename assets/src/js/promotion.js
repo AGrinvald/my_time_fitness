@@ -25,7 +25,12 @@ function modalNextClick() {
 
     var name = document.getElementById("promoName");
     var phone = document.getElementById("promoPhone");
-    var email = document.getElementById("promoEmail");
+
+    var promoClub = $(".promo-dropdown").find('input:hidden').val();
+
+    if (!promoClub) {
+        $(".promo-dropdown").parent().css("background-color", "#FFDBDC");
+    } 
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -35,7 +40,7 @@ function modalNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (name.checkValidity() && phone.checkValidity()) {
+    if (name.checkValidity() && phone.checkValidity() && promoClub) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -102,18 +107,27 @@ $(function () {
 
         var selectedClub = sessionStorage.getItem('club-name');
 
-        if(selectedClub) {
+        if (selectedClub) {
             $(".promo-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
             $(".promo-dropdown").find('input:hidden').val(selectedClub);
         }
+
+        $("#promo-modal").find("#promoName").change(function (e) {
+            $(e.target).parent().css("background-color", "#FFFFFF");
+        });
+
+        $("#promo-modal").find("#promoPhone").change(function (e) {
+            $(e.target).parent().css("background-color", "#FFFFFF");
+        });
 
         if ($(".promo-dropdown a.dropdown-item")) {
 
             $(".promo-dropdown a.dropdown-item").click(function (event) {
                 event.preventDefault();
 
+                $(".promo-dropdown").parent().css("background-color", "#FFFFFF");
                 $(".promo-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-                $(".promo-dropdown").find('input:hidden').val($(this).data('value'));
+                $(".promo-dropdown").find('input:hidden').val($(event.target).text());
             });
         }
     });

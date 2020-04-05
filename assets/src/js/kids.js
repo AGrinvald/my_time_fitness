@@ -58,7 +58,13 @@ function modalNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (name.checkValidity() && phone.checkValidity()) {
+    var promoClub = $(".kids-dropdown").find('input:hidden').val();
+
+    if (!promoClub) {
+        $(".kids-dropdown").parent().css("background-color", "#FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity() && promoClub) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -82,7 +88,13 @@ function seasonNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (name.checkValidity() && phone.checkValidity()) {
+    var promoClub = $(".kids-season-dropdown").find('input:hidden').val();
+
+    if (!promoClub) {
+        $(".kids-season-dropdown").parent().css("background-color", "#FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity() && promoClub) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -120,11 +132,20 @@ $(function () {
             $(".kids-dropdown").find('input:hidden').val(selectedClub);
         }
 
+        $("#kids-request-modal").find("#clientName").change(function (e) {
+            $(e.target).parent().css("background-color", "#FFFFFF");
+        });
+
+        $("#kids-request-modal").find("#clientPhone").change(function (e) {
+            $(e.target).parent().css("background-color", "#FFFFFF");
+        });
+
         $(".kids-dropdown a.dropdown-item").click(function (event) {
             event.preventDefault();
 
-            $(".kids-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-            $(".kids-dropdown").find('input:hidden').val($(this).data('value'));
+            $(".kids-dropdown").parent().css("background-color", "#FFFFFF");
+            $(".kids-dropdown").find('.dropdown-toggle').html($(event.target).text() + ' <span class="caret"></span>');
+            $(".kids-dropdown").find('input:hidden').val($(event.target).text());
         });
     });
 
@@ -152,11 +173,20 @@ $(function () {
             $(".kids-season-dropdown").find('input:hidden').val(selectedClub);
         }
 
+        $("#kids-season-modal").find("#clientSeasonName").change(function (e) {
+            $(e.target).parent().css("background-color", "#FFFFFF");
+        });
+
+        $("#kids-season-modal").find("#clientSeasonPhone").change(function (e) {
+            $(e.target).parent().css("background-color", "#FFFFFF");
+        });
+
         modal.find(".kids-season-dropdown a.dropdown-item").click(function (event) {
             event.preventDefault();
 
-            $(".kids-season-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-            $(".kids-season-dropdown").find('input:hidden').val($(this).data('value'));
+            $(".kids-season-dropdown").parent().css("background-color", "#FFFFFF");
+            $(".kids-season-dropdown").find('.dropdown-toggle').html($(event.target).text() + ' <span class="caret"></span>');
+            $(".kids-season-dropdown").find('input:hidden').val($(event.target).text());
         });
     });
 

@@ -31,7 +31,7 @@ body {
       color: #8e8e8e;
     }
   }
-} 
+}
 
 .banner-top {
   @include media-breakpoint-down(md) {
@@ -51,7 +51,7 @@ body {
   .dropdown {
     text-decoration: underline;
   }
-} 
+}
 
 button {
   font-family: "Avenir Next Cyr";
@@ -119,7 +119,6 @@ button {
 }
 
 .btn-custom-lg-res {
-
   @include media-breakpoint-up(lg) {
     height: 56px;
     width: 312px;
@@ -140,7 +139,7 @@ button {
 
   &:hover {
     background-color: $white;
-    color: #26272b;   
+    color: #26272b;
     border: 1px solid #26272b;
   }
 }
@@ -151,7 +150,7 @@ button {
 
   &:hover {
     background-color: $primary;
-    color: $black;   
+    color: $black;
     border: 1px solid $black;
   }
 }
@@ -162,7 +161,7 @@ button {
 
   &:hover {
     background-color: $primary;
-    color: $black;   
+    color: $black;
     border: 1px solid $black;
   }
 }
@@ -174,7 +173,7 @@ button {
 
   &:hover {
     background-color: $black;
-    color: $primary;   
+    color: $primary;
     border: 1px solid $primary;
   }
 }
@@ -185,7 +184,7 @@ button {
 
   &:hover {
     background-color: $black;
-    color: $primary;   
+    color: $primary;
   }
 }
 
@@ -195,7 +194,7 @@ button {
 
   &:hover {
     background-color: $black;
-    color: $white;   
+    color: $white;
   }
 }
 
@@ -222,7 +221,7 @@ h2.title {
 
 .dropdown-menu {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.37);
-  min-width: 100%; 
+  min-width: 100%;
   padding: 0;
   margin: 0;
   background-clip: border-box;
@@ -233,18 +232,24 @@ h2.title {
     letter-spacing: 0.05px;
     &:hover {
       font-weight: 700;
-      background: linear-gradient(to right, rgba(229,229,229,1) 0%, rgba(244,244,244,1) 50%, rgba(244,244,244,1) 100%);
+      background: linear-gradient(
+        to right,
+        rgba(229, 229, 229, 1) 0%,
+        rgba(244, 244, 244, 1) 50%,
+        rgba(244, 244, 244, 1) 100%
+      );
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f4f4f4', GradientType=1 );
     }
   }
 }
 
-.input-group>.custom-select:not(:first-child), .input-group>.form-control:not(:first-child) {
+.input-group > .custom-select:not(:first-child),
+.input-group > .form-control:not(:first-child) {
   border-radius: 28px;
   padding-left: 10%;
 }
 
-.input-group>.input-group-prepend>.input-group-text {
+.input-group > .input-group-prepend > .input-group-text {
   border-radius: 50%;
 }
 
@@ -260,7 +265,7 @@ h2.title {
     overflow: hidden;
     z-index: 5;
     height: 56px;
-    width: 56px; 
+    width: 56px;
   }
 
   .input-group-text {
@@ -275,7 +280,14 @@ h2.title {
     justify-content: center;
   }
 
-  &.primary, &.primary:focus, &.primary:hover, &.primary:active  {
+  .form-control:focus {
+    background-color: transparent;
+  }
+
+  &.primary,
+  &.primary:focus,
+  &.primary:hover,
+  &.primary:active {
     background-color: $primary;
     border: solid 1px $black;
 
@@ -290,7 +302,10 @@ h2.title {
     }
   }
 
-  &.blue, &.blue:focus, &.blue:hover, &.blue:active  {
+  &.blue,
+  &.blue:focus,
+  &.blue:hover,
+  &.blue:active {
     background-color: $white;
     border: solid 1px $blue;
 
@@ -309,7 +324,7 @@ h2.title {
     color: $primary;
     border: solid 1px $primary;
     background-color: $white;
-    
+
     .input-group-text {
       border: solid 1px $primary;
       color: $primary;
@@ -319,7 +334,7 @@ h2.title {
   .dropdown-toggle::after {
     float: right;
     margin-top: 4%;
-  }   
+  }
 
   .dropdown {
     width: 100%;
@@ -339,22 +354,23 @@ h2.title {
     height: 52px;
     border: none;
     border-radius: 27%;
-    text-align: center; 
+    text-align: center;
     padding-left: 10%;
   }
 
   input {
     background-color: transparent;
     display: block;
-    
 
     &[type="button"] {
       font-size: 16px;
       font-weight: bold;
       letter-spacing: 0.8px;
     }
-  
-    &[type="text"], &[type="tel"], &[type="email"] {
+
+    &[type="text"],
+    &[type="tel"],
+    &[type="email"] {
       font-size: 18px;
       font-weight: 300;
       letter-spacing: -0.39px;
@@ -366,7 +382,3 @@ h2.title {
     text-align: center;
   }
 }
-
-
-
-

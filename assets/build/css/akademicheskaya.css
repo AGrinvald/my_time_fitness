@@ -8201,7 +8201,8 @@ h2.title {
       background: linear-gradient(to right, #e5e5e5 0%, #f4f4f4 50%, #f4f4f4 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f4f4f4', GradientType=1 ); }
 
-.input-group > .custom-select:not(:first-child), .input-group > .form-control:not(:first-child) {
+.input-group > .custom-select:not(:first-child),
+.input-group > .form-control:not(:first-child) {
   border-radius: 28px;
   padding-left: 10%; }
 
@@ -8231,6 +8232,8 @@ h2.title {
     padding: 0;
     -ms-flex-pack: center;
         justify-content: center; }
+  .custom-input-group .form-control:focus {
+    background-color: transparent; }
   .custom-input-group.primary, .custom-input-group.primary:focus, .custom-input-group.primary:hover, .custom-input-group.primary:active {
     background-color: #aacc23;
     border: solid 1px #000000; }

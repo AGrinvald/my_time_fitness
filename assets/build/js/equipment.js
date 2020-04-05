@@ -22006,7 +22006,8 @@ $(function () {
         mouseDrag: false,
         nav: true,
         navText: ["", ""],
-        dots: false
+        dots: false,
+        touchDrag: false
     });
 
     $('.level-img-slides-1').owlCarousel({
@@ -22030,7 +22031,8 @@ $(function () {
         mouseDrag: false,
         nav: true,
         navText: ["", ""],
-        dots: false
+        dots: false,
+        touchDrag: false
     });
 
     $('.weight-img-slides-1').owlCarousel({
@@ -22056,7 +22058,8 @@ $(function () {
         mouseDrag: false,
         nav: true,
         navText: ["", ""],
-        dots: false
+        dots: false,
+        touchDrag: false
     });
 
     $("#scroll-control").click(function () {
