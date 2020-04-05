@@ -21,7 +21,7 @@
           background-position: center center;
           animation: spin 10s linear infinite;
         }
-  
+
         &::after {
           content: "";
           position: absolute;
@@ -53,7 +53,7 @@
           background-position: center center;
           animation: spin 10s linear infinite;
         }
-  
+
         &::after {
           content: "";
           position: absolute;
@@ -70,11 +70,22 @@
     }
   }
 
+  .promo-form-confirm {
+    height: 100%;
+
+    @include media-breakpoint-down(sm) {
+      height: 500px;
+    }
+  }
+
   .modal-content {
     position: relative;
 
     &.kids-request-theme {
+      height: 100%;
+
       @include media-breakpoint-up(lg) {
+        height: 600px;
         &::before {
           content: "";
           position: absolute;
@@ -88,7 +99,7 @@
           background-position: center center;
           animation: spin 10s linear infinite;
         }
-  
+
         &::after {
           content: "";
           position: absolute;
@@ -105,7 +116,10 @@
     }
 
     &.kids-season-theme {
+      height: 100%;
+
       @include media-breakpoint-up(lg) {
+        height: 740px;
         &::before {
           content: "";
           position: absolute;
@@ -119,7 +133,7 @@
           background-position: center center;
           animation: spin 10s linear infinite;
         }
-  
+
         &::after {
           content: "";
           position: absolute;
@@ -191,7 +205,7 @@
 
   .grey-text {
     color: #717171;
-  }  
+  }
 
   .modal-dialog-centered {
     @include media-breakpoint-up(lg) {
@@ -223,7 +237,7 @@
   .promo-form-confirm {
     height: 100%;
   }
-  
+
   .promo-form {
     max-width: 340px;
     margin-left: auto;
