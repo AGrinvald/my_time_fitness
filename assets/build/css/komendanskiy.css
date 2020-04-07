@@ -8354,7 +8354,7 @@ header {
     z-index: 3; }
   .h-top .b-left {
     position: absolute;
-    left: -5%;
+    left: 0;
     top: 50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
@@ -8382,7 +8382,7 @@ header {
   .h-top .b-right {
     text-align: right;
     position: absolute;
-    right: -5%;
+    right: 0;
     top: 50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);

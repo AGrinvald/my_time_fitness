@@ -792,6 +792,7 @@
 /* TEAM AREA START */
 .team-area {
   .team-container {
+    overflow: hidden;
     height: 950px;
     background: linear-gradient(
       to bottom,
@@ -822,6 +823,8 @@
 
   .scrolling-wrapper {
     white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
 
     &::-webkit-scrollbar {
       height: 8px;
@@ -837,16 +840,10 @@
       background-color: #282828;
     }
 
-    @include media-breakpoint-down(md) {
-      overflow-x: scroll;
-      overflow-y: hidden;
-    }
-
     .photo {
       margin-left: auto;
       margin-right: auto;
-      width: 1202px;
-      max-width: 1171px;
+      width: 1171px;
       height: 560px;
       position: relative;
 

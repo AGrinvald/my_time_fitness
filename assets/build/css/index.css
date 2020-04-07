@@ -8368,7 +8368,7 @@ header {
     z-index: 3; }
   .h-top .b-left {
     position: absolute;
-    left: -5%;
+    left: 0;
     top: 50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
@@ -8396,7 +8396,7 @@ header {
   .h-top .b-right {
     text-align: right;
     position: absolute;
-    right: -5%;
+    right: 0;
     top: 50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
@@ -10343,6 +10343,7 @@ footer {
 /* PROMO AREA END */
 /* TEAM AREA START */
 .team-area .team-container {
+  overflow: hidden;
   height: 950px;
   background: linear-gradient(to bottom, #fefeff 0%, #fefeff 22%, #b5b8bf 45%, #4f565c 69%, #3c444a 78%, #3c444a 79%, #646c7b 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefeff', endColorstr='#646c7b', GradientType=0 ); }
@@ -10359,7 +10360,9 @@ footer {
       margin-bottom: 35px; } }
 
 .team-area .scrolling-wrapper {
-  white-space: nowrap; }
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden; }
   .team-area .scrolling-wrapper::-webkit-scrollbar {
     height: 8px; }
   .team-area .scrolling-wrapper::-webkit-scrollbar-thumb {
@@ -10368,15 +10371,10 @@ footer {
   .team-area .scrolling-wrapper::-webkit-scrollbar-track {
     border-radius: 4px;
     background-color: #282828; }
-  @media (max-width: 991.98px) {
-    .team-area .scrolling-wrapper {
-      overflow-x: scroll;
-      overflow-y: hidden; } }
   .team-area .scrolling-wrapper .photo {
     margin-left: auto;
     margin-right: auto;
-    width: 1202px;
-    max-width: 1171px;
+    width: 1171px;
     height: 560px;
     position: relative; }
     .team-area .scrolling-wrapper .photo:hover img {

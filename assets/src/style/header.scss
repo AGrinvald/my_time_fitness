@@ -77,7 +77,7 @@ header {
 
   .b-left {
     position: absolute;
-    left: -5%;
+    left:0;
     top: 50%;
     transform: translate(0, -50%);
     font-size: 14px;
@@ -105,7 +105,7 @@ header {
   .b-right {
     text-align: right;
     position: absolute;
-    right: -5%;
+    right: 0;
     top: 50%;
     transform: translate(0, -50%);
     font-size: 12px;
