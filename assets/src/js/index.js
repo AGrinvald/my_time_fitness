@@ -452,10 +452,10 @@ $(function () {
         items: 1,
         loop: true,
         mouseDrag: false,
-        // autoplay: true,
-        // autoplaySpeed: 1000,
-        // autoplayTimeout: 3000,
-        // autoplayHoverPause: true,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
         responsive: {
             992: {
                 dots: false,
@@ -469,7 +469,7 @@ $(function () {
         navText: ["", ""]
     });
 
-    //owl.trigger('play.owl.autoplay', [3000])
+    owl.trigger('play.owl.autoplay', [3000])
 
     $('.features').owlCarousel({
         mouseDrag: false,
@@ -513,7 +513,7 @@ $(function () {
                     zoom: mapSettings.zoom,
                     timingFunction: 'ease-in',
                     checkZoomRange: true,
-                    duration: 10
+                    duration: 500
                 });
 
                 map.action.execute(moving);
@@ -540,7 +540,7 @@ $(function () {
                     zoom: zoom,
                     timingFunction: 'ease-in',
                     checkZoomRange: true,
-                    duration: 10,
+                    duration: 500,
                     callback: function (err) {
                         $(".map-accordion-btn").removeClass("active");
                         self.addClass("active");
@@ -574,7 +574,7 @@ $(function () {
                     zoom: mapSettings.zoom,
                     timingFunction: 'ease-in',
                     checkZoomRange: true,
-                    duration: 10
+                    duration: 500
                 });
 
                 map.action.execute(moving);
@@ -605,7 +605,7 @@ $(function () {
                     zoom: zoom,
                     timingFunction: 'linear',
                     checkZoomRange: true,
-                    duration: 10,
+                    duration: 500,
                     callback: function (err) {
                         selected.setOptions('visible', true);
 
