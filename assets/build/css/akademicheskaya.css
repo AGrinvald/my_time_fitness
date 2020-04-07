@@ -8180,7 +8180,7 @@ h2.title {
   @media (min-width: 992px) {
     h2.title {
       letter-spacing: 0.69px;
-      font-size: 34px; } }
+      font-size: 28px; } }
   @media (max-width: 991.98px) {
     h2.title {
       font-size: 20px;
@@ -9190,7 +9190,7 @@ footer {
     font-weight: bold; }
     @media (min-width: 992px) {
       .announce-container h3 {
-        font-size: 48px;
+        font-size: 40px;
         letter-spacing: 1px; } }
     @media (max-width: 991.98px) {
       .announce-container h3 {
@@ -9205,7 +9205,7 @@ footer {
     color: #aacc23; }
     @media (min-width: 992px) {
       .announce-container .subtitle {
-        font-size: 36px;
+        font-size: 28px;
         line-height: 0.92; } }
     @media (max-width: 991.98px) {
       .announce-container .subtitle {
@@ -10391,7 +10391,7 @@ footer {
         font-weight: 600; }
       @media (min-width: 1200px) {
         .banner-area .banner-container .promo-block .inner .price {
-          font-size: 25px;
+          font-size: 22px;
           margin-bottom: 13px;
           letter-spacing: -0.6px; } }
       @media (max-width: 1199.98px) {
@@ -10403,7 +10403,7 @@ footer {
       font-weight: 500; }
       @media (min-width: 1200px) {
         .banner-area .banner-container .promo-block .inner .promo {
-          font-size: 26px;
+          font-size: 22px;
           margin-bottom: 0px;
           margin-top: 15px; } }
       @media (max-width: 1199.98px) {
@@ -10464,7 +10464,7 @@ footer {
       @media (min-width: 1200px) {
         .banner-area .banner-container .subtitle-div h2 {
           margin-top: 40px;
-          font-size: 32px;
+          font-size: 28px;
           line-height: 1.25;
           letter-spacing: 0.67px; } }
       @media (max-width: 1199.98px) {

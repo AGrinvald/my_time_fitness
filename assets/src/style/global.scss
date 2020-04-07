@@ -210,7 +210,8 @@ h2.title {
 
   @include media-breakpoint-up(lg) {
     letter-spacing: 0.69px;
-    font-size: 34px;
+    //font-size: 34px;
+    font-size: 28px
   }
 
   @include media-breakpoint-down(md) {

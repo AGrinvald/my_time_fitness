@@ -655,9 +655,8 @@
 
     @include media-breakpoint-down(md) {
       background-color: #f1f1f1;
-      padding-top: 35px;
+      padding-top: 50px;
       padding-bottom: 30px;
-      margin-bottom: 32px;
     }
   }
 
@@ -1054,6 +1053,7 @@
     height: 183px;
     overflow-y: scroll;
     position: relative;
+    box-sizing: border-box;
   }
 
   .inner-block {
@@ -1247,6 +1247,7 @@
 
 .accordion {
   &-block {
+    box-sizing: border-box;
     width: 100%;
     border-bottom: 1px solid #ebebeb;
   }
@@ -1264,7 +1265,8 @@
     align-items: center;
     padding-left: 15px;
     padding-right: 30px;
-
+    box-sizing: border-box;
+    
     &.collapsed {
       background-color: $white;
 

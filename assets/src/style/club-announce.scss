@@ -17,7 +17,8 @@
 
   h3 {
     @include media-breakpoint-up(lg) {
-      font-size: 48px;
+      //font-size: 48px;
+      font-size: 40px;
       letter-spacing: 1px;
     }
 
@@ -38,7 +39,8 @@
     color: $primary;
 
     @include media-breakpoint-up(lg) {
-      font-size: 36px;
+      //font-size: 36px;
+      font-size: 28px;
       line-height: 0.92;
     }
 

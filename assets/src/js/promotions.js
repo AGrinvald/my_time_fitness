@@ -112,7 +112,9 @@ $(function () {
                 setClubName();
                 $('#clubs-modal').modal('hide');
 
-                return false;
+                if (toSelect) {
+                    return false;
+                }
                 
             });
 

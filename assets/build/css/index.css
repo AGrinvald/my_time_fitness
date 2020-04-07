@@ -8194,7 +8194,7 @@ h2.title {
   @media (min-width: 992px) {
     h2.title {
       letter-spacing: 0.69px;
-      font-size: 34px; } }
+      font-size: 28px; } }
   @media (max-width: 991.98px) {
     h2.title {
       font-size: 20px;
@@ -10236,9 +10236,8 @@ footer {
 @media (max-width: 991.98px) {
   .promo-area .promo-container {
     background-color: #f1f1f1;
-    padding-top: 35px;
-    padding-bottom: 30px;
-    margin-bottom: 32px; } }
+    padding-top: 50px;
+    padding-bottom: 30px; } }
 
 @media (min-width: 992px) {
   .promo-area .promo-block {
@@ -10525,7 +10524,8 @@ footer {
   .map-area .accordion {
     height: 183px;
     overflow-y: scroll;
-    position: relative; }
+    position: relative;
+    box-sizing: border-box; }
   .map-area .inner-block {
     position: relative;
     overflow: hidden;
@@ -10671,6 +10671,7 @@ footer {
 
 /* MAP AREA END */
 .accordion-block {
+  box-sizing: border-box;
   width: 100%;
   border-bottom: 1px solid #ebebeb; }
 
@@ -10688,7 +10689,8 @@ footer {
   -ms-flex-align: center;
       align-items: center;
   padding-left: 15px;
-  padding-right: 30px; }
+  padding-right: 30px;
+  box-sizing: border-box; }
   .accordion-btn.collapsed {
     background-color: #ffffff; }
     .accordion-btn.collapsed .accordion-path {
