@@ -8720,7 +8720,7 @@ footer {
 /* BANNER AREA START*/
 .banner-area .banner-container {
   position: relative;
-  z-index: 3;
+  z-index: 10;
   padding: 0; }
 
 /* BANNER AREA END*/

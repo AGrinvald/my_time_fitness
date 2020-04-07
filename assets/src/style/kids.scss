@@ -59,7 +59,7 @@
 
 /* TOP HEADER START */
 .h-top {
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     .inner {
       height: 585px;
 
@@ -210,7 +210,7 @@
     }
 
     .row {
-      @include media-breakpoint-up(lg) {
+      @media only screen and (min-width: 1300px) {
         &::before {
           content: "";
           position: absolute;
@@ -385,6 +385,7 @@
 .schedule-area {
   .container-fluid {
     position: relative;
+    overflow: hidden;
 
     .flower {
       @include media-breakpoint-up(lg) {
@@ -731,7 +732,7 @@
         position: absolute;
         content: "";
         top: -65%;
-        left: -50%;    
+        left: -50%;
         width: 251px;
         height: 134px;
         background-image: url(../img/cloud-mirror.svg);
@@ -745,7 +746,7 @@
         position: absolute;
         content: "";
         top: -25%;
-        right: -50%;  
+        right: -50%;
         width: 166px;
         height: 99px;
         background-image: url(../img/small-cloud.svg);
@@ -786,7 +787,7 @@
         background-position: center center;
         animation: spin 10s linear infinite;
       }
-    }  
+    }
   }
 
   .season-item-pink {
@@ -876,6 +877,7 @@
     cursor: pointer;
     color: $black;
     transition: all 0.5s ease-in-out;
+    margin-bottom: 30px;
 
     &:hover {
       text-decoration: none;
@@ -1030,9 +1032,8 @@
 
 /* PHOTO AREA START*/
 .photo-area {
+
   .photo-container {
-    max-width: 1000px;
-    width: 80%;
     margin-right: auto;
     margin-left: auto;
     text-align: right;
@@ -1040,11 +1041,26 @@
     margin-bottom: 50px;
     position: relative;
 
+    .photo-img {
+      display: block;
+      width: 40%;
+      margin-right: auto;
+      margin-left: auto;
+
+      @include media-breakpoint-down(md) {
+        width: 40%;
+      }
+      
+      @include media-breakpoint-down(sm) {
+        width: 80%;
+      }
+    }
+
     @include media-breakpoint-up(xl) {
       &::before {
         content: "";
         position: absolute;
-        right: -8%;
+        right: 5%;
         top: -3%;
         width: 99px;
         height: 99px;
@@ -1053,7 +1069,7 @@
         background-position: center center;
         animation: spin 10s linear infinite;
       }
-    }  
+    }
   }
 }
 /* PHOTO AREA END*/

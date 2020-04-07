@@ -10361,6 +10361,7 @@ footer {
 
 .team-area .scrolling-wrapper {
   white-space: nowrap;
+  overflow: hidden;
   overflow-x: auto;
   overflow-y: hidden; }
   .team-area .scrolling-wrapper::-webkit-scrollbar {
@@ -10374,7 +10375,7 @@ footer {
   .team-area .scrolling-wrapper .photo {
     margin-left: auto;
     margin-right: auto;
-    width: 1171px;
+    width: 1202px;
     height: 560px;
     position: relative; }
     .team-area .scrolling-wrapper .photo:hover img {

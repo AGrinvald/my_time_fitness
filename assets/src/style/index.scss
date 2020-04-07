@@ -823,8 +823,7 @@
 
   .scrolling-wrapper {
     white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: hidden;
 
     &::-webkit-scrollbar {
       height: 8px;
@@ -840,10 +839,13 @@
       background-color: #282828;
     }
 
+    overflow-x: auto;
+    overflow-y: hidden;
+
     .photo {
       margin-left: auto;
       margin-right: auto;
-      width: 1171px;
+      width: 1202px;
       height: 560px;
       position: relative;
 

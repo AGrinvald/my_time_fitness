@@ -8975,7 +8975,7 @@ footer {
             transform: rotate(360deg); } }
 
 /* TOP HEADER START */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .h-top .inner {
     height: 585px; }
     .h-top .inner::before {
@@ -9097,7 +9097,7 @@ footer {
             background-position: center center;
             -webkit-animation: spin 10s linear infinite;
                     animation: spin 10s linear infinite; } }
-  @media (min-width: 992px) {
+  @media only screen and (min-width: 1300px) {
     .banner-area .banner-bottom .row::before {
       content: "";
       position: absolute;
@@ -9258,7 +9258,8 @@ footer {
 /* BANNER AREA END*/
 /* SCHEDULE AREA START*/
 .schedule-area .container-fluid, .schedule-area .container-sm, .schedule-area .container-md, .schedule-area .container-lg {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   @media (min-width: 992px) {
     .schedule-area .container-fluid .flower, .schedule-area .container-sm .flower, .schedule-area .container-md .flower, .schedule-area .container-lg .flower {
       display: none; } }
@@ -9618,7 +9619,8 @@ footer {
         flex-direction: column;
     cursor: pointer;
     color: #000000;
-    transition: all 0.5s ease-in-out; }
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 30px; }
     .season-area .season-item:hover {
       text-decoration: none;
       -webkit-transform: scale(1.02);
@@ -9738,19 +9740,28 @@ footer {
 /* SEASON AREA END*/
 /* PHOTO AREA START*/
 .photo-area .photo-container {
-  max-width: 1000px;
-  width: 80%;
   margin-right: auto;
   margin-left: auto;
   text-align: right;
   margin-top: 50px;
   margin-bottom: 50px;
   position: relative; }
+  .photo-area .photo-container .photo-img {
+    display: block;
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto; }
+    @media (max-width: 991.98px) {
+      .photo-area .photo-container .photo-img {
+        width: 40%; } }
+    @media (max-width: 767.98px) {
+      .photo-area .photo-container .photo-img {
+        width: 80%; } }
   @media (min-width: 1200px) {
     .photo-area .photo-container::before {
       content: "";
       position: absolute;
-      right: -8%;
+      right: 5%;
       top: -3%;
       width: 99px;
       height: 99px;

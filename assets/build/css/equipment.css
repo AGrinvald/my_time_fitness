@@ -9051,7 +9051,7 @@ footer {
 
 /* CONTACT BOSS END*/
 /* TOP HEADER START */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
   .h-top .inner {
     height: 585px; }
     .h-top .inner::before {
