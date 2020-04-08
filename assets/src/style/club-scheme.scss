@@ -18,9 +18,104 @@
         position: relative;
         text-align: center;
 
-        > div:first-child {
+        .akad-box {
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+
+            @include media-breakpoint-down(md) {
+                width: 340px;
+                height: 294px;
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: $primary;
+            font-size: 18px;
+            font-weight: 500;
+
             @include media-breakpoint-up(lg) {
-                height: 549px;
+                display: none;
+            }
+        }
+
+        .akad-overlay-1 {
+            position: absolute;
+            top: -2px;
+            left: 79px;
+        }
+
+        .akad-overlay-2 {
+            position: absolute;
+            top: 0px;
+            left: 182px;
+        }
+
+        .akad-overlay-3 {
+            position: absolute;
+            top: 0px;
+            right: 41px;
+        }
+
+        .akad-overlay-4 {
+            position: absolute;
+            bottom: 35px;
+            left: 26px;
+        }
+
+        .akad-overlay-5 {
+            position: absolute;
+            bottom: 14px;
+            left: 93px;
+        }
+
+        .akad-overlay-6 {
+            position: absolute;
+            bottom: -1px;
+            left: 92px;
+        }
+
+        .akad-overlay-7 {
+            position: absolute;
+            bottom: 9px;
+            right: 134px;
+        }
+
+        .akad-overlay-8 {
+            position: absolute;
+            bottom: 27px;
+            right: 93px;
+        }
+
+        .akad-overlay-9 {
+            position: absolute;
+            bottom: 57px;
+            right: 57px;
+        }
+
+        .akad-overlay-10 {
+            position: absolute;
+            bottom: 84px;
+            right: 12px;
+        }
+
+        .number-animation {
+            transition: transform .2s; 
+        }
+
+        .number-scale {
+            transform: scale(1.5);
+        }
+
+        .akad-img {
+            width: 100%;
+            @include media-breakpoint-up(lg) {
+                height: 490px;
                 background-image: url(../img/akad-scheme.png);
                 background-position: center;
                 background-size: contain;
@@ -33,9 +128,175 @@
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat;
+            } 
+        }
+
+        .kom-box {
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+
+            @include media-breakpoint-down(md) {
+                width: 345px;
+                height: 291px;
+            }
+        }
+
+        .kom-img {
+            width: 100%;
+            @include media-breakpoint-up(lg) {
+                height: 550px;
+                background-image: url(../img/komendanskiy-scheme.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
             }
 
+            @include media-breakpoint-down(md) {
+                height: 290px;
+                background-image: url(../img/komendanskiy-sm-scheme.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .kom-overlay-1 {
+            position: absolute;
+            top: -6px;
+            left: 80px;
+        }
+
+        .kom-overlay-2 {
+            position: absolute;
+            top: -6px;
+            left: 144px;
+        }
+
+        .kom-overlay-3 {
+            position: absolute;
+            top: -6px;
+            right: 135px;
+        }
+
+        .kom-overlay-4 {
+            position: absolute;
+            top: -6px;
+            right: 75px;        
+        }
+
+        .kom-overlay-5 {
+            position: absolute;
+            bottom: -5px;
+            left: 133px;
+        }
+
+        .kom-overlay-6 {
+            position: absolute;
+            bottom: 19px;
+            left: 133px;
+        }
+
+        .kom-overlay-7 {
+            position: absolute;
+            bottom: 43px;
+            left: 133px;     
+        }
+
+        .kom-overlay-8 {
+            position: absolute;
+            bottom: 43px;
+            right: 138px;
+        }
+
+        .kom-overlay-9 {
+            position: absolute;
+            bottom: 43px;
+            right: 69px;
+        }
+
+        .kom-overlay-10 {
+            position: absolute;
+            bottom: 43px;
+            right: 3px;
+        }
+
+        .kup-box {
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+
+            @include media-breakpoint-down(md) {
+                width: 340px;
+                height: 230px;
+            }
+        }
+
+        .kup-img {
             width: 100%;
+            @include media-breakpoint-up(lg) {
+                height: 465px;
+                background-image: url(../img/kupchino-scheme.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 230px;
+                background-image: url(../img/kupchino-sm-scheme.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .kup-overlay-1 {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+        }
+
+        .kup-overlay-2 {
+            position: absolute;
+            top: 34px;
+            left: 15px;
+        }
+
+        .kup-overlay-3 {
+            position: absolute;
+            top: 58px;
+            left: 15px;
+        }
+
+        .kup-overlay-4 {
+            position: absolute;
+            top: 13px;
+            right: 17px;     
+        }
+
+        .kup-overlay-5 {
+            position: absolute;
+            top: 36px;
+            right: 16px;        
+        }
+
+        .kup-overlay-6 {
+            position: absolute;
+            top: 58px;
+            right: 16px;
+        }
+
+        .kup-overlay-7 {
+            position: absolute;
+            bottom: 13px;
+            left: 132px;    
+        }
+
+        .kup-overlay-8 {
+            position: absolute;
+            bottom: 13px;
+            right: 80px;
         }
 
         .scheme-slides {

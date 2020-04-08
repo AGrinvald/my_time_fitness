@@ -22381,6 +22381,7 @@ var createLayout = function (id) {
                 img.src = mapSettings.imgUrls[id];
                 img.width = mapSettings.imgSize[0];
                 img.height = mapSettings.imgSize[1];
+                img.id = 'map-pointer-' + id;
 
                 var options = this.getData().options,
                     element = this.getParentElement().getElementsByClassName('club')[0],
@@ -22394,12 +22395,27 @@ var createLayout = function (id) {
                 element.style.width = mapSettings.imgSize[0];
                 element.style.height = mapSettings.imgSize[1];
 
+                element.id = 'map-pointer-' + id;
                 element.style.marginLeft = -mapSettings.imgSize[0] / 2 + 'px';
                 element.style.marginTop = -mapSettings.imgSize[1] / 2 + 'px';
                 element.style.left = -mapSettings.imgSize[0] / 2 + 'px';
                 element.style.top = -1 * mapSettings.imgSize[1] + 'px';
 
+                $('#map-pointer-' + id).bind('click', function () {
+                    console.log('mapclicked');
+                    this.onClubClick(id);
+                });
+
                 options.set('shape', circleShape);
+            },
+            onClubClick: function (id) {
+                // if(id === 0) {
+                //     $('#komendanskiy').click();
+                // } else if(id === 1) {
+                //     $('#akademicheskaya').click();
+                // } else if(id === 2) {
+                //     $('#kupchino').click();
+                // }
             }
         }
     );
@@ -22461,6 +22477,18 @@ function init() {
     map.controls.remove('zoomControl');
     map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px' }, size: 'small' });
 
+    kupchino.events.add(['click'], function (e) {
+        $('#kupchino').click();
+    });
+
+    akademicheskaya.events.add(['click'], function (e) {
+        $('#akademicheskaya').click();
+    });
+
+    komendanskiy.events.add(['click'], function (e) {
+        $('#komendanskiy').click();
+    });
+
     map.events.add('sizechange', function (event) {
         var size = map.container.getSize();
         var width = size[0];
@@ -22518,7 +22546,7 @@ function signupNextClick() {
         if ($(".signup-btn").length > 0) {
 
             $(".signup-btn").bind("click", function () {
-                
+
                 var name = getElementInsideContainer("signup-container", "signupName");
                 var phone = getElementInsideContainer("signup-container", "signupPhone");
 
@@ -22675,6 +22703,29 @@ function setClubName() {
 }
 
 $(function () {
+
+    var toSelect = true;
+
+    $(".club-link").on("click", function (e) {
+        var name = $(this).data('name');
+        var link = $(this).data('link');
+
+        sessionStorage.setItem('club-link', link);
+        sessionStorage.setItem('club-name', name);
+
+        setClubName();
+        $('#clubs-modal').modal('hide');
+
+        if (toSelect) {
+            return false;
+        }
+    });
+
+    var club = sessionStorage.getItem('club-name');
+
+    if (!club) {
+        $('#clubs-modal').modal('show');
+    }
 
     setClubName();
 
@@ -22981,7 +23032,7 @@ $(function () {
         event.preventDefault();
         var self = $(this);
 
-        var toSelect = self.data('select');
+        toSelect = self.data('select');
         var hash = self.data('hash');
         var club = sessionStorage.getItem('club-link');
 
@@ -22992,22 +23043,6 @@ $(function () {
             $('.club-link').each(function () {
                 var link = $(this).data('link');
                 $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
-            });
-
-            $(".club-link").on("click", function (e) {
-                var name = $(this).data('name');
-                var link = $(this).data('link');
-
-                sessionStorage.setItem('club-link', link);
-                sessionStorage.setItem('club-name', name);
-
-                setClubName();
-                $('#clubs-modal').modal('hide');
-
-                if (toSelect) {
-                    return false;
-                }
-                
             });
 
             $('#clubs-modal').modal('show');

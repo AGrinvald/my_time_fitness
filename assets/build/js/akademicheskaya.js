@@ -22692,6 +22692,29 @@ function setClubName() {
 
 $(function () {
 
+    var toSelect = false;
+
+    $(".club-link").on("click", function (e) {
+        var name = $(this).data('name');
+        var link = $(this).data('link');
+
+        sessionStorage.setItem('club-link', link);
+        sessionStorage.setItem('club-name', name);
+
+        setClubName();
+        $('#clubs-modal').modal('hide');
+
+        if (toSelect) {
+            return false;
+        }
+    });
+
+    var club = sessionStorage.getItem('club-name');
+
+    if (!club) {
+        $('#clubs-modal').modal('show');
+    }
+
     setClubName();
 
     $("#couponPhone").mask("+7(999) 999-99-99");
@@ -22738,7 +22761,15 @@ $(function () {
             mouseDrag: false,
             navText: ["", ""],
             dots: false,
-            items: 1
+            items: 1,
+            onTranslated: function(property) {
+                $( ".number-animation" ).removeClass("number-scale");
+
+                var current = property.item.index;
+                var item = $(property.target).find(".owl-item").eq(current).find(".slide").data('number');
+
+                $('.'+ item).addClass('number-scale');
+            }
         };
 
     if ($(window).width() < md) {
@@ -22820,7 +22851,7 @@ $(function () {
         event.preventDefault();
         var self = $(this);
 
-        var toSelect = self.data('select');
+        toSelect = self.data('select');
         var hash = self.data('hash');
         var club = sessionStorage.getItem('club-link');
 
@@ -22830,22 +22861,7 @@ $(function () {
         if (toSelect || !club) {
             $('.club-link').each(function () {
                 var link = $(this).data('link');
-                $(this).attr("href", currentURL.concat('/', link, hash ? hash : '')); 
-            });
-
-            $(".club-link").on("click", function (e) {
-                var name = $(this).data('name');
-                var link = $(this).data('link');
-
-                sessionStorage.setItem('club-link', link);
-                sessionStorage.setItem('club-name', name);
-
-                setClubName();
-                $('#clubs-modal').modal('hide');
-
-                if (toSelect) {
-                    return false;
-                }
+                $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
             });
 
             $('#clubs-modal').modal('show');

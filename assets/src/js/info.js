@@ -65,6 +65,29 @@ function setClubName() {
 
 $(function () {
 
+    var toSelect = true;
+
+    $(".club-link").on("click", function (e) {
+        var name = $(this).data('name');
+        var link = $(this).data('link');
+
+        sessionStorage.setItem('club-link', link);
+        sessionStorage.setItem('club-name', name);
+
+        setClubName();
+        $('#clubs-modal').modal('hide');
+
+        if (toSelect) {
+            return false;
+        }
+    });
+
+    var club = sessionStorage.getItem('club-name');
+
+    if (!club) {
+        $('#clubs-modal').modal('show');
+    }
+    
     setClubName();
     
     $("#bossContactPhone").mask("+7(999) 999-99-99");
@@ -77,7 +100,7 @@ $(function () {
         event.preventDefault();
         var self = $(this);
 
-        var toSelect = self.data('select');
+        toSelect = self.data('select');
         var hash = self.data('hash');
         var club = sessionStorage.getItem('club-link');
 
@@ -85,24 +108,10 @@ $(function () {
         currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
 
         if (toSelect || !club) {
+
             $('.club-link').each(function () {
                 var link = $(this).data('link');
-                $(this).attr("href", currentURL.concat('/', link, hash ? hash : '')); 
-            });
-
-            $(".club-link").on("click", function (e) {
-                var name = $(this).data('name');
-                var link = $(this).data('link');
-
-                sessionStorage.setItem('club-link', link);
-                sessionStorage.setItem('club-name', name);
-
-                setClubName();
-                $('#clubs-modal').modal('hide');
-
-                if (toSelect) {
-                    return false;
-                }
+                $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
             });
 
             $('#clubs-modal').modal('show');

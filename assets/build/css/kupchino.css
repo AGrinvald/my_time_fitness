@@ -10015,22 +10015,209 @@ footer {
 .scheme-area .scheme {
   position: relative;
   text-align: center; }
-  .scheme-area .scheme > div:first-child {
+  .scheme-area .scheme .akad-box {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto; }
+    @media (max-width: 991.98px) {
+      .scheme-area .scheme .akad-box {
+        width: 340px;
+        height: 294px; } }
+  .scheme-area .scheme .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #aacc23;
+    font-size: 18px;
+    font-weight: 500; }
+    @media (min-width: 992px) {
+      .scheme-area .scheme .overlay {
+        display: none; } }
+  .scheme-area .scheme .akad-overlay-1 {
+    position: absolute;
+    top: -2px;
+    left: 79px; }
+  .scheme-area .scheme .akad-overlay-2 {
+    position: absolute;
+    top: 0px;
+    left: 182px; }
+  .scheme-area .scheme .akad-overlay-3 {
+    position: absolute;
+    top: 0px;
+    right: 41px; }
+  .scheme-area .scheme .akad-overlay-4 {
+    position: absolute;
+    bottom: 35px;
+    left: 26px; }
+  .scheme-area .scheme .akad-overlay-5 {
+    position: absolute;
+    bottom: 14px;
+    left: 93px; }
+  .scheme-area .scheme .akad-overlay-6 {
+    position: absolute;
+    bottom: -1px;
+    left: 92px; }
+  .scheme-area .scheme .akad-overlay-7 {
+    position: absolute;
+    bottom: 9px;
+    right: 134px; }
+  .scheme-area .scheme .akad-overlay-8 {
+    position: absolute;
+    bottom: 27px;
+    right: 93px; }
+  .scheme-area .scheme .akad-overlay-9 {
+    position: absolute;
+    bottom: 57px;
+    right: 57px; }
+  .scheme-area .scheme .akad-overlay-10 {
+    position: absolute;
+    bottom: 84px;
+    right: 12px; }
+  .scheme-area .scheme .number-animation {
+    transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s; }
+  .scheme-area .scheme .number-scale {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5); }
+  .scheme-area .scheme .akad-img {
     width: 100%; }
     @media (min-width: 992px) {
-      .scheme-area .scheme > div:first-child {
-        height: 549px;
+      .scheme-area .scheme .akad-img {
+        height: 490px;
         background-image: url(../img/akad-scheme.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat; } }
     @media (max-width: 991.98px) {
-      .scheme-area .scheme > div:first-child {
+      .scheme-area .scheme .akad-img {
         height: 294px;
         background-image: url(../img/akad-sm-scheme.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat; } }
+  .scheme-area .scheme .kom-box {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto; }
+    @media (max-width: 991.98px) {
+      .scheme-area .scheme .kom-box {
+        width: 345px;
+        height: 291px; } }
+  .scheme-area .scheme .kom-img {
+    width: 100%; }
+    @media (min-width: 992px) {
+      .scheme-area .scheme .kom-img {
+        height: 550px;
+        background-image: url(../img/komendanskiy-scheme.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
+    @media (max-width: 991.98px) {
+      .scheme-area .scheme .kom-img {
+        height: 290px;
+        background-image: url(../img/komendanskiy-sm-scheme.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
+  .scheme-area .scheme .kom-overlay-1 {
+    position: absolute;
+    top: -6px;
+    left: 80px; }
+  .scheme-area .scheme .kom-overlay-2 {
+    position: absolute;
+    top: -6px;
+    left: 144px; }
+  .scheme-area .scheme .kom-overlay-3 {
+    position: absolute;
+    top: -6px;
+    right: 135px; }
+  .scheme-area .scheme .kom-overlay-4 {
+    position: absolute;
+    top: -6px;
+    right: 75px; }
+  .scheme-area .scheme .kom-overlay-5 {
+    position: absolute;
+    bottom: -5px;
+    left: 133px; }
+  .scheme-area .scheme .kom-overlay-6 {
+    position: absolute;
+    bottom: 19px;
+    left: 133px; }
+  .scheme-area .scheme .kom-overlay-7 {
+    position: absolute;
+    bottom: 43px;
+    left: 133px; }
+  .scheme-area .scheme .kom-overlay-8 {
+    position: absolute;
+    bottom: 43px;
+    right: 138px; }
+  .scheme-area .scheme .kom-overlay-9 {
+    position: absolute;
+    bottom: 43px;
+    right: 69px; }
+  .scheme-area .scheme .kom-overlay-10 {
+    position: absolute;
+    bottom: 43px;
+    right: 3px; }
+  .scheme-area .scheme .kup-box {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto; }
+    @media (max-width: 991.98px) {
+      .scheme-area .scheme .kup-box {
+        width: 340px;
+        height: 230px; } }
+  .scheme-area .scheme .kup-img {
+    width: 100%; }
+    @media (min-width: 992px) {
+      .scheme-area .scheme .kup-img {
+        height: 465px;
+        background-image: url(../img/kupchino-scheme.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
+    @media (max-width: 991.98px) {
+      .scheme-area .scheme .kup-img {
+        height: 230px;
+        background-image: url(../img/kupchino-sm-scheme.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
+  .scheme-area .scheme .kup-overlay-1 {
+    position: absolute;
+    top: 14px;
+    left: 14px; }
+  .scheme-area .scheme .kup-overlay-2 {
+    position: absolute;
+    top: 34px;
+    left: 15px; }
+  .scheme-area .scheme .kup-overlay-3 {
+    position: absolute;
+    top: 58px;
+    left: 15px; }
+  .scheme-area .scheme .kup-overlay-4 {
+    position: absolute;
+    top: 13px;
+    right: 17px; }
+  .scheme-area .scheme .kup-overlay-5 {
+    position: absolute;
+    top: 36px;
+    right: 16px; }
+  .scheme-area .scheme .kup-overlay-6 {
+    position: absolute;
+    top: 58px;
+    right: 16px; }
+  .scheme-area .scheme .kup-overlay-7 {
+    position: absolute;
+    bottom: 13px;
+    left: 132px; }
+  .scheme-area .scheme .kup-overlay-8 {
+    position: absolute;
+    bottom: 13px;
+    right: 80px; }
   .scheme-area .scheme .scheme-slides {
     position: relative;
     border: 1px solid #aacc23;
@@ -10391,7 +10578,7 @@ footer {
         font-weight: 600; }
       @media (min-width: 1200px) {
         .banner-area .banner-container .promo-block .inner .price {
-          font-size: 25px;
+          font-size: 22px;
           margin-bottom: 13px;
           letter-spacing: -0.6px; } }
       @media (max-width: 1199.98px) {
@@ -10403,7 +10590,7 @@ footer {
       font-weight: 500; }
       @media (min-width: 1200px) {
         .banner-area .banner-container .promo-block .inner .promo {
-          font-size: 26px;
+          font-size: 22px;
           margin-bottom: 0px;
           margin-top: 15px; } }
       @media (max-width: 1199.98px) {
@@ -10463,8 +10650,8 @@ footer {
       color: #ffffff; }
       @media (min-width: 1200px) {
         .banner-area .banner-container .subtitle-div h2 {
-          margin-top: 40px;
-          font-size: 32px;
+          margin-top: 60px;
+          font-size: 28px;
           line-height: 1.25;
           letter-spacing: 0.67px; } }
       @media (max-width: 1199.98px) {

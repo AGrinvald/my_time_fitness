@@ -308,7 +308,7 @@
                     }
 
                     @include media-breakpoint-up(xl) {
-                        font-size: 25px;
+                        font-size: 22px;
                         margin-bottom: 13px;
                         letter-spacing: -0.6px;
                     }
@@ -324,7 +324,7 @@
                     font-weight: 500;
 
                     @include media-breakpoint-up(xl) {
-                        font-size: 26px;
+                        font-size: 22px;
                         margin-bottom: 0px;
                         margin-top: 15px;
                     }
@@ -410,7 +410,7 @@
 
                 @include media-breakpoint-up(xl) {
                     margin-top: 40px;
-                    font-size: 32px;
+                    font-size: 28px;
                     line-height: 1.25;
                     letter-spacing: 0.67px;
                 }
