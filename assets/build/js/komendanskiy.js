@@ -22701,10 +22701,6 @@ $(function () {
 
         setClubName();
         $('#clubs-modal').modal('hide');
-
-        if (toSelect) {
-            return false;
-        }
     });
 
     var club = sessionStorage.getItem('club-name');

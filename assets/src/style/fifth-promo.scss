@@ -69,6 +69,7 @@
   @include media-breakpoint-up(lg) {
     position: relative;
     background-color: #17191e;
+    margin-top: 80px;
 
     &::before {
       content: "";

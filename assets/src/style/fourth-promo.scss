@@ -69,6 +69,8 @@
   position: relative;
 
   @include media-breakpoint-up(lg) {
+    margin-top: 80px;
+
     &::before {
       content: "";
       width: 62%;

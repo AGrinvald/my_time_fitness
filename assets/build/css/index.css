@@ -120,7 +120,7 @@
 @font-face {
   font-family: 'MagistralC';
   src: url("../fonts/MagistralC-Bold.eot");
-  src: local("PT Magistral Bold Cyrillic"), local("MagistralC-Bold"), url("../fonts/MagistralC-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/MagistralC-Bold.woff2") format("woff2"), url("../fonts/MagistralC-Bold.woff") format("woff"), url("../fonts/MagistralC-Bold.ttf") format("truetype");
+  src: local("PT Magistral Bold Cyrillic"), local("MagistralC-Bold"), url("../fonts/MagistralC-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal; }
 
@@ -8627,9 +8627,13 @@ nav.navbar {
   height: 120px;
   background-color: #ffffff;
   margin: 0 auto;
-  padding: 22px 18px;
+  padding: 0 18px;
   text-decoration: none;
-  border-radius: 3px; }
+  border-radius: 3px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
   #clubs-modal .modal-body .club-link img {
     margin-right: 24px; }
   #clubs-modal .modal-body .club-link h5 {
@@ -8640,7 +8644,8 @@ nav.navbar {
     font-size: 15px;
     font-weight: 300;
     line-height: 22px;
-    letter-spacing: 0.15px; }
+    letter-spacing: 0.15px;
+    margin-bottom: 0; }
 
 /* CLUBS MODAL END*/
 /* PROMO MODAL START*/
@@ -10531,10 +10536,15 @@ footer {
     position: relative;
     overflow: hidden;
     z-index: 10; }
+    .map-area .inner-block .brand-name {
+      font-family: 'MagistralC', roboto;
+      font-weight: bold; }
     .map-area .inner-block h2 {
       letter-spacing: 0.4px;
       text-align: center;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-weight: 600;
+      font-size: 35px; }
       @media (max-width: 991.98px) {
         .map-area .inner-block h2 {
           display: -ms-flexbox;

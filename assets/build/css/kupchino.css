@@ -120,7 +120,7 @@
 @font-face {
   font-family: 'MagistralC';
   src: url("../fonts/MagistralC-Bold.eot");
-  src: local("PT Magistral Bold Cyrillic"), local("MagistralC-Bold"), url("../fonts/MagistralC-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/MagistralC-Bold.woff2") format("woff2"), url("../fonts/MagistralC-Bold.woff") format("woff"), url("../fonts/MagistralC-Bold.ttf") format("truetype");
+  src: local("PT Magistral Bold Cyrillic"), local("MagistralC-Bold"), url("../fonts/MagistralC-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal; }
 
@@ -8613,9 +8613,13 @@ nav.navbar {
   height: 120px;
   background-color: #ffffff;
   margin: 0 auto;
-  padding: 22px 18px;
+  padding: 0 18px;
   text-decoration: none;
-  border-radius: 3px; }
+  border-radius: 3px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
   #clubs-modal .modal-body .club-link img {
     margin-right: 24px; }
   #clubs-modal .modal-body .club-link h5 {
@@ -8626,7 +8630,8 @@ nav.navbar {
     font-size: 15px;
     font-weight: 300;
     line-height: 22px;
-    letter-spacing: 0.15px; }
+    letter-spacing: 0.15px;
+    margin-bottom: 0; }
 
 /* CLUBS MODAL END*/
 /* PROMO MODAL START*/
@@ -8960,14 +8965,14 @@ footer {
     .map-area .inner-block p {
       margin-bottom: 0; }
     .map-area .inner-block p {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 300;
       letter-spacing: 0.18px; }
     @media (min-width: 992px) {
       .map-area .inner-block {
         height: 504px;
         max-width: 408px;
-        padding: 25px 32px 32px 40px; } }
+        padding: 20px 25px 40px 25px; } }
     @media (max-width: 991.98px) {
       .map-area .inner-block {
         margin-top: 45px;
@@ -9087,7 +9092,10 @@ footer {
     .map-area .map-block {
       height: 558px; }
     .map-area .title {
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      font-size: 35px; }
+    .map-area .brand-name {
+      font-family: 'MagistralC', roboto; }
     .map-area .club-info-block {
       display: -ms-flexbox;
       display: flex; }
@@ -9104,10 +9112,9 @@ footer {
           justify-content: space-between;
       -ms-flex-align: center;
           align-items: center;
-      max-width: 340px;
       box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
       border-left: 5px solid #000;
-      padding: 9px 3px 10px 13px;
+      padding: 9px 30px 10px 13px;
       color: #000; }
       .map-area .club-block .f-small {
         font-size: 14px; }

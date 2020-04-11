@@ -1062,11 +1062,18 @@
     overflow: hidden;
     z-index: 10;
 
+    .brand-name {
+      font-family: 'MagistralC', roboto;
+      font-weight: bold;
+    }
+
     h2 {
       letter-spacing: 0.4px;
       text-align: center;
       margin-bottom: 0;
-
+      font-weight: 600;
+      font-size: 35px;
+      
       @include media-breakpoint-down(md) {
         display: flex;
         align-items: center;

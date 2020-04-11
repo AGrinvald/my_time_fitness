@@ -31,14 +31,10 @@ var path = {
     style: ['assets/src/style/index.scss', 'assets/src/style/akademicheskaya.scss',
     'assets/src/style/komendanskiy.scss', 'assets/src/style/kupchino.scss', 
     'assets/src/style/kids.scss', 'assets/src/style/promotions.scss', 'assets/src/style/sale.scss', 
-    'assets/src/style/fitness-plus-spa.scss', 'assets/src/style/payment.scss', 
-    'assets/src/style/first-promo.scss', 'assets/src/style/second-promo.scss', 
+    'assets/src/style/fitness-plus-spa.scss','assets/src/style/first-promo.scss', 
+    'assets/src/style/second-promo.scss', 
     'assets/src/style/fourth-promo.scss', 'assets/src/style/fifth-promo.scss', 
-    'assets/src/style/equipment.scss', 'assets/src/style/refund.scss',
-    'assets/src/style/law.scss', 'assets/src/style/offer.scss', 
-    'assets/src/style/rules.scss', 'assets/src/style/vacancies.scss',
-    'assets/src/style/about.scss', 'assets/src/style/sections.scss',
-    'assets/src/style/privacy-policy.scss','assets/src/style/personal-data.scss'
+    'assets/src/style/equipment.scss', 'assets/src/style/info.scss'
   ],
 
     img: 'assets/src/img/**/*.*',

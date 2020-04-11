@@ -81,12 +81,6 @@ $(function () {
             return false;
         }
     });
-
-    var club = sessionStorage.getItem('club-name');
-
-    if (!club) {
-        $('#clubs-modal').modal('show');
-    }
     
     setClubName();
     

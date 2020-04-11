@@ -88,9 +88,19 @@
 
 /* PROMOTIONS AREA START*/
 .promotions-area {
+  
   h2 {
-    margin-top: 25px;
+    
     margin-bottom: 15px;
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 80px;
+    }
+
+    @include media-breakpoint-down(md) {
+      margin-top: 40px;
+    }
+
   }
 
   .mb-110 {

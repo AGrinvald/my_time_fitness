@@ -22407,15 +22407,6 @@ var createLayout = function (id) {
                 });
 
                 options.set('shape', circleShape);
-            },
-            onClubClick: function (id) {
-                // if(id === 0) {
-                //     $('#komendanskiy').click();
-                // } else if(id === 1) {
-                //     $('#akademicheskaya').click();
-                // } else if(id === 2) {
-                //     $('#kupchino').click();
-                // }
             }
         }
     );
@@ -22943,6 +22934,7 @@ $(function () {
             });
         } else {
             var idStr = self.data("id");
+            var name = self.data("name");
             var area = self.data("area");
             var hall = self.data("hall");
             var link = self.data("link");
@@ -23004,9 +22996,14 @@ $(function () {
                             + '</div>\
                           </div>\
                     </div>\
-                    <a href="' + link + '"class="btn btn-rounded btn-primary club-info-btn">О клубе</a>\
+                    <a data-link="'+ link + '" href="' + link + '"class="btn btn-rounded btn-primary club-info-btn">О клубе</a>\
                     </div>\
-                  </div>').appendTo(".map-area .clubs-block .container");
+                  </div>').appendTo(".map-area .clubs-block .container").on('click', 'a.club-info-btn', function () {
+                                sessionStorage.setItem('club-link', link);
+                                sessionStorage.setItem('club-name', name);
+
+                                return true;
+                        });
                     }
                 });
 

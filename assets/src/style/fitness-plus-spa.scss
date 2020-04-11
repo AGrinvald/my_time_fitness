@@ -109,13 +109,15 @@
         background-size: auto 95px;
         background-position: 100% 100%;
       }
-    }
+    } 
 
     @include media-breakpoint-up(lg) {
+      margin-top: 80px;
       height: 384px;
     }
 
     @include media-breakpoint-down(md) {
+      margin-top: 40px;
       height: 192px;
     }
 

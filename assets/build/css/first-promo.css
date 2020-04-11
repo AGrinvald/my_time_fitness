@@ -120,7 +120,7 @@
 @font-face {
   font-family: 'MagistralC';
   src: url("../fonts/MagistralC-Bold.eot");
-  src: local("PT Magistral Bold Cyrillic"), local("MagistralC-Bold"), url("../fonts/MagistralC-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/MagistralC-Bold.woff2") format("woff2"), url("../fonts/MagistralC-Bold.woff") format("woff"), url("../fonts/MagistralC-Bold.ttf") format("truetype");
+  src: local("PT Magistral Bold Cyrillic"), local("MagistralC-Bold"), url("../fonts/MagistralC-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal; }
 
@@ -8419,9 +8419,13 @@ nav.navbar {
   height: 120px;
   background-color: #ffffff;
   margin: 0 auto;
-  padding: 22px 18px;
+  padding: 0 18px;
   text-decoration: none;
-  border-radius: 3px; }
+  border-radius: 3px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
   #clubs-modal .modal-body .club-link img {
     margin-right: 24px; }
   #clubs-modal .modal-body .club-link h5 {
@@ -8432,7 +8436,8 @@ nav.navbar {
     font-size: 15px;
     font-weight: 300;
     line-height: 22px;
-    letter-spacing: 0.15px; }
+    letter-spacing: 0.15px;
+    margin-bottom: 0; }
 
 /* CLUBS MODAL END*/
 /* FOOTER START */
@@ -8652,7 +8657,7 @@ b {
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%);
       position: absolute;
-      width: 1835px;
+      width: 1870px;
       height: 466px;
       background: url(../img/group-2.svg);
       background-size: auto 100%;
@@ -8896,6 +8901,9 @@ b {
   -ms-flex-pack: center;
       justify-content: center;
   height: 384px; }
+  @media (min-width: 992px) {
+    .girl-promo {
+      margin-top: 80px; } }
   @media (min-width: 992px) {
     .girl-promo .inner-block {
       width: 575px;

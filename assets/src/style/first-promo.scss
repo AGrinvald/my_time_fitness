@@ -72,8 +72,11 @@
   justify-content: center;
   height: 384px;
 
-  .inner-block {
+  @include media-breakpoint-up(lg) {
+    margin-top: 80px;
+  }
 
+  .inner-block {
     @include media-breakpoint-up(lg) {
       width: 575px;
       height: 384px;

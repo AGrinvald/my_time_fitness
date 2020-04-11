@@ -120,7 +120,7 @@
 @font-face {
   font-family: 'MagistralC';
   src: url("../fonts/MagistralC-Bold.eot");
-  src: local("PT Magistral Bold Cyrillic"), local("MagistralC-Bold"), url("../fonts/MagistralC-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/MagistralC-Bold.woff2") format("woff2"), url("../fonts/MagistralC-Bold.woff") format("woff"), url("../fonts/MagistralC-Bold.ttf") format("truetype");
+  src: local("PT Magistral Bold Cyrillic"), local("MagistralC-Bold"), url("../fonts/MagistralC-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal; }
 
@@ -8419,9 +8419,13 @@ nav.navbar {
   height: 120px;
   background-color: #ffffff;
   margin: 0 auto;
-  padding: 22px 18px;
+  padding: 0 18px;
   text-decoration: none;
-  border-radius: 3px; }
+  border-radius: 3px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
   #clubs-modal .modal-body .club-link img {
     margin-right: 24px; }
   #clubs-modal .modal-body .club-link h5 {
@@ -8432,7 +8436,8 @@ nav.navbar {
     font-size: 15px;
     font-weight: 300;
     line-height: 22px;
-    letter-spacing: 0.15px; }
+    letter-spacing: 0.15px;
+    margin-bottom: 0; }
 
 /* CLUBS MODAL END*/
 /* FOOTER START */
@@ -8717,10 +8722,25 @@ footer {
       z-index: 8; } }
 
 /* TOP HEADER END */
-/* BANNER AREA START*/
-.banner-area .banner-container {
-  position: relative;
-  z-index: 10;
-  padding: 0; }
+/* DESCRIPTION AREA START*/
+.description-area {
+  padding-top: 50px; }
+  .description-area h4 {
+    font-size: 34px;
+    letter-spacing: 0.71px; }
+  .description-area h3 {
+    font-size: 18px;
+    font-weight: 600; }
+  .description-area h4 {
+    font-size: 22px; }
+  .description-area p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5; }
+  .description-area ul li {
+    list-style-image: url(../img/path-copy-3.svg);
+    font-size: 18px;
+    padding-bottom: 5px;
+    font-weight: 300; }
 
-/* BANNER AREA END*/
+/* DESCRIPTION AREA END*/

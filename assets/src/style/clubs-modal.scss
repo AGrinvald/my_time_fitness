@@ -39,9 +39,11 @@
       height: 120px;
       background-color: $white;
       margin: 0 auto;
-      padding: 22px 18px;
+      padding: 0 18px;
       text-decoration: none;
       border-radius: 3px;
+      display: flex;
+      align-items: center;
 
       img {
         margin-right: 24px;
@@ -58,6 +60,7 @@
         font-weight: 300;
         line-height: 22px;
         letter-spacing: 0.15px;
+        margin-bottom: 0;
       }
     }
   }
