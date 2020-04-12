@@ -382,9 +382,57 @@ function setClubName() {
     $('#header-club-name').html(name);
 }
 
-$(function () {
+function toggleDropdown(e) {
+    var _d = $(e.target).closest('.dropdown'),
+        _m = $('.dropdown-menu', _d);
+    var club = sessionStorage.getItem('club-name');
+    var link = sessionStorage.getItem('club-link');
 
-    var toSelect = true;
+    setTimeout(function () {
+        var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
+
+        if (e.type == 'click' && club) {
+            
+            var hash = $(e.target).data('hash');
+
+            if (!hash) {
+                hash = '';
+            }
+
+            sessionStorage.setItem('club-hash', hash);
+
+            var currentURL = window.location.href;
+            currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
+            window.location.href = currentURL.concat('/', link);
+        }
+
+        _m.toggleClass('show', shouldOpen);
+        _d.toggleClass('show', shouldOpen);
+        $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+
+    }, e.type === 'mouseleave' ? 100 : 0);
+}
+
+function storeHash(e) {
+    var hash = $(e.target).data('hash');
+
+    if (!hash) {
+        hash = '';
+    }
+
+    sessionStorage.setItem('club-hash', hash);
+}
+
+$(function () {
+    setClubName();
+
+    $('body')
+        .on('mouseenter mouseleave', '.navbar .dropdown', toggleDropdown)
+        .on('click', '.navbar a.nav-club-link', toggleDropdown);
+
+    $('.navbar a.dropdown-item').click(storeHash);
+    $('.promo-area .schedule-link a').click(storeHash);
+    $('.promo-area a.accordion-body-btn').click(storeHash);
 
     $(".club-link").on("click", function (e) {
         var name = $(this).data('name');
@@ -395,10 +443,7 @@ $(function () {
 
         setClubName();
         $('#clubs-modal').modal('hide');
-
-        if (toSelect) {
-            return false;
-        }
+        return false;
     });
 
     var club = sessionStorage.getItem('club-name');
@@ -406,10 +451,6 @@ $(function () {
     if (!club) {
         $('#clubs-modal').modal('show');
     }
-
-    setClubName();
-
-    var md = 992;
 
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $('#signupFormBtn').bind("click", signupNextClick);
@@ -623,7 +664,6 @@ $(function () {
             });
         } else {
             var idStr = self.data("id");
-            var name = self.data("name");
             var area = self.data("area");
             var hall = self.data("hall");
             var link = self.data("link");
@@ -687,12 +727,7 @@ $(function () {
                     </div>\
                     <a data-link="'+ link + '" href="' + link + '"class="btn btn-rounded btn-primary club-info-btn">О клубе</a>\
                     </div>\
-                  </div>').appendTo(".map-area .clubs-block .container").on('click', 'a.club-info-btn', function () {
-                                sessionStorage.setItem('club-link', link);
-                                sessionStorage.setItem('club-name', name);
-
-                                return true;
-                        });
+                  </div>').appendTo(".map-area .clubs-block .container");
                     }
                 });
 
@@ -713,28 +748,4 @@ $(function () {
             $('#scroll-control').fadeOut();
         }
     });
-
-    $('.open-modal-link').click(function (event) {
-        event.preventDefault();
-        var self = $(this);
-
-        toSelect = self.data('select');
-        var hash = self.data('hash');
-        var club = sessionStorage.getItem('club-link');
-
-        var currentURL = window.location.href;
-        currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
-
-        if (toSelect || !club) {
-            $('.club-link').each(function () {
-                var link = $(this).data('link');
-                $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
-            });
-
-            $('#clubs-modal').modal('show');
-        } else {
-            window.location.href = currentURL.concat('/', club, hash ? hash : '');
-        }
-    });
-
 });

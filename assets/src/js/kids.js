@@ -23,8 +23,8 @@
 
 function bossModalNextClick() {
 
-    var name = document.getElementById("bossContactName"); 
-    var phone = document.getElementById("bossContactPhone"); 
+    var name = document.getElementById("bossContactName");
+    var phone = document.getElementById("bossContactPhone");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -47,8 +47,8 @@ function bossModalNextClick() {
 }
 
 function modalNextClick() {
-    var name = document.getElementById("clientName"); 
-    var phone = document.getElementById("clientPhone"); 
+    var name = document.getElementById("clientName");
+    var phone = document.getElementById("clientPhone");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -77,8 +77,8 @@ function modalNextClick() {
 }
 
 function seasonNextClick() {
-    var name = document.getElementById("clientSeasonName"); 
-    var phone = document.getElementById("clientSeasonPhone"); 
+    var name = document.getElementById("clientSeasonName");
+    var phone = document.getElementById("clientSeasonPhone");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -117,9 +117,44 @@ function setClubName() {
     $('#header-club-name').html(name);
 }
 
+function toggleDropdown(e) {
+    var _d = $(e.target).closest('.dropdown'),
+        _m = $('.dropdown-menu', _d);
+    var club = sessionStorage.getItem('club-name');
+    var link = sessionStorage.getItem('club-link');
+
+    setTimeout(function () {
+        var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
+
+        if (e.type == 'click' && club) {
+
+            var hash = $(e.target).data('hash');
+
+            if (!hash) {
+                hash = '';
+            }
+
+            sessionStorage.setItem('club-hash', hash);
+
+            var currentURL = window.location.href;
+            currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
+            window.location.href = currentURL.concat('/', link);
+        }
+
+        _m.toggleClass('show', shouldOpen);
+        _d.toggleClass('show', shouldOpen);
+        $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+
+    }, e.type === 'mouseleave' ? 100 : 0);
+}
+
 $(function () {
-    
-    var toSelect = true;
+
+    setClubName();
+
+    $('body')
+        .on('mouseenter mouseleave', '.navbar .dropdown', toggleDropdown)
+        .on('click', '.navbar a.nav-club-link', toggleDropdown);
 
     $(".club-link").on("click", function (e) {
         var name = $(this).data('name');
@@ -130,10 +165,7 @@ $(function () {
 
         setClubName();
         $('#clubs-modal').modal('hide');
-
-        if (toSelect) {
-            return false;
-        }
+        return false;
     });
 
     var club = sessionStorage.getItem('club-name');
@@ -142,15 +174,13 @@ $(function () {
         $('#clubs-modal').modal('show');
     }
 
-    setClubName();
-
     $('#kids-request-modal').on('show.bs.modal', function (e) {
         $("#clientPhone").mask("+7(999) 999-99-99");
         $("#kids-request-modal .promo-btn").bind("click", modalNextClick);
 
         var selectedClub = sessionStorage.getItem('club-name');
 
-        if(selectedClub) {
+        if (selectedClub) {
             $(".kids-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
             $(".kids-dropdown").find('input:hidden').val(selectedClub);
         }
@@ -183,7 +213,7 @@ $(function () {
         modal.find('.season-name').text(name);
         modal.find('.season-price').text(price);
         modal.find('.season-block').removeAttr('class')
-        .attr('class', 'season-block d-flex').addClass(style);
+            .attr('class', 'season-block d-flex').addClass(style);
         modal.find('#season-name').val(name);
 
         modal.find("#clientSeasonPhone").mask("+7(999) 999-99-99");
@@ -191,7 +221,7 @@ $(function () {
 
         var selectedClub = sessionStorage.getItem('club-name');
 
-        if(selectedClub) {
+        if (selectedClub) {
             $(".kids-season-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
             $(".kids-season-dropdown").find('input:hidden').val(selectedClub);
         }
@@ -230,28 +260,4 @@ $(function () {
             $('#scroll-control').fadeOut();
         }
     });
-
-    $('.open-modal-link').click(function (event) {
-        event.preventDefault();
-        var self = $(this);
-
-        toSelect = self.data('select');
-        var hash = self.data('hash');
-        var club = sessionStorage.getItem('club-link');
-
-        var currentURL = window.location.href;
-        currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
-
-        if (toSelect || !club) {
-            $('.club-link').each(function () {
-                var link = $(this).data('link');
-                $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
-            });
-
-            $('#clubs-modal').modal('show');
-        } else {
-            window.location.href = currentURL.concat('/', club, hash ? hash : '');
-        }
-    });
-
 });

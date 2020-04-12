@@ -22376,9 +22376,11 @@ var createLayout = function (id) {
 
                 var options = this.getData().options,
                     element = this.getParentElement().getElementsByClassName('club')[0],
-                    circleShape = {type: 'Rectangle', coordinates: [
-                        [-mapSettings.imgSize[0] / 2, -mapSettings.imgSize[1] / 2], 
-                        [mapSettings.imgSize[0] / 2, mapSettings.imgSize[1] / 2]]};
+                    circleShape = {
+                        type: 'Rectangle', coordinates: [
+                            [-mapSettings.imgSize[0] / 2, -mapSettings.imgSize[1] / 2],
+                            [mapSettings.imgSize[0] / 2, mapSettings.imgSize[1] / 2]]
+                    };
                 element.appendChild(img);
 
                 element.style.width = mapSettings.imgSize[0];
@@ -22386,8 +22388,8 @@ var createLayout = function (id) {
 
                 element.style.marginLeft = -mapSettings.imgSize[0] / 2 + 'px';
                 element.style.marginTop = -mapSettings.imgSize[1] / 2 + 'px';
-                element.style.left =  -mapSettings.imgSize[0] / 2 + 'px';
-                element.style.top =  -mapSettings.imgSize[1] / 2 + 'px';
+                element.style.left = -mapSettings.imgSize[0] / 2 + 'px';
+                element.style.top = -mapSettings.imgSize[1] / 2 + 'px';
 
                 options.set('shape', circleShape);
             }
@@ -22416,11 +22418,11 @@ function init() {
 
     var akademicheskaya = new ymaps.Placemark(
         [60.00816706410207, 30.2457365], {
-            id: 0,
-            hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
-        }, {
-            iconLayout: createLayout(0)
-        }
+        id: 0,
+        hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
+    }, {
+        iconLayout: createLayout(0)
+    }
     );
 
     map.controls.remove('geolocationControl');
@@ -22431,8 +22433,8 @@ function init() {
     map.controls.remove('rulerControl');
     map.behaviors.disable(['scrollZoom']);
     map.controls.remove('zoomControl');
-    map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px'}, size: 'small'});
-    
+    map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px' }, size: 'small' });
+
     map.events.add('boundschange', function (event) {
         console.log(map.getCenter());
     });
@@ -22472,7 +22474,7 @@ function moveToSelected(element) {
     } else {
         var selected = element;
     }
-   
+
     var amount = $("div.gallery-carousel div").length;
     var selectedIndex = $(".gallery-carousel div.slide").index($(selected));
 
@@ -22484,7 +22486,7 @@ function moveToSelected(element) {
         var lastSlide = gallery.find("div.slide:last-child");
         lastSlide.clone().prependTo(gallery);
         lastSlide.remove();
-    } 
+    }
 
     var next = $(selected).next();
     var prev = $(selected).prev();
@@ -22547,9 +22549,9 @@ function calcPositions() {
     var prev = $(selected).prev();
     var prevSecond = $(prev).prev();
     var nextSecond = $(next).next();
-    
+
     var containerWidth = $("div.gallery-carousel").width();
-    selected.css({top: 0});
+    selected.css({ top: 0 });
 
     var selectedWidth = calcWidth(57.3);
     var secondWidth = calcWidth(39);
@@ -22562,23 +22564,23 @@ function calcPositions() {
     prevSecond.width(thirdWidth);
 
     var selectedLeft = (containerWidth - selectedWidth) / 2;
-    selected.css({left: selectedLeft});
+    selected.css({ left: selectedLeft });
 
-    var secondX = (containerWidth - selectedWidth - 2*(secondWidth/3))/2;
-    next.css({left: containerWidth - secondX - secondWidth});
-    prev.css({left: secondX});
+    var secondX = (containerWidth - selectedWidth - 2 * (secondWidth / 3)) / 2;
+    next.css({ left: containerWidth - secondX - secondWidth });
+    prev.css({ left: secondX });
 
-    var thirdX = (containerWidth - selectedWidth - 2*(secondWidth/3) - 2*(thirdWidth/3))/2;
-    nextSecond.css({left: containerWidth - thirdX - thirdWidth});
-    prevSecond.css({left: thirdX});
+    var thirdX = (containerWidth - selectedWidth - 2 * (secondWidth / 3) - 2 * (thirdWidth / 3)) / 2;
+    nextSecond.css({ left: containerWidth - thirdX - thirdWidth });
+    prevSecond.css({ left: thirdX });
 
-    var secondY = (selectedWidth*0.66878981 - secondWidth*0.66878981) / 2;
-    next.css({top: secondY});
-    prev.css({top: secondY});
+    var secondY = (selectedWidth * 0.66878981 - secondWidth * 0.66878981) / 2;
+    next.css({ top: secondY });
+    prev.css({ top: secondY });
 
-    var thirdY = (selectedWidth*0.66878981 - thirdWidth*0.66878981) / 2;
-    nextSecond.css({top: thirdY});
-    prevSecond.css({top: thirdY});
+    var thirdY = (selectedWidth * 0.66878981 - thirdWidth * 0.66878981) / 2;
+    nextSecond.css({ top: thirdY });
+    prevSecond.css({ top: thirdY });
 }
 
 function galleryReset() {
@@ -22605,8 +22607,8 @@ function galleryReset() {
 }
 
 function announceNextClick() {
-    var name = document.getElementById("announceName"); 
-    var phone = document.getElementById("announcePhone"); 
+    var name = document.getElementById("announceName");
+    var phone = document.getElementById("announcePhone");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -22629,7 +22631,7 @@ function announceNextClick() {
 }
 
 function couponNextClick() {
-    var phone = document.getElementById("couponPhone"); 
+    var phone = document.getElementById("couponPhone");
 
     if (!phone.checkValidity()) {
         phone.setAttribute("style", "background-color: #FFDBDC");
@@ -22649,10 +22651,10 @@ function couponNextClick() {
 
 function bossModalNextClick() {
 
-    var name = document.getElementById("bossContactName"); 
-    var phone = document.getElementById("bossContactPhone"); 
-    var email = document.getElementById("bossContactEmail"); 
-    var message = document.getElementById("bossContactMessage"); 
+    var name = document.getElementById("bossContactName");
+    var phone = document.getElementById("bossContactPhone");
+    var email = document.getElementById("bossContactEmail");
+    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -22679,37 +22681,50 @@ function bossModalNextClick() {
 }
 
 function setClubName() {
-    var name = sessionStorage.getItem('club-name');
+    sessionStorage.setItem('club-link', 'komendanskiy.html');
+    sessionStorage.setItem('club-name', 'Коменданский');
 
-    if (!name) {
-        name = 'Выберите ваш клуб'
+    $('#club-name').html('Коменданский');
+    $('#header-club-name').html('Коменданский');
+}
+
+function scrollToSection() {
+    var hash = sessionStorage.getItem('club-hash');
+
+    if (hash) {
+        setTimeout(function () {
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 'slow', function () {
+                window.location.hash = hash;
+                sessionStorage.removeItem('club-hash')
+            });
+            
+        }, 1000);
     }
+}
 
-    $('#club-name').html(name);
-    $('#header-club-name').html(name);
+function pageNavClick(event) {
+    event.preventDefault();
+
+    if (this.hash !== "") {
+        var hash = this.hash;
+
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 'slow', function () {
+            window.location.hash = hash;
+        });
+    }
 }
 
 $(function () {
-    var toSelect = false;
-
-    $(".club-link").on("click", function (e) {
-        var name = $(this).data('name');
-        var link = $(this).data('link');
-
-        sessionStorage.setItem('club-link', link);
-        sessionStorage.setItem('club-name', name);
-
-        setClubName();
-        $('#clubs-modal').modal('hide');
-    });
-
-    var club = sessionStorage.getItem('club-name');
-
-    if (!club) {
-        $('#clubs-modal').modal('show');
-    }
 
     setClubName();
+    scrollToSection();
+
+    $('.navbar a.nav-link').click(pageNavClick);
+    $("a.page-nav-item").click(pageNavClick);
 
     $('#signupFormBtn').bind("click", announceNextClick);
     $('#couponFormBtn').bind("click", couponNextClick);
@@ -22736,7 +22751,7 @@ $(function () {
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
         $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);
     });
-    
+
     var galleryOwl = $('.gallery-carousel'),
         galleryOwlOptions = {
             loop: true,
@@ -22757,13 +22772,13 @@ $(function () {
             navText: ["", ""],
             dots: false,
             items: 1,
-            onTranslated: function(property) {
-                $( ".number-animation" ).removeClass("number-scale");
+            onTranslated: function (property) {
+                $(".number-animation").removeClass("number-scale");
 
                 var current = property.item.index;
                 var item = $(property.target).find(".owl-item").eq(current).find(".slide").data('number');
 
-                $('.'+ item).addClass('number-scale');
+                $('.' + item).addClass('number-scale');
             }
         };
 
@@ -22815,20 +22830,6 @@ $(function () {
         }
     });
 
-    $("a.page-nav-item").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            var duration = parseInt($(this).data("duration"));
-
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, duration, function () {
-                window.location.hash = hash;
-            });
-        }
-    });
-
     $("#scroll-control").click(function () {
         $("html, body").animate({ scrollTop: 0 }, "slow");
         return false;
@@ -22839,38 +22840,6 @@ $(function () {
             $('#scroll-control').fadeIn();
         } else {
             $('#scroll-control').fadeOut();
-        }
-    });
-
-    $('.open-modal-link').click(function (event) {
-        event.preventDefault();
-        var self = $(this);
-
-        toSelect = self.data('select');
-        var hash = self.data('hash');
-        var club = sessionStorage.getItem('club-link');
-
-        var currentURL = window.location.href;
-        currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
-
-        if (toSelect || !club) {
-            $('.club-link').each(function () {
-                var link = $(this).data('link');
-                $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
-            });
-
-            $('#clubs-modal').modal('show');
-        } else {
-
-            if (window.location.pathname === ('/' + club)) {
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 2800, function () {
-                    window.location.hash = hash;
-                });
-            } else {
-                window.location.href = currentURL.concat('/', club, hash ? hash : '');
-            }
         }
     });
 

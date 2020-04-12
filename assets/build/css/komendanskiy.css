@@ -8334,7 +8334,7 @@ header {
   position: relative; }
   .h-top .inner {
     position: absolute; }
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       .h-top .inner {
         width: 100%;
         z-index: 2;
@@ -8345,6 +8345,9 @@ header {
     @media (min-width: 992px) {
       .h-top .container {
         max-width: 945px; } }
+    @media (min-width: 1200px) {
+      .h-top .container {
+        max-width: 1070px; } }
   .h-top .b-center {
     position: absolute;
     top: 50%;
@@ -8434,16 +8437,24 @@ nav.navbar {
       background-color: #26272b; }
       nav.navbar .navbar-nav {
         max-width: 945px;
+        position: relative;
         z-index: 6; }
+        nav.navbar .navbar-nav .nav-item-padded {
+          padding-right: 60px; } }
+      @media (min-width: 992px) and (min-width: 1200px) {
+        nav.navbar .navbar-nav .nav-item-padded {
+          padding-right: 80px; } }
+  @media (min-width: 992px) {
         nav.navbar .navbar-nav .nav-link {
           color: #ffffff;
           text-transform: uppercase;
           font-size: 14px;
           letter-spacing: 2.17px;
-          padding-top: 25px;
-          padding-bottom: 20px;
+          padding-top: 20px;
+          padding-bottom: 16px;
           font-family: Helvetica;
-          border-bottom: 4px solid #26272b; }
+          border-bottom: 4px solid #26272b;
+          text-align: center; }
           nav.navbar .navbar-nav .nav-link.active {
             color: #aacc23;
             border-bottom: 4px solid #aacc23; }
@@ -8451,6 +8462,28 @@ nav.navbar {
             color: #aacc23; }
           nav.navbar .navbar-nav .nav-link.disabled {
             color: rgba(255, 255, 255, 0.25); }
+        nav.navbar .navbar-nav .nav-secondary {
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 33px;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-align: center;
+              align-items: center;
+          width: 290px; } }
+      @media (min-width: 992px) and (min-width: 1200px) {
+        nav.navbar .navbar-nav .nav-secondary {
+          width: 240px; } }
+  @media (min-width: 992px) {
+        nav.navbar .navbar-nav .nav-small {
+          font-size: 14px;
+          color: #ffffff;
+          padding: 0 20px; } }
+      @media (min-width: 992px) and (min-width: 1200px) {
+        nav.navbar .navbar-nav .nav-small {
+          padding: 0 30px; } }
+  @media (min-width: 992px) {
         nav.navbar .navbar-nav .show > .nav-link,
         nav.navbar .navbar-nav .active > .nav-link,
         nav.navbar .navbar-nav .nav-link.show,
@@ -8478,7 +8511,7 @@ nav.navbar {
       nav.navbar .dropdown-menu {
         border: none;
         border-radius: 0;
-        background-color: #F0F0F0; }
+        background-color: #f0f0f0; }
         nav.navbar .dropdown-menu .dropdown-item {
           font-weight: lighter;
           color: #656565;
@@ -8487,7 +8520,7 @@ nav.navbar {
           padding-left: 50px;
           font-weight: 300; }
           nav.navbar .dropdown-menu .dropdown-item:hover {
-            background-color: #F0F0F0; }
+            background-color: #f0f0f0; }
           nav.navbar .dropdown-menu .dropdown-item:first-child {
             padding-top: 15px; }
       nav.navbar .nav-item {
@@ -8517,7 +8550,7 @@ nav.navbar {
             justify-content: space-between;
         padding: 15px; }
       nav.navbar .n-bottom {
-        background-color: #272B31;
+        background-color: #272b31;
         text-align: center; }
         nav.navbar .n-bottom .btn-link {
           color: #ffffff;
@@ -9675,7 +9708,7 @@ footer {
   overflow: hidden; }
   @media (min-width: 992px) {
     .season-area .container-fluid, .season-area .container-sm, .season-area .container-md, .season-area .container-lg {
-      padding-bottom: 185px; } }
+      padding-bottom: 140px; } }
 
 .season-area h2.title {
   margin-bottom: 0; }
@@ -9787,7 +9820,7 @@ footer {
     padding: 0 30px; }
     @media (min-width: 1200px) {
       .season-area .season-item .features-b {
-        min-height: 450px; } }
+        min-height: 330px; } }
     .season-area .season-item .features-b p {
       margin: 0; }
     .season-area .season-item .features-b li {
@@ -9799,12 +9832,10 @@ footer {
       line-height: 1.11; }
       .season-area .season-item .features-b li:not(:last-child) {
         border-bottom: 1px dotted #cecece; }
-      .season-area .season-item .features-b li:last-child {
-        margin-bottom: 40px; }
       .season-area .season-item .features-b li > p:first-child {
         margin-right: 17px; }
   .season-area .season-item .desc {
-    padding: 0 30px 60px 30px;
+    padding: 0 30px 35px 30px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -9987,24 +10018,45 @@ footer {
 
 /* SERVICES AREA END*/
 /* TOP HEADER START */
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .h-top .inner {
-    height: 585px; }
-    .h-top .inner::before {
+    height: 472px; } }
+  @media (min-width: 992px) and (min-width: 1200px) {
+    .h-top .inner:before {
       content: "";
       top: 0;
       left: 50%;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%);
       position: absolute;
-      width: 1709px;
-      height: 466px;
+      width: 1680px;
+      height: 472px;
       background-image: url(../img/group-6-copy.svg);
       background-size: auto 100%;
       background-repeat: no-repeat;
       background-position-y: top;
       background-position-x: right;
       z-index: 2; } }
+
+@media (min-width: 992px) {
+    .h-top .inner:after {
+      content: "";
+      position: absolute;
+      top: 124px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      width: 1315px;
+      height: 33px;
+      background-image: url(../img/nav-rectagle.png);
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position-y: top;
+      background-position-x: right;
+      z-index: 2; } }
+    @media (min-width: 992px) and (min-width: 1200px) {
+      .h-top .inner:after {
+        width: 1453px; } }
 
 /* TOP HEADER END */
 /* SCHEME AREA START*/

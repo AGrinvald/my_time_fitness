@@ -4,7 +4,7 @@ nav.navbar {
   display: block;
   padding: 0;
 
-  @include media-breakpoint-down(md) { 
+  @include media-breakpoint-down(md) {
     .n-bottom {
       position: relative;
 
@@ -14,33 +14,42 @@ nav.navbar {
         left: 0;
         top: 18%;
         height: 59px;
-        width: 72px;      
+        width: 72px;
         background: url(../img/hexagone.svg);
         background-repeat: no-repeat;
         background-size: auto 100%;
         background-position: center center;
         z-index: 101;
-      }   
+      }
     }
   }
-  
-  @include media-breakpoint-up(lg) { 
+
+  @include media-breakpoint-up(lg) {
     background-color: $dark;
 
     .navbar-nav {
       max-width: 945px;
+      position: relative;
       z-index: 6;
+
+      .nav-item-padded {
+        padding-right: 60px;
+        @include media-breakpoint-up(xl) {
+          padding-right: 80px;
+        }
+      }
 
       .nav-link {
         color: $white;
         text-transform: uppercase;
         font-size: 14px;
         letter-spacing: 2.17px;
-        padding-top: 25px;
-        padding-bottom: 20px;
+        padding-top: 20px;
+        padding-bottom: 16px;
         font-family: Helvetica;
         border-bottom: 4px solid $dark;
-        
+        text-align: center;
+
         &.active {
           color: $primary;
           border-bottom: 4px solid $primary;
@@ -49,12 +58,36 @@ nav.navbar {
         @include hover-focus {
           color: $primary;
         }
-  
+
         &.disabled {
           color: $navbar-dark-disabled-color;
         }
       }
-  
+
+      .nav-secondary {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        width: 290px;
+
+        @include media-breakpoint-up(xl) {
+          width: 240px;   
+        }
+      }
+
+      .nav-small {
+        font-size: 14px;
+        color: $white;
+        padding: 0 20px;
+
+        @include media-breakpoint-up(xl) {
+          padding: 0 30px;
+        }
+      }
+
       .show > .nav-link,
       .active > .nav-link,
       .nav-link.show,
@@ -62,16 +95,16 @@ nav.navbar {
         color: $primary;
       }
     }
-  
+
     .navbar-toggler {
       color: $navbar-dark-color;
       border-color: $navbar-dark-toggler-border-color;
     }
-  
+
     .navbar-toggler-icon {
       background-image: $navbar-dark-toggler-icon-bg;
     }
-  
+
     .navbar-text {
       color: $navbar-dark-color;
       a {
@@ -84,7 +117,7 @@ nav.navbar {
     }
   }
 
-  @include media-breakpoint-down(md) { 
+  @include media-breakpoint-down(md) {
     background: $white;
 
     .dropdown-toggle::after {
@@ -97,7 +130,7 @@ nav.navbar {
     .dropdown-menu {
       border: none;
       border-radius: 0;
-      background-color: #F0F0F0;
+      background-color: #f0f0f0;
 
       .dropdown-item {
         font-weight: lighter;
@@ -107,7 +140,7 @@ nav.navbar {
         padding-left: 50px;
         font-weight: 300;
         &:hover {
-          background-color: #F0F0F0;
+          background-color: #f0f0f0;
         }
 
         &:first-child {
@@ -118,13 +151,13 @@ nav.navbar {
     .nav-item {
       padding-bottom: 15px;
 
-      &:first-child{
+      &:first-child {
         padding-top: 15px;
-      }   
+      }
 
-      &:last-child{
+      &:last-child {
         padding-bottom: 25px;
-      }   
+      }
     }
     .navbar-logo {
       font-family: "MagistralC";
@@ -137,8 +170,13 @@ nav.navbar {
     }
 
     .n-top {
-      background: linear-gradient(to right, rgba(217,217,217,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );  
+      background: linear-gradient(
+        to right,
+        rgba(217, 217, 217, 1) 0%,
+        rgba(255, 255, 255, 1) 30%,
+        rgba(255, 255, 255, 1) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#ffffff', GradientType=1 );
       position: relative;
       display: flex;
       flex-wrap: wrap;
@@ -148,7 +186,7 @@ nav.navbar {
     }
 
     .n-bottom {
-      background-color: #272B31;
+      background-color: #272b31;
       text-align: center;
 
       .btn-link {
@@ -156,7 +194,8 @@ nav.navbar {
         font-family: "Avenir Next Cyr";
         font-weight: lighter;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           text-decoration: none;
         }
 
@@ -175,7 +214,12 @@ nav.navbar {
     }
 
     .navbar-nav {
-      background: linear-gradient(to bottom, rgba(249,249,249,1) 0%, rgba(249,249,249,1) 35%, rgba(229,229,229,1) 100%);
+      background: linear-gradient(
+        to bottom,
+        rgba(249, 249, 249, 1) 0%,
+        rgba(249, 249, 249, 1) 35%,
+        rgba(229, 229, 229, 1) 100%
+      );
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#e5e5e5', GradientType=0 );
       border-bottom-right-radius: 10px;
       border-bottom-left-radius: 10px;
@@ -198,12 +242,12 @@ nav.navbar {
         @include hover-focus {
           color: $navbar-light-hover-color;
         }
-  
+
         &.disabled {
           color: $navbar-light-disabled-color;
         }
       }
-  
+
       .show > .nav-link,
       .active > .nav-link,
       .nav-link.show,
@@ -211,7 +255,7 @@ nav.navbar {
         color: $navbar-light-active-color;
       }
     }
-  
+
     .navbar-toggler {
       color: $navbar-light-color;
       border: none;
@@ -219,13 +263,13 @@ nav.navbar {
       padding-right: 0;
       font-weight: bold;
     }
-  
+
     .navbar-toggler-icon {
       background-image: $navbar-light-toggler-icon-bg;
       width: 24px;
       height: 22px;
     }
-  
+
     .navbar-text {
       color: $navbar-light-color;
       a {
@@ -237,6 +281,5 @@ nav.navbar {
       }
     }
   }
-
 }
-  /* NAVBAR END */
+/* NAVBAR END */

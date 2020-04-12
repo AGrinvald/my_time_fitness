@@ -18927,9 +18927,44 @@ function setClubName() {
     $('#header-club-name').html(name);
 }
 
+function toggleDropdown(e) {
+    var _d = $(e.target).closest('.dropdown'),
+        _m = $('.dropdown-menu', _d);
+    var club = sessionStorage.getItem('club-name');
+    var link = sessionStorage.getItem('club-link');
+
+    setTimeout(function () {
+        var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
+
+        if (e.type == 'click' && club) {
+
+            var hash = $(e.target).data('hash');
+
+            if (!hash) {
+                hash = '';
+            }
+
+            sessionStorage.setItem('club-hash', hash);
+
+            var currentURL = window.location.href;
+            currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
+            window.location.href = currentURL.concat('/', link);
+        }
+
+        _m.toggleClass('show', shouldOpen);
+        _d.toggleClass('show', shouldOpen);
+        $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+
+    }, e.type === 'mouseleave' ? 100 : 0);
+}
+
 $(function () {
 
-    var toSelect = true;
+    setClubName();
+
+    $('body')
+        .on('mouseenter mouseleave', '.navbar .dropdown', toggleDropdown)
+        .on('click', '.navbar a.nav-club-link', toggleDropdown);
 
     $(".club-link").on("click", function (e) {
         var name = $(this).data('name');
@@ -18940,10 +18975,7 @@ $(function () {
 
         setClubName();
         $('#clubs-modal').modal('hide');
-
-        if (toSelect) {
-            return false;
-        }
+        return false;
     });
 
     var club = sessionStorage.getItem('club-name');
@@ -18951,8 +18983,6 @@ $(function () {
     if (!club) {
         $('#clubs-modal').modal('show');
     }
-    
-    setClubName();
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
         $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);
@@ -18972,26 +19002,4 @@ $(function () {
         }
     });
 
-    $('.open-modal-link').click(function (event) {
-        event.preventDefault();
-        var self = $(this);
-
-        toSelect = self.data('select');
-        var hash = self.data('hash');
-        var club = sessionStorage.getItem('club-link');
-
-        var currentURL = window.location.href;
-        currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
-
-        if (toSelect || !club) {
-            $('.club-link').each(function () {
-                var link = $(this).data('link');
-                $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
-            });
-
-            $('#clubs-modal').modal('show');
-        } else {
-            window.location.href = currentURL.concat('/', club, hash ? hash : '');
-        }
-    });
 });

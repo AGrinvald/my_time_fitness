@@ -1,17 +1,39 @@
 /* TOP HEADER START */
 .h-top {
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(lg) {
         .inner {
-            height: 585px;
-            &::before {
+            height: 472px;
+
+            &:before {
+                @include media-breakpoint-up(xl) {
+                    content: "";
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: absolute;
+                    width: 1680px;
+                    height: 472px;
+                    background-image: url(../img/group-6-copy.svg);
+                    background-size: auto 100%;
+                    background-repeat: no-repeat;
+                    background-position-y: top;
+                    background-position-x: right;
+                    z-index: 2;
+                }
+            }
+
+            &:after {
                 content: "";
-                top: 0;
+                position: absolute;
+                top: 124px;
                 left: 50%;
                 transform: translateX(-50%);
-                position: absolute;
-                width: 1709px;
-                height: 466px;
-                background-image: url(../img/group-6-copy.svg);
+                width: 1315px;
+                @include media-breakpoint-up(xl) {
+                    width: 1453px;
+                }
+                height: 33px;
+                background-image: url(../img/nav-rectagle.png);
                 background-size: auto 100%;
                 background-repeat: no-repeat;
                 background-position-y: top;

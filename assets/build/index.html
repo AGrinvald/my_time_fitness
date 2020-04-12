@@ -34,7 +34,7 @@
                   </svg>
                   <div class="b-left-inner">
                       <span>Ваш клуб</span>
-                      <button id='header-club-name' data-select='true' class="b-left-btn open-modal-link" type='button'>
+                      <button id='header-club-name' class="b-left-btn" type='button' data-toggle="modal" data-target="#clubs-modal">
                       </button>
                   </div>
               </div>
@@ -53,18 +53,39 @@
                           img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
       </div>
       <div class="d-lg-none n-bottom">
-          <button class="btn btn-link open-modal-link" id='club-name' data-select='true'></button>
+          <button class="btn btn-link" id='club-name' type="button" data-toggle="modal" data-target="#clubs-modal"></button>
       </div>
       <div class="collapse navbar-collapse justify-content-center" id="navbar">
           <ul class="navbar-nav justify-content-lg-between w-100">
-              <li class="nav-item">
-                  <a class="nav-link open-modal-link" href="#">Клубы</a>
+              <li class="nav-item dropdown">
+                  <a class="nav-link nav-club-link" href="#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                      Клубы
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="komendanskiy.html">Комендантский</a>
+                      <a class="dropdown-item" href="akademicheskaya.html">Академическая</a>
+                      <a class="dropdown-item" href="kupchino.html">Купчино</a>
+                  </div>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link open-modal-link" data-hash='#schedule' href="#">Расписание</a>
+              <li class="nav-item dropdown">
+                  <a class="nav-link nav-club-link" data-hash='#schedule' href="#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                      Расписание
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" data-hash='#schedule' href="komendanskiy.html">Комендантский</a>
+                      <a class="dropdown-item" data-hash='#schedule' href="akademicheskaya.html">Академическая</a>
+                      <a class="dropdown-item" data-hash='#schedule' href="kupchino.html">Купчино</a>
+                  </div>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link open-modal-link" data-hash='#seasons' href="#">Тарифы</a>
+              <li class="nav-item dropdown">
+                  <a class="nav-link nav-club-link" data-hash='#seasons' href="#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                      Тарифы
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" data-hash='#seasons' href="komendanskiy.html">Комендантский</a>
+                      <a class="dropdown-item" data-hash='#seasons' href="akademicheskaya.html">Академическая</a>
+                      <a class="dropdown-item" data-hash='#seasons' href="kupchino.html">Купчино</a>
+                  </div>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="promotions.html">Акции</a>
@@ -484,7 +505,7 @@
                 <span class="ml-2 mr-2">ЧТ</span>Кикбоксинг
               </div>
               <div class="schedule-link d-none d-lg-block">
-                <a href="akademicheskaya.html#schedule">Смотреть <span class="d-lg-none">все</span> расписание</a>
+                <a data-hash='#schedule' href="akademicheskaya.html">Смотреть расписание</a>
               </div>
             </div>
             <div class="right-border-lg d-none d-lg-block">
@@ -504,7 +525,7 @@
                 <span class="ml-2 mr-2">ЧТ</span>Yoga
               </div>
               <div class="schedule-link d-none d-lg-block">
-                <a href="komendanskiy.html#schedule">Смотреть <span class="d-lg-none">все</span> расписание</a>
+                <a data-hash='#schedule' href="komendanskiy.html">Смотреть расписание</a>
               </div>
             </div>
             <div class='d-none d-lg-block'>
@@ -524,7 +545,7 @@
                 <span class="ml-2 mr-2">ЧТ</span>Functional
               </div>
               <div class="schedule-link d-none d-lg-block">
-                <a href="kupchino.html#schedule">Смотреть <span class="d-lg-none">все</span> расписание</a>
+                <a data-hash='#schedule' href="kupchino.html">Смотреть расписание</a>
               </div>
             </div>
           </div>
@@ -551,8 +572,8 @@
                     <span class='font-weight-bold mb-2'>ст.м. «Комендантский проспект»</span><br />
                     пр. Ильюшина, 14 <br /> ТК «Долгоозерный», 3 этаж
                   </div>
-                  <a class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
-                    href="komendanskiy.html#schedule">Смотреть расписание</a>
+                  <a data-hash='#schedule' class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
+                    href="komendanskiy.html">Смотреть расписание</a>
                 </div>
               </div>
             </div>
@@ -578,8 +599,8 @@
                     <span class='font-weight-bold mb-2'>ст.м. «Академическая»</span><br />
                     ул. Бутлерова 42 а, 3 этаж ТК Призма
                   </div>
-                  <a class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
-                    href="akademicheskaya.html#schedule">Смотреть расписание</a>
+                  <a data-hash='#schedule' class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
+                    href="akademicheskaya.html">Смотреть расписание</a>
                 </div>
               </div>
             </div>
@@ -605,8 +626,8 @@
                     <span class='font-weight-bold mb-2'>ст.м. «Купчино»</span><br />
                     ул. Олеко Дундича 10/2
                   </div>
-                  <a class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
-                    href="kupchino.html#schedule">Смотреть расписание</a>
+                  <a data-hash='#schedule' class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
+                    href="kupchino.html">Смотреть расписание</a>
                 </div>
               </div>
             </div>

@@ -4,7 +4,7 @@
         overflow: hidden;
 
         @include media-breakpoint-up(lg) {
-            padding-bottom: 185px;
+            padding-bottom: 140px;
         }
     }
 
@@ -149,7 +149,7 @@
             padding: 0 30px;
 
             @include media-breakpoint-up(xl) {
-                min-height: 450px;
+                min-height: 330px;
             }
 
             p {
@@ -167,10 +167,6 @@
                     border-bottom: 1px dotted #cecece;
                 }
 
-                &:last-child {
-                    margin-bottom: 40px;
-                }
-
                 > p:first-child {
                     margin-right: 17px;
                 }
@@ -179,7 +175,7 @@
         }
 
         .desc {
-            padding: 0 30px 60px 30px;
+            padding: 0 30px 35px 30px;
             display: flex;
             flex-direction: column;
             

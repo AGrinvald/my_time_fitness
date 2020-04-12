@@ -22680,39 +22680,50 @@ function bossModalNextClick() {
 }
 
 function setClubName() {
-    var name = sessionStorage.getItem('club-name');
+    sessionStorage.setItem('club-link', 'akademicheskaya.html');
+    sessionStorage.setItem('club-name', 'Академическая');
 
-    if (!name) {
-        name = 'Выберите ваш клуб'
+    $('#club-name').html('Академическая');
+    $('#header-club-name').html('Академическая');
+}
+
+function scrollToSection() {
+    var hash = sessionStorage.getItem('club-hash');
+
+    if (hash) {
+        setTimeout(function () {
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 'slow', function () {
+                window.location.hash = hash;
+                sessionStorage.removeItem('club-hash')
+            });
+
+        }, 1000);
     }
+}
 
-    $('#club-name').html(name);
-    $('#header-club-name').html(name);
+function pageNavClick(event) {
+    event.preventDefault();
+
+    if (this.hash !== "") {
+        var hash = this.hash;
+
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 'slow', function () {
+            window.location.hash = hash;
+        });
+    }
 }
 
 $(function () {
 
-    var toSelect = false;
-
-    $(".club-link").on("click", function (e) {
-        var name = $(this).data('name');
-        var link = $(this).data('link');
-
-        sessionStorage.setItem('club-link', link);
-        sessionStorage.setItem('club-name', name);
-
-        setClubName();
-        $('#clubs-modal').modal('hide');
-
-    });
-
-    var club = sessionStorage.getItem('club-name');
-
-    if (!club) {
-        $('#clubs-modal').modal('show');
-    }
-
     setClubName();
+    scrollToSection();
+
+    $('.navbar a.nav-link').click(pageNavClick);
+    $("a.page-nav-item").click(pageNavClick);
 
     $("#couponPhone").mask("+7(999) 999-99-99");
     $('#signupFormBtn').bind("click", announceNextClick);
@@ -22759,13 +22770,13 @@ $(function () {
             navText: ["", ""],
             dots: false,
             items: 1,
-            onTranslated: function(property) {
-                $( ".number-animation" ).removeClass("number-scale");
+            onTranslated: function (property) {
+                $(".number-animation").removeClass("number-scale");
 
                 var current = property.item.index;
                 var item = $(property.target).find(".owl-item").eq(current).find(".slide").data('number');
 
-                $('.'+ item).addClass('number-scale');
+                $('.' + item).addClass('number-scale');
             }
         };
 
@@ -22817,20 +22828,6 @@ $(function () {
         }
     });
 
-    $("a.page-nav-item").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            var duration = parseInt($(this).data("duration"));
-
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, duration, function () {
-                window.location.hash = hash;
-            });
-        }
-    });
-
     $("#scroll-control").click(function () {
         $("html, body").animate({ scrollTop: 0 }, "slow");
         return false;
@@ -22841,38 +22838,6 @@ $(function () {
             $('#scroll-control').fadeIn();
         } else {
             $('#scroll-control').fadeOut();
-        }
-    });
-
-    $('.open-modal-link').click(function (event) {
-        event.preventDefault();
-        var self = $(this);
-
-        toSelect = self.data('select');
-        var hash = self.data('hash');
-        var club = sessionStorage.getItem('club-link');
-
-        var currentURL = window.location.href;
-        currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
-
-        if (toSelect || !club) {
-            $('.club-link').each(function () {
-                var link = $(this).data('link');
-                $(this).attr("href", currentURL.concat('/', link, hash ? hash : ''));
-            });
-
-            $('#clubs-modal').modal('show');
-        } else {
-
-            if (window.location.pathname === ('/' + club)) {
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 2800, function () {
-                    window.location.hash = hash;
-                });
-            } else {
-                window.location.href = currentURL.concat('/', club, hash ? hash : '');
-            }
         }
     });
 });

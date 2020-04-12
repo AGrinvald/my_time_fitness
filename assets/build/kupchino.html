@@ -34,7 +34,7 @@
                     </svg>
                     <div class="b-left-inner">
                         <span>Ваш клуб</span>
-                        <button id='header-club-name' data-select='true' class="b-left-btn open-modal-link" type='button'>
+                        <button id='header-club-name' class="b-left-btn" type='button' data-toggle="modal" data-target="#clubs-modal">
                         </button>
                     </div>
                 </div>
@@ -53,33 +53,38 @@
                     img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
         </div>
         <div class="d-lg-none n-bottom">
-            <button class="btn btn-link open-modal-link" id='club-name' data-select='true'></button>
+            <button class="btn btn-link" id='club-name' data-select='true'></button>
         </div>
         <div class="collapse navbar-collapse justify-content-center" id="navbar">
-            <ul class="navbar-nav justify-content-lg-between w-100">
-                <li class="nav-item">
-                    <a class="nav-link active open-modal-link" href="#">Клубы</a>
+            <ul class="navbar-nav w-100">
+                <li class="nav-item nav-item-padded">
+                    <a class="nav-link active" href="#">MY<span class='text-white'>CLUB</span></a>
+                </li>
+                <li class="nav-item nav-item-padded">
+                    <a class="nav-link" href="#schedule">Расписание</a>
+                </li>
+                <li class="nav-item nav-item-padded">
+                    <a class="nav-link" href="#seasons">Тарифы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link open-modal-link" data-hash='#schedule' href="#">Расписание</a>
+                    <a class="nav-link" href="#gallery">Галерея</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link open-modal-link" data-hash='#seasons' href="#">Абонементы</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="promotions.html">Акции</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="kids.html">Детям</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="equipment.html">Оборудование</a>
-                </li>
+                <div class='nav-secondary'>
+                    <li class="nav-item">
+                        <a class="nav-small" href="promotions.html">Акции</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-small" href="kids.html">Детям</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-small" href="equipment.html">Оборудование</a>
+                    </li>
+                </div>
                 <li class="nav-item w-100 d-lg-none d-xs-inline text-center">
                     <button class="navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <img srcset="img/rectangle@1x.png 48w,
-                          img/rectangle@2x.png 96w,
-                          img/rectangle@3x.png 144w" sizes="48px" src="img/rectangle@1x.png" alt="Tooggler"></a>
+                              img/rectangle@2x.png 96w,
+                              img/rectangle@3x.png 144w" sizes="48px" src="img/rectangle@1x.png" alt="Tooggler"></a>
                 </li>
             </ul>
         </div>
@@ -165,25 +170,25 @@
                 justify-content-center
                 align-items-center">
                 <div class="d-flex w-100 flex-wrap justify-content-center justify-content-xl-between">
-                    <a href="#schedule" data-duration='2800' class="page-nav-item">
+                    <a href="#schedule" class="page-nav-item">
                         <div class="icon imb-bg-2">
                             &nbsp;
                         </div>
                         <p>РАСПИСАНИЕ</p>
                     </a>
-                    <a href="#seasons" data-duration='2400' class="page-nav-item">
+                    <a href="#seasons" class="page-nav-item">
                         <div class="icon imb-bg-4">
                             &nbsp;
                         </div>
                         <p>ТАРИФЫ</p>
                     </a>
-                    <a href="#services" data-duration='1800' class="page-nav-item">
+                    <a href="#services" class="page-nav-item">
                         <div class="icon imb-bg-3">
                             &nbsp;
                         </div>
                         <p>УСЛУГИ</p>
                     </a>
-                    <a href="#onmap" data-duration='3000' class="page-nav-item">
+                    <a href="#onmap" class="page-nav-item">
                         <div class="icon imb-bg-1">
                             &nbsp;
                         </div>
@@ -194,7 +199,7 @@
         </div>
     </section>
     <div class='d-flex flex-column'>
-        <section class="gallery-area order-0">
+        <section id="gallery" class="gallery-area order-0">
             <div class="container-fluid gallery-container">
                 <div class="container">
                     <h2 class="title">

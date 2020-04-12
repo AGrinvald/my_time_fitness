@@ -8140,7 +8140,7 @@ header {
   position: relative; }
   .h-top .inner {
     position: absolute; }
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       .h-top .inner {
         width: 100%;
         z-index: 2;
@@ -8151,6 +8151,9 @@ header {
     @media (min-width: 992px) {
       .h-top .container {
         max-width: 945px; } }
+    @media (min-width: 1200px) {
+      .h-top .container {
+        max-width: 1070px; } }
   .h-top .b-center {
     position: absolute;
     top: 50%;
@@ -8240,16 +8243,24 @@ nav.navbar {
       background-color: #26272b; }
       nav.navbar .navbar-nav {
         max-width: 945px;
+        position: relative;
         z-index: 6; }
+        nav.navbar .navbar-nav .nav-item-padded {
+          padding-right: 60px; } }
+      @media (min-width: 992px) and (min-width: 1200px) {
+        nav.navbar .navbar-nav .nav-item-padded {
+          padding-right: 80px; } }
+  @media (min-width: 992px) {
         nav.navbar .navbar-nav .nav-link {
           color: #ffffff;
           text-transform: uppercase;
           font-size: 14px;
           letter-spacing: 2.17px;
-          padding-top: 25px;
-          padding-bottom: 20px;
+          padding-top: 20px;
+          padding-bottom: 16px;
           font-family: Helvetica;
-          border-bottom: 4px solid #26272b; }
+          border-bottom: 4px solid #26272b;
+          text-align: center; }
           nav.navbar .navbar-nav .nav-link.active {
             color: #aacc23;
             border-bottom: 4px solid #aacc23; }
@@ -8257,6 +8268,28 @@ nav.navbar {
             color: #aacc23; }
           nav.navbar .navbar-nav .nav-link.disabled {
             color: rgba(255, 255, 255, 0.25); }
+        nav.navbar .navbar-nav .nav-secondary {
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 33px;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-align: center;
+              align-items: center;
+          width: 290px; } }
+      @media (min-width: 992px) and (min-width: 1200px) {
+        nav.navbar .navbar-nav .nav-secondary {
+          width: 240px; } }
+  @media (min-width: 992px) {
+        nav.navbar .navbar-nav .nav-small {
+          font-size: 14px;
+          color: #ffffff;
+          padding: 0 20px; } }
+      @media (min-width: 992px) and (min-width: 1200px) {
+        nav.navbar .navbar-nav .nav-small {
+          padding: 0 30px; } }
+  @media (min-width: 992px) {
         nav.navbar .navbar-nav .show > .nav-link,
         nav.navbar .navbar-nav .active > .nav-link,
         nav.navbar .navbar-nav .nav-link.show,
@@ -8284,7 +8317,7 @@ nav.navbar {
       nav.navbar .dropdown-menu {
         border: none;
         border-radius: 0;
-        background-color: #F0F0F0; }
+        background-color: #f0f0f0; }
         nav.navbar .dropdown-menu .dropdown-item {
           font-weight: lighter;
           color: #656565;
@@ -8293,7 +8326,7 @@ nav.navbar {
           padding-left: 50px;
           font-weight: 300; }
           nav.navbar .dropdown-menu .dropdown-item:hover {
-            background-color: #F0F0F0; }
+            background-color: #f0f0f0; }
           nav.navbar .dropdown-menu .dropdown-item:first-child {
             padding-top: 15px; }
       nav.navbar .nav-item {
@@ -8323,7 +8356,7 @@ nav.navbar {
             justify-content: space-between;
         padding: 15px; }
       nav.navbar .n-bottom {
-        background-color: #272B31;
+        background-color: #272b31;
         text-align: center; }
         nav.navbar .n-bottom .btn-link {
           color: #ffffff;
@@ -8817,359 +8850,349 @@ footer {
 
 /* BANNER AREA END*/
 /* PROMOTIONS AREA START*/
-.promotions-area h2 {
-  margin-bottom: 15px; }
+.promotions-area {
+  overflow: hidden; }
   @media (min-width: 992px) {
-    .promotions-area h2 {
-      padding-top: 80px; } }
+    .promotions-area {
+      margin-top: 80px; } }
   @media (max-width: 991.98px) {
-    .promotions-area h2 {
+    .promotions-area {
       margin-top: 40px; } }
-
-.promotions-area .mb-110 {
-  margin-bottom: 110px; }
-
-.promotions-area a:hover, .promotions-area a:focus {
-  text-decoration: none; }
-
-.promotions-area .promo-container {
-  margin-bottom: 50px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: end !important;
-      justify-content: flex-end !important;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-direction: row;
-      flex-direction: row; }
-
-@media (min-width: 992px) {
-  .promotions-area .pl-lg-25 {
-    padding-left: 25px; } }
-
-@media (min-width: 992px) {
-  .promotions-area .pr-lg-25 {
-    padding-right: 25px; } }
-
-.promotions-area h3 {
-  font-weight: bold;
-  margin-bottom: 0; }
-  @media (min-width: 992px) {
-    .promotions-area h3 {
-      font-size: 34px;
-      line-height: 1.29; } }
-  @media (max-width: 991.98px) {
-    .promotions-area h3 {
-      font-size: 20px; } }
-
-.promotions-area p {
-  font-weight: 300;
-  margin-bottom: 0; }
-  @media (min-width: 992px) {
-    .promotions-area p {
-      font-size: 24px; } }
-  @media (max-width: 991.98px) {
-    .promotions-area p {
-      font-size: 16px; } }
-  .promotions-area p b {
-    font-weight: 700; }
-
-.promotions-area .promo-1 {
-  background-image: url(../img/promo1.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative; }
-  .promotions-area .promo-1::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: url(../img/promo-dark-bg.svg);
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: right center;
-    z-index: 2; }
-  @media (min-width: 992px) {
-    .promotions-area .promo-1 {
-      height: 384px; } }
-  @media (max-width: 991.98px) {
-    .promotions-area .promo-1 {
-      height: 192px; } }
-  .promotions-area .promo-1 .promo-block {
+  .promotions-area h2 {
+    margin-bottom: 15px; }
+  .promotions-area .mb-110 {
+    margin-bottom: 110px; }
+  .promotions-area a:hover, .promotions-area a:focus {
+    text-decoration: none; }
+  .promotions-area .promo-container {
+    margin-bottom: 50px;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    z-index: 10;
-    color: #ffffff; }
-    @media (min-width: 992px) {
-      .promotions-area .promo-1 .promo-block {
-        width: 480px;
-        height: 50%; } }
-    @media (max-width: 991.98px) {
-      .promotions-area .promo-1 .promo-block {
-        width: 240px;
-        height: 55%; } }
-    @media (min-width: 992px) {
-      .promotions-area .promo-1 .promo-block h3 {
-        margin-top: 3%;
-        margin-left: 6%; } }
-    @media (max-width: 991.98px) {
-      .promotions-area .promo-1 .promo-block h3 {
-        margin-top: 5%; } }
-    @media (min-width: 992px) {
-      .promotions-area .promo-1 .promo-block p {
-        margin-left: 4%; } }
-
-.promotions-area .promo-2 {
-  background-image: url(../img/promo2.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative; }
-  .promotions-area .promo-2::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: url(../img/promo-green-sm.svg);
-    background-repeat: no-repeat;
-    background-position: right top;
-    z-index: 2; }
-    @media (min-width: 992px) {
-      .promotions-area .promo-2::before {
-        background-size: auto; } }
-    @media (max-width: 991.98px) {
-      .promotions-area .promo-2::before {
-        background-size: auto 95px;
-        background-position: 95% 10%; } }
+    -ms-flex-pack: end !important;
+        justify-content: flex-end !important;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: row;
+        flex-direction: row; }
   @media (min-width: 992px) {
-    .promotions-area .promo-2 {
-      height: 352px;
-      padding-right: 50px; } }
-  @media (max-width: 991.98px) {
-    .promotions-area .promo-2 {
-      height: 192px; } }
-  .promotions-area .promo-2 .promo-block {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    z-index: 10;
-    color: #ffffff; }
+    .promotions-area .pl-lg-25 {
+      padding-left: 25px; } }
+  @media (min-width: 992px) {
+    .promotions-area .pr-lg-25 {
+      padding-right: 25px; } }
+  .promotions-area h3 {
+    font-weight: bold;
+    margin-bottom: 0; }
     @media (min-width: 992px) {
-      .promotions-area .promo-2 .promo-block {
-        width: 325px;
-        height: 72%; } }
+      .promotions-area h3 {
+        font-size: 34px;
+        line-height: 1.29; } }
     @media (max-width: 991.98px) {
-      .promotions-area .promo-2 .promo-block {
-        width: 100%;
-        height: 85%; } }
+      .promotions-area h3 {
+        font-size: 20px; } }
+  .promotions-area p {
+    font-weight: 300;
+    margin-bottom: 0; }
     @media (min-width: 992px) {
-      .promotions-area .promo-2 .promo-block h3 {
-        font-size: 30px;
-        line-height: 32px;
-        margin-left: 13%; } }
+      .promotions-area p {
+        font-size: 24px; } }
     @media (max-width: 991.98px) {
-      .promotions-area .promo-2 .promo-block h3 {
-        width: 240px;
-        margin-top: 29px;
-        margin-left: auto; } }
-    .promotions-area .promo-2 .promo-block p {
-      position: relative; }
-      .promotions-area .promo-2 .promo-block p::before {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        -webkit-filter: blur(9px);
-                filter: blur(9px);
-        background-color: rgba(0, 0, 0, 0.63);
-        z-index: -1; }
+      .promotions-area p {
+        font-size: 16px; } }
+    .promotions-area p b {
+      font-weight: 700; }
+  .promotions-area .promo-1 {
+    background-image: url(../img/promo1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative; }
+    .promotions-area .promo-1::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../img/promo-dark-bg.svg);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: right center;
+      z-index: 2; }
+    @media (min-width: 992px) {
+      .promotions-area .promo-1 {
+        height: 384px; } }
+    @media (max-width: 991.98px) {
+      .promotions-area .promo-1 {
+        height: 192px; } }
+    .promotions-area .promo-1 .promo-block {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      z-index: 10;
+      color: #ffffff; }
       @media (min-width: 992px) {
-        .promotions-area .promo-2 .promo-block p {
-          text-align: right; } }
+        .promotions-area .promo-1 .promo-block {
+          width: 480px;
+          height: 50%; } }
       @media (max-width: 991.98px) {
-        .promotions-area .promo-2 .promo-block p {
-          width: 235px;
-          text-align: center;
-          margin-left: auto;
-          margin-right: auto; } }
-
-.promotions-area .promo-3 {
-  background-image: url(../img/promo3.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative; }
-  .promotions-area .promo-3::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: url(../img/promo-dark-sm.svg);
+        .promotions-area .promo-1 .promo-block {
+          width: 240px;
+          height: 55%; } }
+      @media (min-width: 992px) {
+        .promotions-area .promo-1 .promo-block h3 {
+          margin-top: 3%;
+          margin-left: 6%; } }
+      @media (max-width: 991.98px) {
+        .promotions-area .promo-1 .promo-block h3 {
+          margin-top: 5%; } }
+      @media (min-width: 992px) {
+        .promotions-area .promo-1 .promo-block p {
+          margin-left: 4%; } }
+  .promotions-area .promo-2 {
+    background-image: url(../img/promo2.jpg);
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    z-index: 2; }
+    position: relative; }
+    .promotions-area .promo-2::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../img/promo-green-sm.svg);
+      background-repeat: no-repeat;
+      background-position: right top;
+      z-index: 2; }
+      @media (min-width: 992px) {
+        .promotions-area .promo-2::before {
+          background-size: auto; } }
+      @media (max-width: 991.98px) {
+        .promotions-area .promo-2::before {
+          background-size: auto 95px;
+          background-position: 95% 10%; } }
     @media (min-width: 992px) {
-      .promotions-area .promo-3::before {
-        background-size: auto;
-        background-position: right top; } }
-    @media (max-width: 991.98px) {
-      .promotions-area .promo-3::before {
-        background-size: auto 95px;
-        background-position: 95% 10%; } }
-  @media (min-width: 992px) {
-    .promotions-area .promo-3 {
-      height: 352px;
-      padding-right: 50px; } }
-  @media (max-width: 991.98px) {
-    .promotions-area .promo-3 {
-      height: 192px; } }
-  .promotions-area .promo-3 .promo-block {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    z-index: 10;
-    color: #ffffff; }
-    @media (min-width: 992px) {
-      .promotions-area .promo-3 .promo-block {
-        width: 325px;
-        height: 72%; } }
-    @media (max-width: 991.98px) {
-      .promotions-area .promo-3 .promo-block {
-        width: 100%;
-        height: 85%; } }
-    @media (min-width: 992px) {
-      .promotions-area .promo-3 .promo-block h3 {
-        font-size: 30px;
-        line-height: 32px;
-        margin-left: 13%;
-        margin-top: 5%; } }
-    @media (max-width: 991.98px) {
-      .promotions-area .promo-3 .promo-block h3 {
-        margin-top: 39px;
-        margin-left: auto;
-        width: 235px;
+      .promotions-area .promo-2 {
+        height: 352px;
         padding-right: 50px; } }
-    .promotions-area .promo-3 .promo-block p {
-      font-weight: 300;
-      position: relative; }
-      .promotions-area .promo-3 .promo-block p::before {
-        content: "";
-        position: absolute;
-        right: 0;
-        top: -4%;
-        height: 100%;
-        width: 100%;
-        -webkit-filter: blur(20px);
-                filter: blur(20px);
-        background-color: rgba(0, 0, 0, 0.63);
-        z-index: -1; }
+    @media (max-width: 991.98px) {
+      .promotions-area .promo-2 {
+        height: 192px; } }
+    .promotions-area .promo-2 .promo-block {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      z-index: 10;
+      color: #ffffff; }
       @media (min-width: 992px) {
-        .promotions-area .promo-3 .promo-block p {
-          text-align: right; } }
+        .promotions-area .promo-2 .promo-block {
+          width: 325px;
+          height: 72%; } }
       @media (max-width: 991.98px) {
-        .promotions-area .promo-3 .promo-block p {
-          width: 222px;
-          line-height: 1;
-          text-align: center;
-          margin-left: auto;
-          margin-right: auto; } }
-
-.promotions-area .promo-4 {
-  background-image: url(../img/promo4.jpg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative; }
-  .promotions-area .promo-4::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: url(../img/promo-green-bg.svg);
+        .promotions-area .promo-2 .promo-block {
+          width: 100%;
+          height: 85%; } }
+      @media (min-width: 992px) {
+        .promotions-area .promo-2 .promo-block h3 {
+          font-size: 30px;
+          line-height: 32px;
+          margin-left: 13%; } }
+      @media (max-width: 991.98px) {
+        .promotions-area .promo-2 .promo-block h3 {
+          width: 240px;
+          margin-top: 29px;
+          margin-left: auto; } }
+      .promotions-area .promo-2 .promo-block p {
+        position: relative; }
+        .promotions-area .promo-2 .promo-block p::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          -webkit-filter: blur(9px);
+                  filter: blur(9px);
+          background-color: rgba(0, 0, 0, 0.63);
+          z-index: -1; }
+        @media (min-width: 992px) {
+          .promotions-area .promo-2 .promo-block p {
+            text-align: right; } }
+        @media (max-width: 991.98px) {
+          .promotions-area .promo-2 .promo-block p {
+            width: 235px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto; } }
+  .promotions-area .promo-3 {
+    background-image: url(../img/promo3.jpg);
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: right center;
-    z-index: 2; }
-  @media (min-width: 992px) {
-    .promotions-area .promo-4 {
-      height: 384px;
-      padding-right: 125px; } }
-  @media (max-width: 991.98px) {
-    .promotions-area .promo-4 {
-      height: 192px;
-      padding-right: 75px; } }
-  .promotions-area .promo-4 .promo-block {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-        flex-direction: column;
-    z-index: 10;
-    color: #ffffff; }
-    @media (min-width: 992px) {
-      .promotions-area .promo-4 .promo-block {
-        width: 385px;
-        height: 55%; } }
-    @media (max-width: 991.98px) {
-      .promotions-area .promo-4 .promo-block {
-        width: 200px;
-        height: 65%; } }
-    @media (min-width: 992px) {
-      .promotions-area .promo-4 .promo-block {
-        -ms-flex-pack: justify;
-            justify-content: space-between; } }
-    @media (max-width: 991.98px) {
-      .promotions-area .promo-4 .promo-block {
-        -ms-flex-pack: center;
-            justify-content: center; } }
-    .promotions-area .promo-4 .promo-block h3 {
-      line-height: 1; }
+    position: relative; }
+    .promotions-area .promo-3::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../img/promo-dark-sm.svg);
+      background-repeat: no-repeat;
+      z-index: 2; }
       @media (min-width: 992px) {
-        .promotions-area .promo-4 .promo-block h3 {
-          margin-top: 6%; } }
+        .promotions-area .promo-3::before {
+          background-size: auto;
+          background-position: right top; } }
       @media (max-width: 991.98px) {
-        .promotions-area .promo-4 .promo-block h3 {
-          width: 190px;
-          text-align: center;
+        .promotions-area .promo-3::before {
+          background-size: auto 95px;
+          background-position: 95% 10%; } }
+    @media (min-width: 992px) {
+      .promotions-area .promo-3 {
+        height: 352px;
+        padding-right: 50px; } }
+    @media (max-width: 991.98px) {
+      .promotions-area .promo-3 {
+        height: 192px; } }
+    .promotions-area .promo-3 .promo-block {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      z-index: 10;
+      color: #ffffff; }
+      @media (min-width: 992px) {
+        .promotions-area .promo-3 .promo-block {
+          width: 325px;
+          height: 72%; } }
+      @media (max-width: 991.98px) {
+        .promotions-area .promo-3 .promo-block {
+          width: 100%;
+          height: 85%; } }
+      @media (min-width: 992px) {
+        .promotions-area .promo-3 .promo-block h3 {
+          font-size: 30px;
+          line-height: 32px;
+          margin-left: 13%;
+          margin-top: 5%; } }
+      @media (max-width: 991.98px) {
+        .promotions-area .promo-3 .promo-block h3 {
+          margin-top: 39px;
           margin-left: auto;
-          margin-top: 3%; } }
-    .promotions-area .promo-4 .promo-block p {
-      line-height: 1; }
-      @media (min-width: 992px) {
-        .promotions-area .promo-4 .promo-block p {
-          width: 310px;
-          color: #000000; } }
-      @media (max-width: 991.98px) {
-        .promotions-area .promo-4 .promo-block p {
-          color: #ffffff;
-          text-align: center;
-          font-size: 15px;
-          letter-spacing: -0.58px;
-          margin: 6px 0; } }
+          width: 235px;
+          padding-right: 50px; } }
+      .promotions-area .promo-3 .promo-block p {
+        font-weight: 300;
+        position: relative; }
+        .promotions-area .promo-3 .promo-block p::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: -4%;
+          height: 100%;
+          width: 100%;
+          -webkit-filter: blur(20px);
+                  filter: blur(20px);
+          background-color: rgba(0, 0, 0, 0.63);
+          z-index: -1; }
+        @media (min-width: 992px) {
+          .promotions-area .promo-3 .promo-block p {
+            text-align: right; } }
+        @media (max-width: 991.98px) {
+          .promotions-area .promo-3 .promo-block p {
+            width: 222px;
+            line-height: 1;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto; } }
+  .promotions-area .promo-4 {
+    background-image: url(../img/promo4.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative; }
+    .promotions-area .promo-4::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: url(../img/promo-green-bg.svg);
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: right center;
+      z-index: 2; }
+    @media (min-width: 992px) {
+      .promotions-area .promo-4 {
+        height: 384px;
+        padding-right: 125px; } }
     @media (max-width: 991.98px) {
-      .promotions-area .promo-4 .promo-block button {
-        margin-left: 12%; } }
-
-.promotions-area a.promo-sale:hover, .promotions-area a.promo-sale:focus {
-  text-decoration: none; }
+      .promotions-area .promo-4 {
+        height: 192px;
+        padding-right: 75px; } }
+    .promotions-area .promo-4 .promo-block {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      z-index: 10;
+      color: #ffffff; }
+      @media (min-width: 992px) {
+        .promotions-area .promo-4 .promo-block {
+          width: 385px;
+          height: 55%; } }
+      @media (max-width: 991.98px) {
+        .promotions-area .promo-4 .promo-block {
+          width: 200px;
+          height: 65%; } }
+      @media (min-width: 992px) {
+        .promotions-area .promo-4 .promo-block {
+          -ms-flex-pack: justify;
+              justify-content: space-between; } }
+      @media (max-width: 991.98px) {
+        .promotions-area .promo-4 .promo-block {
+          -ms-flex-pack: center;
+              justify-content: center; } }
+      .promotions-area .promo-4 .promo-block h3 {
+        line-height: 1; }
+        @media (min-width: 992px) {
+          .promotions-area .promo-4 .promo-block h3 {
+            margin-top: 6%; } }
+        @media (max-width: 991.98px) {
+          .promotions-area .promo-4 .promo-block h3 {
+            width: 190px;
+            text-align: center;
+            margin-left: auto;
+            margin-top: 3%; } }
+      .promotions-area .promo-4 .promo-block p {
+        line-height: 1; }
+        @media (min-width: 992px) {
+          .promotions-area .promo-4 .promo-block p {
+            width: 310px;
+            color: #000000; } }
+        @media (max-width: 991.98px) {
+          .promotions-area .promo-4 .promo-block p {
+            color: #ffffff;
+            text-align: center;
+            font-size: 15px;
+            letter-spacing: -0.58px;
+            margin: 6px 0; } }
+      @media (max-width: 991.98px) {
+        .promotions-area .promo-4 .promo-block button {
+          margin-left: 12%; } }
+  .promotions-area a.promo-sale:hover, .promotions-area a.promo-sale:focus {
+    text-decoration: none; }
 
 /* PROMOTIONS AREA END*/
