@@ -9008,7 +9008,8 @@ footer {
     width: 100%;
     height: 100%;
     position: absolute;
-    left: 0; }
+    left: 0;
+    box-sizing: border-box; }
   .map-area a.club-info-btn {
     display: block;
     width: 152px;
@@ -9020,7 +9021,8 @@ footer {
     z-index: 10;
     width: 100%; }
     .map-area .inner-block .title {
-      font-weight: 600; }
+      font-weight: 600;
+      margin-bottom: 20px; }
     .map-area .inner-block h2,
     .map-area .inner-block p {
       margin-bottom: 0; }
@@ -9030,13 +9032,9 @@ footer {
       letter-spacing: 0.18px; }
     @media (min-width: 992px) {
       .map-area .inner-block {
-        height: 504px;
+        height: 480px;
         max-width: 408px;
         padding: 20px 25px 40px 25px; } }
-    @media (max-width: 991.98px) {
-      .map-area .inner-block {
-        margin-top: 45px;
-        max-width: 340px; } }
   .map-area .club-info-block {
     height: 504px;
     padding-left: 45px; }
@@ -9138,7 +9136,8 @@ footer {
       border-bottom: 3px solid #aacc23;
       font-size: 16px;
       letter-spacing: 0.16px;
-      padding-left: 25px; }
+      padding-left: 20px;
+      padding-right: 20px; }
       .map-area .club-tab.active {
         display: -ms-flexbox;
         display: flex;
@@ -9152,10 +9151,9 @@ footer {
     .map-area .map-block {
       height: 558px; }
     .map-area .title {
-      margin-bottom: 20px;
       font-size: 35px; }
     .map-area .brand-name {
-      font-family: 'MagistralC', roboto; }
+      font-family: "MagistralC", roboto; }
     .map-area .club-info-block {
       display: -ms-flexbox;
       display: flex; }
@@ -9166,22 +9164,20 @@ footer {
       margin-top: 20px;
       display: -ms-flexbox;
       display: flex;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
       -ms-flex-pack: justify;
           justify-content: space-between;
-      -ms-flex-align: center;
-          align-items: center;
       box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
       border-left: 5px solid #000;
-      padding: 9px 30px 10px 13px;
+      padding: 9px 20px 15px 13px;
       color: #000; }
+      .map-area .club-block.club-block-first {
+        height: 140px; }
+      .map-area .club-block.club-block-second {
+        height: 100px; }
       .map-area .club-block .f-small {
         font-size: 14px; }
-      .map-area .club-block:first-child {
-        height: 150px; }
-      .map-area .club-block:last-child {
-        height: 115px; }
       .map-area .club-block .number-bg {
         line-height: 38px;
         height: 42px;
@@ -9195,13 +9191,13 @@ footer {
         background-size: contain;
         background-position: center center;
         background-repeat: no-repeat; }
-      .map-area .club-block .desc h4 {
+      .map-area .club-block h4 {
         color: #aacc23;
         font-size: 18px;
         letter-spacing: 0.18px;
         font-weight: 500;
         margin-bottom: 3px; }
-      .map-area .club-block .desc p {
+      .map-area .club-block p {
         letter-spacing: 0.14px;
         font-weight: normal;
         margin-bottom: 0; } }
