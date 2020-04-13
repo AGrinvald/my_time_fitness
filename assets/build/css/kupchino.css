@@ -9010,11 +9010,6 @@ footer {
     position: absolute;
     left: 0;
     box-sizing: border-box; }
-  .map-area a.club-info-btn {
-    display: block;
-    width: 152px;
-    line-height: 44px;
-    margin-left: 20px; }
   .map-area .inner-block {
     position: relative;
     overflow: hidden;
@@ -9035,11 +9030,13 @@ footer {
         height: 480px;
         max-width: 405px;
         padding: 20px 25px 40px 25px; } }
+    @media (max-width: 991.98px) {
+      .map-area .inner-block {
+        margin-top: 45px;
+        max-width: 340px; } }
   @media (max-width: 991.98px) {
     .map-area .map-block {
       height: 650px; }
-    .map-area .club-info-block {
-      display: none; }
     .map-area .club-header {
       color: #ffffff;
       background-color: #2d2d2d;
