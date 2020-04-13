@@ -63,41 +63,8 @@
 
     @include media-breakpoint-up(lg) {
       height: 480px;
-      max-width: 408px;
+      max-width: 405px;
       padding: 20px 25px 40px 25px;
-    }
-  }
-
-  .club-info-block {
-    height: 504px;
-    padding-left: 45px;
-
-    .inner-div {
-      background-color: rgba(0, 0, 0, 0.5);
-      text-align: center;
-      width: 100%;
-      padding: 0 15px;
-      font-size: 15px;
-      letter-spacing: 0.06px;
-      color: #ffffff;
-
-      > div:not(:last-child) {
-        padding-right: 26px;
-      }
-
-      .info-top,
-      .info-bottom {
-        padding: 10px 0;
-      }
-
-      .info-top {
-        font-weight: 500;
-        border-bottom: 1px solid #d6ff34;
-      }
-
-      .info-bottom {
-        font-weight: 100;
-      }
     }
   }
 
@@ -240,9 +207,9 @@
       font-family: "MagistralC", roboto;
     }
 
-    .club-info-block {
-      display: flex;
-    }
+    // .club-info-block {
+    //   display: flex;
+    // }
 
     .club-block {
       display: block;
