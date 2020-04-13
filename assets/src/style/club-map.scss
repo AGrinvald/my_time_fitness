@@ -73,7 +73,7 @@
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(md) { 
     .map-block {
       height: 650px;
     }
