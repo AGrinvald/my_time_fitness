@@ -55,7 +55,7 @@
 
 /* TOP HEADER START */
 .h-top {
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(lg) {
     .inner {
       height: 585px;
 
@@ -72,7 +72,7 @@
         background-repeat: no-repeat;
         background-position-y: top;
         background-position-x: right;
-        z-index: 2;
+        z-index: 3;
       }
     }
   }

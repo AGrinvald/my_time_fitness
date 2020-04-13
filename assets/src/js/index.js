@@ -192,10 +192,10 @@ function init() {
     ymaps.geoQuery(akademicheskaya).addToMap(map);
     ymaps.geoQuery(kupchino).addToMap(map);
 
-    map.events.add('boundschange', function (event) {
-        console.log(map.getCenter());
-        console.log(map.getZoom());
-    });
+    // map.events.add('boundschange', function (event) {
+    //     console.log(map.getCenter());
+    //     console.log(map.getZoom());
+    // });
 }
 
 function getElementInsideContainer(containerID, childID) {
@@ -389,7 +389,6 @@ function toggleDropdown(e) {
     var link = sessionStorage.getItem('club-link');
 
     setTimeout(function () {
-        var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
 
         if (e.type == 'click' && club) {
             
@@ -404,13 +403,20 @@ function toggleDropdown(e) {
             var currentURL = window.location.href;
             currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
             window.location.href = currentURL.concat('/', link);
+        } 
+
+        var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
+
+        if(e.type !== 'click') {
+            _m.toggleClass('show', shouldOpen);
+            _d.toggleClass('show', shouldOpen);
         }
-
-        _m.toggleClass('show', shouldOpen);
-        _d.toggleClass('show', shouldOpen);
-        $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
-
+              
     }, e.type === 'mouseleave' ? 100 : 0);
+
+    if(club) {
+        return false;
+    }
 }
 
 function storeHash(e) {

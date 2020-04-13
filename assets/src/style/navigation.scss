@@ -22,6 +22,22 @@ nav.navbar {
         z-index: 101;
       }
     }
+
+    .nav-small {
+      color: $black;
+      text-transform: uppercase;
+      letter-spacing: 2.17px;
+      font-weight: 500;
+      padding: 0.5rem 15px;
+      display: block;
+      width: 100%;
+      text-align: left;
+
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+      
+    }
   }
 
   @include media-breakpoint-up(lg) {
@@ -30,7 +46,7 @@ nav.navbar {
     .navbar-nav {
       max-width: 945px;
       position: relative;
-      z-index: 6;
+      z-index: 10;
 
       .nav-item-padded {
         padding-right: 60px;
@@ -74,7 +90,7 @@ nav.navbar {
         width: 290px;
 
         @include media-breakpoint-up(xl) {
-          width: 240px;   
+          width: 240px;
         }
       }
 
@@ -82,6 +98,10 @@ nav.navbar {
         font-size: 14px;
         color: $white;
         padding: 0 20px;
+
+        &.active {
+          text-decoration: underline;
+        }
 
         @include media-breakpoint-up(xl) {
           padding: 0 30px;
@@ -150,15 +170,8 @@ nav.navbar {
     }
     .nav-item {
       padding-bottom: 15px;
-
-      &:first-child {
-        padding-top: 15px;
-      }
-
-      &:last-child {
-        padding-bottom: 25px;
-      }
     }
+
     .navbar-logo {
       font-family: "MagistralC";
       font-size: 26px;
@@ -224,7 +237,7 @@ nav.navbar {
       border-bottom-right-radius: 10px;
       border-bottom-left-radius: 10px;
       box-shadow: 0 8px 6px -6px black;
-      padding-top: 20px;
+      padding-top: 35px;
       position: relative;
 
       .nav-link {

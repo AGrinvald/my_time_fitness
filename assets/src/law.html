@@ -25,30 +25,68 @@
             <button class="btn btn-link open-modal-link" id='club-name' data-select='true'></button>
         </div>
         <div class="collapse navbar-collapse justify-content-center" id="navbar">
-            <ul class="navbar-nav justify-content-lg-between w-100">
-                <li class="nav-item">
-                    <a class="nav-link open-modal-link" href="#">Клубы</a>
+            <ul class="navbar-nav w-100">
+                <li class="nav-item dropdown nav-item-padded">
+                    <a class="nav-link nav-club-link" id='clubs-nav' href="#" aria-haspopup="true" aria-expanded="false"
+                        data-toggle="dropdown">
+                        <span class='text-primary'>MY</span>CLUB
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="clubs-nav">
+                        <a class="dropdown-item" href="komendanskiy.html">Комендантский</a>
+                        <a class="dropdown-item" href="akademicheskaya.html">Академическая</a>
+                        <a class="dropdown-item" href="kupchino.html">Купчино</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link open-modal-link" data-hash='#schedule' href="#">Расписание</a>
+                <li class="nav-item dropdown nav-item-padded">
+                    <a class="nav-link nav-club-link" id='schedule-nav' data-hash='#schedule' href="#"
+                        aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                        Расписание
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="schedule-nav">
+                        <a class="dropdown-item" data-hash='#schedule' href="komendanskiy.html">Комендантский</a>
+                        <a class="dropdown-item" data-hash='#schedule' href="akademicheskaya.html">Академическая</a>
+                        <a class="dropdown-item" data-hash='#schedule' href="kupchino.html">Купчино</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link open-modal-link" data-hash='#seasons' href="#">Абонементы</a>
+                <li class="nav-item dropdown nav-item-padded">
+                    <a class="nav-link nav-club-link" id='seasons-nav' data-hash='#seasons' href="#"
+                        aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                        Тарифы
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="seasons-nav">
+                        <a class="dropdown-item" data-hash='#seasons' href="komendanskiy.html">Комендантский</a>
+                        <a class="dropdown-item" data-hash='#seasons' href="akademicheskaya.html">Академическая</a>
+                        <a class="dropdown-item" data-hash='#seasons' href="kupchino.html">Купчино</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="promotions.html">Акции</a>
+                <li class="nav-item dropdown nav-item-padded">
+                    <a class="nav-link nav-club-link" id='gallery-nav' data-hash='#gallery' href="#"
+                        aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                        Галерея
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="gallery-nav">
+                        <a class="dropdown-item" data-hash='#gallery' href="komendanskiy.html">Комендантский</a>
+                        <a class="dropdown-item" data-hash='#gallery' href="akademicheskaya.html">Академическая</a>
+                        <a class="dropdown-item" data-hash='#gallery' href="kupchino.html">Купчино</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="kids.html">Детям</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="equipment.html">Оборудование</a>
-                </li>
+                <div class='nav-secondary'>
+                    <li class="nav-item">
+                        <a class="nav-small" href="promotions.html">Акции</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-small" href="kids.html">Детям</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-small" href="equipment.html">Оборудование</a>
+                    </li>
+                </div>
                 <li class="nav-item w-100 d-lg-none d-xs-inline text-center">
                     <button class="navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <img srcset="img/rectangle@1x.png 48w,
-                              img/rectangle@2x.png 96w,
-                              img/rectangle@3x.png 144w" sizes="48px" src="img/rectangle@1x.png" alt="Tooggler"></a>
+                                  img/rectangle@2x.png 96w,
+                                  img/rectangle@3x.png 144w" sizes="48px" src="img/rectangle@1x.png"
+                            alt="Tooggler"></a>
                 </li>
             </ul>
         </div>

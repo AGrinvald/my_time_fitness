@@ -18887,10 +18887,10 @@ $.fn.extend({
 
 function bossModalNextClick() {
 
-    var name = document.getElementById("bossContactName"); 
-    var phone = document.getElementById("bossContactPhone"); 
-    var email = document.getElementById("bossContactEmail"); 
-    var message = document.getElementById("bossContactMessage"); 
+    var name = document.getElementById("bossContactName");
+    var phone = document.getElementById("bossContactPhone");
+    var email = document.getElementById("bossContactEmail");
+    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -18916,17 +18916,6 @@ function bossModalNextClick() {
     }
 }
 
-function setClubName() {
-    var name = sessionStorage.getItem('club-name');
-
-    if (!name) {
-        name = 'Выберите ваш клуб'
-    }
-
-    $('#club-name').html(name);
-    $('#header-club-name').html(name);
-}
-
 function toggleDropdown(e) {
     var _d = $(e.target).closest('.dropdown'),
         _m = $('.dropdown-menu', _d);
@@ -18934,10 +18923,9 @@ function toggleDropdown(e) {
     var link = sessionStorage.getItem('club-link');
 
     setTimeout(function () {
-        var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
 
         if (e.type == 'click' && club) {
-
+            
             var hash = $(e.target).data('hash');
 
             if (!hash) {
@@ -18949,13 +18937,31 @@ function toggleDropdown(e) {
             var currentURL = window.location.href;
             currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
             window.location.href = currentURL.concat('/', link);
+        } 
+
+        var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
+
+        if(e.type !== 'click') {
+            _m.toggleClass('show', shouldOpen);
+            _d.toggleClass('show', shouldOpen);
         }
-
-        _m.toggleClass('show', shouldOpen);
-        _d.toggleClass('show', shouldOpen);
-        $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
-
+              
     }, e.type === 'mouseleave' ? 100 : 0);
+
+    if(club) {
+        return false;
+    }
+}
+
+function setClubName() {
+    var name = sessionStorage.getItem('club-name');
+
+    if (!name) {
+        name = 'Выберите ваш клуб'
+    }
+
+    $('#club-name').html(name);
+    $('#header-club-name').html(name);
 }
 
 $(function () {
@@ -18982,7 +18988,7 @@ $(function () {
 
     if (!club) {
         $('#clubs-modal').modal('show');
-    }
+    } 
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
         $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);

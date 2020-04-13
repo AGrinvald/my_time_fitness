@@ -50,49 +50,66 @@
                         img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
         </div>
         <div class="d-lg-none n-bottom">
-            <button class="btn btn-link" id='club-name' type="button" data-toggle="modal" data-target="#clubs-modal"></button>
+            <button class="btn btn-link" id='club-name' type="button" data-toggle="modal"
+                data-target="#clubs-modal"></button>
         </div>
         <div class="collapse navbar-collapse justify-content-center" id="navbar">
-            <ul class="navbar-nav justify-content-lg-between w-100">
-                <li class="nav-item dropdown">
-                    <a class="nav-link nav-club-link" href="#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
-                        Клубы
+            <ul class="navbar-nav w-100">
+                <li class="nav-item dropdown nav-item-padded">
+                    <a class="nav-link nav-club-link" id='clubs-nav' href="#" aria-haspopup="true"
+                        aria-expanded="false" data-toggle="dropdown" >
+                        <span class='text-primary'>MY</span>CLUB
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu" aria-labelledby="clubs-nav">
                         <a class="dropdown-item" href="komendanskiy.html">Комендантский</a>
                         <a class="dropdown-item" href="akademicheskaya.html">Академическая</a>
                         <a class="dropdown-item" href="kupchino.html">Купчино</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link nav-club-link" data-hash='#schedule' href="#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item dropdown nav-item-padded">
+                    <a class="nav-link nav-club-link" id='schedule-nav' data-hash='#schedule' href="#"
+                        aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" >
                         Расписание
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu" aria-labelledby="schedule-nav">
                         <a class="dropdown-item" data-hash='#schedule' href="komendanskiy.html">Комендантский</a>
                         <a class="dropdown-item" data-hash='#schedule' href="akademicheskaya.html">Академическая</a>
                         <a class="dropdown-item" data-hash='#schedule' href="kupchino.html">Купчино</a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link nav-club-link" data-hash='#seasons' href="#" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item dropdown nav-item-padded">
+                    <a class="nav-link nav-club-link" id='seasons-nav' data-hash='#seasons' href="#"
+                        aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" >
                         Тарифы
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu" aria-labelledby="seasons-nav">
                         <a class="dropdown-item" data-hash='#seasons' href="komendanskiy.html">Комендантский</a>
                         <a class="dropdown-item" data-hash='#seasons' href="akademicheskaya.html">Академическая</a>
                         <a class="dropdown-item" data-hash='#seasons' href="kupchino.html">Купчино</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="promotions.html">Акции</a>
+                <li class="nav-item dropdown nav-item-padded">
+                    <a class="nav-link nav-club-link" id='gallery-nav' data-hash='#gallery' href="#"
+                        aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" >
+                        Галерея
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="gallery-nav">
+                        <a class="dropdown-item" data-hash='#gallery' href="komendanskiy.html">Комендантский</a>
+                        <a class="dropdown-item" data-hash='#gallery' href="akademicheskaya.html">Академическая</a>
+                        <a class="dropdown-item" data-hash='#gallery' href="kupchino.html">Купчино</a>
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="kids.html">Детям</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="equipment.html">Оборудование</a>
-                </li>
+                <div class='nav-secondary'>
+                    <li class="nav-item">
+                        <a class="nav-small" href="promotions.html">Акции</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-small active" href="kids.html">Детям</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-small" href="equipment.html">Оборудование</a>
+                    </li>
+                </div>
                 <li class="nav-item w-100 d-lg-none d-xs-inline text-center">
                     <button class="navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbar"
                         aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <img srcset="img/rectangle@1x.png 48w,
@@ -224,7 +241,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="container season-container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
+            <div
+                class="container season-container d-flex flex-column flex-xl-row align-items-center align-items-xl-stretch justify-content-xl-between">
                 <div href="#" class="season-item season-item-pink">
                     <div class="tariff-b">
                         <p class="name">Разовый</p>
@@ -250,7 +268,7 @@
                         <p>
                         </p>
                         <button data-name="Разовый" data-price="500" data-style="pink-bg" data-toggle="modal"
-                        data-target="#kids-season-modal" class="btn btn-custom-lg btn-rounded">Выбрать</button>
+                            data-target="#kids-season-modal" class="btn btn-custom-lg btn-rounded">Выбрать</button>
                     </div>
                 </div>
                 <div class="season-item season-item-velvet">
@@ -277,8 +295,9 @@
                     <div class="desc mt-auto">
                         <p>
                         </p>
-                        <button type="button" data-name="Хочу еще!" data-price="500" data-style="velvet-bg" data-toggle="modal"
-                        data-target="#kids-season-modal" class="btn btn-custom-lg btn-rounded">Выбрать</button>
+                        <button type="button" data-name="Хочу еще!" data-price="500" data-style="velvet-bg"
+                            data-toggle="modal" data-target="#kids-season-modal"
+                            class="btn btn-custom-lg btn-rounded">Выбрать</button>
                     </div>
                 </div>
                 <div href="#" class="season-item season-item-orange">
@@ -305,8 +324,9 @@
                     <div class="desc mt-auto">
                         <p>
                         </p>
-                        <button type="button" data-name="Мне нравится!" data-style="orange-bg" data-price="500" data-toggle="modal"
-                        data-target="#kids-season-modal" class="btn btn-custom-lg btn-rounded">Выбрать</button>
+                        <button type="button" data-name="Мне нравится!" data-style="orange-bg" data-price="500"
+                            data-toggle="modal" data-target="#kids-season-modal"
+                            class="btn btn-custom-lg btn-rounded">Выбрать</button>
                     </div>
                 </div>
                 <div href="#" class="season-item season-item-blue">
@@ -333,10 +353,9 @@
                     <div class="desc mt-auto">
                         <p>
                         </p>
-                        <button type="button" data-toggle="modal"
-                        data-target="#kids-season-modal" 
-                        data-name="Люблю спорт!" data-style="blue-bg" data-price="500" 
-                        class="btn btn-custom-lg btn-rounded">Выбрать</button>
+                        <button type="button" data-toggle="modal" data-target="#kids-season-modal"
+                            data-name="Люблю спорт!" data-style="blue-bg" data-price="500"
+                            class="btn btn-custom-lg btn-rounded">Выбрать</button>
                     </div>
                 </div>
             </div>

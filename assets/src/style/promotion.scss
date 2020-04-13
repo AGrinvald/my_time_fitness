@@ -4,26 +4,26 @@ b {
 
 /* TOP HEADER START */
 .h-top {
-  @include media-breakpoint-up(xl) {
-      .inner {
-        height: 466px;
+  @include media-breakpoint-up(lg) {
+    .inner {
+      height: 585px;
 
-          &::before {
-              content: "";
-              top: -2%;
-              left: 50%;
-              transform: translateX(-50%);
-              position: absolute;
-              width: 1870px;
-              height: 466px;
-              background: url(../img/group-2.svg);
-              background-size: auto 100%;
-              background-repeat: no-repeat;
-              background-position-y: top;
-              background-position-x: right;
-              z-index: 8;
-          }
+      &::before {
+        content: "";
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        width: 1670px;
+        height: 293px;
+        background-image: url(../img/header-kids.svg);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position-y: top;
+        background-position-x: right;
+        z-index: 3;
       }
+    }
   }
 }
 /* TOP HEADER END */

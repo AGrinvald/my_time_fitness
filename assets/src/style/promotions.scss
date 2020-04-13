@@ -52,7 +52,7 @@
 
 /* TOP HEADER START */
 .h-top {
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(lg) {
       .inner {
         height: 466px;
 
