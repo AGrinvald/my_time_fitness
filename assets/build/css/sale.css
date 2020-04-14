@@ -8943,3 +8943,48 @@ b {
     max-width: 330px; }
 
 /* CONTACT BOSS END*/
+.fixed-controls {
+  position: fixed;
+  z-index: 999;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+.scroll-control {
+  background-image: url("../img/scroll.png");
+  background-size: 100%;
+  background-color: transparent;
+  border: 0;
+  display: none; }
+
+.whatsapp-control {
+  background-image: url("../img/whatsapp-control.png");
+  background-size: 100%;
+  background-color: transparent;
+  border: 0;
+  display: block; }
+
+@media (min-width: 992px) {
+  .scroll-control {
+    width: 66px;
+    height: 66px; }
+  .whatsapp-control {
+    width: 66px;
+    height: 66px; }
+  .fixed-controls {
+    width: 66px;
+    bottom: 35px;
+    right: 20px; } }
+
+@media (max-width: 991.98px) {
+  .scroll-control {
+    width: 40px;
+    height: 40px; }
+  .whatsapp-control {
+    width: 40px;
+    height: 40px; }
+  .fixed-controls {
+    width: 40px;
+    bottom: 35px;
+    right: 10px; } }
