@@ -18990,7 +18990,7 @@ function toggleDropdown(e) {
     setTimeout(function () {
 
         if (e.type == 'click' && club) {
-            
+
             var hash = $(e.target).data('hash');
 
             if (!hash) {
@@ -19002,20 +19002,30 @@ function toggleDropdown(e) {
             var currentURL = window.location.href;
             currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
             window.location.href = currentURL.concat('/', link);
-        } 
+        }
 
         var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
 
-        if(e.type !== 'click') {
+        if (e.type !== 'click') {
             _m.toggleClass('show', shouldOpen);
             _d.toggleClass('show', shouldOpen);
         }
-              
+
     }, e.type === 'mouseleave' ? 100 : 0);
 
-    if(club) {
+    if (club) {
         return false;
     }
+}
+
+function storeHash(e) {
+    var hash = $(e.target).data('hash');
+
+    if (!hash) {
+        hash = '';
+    }
+
+    sessionStorage.setItem('club-hash', hash);
 }
 
 $(function () {
@@ -19026,6 +19036,8 @@ $(function () {
         .on('mouseenter mouseleave', '.navbar .dropdown', toggleDropdown)
         .on('click', '.navbar a.nav-club-link', toggleDropdown);
 
+    $('.navbar a.dropdown-item').click(storeHash);
+    
     $(".club-link").on("click", function (e) {
         var name = $(this).data('name');
         var link = $(this).data('link');

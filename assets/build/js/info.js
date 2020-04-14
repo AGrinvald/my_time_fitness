@@ -18887,10 +18887,10 @@ $.fn.extend({
 
 function bossModalNextClick() {
 
-    var name = document.getElementById("bossContactName"); 
-    var phone = document.getElementById("bossContactPhone"); 
-    var email = document.getElementById("bossContactEmail"); 
-    var message = document.getElementById("bossContactMessage"); 
+    var name = document.getElementById("bossContactName");
+    var phone = document.getElementById("bossContactPhone");
+    var email = document.getElementById("bossContactEmail");
+    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -18936,7 +18936,7 @@ function toggleDropdown(e) {
     setTimeout(function () {
 
         if (e.type == 'click' && club) {
-            
+
             var hash = $(e.target).data('hash');
 
             if (!hash) {
@@ -18948,20 +18948,30 @@ function toggleDropdown(e) {
             var currentURL = window.location.href;
             currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
             window.location.href = currentURL.concat('/', link);
-        } 
+        }
 
         var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
 
-        if(e.type !== 'click') {
+        if (e.type !== 'click') {
             _m.toggleClass('show', shouldOpen);
             _d.toggleClass('show', shouldOpen);
         }
-              
+
     }, e.type === 'mouseleave' ? 100 : 0);
 
-    if(club) {
+    if (club) {
         return false;
     }
+}
+
+function storeHash(e) {
+    var hash = $(e.target).data('hash');
+
+    if (!hash) {
+        hash = '';
+    }
+
+    sessionStorage.setItem('club-hash', hash);
 }
 
 $(function () {
@@ -18971,6 +18981,8 @@ $(function () {
     $('body')
         .on('mouseenter mouseleave', '.navbar .dropdown', toggleDropdown)
         .on('click', '.navbar a.nav-club-link', toggleDropdown);
+
+    $('.navbar a.dropdown-item').click(storeHash);
 
     $(".club-link").on("click", function (e) {
         var name = $(this).data('name');
@@ -18983,7 +18995,7 @@ $(function () {
         $('#clubs-modal').modal('hide');
         return false;
     });
-   
+
     $("#bossContactPhone").mask("+7(999) 999-99-99");
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
