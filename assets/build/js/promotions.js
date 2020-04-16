@@ -18970,7 +18970,7 @@ function setClubName() {
         name = 'Выберите ваш клуб'
     }
 
-    $('#club-name').html(name);
+    $('#club-name').html('Ваш клуб <span class="n-bottom-club">' + name + '</span>');
     $('#header-club-name').html(name);
 }
 

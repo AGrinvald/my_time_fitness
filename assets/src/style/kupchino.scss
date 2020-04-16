@@ -73,7 +73,7 @@
         }
 
         @include media-breakpoint-down(xl) {
-            height: 600px;
+            height: 408px;
         }
 
         @include media-breakpoint-up(xl) {
@@ -123,7 +123,7 @@
                         left: 50%;
                         transform: translateX(-50%);
                         position: absolute;
-                        width: 1485px;
+                        width: 1535px;
                         height: 100%;
                         background-image: url(../img/rectagle-group.svg);
                         background-size: auto 100%;
@@ -151,22 +151,6 @@
                 flex: 0 1 65%;
             }
 
-            .quality-b {
-                font-size: 16px;
-                line-height: 30px;
-                color: $white;
-                font-weight: 500;
-                margin-top: 15px;
-
-                p {
-                    margin-bottom: 0;
-                }
-
-                a {
-                    color: #1eb8ff;
-                }
-            }
-
             .inner {
                 transform: rotate(3deg);
                 overflow: hidden;
@@ -187,8 +171,8 @@
 
                 @include media-breakpoint-up(xl) {
                     position: absolute;
-                    right: 76px;
-                    bottom: -131px;
+                    right: 60px;
+                    bottom: -150px;
                     width: 530px;
                     height: 270px;
                     z-index: 4;
@@ -208,14 +192,14 @@
                     h3 {
                         font-weight: bold;
                         color: #101929;
-                        
+
                         @include media-breakpoint-up(xl) {
                             font-size: 38px;
                             margin-bottom: 16px;
                             line-height: 1.16;
                             letter-spacing: 0.79px;
                         }
-    
+
                         @include media-breakpoint-down(lg) {
                             letter-spacing: -0.27px;
                             font-size: 20px;
@@ -231,7 +215,7 @@
                             margin-bottom: 13px;
                             letter-spacing: -0.6px;
                         }
-    
+
                         @include media-breakpoint-down(lg) {
                             letter-spacing: -0.27px;
                             font-size: 16px;
@@ -302,7 +286,7 @@
                 .price {
                     font-weight: 300;
                     color: $black;
-                    
+
                     b {
                         font-weight: 600;
                     }
@@ -355,19 +339,14 @@
 
         .info-div {
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             background-color: rgba(0, 0, 0, 0.5);
             text-align: center;
-            padding: 0 15px;
+            padding: 0 25px;
             padding-bottom: 5px;
             font-size: 15px;
             letter-spacing: 0.06px;
             color: #ffffff;
-            flex: 0 1 45%;
-
-            a {
-                color: #1eb8ff;
-            }
 
             .info-block {
                 &:not(:last-child) {
@@ -391,59 +370,118 @@
         }
 
         .subtitle-div {
-            flex: 0 1 55%;
-            font-family: "MagistralC";
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            color: $white;
+            position: relative;
+            z-index: 15;
 
             @include media-breakpoint-down(lg) {
-                flex: 0 1 35%;
+                max-width: 320px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            > div {
-                @include media-breakpoint-up(xl) {
-                    width: 76%;
-                }
+            @include media-breakpoint-up(xl) {
+                font-weight: 600;
+                margin-left: auto;
+                margin-right: -10px;
+                max-width: 490px;
             }
 
             h2 {
-                font-weight: bold;
+                text-align: center;
+                font-weight: 600;
                 color: $white;
+                text-transform: uppercase;
+                display: block;
+
+                .brand-name {
+                    font-family: "MagistralC", roboto;
+                }
 
                 @include media-breakpoint-up(xl) {
-                    margin-top: 60px;
-                    font-size: 28px;
+                    margin-top: 35px;
+                    font-size: 43px;
                     line-height: 1.25;
-                    letter-spacing: 0.67px;
+                    letter-spacing: 1.4px;
+                    margin-left: 75px;
                 }
 
                 @include media-breakpoint-down(lg) {
-                    margin-top: 30px;
-                    font-size: 23px;
+                    margin-top: 22px;
+                    font-size: 32px;
                     line-height: 1.25;
-                    letter-spacing: 0.48px;
+                    margin-bottom: 4px;
                 }
             }
 
-            p {
-                color: $white;
+            .address {
                 text-align: center;
-                margin-bottom: 0;
-
+                font-weight: 100;
                 @include media-breakpoint-up(xl) {
-                    margin-top: 25px;
-                    font-size: 26px;
-                    line-height: 1.31;
-                    letter-spacing: 1.44px;
+                    font-size: 20px;
+                    line-height: 23px;
+                    margin-left: 65px;
                 }
 
                 @include media-breakpoint-down(lg) {
-                    margin-top: 25px;
+                    font-size: 16px;
+                }
+            }
+
+            .line {
+                background-color: #d0d0d0;
+                height: 1px;
+
+                @include media-breakpoint-up(xl) {
+                    width: 460px;
+                    margin-left: 25px;
+                    line-height: 23px;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    width: 320px;
                     font-size: 20px;
-                    line-height: 1.31;
-                    letter-spacing: 1.11px;
+                }
+            }
+
+            .working-hours {
+                display: flex;
+                width: 100%;
+
+                font-weight: 100;
+                letter-spacing: 0.18px;
+
+                @include media-breakpoint-up(xl) {
+                    margin-top: 20px;
+                    font-size: 18px;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    margin-top: 10px;
+                    font-size: 14px;
+                }
+
+                &-item {
+                    flex-grow: 1;
+                }
+
+                h3 {
+                    font-size: 18px;
+                    color: $primary;
+                    font-weight: 500;
+                    line-height: 23px;
+                    letter-spacing: 0.18px;
+                    margin-bottom: 10px;
+                }
+
+                p {
+                    margin-bottom: 10px;
                 }
             }
         }
     }
-
 }
 /* BANNER AREA END*/

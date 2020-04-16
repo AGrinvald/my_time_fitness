@@ -370,7 +370,7 @@ function setClubName() {
     sessionStorage.setItem('club-link', 'kupchino.html');
     sessionStorage.setItem('club-name', 'Купчино');
 
-    $('#club-name').html('Купчино');
+    $('#club-name').html('Ваш клуб <span class="n-bottom-club">Купчино</span>');
     $('#header-club-name').html('Купчино');
 }
 

@@ -373,7 +373,7 @@ function setClubName() {
     sessionStorage.setItem('club-link', 'komendanskiy.html');
     sessionStorage.setItem('club-name', 'Коменданский');
 
-    $('#club-name').html('Коменданский');
+    $('#club-name').html('Ваш клуб <span class="n-bottom-club">Коменданский</span>');
     $('#header-club-name').html('Коменданский');
 }
 

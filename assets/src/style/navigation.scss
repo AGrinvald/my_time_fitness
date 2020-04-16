@@ -33,15 +33,19 @@ nav.navbar {
       width: 100%;
       text-align: left;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         text-decoration: none;
       }
-      
     }
   }
 
   @include media-breakpoint-up(lg) {
     background-color: $dark;
+
+    .nav-link-text {
+      color: $white;
+    }
 
     .navbar-nav {
       max-width: 945px;
@@ -81,30 +85,33 @@ nav.navbar {
       }
 
       .nav-secondary {
+        overflow: hidden;
         position: absolute;
-        right: 0;
+        right: 5px;
         top: 0;
         height: 33px;
         display: flex;
         align-items: center;
-        width: 290px;
+        width: 270px;
 
         @include media-breakpoint-up(xl) {
-          width: 240px;
+          width: 310px;
+          right: -125px;
         }
       }
 
       .nav-small {
         font-size: 14px;
         color: $white;
-        padding: 0 20px;
+        padding-right: 40px;
 
         &.active {
           text-decoration: underline;
         }
 
+
         @include media-breakpoint-up(xl) {
-          padding: 0 30px;
+            padding-right: 60px;
         }
       }
 
@@ -139,6 +146,10 @@ nav.navbar {
 
   @include media-breakpoint-down(md) {
     background: $white;
+
+    .nav-link-text {
+      color: $primary;
+    }
 
     .dropdown-toggle::after {
       float: right;
@@ -195,7 +206,8 @@ nav.navbar {
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding: 15px;
+      height: 56px;
+      padding: 0 15px;
     }
 
     .n-bottom {
@@ -207,22 +219,20 @@ nav.navbar {
         font-family: "Avenir Next Cyr";
         font-weight: lighter;
 
+        @include media-breakpoint-down(xs) {
+          position: relative;
+          left: 30px;
+        }
+
         &:hover,
         &:focus {
           text-decoration: none;
         }
+      }
 
-        &::after {
-          line-height: 14px;
-          color: $primary;
-          display: inline-block;
-          margin-left: 8px;
-          content: "";
-          border-top: $caret-width solid;
-          border-right: $caret-width solid transparent;
-          border-bottom: 0;
-          border-left: $caret-width solid transparent;
-        }
+      &-club {
+        color: $primary;
+        font-weight: 500;
       }
     }
 

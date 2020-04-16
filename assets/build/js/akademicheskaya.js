@@ -22683,7 +22683,7 @@ function setClubName() {
     sessionStorage.setItem('club-link', 'akademicheskaya.html');
     sessionStorage.setItem('club-name', 'Академическая');
 
-    $('#club-name').html('Академическая');
+    $('#club-name').html('Ваш клуб <span class="n-bottom-club">Академическая</span>');
     $('#header-club-name').html('Академическая');
 }
 

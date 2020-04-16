@@ -8356,16 +8356,13 @@ header {
           z-index: 2; } }
     @media (min-width: 992px) and (min-width: 1200px) {
       .h-top .inner:after {
-        width: 1453px; } }
+        width: 1470px; } }
   .h-top .container {
     position: relative;
     z-index: 10; }
     @media (min-width: 992px) {
       .h-top .container {
         max-width: 945px; } }
-    @media (min-width: 1200px) {
-      .h-top .container {
-        max-width: 1070px; } }
   .h-top .b-center {
     position: absolute;
     top: 50%;
@@ -8464,6 +8461,8 @@ nav.navbar {
   @media (min-width: 992px) {
     nav.navbar {
       background-color: #26272b; }
+      nav.navbar .nav-link-text {
+        color: #ffffff; }
       nav.navbar .navbar-nav {
         max-width: 945px;
         position: relative;
@@ -8492,28 +8491,30 @@ nav.navbar {
           nav.navbar .navbar-nav .nav-link.disabled {
             color: rgba(255, 255, 255, 0.25); }
         nav.navbar .navbar-nav .nav-secondary {
+          overflow: hidden;
           position: absolute;
-          right: 0;
+          right: 5px;
           top: 0;
           height: 33px;
           display: -ms-flexbox;
           display: flex;
           -ms-flex-align: center;
               align-items: center;
-          width: 290px; } }
+          width: 270px; } }
       @media (min-width: 992px) and (min-width: 1200px) {
         nav.navbar .navbar-nav .nav-secondary {
-          width: 240px; } }
+          width: 310px;
+          right: -125px; } }
   @media (min-width: 992px) {
         nav.navbar .navbar-nav .nav-small {
           font-size: 14px;
           color: #ffffff;
-          padding: 0 20px; }
+          padding-right: 40px; }
           nav.navbar .navbar-nav .nav-small.active {
             text-decoration: underline; } }
       @media (min-width: 992px) and (min-width: 1200px) {
         nav.navbar .navbar-nav .nav-small {
-          padding: 0 30px; } }
+          padding-right: 60px; } }
   @media (min-width: 992px) {
         nav.navbar .navbar-nav .show > .nav-link,
         nav.navbar .navbar-nav .active > .nav-link,
@@ -8534,6 +8535,8 @@ nav.navbar {
   @media (max-width: 991.98px) {
     nav.navbar {
       background: #ffffff; }
+      nav.navbar .nav-link-text {
+        color: #aacc23; }
       nav.navbar .dropdown-toggle::after {
         float: right;
         margin-left: none;
@@ -8575,26 +8578,25 @@ nav.navbar {
             align-items: center;
         -ms-flex-pack: justify;
             justify-content: space-between;
-        padding: 15px; }
+        height: 56px;
+        padding: 0 15px; }
       nav.navbar .n-bottom {
         background-color: #272b31;
         text-align: center; }
         nav.navbar .n-bottom .btn-link {
           color: #ffffff;
           font-family: "Avenir Next Cyr";
-          font-weight: lighter; }
+          font-weight: lighter; } }
+      @media (max-width: 991.98px) and (max-width: 575.98px) {
+        nav.navbar .n-bottom .btn-link {
+          position: relative;
+          left: 30px; } }
+  @media (max-width: 991.98px) {
           nav.navbar .n-bottom .btn-link:hover, nav.navbar .n-bottom .btn-link:focus {
             text-decoration: none; }
-          nav.navbar .n-bottom .btn-link::after {
-            line-height: 14px;
-            color: #aacc23;
-            display: inline-block;
-            margin-left: 8px;
-            content: "";
-            border-top: 0.3em solid;
-            border-right: 0.3em solid transparent;
-            border-bottom: 0;
-            border-left: 0.3em solid transparent; }
+        nav.navbar .n-bottom-club {
+          color: #aacc23;
+          font-weight: 500; }
       nav.navbar .navbar-nav {
         background: linear-gradient(to bottom, #f9f9f9 0%, #f9f9f9 35%, #e5e5e5 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#e5e5e5', GradientType=0 );
@@ -9610,7 +9612,8 @@ footer {
 
 @media (max-width: 1199.98px) {
   .page-nav-area .nav-container {
-    padding: 72px 0;
+    padding-top: 120px;
+    padding-bottom: 72px;
     background-image: url(../img/555Copy4.jpg), url(../img/555Copy4-copy.jpg);
     background-position: right top, left bottom;
     background-repeat: no-repeat, no-repeat; } }
@@ -10025,7 +10028,7 @@ footer {
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%);
       position: absolute;
-      width: 1680px;
+      width: 1770px;
       height: 472px;
       background-image: url(../img/group-6-copy.svg);
       background-size: auto 100%;
@@ -10445,7 +10448,7 @@ footer {
 .banner-area .banner-container {
   position: relative;
   width: 100%;
-  height: 600px; }
+  height: 408px; }
   .banner-area .banner-container .star {
     width: 14px;
     height: 14px; }
@@ -10489,7 +10492,7 @@ footer {
           -webkit-transform: translateX(-50%);
                   transform: translateX(-50%);
           position: absolute;
-          width: 1485px;
+          width: 1535px;
           height: 100%;
           background-image: url(../img/rectagle-group.svg);
           background-size: auto 100%;
@@ -10509,16 +10512,6 @@ footer {
     .banner-area .banner-container .promo-block {
       -ms-flex: 0 1 65%;
           flex: 0 1 65%; } }
-  .banner-area .banner-container .promo-block .quality-b {
-    font-size: 16px;
-    line-height: 30px;
-    color: #ffffff;
-    font-weight: 500;
-    margin-top: 15px; }
-    .banner-area .banner-container .promo-block .quality-b p {
-      margin-bottom: 0; }
-    .banner-area .banner-container .promo-block .quality-b a {
-      color: #1eb8ff; }
   .banner-area .banner-container .promo-block .inner {
     -webkit-transform: rotate(3deg);
             transform: rotate(3deg);
@@ -10540,8 +10533,8 @@ footer {
     @media (min-width: 1200px) {
       .banner-area .banner-container .promo-block .inner {
         position: absolute;
-        right: 76px;
-        bottom: -131px;
+        right: 60px;
+        bottom: -150px;
         width: 530px;
         height: 270px;
         z-index: 4;
@@ -10669,18 +10662,14 @@ footer {
           font-size: 14px; } }
   .banner-area .banner-container .info-div {
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    padding: 0 15px;
+    padding: 0 25px;
     padding-bottom: 5px;
     font-size: 15px;
     letter-spacing: 0.06px;
-    color: #ffffff;
-    -ms-flex: 0 1 45%;
-        flex: 0 1 45%; }
-    .banner-area .banner-container .info-div a {
-      color: #1eb8ff; }
+    color: #ffffff; }
     .banner-area .banner-container .info-div .info-block:not(:last-child) {
       margin-right: 30px; }
     .banner-area .banner-container .info-div .info-block > div:first-child {
@@ -10693,46 +10682,94 @@ footer {
       padding-bottom: 10px;
       font-weight: 100; }
   .banner-area .banner-container .subtitle-div {
-    -ms-flex: 0 1 55%;
-        flex: 0 1 55%;
-    font-family: "MagistralC"; }
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    color: #ffffff;
+    position: relative;
+    z-index: 15; }
     @media (max-width: 1199.98px) {
       .banner-area .banner-container .subtitle-div {
-        -ms-flex: 0 1 35%;
-            flex: 0 1 35%; } }
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto; } }
     @media (min-width: 1200px) {
-      .banner-area .banner-container .subtitle-div > div {
-        width: 76%; } }
+      .banner-area .banner-container .subtitle-div {
+        font-weight: 600;
+        margin-left: auto;
+        margin-right: -10px;
+        max-width: 490px; } }
     .banner-area .banner-container .subtitle-div h2 {
-      font-weight: bold;
-      color: #ffffff; }
-      @media (min-width: 1200px) {
-        .banner-area .banner-container .subtitle-div h2 {
-          margin-top: 40px;
-          font-size: 28px;
-          line-height: 1.25;
-          letter-spacing: 0.67px; } }
-      @media (max-width: 1199.98px) {
-        .banner-area .banner-container .subtitle-div h2 {
-          margin-top: 30px;
-          font-size: 23px;
-          line-height: 1.25;
-          letter-spacing: 0.48px; } }
-    .banner-area .banner-container .subtitle-div p {
-      color: #ffffff;
       text-align: center;
-      margin-bottom: 0; }
+      font-weight: 600;
+      color: #ffffff;
+      text-transform: uppercase;
+      display: block; }
+      .banner-area .banner-container .subtitle-div h2 .brand-name {
+        font-family: "MagistralC", roboto; }
       @media (min-width: 1200px) {
-        .banner-area .banner-container .subtitle-div p {
-          margin-top: 25px;
-          font-size: 26px;
-          line-height: 1.31;
-          letter-spacing: 1.44px; } }
+        .banner-area .banner-container .subtitle-div h2 {
+          margin-top: 35px;
+          font-size: 43px;
+          line-height: 1.25;
+          letter-spacing: 1.4px;
+          margin-left: 75px; } }
       @media (max-width: 1199.98px) {
-        .banner-area .banner-container .subtitle-div p {
-          margin-top: 25px;
+        .banner-area .banner-container .subtitle-div h2 {
+          margin-top: 22px;
+          font-size: 32px;
+          line-height: 1.25;
+          margin-bottom: 4px; } }
+    .banner-area .banner-container .subtitle-div .address {
+      font-weight: 100; }
+      @media (min-width: 1200px) {
+        .banner-area .banner-container .subtitle-div .address {
           font-size: 20px;
-          line-height: 1.31;
-          letter-spacing: 1.11px; } }
+          line-height: 23px;
+          margin-left: 65px;
+          text-align: center; } }
+      @media (max-width: 1199.98px) {
+        .banner-area .banner-container .subtitle-div .address {
+          font-size: 16px; } }
+    .banner-area .banner-container .subtitle-div .line {
+      background-color: #d0d0d0;
+      height: 1px; }
+      @media (min-width: 1200px) {
+        .banner-area .banner-container .subtitle-div .line {
+          width: 460px;
+          margin-left: 25px;
+          line-height: 23px; } }
+      @media (max-width: 1199.98px) {
+        .banner-area .banner-container .subtitle-div .line {
+          width: 320px;
+          font-size: 20px; } }
+    .banner-area .banner-container .subtitle-div .working-hours {
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      font-weight: 100;
+      letter-spacing: 0.18px; }
+      @media (min-width: 1200px) {
+        .banner-area .banner-container .subtitle-div .working-hours {
+          margin-top: 20px;
+          font-size: 18px; } }
+      @media (max-width: 1199.98px) {
+        .banner-area .banner-container .subtitle-div .working-hours {
+          margin-top: 10px;
+          font-size: 14px; } }
+      .banner-area .banner-container .subtitle-div .working-hours-item {
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+      .banner-area .banner-container .subtitle-div .working-hours h3 {
+        font-size: 18px;
+        color: #aacc23;
+        font-weight: 500;
+        line-height: 23px;
+        letter-spacing: 0.18px;
+        margin-bottom: 10px; }
+      .banner-area .banner-container .subtitle-div .working-hours p {
+        margin-bottom: 10px; }
 
 /* BANNER AREA END*/
