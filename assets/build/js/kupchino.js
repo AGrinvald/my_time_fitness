@@ -22434,9 +22434,9 @@ function init() {
     map.controls.remove('zoomControl');
     map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px' }, size: 'small' });
 
-    map.events.add('boundschange', function (event) {
-        console.log(map.getCenter());
-    });
+    // map.events.add('boundschange', function (event) {
+    //     console.log(map.getCenter());
+    // });
 
     map.events.add('sizechange', function (event) {
         var size = map.container.getSize();
