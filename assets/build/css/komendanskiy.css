@@ -10528,7 +10528,7 @@ footer {
         left: 50%;
         -webkit-transform: translateX(-50%) rotate(3deg);
                 transform: translateX(-50%) rotate(3deg);
-        bottom: -100px;
+        bottom: -120px;
         height: 235px;
         width: 355px;
         font-size: 15px;
