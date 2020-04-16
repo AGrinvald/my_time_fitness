@@ -161,10 +161,12 @@
                 background-image: url(../img/group-4.png);
 
                 @include media-breakpoint-down(lg) {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%) rotate(3deg);
+                    bottom: -100px;
                     height: 235px;
-                    max-width: 355px;
-                    margin-left: auto;
-                    margin-right: auto;
+                    width: 355px;
                     font-size: 15px;
                     letter-spacing: -0.32px;
                 }
@@ -418,7 +420,7 @@
             }
 
             .address {
-                font-weight: 100;
+                font-weight: 300;
                 
                 @include media-breakpoint-up(xl) {
                     font-size: 20px;
@@ -452,7 +454,7 @@
                 display: flex;
                 width: 100%;
 
-                font-weight: 100;
+                font-weight: 300;
                 letter-spacing: 0.18px;
 
                 @include media-breakpoint-up(xl) {
