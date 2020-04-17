@@ -10625,22 +10625,27 @@ footer {
       font-family: 'MagistralC', roboto;
       font-weight: bold; }
     .map-area .inner-block h2 {
-      letter-spacing: 0.4px;
-      text-align: center;
       margin-bottom: 0;
       font-weight: 600;
-      font-size: 35px; }
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+          justify-content: center; }
+      @media (min-width: 992px) {
+        .map-area .inner-block h2 {
+          font-size: 35px;
+          text-align: center;
+          letter-spacing: 0.4px;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap; } }
       @media (max-width: 991.98px) {
         .map-area .inner-block h2 {
-          display: -ms-flexbox;
-          display: flex;
           -ms-flex-align: center;
               align-items: center;
           height: 60px;
           background: rgba(43, 43, 43, 0.8);
-          -ms-flex-pack: center;
-              justify-content: center;
-          color: #ffffff; } }
+          color: #ffffff;
+          font-size: 20px; } }
     @media (min-width: 992px) {
       .map-area .inner-block {
         background-color: rgba(255, 255, 255, 0.9);

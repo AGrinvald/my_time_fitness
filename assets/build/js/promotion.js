@@ -18952,9 +18952,11 @@ function setClubName() {
 
     if (!name) {
         name = 'Выберите ваш клуб'
+        $('#club-name').html(name);
+    } else {
+        $('#club-name').html('Ваш клуб <span class="n-bottom-club">' + name + '</span>');
     }
 
-    $('#club-name').html('Ваш клуб <span class="n-bottom-club">' + name + '</span>');
     $('#header-club-name').html(name);
 }
 

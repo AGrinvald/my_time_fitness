@@ -192,10 +192,6 @@ function init() {
     ymaps.geoQuery(akademicheskaya).addToMap(map);
     ymaps.geoQuery(kupchino).addToMap(map);
 
-    // map.events.add('boundschange', function (event) {
-    //     console.log(map.getCenter());
-    //     console.log(map.getZoom());
-    // });
 }
 
 function getElementInsideContainer(containerID, childID) {
@@ -376,9 +372,11 @@ function setClubName() {
 
     if (!name) {
         name = 'Выберите ваш клуб'
+        $('#club-name').html(name);
+    } else {
+        $('#club-name').html('Ваш клуб <span class="n-bottom-club">' + name + '</span>');
     }
 
-    $('#club-name').html('Ваш клуб <span class="n-bottom-club">' + name + '</span>');
     $('#header-club-name').html(name);
 }
 
