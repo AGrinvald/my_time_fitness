@@ -8843,6 +8843,8 @@ footer {
 /* DESCRIPTION AREA START*/
 .description-area {
   padding-top: 50px; }
+  .description-area h2 {
+    font-size: 28px; }
   .description-area h4 {
     font-size: 34px;
     letter-spacing: 0.71px; }
