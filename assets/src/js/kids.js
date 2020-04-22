@@ -190,9 +190,9 @@ $(function () {
 
     var club = sessionStorage.getItem('club-name');
 
-    if (!club) {
-        $('#clubs-modal').modal('show');
-    }
+    // if (!club) {
+    //     $('#clubs-modal').modal('show');
+    // }
 
     $('#kids-request-modal').on('show.bs.modal', function (e) {
         $("#clientPhone").mask("+7(999) 999-99-99");

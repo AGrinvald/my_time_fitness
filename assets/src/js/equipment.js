@@ -134,12 +134,6 @@ $(function () {
         return false;
     });
 
-    var club = sessionStorage.getItem('club-name');
-
-    if (!club) {
-        $('#clubs-modal').modal('show');
-    }
-
     if ($(window).width() < 992) {
 
         (function () {

@@ -8269,6 +8269,16 @@ nav.navbar {
       background-color: #26272b; }
       nav.navbar .nav-link-text {
         color: #ffffff; }
+      nav.navbar .navbar-collapse {
+        position: relative; }
+        nav.navbar .navbar-collapse:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 25%;
+          height: 33px;
+          background-color: #507502; }
       nav.navbar .navbar-nav {
         max-width: 945px;
         position: relative;

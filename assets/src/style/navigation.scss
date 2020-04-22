@@ -47,6 +47,20 @@ nav.navbar {
       color: $white;
     }
 
+    .navbar-collapse {
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 25%;
+        height: 33px;
+        background-color: #507502;
+      }
+    }
+
     .navbar-nav {
       max-width: 945px;
       position: relative;

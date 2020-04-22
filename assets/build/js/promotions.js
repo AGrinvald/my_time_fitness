@@ -18998,11 +18998,11 @@ $(function () {
         return false;
     });
 
-    var club = sessionStorage.getItem('club-name');
+    // var club = sessionStorage.getItem('club-name');
 
-    if (!club) {
-        $('#clubs-modal').modal('show');
-    }
+    // if (!club) {
+    //     $('#clubs-modal').modal('show');
+    // }
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
         $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);

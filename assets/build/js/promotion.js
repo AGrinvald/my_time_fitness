@@ -19029,12 +19029,6 @@ $(function () {
         return false;
     });
 
-    var club = sessionStorage.getItem('club-name');
-
-    if (!club) {
-        $('#clubs-modal').modal('show');
-    }
-
     $("#bossContactPhone").mask("+7(999) 999-99-99");
     $("#promoPhone").mask("+7(999) 999-99-99");
 
