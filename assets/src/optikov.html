@@ -4,92 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/komendanskiy.min.css" media="all">
+    <link rel="stylesheet" href="css/optikov.min.css" media="all">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ba6c0504-43ff-4821-a7d3-7384f5e5cd00&lang=ru_RU&mode=debug"
         type="text/javascript">
         </script>
-    <title>Комендантский</title>
+    <title>Оптиков</title>
 </head>
 
 <body>
-    <header>
-        <div class="hex-c"></div>
-        <div class="h-top d-none d-lg-block">
-            <div class="inner"></div>
-            <div class="container text-center h-100">
-                <div class="b-center">
-                    <a href="index.html" class="logo">mytime<span class="text-primary">fitness</span></a>
-                </div>
-                <div class="b-right">
-                    <div>
-                        <a class="text-primary" href="tel:+7 (812) 337-07-07"><img height='25px' src="img/phone.svg"
-                                alt="иконка">&nbsp;+7 (812) 337-07-07</a>
-                    </div>
-                </div>
-                <div class="b-left">
-                    <svg width="21" height="28" viewBox="0 0 21 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M9.64929 26.6275L9.31663 27.0008L9.31694 27.0011L9.64929 26.6275ZM1 11.074L1.5 11.074V11.074H1ZM11.6007 26.6275L11.9332 27.001L11.9334 27.0008L11.6007 26.6275ZM9.31694 27.0011C9.68979 27.3328 10.1571 27.5 10.625 27.5V26.5C10.3958 26.5 10.1666 26.4185 9.98164 26.254L9.31694 27.0011ZM0.5 11.074C0.499846 15.116 2.65248 19.0337 4.7893 21.9383C6.93644 24.8569 9.12715 26.8319 9.31663 27.0008L9.98195 26.2542C9.81814 26.1082 7.68406 24.1856 5.5948 21.3457C3.49523 18.4917 1.49986 14.7901 1.5 11.074L0.5 11.074ZM10.6251 0.833374C5.036 0.833374 0.5 5.43254 0.5 11.074H1.5C1.5 5.97354 5.59951 1.83337 10.6251 1.83337V0.833374ZM20.75 11.074C20.75 5.43255 16.2142 0.833374 10.6251 0.833374V1.83337C15.6506 1.83337 19.75 5.97352 19.75 11.074H20.75ZM11.9334 27.0008C12.1229 26.8319 14.3135 24.8569 16.4606 21.9383C18.5974 19.0337 20.75 15.116 20.75 11.074H19.75C19.75 14.7901 17.7546 18.4917 15.6551 21.3457C13.5659 24.1856 11.4319 26.1083 11.2681 26.2542L11.9334 27.0008ZM10.625 27.5C11.0928 27.5 11.5604 27.3328 11.9332 27.001L11.2683 26.254C11.0835 26.4185 10.8543 26.5 10.625 26.5V27.5ZM10.6252 8.89177C11.7663 8.89177 12.6917 9.81678 12.6917 10.9584H13.6917C13.6917 9.26443 12.3185 7.89177 10.6252 7.89177V8.89177ZM8.55834 10.9584C8.55834 9.8168 9.48354 8.89177 10.6252 8.89177V7.89177C8.93136 7.89177 7.55834 9.26441 7.55834 10.9584H8.55834ZM10.6252 13.0251C9.48357 13.0251 8.55834 12.0998 8.55834 10.9584H7.55834C7.55834 12.6521 8.93132 14.0251 10.6252 14.0251V13.0251ZM12.6917 10.9584C12.6917 12.1 11.7663 13.0251 10.6252 13.0251V14.0251C12.3185 14.0251 13.6917 12.6523 13.6917 10.9584H12.6917Z"
-                            fill="#AACC23" />
-                    </svg>
-                    <div class="b-left-inner">
-                        <span>Ваш клуб</span>
-                        <button id='header-club-name' class="b-left-btn" type='button' data-toggle="modal" data-target="#clubs-modal">
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <nav class="navbar navbar-expand-lg">
-        <div class="d-lg-none n-top">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-logo" href="index.html">mytime<span class="text-primary">fitness</span></a>
-            <a class="btn-link" href="tel:+7 (812) 337-07-07"><img srcset="img/phone@1x.png 25w,
-                    img/phone@2x.png 50w,
-                    img/phone@3x.png 100w" sizes="25px" src="img/phone@1x.png" alt="Телефон"></a>
-        </div>
-        <div class="d-lg-none n-bottom">
-            <button class="btn btn-link" id='club-name' type="button" data-toggle="modal"
-            data-target="#clubs-modal"></button>
-        </div>
-        <div class="collapse navbar-collapse justify-content-center" id="navbar">
-            <ul class="navbar-nav w-100">
-                <li class="nav-item nav-item-padded">
-                    <a class="nav-link active" href="#">MY<span class='nav-link-text'>CLUB</span></a>
-                </li>
-                <li class="nav-item nav-item-padded">
-                    <a class="nav-link" href="#schedule">Расписание</a>
-                </li>
-                <li class="nav-item nav-item-padded">
-                    <a class="nav-link" href="#seasons">Тарифы</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#gallery">Галерея</a>
-                </li>
-                <div class='nav-secondary'>
-                    <li class="nav-item">
-                        <a class="nav-small" href="promotions.html">Акции</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-small" href="kids.html">Детям</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-small" href="equipment.html">Оборудование</a>
-                    </li>
-                </div>
-                <li class="nav-item w-100 d-lg-none d-xs-inline text-center">
-                    <button class="navbar-toggler" href="#" type="button" data-toggle="collapse" data-target="#navbar"
-                        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"> <img srcset="img/rectangle@1x.png 48w,
-                              img/rectangle@2x.png 96w,
-                              img/rectangle@3x.png 144w" sizes="48px" src="img/rectangle@1x.png" alt="Tooggler"></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    //= header.html
+    //= club-navigation.html
     <section class="banner-area">
         <div class="banner-container">
             <div class="container-fluid h-100">
@@ -116,10 +40,10 @@
                         <h2>
                             <span class='brand-name'>mytime<span class="text-primary">fitness</span></span>
                             <br />
-                            КОМЕНДАНТСКИЙ
+                            ОПТИКОВ
                         </h2>
                         <p class="address">
-                            ул. Ильюшина, 14, ТК Долгоозерный, 3 этаж
+                            ул. Оптиков, 30
                         </p>
                         <hr class='line' />
                         <div class='working-hours'>
@@ -239,7 +163,7 @@
             <div class="container-fluid worhouts-container">
                 <div class="container">
                     <h2 class="title">
-                        НАПРАВЛЕНИЯ ТРЕНИРОВОК КЛУБА У М. КОМЕНДАНТСКИЙ
+                        НАПРАВЛЕНИЯ ТРЕНИРОВОК КЛУБА НА УЛ. ОПТИКОВ
                     </h2>
                 </div>
                 <div class="workouts-block d-flex flex-wrap justify-content-center">
@@ -751,10 +675,10 @@
                         <div class="inner-block">
                             <div class='club-header'>
                                 <h2 class="title"><span class='brand-name'>mytime<span
-                                            class="text-primary">fitness</span></span> КОМЕНДАНТСКИЙ
+                                            class="text-primary">fitness</span></span> ОПТИКОВ
                                 </h2>
                                 <p class="mb-1">
-                                    ул. Ильюшина, 14, ТК Долгоозерный, 3 этаж
+                                    ул. Оптиков, 30
                                 </p>
                                 <p>
                                     mytimefitnessspb@gmail.com
@@ -823,313 +747,36 @@
             </div>
         </section>
     </div>
-    <footer>
-        <div class="container-fluid">
-            <div class="container f-top">
-                <div class="row mb-xl-5">
-                    <div class="col-xl-3 col-md-6 col-7 offset-xl-2 order-1">
-                        <ul>
-                            <li>
-                                Фитнес клубы
-                            </li>
-                            <li>
-                                <a href="akademicheskaya.html">Академический</a>
-                            </li>
-                            <li>
-                                <a href="kupchino.html">Купчино</a>
-                            </li>
-                            <li>
-                                <a href="komendanskiy.html">Комендантский</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-xs-12 order-3 order-xl-2 mt-4 mt-xl-0">
-                        <ul>
-                            <li>
-                                Информация
-                            </li>
-                            <li>
-                                <a href="payment.html">Правила оплаты</a>
-                            </li>
-                            <li>
-                                <a href="refund.html">Правила возврата</a>
-                            </li>
-                            <li>
-                                <a href="law.html">Юридическая информация</a>
-                            </li>
-                            <li>
-                                <a href="offer.html">Публичная оферта</a>
-                            </li>
-                            <li>
-                                <a href="rules.html">Правила клуба</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xl-2 col-5 order-2 order-xl-3">
-                        <ul>
-                            <li>
-                                <a href="promotions.html">Акции</a>
-                            </li>
-                            <li>
-                                <a href="vacancies.html">Вакансии</a>
-                            </li>
-                            <li>
-                                <a href="about.html">О компании</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-xl-2 col-12 f-border-bottom f-border-top order-4 mt-3 mt-xl-0">
-                        <ul class="py-3 py-xl-0">
-                            <li>
-                                <a href="index.html">mytime<span class="text-green">fitness</span>.ru</a>
-                            </li>
-                            <li>
-                                <a class="number" href="tel:+7 (812) 337-07-07">+7 (812) 337-07-07</a>
-                            </li>
-                            <li class="d-flex mt-2">
-                                <a href="#"><img src="img/group-7.svg" alt="whatsup link"></a>
-                                <a href="#" class="link-middle"><img src="img/group-8.svg" alt="instagram link"></a>
-                                <a href="#"><img src="img/group-9.svg" alt="vk link"></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row list">
-                    <div class="offset-xl-2 col-xl-3 col-12 pt-3 pt-xl-0">
-                        <a href="privacy-policy.html">Политика конфиденциальности</a>
-                    </div>
-                    <div class="col-xl-4 col-12">
-                        <a href="personal-data.html">Политика обработки персональных данных</a>
-                    </div>
-                    <div class="col-xl-3 col-12 pb-3 pb-xl-0 mb-xl-5">
-                        <a href="#" data-toggle="modal" data-target="#contact-boss-modal">Написать руководителю</a>
-                    </div>
-                </div>
-            </div>
-            <div class="f-bottom">
-                <div class="container h-100">
-                    <div class="row h-100 align-items-center">
-                        <div class="col-xl-10 offset-xl-2 col-12 f-border-top pt-3 pt-xl-0 pb-5 pb-xl-0">
-                            Вся информация носит справочный характер и не является публичной офертой, определяемой
-                            положениями
-                            статьи
-                            437 ГК РФ.
-                            Любое использование текстов, изображений и видео, расположенных на сайте, не допускается без
-                            письменного
-                            разрешения.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <div class='fixed-controls'>
-        <a class='whatsapp-control' href="https://api.whatsapp.com/send?phone=+7(812)337-07-07"></a>
-        <a class='scroll-control' href="#" id='scroll-control'></a>
-    </div>
+    //= footer.html
     <div class="modal fade" id="clubs-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <img srcset="img/cancel@1x.png 23w,
-                            img/cancel@2x.png 46w,
-                            img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
-                    </button>
-                    <h3 class='my-5'>ВЫБЕРИТЕ КЛУБ</h3>
-                    <a href="komendanskiy.html" 
-                    data-link='komendanskiy.html' 
-                    data-name='Комендантский'
-                    class="club-link d-flex mt-3">
-                        <img src="img/shape1.svg" alt="pointer">
-                        <div class="inner-div">
-                            <h5>
-                                Комендантский
-                            </h5>
-                            <p class="flex-grow-1">
-                                пр. Ильюшина, 14
-                                ТК «Долгоозерный», 3 этаж
-                            </p>
-                        </div>
-                    </a>
-                    <a href="akademicheskaya.html" 
-                    data-link='akademicheskaya.html'
-                    data-name='Академическая' 
-                    class="club-link d-flex mt-3">
-                        <img src="img/shape1.svg" alt="pointer">
-                        <div class="inner-div">
-                            <h5>
-                                Академическая
-                            </h5>
-                            <p>
-                                ул. Бутлерова 42 а, 3 этаж
-                                ТК Призма
-                            </p>
-                        </div>
-                    </a>
-                    <a href="kupchino.html" 
-                    data-link='kupchino.html'  
-                    data-name='Купчино'
-                    class="club-link d-flex mt-3">
-                        <img src="img/shape1.svg" alt="pointer">
-                        <div class="inner-div">
-                            <h5>
-                                Купчино
-                            </h5>
-                            <p>
-                                ул. Олеко Дундича 10/2
-                            </p>
-                        </div>
-                    </a>
-                    <a href="optikov.html" 
-                    data-link='optikov.html' 
-                    data-name='Оптиков'
-                    class="club-link d-flex mt-3 mb-5">
-                        <img src="img/shape1.svg" alt="pointer">
-                        <div class="inner-div">
-                            <h5>
-                                Оптиков
-                            </h5>
-                            <p class="flex-grow-1">
-                                ул. Оптиков, 30
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        //= clubs-modal.html
     </div>
     <div class="modal fade" id="promo-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <img srcset="img/cancel@1x.png 23w,
-                            img/cancel@2x.png 46w,
-                            img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
-                    </button>
-                    <div class="promo-form">
-                        <h3 class="text-center font-weight-bold my-5">ОСТАВИТЬ ЗАЯВКУ</h3>
-                        <form class="promo-form">
-                            <div class="form-row">
-                                <div class="input-group white custom-input-group mb-3 col-12">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">1</span>
-                                    </div>
-                                    <input type="text" id="promoName" class="form-control" placeholder="Введите Ваше имя" required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="input-group white custom-input-group mb-3 col-12">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">2</span>
-                                    </div>
-                                    <input type="text" id="promoPhone" class="form-control" placeholder="Введите Ваш телефон" required>
-                                </div>
-                            </div>
-                            <input type="hidden" name="selectedPromoClub" id='selectedPromoClub'>
-                            <div class="form-row">
-                                <button type="button" data-next="promo-confirm.html"
-                                    class="btn btn-custom-green-no-border btn-custom-block btn-rounded w-100 promo-btn">ОТПРАВИТЬ
-                                    ЗАЯВКУ</button>
-                            </div>
-                        </form>
-                        <p class="my-5">
-                            Нажимая на кнопку "Записаться",<br /> Вы соглашаетесь с <a href="#" class="text-primary d-inline">правилами
-                                обработки персональных данных.</a>
-                        </p>
-                    </div>
+                    //= promo-club-form.html
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                        <button type="button" class="close align-self-end" data-dismiss="modal" aria-label="Close">
-                                <img srcset="img/cancel@1x.png 23w,
-                                img/cancel@2x.png 46w,
-                                img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
-                        </button>
-                        <p>Уважаемый посетитель,
-                                Вы будете перенаправлены
-                                на сайт школы фитнес-тренеров
-                                VP Fitness!</p>
-                        <a class="btn btn-custom-dark btn-custom-lg btn-rounded" href="#">
-                            ПЕРЕЙТИ
-                        </a>
-                </div>
-            </div>
-        </div>
+        //= alert-modal.html
     </div>
     <div class="modal fade" id="contact-boss-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <img srcset="img/cancel@1x.png 23w,
-                            img/cancel@2x.png 46w,
-                            img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
-                    </button>
-                    <div class="promo-form">
-                        <h3 class="text-center font-weight-bold my-5">НАПИСАТЬ РУКОВОДИТЕЛЮ</h3>
-                        <form class="promo-form pt-3">
-                            <div class="row">
-                                <div class="col-12 col-lg-6">
-                                    <div class="form-row">
-                                        <div class="input-group white custom-input-group mb-3 col-12">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">1</span>
-                                            </div>
-                                            <input type="text" id="bossContactName" class="form-control" placeholder="Ваше имя и фамилия *" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="input-group white custom-input-group mb-3 col-12">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">2</span>
-                                            </div>
-                                            <input type="text" id="bossContactPhone" class="form-control" placeholder="Ваш телефон *"
-                                                required>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="input-group white custom-input-group col-12 mb-0">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">3</span>
-                                            </div>
-                                            <input type="email" id="bossContactEmail" class="form-control" placeholder="Ваш email"
-                                                required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-6 my-3 my-lg-0">
-                                    <textarea class="form-control" id="bossContactMessage" placeholder="Введите Ваше сообщение"></textarea>
-                                    <div class="text-right">* обязательные поля</div>
-                                </div>
-                            </div>
-                            <div class="row mt-5">
-                                <div class="col-12 text-center">
-                                    <button type="button" data-next="contact-boss-confirm.html"
-                                        class="btn btn-custom-green-no-border btn-custom-lg btn-rounded mx-auto w-100 promo-btn">ОТПРАВИТЬ</button>
-                                </div>
-                            </div>
-                        </form>
-                        <p class="my-5 rules-text mx-auto">
-                            Нажимая на кнопку "Записаться",<br /> Вы соглашаетесь с <a href="#" class="text-primary d-inline">правилами
-                                обработки персональных данных.</a>
-                        </p>
-                    </div>
+                    //= contact-boss-form.html
                 </div>
             </div>
         </div>
     </div>
-    <script src="js/komendanskiy.js"></script>
+    <script src="js/optikov.js"></script>
     <script type="text/javascript">
         ymaps.ready(init);
     </script>

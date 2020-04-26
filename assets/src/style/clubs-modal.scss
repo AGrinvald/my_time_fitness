@@ -21,9 +21,6 @@
       background-repeat: no-repeat;
     }
 
-    @include media-breakpoint-down(sm) {
-      height: 100%;
-    }
   }
   .modal-body {
     h3 {
@@ -36,7 +33,7 @@
     .club-link {
       color: $black;
       max-width: 328px;
-      height: 120px;
+      height: 100px;
       background-color: $white;
       margin: 0 auto;
       padding: 0 18px;

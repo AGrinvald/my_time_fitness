@@ -8669,9 +8669,6 @@ nav.navbar {
       background-image: url(../img/555-copy-7.png);
       background-position: -130% 0%;
       background-repeat: no-repeat; } }
-  @media (max-width: 767.98px) {
-    #clubs-modal .modal-content {
-      height: 100%; } }
 
 #clubs-modal .modal-body h3 {
   text-align: center;
@@ -8682,7 +8679,7 @@ nav.navbar {
 #clubs-modal .modal-body .club-link {
   color: #000000;
   max-width: 328px;
-  height: 120px;
+  height: 100px;
   background-color: #ffffff;
   margin: 0 auto;
   padding: 0 18px;

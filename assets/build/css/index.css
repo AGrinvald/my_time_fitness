@@ -8683,9 +8683,6 @@ nav.navbar {
       background-image: url(../img/555-copy-7.png);
       background-position: -130% 0%;
       background-repeat: no-repeat; } }
-  @media (max-width: 767.98px) {
-    #clubs-modal .modal-content {
-      height: 100%; } }
 
 #clubs-modal .modal-body h3 {
   text-align: center;
@@ -8696,7 +8693,7 @@ nav.navbar {
 #clubs-modal .modal-body .club-link {
   color: #000000;
   max-width: 328px;
-  height: 120px;
+  height: 100px;
   background-color: #ffffff;
   margin: 0 auto;
   padding: 0 18px;
@@ -10342,22 +10339,10 @@ footer {
 
 @media (min-width: 992px) {
   .promo-area .promo-block {
-    max-width: 528px;
+    max-width: 648px;
     margin-left: auto;
     margin-top: auto;
     margin-bottom: auto; } }
-
-@media (min-width: 992px) {
-  .promo-area .promo-block > div {
-    -ms-flex-direction: row;
-        flex-direction: row; } }
-
-@media (max-width: 991.98px) {
-  .promo-area .promo-block .schedule-link {
-    width: 100%;
-    margin: 25px 0;
-    font-size: 16px;
-    letter-spacing: 0.32px; } }
 
 .promo-area .promo-block .schedule-link > a {
   text-align: center;
@@ -10383,19 +10368,46 @@ footer {
   font-size: 15px;
   letter-spacing: 0.15px; }
 
+.promo-area .promo-block .club-blocks {
+  display: none;
+  margin-bottom: 15px; }
+  @media (min-width: 992px) {
+    .promo-area .promo-block .club-blocks {
+      display: -ms-flexbox;
+      display: flex;
+      max-width: 648px;
+      width: 100%;
+      overflow-x: auto; }
+      .promo-area .promo-block .club-blocks::-webkit-scrollbar {
+        height: 8px; }
+      .promo-area .promo-block .club-blocks::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: #8e8e8e; }
+      .promo-area .promo-block .club-blocks::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background-color: #ced0db; } }
+
+.promo-area .promo-block .club-block {
+  margin-bottom: 5px;
+  width: 162px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+  .promo-area .promo-block .club-block:not(:last-child) > div.time-block {
+    border-right: 1px solid #ffffff; }
+
 .promo-area .promo-block .time-block {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
       align-items: center;
   height: 48px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400; }
   .promo-area .promo-block .time-block:not(:first-child) {
     border-top: 1px solid #ffffff; }
 
 .promo-area .promo-block .club-title {
-  font-size: 18px;
+  font-size: 16px;
   background-color: #d8d8d8; }
 
 .promo-area .promo-block .right-border-lg > div:not(:last-child) {
@@ -10439,6 +10451,10 @@ footer {
       letter-spacing: 0.42px;
       margin-bottom: 20px;
       text-align: center; } }
+
+.promo-area .promo-block small {
+  font-size: 14px;
+  letter-spacing: 0.04em; }
 
 /* PROMO AREA END */
 /* TEAM AREA START */
@@ -10633,7 +10649,7 @@ footer {
     overflow: hidden;
     z-index: 10; }
     .map-area .inner-block .brand-name {
-      font-family: 'MagistralC', roboto;
+      font-family: "MagistralC", roboto;
       font-weight: bold; }
     .map-area .inner-block h2 {
       margin-bottom: 0;
@@ -10684,9 +10700,9 @@ footer {
       @media (min-width: 992px) {
         .map-area .inner-block .club-block {
           max-width: 344px;
-          padding: 12px 17px 15px 25px;
+          padding: 5px 19px 8px 25px;
           color: #000;
-          height: 88px;
+          height: 80px;
           box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
           background-color: #ffffff;
           border-left: 5px solid #000; }

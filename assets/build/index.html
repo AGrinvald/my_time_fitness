@@ -67,6 +67,7 @@
                       <a class="dropdown-item" href="komendanskiy.html">Комендантский</a>
                       <a class="dropdown-item" href="akademicheskaya.html">Академическая</a>
                       <a class="dropdown-item" href="kupchino.html">Купчино</a>
+                      <a class="dropdown-item" href="optikov.html">Оптиков</a>
                   </div>
               </li>
               <li class="nav-item dropdown nav-item-padded">
@@ -78,6 +79,7 @@
                       <a class="dropdown-item" data-hash='#schedule' href="komendanskiy.html">Комендантский</a>
                       <a class="dropdown-item" data-hash='#schedule' href="akademicheskaya.html">Академическая</a>
                       <a class="dropdown-item" data-hash='#schedule' href="kupchino.html">Купчино</a>
+                      <a class="dropdown-item" data-hash='#schedule' href="optikov.html">Оптиков</a>
                   </div>
               </li>
               <li class="nav-item dropdown nav-item-padded">
@@ -89,6 +91,7 @@
                       <a class="dropdown-item" data-hash='#seasons' href="komendanskiy.html">Комендантский</a>
                       <a class="dropdown-item" data-hash='#seasons' href="akademicheskaya.html">Академическая</a>
                       <a class="dropdown-item" data-hash='#seasons' href="kupchino.html">Купчино</a>
+                      <a class="dropdown-item" data-hash='#seasons' href="optikov.html">Оптиков</a>
                   </div>
               </li>
               <li class="nav-item dropdown nav-item-padded">
@@ -100,6 +103,7 @@
                       <a class="dropdown-item" data-hash='#gallery' href="komendanskiy.html">Комендантский</a>
                       <a class="dropdown-item" data-hash='#gallery' href="akademicheskaya.html">Академическая</a>
                       <a class="dropdown-item" data-hash='#gallery' href="kupchino.html">Купчино</a>
+                      <a class="dropdown-item" data-hash='#gallery' href="optikov.html">Оптиков</a>
                   </div>
               </li>
               <div class='nav-secondary'>
@@ -365,10 +369,27 @@
                       img/group-2-copy@2x.png 63w,
                       img/group-2-copy@3x.png 93w" sizes="31px" src="img/group-2-copy@1x.png" alt="Поинтер">
             </a>
+            <a href="#" id="optikov" data-name="Оптиков" data-link="optikov.html" data-area="3 000 м2"
+              data-hall="1 040 м2" data-programs="Бокс, кросфит, cycle…" data-id="3"
+              class="club-block club-block-lg d-none d-lg-flex">
+              <div class="number-bg">
+                4
+              </div>
+              <div class="desc">
+                <h4>Оптиков</h4>
+                <p>
+                  ул. Оптиков 30
+                </p>
+              </div>
+              <img class="ml-auto" srcset="img/group-2-copy@1x.png 31w,
+                    img/group-2-copy@2x.png 63w,
+                    img/group-2-copy@3x.png 93w" sizes="31px" src="img/group-2-copy@1x.png" alt="Поинтер">
+            </a>
             <div class="accordion d-lg-none" id="accordionMap">
               <div class="accordion-block">
-                <button class="accordion-btn map-accordion-btn collapsed" data-id="0" data-scroll='0' type="button"
-                  data-toggle="collapse" data-target="#mapOne" aria-expanded="false" aria-controls="mapOne">
+                <button id='komAccord' class="accordion-btn map-accordion-btn collapsed" data-id="0" data-scroll='0'
+                  type="button" data-toggle="collapse" data-target="#mapOne" aria-expanded="false"
+                  aria-controls="mapOne">
                   <div class='accordion-number'>
                     1
                   </div>
@@ -393,7 +414,8 @@
               </div>
               <div class="accordion-block">
                 <button class="accordion-btn map-accordion-btn collapsed" data-id="1" data-scroll='61' type="button"
-                  data-toggle="collapse" data-target="#mapTwo" aria-expanded="false" aria-controls="mapTwo">
+                  id='akadAccord' data-toggle="collapse" data-target="#mapTwo" aria-expanded="false"
+                  aria-controls="mapTwo">
                   <div class='accordion-number'>
                     2
                   </div>
@@ -417,7 +439,7 @@
                 </div>
               </div>
               <div class="accordion-block">
-                <button class="accordion-btn map-accordion-btn collapsed" data-id="2" data-scroll='70' type="button"
+                <button id='kupAccord' class="accordion-btn map-accordion-btn collapsed" data-id="2" data-scroll='122' type="button"
                   data-toggle="collapse" data-target="#mapThree" aria-expanded="false" aria-controls="mapThree">
                   <div class='accordion-number'>
                     3
@@ -437,6 +459,31 @@
                     <div class="accordion-body-text">
                       <span class='font-weight-bold mb-2'>ст.м. «Купчино»</span><br />
                       ул. Олеко Дундича 10/2
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-block">
+                <button id='optAccord' class="accordion-btn map-accordion-btn collapsed" data-id="3" data-scroll='130' type="button"
+                  data-toggle="collapse" data-target="#mapFour" aria-expanded="false" aria-controls="mapFour">
+                  <div class='accordion-number'>
+                    4
+                  </div>
+                  <span class='accordion-text'>Оптиков</span>
+                  <svg class='accordion-lens' width="31" height="32" viewBox="0 0 31 32"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="accordion-path"
+                      d="M8.11337 21.2259L0.471334 29.1469C-0.175177 29.8171 -0.153759 30.8855 0.518118 31.5298C0.834328 31.8332 1.25087 32 1.68996 32C2.15384 32 2.58673 31.8163 2.90858 31.4832L10.6087 23.502C12.7951 25.0333 15.3524 25.84 18.0359 25.84C25.1842 25.84 31 20.044 31 12.92C31 5.79602 25.1842 0 18.0359 0C10.8877 0 5.07188 5.79602 5.07188 12.92C5.07188 15.9691 6.14846 18.898 8.11337 21.2259ZM8 13C8 7.48588 12.4859 3 18 3C23.5141 3 28 7.48588 28 13C28 18.5141 23.5141 23 18 23C12.4859 23 8 18.5141 8 13Z" />
+                    <path
+                      d="M22.9398 8.06641C22.8769 7.99986 22.78 7.98132 22.698 8.01994L12.1242 12.9902C12.0392 13.0304 11.9895 13.1222 12.0019 13.2174C12.0142 13.3125 12.0856 13.388 12.1778 13.4037L16.9206 14.2178L17.4627 18.808C17.4742 18.9036 17.5456 18.9806 17.6383 18.9967C17.6504 18.9989 17.6623 19 17.6743 19C17.7541 19 17.8289 18.954 17.8651 18.8787L22.9779 8.31514C23.0179 8.23245 23.0026 8.13274 22.9398 8.06641Z"
+                      fill="#7F7F7F" />
+                  </svg>
+                </button>
+                <div id="mapFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionMap">
+                  <div class="accordion-body">
+                    <div class="accordion-body-text">
+                      <span class='font-weight-bold mb-2'>ст.м. «Беговая»</span><br />
+                      ул. Оптиков 30
                     </div>
                   </div>
                 </div>
@@ -509,156 +556,203 @@
         <div class="promo-block">
           <h2 class="title">Мастер-классы и расширенная сетка групповых программ</h2>
           <p>по фитнесу | TRX | Cycle </p>
-          <div class="d-lg-flex justify-content-lg-start">
-            <div class="right-border-lg d-none d-lg-block">
+          <div class="club-blocks">
+            <div class="club-block">
               <div class="time-block club-title justify-content-center bold">
                 Академическая
               </div>
               <div class="time-block dark-yellow">
-                <span class="ml-2 mr-2">ПН</span>Stretching
+                <span class="ml-2 mr-2">10:00</span>Stretching
               </div>
               <div class="time-block dark-green">
-                <span class="ml-2 mr-2">ВТ</span>Yoga
+                <span class="ml-2 mr-2">11:00</span>Yoga
               </div>
               <div class="time-block bright-yellow">
-                <span class="ml-2 mr-2">СР</span>Step
+                <span class="ml-2 mr-2">12:00</span>Step
               </div>
               <div class="time-block blue mb-0">
-                <span class="ml-2 mr-2">ЧТ</span>Кикбоксинг
+                <span class="ml-2 mr-2">13:00</span>Кикбоксинг
               </div>
-              <div class="schedule-link d-none d-lg-block">
+              <div class="schedule-link">
                 <a data-hash='#schedule' href="akademicheskaya.html">Смотреть расписание</a>
               </div>
             </div>
-            <div class="right-border-lg d-none d-lg-block">
+            <div class="club-block">
               <div class="time-block club-title justify-content-center bold">
                 Комендантский
               </div>
               <div class="time-block blue">
-                <span class="ml-2 mr-2">ПН</span>Кикбоксинг
+                <span class="ml-2 mr-2">10:00</span>Кикбоксинг
               </div>
               <div class="time-block bright-yellow">
-                <span class="ml-2 mr-2">ВТ</span>Pilates
+                <span class="ml-2 mr-2">11:00</span>Pilates
               </div>
               <div class="time-block bright-green">
-                <span class="ml-2 mr-2">СР</span>Teen Gym
+                <span class="ml-2 mr-2">12:00</span>Teen Gym
               </div>
               <div class="time-block dark-green mb-0">
-                <span class="ml-2 mr-2">ЧТ</span>Yoga
+                <span class="ml-2 mr-2">13:00</span>Yoga
               </div>
-              <div class="schedule-link d-none d-lg-block">
+              <div class="schedule-link">
                 <a data-hash='#schedule' href="komendanskiy.html">Смотреть расписание</a>
               </div>
             </div>
-            <div class='d-none d-lg-block'>
+            <div class='club-block'>
               <div class="time-block justify-content-center club-title bold">
                 Купчино
               </div>
               <div class="time-block bright-yellow">
-                <span class="ml-2 mr-2">ПН</span>Step
+                <span class="ml-2 mr-2">10:00</span>Step
               </div>
               <div class="time-block blue">
-                <span class="ml-2 mr-2">ВТ</span>Кикбоксинг
+                <span class="ml-2 mr-2">11:00</span>Кикбоксинг
               </div>
               <div class="time-block dark-yellow">
-                <span class="ml-2 mr-2">СР</span>Stretching
+                <span class="ml-2 mr-2">12:00</span>Stretching
               </div>
               <div class="time-block green mb-0">
-                <span class="ml-2 mr-2">ЧТ</span>Functional
+                <span class="ml-2 mr-2">13:00</span>Functional
               </div>
-              <div class="schedule-link d-none d-lg-block">
+              <div class="schedule-link">
                 <a data-hash='#schedule' href="kupchino.html">Смотреть расписание</a>
               </div>
             </div>
+            <div class='club-block'>
+              <div class="time-block justify-content-center club-title bold">
+                Оптиков
+              </div>
+              <div class="time-block bright-yellow">
+                <span class="ml-2 mr-2">10:00</span>Teen Gym
+              </div>
+              <div class="time-block blue">
+                <span class="ml-2 mr-2">11:00</span>Pilates
+              </div>
+              <div class="time-block dark-yellow">
+                <span class="ml-2 mr-2">12:00</span>Stretching
+              </div>
+              <div class="time-block green mb-0">
+                <span class="ml-2 mr-2">13:00</span>Кикбоксинг
+              </div>
+              <div class="schedule-link">
+                <a data-hash='#schedule' href="optikov.html">Смотреть расписание</a>
+              </div>
+            </div>
           </div>
-          <div class="accordion d-lg-none" id="accordionExample">
-            <div class="accordion-block">
-              <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
-                aria-expanded="false" aria-controls="collapseOne">
-                <div class='accordion-number'>
-                  1
+          <small class='d-none d-lg-block'>* Предложение не является публичной офертой. Точное расписание смотрите по
+            кнопке.</small>
+        </div>
+        <div class="accordion d-lg-none" id="accordionExample">
+          <div class="accordion-block">
+            <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="false" aria-controls="collapseOne">
+              <div class='accordion-number'>
+                1
+              </div>
+              <span class='accordion-text'>Комендантский</span>
+              <svg class='accordion-lens' width="31" height="32" viewBox="0 0 31 32" xmlns="http://www.w3.org/2000/svg">
+                <path class="accordion-path"
+                  d="M8.11337 21.2259L0.471334 29.1469C-0.175177 29.8171 -0.153759 30.8855 0.518118 31.5298C0.834328 31.8332 1.25087 32 1.68996 32C2.15384 32 2.58673 31.8163 2.90858 31.4832L10.6087 23.502C12.7951 25.0333 15.3524 25.84 18.0359 25.84C25.1842 25.84 31 20.044 31 12.92C31 5.79602 25.1842 0 18.0359 0C10.8877 0 5.07188 5.79602 5.07188 12.92C5.07188 15.9691 6.14846 18.898 8.11337 21.2259ZM8 13C8 7.48588 12.4859 3 18 3C23.5141 3 28 7.48588 28 13C28 18.5141 23.5141 23 18 23C12.4859 23 8 18.5141 8 13Z" />
+                <path
+                  d="M22.9398 8.06641C22.8769 7.99986 22.78 7.98132 22.698 8.01994L12.1242 12.9902C12.0392 13.0304 11.9895 13.1222 12.0019 13.2174C12.0142 13.3125 12.0856 13.388 12.1778 13.4037L16.9206 14.2178L17.4627 18.808C17.4742 18.9036 17.5456 18.9806 17.6383 18.9967C17.6504 18.9989 17.6623 19 17.6743 19C17.7541 19 17.8289 18.954 17.8651 18.8787L22.9779 8.31514C23.0179 8.23245 23.0026 8.13274 22.9398 8.06641Z"
+                  fill="#7F7F7F" />
+              </svg>
+            </button>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="accordion-body-text">
+                  <span class='font-weight-bold mb-2'>ст.м. «Комендантский проспект»</span><br />
+                  пр. Ильюшина, 14 <br /> ТК «Долгоозерный», 3 этаж
                 </div>
-                <span class='accordion-text'>Комендантский</span>
-                <svg class='accordion-lens' width="31" height="32" viewBox="0 0 31 32"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path class="accordion-path"
-                    d="M8.11337 21.2259L0.471334 29.1469C-0.175177 29.8171 -0.153759 30.8855 0.518118 31.5298C0.834328 31.8332 1.25087 32 1.68996 32C2.15384 32 2.58673 31.8163 2.90858 31.4832L10.6087 23.502C12.7951 25.0333 15.3524 25.84 18.0359 25.84C25.1842 25.84 31 20.044 31 12.92C31 5.79602 25.1842 0 18.0359 0C10.8877 0 5.07188 5.79602 5.07188 12.92C5.07188 15.9691 6.14846 18.898 8.11337 21.2259ZM8 13C8 7.48588 12.4859 3 18 3C23.5141 3 28 7.48588 28 13C28 18.5141 23.5141 23 18 23C12.4859 23 8 18.5141 8 13Z" />
-                  <path
-                    d="M22.9398 8.06641C22.8769 7.99986 22.78 7.98132 22.698 8.01994L12.1242 12.9902C12.0392 13.0304 11.9895 13.1222 12.0019 13.2174C12.0142 13.3125 12.0856 13.388 12.1778 13.4037L16.9206 14.2178L17.4627 18.808C17.4742 18.9036 17.5456 18.9806 17.6383 18.9967C17.6504 18.9989 17.6623 19 17.6743 19C17.7541 19 17.8289 18.954 17.8651 18.8787L22.9779 8.31514C23.0179 8.23245 23.0026 8.13274 22.9398 8.06641Z"
-                    fill="#7F7F7F" />
-                </svg>
-              </button>
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                <div class="accordion-body">
-                  <div class="accordion-body-text">
-                    <span class='font-weight-bold mb-2'>ст.м. «Комендантский проспект»</span><br />
-                    пр. Ильюшина, 14 <br /> ТК «Долгоозерный», 3 этаж
-                  </div>
-                  <a data-hash='#schedule'
-                    class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
-                    href="komendanskiy.html">Смотреть расписание</a>
-                </div>
+                <a data-hash='#schedule'
+                  class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
+                  href="komendanskiy.html">Смотреть расписание</a>
               </div>
             </div>
-            <div class="accordion-block">
-              <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="false" aria-controls="collapseTwo">
-                <div class='accordion-number'>
-                  2
+          </div>
+          <div class="accordion-block">
+            <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              <div class='accordion-number'>
+                2
+              </div>
+              <span class='accordion-text'>Академическая</span>
+              <svg class='accordion-lens' width="31" height="32" viewBox="0 0 31 32" xmlns="http://www.w3.org/2000/svg">
+                <path class="accordion-path"
+                  d="M8.11337 21.2259L0.471334 29.1469C-0.175177 29.8171 -0.153759 30.8855 0.518118 31.5298C0.834328 31.8332 1.25087 32 1.68996 32C2.15384 32 2.58673 31.8163 2.90858 31.4832L10.6087 23.502C12.7951 25.0333 15.3524 25.84 18.0359 25.84C25.1842 25.84 31 20.044 31 12.92C31 5.79602 25.1842 0 18.0359 0C10.8877 0 5.07188 5.79602 5.07188 12.92C5.07188 15.9691 6.14846 18.898 8.11337 21.2259ZM8 13C8 7.48588 12.4859 3 18 3C23.5141 3 28 7.48588 28 13C28 18.5141 23.5141 23 18 23C12.4859 23 8 18.5141 8 13Z" />
+                <path
+                  d="M22.9398 8.06641C22.8769 7.99986 22.78 7.98132 22.698 8.01994L12.1242 12.9902C12.0392 13.0304 11.9895 13.1222 12.0019 13.2174C12.0142 13.3125 12.0856 13.388 12.1778 13.4037L16.9206 14.2178L17.4627 18.808C17.4742 18.9036 17.5456 18.9806 17.6383 18.9967C17.6504 18.9989 17.6623 19 17.6743 19C17.7541 19 17.8289 18.954 17.8651 18.8787L22.9779 8.31514C23.0179 8.23245 23.0026 8.13274 22.9398 8.06641Z"
+                  fill="#7F7F7F" />
+              </svg>
+            </button>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="accordion-body-text">
+                  <span class='font-weight-bold mb-2'>ст.м. «Академическая»</span><br />
+                  ул. Бутлерова 42 а, 3 этаж ТК Призма
                 </div>
-                <span class='accordion-text'>Академическая</span>
-                <svg class='accordion-lens' width="31" height="32" viewBox="0 0 31 32"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path class="accordion-path"
-                    d="M8.11337 21.2259L0.471334 29.1469C-0.175177 29.8171 -0.153759 30.8855 0.518118 31.5298C0.834328 31.8332 1.25087 32 1.68996 32C2.15384 32 2.58673 31.8163 2.90858 31.4832L10.6087 23.502C12.7951 25.0333 15.3524 25.84 18.0359 25.84C25.1842 25.84 31 20.044 31 12.92C31 5.79602 25.1842 0 18.0359 0C10.8877 0 5.07188 5.79602 5.07188 12.92C5.07188 15.9691 6.14846 18.898 8.11337 21.2259ZM8 13C8 7.48588 12.4859 3 18 3C23.5141 3 28 7.48588 28 13C28 18.5141 23.5141 23 18 23C12.4859 23 8 18.5141 8 13Z" />
-                  <path
-                    d="M22.9398 8.06641C22.8769 7.99986 22.78 7.98132 22.698 8.01994L12.1242 12.9902C12.0392 13.0304 11.9895 13.1222 12.0019 13.2174C12.0142 13.3125 12.0856 13.388 12.1778 13.4037L16.9206 14.2178L17.4627 18.808C17.4742 18.9036 17.5456 18.9806 17.6383 18.9967C17.6504 18.9989 17.6623 19 17.6743 19C17.7541 19 17.8289 18.954 17.8651 18.8787L22.9779 8.31514C23.0179 8.23245 23.0026 8.13274 22.9398 8.06641Z"
-                    fill="#7F7F7F" />
-                </svg>
-              </button>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                <div class="accordion-body">
-                  <div class="accordion-body-text">
-                    <span class='font-weight-bold mb-2'>ст.м. «Академическая»</span><br />
-                    ул. Бутлерова 42 а, 3 этаж ТК Призма
-                  </div>
-                  <a data-hash='#schedule'
-                    class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
-                    href="akademicheskaya.html">Смотреть расписание</a>
-                </div>
+                <a data-hash='#schedule'
+                  class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
+                  href="akademicheskaya.html">Смотреть расписание</a>
               </div>
             </div>
-            <div class="accordion-block">
-              <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
-                aria-expanded="false" aria-controls="collapseThree">
-                <div class='accordion-number'>
-                  3
+          </div>
+          <div class="accordion-block">
+            <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              <div class='accordion-number'>
+                3
+              </div>
+              <span class='accordion-text'>Купчино</span>
+              <svg class='accordion-lens' width="31" height="32" viewBox="0 0 31 32" xmlns="http://www.w3.org/2000/svg">
+                <path class="accordion-path"
+                  d="M8.11337 21.2259L0.471334 29.1469C-0.175177 29.8171 -0.153759 30.8855 0.518118 31.5298C0.834328 31.8332 1.25087 32 1.68996 32C2.15384 32 2.58673 31.8163 2.90858 31.4832L10.6087 23.502C12.7951 25.0333 15.3524 25.84 18.0359 25.84C25.1842 25.84 31 20.044 31 12.92C31 5.79602 25.1842 0 18.0359 0C10.8877 0 5.07188 5.79602 5.07188 12.92C5.07188 15.9691 6.14846 18.898 8.11337 21.2259ZM8 13C8 7.48588 12.4859 3 18 3C23.5141 3 28 7.48588 28 13C28 18.5141 23.5141 23 18 23C12.4859 23 8 18.5141 8 13Z" />
+                <path
+                  d="M22.9398 8.06641C22.8769 7.99986 22.78 7.98132 22.698 8.01994L12.1242 12.9902C12.0392 13.0304 11.9895 13.1222 12.0019 13.2174C12.0142 13.3125 12.0856 13.388 12.1778 13.4037L16.9206 14.2178L17.4627 18.808C17.4742 18.9036 17.5456 18.9806 17.6383 18.9967C17.6504 18.9989 17.6623 19 17.6743 19C17.7541 19 17.8289 18.954 17.8651 18.8787L22.9779 8.31514C23.0179 8.23245 23.0026 8.13274 22.9398 8.06641Z"
+                  fill="#7F7F7F" />
+              </svg>
+            </button>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="accordion-body-text">
+                  <span class='font-weight-bold mb-2'>ст.м. «Купчино»</span><br />
+                  ул. Олеко Дундича 10/2
                 </div>
-                <span class='accordion-text'>Купчино</span>
-                <svg class='accordion-lens' width="31" height="32" viewBox="0 0 31 32"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path class="accordion-path"
-                    d="M8.11337 21.2259L0.471334 29.1469C-0.175177 29.8171 -0.153759 30.8855 0.518118 31.5298C0.834328 31.8332 1.25087 32 1.68996 32C2.15384 32 2.58673 31.8163 2.90858 31.4832L10.6087 23.502C12.7951 25.0333 15.3524 25.84 18.0359 25.84C25.1842 25.84 31 20.044 31 12.92C31 5.79602 25.1842 0 18.0359 0C10.8877 0 5.07188 5.79602 5.07188 12.92C5.07188 15.9691 6.14846 18.898 8.11337 21.2259ZM8 13C8 7.48588 12.4859 3 18 3C23.5141 3 28 7.48588 28 13C28 18.5141 23.5141 23 18 23C12.4859 23 8 18.5141 8 13Z" />
-                  <path
-                    d="M22.9398 8.06641C22.8769 7.99986 22.78 7.98132 22.698 8.01994L12.1242 12.9902C12.0392 13.0304 11.9895 13.1222 12.0019 13.2174C12.0142 13.3125 12.0856 13.388 12.1778 13.4037L16.9206 14.2178L17.4627 18.808C17.4742 18.9036 17.5456 18.9806 17.6383 18.9967C17.6504 18.9989 17.6623 19 17.6743 19C17.7541 19 17.8289 18.954 17.8651 18.8787L22.9779 8.31514C23.0179 8.23245 23.0026 8.13274 22.9398 8.06641Z"
-                    fill="#7F7F7F" />
-                </svg>
-              </button>
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <div class="accordion-body">
-                  <div class="accordion-body-text">
-                    <span class='font-weight-bold mb-2'>ст.м. «Купчино»</span><br />
-                    ул. Олеко Дундича 10/2
-                  </div>
-                  <a data-hash='#schedule'
-                    class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
-                    href="kupchino.html">Смотреть расписание</a>
+                <a data-hash='#schedule'
+                  class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
+                  href="kupchino.html">Смотреть расписание</a>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-block">
+            <button class="accordion-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
+              aria-expanded="false" aria-controls="collapseFour">
+              <div class='accordion-number'>
+                4
+              </div>
+              <span class='accordion-text'>Оптиков</span>
+              <svg class='accordion-lens' width="31" height="32" viewBox="0 0 31 32" xmlns="http://www.w3.org/2000/svg">
+                <path class="accordion-path"
+                  d="M8.11337 21.2259L0.471334 29.1469C-0.175177 29.8171 -0.153759 30.8855 0.518118 31.5298C0.834328 31.8332 1.25087 32 1.68996 32C2.15384 32 2.58673 31.8163 2.90858 31.4832L10.6087 23.502C12.7951 25.0333 15.3524 25.84 18.0359 25.84C25.1842 25.84 31 20.044 31 12.92C31 5.79602 25.1842 0 18.0359 0C10.8877 0 5.07188 5.79602 5.07188 12.92C5.07188 15.9691 6.14846 18.898 8.11337 21.2259ZM8 13C8 7.48588 12.4859 3 18 3C23.5141 3 28 7.48588 28 13C28 18.5141 23.5141 23 18 23C12.4859 23 8 18.5141 8 13Z" />
+                <path
+                  d="M22.9398 8.06641C22.8769 7.99986 22.78 7.98132 22.698 8.01994L12.1242 12.9902C12.0392 13.0304 11.9895 13.1222 12.0019 13.2174C12.0142 13.3125 12.0856 13.388 12.1778 13.4037L16.9206 14.2178L17.4627 18.808C17.4742 18.9036 17.5456 18.9806 17.6383 18.9967C17.6504 18.9989 17.6623 19 17.6743 19C17.7541 19 17.8289 18.954 17.8651 18.8787L22.9779 8.31514C23.0179 8.23245 23.0026 8.13274 22.9398 8.06641Z"
+                  fill="#7F7F7F" />
+              </svg>
+            </button>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="accordion-body-text">
+                  <span class='font-weight-bold mb-2'>ст.м. «Беговая»</span><br />
+                  ул. Оптиков, д. 30
                 </div>
+                <a data-hash='#schedule'
+                  class='btn btn-custom-lg btn-rounded btn-custom-dark-text-white accordion-body-btn'
+                  href="optikov.html">Смотреть расписание</a>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section>
   <section class="workouts-area">
@@ -897,7 +991,7 @@
                 <a href="komendanskiy.html" 
                 data-link='komendanskiy.html' 
                 data-name='Комендантский'
-                class="club-link d-flex mt-4">
+                class="club-link d-flex mt-3">
                     <img src="img/shape1.svg" alt="pointer">
                     <div class="inner-div">
                         <h5>
@@ -912,7 +1006,7 @@
                 <a href="akademicheskaya.html" 
                 data-link='akademicheskaya.html'
                 data-name='Академическая' 
-                class="club-link d-flex mt-4">
+                class="club-link d-flex mt-3">
                     <img src="img/shape1.svg" alt="pointer">
                     <div class="inner-div">
                         <h5>
@@ -927,7 +1021,7 @@
                 <a href="kupchino.html" 
                 data-link='kupchino.html'  
                 data-name='Купчино'
-                class="club-link d-flex mt-4 mb-5">
+                class="club-link d-flex mt-3">
                     <img src="img/shape1.svg" alt="pointer">
                     <div class="inner-div">
                         <h5>
@@ -935,6 +1029,20 @@
                         </h5>
                         <p>
                             ул. Олеко Дундича 10/2
+                        </p>
+                    </div>
+                </a>
+                <a href="optikov.html" 
+                data-link='optikov.html' 
+                data-name='Оптиков'
+                class="club-link d-flex mt-3 mb-5">
+                    <img src="img/shape1.svg" alt="pointer">
+                    <div class="inner-div">
+                        <h5>
+                            Оптиков
+                        </h5>
+                        <p class="flex-grow-1">
+                            ул. Оптиков, 30
                         </p>
                     </div>
                 </a>

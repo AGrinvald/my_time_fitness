@@ -44,7 +44,8 @@ var mapSettingsCollection = {
 var centerPoints = [
     [60.0066198557117, 30.229417072509765],
     [60.0085957593716, 30.38656056396479],
-    [59.82606894374578, 30.377313508422816]
+    [59.82606894374578, 30.377313508422816],
+    [59.99793695032447, 30.200749622558583]
 ];
 
 var mapSettings = null;
@@ -147,6 +148,15 @@ function init() {
     }
     );
 
+    var optikov = new ymaps.Placemark(
+        [59.99910206407877,30.220116499999992], {
+        id: 3,
+        hintContent: 'Санкт-Петербург м.Беговая, ул. Оптиков, 30'
+    }, {
+        iconLayout: createLayout(1)
+    }
+    );
+
     map.controls.remove('geolocationControl');
     map.controls.remove('searchControl');
     map.controls.remove('trafficControl');
@@ -158,15 +168,35 @@ function init() {
     map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px' }, size: 'small' });
 
     kupchino.events.add(['click'], function (e) {
-        $('#kupchino').click();
+        if (width >= 977) {
+            $('#kupchino').click();
+        } else {
+            $('#kupAccord').click();
+        }   
     });
 
     akademicheskaya.events.add(['click'], function (e) {
-        $('#akademicheskaya').click();
+        if (width >= 977) {
+            $('#akademicheskaya').click();
+        } else {
+            $('#akadAccord').click();
+        }   
     });
 
     komendanskiy.events.add(['click'], function (e) {
-        $('#komendanskiy').click();
+        if (width >= 977) {
+            $('#komendanskiy').click();
+        } else {
+            $('#komAccord').click();
+        }   
+    });
+
+    optikov.events.add(['click'], function (e) {
+        if (width >= 977) {
+            $('#optikov').click();
+        } else {
+            $('#optAccord').click();
+        } 
     });
 
     map.events.add('sizechange', function (event) {
@@ -188,10 +218,14 @@ function init() {
         }
     });
 
+    // map.events.add('boundschange', function (event) {
+    //     console.log(map.getCenter());
+    // });
+
     ymaps.geoQuery(komendanskiy).addToMap(map);
     ymaps.geoQuery(akademicheskaya).addToMap(map);
     ymaps.geoQuery(kupchino).addToMap(map);
-
+    ymaps.geoQuery(optikov).addToMap(map);
 }
 
 function getElementInsideContainer(containerID, childID) {

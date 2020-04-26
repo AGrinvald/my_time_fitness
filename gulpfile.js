@@ -25,7 +25,7 @@ var path = {
     'assets/src/js/kids.js', 'assets/src/js/kupchino.js', 
     'assets/src/js/komendanskiy.js', 'assets/src/js/promotions.js',
     'assets/src/js/promotion.js', 'assets/src/js/info.js', 
-    'assets/src/js/equipment.js'
+    'assets/src/js/equipment.js','assets/src/js/optikov.js'
    ],
 
     style: ['assets/src/style/index.scss', 'assets/src/style/akademicheskaya.scss',
@@ -34,7 +34,8 @@ var path = {
     'assets/src/style/fitness-plus-spa.scss','assets/src/style/first-promo.scss', 
     'assets/src/style/second-promo.scss', 
     'assets/src/style/fourth-promo.scss', 'assets/src/style/fifth-promo.scss', 
-    'assets/src/style/equipment.scss', 'assets/src/style/info.scss'
+    'assets/src/style/equipment.scss', 'assets/src/style/info.scss',
+    'assets/src/style/optikov.scss'
   ],
 
     img: 'assets/src/img/**/*.*',

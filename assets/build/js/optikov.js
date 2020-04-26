@@ -18435,6 +18435,456 @@ return Popper;
 })));
 //# sourceMappingURL=toast.js.map
 
+// импортируем jQuery Masked Input
+(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node/CommonJS
+        factory(require('jquery'));
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
+
+var ua = navigator.userAgent,
+	iPhone = /iphone/i.test(ua),
+	chrome = /chrome/i.test(ua),
+	android = /android/i.test(ua),
+	caretTimeoutId;
+
+$.mask = {
+	//Predefined character definitions
+	definitions: {
+		'9': "[0-9]",
+		'a': "[A-Za-z]",
+		'*': "[A-Za-z0-9]"
+	},
+	autoclear: true,
+	dataName: "rawMaskFn",
+	placeholder: '_'
+};
+
+$.fn.extend({
+	//Helper Function for Caret positioning
+	caret: function(begin, end) {
+		var range;
+
+		if (this.length === 0 || this.is(":hidden") || this.get(0) !== document.activeElement) {
+			return;
+		}
+
+		if (typeof begin == 'number') {
+			end = (typeof end === 'number') ? end : begin;
+			return this.each(function() {
+				if (this.setSelectionRange) {
+					this.setSelectionRange(begin, end);
+				} else if (this.createTextRange) {
+					range = this.createTextRange();
+					range.collapse(true);
+					range.moveEnd('character', end);
+					range.moveStart('character', begin);
+					range.select();
+				}
+			});
+		} else {
+			if (this[0].setSelectionRange) {
+				begin = this[0].selectionStart;
+				end = this[0].selectionEnd;
+			} else if (document.selection && document.selection.createRange) {
+				range = document.selection.createRange();
+				begin = 0 - range.duplicate().moveStart('character', -100000);
+				end = begin + range.text.length;
+			}
+			return { begin: begin, end: end };
+		}
+	},
+	unmask: function() {
+		return this.trigger("unmask");
+	},
+	mask: function(mask, settings) {
+		var input,
+			defs,
+			tests,
+			partialPosition,
+			firstNonMaskPos,
+            lastRequiredNonMaskPos,
+            len,
+            oldVal;
+
+		if (!mask && this.length > 0) {
+			input = $(this[0]);
+            var fn = input.data($.mask.dataName)
+			return fn?fn():undefined;
+		}
+
+		settings = $.extend({
+			autoclear: $.mask.autoclear,
+			placeholder: $.mask.placeholder, // Load default placeholder
+			completed: null
+		}, settings);
+
+
+		defs = $.mask.definitions;
+		tests = [];
+		partialPosition = len = mask.length;
+		firstNonMaskPos = null;
+
+		mask = String(mask);
+
+		$.each(mask.split(""), function(i, c) {
+			if (c == '?') {
+				len--;
+				partialPosition = i;
+			} else if (defs[c]) {
+				tests.push(new RegExp(defs[c]));
+				if (firstNonMaskPos === null) {
+					firstNonMaskPos = tests.length - 1;
+				}
+                if(i < partialPosition){
+                    lastRequiredNonMaskPos = tests.length - 1;
+                }
+			} else {
+				tests.push(null);
+			}
+		});
+
+		return this.trigger("unmask").each(function() {
+			var input = $(this),
+				buffer = $.map(
+    				mask.split(""),
+    				function(c, i) {
+    					if (c != '?') {
+    						return defs[c] ? getPlaceholder(i) : c;
+    					}
+    				}),
+				defaultBuffer = buffer.join(''),
+				focusText = input.val();
+
+            function tryFireCompleted(){
+                if (!settings.completed) {
+                    return;
+                }
+
+                for (var i = firstNonMaskPos; i <= lastRequiredNonMaskPos; i++) {
+                    if (tests[i] && buffer[i] === getPlaceholder(i)) {
+                        return;
+                    }
+                }
+                settings.completed.call(input);
+            }
+
+            function getPlaceholder(i){
+                if(i < settings.placeholder.length)
+                    return settings.placeholder.charAt(i);
+                return settings.placeholder.charAt(0);
+            }
+
+			function seekNext(pos) {
+				while (++pos < len && !tests[pos]);
+				return pos;
+			}
+
+			function seekPrev(pos) {
+				while (--pos >= 0 && !tests[pos]);
+				return pos;
+			}
+
+			function shiftL(begin,end) {
+				var i,
+					j;
+
+				if (begin<0) {
+					return;
+				}
+
+				for (i = begin, j = seekNext(end); i < len; i++) {
+					if (tests[i]) {
+						if (j < len && tests[i].test(buffer[j])) {
+							buffer[i] = buffer[j];
+							buffer[j] = getPlaceholder(j);
+						} else {
+							break;
+						}
+
+						j = seekNext(j);
+					}
+				}
+				writeBuffer();
+				input.caret(Math.max(firstNonMaskPos, begin));
+			}
+
+			function shiftR(pos) {
+				var i,
+					c,
+					j,
+					t;
+
+				for (i = pos, c = getPlaceholder(pos); i < len; i++) {
+					if (tests[i]) {
+						j = seekNext(i);
+						t = buffer[i];
+						buffer[i] = c;
+						if (j < len && tests[j].test(t)) {
+							c = t;
+						} else {
+							break;
+						}
+					}
+				}
+			}
+
+			function androidInputEvent(e) {
+				var curVal = input.val();
+				var pos = input.caret();
+				if (oldVal && oldVal.length && oldVal.length > curVal.length ) {
+					// a deletion or backspace happened
+					checkVal(true);
+					while (pos.begin > 0 && !tests[pos.begin-1])
+						pos.begin--;
+					if (pos.begin === 0)
+					{
+						while (pos.begin < firstNonMaskPos && !tests[pos.begin])
+							pos.begin++;
+					}
+					input.caret(pos.begin,pos.begin);
+				} else {
+					var pos2 = checkVal(true);
+					var lastEnteredValue = curVal.charAt(pos.begin);
+					if (pos.begin < len){
+						if(!tests[pos.begin]){
+							pos.begin++;
+							if(tests[pos.begin].test(lastEnteredValue)){
+								pos.begin++;
+							}
+						}else{
+							if(tests[pos.begin].test(lastEnteredValue)){
+								pos.begin++;
+							}
+						}
+					}
+					input.caret(pos.begin,pos.begin);
+				}
+				tryFireCompleted();
+			}
+
+
+			function blurEvent(e) {
+                checkVal();
+
+                if (input.val() != focusText)
+                    input.change();
+            }
+
+			function keydownEvent(e) {
+                if (input.prop("readonly")){
+                    return;
+                }
+
+				var k = e.which || e.keyCode,
+					pos,
+					begin,
+					end;
+                    oldVal = input.val();
+				//backspace, delete, and escape get special treatment
+				if (k === 8 || k === 46 || (iPhone && k === 127)) {
+					pos = input.caret();
+					begin = pos.begin;
+					end = pos.end;
+
+					if (end - begin === 0) {
+						begin=k!==46?seekPrev(begin):(end=seekNext(begin-1));
+						end=k===46?seekNext(end):end;
+					}
+					clearBuffer(begin, end);
+					shiftL(begin, end - 1);
+
+					e.preventDefault();
+				} else if( k === 13 ) { // enter
+					blurEvent.call(this, e);
+				} else if (k === 27) { // escape
+					input.val(focusText);
+					input.caret(0, checkVal());
+					e.preventDefault();
+				}
+			}
+
+			function keypressEvent(e) {
+                if (input.prop("readonly")){
+                    return;
+                }
+
+				var k = e.which || e.keyCode,
+					pos = input.caret(),
+					p,
+					c,
+					next;
+
+				if (e.ctrlKey || e.altKey || e.metaKey || k < 32) {//Ignore
+					return;
+				} else if ( k && k !== 13 ) {
+					if (pos.end - pos.begin !== 0){
+						clearBuffer(pos.begin, pos.end);
+						shiftL(pos.begin, pos.end-1);
+					}
+
+					p = seekNext(pos.begin - 1);
+					if (p < len) {
+						c = String.fromCharCode(k);
+						if (tests[p].test(c)) {
+							shiftR(p);
+
+							buffer[p] = c;
+							writeBuffer();
+							next = seekNext(p);
+
+							if(android){
+								//Path for CSP Violation on FireFox OS 1.1
+								var proxy = function() {
+									$.proxy($.fn.caret,input,next)();
+								};
+
+								setTimeout(proxy,0);
+							}else{
+								input.caret(next);
+							}
+                            if(pos.begin <= lastRequiredNonMaskPos){
+		                         tryFireCompleted();
+                             }
+						}
+					}
+					e.preventDefault();
+				}
+			}
+
+			function clearBuffer(start, end) {
+				var i;
+				for (i = start; i < end && i < len; i++) {
+					if (tests[i]) {
+						buffer[i] = getPlaceholder(i);
+					}
+				}
+			}
+
+			function writeBuffer() { input.val(buffer.join('')); }
+
+			function checkVal(allow) {
+				//try to place characters where they belong
+				var test = input.val(),
+					lastMatch = -1,
+					i,
+					c,
+					pos;
+
+				for (i = 0, pos = 0; i < len; i++) {
+					if (tests[i]) {
+						buffer[i] = getPlaceholder(i);
+						while (pos++ < test.length) {
+							c = test.charAt(pos - 1);
+							if (tests[i].test(c)) {
+								buffer[i] = c;
+								lastMatch = i;
+								break;
+							}
+						}
+						if (pos > test.length) {
+							clearBuffer(i + 1, len);
+							break;
+						}
+					} else {
+                        if (buffer[i] === test.charAt(pos)) {
+                            pos++;
+                        }
+                        if( i < partialPosition){
+                            lastMatch = i;
+                        }
+					}
+				}
+				if (allow) {
+					writeBuffer();
+				} else if (lastMatch + 1 < partialPosition) {
+					if (settings.autoclear || buffer.join('') === defaultBuffer) {
+						// Invalid value. Remove it and replace it with the
+						// mask, which is the default behavior.
+						if(input.val()) input.val("");
+						clearBuffer(0, len);
+					} else {
+						// Invalid value, but we opt to show the value to the
+						// user and allow them to correct their mistake.
+						writeBuffer();
+					}
+				} else {
+					writeBuffer();
+					input.val(input.val().substring(0, lastMatch + 1));
+				}
+				return (partialPosition ? i : firstNonMaskPos);
+			}
+
+			input.data($.mask.dataName,function(){
+				return $.map(buffer, function(c, i) {
+					return tests[i]&&c!=getPlaceholder(i) ? c : null;
+				}).join('');
+			});
+
+
+			input
+				.one("unmask", function() {
+					input
+						.off(".mask")
+						.removeData($.mask.dataName);
+				})
+				.on("focus.mask", function() {
+                    if (input.prop("readonly")){
+                        return;
+                    }
+
+					clearTimeout(caretTimeoutId);
+					var pos;
+
+					focusText = input.val();
+
+					pos = checkVal();
+
+					caretTimeoutId = setTimeout(function(){
+                        if(input.get(0) !== document.activeElement){
+                            return;
+                        }
+						writeBuffer();
+						if (pos == mask.replace("?","").length) {
+							input.caret(0, pos);
+						} else {
+							input.caret(pos);
+						}
+					}, 10);
+				})
+				.on("blur.mask", blurEvent)
+				.on("keydown.mask", keydownEvent)
+				.on("keypress.mask", keypressEvent)
+				.on("input.mask paste.mask", function() {
+                    if (input.prop("readonly")){
+                        return;
+                    }
+
+					setTimeout(function() {
+						var pos=checkVal(true);
+						input.caret(pos);
+                        tryFireCompleted();
+					}, 0);
+				});
+                if (chrome && android)
+                {
+                    input
+                        .off('input.mask')
+                        .on('input.mask', androidInputEvent);
+                }
+				checkVal(); //Perform initial check for existing values
+		});
+	}
+});
+}));
+
 // Импортируем Owl
 /**
  * Owl Carousel v2.3.4
@@ -21885,456 +22335,6 @@ return Popper;
 
 })(window.Zepto || window.jQuery, window, document);
 
-// импортируем jQuery Masked Input
-(function (factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Register as an anonymous module.
-        define(['jquery'], factory);
-    } else if (typeof exports === 'object') {
-        // Node/CommonJS
-        factory(require('jquery'));
-    } else {
-        // Browser globals
-        factory(jQuery);
-    }
-}(function ($) {
-
-var ua = navigator.userAgent,
-	iPhone = /iphone/i.test(ua),
-	chrome = /chrome/i.test(ua),
-	android = /android/i.test(ua),
-	caretTimeoutId;
-
-$.mask = {
-	//Predefined character definitions
-	definitions: {
-		'9': "[0-9]",
-		'a': "[A-Za-z]",
-		'*': "[A-Za-z0-9]"
-	},
-	autoclear: true,
-	dataName: "rawMaskFn",
-	placeholder: '_'
-};
-
-$.fn.extend({
-	//Helper Function for Caret positioning
-	caret: function(begin, end) {
-		var range;
-
-		if (this.length === 0 || this.is(":hidden") || this.get(0) !== document.activeElement) {
-			return;
-		}
-
-		if (typeof begin == 'number') {
-			end = (typeof end === 'number') ? end : begin;
-			return this.each(function() {
-				if (this.setSelectionRange) {
-					this.setSelectionRange(begin, end);
-				} else if (this.createTextRange) {
-					range = this.createTextRange();
-					range.collapse(true);
-					range.moveEnd('character', end);
-					range.moveStart('character', begin);
-					range.select();
-				}
-			});
-		} else {
-			if (this[0].setSelectionRange) {
-				begin = this[0].selectionStart;
-				end = this[0].selectionEnd;
-			} else if (document.selection && document.selection.createRange) {
-				range = document.selection.createRange();
-				begin = 0 - range.duplicate().moveStart('character', -100000);
-				end = begin + range.text.length;
-			}
-			return { begin: begin, end: end };
-		}
-	},
-	unmask: function() {
-		return this.trigger("unmask");
-	},
-	mask: function(mask, settings) {
-		var input,
-			defs,
-			tests,
-			partialPosition,
-			firstNonMaskPos,
-            lastRequiredNonMaskPos,
-            len,
-            oldVal;
-
-		if (!mask && this.length > 0) {
-			input = $(this[0]);
-            var fn = input.data($.mask.dataName)
-			return fn?fn():undefined;
-		}
-
-		settings = $.extend({
-			autoclear: $.mask.autoclear,
-			placeholder: $.mask.placeholder, // Load default placeholder
-			completed: null
-		}, settings);
-
-
-		defs = $.mask.definitions;
-		tests = [];
-		partialPosition = len = mask.length;
-		firstNonMaskPos = null;
-
-		mask = String(mask);
-
-		$.each(mask.split(""), function(i, c) {
-			if (c == '?') {
-				len--;
-				partialPosition = i;
-			} else if (defs[c]) {
-				tests.push(new RegExp(defs[c]));
-				if (firstNonMaskPos === null) {
-					firstNonMaskPos = tests.length - 1;
-				}
-                if(i < partialPosition){
-                    lastRequiredNonMaskPos = tests.length - 1;
-                }
-			} else {
-				tests.push(null);
-			}
-		});
-
-		return this.trigger("unmask").each(function() {
-			var input = $(this),
-				buffer = $.map(
-    				mask.split(""),
-    				function(c, i) {
-    					if (c != '?') {
-    						return defs[c] ? getPlaceholder(i) : c;
-    					}
-    				}),
-				defaultBuffer = buffer.join(''),
-				focusText = input.val();
-
-            function tryFireCompleted(){
-                if (!settings.completed) {
-                    return;
-                }
-
-                for (var i = firstNonMaskPos; i <= lastRequiredNonMaskPos; i++) {
-                    if (tests[i] && buffer[i] === getPlaceholder(i)) {
-                        return;
-                    }
-                }
-                settings.completed.call(input);
-            }
-
-            function getPlaceholder(i){
-                if(i < settings.placeholder.length)
-                    return settings.placeholder.charAt(i);
-                return settings.placeholder.charAt(0);
-            }
-
-			function seekNext(pos) {
-				while (++pos < len && !tests[pos]);
-				return pos;
-			}
-
-			function seekPrev(pos) {
-				while (--pos >= 0 && !tests[pos]);
-				return pos;
-			}
-
-			function shiftL(begin,end) {
-				var i,
-					j;
-
-				if (begin<0) {
-					return;
-				}
-
-				for (i = begin, j = seekNext(end); i < len; i++) {
-					if (tests[i]) {
-						if (j < len && tests[i].test(buffer[j])) {
-							buffer[i] = buffer[j];
-							buffer[j] = getPlaceholder(j);
-						} else {
-							break;
-						}
-
-						j = seekNext(j);
-					}
-				}
-				writeBuffer();
-				input.caret(Math.max(firstNonMaskPos, begin));
-			}
-
-			function shiftR(pos) {
-				var i,
-					c,
-					j,
-					t;
-
-				for (i = pos, c = getPlaceholder(pos); i < len; i++) {
-					if (tests[i]) {
-						j = seekNext(i);
-						t = buffer[i];
-						buffer[i] = c;
-						if (j < len && tests[j].test(t)) {
-							c = t;
-						} else {
-							break;
-						}
-					}
-				}
-			}
-
-			function androidInputEvent(e) {
-				var curVal = input.val();
-				var pos = input.caret();
-				if (oldVal && oldVal.length && oldVal.length > curVal.length ) {
-					// a deletion or backspace happened
-					checkVal(true);
-					while (pos.begin > 0 && !tests[pos.begin-1])
-						pos.begin--;
-					if (pos.begin === 0)
-					{
-						while (pos.begin < firstNonMaskPos && !tests[pos.begin])
-							pos.begin++;
-					}
-					input.caret(pos.begin,pos.begin);
-				} else {
-					var pos2 = checkVal(true);
-					var lastEnteredValue = curVal.charAt(pos.begin);
-					if (pos.begin < len){
-						if(!tests[pos.begin]){
-							pos.begin++;
-							if(tests[pos.begin].test(lastEnteredValue)){
-								pos.begin++;
-							}
-						}else{
-							if(tests[pos.begin].test(lastEnteredValue)){
-								pos.begin++;
-							}
-						}
-					}
-					input.caret(pos.begin,pos.begin);
-				}
-				tryFireCompleted();
-			}
-
-
-			function blurEvent(e) {
-                checkVal();
-
-                if (input.val() != focusText)
-                    input.change();
-            }
-
-			function keydownEvent(e) {
-                if (input.prop("readonly")){
-                    return;
-                }
-
-				var k = e.which || e.keyCode,
-					pos,
-					begin,
-					end;
-                    oldVal = input.val();
-				//backspace, delete, and escape get special treatment
-				if (k === 8 || k === 46 || (iPhone && k === 127)) {
-					pos = input.caret();
-					begin = pos.begin;
-					end = pos.end;
-
-					if (end - begin === 0) {
-						begin=k!==46?seekPrev(begin):(end=seekNext(begin-1));
-						end=k===46?seekNext(end):end;
-					}
-					clearBuffer(begin, end);
-					shiftL(begin, end - 1);
-
-					e.preventDefault();
-				} else if( k === 13 ) { // enter
-					blurEvent.call(this, e);
-				} else if (k === 27) { // escape
-					input.val(focusText);
-					input.caret(0, checkVal());
-					e.preventDefault();
-				}
-			}
-
-			function keypressEvent(e) {
-                if (input.prop("readonly")){
-                    return;
-                }
-
-				var k = e.which || e.keyCode,
-					pos = input.caret(),
-					p,
-					c,
-					next;
-
-				if (e.ctrlKey || e.altKey || e.metaKey || k < 32) {//Ignore
-					return;
-				} else if ( k && k !== 13 ) {
-					if (pos.end - pos.begin !== 0){
-						clearBuffer(pos.begin, pos.end);
-						shiftL(pos.begin, pos.end-1);
-					}
-
-					p = seekNext(pos.begin - 1);
-					if (p < len) {
-						c = String.fromCharCode(k);
-						if (tests[p].test(c)) {
-							shiftR(p);
-
-							buffer[p] = c;
-							writeBuffer();
-							next = seekNext(p);
-
-							if(android){
-								//Path for CSP Violation on FireFox OS 1.1
-								var proxy = function() {
-									$.proxy($.fn.caret,input,next)();
-								};
-
-								setTimeout(proxy,0);
-							}else{
-								input.caret(next);
-							}
-                            if(pos.begin <= lastRequiredNonMaskPos){
-		                         tryFireCompleted();
-                             }
-						}
-					}
-					e.preventDefault();
-				}
-			}
-
-			function clearBuffer(start, end) {
-				var i;
-				for (i = start; i < end && i < len; i++) {
-					if (tests[i]) {
-						buffer[i] = getPlaceholder(i);
-					}
-				}
-			}
-
-			function writeBuffer() { input.val(buffer.join('')); }
-
-			function checkVal(allow) {
-				//try to place characters where they belong
-				var test = input.val(),
-					lastMatch = -1,
-					i,
-					c,
-					pos;
-
-				for (i = 0, pos = 0; i < len; i++) {
-					if (tests[i]) {
-						buffer[i] = getPlaceholder(i);
-						while (pos++ < test.length) {
-							c = test.charAt(pos - 1);
-							if (tests[i].test(c)) {
-								buffer[i] = c;
-								lastMatch = i;
-								break;
-							}
-						}
-						if (pos > test.length) {
-							clearBuffer(i + 1, len);
-							break;
-						}
-					} else {
-                        if (buffer[i] === test.charAt(pos)) {
-                            pos++;
-                        }
-                        if( i < partialPosition){
-                            lastMatch = i;
-                        }
-					}
-				}
-				if (allow) {
-					writeBuffer();
-				} else if (lastMatch + 1 < partialPosition) {
-					if (settings.autoclear || buffer.join('') === defaultBuffer) {
-						// Invalid value. Remove it and replace it with the
-						// mask, which is the default behavior.
-						if(input.val()) input.val("");
-						clearBuffer(0, len);
-					} else {
-						// Invalid value, but we opt to show the value to the
-						// user and allow them to correct their mistake.
-						writeBuffer();
-					}
-				} else {
-					writeBuffer();
-					input.val(input.val().substring(0, lastMatch + 1));
-				}
-				return (partialPosition ? i : firstNonMaskPos);
-			}
-
-			input.data($.mask.dataName,function(){
-				return $.map(buffer, function(c, i) {
-					return tests[i]&&c!=getPlaceholder(i) ? c : null;
-				}).join('');
-			});
-
-
-			input
-				.one("unmask", function() {
-					input
-						.off(".mask")
-						.removeData($.mask.dataName);
-				})
-				.on("focus.mask", function() {
-                    if (input.prop("readonly")){
-                        return;
-                    }
-
-					clearTimeout(caretTimeoutId);
-					var pos;
-
-					focusText = input.val();
-
-					pos = checkVal();
-
-					caretTimeoutId = setTimeout(function(){
-                        if(input.get(0) !== document.activeElement){
-                            return;
-                        }
-						writeBuffer();
-						if (pos == mask.replace("?","").length) {
-							input.caret(0, pos);
-						} else {
-							input.caret(pos);
-						}
-					}, 10);
-				})
-				.on("blur.mask", blurEvent)
-				.on("keydown.mask", keydownEvent)
-				.on("keypress.mask", keypressEvent)
-				.on("input.mask paste.mask", function() {
-                    if (input.prop("readonly")){
-                        return;
-                    }
-
-					setTimeout(function() {
-						var pos=checkVal(true);
-						input.caret(pos);
-                        tryFireCompleted();
-					}, 0);
-				});
-                if (chrome && android)
-                {
-                    input
-                        .off('input.mask')
-                        .on('input.mask', androidInputEvent);
-                }
-				checkVal(); //Perform initial check for existing values
-		});
-	}
-});
-}));
-
 var map;
 var windowsSize = {
     Medium: 2,
@@ -22343,24 +22343,14 @@ var windowsSize = {
 
 var mapSettingsCollection = {
     Large: {
-        center: [59.91630318065146, 30.07137557421872], zoom: 10,
+        center: [59.99950430055228, 30.20306198749192], zoom: 14,
         imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
     },
     Medium: {
-        center: [60.13485370575094, 30.372126306640563], zoom: 9,
+        center: [60.00685152257632, 30.219946304289866], zoom: 14,
         imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
     }
 };
-
-var centerPoints = [
-    [60.0066198557117, 30.229417072509765],
-    [60.0085957593716, 30.38656056396479],
-    [59.82606894374578, 30.377313508422816],
-    [59.99793695032447, 30.200749622558583]
-];
-
-var mapSettings = null;
-var currentSize = windowsSize.Large;
 
 var createLayout = function (id) {
     var Layout = ymaps.templateLayoutFactory.createClass(
@@ -22376,13 +22366,13 @@ var createLayout = function (id) {
                     placemarkMap.events.add('sizechange', function () {
                         this.rebuild();
                     }, this);
+
                 }
 
                 var img = document.createElement("img");
                 img.src = mapSettings.imgUrls[id];
                 img.width = mapSettings.imgSize[0];
                 img.height = mapSettings.imgSize[1];
-                img.id = 'map-pointer-' + id;
 
                 var options = this.getData().options,
                     element = this.getParentElement().getElementsByClassName('club')[0],
@@ -22396,16 +22386,10 @@ var createLayout = function (id) {
                 element.style.width = mapSettings.imgSize[0];
                 element.style.height = mapSettings.imgSize[1];
 
-                element.id = 'map-pointer-' + id;
                 element.style.marginLeft = -mapSettings.imgSize[0] / 2 + 'px';
                 element.style.marginTop = -mapSettings.imgSize[1] / 2 + 'px';
                 element.style.left = -mapSettings.imgSize[0] / 2 + 'px';
-                element.style.top = -1 * mapSettings.imgSize[1] + 'px';
-
-                $('#map-pointer-' + id).bind('click', function () {
-                    console.log('mapclicked');
-                    this.onClubClick(id);
-                });
+                element.style.top = -mapSettings.imgSize[1] / 2 + 'px';
 
                 options.set('shape', circleShape);
             }
@@ -22432,39 +22416,12 @@ function init() {
         zoom: mapSettings.zoom,
     });
 
-    var kupchino = new ymaps.Placemark(
-        [59.82853206432565, 30.39268299999999], {
-        id: 2,
-        hintContent: 'Санкт-Петербург м.Купчино, ул. Олеко Дундича 10/2, 1 этаж'
-    }, {
-        iconLayout: createLayout(2)
-    }
-    );
-
-    var komendanskiy = new ymaps.Placemark(
-        [60.00816706410207, 30.2457365], {
+    var akademicheskaya = new ymaps.Placemark(
+        [59.99910206407877,30.220116499999992], {
         id: 0,
-        hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
+        hintContent: 'Санкт-Петербург м.Беговая, ул. Оптиков 30'
     }, {
         iconLayout: createLayout(0)
-    }
-    );
-
-    var akademicheskaya = new ymaps.Placemark(
-        [60.01065856407727, 30.403732499999954], {
-        id: 1,
-        hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
-    }, {
-        iconLayout: createLayout(1)
-    }
-    );
-
-    var optikov = new ymaps.Placemark(
-        [59.99910206407877,30.220116499999992], {
-        id: 3,
-        hintContent: 'Санкт-Петербург м.Беговая, ул. Оптиков, 30'
-    }, {
-        iconLayout: createLayout(1)
     }
     );
 
@@ -22477,38 +22434,6 @@ function init() {
     map.behaviors.disable(['scrollZoom']);
     map.controls.remove('zoomControl');
     map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px' }, size: 'small' });
-
-    kupchino.events.add(['click'], function (e) {
-        if (width >= 977) {
-            $('#kupchino').click();
-        } else {
-            $('#kupAccord').click();
-        }   
-    });
-
-    akademicheskaya.events.add(['click'], function (e) {
-        if (width >= 977) {
-            $('#akademicheskaya').click();
-        } else {
-            $('#akadAccord').click();
-        }   
-    });
-
-    komendanskiy.events.add(['click'], function (e) {
-        if (width >= 977) {
-            $('#komendanskiy').click();
-        } else {
-            $('#komAccord').click();
-        }   
-    });
-
-    optikov.events.add(['click'], function (e) {
-        if (width >= 977) {
-            $('#optikov').click();
-        } else {
-            $('#optAccord').click();
-        } 
-    });
 
     map.events.add('sizechange', function (event) {
         var size = map.container.getSize();
@@ -22527,127 +22452,61 @@ function init() {
         if (toChange) {
             map.setCenter(mapSettings.center, mapSettings.zoom);
         }
+
+        console.log(map.getCenter());
+
     });
 
-    // map.events.add('boundschange', function (event) {
-    //     console.log(map.getCenter());
-    // });
-
-    ymaps.geoQuery(komendanskiy).addToMap(map);
     ymaps.geoQuery(akademicheskaya).addToMap(map);
-    ymaps.geoQuery(kupchino).addToMap(map);
-    ymaps.geoQuery(optikov).addToMap(map);
 }
 
-function getElementInsideContainer(containerID, childID) {
-    var elm = {};
-    var elms = document.getElementById(containerID).getElementsByTagName("*");
-    for (var i = 0; i < elms.length; i++) {
-        if (elms[i].id === childID) {
-            elm = elms[i];
-            break;
-        }
+function moveToSelected(element) {
+    var gallery = $("div.gallery-carousel");
+
+    if (element == "next") {
+        var selected = $("div.gallery-carousel .selected").next();
+    } else if (element == "prev") {
+        var selected = $("div.gallery-carousel .selected").prev();
+    } else {
+        var selected = element;
     }
-    return elm;
+
+    var amount = $("div.gallery-carousel div").length;
+    var selectedIndex = $(".gallery-carousel div.slide").index($(selected));
+
+    if (element == "next" && amount <= selectedIndex + 2) {
+        var firstSlide = gallery.find("div.slide:first-child");
+        firstSlide.clone().appendTo(gallery);
+        firstSlide.remove();
+    } else if (element == "prev" && selectedIndex < 2) {
+        var lastSlide = gallery.find("div.slide:last-child");
+        lastSlide.clone().prependTo(gallery);
+        lastSlide.remove();
+    }
+
+    var next = $(selected).next();
+    var prev = $(selected).prev();
+    var prevSecond = $(prev).prev();
+    var nextSecond = $(next).next();
+
+    $(selected).removeClass().addClass("slide").addClass("selected");
+    $(prev).removeClass().addClass("slide").addClass("prev");
+    $(next).removeClass().addClass("slide").addClass("next");
+
+    $(nextSecond).removeClass().addClass("slide").addClass("nextRight");
+    $(prevSecond).removeClass().addClass("slide").addClass("prevLeft");
+
+    $(nextSecond).nextAll().removeClass().addClass("slide").addClass('hideRight');
+    $(prevSecond).prevAll().removeClass().addClass("slide").addClass('hideLeft');
+
+    calcPositions();
 }
 
-function signupNextClick() {
-    var next = $(this).data("next");
+function calcWidth(percent) {
+    var containerWidth = $("div.gallery-carousel").width();
+    var elWidth = containerWidth * percent / 100;
 
-    $.ajax({
-        url: next,
-        dataType: 'html'
-    }).done(function (html) {
-        $(".signup-container").html(html);
-
-        if ($("#signupPhone").length > 0) {
-            $("#signupPhone").mask("+7(999) 999-99-99");
-        }
-
-        if ($(".signup-btn").length > 0) {
-
-            $(".signup-btn").bind("click", function () {
-
-                var name = getElementInsideContainer("signup-container", "signupName");
-                var phone = getElementInsideContainer("signup-container", "signupPhone");
-
-                if (!name.checkValidity()) {
-                    name.parentElement.setAttribute("style", "background-color: #FFDBDC");
-                }
-
-                if (!phone.checkValidity()) {
-                    phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
-                }
-
-                var promoClub = $(".signup-dropdown").find('input:hidden').val();
-
-                if (!promoClub) {
-                    $(".signup-dropdown").parent().css("background-color", "#FFDBDC");
-                }
-
-                if (name.checkValidity() && phone.checkValidity() && promoClub) {
-                    var next = $(this).data("next");
-
-                    $.ajax({
-                        url: next,
-                        dataType: 'html'
-                    }).done(function (html) {
-                        $(".signup-container").html(html);
-                    });
-                }
-            });
-        }
-
-        if ($(".signup-dropdown a.dropdown-item")) {
-
-            var selectedClub = sessionStorage.getItem('club-name');
-
-            if (selectedClub) {
-                $(".signup-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
-                $(".signup-dropdown").find('input:hidden').val(selectedClub);
-            }
-
-            $(".signup-dropdown a.dropdown-item").click(function (event) {
-                event.preventDefault();
-
-                $(".signup-dropdown").find('.dropdown-toggle').html($(event.target).text() + ' <span class="caret"></span>');
-                $(".signup-dropdown").find('input:hidden').val($(event.target).text());
-            });
-        }
-    });
-}
-
-function signupModalNextClick() {
-
-    var name = document.getElementById("signupName");
-    var phone = document.getElementById("signupPhone");
-
-    if (!name.checkValidity()) {
-        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
-    }
-
-    if (!phone.checkValidity()) {
-        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
-    }
-
-    var promoClub = $(".signup-dropdown").find('input:hidden').val();
-
-    if (!promoClub) {
-        $(".signup-dropdown").parent().css("background-color", "#FFDBDC");
-    }
-
-    if (name.checkValidity() && phone.checkValidity() && promoClub) {
-        var next = $(this).data("next");
-
-        $.ajax({
-            url: next,
-            dataType: 'html'
-        }).done(function (html) {
-            $("#signup-modal .modal-body").html(html);
-            $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
-        });
-    }
-
+    return elWidth;
 }
 
 function promoNextClick() {
@@ -22656,12 +22515,6 @@ function promoNextClick() {
     var name = document.getElementById("promoName");
     var phone = document.getElementById("promoPhone");
 
-    var promoClub = $(".promo-dropdown").find('input:hidden').val();
-
-    if (!promoClub) {
-        $(".promo-dropdown").parent().css("background-color", "#FFDBDC");
-    }
-
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
@@ -22670,7 +22523,7 @@ function promoNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (name.checkValidity() && phone.checkValidity() && promoClub) {
+    if (name.checkValidity() && phone.checkValidity()) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -22682,11 +22535,122 @@ function promoNextClick() {
     }
 }
 
+var md = 992;
+var lg = 1400;
+
+function calcPositions() {
+
+    var selected = $("div.gallery-carousel .selected");
+    var next = $(selected).next();
+    var prev = $(selected).prev();
+    var prevSecond = $(prev).prev();
+    var nextSecond = $(next).next();
+
+    var containerWidth = $("div.gallery-carousel").width();
+    selected.css({ top: 0 });
+
+    var selectedWidth = calcWidth(57.3);
+    var secondWidth = calcWidth(39);
+    var thirdWidth = calcWidth(29.9);
+
+    selected.width(selectedWidth);
+    next.width(secondWidth);
+    prev.width(secondWidth);
+    nextSecond.width(thirdWidth);
+    prevSecond.width(thirdWidth);
+
+    var selectedLeft = (containerWidth - selectedWidth) / 2;
+    selected.css({ left: selectedLeft });
+
+    var secondX = (containerWidth - selectedWidth - 2 * (secondWidth / 3)) / 2;
+    next.css({ left: containerWidth - secondX - secondWidth });
+    prev.css({ left: secondX });
+
+    var thirdX = (containerWidth - selectedWidth - 2 * (secondWidth / 3) - 2 * (thirdWidth / 3)) / 2;
+    nextSecond.css({ left: containerWidth - thirdX - thirdWidth });
+    prevSecond.css({ left: thirdX });
+
+    var secondY = (selectedWidth * 0.66878981 - secondWidth * 0.66878981) / 2;
+    next.css({ top: secondY });
+    prev.css({ top: secondY });
+
+    var thirdY = (selectedWidth * 0.66878981 - thirdWidth * 0.66878981) / 2;
+    nextSecond.css({ top: thirdY });
+    prevSecond.css({ top: thirdY });
+}
+
+function galleryReset() {
+    var selected = $("div.gallery-carousel .selected");
+    var next = $(selected).next();
+    var prev = $(selected).prev();
+    var prevSecond = $(prev).prev();
+    var nextSecond = $(next).next();
+    selected.css('width', 'auto');
+    next.css('width', 'auto');
+    prev.css('width', 'auto');
+    prevSecond.css('width', 'auto');
+    nextSecond.css('width', 'auto');
+    selected.css('left', '');
+    next.css('left', '');
+    prev.css('left', '');
+    prevSecond.css('left', '');
+    nextSecond.css('left', '');
+    selected.css('top', '');
+    next.css('top', '');
+    prev.css('top', '');
+    prevSecond.css('top', '');
+    nextSecond.css('top', '');
+}
+
+function announceNextClick() {
+    var name = document.getElementById("announceName");
+    var phone = document.getElementById("announcePhone");
+
+    if (!name.checkValidity()) {
+        name.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (!phone.checkValidity()) {
+        phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (name.checkValidity() && phone.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $(".announce-block").html(html);
+        });
+    }
+}
+
+function couponNextClick() {
+    var phone = document.getElementById("couponPhone");
+
+    if (!phone.checkValidity()) {
+        phone.setAttribute("style", "background-color: #FFDBDC");
+    }
+
+    if (phone.checkValidity()) {
+        var next = $(this).data("next");
+
+        $.ajax({
+            url: next,
+            dataType: 'html'
+        }).done(function (html) {
+            $(".banner-area .promo-block .inner").html(html);
+        });
+    }
+}
+
 function bossModalNextClick() {
 
     var name = document.getElementById("bossContactName");
     var phone = document.getElementById("bossContactPhone");
     var email = document.getElementById("bossContactEmail");
+    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -22713,375 +22677,152 @@ function bossModalNextClick() {
 }
 
 function setClubName() {
-    var name = sessionStorage.getItem('club-name');
+    sessionStorage.setItem('club-link', 'optikov.html');
+    sessionStorage.setItem('club-name', 'Оптиков');
 
-    if (!name) {
-        name = 'Выберите ваш клуб'
-        $('#club-name').html(name);
-    } else {
-        $('#club-name').html('Ваш клуб <span class="n-bottom-club">' + name + '</span>');
-    }
-
-    $('#header-club-name').html(name);
+    $('#club-name').html('Ваш клуб <span class="n-bottom-club">Оптиков</span>');
+    $('#header-club-name').html('Оптиков');
 }
 
-function toggleDropdown(e) {
-    var _d = $(e.target).closest('.dropdown'),
-        _m = $('.dropdown-menu', _d);
-    var club = sessionStorage.getItem('club-name');
-    var link = sessionStorage.getItem('club-link');
+function scrollToSection() {
+    var hash = sessionStorage.getItem('club-hash');
 
-    setTimeout(function () {
-
-        if (e.type == 'click' && club) {
+    if (hash) {
+        setTimeout(function () {
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 'slow', function () {
+                window.location.hash = hash;
+                sessionStorage.removeItem('club-hash')
+            });
             
-            var hash = $(e.target).data('hash');
-
-            if (!hash) {
-                hash = '';
-            }
-
-            sessionStorage.setItem('club-hash', hash);
-
-            var currentURL = window.location.href;
-            currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
-            window.location.href = currentURL.concat('/', link);
-        } 
-
-        var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
-
-        if(e.type !== 'click') {
-            _m.toggleClass('show', shouldOpen);
-            _d.toggleClass('show', shouldOpen);
-        }
-              
-    }, e.type === 'mouseleave' ? 100 : 0);
-
-    if(club) {
-        return false;
+        }, 1000);
     }
 }
 
-function storeHash(e) {
-    var hash = $(e.target).data('hash');
+function pageNavClick(event) {
+    event.preventDefault();
 
-    if (!hash) {
-        hash = '';
+    if (this.hash !== "") {
+        var hash = this.hash;
+
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 'slow', function () {
+            window.location.hash = hash;
+        });
     }
-
-    sessionStorage.setItem('club-hash', hash);
 }
 
 $(function () {
+
     setClubName();
+    scrollToSection();
 
-    $('body')
-        .on('mouseenter mouseleave', '.navbar .dropdown', toggleDropdown)
-        .on('click', '.navbar a.nav-club-link', toggleDropdown);
+    $('.navbar a.nav-link').click(pageNavClick);
+    $("a.page-nav-item").click(pageNavClick);
 
-    $('.navbar a.dropdown-item').click(storeHash);
-    $('.promo-area .schedule-link a').click(storeHash);
-    $('.promo-area a.accordion-body-btn').click(storeHash);
+    $('#signupFormBtn').bind("click", announceNextClick);
+    $('#couponFormBtn').bind("click", couponNextClick);
 
-    $(".club-link").on("click", function (e) {
-        var name = $(this).data('name');
-        var link = $(this).data('link');
-
-        sessionStorage.setItem('club-link', link);
-        sessionStorage.setItem('club-name', name);
-
-        setClubName();
-        $('#clubs-modal').modal('hide');
-        return false;
-    });
-
-    var club = sessionStorage.getItem('club-name');
-
-    if (!club) {
-        $('#clubs-modal').modal('show');
-    }
-
+    $("#couponPhone").mask("+7(999) 999-99-99");
     $("#bossContactPhone").mask("+7(999) 999-99-99");
-    $('#signupFormBtn').bind("click", signupNextClick);
-
-    $('#accordionMap').on('shown.bs.collapse', function (e) {
-        var clicked = $('#accordionMap').find('.accordion-btn').not(".collapsed").first();
-        var scroll = parseInt(clicked.data('scroll'));
-
-        $('#accordionMap').animate({
-            scrollTop: scroll
-        }, 300);
-
-    });
-
-    $('#signup-modal').on('shown.bs.modal', function (e) {
-        $("#signup-modal .signup-btn").bind("click", signupModalNextClick);
-        $("#signupPhone").mask("+7(999) 999-99-99");
-
-        var selectedClub = sessionStorage.getItem('club-name');
-
-        if (selectedClub) {
-            $(".signup-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
-            $(".signup-dropdown").find('input:hidden').val(selectedClub);
-        }
-
-        $("#signup-modal").find("#promoName").change(function (e) {
-            $(e.target).parent().css("background-color", "#FFFFFF");
-        });
-
-        $("#signup-modal").find("#promoPhone").change(function (e) {
-            $(e.target).parent().css("background-color", "#FFFFFF");
-        });
-
-        if ($(".signup-dropdown a.dropdown-item")) {
-
-            $(".signup-dropdown a.dropdown-item").click(function (event) {
-                event.preventDefault();
-
-                $(".signup-dropdown").parent().css("background-color", "#FFFFFF");
-                $(".signup-dropdown").find('.dropdown-toggle').html($(event.target).text() + ' <span class="caret"></span>');
-                $(".signup-dropdown").find('input:hidden').val($(event.target).text());
-            });
-        }
-    });
+    $("#announcePhone").mask("+7(999) 999-99-99");
 
     $('#promo-modal').on('show.bs.modal', function (e) {
         $("#promo-modal .promo-btn").bind("click", promoNextClick);
         $("#promoPhone").mask("+7(999) 999-99-99");
 
-        var selectedClub = sessionStorage.getItem('club-name');
+        $('#selectedPromoClub').val('Оптиков');
+    });
 
-        if (selectedClub) {
-            $(".promo-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
-            $(".promo-dropdown").find('input:hidden').val(selectedClub);
-        }
+    $('.gallery-area button.prev-btn').click(function () {
+        moveToSelected('prev');
+    });
 
-        $("#promo-modal").find("#promoName").change(function (e) {
-            $(e.target).parent().css("background-color", "#FFFFFF");
-        });
-
-        $("#promo-modal").find("#promoPhone").change(function (e) {
-            $(e.target).parent().css("background-color", "#FFFFFF");
-        });
-
-        if ($(".promo-dropdown a.dropdown-item")) {
-
-            $(".promo-dropdown a.dropdown-item").click(function (event) {
-                event.preventDefault();
-
-                $(".promo-dropdown").parent().css("background-color", "#FFFFFF");
-                $(".promo-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-                $(".promo-dropdown").find('input:hidden').val($(event.target).text());
-            });
-        }
+    $('.gallery-area button.next-btn').click(function () {
+        moveToSelected('next');
     });
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
         $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);
     });
 
-    var owl = $('.banner-slides').owlCarousel({
-        items: 1,
-        loop: true,
-        mouseDrag: false,
-        autoplay: true,
-        autoplaySpeed: 1000,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        responsive: {
-            992: {
-                dots: false,
-                nav: true
-            },
-            0: {
-                dots: true,
-                nav: false
+    var galleryOwl = $('.gallery-carousel'),
+        galleryOwlOptions = {
+            loop: true,
+            mouseDrag: false,
+            navText: ["", ""],
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                }
             }
-        },
-        navText: ["", ""]
-    });
+        };
 
-    owl.trigger('play.owl.autoplay', [3000])
+    var owl = $('.scheme-slides'),
+        owlOptions = {
+            loop: true,
+            mouseDrag: false,
+            navText: ["", ""],
+            dots: false,
+            items: 1,
+            onTranslated: function (property) {
+                $(".number-animation").removeClass("number-scale");
 
-    $('.features').owlCarousel({
-        mouseDrag: false,
-        responsive: {
-            1195: {
-                items: 3,
-                nav: false
-            },
-            0: {
-                items: 1,
-                nav: true,
-                center: true
+                var current = property.item.index;
+                var item = $(property.target).find(".owl-item").eq(current).find(".slide").data('number');
+
+                $('.' + item).addClass('number-scale');
             }
-        },
-        navText: ["", ""]
-    });
+        };
 
-    $('.signup-slides').owlCarousel({
-        items: 1,
-        loop: true,
-        mouseDrag: false,
-        nav: true,
-        navText: ["", ""]
-    });
+    if ($(window).width() < md) {
+        var owlActive = owl.owlCarousel(owlOptions);
+    } else {
+        owl.addClass('off');
+    }
 
-    $(".map-accordion-btn").click(function (event) {
-        var self = $(this);
+    if ($(window).width() < lg) {
+        galleryOwl.addClass('owl-carousel');
+        var galleryActive = galleryOwl.owlCarousel(galleryOwlOptions);
+    } else {
+        calcPositions();
+        galleryOwl.addClass('off');
+    }
 
-        var hasClass = self.hasClass("active");
-        var geoObjects = ymaps.geoQuery(map.geoObjects);
+    $(window).resize(function () {
 
-        var result;
+        if ($(window).width() < md) {
+            if ($('.scheme-slides').hasClass('off')) {
+                var owlActive = owl.owlCarousel(owlOptions);
+                owl.removeClass('off');
+            }
 
-        if (hasClass) {
-            result = geoObjects.setOptions('visible', true);
-
-            result.then(function () {
-                self.removeClass("active");
-                var moving = new ymaps.map.action.Single({
-                    center: mapSettings.center,
-                    zoom: mapSettings.zoom,
-                    timingFunction: 'ease-in',
-                    checkZoomRange: true,
-                    duration: 500
-                });
-
-                map.action.execute(moving);
-            });
         } else {
-            var idStr = self.data("id");
-
-            var id = parseInt(idStr);
-            var selected = geoObjects.search("properties.id = " + id);
-            result = geoObjects.setOptions('visible', false);
-
-            result.then(function () {
-
-                var placemark = selected.get(0);
-                var markCoords = placemark.geometry.getCoordinates();
-
-                var coords = [markCoords[0], markCoords[1]];
-
-                coords[0] = coords[0] + 0.01;
-                zoom = 13;
-
-                var moving = new ymaps.map.action.Single({
-                    center: coords,
-                    zoom: zoom,
-                    timingFunction: 'ease-in',
-                    checkZoomRange: true,
-                    duration: 500,
-                    callback: function (err) {
-                        $(".map-accordion-btn").removeClass("active");
-                        self.addClass("active");
-                        selected.setOptions('visible', true);
-                    }
-                });
-
-                map.action.execute(moving);
-            });
+            if (!$('.scheme-slides').hasClass('off')) {
+                owl.addClass('off').trigger('destroy.owl.carousel');
+                owl.find('.owl-stage-outer').children(':eq(0)').unwrap();
+            }
         }
-    });
 
-    $(".club-block-lg").click(function (event) {
-        event.preventDefault();
-        var self = $(this);
-
-        var hasClass = self.hasClass("active");
-        var geoObjects = ymaps.geoQuery(map.geoObjects);
-
-        var result;
-
-        if (hasClass) {
-            result = geoObjects.setOptions('visible', true);
-
-            result.then(function () {
-                self.removeClass("active");
-                $(".club-info-block").remove();
-
-                var moving = new ymaps.map.action.Single({
-                    center: mapSettings.center,
-                    zoom: mapSettings.zoom,
-                    timingFunction: 'ease-in',
-                    checkZoomRange: true,
-                    duration: 500
-                });
-
-                map.action.execute(moving);
-            });
+        if ($(window).width() < lg) {
+            galleryReset();
+            if ($('.gallery-carousel').hasClass('off')) {
+                galleryOwl.addClass('owl-carousel');
+                var galleryActive = galleryOwl.owlCarousel(galleryOwlOptions);
+                galleryOwl.removeClass('off');
+            }
         } else {
-            var idStr = self.data("id");
-            var area = self.data("area");
-            var hall = self.data("hall");
-            var link = self.data("link");
+            galleryOwl.removeClass('owl-carousel');
 
-            var programs = self.data("programs");
+            if (!$('.gallery-carousel').hasClass('off')) {
+                galleryOwl.addClass('off').trigger('destroy.owl.carousel');
+                galleryOwl.find('.owl-stage-outer').children(':eq(0)').unwrap();
+            }
 
-            var id = parseInt(idStr);
-            var selected = geoObjects.search("properties.id = " + id);
-            result = geoObjects.setOptions('visible', false);
-
-            result.then(function () {
-
-                var placemark = selected.get(0);
-                var markCoords = placemark.geometry.getCoordinates();
-
-                var coords = [markCoords[0], markCoords[1]];
-                var coords = centerPoints[id];
-                var zoom = 14;
-
-                var moving = new ymaps.map.action.Single({
-                    center: coords,
-                    zoom: zoom,
-                    timingFunction: 'linear',
-                    checkZoomRange: true,
-                    duration: 500,
-                    callback: function (err) {
-                        selected.setOptions('visible', true);
-
-                        $(".club-block").removeClass("active");
-                        self.addClass("active");
-
-                        $(".club-info-block").remove();
-
-                        $('<div class="club-info-block"> \
-                        <div class="d-flex align-self-end align-items-center"> \
-                    <div class="inner-div d-flex">\
-                      <div>\
-                        <div class="info-top">\
-                          Площадь клуба\
-                        </div>\
-                        <div class="info-bottom">' +
-                            area
-                            + '</div>\
-                      </div>\
-                      <div>\
-                          <div class="info-top">\
-                              Тренажерный зал\
-                          </div>\
-                          <div class="info-bottom">' +
-                            hall
-                            + '</div>\
-                        </div>\
-                        <div>\
-                            <div class="info-top">\
-                                Зал групповых программ\
-                            </div>\
-                            <div class="info-bottom">' +
-                            programs
-                            + '</div>\
-                          </div>\
-                    </div>\
-                    <a data-link="'+ link + '" href="' + link + '"class="btn btn-rounded btn-primary club-info-btn">О клубе</a>\
-                    </div>\
-                  </div>').appendTo(".map-area .clubs-block .container");
-                    }
-                });
-
-                map.action.execute(moving);
-            });
+            calcPositions();
         }
     });
 
@@ -23097,4 +22838,5 @@ $(function () {
             $('#scroll-control').fadeOut();
         }
     });
+
 });

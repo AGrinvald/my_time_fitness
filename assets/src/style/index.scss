@@ -63,7 +63,7 @@
   @include media-breakpoint-up(lg) {
     .inner {
       height: 248px;
-      
+
       &::before {
         content: "";
         top: -1.65%;
@@ -661,29 +661,15 @@
       padding-bottom: 30px;
     }
   }
-
   .promo-block {
     @include media-breakpoint-up(lg) {
-      max-width: 528px;
+      max-width: 648px;
       margin-left: auto;
       margin-top: auto;
       margin-bottom: auto;
     }
 
-    > div {
-      @include media-breakpoint-up(lg) {
-        flex-direction: row;
-      }
-    }
-
     .schedule-link {
-      @include media-breakpoint-down(md) {
-        width: 100%;
-        margin: 25px 0;
-        font-size: 16px;
-        letter-spacing: 0.32px;
-      }
-
       > a {
         text-align: center;
         display: block;
@@ -714,11 +700,50 @@
       letter-spacing: 0.15px;
     }
 
+    .club-blocks {
+      display: none;
+      margin-bottom: 15px;
+  
+      @include media-breakpoint-up(lg) {
+        display: flex;
+        max-width: 648px;
+        width: 100%;
+        overflow-x: auto;
+  
+        &::-webkit-scrollbar {
+          height: 8px;
+        }
+  
+        &::-webkit-scrollbar-thumb {
+          border-radius: 6px;
+          background-color: #8e8e8e;
+        }
+  
+        &::-webkit-scrollbar-track {
+          border-radius: 4px;
+          background-color: #ced0db;
+        }
+      }
+    }
+
+    
+    .club-block {
+      margin-bottom: 5px;
+      width: 162px;
+      flex-shrink: 0;
+
+      &:not(:last-child) {
+        & > div.time-block {
+          border-right: 1px solid $white;
+        }
+      }
+    }
+
     .time-block {
       display: flex;
       align-items: center;
       height: 48px;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 400;
       &:not(:first-child) {
         border-top: 1px solid $white;
@@ -726,7 +751,7 @@
     }
 
     .club-title {
-      font-size: 18px;
+      font-size: 16px;
       background-color: #d8d8d8;
     }
 
@@ -785,6 +810,11 @@
         margin-bottom: 20px;
         text-align: center;
       }
+    }
+
+    small {
+      font-size: 14px;
+      letter-spacing: 0.04em;
     }
   }
 }
@@ -1021,7 +1051,7 @@
 .map-area {
   position: relative;
   overflow: hidden;
-  
+
   [class*="ymaps-2"][class*="-ground-pane"] {
     filter: invert(1) grayscale(1) opacity(0.8);
   }
@@ -1065,7 +1095,7 @@
     z-index: 10;
 
     .brand-name {
-      font-family: 'MagistralC', roboto;
+      font-family: "MagistralC", roboto;
       font-weight: bold;
     }
 
@@ -1074,7 +1104,7 @@
       font-weight: 600;
       display: flex;
       justify-content: center;
-      
+
       @include media-breakpoint-up(lg) {
         font-size: 35px;
         text-align: center;
@@ -1114,9 +1144,9 @@
 
       @include media-breakpoint-up(lg) {
         max-width: 344px;
-        padding: 12px 17px 15px 25px;
+        padding: 5px 19px 8px 25px;
         color: #000;
-        height: 88px;
+        height: 80px;
         box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.04);
         background-color: $white;
         border-left: 5px solid #000;
@@ -1281,7 +1311,7 @@
     padding-left: 15px;
     padding-right: 30px;
     box-sizing: border-box;
-    
+
     &.collapsed {
       background-color: $white;
 
