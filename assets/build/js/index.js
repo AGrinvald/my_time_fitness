@@ -22344,11 +22344,11 @@ var windowsSize = {
 var mapSettingsCollection = {
     Large: {
         center: [59.91630318065146, 30.07137557421872], zoom: 10,
-        imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
+        imgUrls: ["img/1.png", "img/2.png", 'img/3.png', 'img/4.png'], imgSize: [55, 76]
     },
     Medium: {
         center: [60.13485370575094, 30.372126306640563], zoom: 9,
-        imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
+        imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png', 'img/4small.png'], imgSize: [44, 58]
     }
 };
 
@@ -22464,7 +22464,7 @@ function init() {
         id: 3,
         hintContent: 'Санкт-Петербург м.Беговая, ул. Оптиков, 30'
     }, {
-        iconLayout: createLayout(1)
+        iconLayout: createLayout(3)
     }
     );
 

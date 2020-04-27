@@ -33,11 +33,11 @@ var windowsSize = {
 var mapSettingsCollection = {
     Large: {
         center: [59.99950430055228, 30.20306198749192], zoom: 14,
-        imgUrls: ["img/1.png", "img/2.png", 'img/3.png'], imgSize: [55, 76]
+        imgUrls: ["img/1.png", "img/2.png", 'img/3.png', 'img/4.png'], imgSize: [55, 76]
     },
     Medium: {
         center: [60.00685152257632, 30.219946304289866], zoom: 14,
-        imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png'], imgSize: [44, 58]
+        imgUrls: ["img/1small.png", "img/2small.png", 'img/3small.png', 'img/4small.png'], imgSize: [44, 58]
     }
 };
 
@@ -106,11 +106,11 @@ function init() {
     });
 
     var akademicheskaya = new ymaps.Placemark(
-        [59.99910206407877,30.220116499999992], {
+        [59.99910206407877, 30.220116499999992], {
         id: 0,
         hintContent: 'Санкт-Петербург м.Беговая, ул. Оптиков 30'
     }, {
-        iconLayout: createLayout(0)
+        iconLayout: createLayout(3)
     }
     );
 
@@ -384,7 +384,7 @@ function scrollToSection() {
                 window.location.hash = hash;
                 sessionStorage.removeItem('club-hash')
             });
-            
+
         }, 1000);
     }
 }
