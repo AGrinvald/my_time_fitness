@@ -120,7 +120,6 @@ var createLayout = function (id) {
                 }
             
                 if(id === 3) {
-                    console.log(optikovCoords);
                     geometry.setCoordinates(optikovCoords);
                 }
 
