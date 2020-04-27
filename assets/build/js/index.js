@@ -22359,6 +22359,13 @@ var centerPoints = [
     [59.99793695032447, 30.200749622558583]
 ];
 
+var coordinates = [
+    [60.00816706410207, 30.2457365],
+    [60.01065856407727, 30.403732499999954],
+    [59.82853206432565, 30.39268299999999],
+    [59.99910206407877, 30.220116499999992]
+];
+
 var mapSettings = null;
 var currentSize = windowsSize.Large;
 
@@ -22376,6 +22383,10 @@ var createLayout = function (id) {
                     placemarkMap.events.add('sizechange', function () {
                         this.rebuild();
                     }, this);
+
+                    placemarkMap.events.add('boundschange', function () {
+                        this.rebuild();
+                    }, this);
                 }
 
                 var img = document.createElement("img");
@@ -22384,13 +22395,16 @@ var createLayout = function (id) {
                 img.height = mapSettings.imgSize[1];
                 img.id = 'map-pointer-' + id;
 
+                var geometry = this.getData().geometry;
                 var options = this.getData().options,
-                    element = this.getParentElement().getElementsByClassName('club')[0],
-                    circleShape = {
-                        type: 'Rectangle', coordinates: [
-                            [-mapSettings.imgSize[0] / 2, -mapSettings.imgSize[1] / 2],
-                            [mapSettings.imgSize[0] / 2, mapSettings.imgSize[1] / 2]]
-                    };
+                    element = this.getParentElement().getElementsByClassName('club')[0];
+
+                var shape = {
+                    type: 'Rectangle', coordinates: [
+                        [-mapSettings.imgSize[0] / 2, -mapSettings.imgSize[1] / 2],
+                        [mapSettings.imgSize[0] / 2, mapSettings.imgSize[1] / 2]]
+                };
+
                 element.appendChild(img);
 
                 element.style.width = mapSettings.imgSize[0];
@@ -22402,12 +22416,27 @@ var createLayout = function (id) {
                 element.style.left = -mapSettings.imgSize[0] / 2 + 'px';
                 element.style.top = -1 * mapSettings.imgSize[1] + 'px';
 
+
                 $('#map-pointer-' + id).bind('click', function () {
-                    console.log('mapclicked');
                     this.onClubClick(id);
                 });
 
-                options.set('shape', circleShape);
+                var zoom = placemarkMap.getZoom();
+                var optikovCoords = [];
+                optikovCoords[0] = coordinates[3][0];
+                optikovCoords[1] = coordinates[3][1];
+
+                if(zoom <= 10) {
+                    optikovCoords[1] = optikovCoords[1] - 0.04;
+                }
+            
+                if(id === 3) {
+                    console.log(optikovCoords);
+                    geometry.setCoordinates(optikovCoords);
+                }
+
+                options.set('shape', shape);
+                options.set('iconOffset', [-mapSettings.imgSize[0], -mapSettings.imgSize[1]]);
             }
         }
     );
@@ -22432,17 +22461,8 @@ function init() {
         zoom: mapSettings.zoom,
     });
 
-    var kupchino = new ymaps.Placemark(
-        [59.82853206432565, 30.39268299999999], {
-        id: 2,
-        hintContent: 'Санкт-Петербург м.Купчино, ул. Олеко Дундича 10/2, 1 этаж'
-    }, {
-        iconLayout: createLayout(2)
-    }
-    );
-
     var komendanskiy = new ymaps.Placemark(
-        [60.00816706410207, 30.2457365], {
+        coordinates[0], {
         id: 0,
         hintContent: 'Санкт-Петербург м.Комендантский, ул. Бутлерова 42 а, 3 этаж, ТК Призма'
     }, {
@@ -22451,7 +22471,7 @@ function init() {
     );
 
     var akademicheskaya = new ymaps.Placemark(
-        [60.01065856407727, 30.403732499999954], {
+        coordinates[1], {
         id: 1,
         hintContent: 'Санкт-Петербург м.Академическая, пр. Ильюшина, 14  ТК «Долгоозерный», 3 этаж'
     }, {
@@ -22459,8 +22479,17 @@ function init() {
     }
     );
 
+    var kupchino = new ymaps.Placemark(
+        coordinates[2], {
+        id: 2,
+        hintContent: 'Санкт-Петербург м.Купчино, ул. Олеко Дундича 10/2, 1 этаж'
+    }, {
+        iconLayout: createLayout(2)
+    }
+    );
+
     var optikov = new ymaps.Placemark(
-        [59.99910206407877,30.220116499999992], {
+        [coordinates[3][0], coordinates[3][1]], {
         id: 3,
         hintContent: 'Санкт-Петербург м.Беговая, ул. Оптиков, 30'
     }, {
@@ -22483,7 +22512,7 @@ function init() {
             $('#kupchino').click();
         } else {
             $('#kupAccord').click();
-        }   
+        }
     });
 
     akademicheskaya.events.add(['click'], function (e) {
@@ -22491,7 +22520,7 @@ function init() {
             $('#akademicheskaya').click();
         } else {
             $('#akadAccord').click();
-        }   
+        }
     });
 
     komendanskiy.events.add(['click'], function (e) {
@@ -22499,7 +22528,7 @@ function init() {
             $('#komendanskiy').click();
         } else {
             $('#komAccord').click();
-        }   
+        }
     });
 
     optikov.events.add(['click'], function (e) {
@@ -22507,11 +22536,10 @@ function init() {
             $('#optikov').click();
         } else {
             $('#optAccord').click();
-        } 
+        }
     });
 
     map.events.add('sizechange', function (event) {
-        var size = map.container.getSize();
         var width = size[0];
         var toChange = false;
 
@@ -22528,10 +22556,6 @@ function init() {
             map.setCenter(mapSettings.center, mapSettings.zoom);
         }
     });
-
-    // map.events.add('boundschange', function (event) {
-    //     console.log(map.getCenter());
-    // });
 
     ymaps.geoQuery(komendanskiy).addToMap(map);
     ymaps.geoQuery(akademicheskaya).addToMap(map);
@@ -22734,7 +22758,7 @@ function toggleDropdown(e) {
     setTimeout(function () {
 
         if (e.type == 'click' && club) {
-            
+
             var hash = $(e.target).data('hash');
 
             if (!hash) {
@@ -22746,18 +22770,18 @@ function toggleDropdown(e) {
             var currentURL = window.location.href;
             currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
             window.location.href = currentURL.concat('/', link);
-        } 
+        }
 
         var shouldOpen = e.type !== 'click' && _d.is(':hover') && !club;
 
-        if(e.type !== 'click') {
+        if (e.type !== 'click') {
             _m.toggleClass('show', shouldOpen);
             _d.toggleClass('show', shouldOpen);
         }
-              
+
     }, e.type === 'mouseleave' ? 100 : 0);
 
-    if(club) {
+    if (club) {
         return false;
     }
 }
