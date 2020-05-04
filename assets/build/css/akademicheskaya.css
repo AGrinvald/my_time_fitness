@@ -10547,7 +10547,7 @@ footer {
         bottom: -150px;
         width: 530px;
         height: 270px;
-        z-index: 4;
+        z-index: 15;
         font-size: 24px;
         padding: 1% 1.5% 1% 1.5%; } }
     .banner-area .banner-container .promo-block .inner .confirm-block {
