@@ -49,7 +49,6 @@
 @import "alert-modal";
 @import "promotion";
 @import "contact-boss-modal";
-@import "couple-promo";
 @import "scroll-control";
 
 
@@ -61,86 +60,6 @@
 
     .col-12 {
       padding: 0;
-    }
-  }
-}
-
-.couple-promo {
-  height: 384px;
-  position: relative;
-
-  @include media-breakpoint-up(lg) {
-    margin-top: 80px;
-
-    &::before {
-      content: "";
-      width: 62%;
-      left: 50%;
-    }
-  }
-
-  .container-fluid {
-    &::before {
-      @include media-breakpoint-up(lg) {
-        height: 170px;
-        width: 800px;
-        top: 27%;
-      }
-    }
-    .right-block {
-      width: 495px;
-      height: 90px;
-      background-size: contain;
-
-      p {
-        font-size: 20px;
-      }
-    }
-  }
-
-  .flex-block {
-    @include media-breakpoint-up(lg) {
-      width: 45%;
-      height: 100%;
-      padding: 30px 0 35px 0;
-    }
-
-    @include media-breakpoint-down(md) {
-      width: 100%;
-      margin-bottom: 50px;
-    }
-
-    h2 {
-      @include media-breakpoint-up(lg) {
-        font-size: 34px;
-      }
-
-      @include media-breakpoint-down(md) {
-        font-size: 26px;
-      }
-    }
-
-    p.subtitle {
-      @include media-breakpoint-up(lg) {
-        font-size: 24px;
-      }
-
-      @include media-breakpoint-down(md) {
-        font-size: 18px;
-        margin-bottom: 1%;
-      }
-    }
-
-    p.date-text {
-      flex-grow: 0;
-      margin-bottom: 0;
-      @include media-breakpoint-up(lg) {
-        font-size: 24px;
-      }
-
-      @include media-breakpoint-down(md) {
-        font-size: 22px;
-      }
     }
   }
 }

@@ -49,7 +49,6 @@
 @import "alert-modal";
 @import "promotion";
 @import "contact-boss-modal";
-@import "girl-promo";
 @import "scroll-control";
 
 .promo-area {
@@ -60,77 +59,6 @@
 
     .col-12 {
       padding: 0;
-    }
-  }
-}
-
-.girl-promo {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-image: url(../img/222@2x.png);
-  display: flex;
-  justify-content: center;
-  height: 384px;
-
-  @include media-breakpoint-up(lg) {
-    margin-top: 80px;
-  }
-
-  .inner-block {
-    @include media-breakpoint-up(lg) {
-      width: 575px;
-      height: 384px;
-      padding: 80px 54px 54px 89px;
-      margin-top: 0;
-    }
-
-    p {
-      @include media-breakpoint-up(lg) {
-        font-size: 24px;
-      }
-
-      @include media-breakpoint-down(md) {
-        font-size: 18px;
-        line-height: 30px;
-      }
-
-      &:last-child {
-        margin-bottom: 98px;
-      }
-    }
-
-    h3 {
-      @include media-breakpoint-up(lg) {
-        font-size: 30px;
-      }
-
-      @include media-breakpoint-down(md) {
-        font-size: 22px;
-      }
-    }
-
-    &::before {
-      @include media-breakpoint-down(md) {
-        width: 350px;
-        height: 191px;
-        bottom: 65px;
-      }
-    }
-
-    &::after {
-      @include media-breakpoint-up(lg) {
-        left: -50px;
-        top: 27px;
-        width: 173px;
-        height: 357px;
-      }
-
-      @include media-breakpoint-down(md) {
-        bottom: -6px;
-        width: 273px;
-        height: 365px;
-      }
     }
   }
 }

@@ -49,7 +49,6 @@
 @import "alert-modal";
 @import "promotion";
 @import "contact-boss-modal";
-@import "fighting-promo";
 @import "scroll-control";
 
 .promo-area {
@@ -63,67 +62,3 @@
     }
   }
 }
-
-.fighting-promo {
-    height: 384px;
-  
-    @include media-breakpoint-up(lg) {
-      margin-top: 80px;
-    }
-
-    &::before {
-      @include media-breakpoint-up(lg) {
-        height: 255px;
-        top: 65px;
-      }
-  
-      @include media-breakpoint-down(md) {
-        height: 300px;
-        top: 30px;
-      }
-    }
-  
-    .inner-block {
-      @include media-breakpoint-up(lg) {
-        height: 115px;
-      }
-  
-      @include media-breakpoint-down(md) {
-        width: 310px;
-        margin-bottom: 100px;
-      }
-
-      h3 {
-        @include media-breakpoint-up(lg) {
-          font-size: 30px;
-        }
-  
-        @include media-breakpoint-down(md) {
-          font-size: 22px;
-        }
-      }
-  
-      h2 {
-        @include media-breakpoint-up(lg) {
-          font-size: 30px;
-        }
-  
-        @include media-breakpoint-down(md) {
-          font-size: 22px;
-          margin-bottom: 10px;
-        }
-      }
-  
-      p {
-        font-weight: 300;
-  
-        @include media-breakpoint-up(lg) {
-          font-size: 24px;
-        }
-  
-        @include media-breakpoint-down(md) {
-          font-size: 18px;
-        }
-      }
-    }
-  }

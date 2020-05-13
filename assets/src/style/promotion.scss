@@ -1,6 +1,6 @@
 b {
   font-weight: 700;
-} 
+}
 
 /* TOP HEADER START */
 .h-top {
@@ -40,51 +40,79 @@ b {
 
 /* PROMO AREA START*/
 .promo-area {
-    h4 {
-      font-size: 24px;
-      font-weight: 300;
-      color: $black;
-      b {
-        font-weight: 600;
-      }
+  .banner {
+    width: 100%;
+    height: 385px;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 80px;
     }
-  
-    p {
-      font-size: 18px;
-      font-weight: 300;
-      line-height: 1.67;
-      color: #000000;
-    }
-  
-    .arrow-text {
-      font-weight: 300;
-      line-height: 1.39;
-      color: #81a100;
-      
-      @include media-breakpoint-up(lg) {
-        font-size: 18px;
+    
+    &-img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      &-lg {
+        @include media-breakpoint-down(md) {
+          display: none;
+        }
       }
-  
-      @include media-breakpoint-down(md) {
-        font-size: 14px;
-      }
-    }
-  
-    .arrow-btn {
-      background-position: center center;
-      background-repeat: no-repeat;
-      width: 58px;
-      height: 58px;
-      background-position: center center;
-      background-repeat: no-repeat;
-  
-      &.btn-prev {
-        background-image: url(../img/group-copy-7@1x.png);
-      }
-  
-      &.btn-next {
-        background-image: url(../img/group-copy-6@1x.png);
+
+      &-sm {
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
       }
     }
   }
-  /* PROMO AREA END*/
+
+  h4 {
+    font-size: 24px;
+    font-weight: 300;
+    color: $black;
+    b {
+      font-weight: 600;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.67;
+    color: #000000;
+  }
+
+  .arrow-text {
+    font-weight: 300;
+    line-height: 1.39;
+    color: #81a100;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 18px;
+    }
+
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+    }
+  }
+
+  .arrow-btn {
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 58px;
+    height: 58px;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    &.btn-prev {
+      background-image: url(../img/group-copy-7@1x.png);
+    }
+
+    &.btn-next {
+      background-image: url(../img/group-copy-6@1x.png);
+    }
+  }
+}
+/* PROMO AREA END*/
