@@ -51,11 +51,6 @@
 @import "footer";
 @import "workouts";
 @import "contact-boss-modal";
-@import "girl-promo";
-@import "fighting-promo";
-@import "couple-promo";
-@import "dark-promo";
-@import "equipment-promo";
 @import "scroll-control";
 
 /* TOP HEADER START */
@@ -86,6 +81,26 @@
 
 /* BANNER AREA START*/
 .banner-area {
+
+  .banner-slide-img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .owl-carousel .owl-item img.banner-slide-img-lg {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+
+  .owl-carousel .owl-item img.banner-slide-img-sm {
+    @include media-breakpoint-up(lg) {
+      display: none;
+    }
+  }
+
   @include media-breakpoint-down(lg) {
     .owl-dots {
       width: 100%;
@@ -139,6 +154,19 @@
       button.owl-next {
         background-image: url(../img/group-copy-6@1x.png);
       }
+    }
+  }
+
+  .banner-slide-link {
+    display: block;
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      height: 510px;
+    }
+
+    @include media-breakpoint-down(md) {
+      height: 610px;
     }
   }
 
@@ -703,22 +731,22 @@
     .club-blocks {
       display: none;
       margin-bottom: 15px;
-  
+
       @include media-breakpoint-up(lg) {
         display: flex;
         max-width: 648px;
         width: 100%;
         overflow-x: auto;
-  
+
         &::-webkit-scrollbar {
           height: 8px;
         }
-  
+
         &::-webkit-scrollbar-thumb {
           border-radius: 6px;
           background-color: #8e8e8e;
         }
-  
+
         &::-webkit-scrollbar-track {
           border-radius: 4px;
           background-color: #ced0db;
@@ -726,7 +754,6 @@
       }
     }
 
-    
     .club-block {
       margin-bottom: 5px;
       width: 162px;
