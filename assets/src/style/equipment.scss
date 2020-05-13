@@ -417,7 +417,7 @@
     .equipment-img-container {
       box-sizing: border-box;
       position: relative;
-
+      
       @include media-breakpoint-up(lg) {
         width: 500px;
         height: 500px;
@@ -425,6 +425,9 @@
 
       @include media-breakpoint-down(md) {
         width: 100%;
+        padding-top: 15px;
+        padding-right: 15px;
+        padding-left: 15px;
       }
 
       .owl-carousel .owl-stage {

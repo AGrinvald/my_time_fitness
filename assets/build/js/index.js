@@ -23035,6 +23035,8 @@ $(function () {
                 map.action.execute(moving);
             });
         } else {
+            var clubItems = JSON.parse(self.data("info"));
+            console.log(clubItems);
             var idStr = self.data("id");
             var area = self.data("area");
             var hall = self.data("hall");

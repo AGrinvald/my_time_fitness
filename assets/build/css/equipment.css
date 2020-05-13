@@ -9441,7 +9441,10 @@ footer {
         height: 500px; } }
     @media (max-width: 991.98px) {
       .equipment-block .equipment-slide .equipment-img-container {
-        width: 100%; } }
+        width: 100%;
+        padding-top: 15px;
+        padding-right: 15px;
+        padding-left: 15px; } }
     .equipment-block .equipment-slide .equipment-img-container .owl-carousel .owl-stage {
       display: -ms-flexbox;
       display: flex; }
