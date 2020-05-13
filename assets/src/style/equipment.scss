@@ -338,14 +338,7 @@
       justify-content: space-between;
       width: 104%;
       left: -2%;
-
-      @include media-breakpoint-up(lg) {
-        top: 45%;
-      }
-
-      @include media-breakpoint-down(md) {
-        top: 35%;
-      }
+      top: 45%;
 
       button.owl-prev,
       button.owl-next {
@@ -417,7 +410,7 @@
     .equipment-img-container {
       box-sizing: border-box;
       position: relative;
-      
+
       @include media-breakpoint-up(lg) {
         width: 500px;
         height: 500px;
@@ -425,13 +418,22 @@
 
       @include media-breakpoint-down(md) {
         width: 100%;
-        padding-top: 15px;
-        padding-right: 15px;
-        padding-left: 15px;
       }
 
       .owl-carousel .owl-stage {
-          display: flex;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      .owl-carousel .owl-item {
+        float: none;
+        display: block;
+      }
+
+      .owl-stage-outer {
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .owl-nav {
@@ -450,7 +452,7 @@
           margin: 0px 6px;
           width: 8px;
           height: 8px;
-          background-color: #8D8D8D;
+          background-color: #8d8d8d;
           border-radius: 30px;
           box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5);
 
@@ -465,13 +467,8 @@
       display: block;
       width: 100%;
       height: auto;
-
-      &-slide {
+      @include media-breakpoint-up(lg) {
         border: 2px solid #fff;
-        display: flex;
-        align-items: center;
-        height: 100%;
-        width: 100%;
       }
     }
 

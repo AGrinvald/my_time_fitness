@@ -9367,13 +9367,8 @@ footer {
   -ms-flex-pack: justify;
       justify-content: space-between;
   width: 104%;
-  left: -2%; }
-  @media (min-width: 992px) {
-    .equipment-block .equipment-slides .owl-nav {
-      top: 45%; } }
-  @media (max-width: 991.98px) {
-    .equipment-block .equipment-slides .owl-nav {
-      top: 35%; } }
+  left: -2%;
+  top: 45%; }
   .equipment-block .equipment-slides .owl-nav button.owl-prev,
   .equipment-block .equipment-slides .owl-nav button.owl-next {
     cursor: pointer;
@@ -9441,13 +9436,19 @@ footer {
         height: 500px; } }
     @media (max-width: 991.98px) {
       .equipment-block .equipment-slide .equipment-img-container {
-        width: 100%;
-        padding-top: 15px;
-        padding-right: 15px;
-        padding-left: 15px; } }
+        width: 100%; } }
     .equipment-block .equipment-slide .equipment-img-container .owl-carousel .owl-stage {
       display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      margin: 0 auto;
+      -ms-flex-align: center;
+          align-items: center; }
+    .equipment-block .equipment-slide .equipment-img-container .owl-carousel .owl-item {
+      float: none;
+      display: block; }
+    .equipment-block .equipment-slide .equipment-img-container .owl-stage-outer {
+      width: 100%;
+      box-sizing: border-box; }
     .equipment-block .equipment-slide .equipment-img-container .owl-nav.disabled {
       display: none; }
     .equipment-block .equipment-slide .equipment-img-container .owl-dots {
@@ -9459,7 +9460,7 @@ footer {
         margin: 0px 6px;
         width: 8px;
         height: 8px;
-        background-color: #8D8D8D;
+        background-color: #8d8d8d;
         border-radius: 30px;
         box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5); }
         .equipment-block .equipment-slide .equipment-img-container .owl-dots .owl-dot.active {
@@ -9468,14 +9469,9 @@ footer {
     display: block;
     width: 100%;
     height: auto; }
-    .equipment-block .equipment-slide .equipment-image-slide {
-      border: 2px solid #fff;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-          align-items: center;
-      height: 100%;
-      width: 100%; }
+    @media (min-width: 992px) {
+      .equipment-block .equipment-slide .equipment-image {
+        border: 2px solid #fff; } }
   .equipment-block .equipment-slide .equipment-video {
     max-width: 512px;
     max-height: 416px;
