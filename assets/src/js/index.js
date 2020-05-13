@@ -46,6 +46,7 @@ var centerPoints = [
     [60.0085957593716, 30.38656056396479],
     [59.82606894374578, 30.377313508422816],
     [59.99793695032447, 30.200749622558583]
+    //[60.012024287722944, 30.21908363256835]
 ];
 
 var coordinates = [
@@ -69,10 +70,6 @@ var createLayout = function (id) {
                 if (!this.inited) {
                     this.inited = true;
 
-                    placemarkMap.events.add('sizechange', function () {
-                        this.rebuild();
-                    }, this);
-
                     placemarkMap.events.add('boundschange', function () {
                         this.rebuild();
                     }, this);
@@ -84,7 +81,6 @@ var createLayout = function (id) {
                 img.height = mapSettings.imgSize[1];
                 img.id = 'map-pointer-' + id;
 
-                var geometry = this.getData().geometry;
                 var options = this.getData().options,
                     element = this.getParentElement().getElementsByClassName('club')[0];
 
@@ -110,16 +106,19 @@ var createLayout = function (id) {
                     this.onClubClick(id);
                 });
 
-                var zoom = placemarkMap.getZoom();
-                var optikovCoords = [];
-                optikovCoords[0] = coordinates[3][0];
-                optikovCoords[1] = coordinates[3][1];
+                if (id === 3) {
+                    var geometry = this.getData().geometry;
+                    var zoom = placemarkMap.getZoom();
 
-                if(zoom <= 10) {
-                    optikovCoords[1] = optikovCoords[1] - 0.04;
-                }
-            
-                if(id === 3) {
+                    var optikovCoords = [];
+                    optikovCoords[0] = coordinates[3][0];
+
+                    if (zoom <= 10) {
+                        optikovCoords[1] = coordinates[3][1] - 0.04;
+                    } else {
+                        optikovCoords[1] = coordinates[3][1];
+                    }
+                    
                     geometry.setCoordinates(optikovCoords);
                 }
 
@@ -677,6 +676,13 @@ $(function () {
                 var coords = [markCoords[0], markCoords[1]];
 
                 coords[0] = coords[0] + 0.01;
+
+                var currentZoom = map.getZoom();
+
+                if(currentZoom === 9 && id === 3) {
+                    coords[1] = coords[1] + 0.04;
+                }
+
                 zoom = 13;
 
                 var moving = new ymaps.map.action.Single({
@@ -724,14 +730,16 @@ $(function () {
                 map.action.execute(moving);
             });
         } else {
-            var clubItems = JSON.parse(self.data("info"));
-            console.log(clubItems);
-            var idStr = self.data("id");
-            var area = self.data("area");
-            var hall = self.data("hall");
-            var link = self.data("link");
+            var information = self.data("info");
+            var infoStr = "";
 
-            var programs = self.data("programs");
+            for (var j = 0; j < information.length; j++) {
+                infoStr = infoStr.concat('<div>', '<div class="info-top">', information[j].title, '</div>',
+                    '<div class="info-bottom">', information[j].value, '</div>', '</div>');
+            }
+
+            var idStr = self.data("id");
+            var link = self.data("link");
 
             var id = parseInt(idStr);
             var selected = geoObjects.search("properties.id = " + id);
@@ -762,32 +770,9 @@ $(function () {
 
                         $('<div class="club-info-block"> \
                         <div class="d-flex align-self-end align-items-center"> \
-                    <div class="inner-div d-flex">\
-                      <div>\
-                        <div class="info-top">\
-                          Площадь клуба\
-                        </div>\
-                        <div class="info-bottom">' +
-                            area
-                            + '</div>\
-                      </div>\
-                      <div>\
-                          <div class="info-top">\
-                              Тренажерный зал\
-                          </div>\
-                          <div class="info-bottom">' +
-                            hall
-                            + '</div>\
-                        </div>\
-                        <div>\
-                            <div class="info-top">\
-                                Зал групповых программ\
-                            </div>\
-                            <div class="info-bottom">' +
-                            programs
-                            + '</div>\
-                          </div>\
-                    </div>\
+                    <div class="inner-div d-flex">' +
+                            infoStr +
+                            '</div>\
                     <a data-link="'+ link + '" href="' + link + '"class="btn btn-rounded btn-primary club-info-btn">О клубе</a>\
                     </div>\
                   </div>').appendTo(".map-area .clubs-block .container");
