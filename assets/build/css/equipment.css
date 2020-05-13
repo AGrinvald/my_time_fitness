@@ -9442,10 +9442,9 @@ footer {
     @media (max-width: 991.98px) {
       .equipment-block .equipment-slide .equipment-img-container {
         width: 100%; } }
-    @media (min-width: 992px) {
-      .equipment-block .equipment-slide .equipment-img-container .owl-carousel .owl-stage {
-        display: -ms-flexbox;
-        display: flex; } }
+    .equipment-block .equipment-slide .equipment-img-container .owl-carousel .owl-stage {
+      display: -ms-flexbox;
+      display: flex; }
     .equipment-block .equipment-slide .equipment-img-container .owl-nav.disabled {
       display: none; }
     .equipment-block .equipment-slide .equipment-img-container .owl-dots {

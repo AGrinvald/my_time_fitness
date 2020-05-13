@@ -22007,6 +22007,7 @@ $(function () {
             var lines = 4;
 
             $('.truncate-text').each(function () {
+                console.log("find");
                 var content = $(this).html();
 
                 if ($(this).height() > lineHeight * lines) {

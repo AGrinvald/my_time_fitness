@@ -428,9 +428,7 @@
       }
 
       .owl-carousel .owl-stage {
-        @include media-breakpoint-up(lg) {
           display: flex;
-        }
       }
 
       .owl-nav {
@@ -466,9 +464,7 @@
       height: auto;
 
       &-slide {
-        @include media-breakpoint-up(lg) {
-          border: 2px solid #fff;
-        }
+        border: 2px solid #fff;
         display: flex;
         align-items: center;
         height: 100%;
