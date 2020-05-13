@@ -9481,6 +9481,9 @@ footer {
     max-height: 416px;
     height: auto;
     width: 100%; }
+    @media (min-width: 992px) {
+      .equipment-block .equipment-slide .equipment-video {
+        height: 417px; } }
   .equipment-block .equipment-slide .equipment-desc {
     display: -ms-flexbox;
     display: flex;

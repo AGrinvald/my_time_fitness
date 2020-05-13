@@ -481,6 +481,10 @@
       max-height: 416px;
       height: auto;
       width: 100%;
+
+      @include media-breakpoint-up(lg) {
+        height: 417px;
+      }
     }
 
     .equipment-desc {
