@@ -8704,7 +8704,9 @@ nav.navbar {
   -ms-flex-align: center;
       align-items: center; }
   #clubs-modal .modal-body .club-link img {
-    margin-right: 24px; }
+    margin-right: 24px;
+    width: 35px;
+    height: auto; }
   #clubs-modal .modal-body .club-link h5 {
     font-size: 18px;
     font-weight: bold;
@@ -9278,6 +9280,10 @@ footer {
     margin-bottom: 90px;
     overflow: hidden; } }
 
+@media (max-width: 991.98px) {
+  .equipment-block .container {
+    padding: 0 30px; } }
+
 .equipment-block .block-title {
   text-align: center;
   height: 80px; }
@@ -9348,12 +9354,10 @@ footer {
 
 @media (max-width: 991.98px) {
   .equipment-block .equipment-slides {
-    max-width: 520px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
     box-sizing: border-box; } }
 
 .equipment-block .equipment-slides .owl-nav {
@@ -9361,17 +9365,15 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between; }
+      justify-content: space-between;
+  width: 104%;
+  left: -2%; }
   @media (min-width: 992px) {
     .equipment-block .equipment-slides .owl-nav {
-      top: 45%;
-      width: 104%;
-      left: -2%; } }
+      top: 45%; } }
   @media (max-width: 991.98px) {
     .equipment-block .equipment-slides .owl-nav {
-      top: 65%;
-      width: 100%;
-      left: -2px; } }
+      top: 35%; } }
   .equipment-block .equipment-slides .owl-nav button.owl-prev,
   .equipment-block .equipment-slides .owl-nav button.owl-next {
     cursor: pointer;
@@ -9400,18 +9402,17 @@ footer {
     background-image: url(../img/right-arrow.svg); }
 
 .equipment-block .equipment-slide {
-  width: 100%;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
-  border: 1px solid #d6d6d6; }
+  border: 1px solid #d6d6d6;
+  box-sizing: border-box; }
   @media (min-width: 992px) {
     .equipment-block .equipment-slide {
+      width: 100%;
       -ms-flex-direction: row;
           flex-direction: row;
       -ms-flex-align: stretch;
           align-items: stretch;
-      height: 500px;
       padding: 40px; }
       .equipment-block .equipment-slide::before {
         content: "";
@@ -9430,13 +9431,21 @@ footer {
     .equipment-block .equipment-slide {
       -ms-flex-direction: column;
           flex-direction: column;
-      max-width: 512px;
-      margin: 0 auto; } }
+      width: 100%; } }
   .equipment-block .equipment-slide .equipment-img-container {
-    max-width: 512px;
-    max-height: 416px;
-    position: relative;
-    width: 100%; }
+    box-sizing: border-box;
+    position: relative; }
+    @media (min-width: 992px) {
+      .equipment-block .equipment-slide .equipment-img-container {
+        width: 500px;
+        height: 500px; } }
+    @media (max-width: 991.98px) {
+      .equipment-block .equipment-slide .equipment-img-container {
+        width: 100%; } }
+    @media (min-width: 992px) {
+      .equipment-block .equipment-slide .equipment-img-container .owl-carousel .owl-stage {
+        display: -ms-flexbox;
+        display: flex; } }
     .equipment-block .equipment-slide .equipment-img-container .owl-nav.disabled {
       display: none; }
     .equipment-block .equipment-slide .equipment-img-container .owl-dots {
@@ -9448,16 +9457,25 @@ footer {
         margin: 0px 6px;
         width: 8px;
         height: 8px;
-        background-color: #ffffff;
+        background-color: #f0f0f0;
         border-radius: 30px;
         box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5); }
         .equipment-block .equipment-slide .equipment-img-container .owl-dots .owl-dot.active {
           background: #aacc23; }
   .equipment-block .equipment-slide .equipment-image {
-    max-width: 512px;
-    max-height: 416px;
-    height: 100%;
-    width: 100%; }
+    display: block;
+    width: 100%;
+    height: auto; }
+    .equipment-block .equipment-slide .equipment-image-slide {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      height: 100%;
+      width: 100%; }
+      @media (min-width: 992px) {
+        .equipment-block .equipment-slide .equipment-image-slide {
+          border: 2px solid #fff; } }
   .equipment-block .equipment-slide .equipment-video {
     max-width: 512px;
     max-height: 416px;

@@ -17,7 +17,6 @@
 
   h3 {
     @include media-breakpoint-up(lg) {
-      //font-size: 48px;
       font-size: 40px;
       letter-spacing: 1px;
     }

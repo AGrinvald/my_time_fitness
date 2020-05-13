@@ -229,6 +229,12 @@
     overflow: hidden;
   }
 
+  .container {
+    @include media-breakpoint-down(md) {
+      padding: 0 30px;
+    }
+  }
+
   .block-title {
     text-align: center;
     height: 80px;
@@ -318,14 +324,11 @@
   }
 
   .equipment-slides {
-
     @include media-breakpoint-down(md) {
-      max-width: 520px;
+      max-width: 500px;
       margin-left: auto;
       margin-right: auto;
       width: 100%;
-      padding-right: 15px;
-      padding-left: 15px;
       box-sizing: border-box;
     }
 
@@ -333,17 +336,15 @@
       position: absolute;
       display: flex;
       justify-content: space-between;
+      width: 104%;
+      left: -2%;
 
       @include media-breakpoint-up(lg) {
         top: 45%;
-        width: 104%;
-        left: -2%;
       }
 
       @include media-breakpoint-down(md) {
-        top: 65%;
-        width: 100%;
-        left: -2px;
+        top: 35%;
       }
 
       button.owl-prev,
@@ -382,15 +383,14 @@
   }
 
   .equipment-slide {
-    width: 100%;
     display: flex;
-    position: relative;
     border: 1px solid #d6d6d6;
+    box-sizing: border-box;
 
     @include media-breakpoint-up(lg) {
+      width: 100%;
       flex-direction: row;
       align-items: stretch;
-      height: 500px;
       padding: 40px;
 
       &::before {
@@ -411,16 +411,27 @@
 
     @include media-breakpoint-down(md) {
       flex-direction: column;
-      max-width: 512px;
-      margin: 0 auto;
+      width: 100%;
     }
 
     .equipment-img-container {
-      max-width: 512px;
-      max-height: 416px;
+      box-sizing: border-box;
       position: relative;
-      width: 100%;
-      //height: 100%;
+
+      @include media-breakpoint-up(lg) {
+        width: 500px;
+        height: 500px;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+
+      .owl-carousel .owl-stage {
+        @include media-breakpoint-up(lg) {
+          display: flex;
+        }
+      }
 
       .owl-nav {
         &.disabled {
@@ -438,7 +449,7 @@
           margin: 0px 6px;
           width: 8px;
           height: 8px;
-          background-color: $white;
+          background-color: #f0f0f0;
           border-radius: 30px;
           box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.5);
 
@@ -450,10 +461,19 @@
     }
 
     .equipment-image {
-      max-width: 512px;
-      max-height: 416px;
-      height: 100%;
+      display: block;
       width: 100%;
+      height: auto;
+
+      &-slide {
+        @include media-breakpoint-up(lg) {
+          border: 2px solid #fff;
+        }
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+      }
     }
 
     .equipment-video {

@@ -8704,7 +8704,9 @@ nav.navbar {
   -ms-flex-align: center;
       align-items: center; }
   #clubs-modal .modal-body .club-link img {
-    margin-right: 24px; }
+    margin-right: 24px;
+    width: 35px;
+    height: auto; }
   #clubs-modal .modal-body .club-link h5 {
     font-size: 18px;
     font-weight: bold;

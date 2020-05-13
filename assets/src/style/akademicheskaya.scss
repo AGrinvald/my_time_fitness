@@ -344,8 +344,7 @@
             margin-bottom: 40px;
             background-color: rgba(0, 0, 0, 0.5);
             text-align: center;
-            padding: 0 25px;
-            padding-bottom: 5px;
+            padding: 0 15px;
             font-size: 15px;
             letter-spacing: 0.06px;
             color: #ffffff;
@@ -354,17 +353,16 @@
                 &:not(:last-child) {
                     margin-right: 30px;
                 }
-
                 > div {
                     &:first-child {
                         font-weight: 500;
-                        padding-bottom: 8px;
-                        padding-top: 15px;
+                        padding-bottom: 5px;
+                        padding-top: 8px;
                         border-bottom: 1px solid #d6ff34;
                     }
                     &:last-child {
-                        padding-top: 8px;
-                        padding-bottom: 10px;
+                        padding-top: 5px;
+                        padding-bottom: 8px;
                         font-weight: 100;
                     }
                 }
@@ -421,11 +419,10 @@
             .address {
                 text-align: center;
                 font-weight: 300;
-;
                 @include media-breakpoint-up(xl) {
                     font-size: 20px;
                     line-height: 23px;
-                    margin-left: 65px
+                    margin-left: 65px;
                 }
 
                 @include media-breakpoint-down(lg) {
@@ -434,7 +431,7 @@
             }
 
             .line {
-                background-color: #D0D0D0;
+                background-color: #d0d0d0;
                 height: 1px;
 
                 @include media-breakpoint-up(xl) {
@@ -452,10 +449,10 @@
             .working-hours {
                 display: flex;
                 width: 100%;
-                
+
                 font-weight: 300;
                 letter-spacing: 0.18px;
-                
+
                 @include media-breakpoint-up(xl) {
                     margin-top: 20px;
                     font-size: 18px;

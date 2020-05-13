@@ -8690,7 +8690,9 @@ nav.navbar {
   -ms-flex-align: center;
       align-items: center; }
   #clubs-modal .modal-body .club-link img {
-    margin-right: 24px; }
+    margin-right: 24px;
+    width: 35px;
+    height: auto; }
   #clubs-modal .modal-body .club-link h5 {
     font-size: 18px;
     font-weight: bold;
@@ -10675,8 +10677,7 @@ footer {
     margin-bottom: 40px;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    padding: 0 25px;
-    padding-bottom: 5px;
+    padding: 0 15px;
     font-size: 15px;
     letter-spacing: 0.06px;
     color: #ffffff; }
@@ -10684,12 +10685,12 @@ footer {
       margin-right: 30px; }
     .banner-area .banner-container .info-div .info-block > div:first-child {
       font-weight: 500;
-      padding-bottom: 8px;
-      padding-top: 15px;
+      padding-bottom: 5px;
+      padding-top: 8px;
       border-bottom: 1px solid #d6ff34; }
     .banner-area .banner-container .info-div .info-block > div:last-child {
-      padding-top: 8px;
-      padding-bottom: 10px;
+      padding-top: 5px;
+      padding-bottom: 8px;
       font-weight: 100; }
   .banner-area .banner-container .subtitle-div {
     width: 100%;
@@ -10743,7 +10744,7 @@ footer {
         .banner-area .banner-container .subtitle-div .address {
           font-size: 16px; } }
     .banner-area .banner-container .subtitle-div .line {
-      background-color: #D0D0D0;
+      background-color: #d0d0d0;
       height: 1px; }
       @media (min-width: 1200px) {
         .banner-area .banner-container .subtitle-div .line {
