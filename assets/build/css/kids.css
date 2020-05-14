@@ -9730,7 +9730,9 @@ footer {
         transition: all 0.5s ease-in-out; }
     @media (min-width: 1200px) {
       .season-area .season-item {
-        width: 272px; } }
+        width: 272px; }
+        .season-area .season-item:not(:last-child) {
+          margin-right: 20px; } }
     @media (max-width: 1199.98px) {
       .season-area .season-item {
         max-width: 344px;

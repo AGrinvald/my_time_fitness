@@ -892,6 +892,10 @@
 
     @include media-breakpoint-up(xl) {
       width: 272px;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
     }
 
     @include media-breakpoint-down(lg) {
