@@ -586,9 +586,7 @@
             width: 100px;
             justify-content: center;
 
-            .sign-icon,
-            .man-icon,
-            .weight-icon {
+            img {
               width: 44px;
               height: 76px;
             }
@@ -607,33 +605,6 @@
             max-width: 135px;
             margin-left: 25px;
           }
-        }
-
-        .man-icon {
-          background-image: url(../img/man-icon.svg);
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: 100%;
-          width: 49px;
-          height: 84px;
-        }
-
-        .weight-icon {
-          background-image: url(../img/weight-icon.svg);
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: 100%;
-          width: 58px;
-          height: 83px;
-        }
-
-        .sign-icon {
-          background-image: url(../img/sign-icon.svg);
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: 100%;
-          width: 66px;
-          height: 83px;
         }
       }
     }
