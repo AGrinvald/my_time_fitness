@@ -9802,10 +9802,12 @@ footer {
       .season-area .season-item .features-b li {
         -ms-flex-align: center;
             align-items: center;
-        padding: 35px 0;
+        padding: 15px 0;
         font-size: 18px;
         font-weight: 300;
         line-height: 1.11; }
+        .season-area .season-item .features-b li:not(:last-child) {
+          border-bottom: 1px dotted #cecece; }
         .season-area .season-item .features-b li p:last-child {
           margin-left: 17px; }
       .season-area .season-item .features-b .icon {
@@ -9824,7 +9826,7 @@ footer {
           flex-direction: column; }
       .season-area .season-item .desc p {
         padding-top: 10px;
-        padding-bottom: 30px;
+        padding-bottom: 15px;
         border-top: solid 1px #9f9f9f;
         font-size: 16px;
         font-weight: 300;

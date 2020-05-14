@@ -985,10 +985,14 @@
 
       li {
         align-items: center;
-        padding: 35px 0;
+        padding: 15px 0;
         font-size: 18px;
         font-weight: 300;
         line-height: 1.11;
+
+        &:not(:last-child) {
+          border-bottom: 1px dotted #cecece;
+        }
 
         p:last-child {
           margin-left: 17px;
@@ -1011,7 +1015,7 @@
 
       p {
         padding-top: 10px;
-        padding-bottom: 30px;
+        padding-bottom: 15px;
         border-top: solid 1px #9f9f9f;
         font-size: 16px;
         font-weight: 300;
@@ -1032,7 +1036,6 @@
 
 /* PHOTO AREA START*/
 .photo-area {
-
   .photo-container {
     margin-right: auto;
     margin-left: auto;
@@ -1050,7 +1053,7 @@
       @include media-breakpoint-down(md) {
         width: 40%;
       }
-      
+
       @include media-breakpoint-down(sm) {
         width: 80%;
       }
