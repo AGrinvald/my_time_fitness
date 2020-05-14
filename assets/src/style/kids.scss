@@ -955,7 +955,8 @@
         > div:first-child {
           font-size: 85px;
           font-weight: bold;
-          letter-spacing: 0;
+          letter-spacing: -6px;
+          margin-right: 10px;
         }
         > div:last-child {
           > div:first-child {

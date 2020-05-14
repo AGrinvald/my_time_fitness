@@ -9782,7 +9782,8 @@ footer {
         .season-area .season-item .tariff-b .new-price > div:first-child {
           font-size: 85px;
           font-weight: bold;
-          letter-spacing: 0; }
+          letter-spacing: -6px;
+          margin-right: 10px; }
         .season-area .season-item .tariff-b .new-price > div:last-child > div:first-child {
           font-size: 44px;
           font-weight: bold;
