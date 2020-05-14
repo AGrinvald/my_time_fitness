@@ -9739,31 +9739,33 @@ footer {
       flex-direction: column;
   cursor: pointer;
   color: #000000;
-  transition: all .5s ease-in-out; }
+  transition: all 0.5s ease-in-out; }
   @media (min-width: 1200px) {
     .season-area .season-item {
-      width: 368px; } }
+      width: 368px; }
+      .season-area .season-item:not(:last-child) {
+        margin-right: 20px; } }
   @media (max-width: 1199.98px) {
     .season-area .season-item {
       max-width: 344px;
       width: 100%;
       margin-bottom: 25px; } }
   .season-area .season-item:hover {
-    box-shadow: 0 0 16px 0 #AACC23;
+    box-shadow: 0 0 16px 0 #aacc23;
     text-decoration: none;
     -webkit-transform: scale(1.02);
             transform: scale(1.02); }
     .season-area .season-item:hover .tariff-b::before {
       background-color: #aacc23;
-      transition: background-color .5s ease-in-out; }
+      transition: background-color 0.5s ease-in-out; }
     .season-area .season-item:hover .tariff-b .old-price {
       color: #dcfe55;
-      transition: color .5s ease-in-out; }
+      transition: color 0.5s ease-in-out; }
     .season-area .season-item:hover button {
       background-color: #aacc23;
       border: none;
       color: #ffffff;
-      transition: all .5s ease-in-out; }
+      transition: all 0.5s ease-in-out; }
   .season-area .season-item p {
     margin: 0; }
   .season-area .season-item .tariff-b {
@@ -9809,7 +9811,8 @@ footer {
       .season-area .season-item .tariff-b .new-price > div:first-child {
         font-size: 90px;
         font-weight: bold;
-        letter-spacing: 1.88px; }
+        letter-spacing: -6px;
+        margin-right: 10px; }
       .season-area .season-item .tariff-b .new-price > div:last-child > div:first-child {
         font-size: 44px;
         font-weight: bold;
@@ -9983,7 +9986,7 @@ footer {
         font-size: 26px;
         letter-spacing: 0.26px;
         color: #aacc23;
-        margin-bottom: 30px; }
+        margin-bottom: 15px; }
       .services-area .services-container .flip-card .flip-card-back p {
         text-align: left;
         font-size: 18px;

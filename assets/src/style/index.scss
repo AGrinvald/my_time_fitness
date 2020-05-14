@@ -81,7 +81,6 @@
 
 /* BANNER AREA START*/
 .banner-area {
-
   .banner-slide-img {
     display: block;
     height: 100%;
@@ -469,6 +468,10 @@
       color: #373737;
       line-height: 25px;
       width: 165px;
+
+      p {
+        margin: 0;
+      }
     }
   }
 }
