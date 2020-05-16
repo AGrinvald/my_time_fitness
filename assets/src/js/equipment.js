@@ -112,6 +112,28 @@ function storeHash(e) {
     sessionStorage.setItem('club-hash', hash);
 }
 
+function kidPromoLinkClick(event) {
+    event.preventDefault();
+    var clubLink = sessionStorage.getItem('club-link');
+    var url = $(event.target).attr("href");
+
+    function redirectToPage() {
+        var link = $(this).data('link');
+        window.location.href = url.concat('/', link);
+    }
+
+    $(".club-link").on("click", redirectToPage);
+
+    if (!clubLink) {
+        $('#clubs-modal').on('hidden.bs.modal', function () {
+            $(".club-link").off("click", redirectToPage);
+        });
+        $('#clubs-modal').modal('show');
+    } else {
+        window.location.href = url.concat('/', clubLink);
+    }
+}
+
 $(function () {
 
     setClubName();
@@ -121,7 +143,8 @@ $(function () {
         .on('click', '.navbar a.nav-club-link', toggleDropdown);
 
     $('.navbar a.dropdown-item').click(storeHash);
-    
+    $('.nav-small-club').click(kidPromoLinkClick);
+
     $(".club-link").on("click", function (e) {
         var name = $(this).data('name');
         var link = $(this).data('link');

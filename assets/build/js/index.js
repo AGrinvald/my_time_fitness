@@ -22429,7 +22429,7 @@ var createLayout = function (id) {
                     } else {
                         optikovCoords[1] = coordinates[3][1];
                     }
-                    
+
                     geometry.setCoordinates(optikovCoords);
                 }
 
@@ -22784,6 +22784,7 @@ function toggleDropdown(e) {
     }
 }
 
+
 function storeHash(e) {
     var hash = $(e.target).data('hash');
 
@@ -22792,6 +22793,28 @@ function storeHash(e) {
     }
 
     sessionStorage.setItem('club-hash', hash);
+}
+
+function kidPromoLinkClick(event) {
+    event.preventDefault();
+    var clubLink = sessionStorage.getItem('club-link');
+    var url = $(event.target).attr("href");
+
+    function redirectToPage() {
+        var link = $(this).data('link');
+        window.location.href = url.concat('/', link);
+    }
+
+    $(".club-link").on("click", redirectToPage);
+
+    if (!clubLink) {
+        $('#clubs-modal').on('hidden.bs.modal', function () {
+            $(".club-link").off("click", redirectToPage);
+        });
+        $('#clubs-modal').modal('show');
+    } else {
+        window.location.href = url.concat('/', clubLink);
+    }
 }
 
 $(function () {
@@ -22804,6 +22827,7 @@ $(function () {
     $('.navbar a.dropdown-item').click(storeHash);
     $('.promo-area .schedule-link a').click(storeHash);
     $('.promo-area a.accordion-body-btn').click(storeHash);
+    $('.nav-small-club').click(kidPromoLinkClick);
 
     $(".club-link").on("click", function (e) {
         var name = $(this).data('name');
@@ -22906,10 +22930,10 @@ $(function () {
         items: 1,
         loop: true,
         mouseDrag: false,
-        //autoplay: true,
-        //autoplaySpeed: 1000,
-        //autoplayTimeout: 3000,
-        //autoplayHoverPause: true,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
         responsive: {
             992: {
                 dots: false,
@@ -22923,7 +22947,7 @@ $(function () {
         navText: ["", ""]
     });
 
-    //owl.trigger('play.owl.autoplay', [3000])
+    owl.trigger('play.owl.autoplay', [3000])
 
     $('.features').owlCarousel({
         mouseDrag: false,
@@ -22990,7 +23014,7 @@ $(function () {
 
                 var currentZoom = map.getZoom();
 
-                if(currentZoom === 9 && id === 3) {
+                if (currentZoom === 9 && id === 3) {
                     coords[1] = coords[1] + 0.04;
                 }
 
