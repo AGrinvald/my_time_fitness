@@ -9442,7 +9442,9 @@ footer {
       display: flex;
       margin: 0 auto;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
     .equipment-block .equipment-slide .equipment-img-container .owl-carousel .owl-item {
       float: none;
       display: block; }
@@ -9469,9 +9471,6 @@ footer {
     display: block;
     width: 100%;
     height: auto; }
-    @media (min-width: 992px) {
-      .equipment-block .equipment-slide .equipment-image {
-        border: 2px solid #fff; } }
   .equipment-block .equipment-slide .equipment-video {
     max-width: 512px;
     max-height: 416px;
