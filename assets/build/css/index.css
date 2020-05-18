@@ -9114,6 +9114,129 @@ footer {
     bottom: 35px;
     right: 10px; } }
 
+.equipment-promo {
+  overflow: hidden;
+  background-image: url(../img/eq-bg.jpg);
+  background-repeat: no-repeat; }
+  @media (min-width: 992px) {
+    .equipment-promo {
+      position: relative;
+      background-color: #020202;
+      background-size: auto 100%;
+      background-position: 65% 50%; }
+      .equipment-promo::before {
+        content: "";
+        position: absolute;
+        height: 449px;
+        width: 404px;
+        bottom: 5%;
+        left: 50%;
+        -webkit-transform: translateX(-107%);
+                transform: translateX(-107%);
+        z-index: 3;
+        background-size: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url(../img/equipment.png); } }
+  @media (max-width: 991.98px) {
+    .equipment-promo {
+      background-color: #2b2c26;
+      background-size: auto 485px;
+      background-position: 35% 0%; }
+      .equipment-promo::before {
+        content: "";
+        position: absolute;
+        height: 314px;
+        width: 283px;
+        bottom: 18%;
+        left: 50%;
+        -webkit-transform: translateX(-55%);
+                transform: translateX(-55%);
+        z-index: 3;
+        background-size: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url(../img/equipment.png); } }
+  .equipment-promo .inner-block {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    position: relative;
+    z-index: 5; }
+    @media (min-width: 992px) {
+      .equipment-promo .inner-block {
+        padding: 95px 60px 0px 0; } }
+    @media (max-width: 991.98px) {
+      .equipment-promo .inner-block {
+        width: 100%;
+        height: 100%;
+        max-width: 455px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; } }
+    .equipment-promo .inner-block .equipment-icon {
+      background-image: url(../img/eq-logo.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: auto; }
+      @media (min-width: 992px) {
+        .equipment-promo .inner-block .equipment-icon {
+          margin-bottom: 50px;
+          width: 248px;
+          height: 49px; } }
+      @media (max-width: 991.98px) {
+        .equipment-promo .inner-block .equipment-icon {
+          width: 185px;
+          height: 37px; } }
+    .equipment-promo .inner-block h2 {
+      font-family: "PFDinCondensedMedium";
+      text-align: right;
+      font-weight: bold; }
+      @media (min-width: 992px) {
+        .equipment-promo .inner-block h2 {
+          font-size: 56px; } }
+      @media (max-width: 991.98px) {
+        .equipment-promo .inner-block h2 {
+          font-size: 44px;
+          margin-top: 30px; } }
+      @media (max-width: 575.98px) {
+        .equipment-promo .inner-block h2 {
+          font-size: 40px;
+          margin-top: 30px; } }
+    .equipment-promo .inner-block a.custom-btn {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 1px solid transparent;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 1.5;
+      display: block;
+      width: 232px;
+      height: 56px;
+      border-radius: 32.5px;
+      background-color: #aacc23;
+      color: #ffffff;
+      box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.5);
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1.42px; }
+      @media (min-width: 992px) {
+        .equipment-promo .inner-block a.custom-btn {
+          margin-left: auto; } }
+      @media (max-width: 991.98px) {
+        .equipment-promo .inner-block a.custom-btn {
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: auto;
+          margin-bottom: 70px; } }
+      .equipment-promo .inner-block a.custom-btn:hover {
+        text-decoration: none;
+        background-color: #000000;
+        border-color: #aacc23;
+        color: #aacc23; }
+
 /* TOP HEADER START */
 @media (min-width: 992px) {
   .h-top .inner {
