@@ -23,6 +23,7 @@
 
 // Импортируем Owl
 //= ../../../node_modules/owl.carousel/dist/owl.carousel.js
+//=./waterwheel.js
 
 var map;
 var windowsSize = {
@@ -151,54 +152,7 @@ function init() {
     ymaps.geoQuery(akademicheskaya).addToMap(map);
 }
 
-function moveToSelected(element) {
-    var gallery = $("div.gallery-carousel");
 
-    if (element == "next") {
-        var selected = $("div.gallery-carousel .selected").next();
-    } else if (element == "prev") {
-        var selected = $("div.gallery-carousel .selected").prev();
-    } else {
-        var selected = element;
-    }
-
-    var amount = $("div.gallery-carousel div").length;
-    var selectedIndex = $(".gallery-carousel div.slide").index($(selected));
-
-    if (element == "next" && amount <= selectedIndex + 2) {
-        var firstSlide = gallery.find("div.slide:first-child");
-        firstSlide.clone().appendTo(gallery);
-        firstSlide.remove();
-    } else if (element == "prev" && selectedIndex < 2) {
-        var lastSlide = gallery.find("div.slide:last-child");
-        lastSlide.clone().prependTo(gallery);
-        lastSlide.remove();
-    }
-
-    var next = $(selected).next();
-    var prev = $(selected).prev();
-    var prevSecond = $(prev).prev();
-    var nextSecond = $(next).next();
-
-    $(selected).removeClass().addClass("slide").addClass("selected");
-    $(prev).removeClass().addClass("slide").addClass("prev");
-    $(next).removeClass().addClass("slide").addClass("next");
-
-    $(nextSecond).removeClass().addClass("slide").addClass("nextRight");
-    $(prevSecond).removeClass().addClass("slide").addClass("prevLeft");
-
-    $(nextSecond).nextAll().removeClass().addClass("slide").addClass('hideRight');
-    $(prevSecond).prevAll().removeClass().addClass("slide").addClass('hideLeft');
-
-    calcPositions();
-}
-
-function calcWidth(percent) {
-    var containerWidth = $("div.gallery-carousel").width();
-    var elWidth = containerWidth * percent / 100;
-
-    return elWidth;
-}
 
 function promoNextClick() {
     var next = $(this).data("next");
@@ -229,69 +183,6 @@ function promoNextClick() {
 var md = 992;
 var lg = 1400;
 
-function calcPositions() {
-
-    var selected = $("div.gallery-carousel .selected");
-    var next = $(selected).next();
-    var prev = $(selected).prev();
-    var prevSecond = $(prev).prev();
-    var nextSecond = $(next).next();
-
-    var containerWidth = $("div.gallery-carousel").width();
-    selected.css({ top: 0 });
-
-    var selectedWidth = calcWidth(57.3);
-    var secondWidth = calcWidth(39);
-    var thirdWidth = calcWidth(29.9);
-
-    selected.width(selectedWidth);
-    next.width(secondWidth);
-    prev.width(secondWidth);
-    nextSecond.width(thirdWidth);
-    prevSecond.width(thirdWidth);
-
-    var selectedLeft = (containerWidth - selectedWidth) / 2;
-    selected.css({ left: selectedLeft });
-
-    var secondX = (containerWidth - selectedWidth - 2 * (secondWidth / 3)) / 2;
-    next.css({ left: containerWidth - secondX - secondWidth });
-    prev.css({ left: secondX });
-
-    var thirdX = (containerWidth - selectedWidth - 2 * (secondWidth / 3) - 2 * (thirdWidth / 3)) / 2;
-    nextSecond.css({ left: containerWidth - thirdX - thirdWidth });
-    prevSecond.css({ left: thirdX });
-
-    var secondY = (selectedWidth * 0.66878981 - secondWidth * 0.66878981) / 2;
-    next.css({ top: secondY });
-    prev.css({ top: secondY });
-
-    var thirdY = (selectedWidth * 0.66878981 - thirdWidth * 0.66878981) / 2;
-    nextSecond.css({ top: thirdY });
-    prevSecond.css({ top: thirdY });
-}
-
-function galleryReset() {
-    var selected = $("div.gallery-carousel .selected");
-    var next = $(selected).next();
-    var prev = $(selected).prev();
-    var prevSecond = $(prev).prev();
-    var nextSecond = $(next).next();
-    selected.css('width', 'auto');
-    next.css('width', 'auto');
-    prev.css('width', 'auto');
-    prevSecond.css('width', 'auto');
-    nextSecond.css('width', 'auto');
-    selected.css('left', '');
-    next.css('left', '');
-    prev.css('left', '');
-    prevSecond.css('left', '');
-    nextSecond.css('left', '');
-    selected.css('top', '');
-    next.css('top', '');
-    prev.css('top', '');
-    prevSecond.css('top', '');
-    nextSecond.css('top', '');
-}
 
 function announceNextClick() {
     var name = document.getElementById("announceName");
@@ -342,7 +233,6 @@ function bossModalNextClick() {
     var name = document.getElementById("bossContactName");
     var phone = document.getElementById("bossContactPhone");
     var email = document.getElementById("bossContactEmail");
-    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -427,14 +317,6 @@ $(function () {
         $('#selectedPromoClub').val('Академическая');
     });
 
-    $('.gallery-area button.prev-btn').click(function () {
-        moveToSelected('prev');
-    });
-
-    $('.gallery-area button.next-btn').click(function () {
-        moveToSelected('next');
-    });
-
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
         $("#contact-boss-modal .promo-btn").bind("click", bossModalNextClick);
     });
@@ -470,16 +352,16 @@ $(function () {
         };
 
     if ($(window).width() < md) {
-        var owlActive = owl.owlCarousel(owlOptions);
+        owl.owlCarousel(owlOptions);
     } else {
         owl.addClass('off');
     }
 
     if ($(window).width() < lg) {
         galleryOwl.addClass('owl-carousel');
-        var galleryActive = galleryOwl.owlCarousel(galleryOwlOptions);
+        galleryOwl.owlCarousel(galleryOwlOptions);
     } else {
-        calcPositions();
+        $(".gallery-carousel").waterwheel();
         galleryOwl.addClass('off');
     }
 
@@ -487,10 +369,9 @@ $(function () {
 
         if ($(window).width() < md) {
             if ($('.scheme-slides').hasClass('off')) {
-                var owlActive = owl.owlCarousel(owlOptions);
+                owl.owlCarousel(owlOptions);
                 owl.removeClass('off');
             }
-
         } else {
             if (!$('.scheme-slides').hasClass('off')) {
                 owl.addClass('off').trigger('destroy.owl.carousel');
@@ -499,10 +380,10 @@ $(function () {
         }
 
         if ($(window).width() < lg) {
-            galleryReset();
+            $(".gallery-carousel").waterwheel('destroy');
             if ($('.gallery-carousel').hasClass('off')) {
                 galleryOwl.addClass('owl-carousel');
-                var galleryActive = galleryOwl.owlCarousel(galleryOwlOptions);
+                galleryOwl.owlCarousel(galleryOwlOptions);
                 galleryOwl.removeClass('off');
             }
         } else {
@@ -513,7 +394,7 @@ $(function () {
                 galleryOwl.find('.owl-stage-outer').children(':eq(0)').unwrap();
             }
 
-            calcPositions();
+            $(".gallery-carousel").waterwheel();
         }
     });
 

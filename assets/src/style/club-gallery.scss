@@ -229,9 +229,9 @@
         }
 
         &.prev,
-        &.prevLeft,
+        &.prevSecond,
         &.next,
-        &.nextRight {
+        &.nextSecond {
           &::before {
             content: "";
             position: absolute;
@@ -268,8 +268,8 @@
           z-index: 5;
         }
 
-        &.prevLeft,
-        &.nextRight {
+        &.prevSecond,
+        &.nextSecond {
           z-index: 4;
         }
 

@@ -9557,7 +9557,7 @@ footer {
       .gallery-area .gallery-carousel div img {
         width: 100%;
         height: 100%; }
-      .gallery-area .gallery-carousel div.prev::before, .gallery-area .gallery-carousel div.prevLeft::before, .gallery-area .gallery-carousel div.next::before, .gallery-area .gallery-carousel div.nextRight::before {
+      .gallery-area .gallery-carousel div.prev::before, .gallery-area .gallery-carousel div.prevSecond::before, .gallery-area .gallery-carousel div.next::before, .gallery-area .gallery-carousel div.nextSecond::before {
         content: "";
         position: absolute;
         left: 0%;
@@ -9584,7 +9584,7 @@ footer {
           transition: opacity 0.3s ease-out; }
       .gallery-area .gallery-carousel div.prev, .gallery-area .gallery-carousel div.next {
         z-index: 5; }
-      .gallery-area .gallery-carousel div.prevLeft, .gallery-area .gallery-carousel div.nextRight {
+      .gallery-area .gallery-carousel div.prevSecond, .gallery-area .gallery-carousel div.nextSecond {
         z-index: 4; }
       .gallery-area .gallery-carousel div.selected {
         z-index: 10; }

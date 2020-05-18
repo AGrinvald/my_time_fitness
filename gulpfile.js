@@ -21,7 +21,7 @@ var path = {
   },
   src: {
     html: 'assets/src/*.html',
-    js: ['assets/src/js/index.js', 'assets/src/js/akademicheskaya.js', 
+    js: ['assets/src/js/index.js','assets/src/js/waterwheel.js', 'assets/src/js/akademicheskaya.js', 
     'assets/src/js/kids.js', 'assets/src/js/kupchino.js', 
     'assets/src/js/komendanskiy.js', 'assets/src/js/promotions.js',
     'assets/src/js/promotion.js', 'assets/src/js/info.js', 
