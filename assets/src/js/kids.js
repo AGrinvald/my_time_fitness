@@ -208,7 +208,8 @@ $(function () {
 
         setClubName();
         $('#clubs-modal').modal('hide');
-        return false;
+
+        return true;
     });
 
     var club = sessionStorage.getItem('club-name');
