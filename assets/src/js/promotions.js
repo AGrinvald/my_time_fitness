@@ -71,7 +71,7 @@ function toggleDropdown(e) {
             sessionStorage.setItem('club-hash', hash);
 
             var currentURL = window.location.href;
-            currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
+            currentURL = currentURL.substring(0, currentURL.indexOf('/'));
             window.location.href = currentURL.concat('/', link);
         }
 
@@ -154,7 +154,7 @@ $(function () {
 
         setClubName();
         $('#clubs-modal').modal('hide');
-        
+
         return true;
     });
 

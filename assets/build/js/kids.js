@@ -19002,7 +19002,7 @@ function toggleDropdown(e) {
             sessionStorage.setItem('club-hash', hash);
 
             var currentURL = window.location.href;
-            currentURL = currentURL.substring(0, currentURL.lastIndexOf('/'));
+            currentURL = currentURL.substring(0, currentURL.indexOf('/'));
             window.location.href = currentURL.concat('/', link);
         }
 
@@ -19062,7 +19062,7 @@ $(function () {
 
     $('.navbar a.dropdown-item').click(storeHash);
     $('.nav-small-club').click(kidPromoLinkClick);
-    
+
     $(".club-link").on("click", function (e) {
         var name = $(this).data('name');
         var link = $(this).data('link');
