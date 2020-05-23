@@ -9589,7 +9589,12 @@ footer {
       .gallery-area .gallery-carousel div.selected {
         z-index: 10; }
       .gallery-area .gallery-carousel div.hideLeft, .gallery-area .gallery-carousel div.hideRight {
-        opacity: 0; } }
+        opacity: 0;
+        z-index: -1;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none; } }
 
 @media screen and (min-width: 992px) and (max-width: 1400px) {
   .gallery-area .gallery-carousel {

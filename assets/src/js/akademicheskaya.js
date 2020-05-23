@@ -183,7 +183,6 @@ function promoNextClick() {
 var md = 992;
 var lg = 1400;
 
-
 function announceNextClick() {
     var name = document.getElementById("announceName");
     var phone = document.getElementById("announcePhone");
