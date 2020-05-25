@@ -8786,10 +8786,6 @@ a.promo-sale {
   #promo-modal .modal-dialog-centered {
     min-height: calc(100% - 1%); } }
 
-@media (max-width: 767.98px) {
-  #promo-modal .modal-dialog {
-    height: 100vh; } }
-
 #promo-modal .modal-content {
   border: none;
   background-color: #ffffff;
@@ -8802,14 +8798,14 @@ a.promo-sale {
       height: 600px; } }
   @media (max-width: 767.98px) {
     #promo-modal .modal-content {
-      height: 100%; } }
+      height: 100vh; } }
 
 #promo-modal .form-row > .col, #promo-modal .form-row > [class*=col-] {
   padding-right: 3px;
   padding-left: 3px; }
 
 #promo-modal .promo-form-confirm {
-  height: 100vh; }
+  height: 100%; }
   @media (max-width: 767.98px) {
     #promo-modal .promo-form-confirm {
       height: 500px; } }
