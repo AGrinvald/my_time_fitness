@@ -8841,6 +8841,9 @@ footer {
 /* DESCRIPTION AREA START*/
 .description-area {
   padding-top: 50px; }
+  .description-area .container {
+    position: relative;
+    z-index: 10; }
   .description-area h4 {
     font-size: 34px;
     letter-spacing: 0.71px; }
