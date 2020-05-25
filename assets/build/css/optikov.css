@@ -10741,13 +10741,13 @@ footer {
           line-height: 1.25;
           margin-bottom: 4px; } }
     .banner-area .banner-container .subtitle-div .address {
+      text-align: center;
       font-weight: 300; }
       @media (min-width: 1200px) {
         .banner-area .banner-container .subtitle-div .address {
           font-size: 20px;
           line-height: 23px;
-          margin-left: 65px;
-          text-align: center; } }
+          margin-left: 65px; } }
       @media (max-width: 1199.98px) {
         .banner-area .banner-container .subtitle-div .address {
           font-size: 16px; } }
