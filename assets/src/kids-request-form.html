@@ -7,6 +7,7 @@
     <h3 class="text-center font-weight-bold my-5">УЗНАТЬ ПОДРОБНЕЕ <br />
         ПРО ДЕТСКИЙ ФИТНЕС</h3>
     <form class="promo-form">
+        <input type="hidden"  name="selectedClub" id='selectedClub'>
         <div class="form-row">
             <div class="input-group blue custom-input-group mb-3 col-12">
                 <div class="input-group-prepend">
@@ -24,33 +25,12 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="input-group custom-input-group blue mb-2 col-12">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">3</span>
-                </div>
-                <div class="dropdown kids-dropdown">
-                    <button type="button" class="form-control dropdown-toggle" id="selectClubDropdown"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Выберите клуб
-                    </button>
-                    <div class="dropdown-menu text-center" aria-labelledby="selectClubDropdown">
-                        <a class="dropdown-item" href="#">Комендантский</a>
-                        <a class="dropdown-item" href="#">Академическая</a>
-                        <a class="dropdown-item" href="#">Купчино</a>
-                        <a class="dropdown-item" href="#">Оптиков</a>
-                    </div>
-                    <input type="hidden" name="selectedClub">
-                </div>
-            </div>
-            <div class="text-right text-small mb-4 col-12">* обязательные поля</div>
-        </div>
-        <div class="form-row">
             <button type="button" data-next="kids-request-confirm.html"
                 class="btn btn-custom-blue-no-border btn-custom-block btn-rounded w-100 promo-btn">ОТПРАВИТЬ
                 ЗАЯВКУ</button>
         </div>
     </form>
-    <p class="my-4">
+    <p class="mt-4 mb-0 my-lg-4">
         Нажимая на кнопку "Записаться",<br /> Вы соглашаетесь с <a href="#" class="text-blue d-inline">правилами
             обработки персональных данных.</a>
     </p>

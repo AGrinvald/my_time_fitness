@@ -8819,7 +8819,7 @@ footer {
       background-position: center center; } }
 
 .kids-request-modal .promo-form-confirm {
-  height: 100%; }
+  height: 100vh; }
   @media (max-width: 767.98px) {
     .kids-request-modal .promo-form-confirm {
       height: 500px; } }
@@ -8827,7 +8827,7 @@ footer {
 .kids-request-modal .modal-content {
   position: relative; }
   .kids-request-modal .modal-content.kids-request-theme {
-    height: 100%; }
+    height: 100vh; }
     @media (min-width: 992px) {
       .kids-request-modal .modal-content.kids-request-theme {
         height: 600px; }
@@ -8855,37 +8855,35 @@ footer {
           background-repeat: no-repeat;
           background-size: 100% auto;
           background-position: center center; } }
-  .kids-request-modal .modal-content.kids-season-theme {
-    height: 750px; }
-    @media (min-width: 992px) {
-      .kids-request-modal .modal-content.kids-season-theme {
-        height: 750px; }
-        .kids-request-modal .modal-content.kids-season-theme::before {
-          content: "";
-          position: absolute;
-          bottom: 40%;
-          left: 5%;
-          width: 65px;
-          height: 64px;
-          background: url(../img/flower-sm.svg);
-          background-repeat: no-repeat;
-          background-size: 100% auto;
-          background-position: center center;
-          -webkit-animation: spin 10s linear infinite;
-                  animation: spin 10s linear infinite; }
-        .kids-request-modal .modal-content.kids-season-theme::after {
-          content: "";
-          position: absolute;
-          bottom: 20%;
-          right: 8%;
-          width: 60px;
-          height: 60px;
-          background: url(../img/blue-md-flower.svg);
-          background-repeat: no-repeat;
-          background-size: 100% auto;
-          background-position: center center;
-          -webkit-animation: spin 10s linear infinite;
-                  animation: spin 10s linear infinite; } }
+  @media (min-width: 992px) {
+    .kids-request-modal .modal-content.kids-season-theme {
+      height: 750px; }
+      .kids-request-modal .modal-content.kids-season-theme::before {
+        content: "";
+        position: absolute;
+        bottom: 40%;
+        left: 5%;
+        width: 65px;
+        height: 64px;
+        background: url(../img/flower-sm.svg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center;
+        -webkit-animation: spin 10s linear infinite;
+                animation: spin 10s linear infinite; }
+      .kids-request-modal .modal-content.kids-season-theme::after {
+        content: "";
+        position: absolute;
+        bottom: 20%;
+        right: 8%;
+        width: 60px;
+        height: 60px;
+        background: url(../img/blue-md-flower.svg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center;
+        -webkit-animation: spin 10s linear infinite;
+                animation: spin 10s linear infinite; } }
 
 .kids-request-modal .season-block {
   font-size: 18px;
@@ -8930,10 +8928,6 @@ footer {
 @media (min-width: 992px) {
   .kids-request-modal .modal-dialog-centered {
     min-height: calc(100% - 1%); } }
-
-@media (max-width: 767.98px) {
-  .kids-request-modal .modal-dialog {
-    height: 100%; } }
 
 .kids-request-modal .modal-content {
   border: none;

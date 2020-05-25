@@ -18922,13 +18922,7 @@ function modalNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    var promoClub = $(".kids-dropdown").find('input:hidden').val();
-
-    if (!promoClub) {
-        $(".kids-dropdown").parent().css("background-color", "#FFDBDC");
-    }
-
-    if (name.checkValidity() && phone.checkValidity() && promoClub) {
+    if (name.checkValidity() && phone.checkValidity()) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -18952,13 +18946,7 @@ function seasonNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    var promoClub = $(".kids-season-dropdown").find('input:hidden').val();
-
-    if (!promoClub) {
-        $(".kids-season-dropdown").parent().css("background-color", "#FFDBDC");
-    }
-
-    if (name.checkValidity() && phone.checkValidity() && promoClub) {
+    if (name.checkValidity() && phone.checkValidity()) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -19086,13 +19074,6 @@ $(function () {
         $("#clientPhone").mask("+7(999) 999-99-99");
         $("#kids-request-modal .promo-btn").bind("click", modalNextClick);
 
-        var selectedClub = sessionStorage.getItem('club-name');
-
-        if (selectedClub) {
-            $(".kids-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
-            $(".kids-dropdown").find('input:hidden').val(selectedClub);
-        }
-
         $("#kids-request-modal").find("#clientName").change(function (e) {
             $(e.target).parent().css("background-color", "#FFFFFF");
         });
@@ -19101,18 +19082,13 @@ $(function () {
             $(e.target).parent().css("background-color", "#FFFFFF");
         });
 
-        $(".kids-dropdown a.dropdown-item").click(function (event) {
-            event.preventDefault();
-
-            $(".kids-dropdown").parent().css("background-color", "#FFFFFF");
-            $(".kids-dropdown").find('.dropdown-toggle').html($(event.target).text() + ' <span class="caret"></span>');
-            $(".kids-dropdown").find('input:hidden').val($(event.target).text());
-        });
+        var name = sessionStorage.getItem('club-name');
+        $("#kids-request-modal").find('#selectedClub').val(name);
     });
 
     $('#kids-season-modal').on('show.bs.modal', function (e) {
 
-        var button = $(e.relatedTarget) // Button that triggered the modal
+        var button = $(e.relatedTarget) 
         var name = button.data('name')
         var price = button.data('price');
         var style = button.data('style');
@@ -19127,13 +19103,6 @@ $(function () {
         modal.find("#clientSeasonPhone").mask("+7(999) 999-99-99");
         modal.find(".promo-btn").bind("click", seasonNextClick);
 
-        var selectedClub = sessionStorage.getItem('club-name');
-
-        if (selectedClub) {
-            $(".kids-season-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
-            $(".kids-season-dropdown").find('input:hidden').val(selectedClub);
-        }
-
         $("#kids-season-modal").find("#clientSeasonName").change(function (e) {
             $(e.target).parent().css("background-color", "#FFFFFF");
         });
@@ -19142,13 +19111,8 @@ $(function () {
             $(e.target).parent().css("background-color", "#FFFFFF");
         });
 
-        modal.find(".kids-season-dropdown a.dropdown-item").click(function (event) {
-            event.preventDefault();
-
-            $(".kids-season-dropdown").parent().css("background-color", "#FFFFFF");
-            $(".kids-season-dropdown").find('.dropdown-toggle').html($(event.target).text() + ' <span class="caret"></span>');
-            $(".kids-season-dropdown").find('input:hidden').val($(event.target).text());
-        });
+        var name = sessionStorage.getItem('club-name');
+        $("#kids-season-modal").find('#selectedClub').val(name);
     });
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {
