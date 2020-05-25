@@ -8308,6 +8308,9 @@ h2.title {
       font-weight: 300;
       letter-spacing: -0.39px; }
 
+.modal-full {
+  height: 100vh; }
+
 header {
   position: relative;
   background: linear-gradient(to right, #d9d9d9 0%, white 23%, white 100%);
