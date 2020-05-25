@@ -384,6 +384,6 @@ h2.title {
   }
 }
 
-.modal-full {
-  height: 100vh;
+.modal-full .modal-content {
+  min-height: 100vh;
 }
