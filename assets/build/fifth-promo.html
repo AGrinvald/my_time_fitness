@@ -379,12 +379,14 @@
                     <div class="promo-form">
                         <h3 class="text-center font-weight-bold my-5">ОСТАВИТЬ ЗАЯВКУ</h3>
                         <form class="promo-form">
+                            <input type="hidden" name="selectedClub" id='selectedClub'>
                             <div class="form-row">
                                 <div class="input-group white custom-input-group mb-3 col-12">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">1</span>
                                     </div>
-                                    <input type="text" id="promoName" name='promoName' class="form-control" placeholder="Введите Ваше имя" required>
+                                    <input type="text" id="promoName" name='promoName' class="form-control"
+                                        placeholder="Введите Ваше имя" required>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -392,27 +394,8 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">2</span>
                                     </div>
-                                    <input type="text" id="promoPhone" name='promoPhone' class="form-control" placeholder="Введите Ваш телефон" required>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="input-group custom-input-group white mb-5 col-12">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">3</span>
-                                    </div>
-                                    <div class="dropdown promo-dropdown">
-                                        <button type="button" class="form-control dropdown-toggle" id="selectPromoClubDropdown"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Выберите клуб
-                                        </button>
-                                        <div class="dropdown-menu text-center" aria-labelledby="selectClubDropdown">
-                                            <a class="dropdown-item" href="#">Комендантский</a>
-                                            <a class="dropdown-item" href="#">Академическая</a>
-                                            <a class="dropdown-item" href="#">Купчино</a>
-                                            <a class="dropdown-item" href="#">Оптиков</a>
-                                        </div>
-                                        <input type="hidden" name="selectedPromoClub">
-                                    </div>
+                                    <input type="text" id="promoPhone" name='promoPhone' class="form-control"
+                                        placeholder="Введите Ваш телефон" required>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -422,7 +405,8 @@
                             </div>
                         </form>
                         <p class="mt-3 my-lg-5">
-                            Нажимая на кнопку "Записаться",<br /> Вы соглашаетесь с <a href="#" class="text-primary d-inline">правилами
+                            Нажимая на кнопку "Записаться",<br /> Вы соглашаетесь с <a href="#"
+                                class="text-primary d-inline">правилами
                                 обработки персональных данных.</a>
                         </p>
                     </div>

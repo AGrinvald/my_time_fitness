@@ -8923,10 +8923,12 @@ footer {
 /* FOOTER END */
 /* WORKOUT AREA START */
 .workouts-area .worhouts-container {
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative;
+  z-index: 10; }
   @media (max-width: 991.98px) {
     .workouts-area .worhouts-container {
-      background-color: #F1F1F1; } }
+      background-color: #f1f1f1; } }
 
 .workouts-area h2 {
   text-align: center;
@@ -8955,7 +8957,6 @@ footer {
   width: 390px;
   height: 260px;
   overflow: hidden;
-  cursor: pointer;
   position: relative; }
   .workouts-area .workout-block:hover > img {
     -webkit-transform: scale(1.1);

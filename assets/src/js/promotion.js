@@ -26,12 +26,6 @@ function modalNextClick() {
     var name = document.getElementById("promoName");
     var phone = document.getElementById("promoPhone");
 
-    var promoClub = $(".promo-dropdown").find('input:hidden').val();
-
-    if (!promoClub) {
-        $(".promo-dropdown").parent().css("background-color", "#FFDBDC");
-    }
-
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
@@ -40,7 +34,7 @@ function modalNextClick() {
         phone.parentElement.setAttribute("style", "background-color: #FFDBDC");
     }
 
-    if (name.checkValidity() && phone.checkValidity() && promoClub) {
+    if (name.checkValidity() && phone.checkValidity()) {
         var next = $(this).data("next");
 
         $.ajax({
@@ -57,7 +51,6 @@ function bossModalNextClick() {
     var name = document.getElementById("bossContactName");
     var phone = document.getElementById("bossContactPhone");
     var email = document.getElementById("bossContactEmail");
-    var message = document.getElementById("bossContactMessage");
 
     if (!name.checkValidity()) {
         name.parentElement.setAttribute("style", "background-color: #FFDBDC");
@@ -195,12 +188,8 @@ $(function () {
         $("#promo-modal .promo-btn").bind("click", modalNextClick);
         $("#promoPhone").mask("+7(999) 999-99-99");
 
-        var selectedClub = sessionStorage.getItem('club-name');
-
-        if (selectedClub) {
-            $(".promo-dropdown").find('.dropdown-toggle').html(selectedClub + ' <span class="caret"></span>');
-            $(".promo-dropdown").find('input:hidden').val(selectedClub);
-        }
+        var name = sessionStorage.getItem('club-name');
+        $("#promo-modal").find('#selectedClub').val(name)
 
         $("#promo-modal").find("#promoName").change(function (e) {
             $(e.target).parent().css("background-color", "#FFFFFF");
@@ -209,17 +198,6 @@ $(function () {
         $("#promo-modal").find("#promoPhone").change(function (e) {
             $(e.target).parent().css("background-color", "#FFFFFF");
         });
-
-        if ($(".promo-dropdown a.dropdown-item")) {
-
-            $(".promo-dropdown a.dropdown-item").click(function (event) {
-                event.preventDefault();
-
-                $(".promo-dropdown").parent().css("background-color", "#FFFFFF");
-                $(".promo-dropdown").find('.dropdown-toggle').html($(this).text() + ' <span class="caret"></span>');
-                $(".promo-dropdown").find('input:hidden').val($(event.target).text());
-            });
-        }
     });
 
     $('#contact-boss-modal').on('shown.bs.modal', function (e) {

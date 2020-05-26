@@ -1,119 +1,118 @@
 /* WORKOUT AREA START */
 .workouts-area {
-
-    .worhouts-container {
-      overflow: hidden;
-      @include media-breakpoint-down(md) {
-        background-color: #F1F1F1; 
-      } 
+  .worhouts-container {
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    @include media-breakpoint-down(md) {
+      background-color: #f1f1f1;
     }
-  
-    h2 {
-      text-align: center;
-      margin-bottom: 0;
+  }
 
-      @include media-breakpoint-up(lg) {
-        padding-top: 80px;
-        padding-bottom: 70px
-      }
+  h2 {
+    text-align: center;
+    margin-bottom: 0;
 
-      @include media-breakpoint-down(md) {
-          padding-top: 40px;
-          padding-bottom: 35px;
-      }
+    @include media-breakpoint-up(lg) {
+      padding-top: 80px;
+      padding-bottom: 70px;
     }
-  
-    .workouts-block {
-      max-width: 1170px;
-      margin-left: auto;
-      margin-right: auto;
-  
-      @include media-breakpoint-up(lg) {
-        margin-bottom: 60px;
-      }  
-  
-      @include media-breakpoint-down(lg) {
-        margin-bottom: 30px;
-      }    
-    }
-  
-    .workout-block {
-      width: 390px;
-      height: 260px;
-      overflow: hidden; 
-      cursor: pointer;
-      position: relative;
-  
-      &:hover > img
-      {
-        transform: scale(1.1);
-      }
-  
-      > img {
-        position: absolute;
-        top: 0; 
-        left: 0;
-        z-index: 99;
-        transition: all 0.5s ease;
-        width: 100%;
-        height: 100%;
-      }
 
-      @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
+      padding-top: 40px;
+      padding-bottom: 35px;
+    }
+  }
+
+  .workouts-block {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 60px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .workout-block {
+    width: 390px;
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+
+    &:hover > img {
+      transform: scale(1.1);
+    }
+
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      transition: all 0.5s ease;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      margin: 0 15px 15px 15px;
+    }
+
+    @include media-breakpoint-down(lg) {
+      &:nth-child(2n-1) {
         margin: 0 15px 15px 15px;
-      } 
+      }
+    }
 
-      @include media-breakpoint-down(lg) {
-        &:nth-child(2n-1) {
-          margin: 0 15px 15px 15px;
+    .inner-block {
+      z-index: 100;
+      height: 145px;
+      width: 85%;
+      color: $white;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      padding: 15px 15px;
+
+      &.primary-bg {
+        background-color: rgba(178, 207, 65, 0.85);
+      }
+
+      &.dark-bg {
+        background-color: rgba(16, 25, 41, 0.8);
+      }
+
+      h3 {
+        font-weight: bold;
+        letter-spacing: -0.65px;
+        margin-bottom: 5px;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 30px;
         }
-      }    
-  
-      .inner-block {
-        z-index: 100;
-        height: 145px;
-        width: 85%;
-        color: $white;
-        position: absolute;
-        top: 50%; 
-        transform: translate(0,-50%);
-        padding: 15px 15px;
-  
-        &.primary-bg {
-          background-color: rgba(178, 207, 65, 0.85);
+
+        @include media-breakpoint-down(md) {
+          font-size: 20px;
         }
-  
-        &.dark-bg {
-          background-color: rgba(16, 25, 41, 0.8);       
+      }
+
+      p {
+        font-weight: 300;
+        letter-spacing: -0.39px;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 18px;
         }
-  
-        h3 {
-          font-weight: bold;
-          letter-spacing: -0.65px;
-          margin-bottom: 5px;
-  
-          @include media-breakpoint-up(lg) {
-            font-size: 30px;
-          } 
-  
-          @include media-breakpoint-down(md) {
-            font-size: 20px;
-          }    
-        }
-        
-        p {
-          font-weight: 300;
-          letter-spacing: -0.39px;
-  
-          @include media-breakpoint-up(lg) {
-            font-size: 18px;
-          } 
-  
-          @include media-breakpoint-down(md) {
-            font-size: 16px;
-          }   
+
+        @include media-breakpoint-down(md) {
+          font-size: 16px;
         }
       }
     }
   }
-  /* WORKOUT AREA END */
+}
+/* WORKOUT AREA END */

@@ -23,7 +23,7 @@
         </div>
         <div class="d-lg-none n-bottom">
             <button class="btn btn-link" id='club-name' type="button" data-toggle="modal"
-            data-target="#clubs-modal"></button>
+                data-target="#clubs-modal"></button>
         </div>
         <div class="collapse navbar-collapse justify-content-center" id="navbar">
             <ul class="navbar-nav w-100">
@@ -154,7 +154,45 @@
         <div class="modal-dialog modal-dialog-centered modal-responsive" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    //= promo-form.html
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img srcset="img/cancel@1x.png 23w,
+                            img/cancel@2x.png 46w,
+                            img/cancel@3x.png 69w" sizes="23px" src="img/cancel@1x.png" alt="Закрыть">
+                    </button>
+                    <div class="promo-form">
+                        <h3 class="text-center font-weight-bold my-5">ОСТАВИТЬ ЗАЯВКУ</h3>
+                        <form class="promo-form">
+                            <input type="hidden" name="selectedClub" id='selectedClub'>
+                            <div class="form-row">
+                                <div class="input-group white custom-input-group mb-3 col-12">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">1</span>
+                                    </div>
+                                    <input type="text" id="promoName" name='promoName' class="form-control"
+                                        placeholder="Введите Ваше имя" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="input-group white custom-input-group mb-3 col-12">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">2</span>
+                                    </div>
+                                    <input type="text" id="promoPhone" name='promoPhone' class="form-control"
+                                        placeholder="Введите Ваш телефон" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <button type="button" data-next="promo-confirm.html"
+                                    class="btn btn-custom-green-no-border btn-custom-block btn-rounded w-100 promo-btn">ОТПРАВИТЬ
+                                    ЗАЯВКУ</button>
+                            </div>
+                        </form>
+                        <p class="mt-3 my-lg-5">
+                            Нажимая на кнопку "Записаться",<br /> Вы соглашаетесь с <a href="#"
+                                class="text-primary d-inline">правилами
+                                обработки персональных данных.</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
