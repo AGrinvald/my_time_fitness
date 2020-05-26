@@ -6,6 +6,15 @@
     }
   }
 
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .close {
+    align-self: flex-end;
+  }
+
   .modal-content {
     border: none;
     background-color: $white;
@@ -23,7 +32,8 @@
     }
   }
 
-  .form-row >.col, .form-row>[class*=col-] {
+  .form-row > .col,
+  .form-row > [class*="col-"] {
     padding-right: 3px;
     padding-left: 3px;
   }
@@ -35,7 +45,7 @@
       height: 500px;
     }
   }
-  
+
   .promo-form {
     max-width: 340px;
     margin-left: auto;
@@ -50,13 +60,12 @@
       font-weight: bold;
       letter-spacing: 0.54px;
     }
-    
+
     p {
       font-size: 16px;
       font-weight: 300;
       text-align: center;
     }
   }
-  
 }
 /* PROMO MODAL END*/

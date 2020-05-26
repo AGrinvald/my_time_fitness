@@ -1415,3 +1415,19 @@
     margin-bottom: 15px;
   }
 }
+
+.modal-full {
+  .modal-content {
+    position: fixed;
+    height: 100vh;
+  }
+
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .close {
+    align-self: flex-end;
+  }
+}

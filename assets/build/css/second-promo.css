@@ -8100,10 +8100,6 @@ h2.title {
       font-weight: 300;
       letter-spacing: -0.39px; }
 
-.modal-full .modal-content {
-  position: fixed;
-  height: 100vh; }
-
 header {
   position: relative;
   background: linear-gradient(to right, #d9d9d9 0%, white 23%, white 100%);
@@ -8612,6 +8608,16 @@ footer {
   #promo-modal .modal-dialog-centered {
     min-height: calc(100% - 1%); } }
 
+#promo-modal .modal-body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+#promo-modal .close {
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
+
 #promo-modal .modal-content {
   border: none;
   background-color: #ffffff;
@@ -8626,7 +8632,8 @@ footer {
       height: 100vh;
       position: fixed; } }
 
-#promo-modal .form-row > .col, #promo-modal .form-row > [class*=col-] {
+#promo-modal .form-row > .col,
+#promo-modal .form-row > [class*="col-"] {
   padding-right: 3px;
   padding-left: 3px; }
 

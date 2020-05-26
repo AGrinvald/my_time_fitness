@@ -78,6 +78,15 @@
     }
   }
 
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .close {
+    align-self: flex-end;
+  }
+
   .modal-content {
     position: relative;
 
@@ -112,7 +121,7 @@
         }
       }
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(md) {
         height: 100vh;
         position: fixed;
       }
@@ -214,17 +223,10 @@
     }
   }
 
-  // .modal-dialog {
-  //   @include media-breakpoint-down(sm) {
-  //     height: 100%;
-  //   }
-  // }
-
   .modal-content {
     border: none;
     background-color: $white;
   }
-
   .form-row > .col,
   .form-row > [class*="col-"] {
     padding-right: 3px;

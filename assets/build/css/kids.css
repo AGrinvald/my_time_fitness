@@ -8100,10 +8100,6 @@ h2.title {
       font-weight: 300;
       letter-spacing: -0.39px; }
 
-.modal-full .modal-content {
-  position: fixed;
-  height: 100vh; }
-
 header {
   position: relative;
   background: linear-gradient(to right, #d9d9d9 0%, white 23%, white 100%);
@@ -8825,6 +8821,16 @@ footer {
     .kids-request-modal .promo-form-confirm {
       height: 500px; } }
 
+.kids-request-modal .modal-body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+
+.kids-request-modal .close {
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
+
 .kids-request-modal .modal-content {
   position: relative; }
   @media (min-width: 992px) {
@@ -8854,7 +8860,7 @@ footer {
         background-repeat: no-repeat;
         background-size: 100% auto;
         background-position: center center; } }
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     .kids-request-modal .modal-content.kids-request-theme {
       height: 100vh;
       position: fixed; } }
