@@ -8101,7 +8101,8 @@ h2.title {
       letter-spacing: -0.39px; }
 
 .modal-full .modal-content {
-  min-height: 100vh; }
+  position: fixed;
+  height: 100vh; }
 
 header {
   position: relative;
@@ -8826,35 +8827,37 @@ footer {
 
 .kids-request-modal .modal-content {
   position: relative; }
-  .kids-request-modal .modal-content.kids-request-theme {
-    height: 100vh; }
-    @media (min-width: 992px) {
-      .kids-request-modal .modal-content.kids-request-theme {
-        height: 600px; }
-        .kids-request-modal .modal-content.kids-request-theme::before {
-          content: "";
-          position: absolute;
-          bottom: 20%;
-          left: 10%;
-          width: 69px;
-          height: 64px;
-          background: url(../img/flower-md.svg);
-          background-repeat: no-repeat;
-          background-size: 100% auto;
-          background-position: center center;
-          -webkit-animation: spin 10s linear infinite;
-                  animation: spin 10s linear infinite; }
-        .kids-request-modal .modal-content.kids-request-theme::after {
-          content: "";
-          position: absolute;
-          bottom: 2%;
-          right: 2%;
-          width: 182px;
-          height: 98px;
-          background-image: url(../img/cloud-mirror.svg);
-          background-repeat: no-repeat;
-          background-size: 100% auto;
-          background-position: center center; } }
+  @media (min-width: 992px) {
+    .kids-request-modal .modal-content.kids-request-theme {
+      height: 600px; }
+      .kids-request-modal .modal-content.kids-request-theme::before {
+        content: "";
+        position: absolute;
+        bottom: 20%;
+        left: 10%;
+        width: 69px;
+        height: 64px;
+        background: url(../img/flower-md.svg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center;
+        -webkit-animation: spin 10s linear infinite;
+                animation: spin 10s linear infinite; }
+      .kids-request-modal .modal-content.kids-request-theme::after {
+        content: "";
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+        width: 182px;
+        height: 98px;
+        background-image: url(../img/cloud-mirror.svg);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center center; } }
+  @media (max-width: 767.98px) {
+    .kids-request-modal .modal-content.kids-request-theme {
+      height: 100vh;
+      position: fixed; } }
   @media (min-width: 992px) {
     .kids-request-modal .modal-content.kids-season-theme {
       height: 750px; }

@@ -82,7 +82,6 @@
     position: relative;
 
     &.kids-request-theme {
-      height: 100vh;
       @include media-breakpoint-up(lg) {
         height: 600px;
         &::before {
@@ -111,6 +110,11 @@
           background-size: 100% auto;
           background-position: center center;
         }
+      }
+
+      @include media-breakpoint-down(sm) {
+        height: 100vh;
+        position: fixed;
       }
     }
 

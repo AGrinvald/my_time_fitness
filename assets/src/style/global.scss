@@ -385,5 +385,6 @@ h2.title {
 }
 
 .modal-full .modal-content {
-  min-height: 100vh;
+  position: fixed;
+  height: 100vh;
 }

@@ -8309,7 +8309,8 @@ h2.title {
       letter-spacing: -0.39px; }
 
 .modal-full .modal-content {
-  min-height: 100vh; }
+  position: fixed;
+  height: 100vh; }
 
 header {
   position: relative;
@@ -8824,14 +8825,14 @@ footer {
   background-color: #ffffff;
   background-image: url(../img/555-copy-7.png);
   background-position: left top;
-  background-repeat: no-repeat;
-  height: 100%; }
+  background-repeat: no-repeat; }
   @media (min-width: 768px) {
     #promo-modal .modal-content {
       height: 600px; } }
   @media (max-width: 767.98px) {
     #promo-modal .modal-content {
-      height: 100vh; } }
+      height: 100vh;
+      position: fixed; } }
 
 #promo-modal .form-row > .col, #promo-modal .form-row > [class*=col-] {
   padding-right: 3px;

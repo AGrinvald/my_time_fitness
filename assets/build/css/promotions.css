@@ -8101,7 +8101,8 @@ h2.title {
       letter-spacing: -0.39px; }
 
 .modal-full .modal-content {
-  min-height: 100vh; }
+  position: fixed;
+  height: 100vh; }
 
 header {
   position: relative;
