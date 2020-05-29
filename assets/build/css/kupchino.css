@@ -10140,9 +10140,9 @@ footer {
     bottom: 84px;
     right: 12px; }
   .scheme-area .scheme .number-animation {
-    transition: -webkit-transform .2s;
-    transition: transform .2s;
-    transition: transform .2s, -webkit-transform .2s; }
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s; }
   .scheme-area .scheme .number-scale {
     -webkit-transform: scale(1.5);
             transform: scale(1.5); }
@@ -10282,6 +10282,86 @@ footer {
     position: absolute;
     bottom: 13px;
     right: 80px; }
+  .scheme-area .scheme .opt-box {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto; }
+    @media (max-width: 991.98px) {
+      .scheme-area .scheme .opt-box {
+        width: 345px;
+        height: 291px; } }
+  .scheme-area .scheme .opt-img {
+    width: 100%; }
+    @media (min-width: 992px) {
+      .scheme-area .scheme .opt-img {
+        height: 500px;
+        background-image: url(../img/optikov-scheme.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
+    @media (max-width: 991.98px) {
+      .scheme-area .scheme .opt-img {
+        height: 290px;
+        background-image: url(../img/optikov-sm-scheme.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat; } }
+  .scheme-area .scheme .opt-overlay-1 {
+    position: absolute;
+    top: 10px;
+    left: 50px; }
+  .scheme-area .scheme .opt-overlay-2 {
+    position: absolute;
+    top: 10px;
+    left: 93px; }
+  .scheme-area .scheme .opt-overlay-3 {
+    position: absolute;
+    top: 10px;
+    right: 192px; }
+  .scheme-area .scheme .opt-overlay-4 {
+    position: absolute;
+    top: 10px;
+    right: 120px; }
+  .scheme-area .scheme .opt-overlay-5 {
+    position: absolute;
+    top: 10px;
+    right: 62px; }
+  .scheme-area .scheme .opt-overlay-6 {
+    position: absolute;
+    top: 158px;
+    right: 47px; }
+  .scheme-area .scheme .opt-overlay-7 {
+    position: absolute;
+    top: 158px;
+    right: 6px; }
+  .scheme-area .scheme .opt-overlay-8 {
+    position: absolute;
+    bottom: 11px;
+    left: 45px; }
+  .scheme-area .scheme .opt-overlay-9 {
+    position: absolute;
+    bottom: 11px;
+    left: 85px; }
+  .scheme-area .scheme .opt-overlay-10 {
+    position: absolute;
+    bottom: 11px;
+    left: 118px; }
+  .scheme-area .scheme .opt-overlay-11 {
+    position: absolute;
+    bottom: 13px;
+    left: 160px; }
+  .scheme-area .scheme .opt-overlay-12 {
+    position: absolute;
+    bottom: 13px;
+    left: 201px; }
+  .scheme-area .scheme .kup-box {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto; }
+    @media (max-width: 991.98px) {
+      .scheme-area .scheme .kup-box {
+        width: 340px;
+        height: 230px; } }
   .scheme-area .scheme .scheme-slides {
     position: relative;
     border: 1px solid #aacc23;

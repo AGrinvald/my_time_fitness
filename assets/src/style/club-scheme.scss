@@ -105,7 +105,7 @@
         }
 
         .number-animation {
-            transition: transform .2s; 
+            transition: transform 0.2s;
         }
 
         .number-scale {
@@ -128,7 +128,7 @@
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat;
-            } 
+            }
         }
 
         .kom-box {
@@ -182,7 +182,7 @@
         .kom-overlay-4 {
             position: absolute;
             top: -6px;
-            right: 75px;        
+            right: 75px;
         }
 
         .kom-overlay-5 {
@@ -200,7 +200,7 @@
         .kom-overlay-7 {
             position: absolute;
             bottom: 43px;
-            left: 133px;     
+            left: 133px;
         }
 
         .kom-overlay-8 {
@@ -272,13 +272,13 @@
         .kup-overlay-4 {
             position: absolute;
             top: 13px;
-            right: 17px;     
+            right: 17px;
         }
 
         .kup-overlay-5 {
             position: absolute;
             top: 36px;
-            right: 16px;        
+            right: 16px;
         }
 
         .kup-overlay-6 {
@@ -290,13 +290,126 @@
         .kup-overlay-7 {
             position: absolute;
             bottom: 13px;
-            left: 132px;    
+            left: 132px;
         }
 
         .kup-overlay-8 {
             position: absolute;
             bottom: 13px;
             right: 80px;
+        }
+
+        .opt-box {
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+
+            @include media-breakpoint-down(md) {
+                width: 345px;
+                height: 291px;
+            }
+        }
+
+        .opt-img {
+            width: 100%;
+            @include media-breakpoint-up(lg) {
+                height: 500px;
+                background-image: url(../img/optikov-scheme.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            @include media-breakpoint-down(md) {
+                height: 290px;
+                background-image: url(../img/optikov-sm-scheme.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .opt-overlay-1 {
+            position: absolute;
+            top: 10px;
+            left: 50px;
+        }
+
+        .opt-overlay-2 {
+            position: absolute;
+            top: 10px;
+            left: 93px;
+        }
+
+        .opt-overlay-3 {
+            position: absolute;
+            top: 10px;
+            right: 192px;
+        }
+
+        .opt-overlay-4 {
+            position: absolute;
+            top: 10px;
+            right: 120px;
+        }
+
+        .opt-overlay-5 {
+            position: absolute;
+            top: 10px;
+            right: 62px;
+        }
+
+        .opt-overlay-6 {
+            position: absolute;
+            top: 158px;
+            right: 47px;
+        }
+
+        .opt-overlay-7 {
+            position: absolute;
+            top: 158px;
+            right: 6px;
+        }
+
+        .opt-overlay-8 {
+            position: absolute;
+            bottom: 11px;
+            left: 45px;
+        }
+
+        .opt-overlay-9 {
+            position: absolute;
+            bottom: 11px;
+            left: 85px;
+        }
+
+        .opt-overlay-10 {
+            position: absolute;
+            bottom: 11px;
+            left: 118px;
+        }
+
+        .opt-overlay-11 {
+            position: absolute;
+            bottom: 13px;
+            left: 160px;
+        }
+
+        .opt-overlay-12 {
+            position: absolute;
+            bottom: 13px;
+            left: 201px;
+        }
+
+        .kup-box {
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+
+            @include media-breakpoint-down(md) {
+                width: 340px;
+                height: 230px;
+            }
         }
 
         .scheme-slides {
@@ -353,7 +466,6 @@
                 justify-content: space-between;
                 align-items: center;
 
-
                 button.owl-prev {
                     background-image: url(../img/arrow-left.svg);
                 }
@@ -366,7 +478,7 @@
                 button.owl-next {
                     cursor: pointer;
                     color: $primary;
-                    font-size: 22px; 
+                    font-size: 22px;
                     background-position: center center;
                     background-repeat: no-repeat;
                     background-color: $white;
