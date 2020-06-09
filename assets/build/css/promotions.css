@@ -9000,21 +9000,19 @@ footer {
           max-width: 355px;
           width: 100%;
           margin-right: 130px;
-          height: 50%; } }
+          height: 250px;
+          padding-top: 40px;
+          padding-bottom: 10px; } }
       @media (max-width: 991.98px) {
         .promotions-area .promo-1 .promo-block {
           width: 100%;
           max-width: 170px;
           margin-right: 65px;
-          height: 60%;
-          padding-top: 5px; } }
+          height: 128px;
+          padding-top: 15px; } }
       @media (min-width: 992px) {
         .promotions-area .promo-1 .promo-block h3 {
-          margin-top: 3%;
           margin-left: 6%; } }
-      @media (max-width: 991.98px) {
-        .promotions-area .promo-1 .promo-block h3 {
-          margin-top: 5%; } }
       @media (min-width: 992px) {
         .promotions-area .promo-1 .promo-block p {
           margin-left: 4%; } }
@@ -9242,30 +9240,20 @@ footer {
       @media (min-width: 992px) {
         .promotions-area .promo-4 .promo-block {
           width: 385px;
-          height: 55%; } }
+          height: 248px;
+          padding-top: 40px;
+          padding-bottom: 15px; } }
       @media (max-width: 991.98px) {
         .promotions-area .promo-4 .promo-block {
           width: 200px;
-          height: 65%; } }
-      @media (min-width: 992px) {
-        .promotions-area .promo-4 .promo-block {
-          -ms-flex-pack: justify;
-              justify-content: space-between; } }
-      @media (max-width: 991.98px) {
-        .promotions-area .promo-4 .promo-block {
-          -ms-flex-pack: center;
-              justify-content: center; } }
+          height: 128px; } }
       .promotions-area .promo-4 .promo-block h3 {
         line-height: 1; }
-        @media (min-width: 992px) {
-          .promotions-area .promo-4 .promo-block h3 {
-            margin-top: 6%; } }
         @media (max-width: 991.98px) {
           .promotions-area .promo-4 .promo-block h3 {
             width: 190px;
             text-align: center;
-            margin-left: auto;
-            margin-top: 3%; } }
+            margin-left: auto; } }
       .promotions-area .promo-4 .promo-block p {
         line-height: 1; }
         @media (min-width: 992px) {
