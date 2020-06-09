@@ -22034,7 +22034,8 @@ $(function () {
                 if ($(this).height() > lineHeight * lines) {
 
                     if ($(this).attr('title')) {
-                        $(this).text($(this).attr('title'));
+                        var allText = $(this).attr('title');
+                        $(this).text(allText);
                     }
 
                     var text = $(this).text();
@@ -22051,7 +22052,7 @@ $(function () {
                             var hiddenText = words.slice(i - 1).join(' ');
 
                             var visibleText = prevstr.trim() +
-                                '<span class="morecontent"><span class="hidden-text">' + hiddenText +
+                                '<span class="morecontent"><span class="hidden-text">&nbsp;' + hiddenText +
                                 '</span>&nbsp;&nbsp;<a href="" class="morelink more"><span>' + moretext +
                                 '</span></a></span>';
 

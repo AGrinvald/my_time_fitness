@@ -38,7 +38,6 @@
     color: $primary;
 
     @include media-breakpoint-up(lg) {
-      //font-size: 36px;
       font-size: 28px;
       line-height: 0.92;
     }
