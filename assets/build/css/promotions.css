@@ -9246,7 +9246,8 @@ footer {
       @media (max-width: 991.98px) {
         .promotions-area .promo-4 .promo-block {
           width: 200px;
-          height: 128px; } }
+          height: 128px;
+          padding-top: 15px; } }
       .promotions-area .promo-4 .promo-block h3 {
         line-height: 1; }
         @media (max-width: 991.98px) {
