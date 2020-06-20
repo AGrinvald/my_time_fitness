@@ -22761,7 +22761,6 @@ function scrollToSection() {
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
             }, 'slow', function () {
-                window.location.hash = hash;
                 sessionStorage.removeItem('club-hash')
             });
 
@@ -22777,9 +22776,7 @@ function pageNavClick(event) {
 
         $('html, body').animate({
             scrollTop: $(hash).offset().top
-        }, 'slow', function () {
-            window.location.hash = hash;
-        });
+        }, 'slow');
     }
 }
 

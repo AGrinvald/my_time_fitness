@@ -124,10 +124,6 @@ function init() {
     map.controls.remove('zoomControl');
     map.controls.add('zoomControl', { position: { right: '10px', bottom: '20px' }, size: 'small' });
 
-    // map.events.add('boundschange', function (event) {
-    //     console.log(map.getCenter());
-    // });
-
     map.events.add('sizechange', function (event) {
         var size = map.container.getSize();
         var width = size[0];
@@ -270,10 +266,8 @@ function scrollToSection() {
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
             }, 'slow', function () {
-                window.location.hash = hash;
                 sessionStorage.removeItem('club-hash')
             });
-
         }, 1000);
     }
 }
@@ -286,9 +280,7 @@ function pageNavClick(event) {
 
         $('html, body').animate({
             scrollTop: $(hash).offset().top
-        }, 'slow', function () {
-            window.location.hash = hash;
-        });
+        }, 'slow');
     }
 }
 
